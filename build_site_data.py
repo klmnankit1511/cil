@@ -4,6 +4,7 @@ Keys are shortened (q/o/a/e/c/n/g) purely to keep the file small; the site reads
 them back into full names. Files that produced unusable text are skipped.
 """
 
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -13,6 +14,7 @@ IN_DIR = ROOT / "mcqs"
 NOTES_DIR = ROOT / "notes"
 OUT = ROOT / "site" / "data.js"
 OUT_NOTES = ROOT / "site" / "notes.js"
+DIFFICULTY = ROOT / "difficulty.json"   # written by classify_difficulty.py
 
 # CamScanner scan with no reliable text layer — its "questions" are OCR noise
 SKIP_FILES = {"QUANT_PRACTISE_BOOK"}
@@ -78,8 +80,16 @@ def build_notes():
 
 def main():
     OUT.parent.mkdir(exist_ok=True)
+    # hashed on the raw question text, exactly as classify_difficulty.py keys it
+    levels = json.loads(DIFFICULTY.read_text()) if DIFFICULTY.exists() else {}
+    if levels:
+        print(f"[*] {len(levels)} difficulty ratings loaded from {DIFFICULTY.name}")
+    else:
+        print(f"[-] no {DIFFICULTY.name} — run classify_difficulty.py to add levels")
+
     subjects = []
     skipped = 0
+    rated = 0
 
     for path in sorted(IN_DIR.glob("*.json")):
         if path.stem in SKIP_FILES:
@@ -94,8 +104,12 @@ def main():
             letters = sorted(q["options"])
             expl = (q.get("explanation") or "")[:MAX_EXPLANATION]
             expl = tidy(expl) if expl else None
+            key = hashlib.sha1(q["question"].strip().encode()).hexdigest()[:16]
+            level = levels.get(key)
+            rated += bool(level)
             items.append(
                 {
+                    "d": level,
                     "q": tidy(q["question"]),
                     "o": [tidy(q["options"][k]) for k in letters],
                     "k": letters,
@@ -128,6 +142,8 @@ def main():
     size = OUT.stat().st_size / 1_048_576
     print(f"\n{total} questions across {len(subjects)} subjects -> {OUT} ({size:.1f} MB)")
     print(f"{skipped} unusable entries dropped")
+    print(f"{rated} of {total} questions carry a difficulty level "
+          f"({rated / max(total, 1):.0%})")
 
 
 if __name__ == "__main__":

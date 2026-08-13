@@ -289,6 +289,42 @@ a { color: inherit; text-decoration: none; }
 .bar-val { font-size: 13px; font-weight: 620; color: var(--text-2);
            font-variant-numeric: tabular-nums; }
 
+/* Difficulty is ordinal, so it gets a sequential ramp of one hue (light -> dark)
+   rather than three separate hues: the steps stay distinguishable by lightness
+   alone, which survives every form of colour blindness. */
+:root {
+  --s0: #a3e0c8;   /* easy   */
+  --s1: #3fb98d;   /* medium */
+  --s2: #0d6e4b;   /* hard   */
+}
+:root[data-theme="dark"] {
+  --s0: #7fd9b8; --s1: #2b9d75; --s2: #14614a;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --s0: #7fd9b8; --s1: #2b9d75; --s2: #14614a; }
+}
+
+.legend { display: flex; gap: 16px; margin-bottom: 14px; padding-left: 204px; }
+.legend .lg { display: inline-flex; align-items: center; gap: 7px;
+              font-size: 12.5px; color: var(--text-2); text-transform: capitalize; }
+.sw { width: 11px; height: 11px; border-radius: 3px; }
+.sw.s0 { background: var(--s0); } .sw.s1 { background: var(--s1); } .sw.s2 { background: var(--s2); }
+
+.stack { display: flex; gap: 2px; height: 19px; }   /* 2px surface gap between fills */
+.stack .seg {
+  display: grid; place-items: center;
+  min-width: 3px; font-size: 10.5px; font-weight: 700; font-style: normal;
+  color: #08251b; transition: filter var(--fast) var(--ease);
+}
+.stack .seg:first-child { border-radius: 4px 0 0 4px; }
+.stack .seg:last-child  { border-radius: 0 4px 4px 0; }
+.stack .seg.s0 { background: var(--s0); }
+.stack .seg.s1 { background: var(--s1); }
+.stack .seg.s2 { background: var(--s2); color: #eafaf3; }
+.bar-row:hover .stack .seg { filter: brightness(1.06); }
+
+@media (max-width: 720px) { .legend { padding-left: 0; } }
+
 /* ------------------------------------------------------------ controls */
 
 .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 18px; }
@@ -415,6 +451,27 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
                border-color: var(--accent-ring); }
 .qmeta .qnum em { font-style: normal; opacity: .72; font-weight: 600; }
 .qmeta .warn { background: transparent; border-style: dashed; }
+
+/* difficulty: a sequential three-step ramp of one hue, plus a text label so the
+   level never depends on colour alone */
+.lvl {
+  padding: 4px 10px; border-radius: 999px; border: 1px solid transparent;
+  font-size: 12px; font-weight: 660; text-transform: capitalize;
+  letter-spacing: .01em; white-space: nowrap;
+}
+.lvl.easy   { background: #e4f5ee; color: #0f7d56; }
+.lvl.medium { background: #fdf0d8; color: #8a5a00; }
+.lvl.hard   { background: #fbe4e4; color: #b02f2f; }
+.lvl.none   { background: var(--surface-2); color: var(--text-3);
+              border-color: var(--border); }
+:root[data-theme="dark"] .lvl.easy   { background: #10312a; color: #46cfa0; }
+:root[data-theme="dark"] .lvl.medium { background: #33270e; color: #e8b34a; }
+:root[data-theme="dark"] .lvl.hard   { background: #331618; color: #ea7b7b; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .lvl.easy   { background: #10312a; color: #46cfa0; }
+  :root:not([data-theme="light"]) .lvl.medium { background: #33270e; color: #e8b34a; }
+  :root:not([data-theme="light"]) .lvl.hard   { background: #331618; color: #ea7b7b; }
+}
 .qtext { font-size: 18.5px; line-height: 1.55; font-weight: 560; white-space: pre-wrap;
          max-width: 68ch; }
 

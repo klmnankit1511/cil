@@ -10,3 +10,9 @@ __pycache__
 downloads/
 site/data.js
 site/notes.js
+
+# difficulty.json is deliberately NOT ignored: it costs real API spend to
+# regenerate, is only a few hundred KB, and the Pages build needs it.
+
+# local credentials — never commit
+.env

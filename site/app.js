@@ -24,6 +24,11 @@
     Digital_Logic: 'Digital Logic',
   };
 
+  const LEVELS = ['easy', 'medium', 'hard'];
+  const levelChip = (d) => d
+    ? `<span class="lvl ${d}">${d}</span>`
+    : '<span class="lvl none">unrated</span>';
+
   const RAW = (window.MCQ_DATA && window.MCQ_DATA.subjects) || [];
   const SUBJECTS = RAW.map((s, i) => ({
     id: s.file,
@@ -41,8 +46,9 @@
       total: a.total + s.total,
       keyed: a.keyed + s.keyed,
       explained: a.explained + s.explained,
+      rated: a.rated + s.questions.filter((q) => q.d).length,
     }),
-    { total: 0, keyed: 0, explained: 0 }
+    { total: 0, keyed: 0, explained: 0, rated: 0 }
   );
 
   /* ---------------------------------------------------------- storage */
@@ -173,6 +179,31 @@
             </div>`).join('')}
         </div>
 
+        ${TOTALS.rated ? `
+        <div class="section-head">
+          <h2>Difficulty mix</h2>
+          <p class="spacer">share of each subject's questions</p>
+        </div>
+        <div class="chart">
+          <div class="legend">
+            ${LEVELS.map((l, i) => `<span class="lg"><i class="sw s${i}"></i>${l}</span>`).join('')}
+          </div>
+          ${SUBJECTS.map((s) => {
+            const c = LEVELS.map((l) => s.questions.filter((q) => q.d === l).length);
+            const n = c.reduce((a, b) => a + b, 0) || 1;
+            return `
+              <div class="bar-row">
+                <div class="name" title="${esc(s.name)}">${esc(s.name)}</div>
+                <div class="stack">
+                  ${c.map((v, i) => v
+                    ? `<i class="seg s${i}" style="width:${(v / n) * 100}%"
+                         title="${LEVELS[i]}: ${v}">${(v / n) >= 0.12 ? Math.round((v / n) * 100) + '%' : ''}</i>`
+                    : '').join('')}
+                </div>
+              </div>`;
+          }).join('')}
+        </div>` : ''}
+
         <div class="section-head">
           <h2>Choose a subject</h2>
           <p class="spacer">tap to start practising</p>
@@ -244,6 +275,13 @@
               ${prefs.onlyKeyed ? 'checked' : ''}><span>Only with an answer key</span></label>
             <label class="side-check"><input type="checkbox" id="onlyExpl"
               ${prefs.onlyExpl ? 'checked' : ''}><span>Only with explanations</span></label>
+            <label class="side-row"><span>Level</span>
+              <select id="levelSel">
+                <option value="">Any</option>
+                ${LEVELS.map((l) => `<option value="${l}"
+                  ${prefs.level === l ? 'selected' : ''}>${l}</option>`).join('')}
+              </select>
+            </label>
             <button class="btn primary full" id="startBtn">${ICON.shuffle} New shuffled set</button>
           </div>
           <div class="side-card keys">
@@ -258,11 +296,14 @@
       prefs.size = +$('#setSize').value;
       prefs.onlyKeyed = $('#onlyKeyed').checked;
       prefs.onlyExpl = $('#onlyExpl').checked;
+      prefs.level = $('#levelSel').value;
       store.set('prefs', prefs);
 
       let pool = subject.questions
         .map((q, i) => ({ q, i }))
-        .filter(({ q }) => (!prefs.onlyKeyed || q.a >= 0) && (!prefs.onlyExpl || q.e));
+        .filter(({ q }) => (!prefs.onlyKeyed || q.a >= 0)
+          && (!prefs.onlyExpl || q.e)
+          && (!prefs.level || q.d === prefs.level));
 
       if (!pool.length) {
         session = null;
@@ -283,7 +324,7 @@
     };
 
     $('#startBtn').addEventListener('click', () => { start(); toast('New set shuffled'); });
-    ['setSize', 'onlyKeyed', 'onlyExpl'].forEach((id) =>
+    ['setSize', 'onlyKeyed', 'onlyExpl', 'levelSel'].forEach((id) =>
       $('#' + id).addEventListener('change', start));
 
     start();   // land straight on a question — no extra click needed
@@ -344,6 +385,7 @@
         <div class="qtop">
           <div class="qmeta">
             <span class="qnum">Question ${s.pos + 1}<em> of ${s.pool.length}</em></span>
+            ${levelChip(q.d)}
             ${q.c ? `<span>${esc(q.c)}</span>` : ''}
             ${q.g ? `<span>${esc(q.g)}</span>` : ''}
             ${q.a < 0 ? '<span class="warn">no answer key</span>' : ''}
@@ -601,7 +643,7 @@
 
   /* ---------------------------------------------------------- browse */
 
-  const browseState = { term: '', subject: '', explained: false, saved: false, limit: 40 };
+  const browseState = { term: '', subject: '', level: '', explained: false, saved: false, limit: 40 };
 
   function viewBrowse() {
     app.innerHTML = `
@@ -619,6 +661,13 @@
                 ${browseState.subject === s.id ? 'selected' : ''}>${esc(s.name)}</option>`).join('')}
             </select>
           </label>
+          <label class="field">
+            <select id="lvl">
+              <option value="">Any level</option>
+              ${LEVELS.map((l) => `<option value="${l}"
+                ${browseState.level === l ? 'selected' : ''}>${l}</option>`).join('')}
+            </select>
+          </label>
           <label class="field"><input type="checkbox" id="fx" ${browseState.explained ? 'checked' : ''}>
             <span style="font-size:14.5px">With explanation</span></label>
           <label class="field"><input type="checkbox" id="fs" ${browseState.saved ? 'checked' : ''}>
@@ -634,6 +683,7 @@
       clearTimeout(t); t = setTimeout(rerun, 180);
     });
     $('#subj').addEventListener('change', (e) => { browseState.subject = e.target.value; rerun(); });
+    $('#lvl').addEventListener('change', (e) => { browseState.level = e.target.value; rerun(); });
     $('#fx').addEventListener('change', (e) => { browseState.explained = e.target.checked; rerun(); });
     $('#fs').addEventListener('change', (e) => { browseState.saved = e.target.checked; rerun(); });
     renderResults();
@@ -647,6 +697,7 @@
       for (let i = 0; i < s.questions.length; i++) {
         const q = s.questions[i];
         if (browseState.explained && !q.e) continue;
+        if (browseState.level && q.d !== browseState.level) continue;
         if (browseState.saved && !bookmarks.has(s.id + ':' + i)) continue;
         if (term) {
           const hay = (q.q + ' ' + q.o.join(' ') + ' ' + (q.e || '')).toLowerCase();
@@ -675,7 +726,7 @@
       <div class="qlist">
         ${shown.map(({ s, q, i }) => `
           <article class="qitem">
-            <div class="qmeta"><span>${esc(s.name)}</span>${q.c ? `<span>${esc(q.c)}</span>` : ''}</div>
+            <div class="qmeta"><span>${esc(s.name)}</span>${levelChip(q.d)}${q.c ? `<span>${esc(q.c)}</span>` : ''}</div>
             <div class="q">${esc(q.q)}</div>
             <div class="opts">
               ${q.o.map((o, k) => `<div class="o ${q.a === k ? 'is-ans' : ''}">
