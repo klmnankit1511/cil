@@ -1,0 +1,3030 @@
+[
+ {
+  "t": "h1",
+  "x": "1. Programming in C"
+ },
+ {
+  "t": "li",
+  "x": "Basic concepts"
+ },
+ {
+  "t": "li",
+  "x": "Character set"
+ },
+ {
+  "t": "li",
+  "x": "Identiﬁ er"
+ },
+ {
+  "t": "li",
+  "x": "Declaring a variable"
+ },
+ {
+  "t": "li",
+  "x": "Visualization of declaration"
+ },
+ {
+  "t": "li",
+  "x": "Constants"
+ },
+ {
+  "t": "li",
+  "x": "Single character constants"
+ },
+ {
+  "t": "li",
+  "x": "String constants"
+ },
+ {
+  "t": "li",
+  "x": "Using const keyword"
+ },
+ {
+  "t": "li",
+  "x": "Precedence decreases as we move from top to bottom"
+ },
+ {
+  "t": "li",
+  "x": "Type conversion"
+ },
+ {
+  "t": "li",
+  "x": "Documentation section"
+ },
+ {
+  "t": "li",
+  "x": "Preprocessing"
+ },
+ {
+  "t": "li",
+  "x": "Global declaration"
+ },
+ {
+  "t": "li",
+  "x": "Control statements"
+ },
+ {
+  "t": "li",
+  "x": "Selection/Decision making statement"
+ },
+ {
+  "t": "li",
+  "x": "Looping statements"
+ },
+ {
+  "t": "li",
+  "x": "Unconditional jump statements"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "Basic Concepts"
+ },
+ {
+  "t": "h2",
+  "x": "Character Set"
+ },
+ {
+  "t": "p",
+  "x": "A character refers to an alphabet, digit or a special symbol. Alphabets: A – Z, a – z Digits: 0 -9 Special symbols: ∼ ! # % ∧ and ⟨eq⟩ ? \\ ⟨eq⟩ White space"
+ },
+ {
+  "t": "h2",
+  "x": "Identiﬁ er"
+ },
+ {
+  "t": "p",
+  "x": "Identifier is a user-defined name used for naming a variable or a function. Rules for naming an identifier"
+ },
+ {
+  "t": "li",
+  "x": "Consists only letters, digits and underscore"
+ },
+ {
+  "t": "li",
+  "x": "Starts only with an alphabet or underscore"
+ },
+ {
+  "t": "li",
+  "x": "Keywords cannot be used."
+ },
+ {
+  "t": "li",
+  "x": "Can be as long as you like, first 31 characters are significant."
+ },
+ {
+  "t": "h2",
+  "x": "Variable"
+ },
+ {
+  "t": "p",
+  "x": "The name itself represents value, is not constant. Variable is a data name whose value varies/changes during program execution. Variable name is a name given to memory cell (may be one or multiple bytes)."
+ },
+ {
+  "t": "h1",
+  "x": "Data types"
+ },
+ {
+  "t": "p",
+  "x": "Represents type of data and set of operations to perform on data ."
+ },
+ {
+  "t": "h2",
+  "x": "Number of Bytes"
+ },
+ {
+  "t": "p",
+  "x": "Integer int Floating float Double double Character char"
+ },
+ {
+  "t": "h2",
+  "x": "Declaring a Variable"
+ },
+ {
+  "t": "li",
+  "x": "Before using a variable, you must give some information to compiler about the variable. i.e., you must declare it."
+ },
+ {
+  "t": "li",
+  "x": "Declaration statement includes the type and variable name."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax:"
+ },
+ {
+  "t": "p",
+  "x": "Datatype Var_name; Example: int roll_no; char ch; float age;"
+ },
+ {
+  "t": "li",
+  "x": "When we declare a variable"
+ },
+ {
+  "t": "li",
+  "x": "\u0007memory space is allocated to hold a value of specified type."
+ },
+ {
+  "t": "li",
+  "x": "space is associated with variable name"
+ },
+ {
+  "t": "li",
+  "x": "space is associated with a unique Address."
+ },
+ {
+  "t": "h2",
+  "x": "Table 1 Visualization of declaration"
+ },
+ {
+  "t": "p",
+  "x": "roll no int roll no; garbage marks int marks = 10; diameter float diameter = 5.9 5.9 ch → variable name char ch : ‘A’ A → value 2820 → address Note: The default value is garbage, i.e., an unknown value is assigned randomly. Renaming data types with typedef Typedef is a keyword, which can form complex types from the basic type, and will assign some simpler names for such combinations. This is more helpful when some declaration is very tough, confusing or varies from one implementation to another. For example, the data type unsigned long int is redefined as LONG as follows: typedef unsigned long int LONG;"
+ },
+ {
+  "t": "h2",
+  "x": "Uses of enumerated data types Enumerated data types are"
+ },
+ {
+  "t": "p",
+  "x": "most useful when one is working over small, discrete set of values, in which each is having a meaning and it is not a number. A best example can be given on months jan, feb, mar, …, dec, which are 12 in number, with assigning consecutive numbers for it. The main advantages are storage efficiency, the c-code can become readable"
+ },
+ {
+  "t": "h2",
+  "x": "Constants"
+ },
+ {
+  "t": "p",
+  "x": "A constant value is one which does not change during the execution of a program. C supports several types of constants: 1. Integer constants 2. Real constants 3. Single character constants 4. Strings constants"
+ },
+ {
+  "t": "h2",
+  "x": "Integer constants"
+ },
+ {
+  "t": "p",
+  "x": "An integer constant is a sequence of digits. It consists of a set of digits 0 to 9 preceded by an optional + or - sign spaces, commas, and non-digit characters are not permitted between digits. Examples for valid decimal integer constants are -31 562321 +78 Examples for invalid integer constants are 20,000 `1000"
+ },
+ {
+  "t": "h2",
+  "x": "Real constants"
+ },
+ {
+  "t": "p",
+  "x": "Real constants consist of a fractional part in their representation. Integer constants are inadequate to represent quantities that vary continuously. Examples of real constants are 0.0026 -0.97 435.29 +487.0"
+ },
+ {
+  "t": "h2",
+  "x": "Single character constants"
+ },
+ {
+  "t": "p",
+  "x": "A single character constant represents a single character which is enclosed in a pair of quotation symbols. Examples for character constants are ‘5’ ‘x’ ‘;’"
+ },
+ {
+  "t": "h2",
+  "x": "String constants"
+ },
+ {
+  "t": "p",
+  "x": "A string constant is a set of characters enclosed in double quotation marks. The characters in a string constant sequence may be alphabet, number, special character and blank space. Examples of string constants are “VISHAL” “1234” “C language” “!….?”"
+ },
+ {
+  "t": "h2",
+  "x": "Naming constants"
+ },
+ {
+  "t": "p",
+  "x": "A name given to a constant value. Value of name does not change during program execution."
+ },
+ {
+  "t": "h2",
+  "x": "Using const keyword"
+ },
+ {
+  "t": "p",
+  "x": "When we use ‘const’ with data type, memory will be allocated to variable and the initialized value does not change. const int x = 10; const float pi = 3.141;"
+ },
+ {
+  "t": "h2",
+  "x": "Using # define"
+ },
+ {
+  "t": "p",
+  "x": "# define x 10 # define pi 3.141 Where ‘# define’ is instruction to preprocessor so memory is allocated. The preprocessor replace each occurrence of name with value in program before execution."
+ },
+ {
+  "t": "h1",
+  "x": "Operator"
+ },
+ {
+  "t": "p",
+  "x": "An operator is a symbol which performs operations on given data elements."
+ },
+ {
+  "t": "h2",
+  "x": "Table 2 Precedence and Associativity"
+ },
+ {
+  "t": "li",
+  "x": "Member of L -R"
+ },
+ {
+  "t": "p",
+  "x": "Pre ++, -- (unary) - , &(address of ) * (Indirection ) R -L Arithmetic * , /, % L -R Arithmetic: +, - L -R Bitwise shift : ≪, ≫ L -R Relational: ⟨eq⟩ ! = L -R Bitwise ex -OR : ∧ L -R Logical AND : && L -R Logical OR : || L -R Conditional: ? : R -L Assignment & compound Assignment ⟨eq⟩ % = R -L Separation operator: , (comma) L -R"
+ },
+ {
+  "t": "h2",
+  "x": "Examples:"
+ },
+ {
+  "t": "p",
+  "x": "1. int a,b,c; ⟨eq⟩ 0; Assigns ‘0’ to a,b,c; 2. int a, b = 55, c = 10; initializes ‘b’ with 55 and ‘c’ with ‘10’. ⟨eq⟩ a; // Invalid Only variable is allowed on left side of assignment. 3. int a = 15, b = 20, c = 2, d = 5, e = 10, f, g, h, i; ⟨eq⟩ c; ‘a’ is left shifted for ‘c’ times and result stored in ‘f’ i.e., ⟨eq⟩ (1 1 1 1)2 ↓ ↓ ↓ ↓ 1 1 1 1 0 (After first shift) ↓ ↓ ↓ ↓ 1 1 1 1 0 0 (After second shift) One left shift multiplies 15 by 2 = 30 Again the 2nd left shift multiplies 30 by 2 = 60 Thus 15 × 22 = 60, where the power of 2 is the number of times shift is made. Value of ‘f ’ becomes 60. Note: Left shift multiplies the value by 2. Right shift divides the value by 2. g = a and b; ⟨eq⟩ ______________ 0 0 1 0 0 = 4 ______________ ‘&’ performs bitwise AND. So ‘g’ value is ‘4’. h = a|b; ⟨eq⟩ _______________ 1 1 1 1 1 = 31 _______________ “I ” performs bitwise ‘OR’. R value is ‘31’. ⟨eq⟩ _____________ 1 0 1 0 = 10 _____________ ‘^’ performs bit-wise ex - OR. i value is ‘10’. 4. int ⟨eq⟩ 200, c = 300, x; x = (a > b)?((a > c)? a:c):((b > c)? b:c); false c x = c so, x = 300 5. int i = 10, j = 10, x, y; x = i+++++i+i+++++i+++i executes as ⟨eq⟩ pre-increments ⟨eq⟩ post-increments i ++ ; so x = 65, i = 15. \u0007y ⟨eq⟩ executes as - - j; - - j; pre decrements - - j; ⟨eq⟩ post decrements. y = 35; j = 5 6. int i = 10; printf(“%d%d%d%d%d”, i++, ++i, ++i, i++, ++i); evaluates the values in printf from right to left. So i++, ++i, ++i, i++, ++i Prints 14 14 13 11 11 Printf (“%d”, i) Prints 15:"
+ },
+ {
+  "t": "h1",
+  "x": "Type Conversion"
+ },
+ {
+  "t": "p",
+  "x": "‘C’ allows mixed mode operations, i.e., variables of different type may appear in same expression. To perform the operation, the data need to convert into compatible type. The conversion takes place in two ways:"
+ },
+ {
+  "t": "h2",
+  "x": "Implicit"
+ },
+ {
+  "t": "p",
+  "x": "C automatically converts any intermediate values to proper type so that the expression can be evaluated without losing any significance. For mixed mode operations, generally the ‘lower’ type is automatically converted to ‘higher’ type before the operation proceeds."
+ },
+ {
+  "t": "h2",
+  "x": "Explicit"
+ },
+ {
+  "t": "p",
+  "x": "‘C’ allows programmer to use type conversion operator to convert a data value to the required type."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax:"
+ },
+ {
+  "t": "p",
+  "x": "V1 = (type) V2; Type in parenthesis represents the destination type. Example: int a = 3, b = 2, float x, y; Case I: x = a/b; results x = 1.000000 Case II: y = (float) a/b; results y = 1.500000. Because, in case 1, the integer division is performed and so returns an integer by division operator. While assigning the integer value implicitly converted to 1.000000, then assigns to float variable x where as in case 2, (float)a converts value of ‘a’ to float, the second variable ‘b’ is integer. The compiler implicitly converts integer to float. Then it performs float division. So 1.500000 is stored into floating variables. Notes: ‘C’ allows both implicit and explicit type conversion. Type conversion is of two types: 1. Narrowing: Conversion of ‘higher’ type to ‘lower’ type. 2. Widening: Conversion of ‘lower’ type to ‘higher’ type. Char – int ¬– long – float – double – long double"
+ },
+ {
+  "t": "h2",
+  "x": "Purpose"
+ },
+ {
+  "t": "p",
+  "x": "printf prints formatted string scanf reads formatted string getchar reads character putchar displays a character gets reads a string puts displays a string"
+ },
+ {
+  "t": "h2",
+  "x": "Purpose"
+ },
+ {
+  "t": "p",
+  "x": "%c single character %d decimal integer %e floating point %f floating point %h short int %o octal integer %x hexa decimal %s string %u unsigned decimal integer"
+ },
+ {
+  "t": "h2",
+  "x": "Note: scanf(“%s”, string_var); does not read string which"
+ },
+ {
+  "t": "p",
+  "x": "contains white space. Hence to read multi word string use gets(string_var);"
+ },
+ {
+  "t": "h2",
+  "x": "Example 1: Which of following comment regarding the"
+ },
+ {
+  "t": "p",
+  "x": "reading of a string using scanf( ) and gets ( ) is true? (A) Both can be used interchangeably (B) \u0007scanf is delimited by end of line, gets is delimited by blank space (C) \u0007scanf is delimited by blank, gets is delimited by end of line (D) None of these Ans: (C)"
+ },
+ {
+  "t": "h1",
+  "x": "Program Structure"
+ },
+ {
+  "t": "p",
+  "x": "/* Documentation section */ Preprocessor commands; Global declaration; main ⟨eq⟩ Body of main; } User defined function area;"
+ },
+ {
+  "t": "h2",
+  "x": "section/comments Ignored"
+ },
+ {
+  "t": "p",
+  "x": "by compiler, provides additional information to user to improve readability."
+ },
+ {
+  "t": "h2",
+  "x": "Preprocessing Tells the compiler to do pre-processing"
+ },
+ {
+  "t": "p",
+  "x": "before doing compilation. For example #include < stdio.h > tells to include stdio header file."
+ },
+ {
+  "t": "h2",
+  "x": "Global declaration It contains variable declarations, these"
+ },
+ {
+  "t": "p",
+  "x": "are accessible in more than one function."
+ },
+ {
+  "t": "h2",
+  "x": "Function Functions are main building blocks of ‘C’ pro-"
+ },
+ {
+  "t": "p",
+  "x": "gram. Every ‘C’ program contains one or more functions. A mandatory function called ’main( )’ instructs the compiler to start execution from here. User defined area Here user can define his own functions."
+ },
+ {
+  "t": "h1",
+  "x": "Control Statements"
+ },
+ {
+  "t": "p",
+  "x": "The statement that controls the execution sequence of a program is called “control statement”. The control statements are classified as: 1. Selection statement: if, switch 2. Iterative/looping statement: While, do-while, for 3. Unconditional jump statements: break, continue, return, goto"
+ },
+ {
+  "t": "h2",
+  "x": "Selection/Decision-making Statement"
+ },
+ {
+  "t": "p",
+  "x": "Makes a decision to select and execute statement(s) based on the condition. ‘C’ supports if and switch selection statements. The if statement “if ” is called two-way selection statement."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax:"
+ },
+ {
+  "t": "p",
+  "x": "if (expression) // simple-if statement(s); if (expression) // if-else { statement1(s); } else { statements(s); } if (expression) // ladder else-if. { Statement1(s); } else if (expression2) { Statement2(s); } else { Statement3(s); }"
+ },
+ {
+  "t": "h2",
+  "x": "Nested if:"
+ },
+ {
+  "t": "p",
+  "x": "if (expression1) { Statement(s)1; if (expression(s)2) else Statement(s)3; } else Statement(s)4; Note: If the expression evaluates to true then the statements of if block gets executed otherwise else block statements will execute."
+ },
+ {
+  "t": "h2",
+  "x": "Example 2: Consider the following program segment:"
+ },
+ {
+  "t": "p",
+  "x": "if (a > b) printf (“a > b”); else printf (“else part”); printf (“a < = b”); ⟨eq⟩ will be printed if (A) a > b (B) a < b (C) a = b (D) all of these Ans: (D) Because the statement, printf(“a < = b”); is not the part of either if block or else block."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax:"
+ },
+ {
+  "t": "p",
+  "x": "switch (var_name/exp) { case const1: stmts1; break; case const2: stmts2; break; . . . case constn: stmts n; break; default: statements; }"
+ },
+ {
+  "t": "h2",
+  "x": "Notes:"
+ },
+ {
+  "t": "li",
+  "x": "For switch only the integral (integer/char) type variables or expression evaluates to integral allowed."
+ },
+ {
+  "t": "li",
+  "x": "Absence of break after case statements leads continuation execution of all case statements followed by matching case block."
+ },
+ {
+  "t": "h2",
+  "x": "Example 3:"
+ },
+ {
+  "t": "p",
+  "x": "main () { int i = 10; switch(i) { case 10 : printf (“case 10”); case 15 : printf (“case 15”); case 20 : printf (“case 20”); default : printf (“default case”); } }"
+ },
+ {
+  "t": "h2",
+  "x": "Example 4:"
+ },
+ {
+  "t": "p",
+  "x": "main ( ) { int i = 10; switch (i) { case 10 : printf(“case 10”); break ; case ⟨eq⟩ printf(“case 8+2”); break; default : printf(“ No matching case”); } } Program raises an error called ‘Duplicate case’ while compiling because the expression ‘8 + 2’ evaluates to ‘10’."
+ },
+ {
+  "t": "h2",
+  "x": "Looping Statements"
+ },
+ {
+  "t": "p",
+  "x": "Sometimes, there is a situation to execute statement(s) repeatedly for a number of times or until the condition satisfies. C’ supports following looping statements: while, do-while, for."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax: while (condition)"
+ },
+ {
+  "t": "p",
+  "x": "{ Statement(s); } If the condition is true the block of statements will execute and control returns to condition, i.e., the statement(s) executes till the condition becomes false."
+ },
+ {
+  "t": "h2",
+  "x": "Notes:"
+ },
+ {
+  "t": "li",
+  "x": "‘While’ executes the block either ‘0’ or more times."
+ },
+ {
+  "t": "li",
+  "x": "‘While’ is called entry control loop."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax:"
+ },
+ {
+  "t": "p",
+  "x": "do { Statement(s); } while (condition); do-while is same as ‘while; except that the statement(s) will execute for at least once."
+ },
+ {
+  "t": "h2",
+  "x": "Notes:"
+ },
+ {
+  "t": "li",
+  "x": "The condition will not be evaluate to execute the block for first time."
+ },
+ {
+  "t": "li",
+  "x": "‘do-while’ is called exit-control loop."
+ },
+ {
+  "t": "h2",
+  "x": "Example 5:"
+ },
+ {
+  "t": "p",
+  "x": "main ( ) { int i = 0; while (i! = 0) { printf(“%d”, i); i++; } } No output, because the condition is false for the first time. main ( ) { int i = 0; do { printf(“%d”, i); i++; } while (i! = 0); }"
+ },
+ {
+  "t": "h2",
+  "x": "Expression 1: Initialization expression may contain mul-"
+ },
+ {
+  "t": "p",
+  "x": "tiple initializations. It executes only once before executing the loop for first time."
+ },
+ {
+  "t": "h2",
+  "x": "Expression 2: Condition expression. Only one condition"
+ },
+ {
+  "t": "p",
+  "x": "expression is allowed. That may be single or compound condition, evaluates before every execution."
+ },
+ {
+  "t": "h2",
+  "x": "Expression 3: Modification statement may contain multi-"
+ },
+ {
+  "t": "p",
+  "x": "ple statements. It executes on completion of loop body for every iteration."
+ },
+ {
+  "t": "h2",
+  "x": "Note: All the expressions in parenthesis are optional. Two"
+ },
+ {
+  "t": "p",
+  "x": "semi-colons (;) are compulsory even though there are no expressions. Odd loops In the for loop, while loop, the condition specifies the number of times a loop can be executed. Sometimes a user may not know, about the number of times a loop is to be executed. If we want to execute a loop for unknown number of times, then the concept of odd loops should be implemented, these can be done using the for, while (or) do-while loops. Let us illustrate odd-loop with a program # include <stdio.h> main() { int num, x; num = 1; while (num = = 1) { printf (“enter a number“); scanf (“%d”, & x); if((x % 2) = = 0) printf(“number is even”); else printf(“number is odd”); printf(“do u want to test any num.”); printf(“for yes-enter ‘1’, No-enter ‘0’”); Scanf(“%d”,& num); } }"
+ },
+ {
+  "t": "h2",
+  "x": "Unconditional Jump Statements"
+ },
+ {
+  "t": "li",
+  "x": "“C” language permits to jump from one statement to another."
+ },
+ {
+  "t": "li",
+  "x": "‘C’ supports break, continue, return and goto jump statements."
+ },
+ {
+  "t": "h2",
+  "x": "Break statement Breaks the execution sequence. That is"
+ },
+ {
+  "t": "p",
+  "x": "when the break statement executes in a block (loop) it’ll come out from block (loop)."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax:"
+ },
+ {
+  "t": "p",
+  "x": "break; Continue statement Used to skip a part of the loop under certain conditions."
+ },
+ {
+  "t": "h2",
+  "x": "Return statement Terminates the execution of a function"
+ },
+ {
+  "t": "p",
+  "x": "and returns the control to the calling function."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax:"
+ },
+ {
+  "t": "p",
+  "x": "return [exp/value]; Goto statement Jumps from one point to another with in a function."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax:"
+ },
+ {
+  "t": "p",
+  "x": "label1: goto label2: Statement(s); Statement(s); goto label1; label2; reverse jump forward jump Reverse jump, executes the statements repeatedly where as in forward jump, the statements are skipped from execution."
+ },
+ {
+  "t": "h2",
+  "x": "Example 6:"
+ },
+ {
+  "t": "p",
+  "x": "main( ) { int i ; for (i=1; i<=10; i++) { if (i = = 5) break; printf(“%d” , i); } } output: 1 if i = 5, then the loop will break."
+ },
+ {
+  "t": "h2",
+  "x": "Example 7:"
+ },
+ {
+  "t": "p",
+  "x": "main( ) { int i ; for (i = 1; i<=10; i++) { if (i = = 5) continue; printf(“%d” , i); } } o/p: 1 2 3 4 6 7 8 9 10 if i = 5, the loop statements skipped for that iteration. So it does not print ‘5’."
+ },
+ {
+  "t": "h2",
+  "x": "Example 8:"
+ },
+ {
+  "t": "p",
+  "x": "Output for the following program segment for (i = 1, ⟨eq⟩ 6; ++i, --j) printf(“\\n %d %d”, i, j); Output:"
+ },
+ {
+  "t": "h2",
+  "x": "Note: Since for statement allows multiple initialization and"
+ },
+ {
+  "t": "p",
+  "x": "multiple update statements, expression 1 and expression 3, does not raise any error."
+ },
+ {
+  "t": "h1",
+  "x": "functions"
+ },
+ {
+  "t": "p",
+  "x": "A function is a block of code that performs a specific task. It has a name and is reusable, i.e., it can be executed from as many different parts in a program as required. Functions make possible top down modular programming. In this style of programming, the high-level logic of overall problem is solved first, whereas the detail of each lower-level function is addressed later. This approach reduces the complexity in writing program. 1. Every C program can be thought of collection of functions. 2. main( ) is also a function."
+ },
+ {
+  "t": "h2",
+  "x": "Library functions"
+ },
+ {
+  "t": "p",
+  "x": "These are the in-built functions of ‘C’ library. These are already defined in header files. Example 1: printf( ); is a function which is used to print at output. It is defined in ‘stdio.h’ file."
+ },
+ {
+  "t": "h2",
+  "x": "User-deﬁ ned functions"
+ },
+ {
+  "t": "p",
+  "x": "Programmers can create their own function in ‘C’ to perform specific tasks."
+ },
+ {
+  "t": "h2",
+  "x": "Example 2: # include <stdio.h>"
+ },
+ {
+  "t": "li",
+  "x": "A function receives zero (or) more parameters, performs a specific task, and returns zero or one value."
+ },
+ {
+  "t": "li",
+  "x": "A function is invoked by its name and parameters."
+ },
+ {
+  "t": "li",
+  "x": "No two functions have the same name in a single C program."
+ },
+ {
+  "t": "li",
+  "x": "The communication between the function and invoker is through the parameter and the return value."
+ },
+ {
+  "t": "li",
+  "x": "A function is independent."
+ },
+ {
+  "t": "li",
+  "x": "It is “completely” self-contained."
+ },
+ {
+  "t": "li",
+  "x": "It can be called at any place of your code and can be ported to another program."
+ },
+ {
+  "t": "li",
+  "x": "Functions make programs reusable and readable."
+ },
+ {
+  "t": "p",
+  "x": "Example 3: Return the largest of two integers. int maximum (int a, int b) { if (a > b) return a; else return b; } Note: Function calls execute with the help of execution stack. Execution of ‘C program’ starts with main( ) function. Main( ) is a user-defined function."
+ },
+ {
+  "t": "h2",
+  "x": "Deﬁ ning User-deﬁ ned Functions"
+ },
+ {
+  "t": "p",
+  "x": "In order to work with user-defined functions, it requires the following concepts about functions:"
+ },
+ {
+  "t": "li",
+  "x": "Declaration of a function"
+ },
+ {
+  "t": "li",
+  "x": "Definition of a function"
+ },
+ {
+  "t": "li",
+  "x": "Function call"
+ },
+ {
+  "t": "h1",
+  "x": "2. Functions"
+ },
+ {
+  "t": "p",
+  "x": "Functions Library functions User deﬁ ned functions Deﬁ ning user deﬁ ned functions Recursion Parameter passing Pass by value Pass by address Scope Life time Binding"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "li",
+  "x": "is the name of the function"
+ },
+ {
+  "t": "li",
+  "x": "are the parameters to pass (type, order and number of parameters)."
+ },
+ {
+  "t": "li",
+  "x": "it returns on completion of execution"
+ },
+ {
+  "t": "p",
+  "x": "Example 4: int maximum (int, int); int maximum (int a, int b);"
+ },
+ {
+  "t": "h2",
+  "x": "Syntax:"
+ },
+ {
+  "t": "p",
+  "x": "Return_type Function_Name(Parameter_list);"
+ },
+ {
+  "t": "li",
+  "x": "Names of parameters are optional in declaration."
+ },
+ {
+  "t": "li",
+  "x": "Default return type for ‘C’ functions is ‘int’."
+ },
+ {
+  "t": "li",
+  "x": "A function, whose return type is void returns nothing."
+ },
+ {
+  "t": "li",
+  "x": "Empty parenthesis after a function name in declaration says, function does not accept any parameters."
+ },
+ {
+  "t": "li",
+  "x": "to perform the specified task"
+ },
+ {
+  "t": "li",
+  "x": "to accept passed parameters"
+ },
+ {
+  "t": "li",
+  "x": "to process parameters or execute instruction to producer equired results (return value)."
+ },
+ {
+  "t": "p",
+  "x": "Function definition is a self-contained block of instructions, will be executed on call:"
+ },
+ {
+  "t": "h2",
+  "x": "Syntax:"
+ },
+ {
+  "t": "p",
+  "x": "Return _type Function -Name(paralist) { Local declaration(s); Executable statements(s); } int maximum (int a, int b) { if (a > b) return a; else return b; } Function call specifies 1. where to execute the function 2. when to execute the function Note: If the function definition provided before use (call), the declaration is optional. The following example describes control flow during function call: void hello(); // Declaration void main() { printf(“\\n function”); hello(); printf(“\\n Main after call to hello”) void hello()//Definition { printf (“\\n function Hello”); return; } A return statement has two important uses: 1. first, it causes an immediate exit from the function. 2. second, it may be used to return a value. If a function does not return any value, then the return statement is optional."
+ },
+ {
+  "t": "h1",
+  "x": "Recursion"
+ },
+ {
+  "t": "p",
+  "x": "In general, programmers use two approaches to write repetitive algorithms. One approach using loops, the other is recursion. Recursive functions typically implement recurrence relations, which are mathematical formula in which the desired expression (function) involving a positive integer, n, is described in terms of the function applied to corresponding values for integers less than ‘n’. 1. The function written in terms of itself is a recursive case. 2. The recursive case must call the function with a decreasing ‘n’. 3. Recursion in computer programming is exemplified when a function defined in terms of itself. 4. Recursion is a repetitive process in which a function calls itself. Note: Recursive function must have an if condition to force the function to return without recursive call being executed. If there is no such condition, then the function execution falls into infinite loop. Rules for designing recursive function 1. Determine base case 2. Determine general case 3. Combine, base and general case into a function"
+ },
+ {
+  "t": "h2",
+  "x": "Example 5: Recursive factorial function"
+ },
+ {
+  "t": "p",
+  "x": "1. int factorial (int n) 2. { 3. if (n = = 0) 4. return 1; 5. else 6. return (n ٭factorial (n − 1)); 7. } The statement 3 is a base condition, which stops the recursive call of function. The statement 6 reduces the size of problem by recursively calling the factorial with (n − 1). Execution sequences for factorial (3): Factorial (3) = 3* factorial (2) Factorial (3) 3* 2 = 6 Factorial (2) = 2* factorial (1) Factorial (2) 2* 1 = 2 Factorial (1) 1* factorial (0) Factorial (1) 1* 1 = 1 Factorial (0) = 1"
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages:"
+ },
+ {
+  "t": "p",
+  "x": "1. Recursive programs increase the execution time of program. 2. Recursive programs typically use a large amount of computer memory and the greater the recursion, the more memory is used. 3. Recursive programs can be confusing to develop and extremely complicated to debug."
+ },
+ {
+  "t": "h1",
+  "x": "Parameter Passing"
+ },
+ {
+  "t": "p",
+  "x": "There are two ways of passing parameters to functions in ‘C’ language. 1. Pass-by-value: When parameters are passed by value, create copies in called function. This mechanism is used when we do not want to change the value of actual parameters. 2. Pass-by-address: In this case, only the addresses of parameters are passed to the called function. Therefore, manipulation of formal parameters affects actual parameters."
+ },
+ {
+  "t": "h2",
+  "x": "Examples 6:"
+ },
+ {
+  "t": "p",
+  "x": "void swap1(int, int); /* function – to swap two numbers by passing values */ void swap2 (int *, int *); /* function to swap two numbers by passing Address * / void main () { int a = 10, b = 15, c = 5, d = 25; printf(“value of a and b before swapping :%d, %d” ⟨eq⟩ swap1(a, b); printf(“values of a and b after swapping : %d, %d”, a, b); printf (“values of c and d before swapping :%d%d”, c,d ); Swap2(&c, &d); printf(“values of c and d after swapping %d, %d”, c, d); } void swap1(int x, int y ) { int temp; temp = x; x = y; y = temp; } void swap2 (int *x, int *y) { int temp; temp = *x; *x = *y: *y = temp; }"
+ },
+ {
+  "t": "h2",
+  "x": "Output:"
+ },
+ {
+  "t": "p",
+  "x": "Value of a and b before swapping: 10, 15 Value of a and b after swapping: 10, 15 Value of c and d before swapping: 5, 25 Value of c and d after swapping: 25, 5"
+ },
+ {
+  "t": "h2",
+  "x": "Example 1: Consider the program below:"
+ },
+ {
+  "t": "p",
+  "x": "#include<stdio.h> int fun (int n, int *fp)"
+ },
+ {
+  "t": "h2",
+  "x": "Pass-by-address"
+ },
+ {
+  "t": "p",
+  "x": "1. Also known as call-by-value 1. Also known as call-by-address or call by-reference 2. Pass the values of actual parameters 2. Pass the address of actual parameters 3. Formal parameters act as duplicates or as a copy to actual parameters 3. Formal parameters acts as references to the actual parameters 4. Operations on formal parameter does not affect actual parameters 4. Operations on formal parameters affect actual parameters 5. Passing of parameters is time consuming as the data size increases 5. The size of parameters does not affect the time for transferring references. 6. Actual parameters are secured 6. Helps to return multiple parameters { int t,f; if (n < =1) { *fp=1; return 1; } t = fun(n−1, fp); f = t+ *fp; *fp = t; return f; } int main () { int x = 15; printf (“%d\\n”, fun(5,&x)); return 0; } What is the output? (A) 2 (B) 4 (C) 8 (D) 16"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (C)"
+ },
+ {
+  "t": "p",
+  "x": "Execution stack Function call sequence \u0007Corresponding values of t, f, n, x main() ⟨eq⟩ fun (5 &x) main() t f n x(fp) ⟨eq⟩ x(fp) ⟨eq⟩ fun (5 &x) fun (4 &x) main() t f n x(fp) ⟨eq⟩ fun (5 &x) fun (4 &x) fun (3 &x) main() main() fun (5, &x) fun (4, &x) fun (3, &x) fun (2, &x) t f n x(fp) ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Note: ‘–’ indicates no memory allocated to variable. ‘G’"
+ },
+ {
+  "t": "p",
+  "x": "indicates garbage value. main() fun (5, &x) fun (4, &x) fun (3, &x) fun (2, &x) fun (1, &x) t f n x(fp) ⟨eq⟩ For the function call fun(1, &x) condition (n<=1) is true. So Assigns ‘1’ to fp and returns ‘1’. main() fun (5, &x) fun (4, &x) fun (3, &x) fun (2, &x) fun (1, &x) t f n x(fp) G G G G G G G G 1. 1. 1. 1. 1. 1. ⟨eq⟩ main() fun (5, &x) fun (4, &x) fun (3, &x) fun (2, &x) t f n x(fp) G G G G G G 1. 1. 1. 1. 1. − − − main() fun (5, &x) fun (4, &x) fun (3, &x) t f n x(fp) G G G G 1. − − − 2. 2. 2. main() fun (5, &x) fun (4, &x) t f n x(fp) G G 1. − − − 3. 3. main() fun (5, &x) t f n x(fp) 5. − − − 5. main() t f n x(fp) Finally, x contains ‘8’, so printf prints ‘8’."
+ },
+ {
+  "t": "h2",
+  "x": "Example 2: What does the following program prints?"
+ },
+ {
+  "t": "p",
+  "x": "#include < stdio.h> void f (int *p, int *q) { p=q; *p=12; } int i = 0, j=1; int main() { f(&i, &j); printf(“ %d%d “, i, j); return 0 ; } (A) 2 12 (B) 12 1 (C) 0 1 (D) 0 12"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (D)"
+ },
+ {
+  "t": "p",
+  "x": "main( ) f (&i, &j) address of ‘i’ is stored in to p. and address of ‘j’ is stored into ‘q’. i.e., *p and*q refers i and j. The statement: p = q; updates pointer ‘p’, so that both pointers refer to parameter ‘j’. *p = 12 Changes value of ‘j’ to ‘12’ But ‘i’ does not effected. So, prints 0 12. Example 3: What is the value printed by the following program? # include <stdio.h> int f(int *a, int n) { if (n<=0) return 0 ; else if(*a%2 = = 0) return *a + f(a+1, n−1); else return *a – f(a+1, n−1); } int main ( ) { int ⟨eq⟩ 12, 7, 13, 4, 11, 6}; printf(“%d”, f (a,b)); return 0; } (a) −9 (b) 12 (c) 15 (d) 20"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (C)"
+ },
+ {
+  "t": "p",
+  "x": "a f (a, 6) is the first call to function f ( ). The array _ name refers to base address of array, i.e., address of first element. Thus, F (a, 6) 12 % 2 = 0. So, + + − ↓ ⟨eq⟩ is even ⟨eq⟩ ↓ ⟨eq⟩ is odd ⟨eq⟩ ↓ ⟨eq⟩ is odd] ⟨eq⟩ ↓ ⟨eq⟩ is even ⟨eq⟩ ↓ ⟨eq⟩ is odd ⟨eq⟩ ↓ ⟨eq⟩ is even 12 + (7 (13 - (4 + (11 - (6 + 0))))) = 15"
+ },
+ {
+  "t": "h1",
+  "x": "Scope, Lifetime and Binding"
+ },
+ {
+  "t": "p",
+  "x": "Storage classes specify the scope, lifetime and binding of variables. To fully define a variable, one needs to mention not only its ‘type’ but also its ‘storage class’. A variable name identifies some physical location within computer memory where a collection of bits are allocated for storing value of variable. Storage class tells us: 1. Where the variable would be stored (either in memory or CPU registers)? 2. What will be the initial value of a variable, if no value is specifically initialized? 3. What is the scope of a variable (where it can be accessed)? 4. What is the life of a variable?"
+ },
+ {
+  "t": "h2",
+  "x": "Scope"
+ },
+ {
+  "t": "p",
+  "x": "The scope defines the visibility of an object. It defines where an object can be referenced/accessed; generally, the scope of variable is local or global. 1. The variables defined within a block have local scope. They are visible only to the block in which they are defined. 2. The variables defined in global area are visible from their definition until the end of program. It is visible everywhere in program."
+ },
+ {
+  "t": "h2",
+  "x": "Lifetime"
+ },
+ {
+  "t": "p",
+  "x": "The lifetime of a variable defines the duration for which the computer allocates memory for it (the duration between allocation and deallocation of memory). In C, variable can have automatic, static or dynamic lifetime. 1. Automatic: Variables with automatic lifetime are created each time their declaration are encountered and are destroyed each time their blocks are exited. 2. Static: A variable is created when the declaration is executed for the first time and destroyed when the execution stops/terminates. 3. Dynamic: The variable’s memory is allocated and deallocated through memory management functions."
+ },
+ {
+  "t": "h2",
+  "x": "Binding"
+ },
+ {
+  "t": "p",
+  "x": "Binding finds the corresponding binding occurrence (declaration/definition) for an applied occurrence (usage) of an identifier. For Binding. 1. Scope of variables should be known. What is the block structure? In which block the identifier is variable? 2. What will happen if we use same identifier name again? ‘C forbids use of same identifier name in the same scope’. Same name can be used in different scopes."
+ },
+ {
+  "t": "h2",
+  "x": "Examples:"
+ },
+ {
+  "t": "p",
+  "x": "1. double f,y; int f( ) // error ⟨eq⟩ double y; // error 2. double y; int f( ) { double f;// legal int y; //legal } There are four storage classes in C."
+ },
+ {
+  "t": "h2",
+  "x": "Keyword"
+ },
+ {
+  "t": "p",
+  "x": "Automatic Memory Till the control remains in block Till the control remains in block Local auto Register CPU register An unpredictable value (or) garbage value Till the control remains in block Local register Static Memory Zero Value of variable persist between function calls Local static External Memory Unpredictable or garbage value Throughout program execution Global extern Note: Default storage class is auto. Example 4: What will be the output for the program? int i = 33; main( ) { extern int i; { int i = 22; { const volatile unsigned i = 11; printf (“ %d ”, i); } printf (“ %d ”, i); } printf (“%d “, i) ; } (A) error (B) 11 22 33 (C) 11 22 garbage (D) 11 11 11"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "‘{‘ introduces new block and thus new scope. In the innermost block, i is declared as const volatile unsigned which is a valid declaration. i is assumed of type int. So printf prints 11. In the next block, i has value 22 and so printf prints 22. In the outermost block, i is declared as extern, so no storage space is allocated for it. After compilation is over, the linker resolves it to global variable, i since it is the only variable visible there. So it prints its value as 33."
+ },
+ {
+  "t": "h2",
+  "x": "Example 5: Consider the following C program:"
+ },
+ {
+  "t": "p",
+  "x": "int f(int n) { static int r; if (n<=0) return 1; if (n> 3) { r=n; return (f(n−2)+2)); } return f(n−1) + r; } What is the value of f(5)? (a) 15 (b) 17 (c) 18 (d) 19"
+ },
+ {
+  "t": "h2",
+  "x": "Return Sequence"
+ },
+ {
+  "t": "p",
+  "x": "f (5) ↓ f (3)+2 16+2 ↑ f (2)+r 11+5 ↑ f (1)+r 6+5 ↑ f (0)+r 1+5 ↑ Common data for questions 6 and 7: Consider the following recursive ‘C’ function that takes two arguments. unsigned int foo (unsigned int n, unsigned int r) { if (n>0) return ((n%r)+ foo(n/r,r)); else return 0; } Example 6: What is the return value of the function foo when it is called as foo (512,2)? (A) 9 (B) 8 (C) 2 (D) 1"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "h1",
+  "x": "arrays"
+ },
+ {
+  "t": "p",
+  "x": "In C we have the following derived data types:"
+ },
+ {
+  "t": "li",
+  "x": "Structures"
+ },
+ {
+  "t": "p",
+  "x": "Imagine a problem that requires to read, process, and print 10 integers. We can declare 10 variables, each with different name. Having 10 different names creates a problem; we need 10 read and 10 write statements each for different variable."
+ },
+ {
+  "t": "h2",
+  "x": "Deﬁ nition"
+ },
+ {
+  "t": "p",
+  "x": "An array is a collection of elements of same data type. Array is a sequenced collection. So, we can refer to the elements in array as 0th element, 1st element, and so on, until we get the last element. The array elements are individually addressed with their subscripts/indices along with array name. We place subscript value in square brackets ([ ]) followed by array name. This notation is called indexing. There is a powerful programming construct, loop, that makes array processing easy. It does not matter if there are 1, 10, 100 or 1000 elements. We can also use a variable name in subscript, as the value of variable changes; it refers different elements at different times."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax of Array Declaration"
+ },
+ {
+  "t": "p",
+  "x": "Data_type array_name_[size]; Here, data type says the type of elements in collection, array_name is the name given to collection of elements and size says the number of elements in array. Example: int marks[6]; Here, ‘int’ specifies the type of variable, marks specifies name of variable. The number 6 tells the dimension/size. The ‘[ ]’ tells the compiler that we are dealing with array. Accessing array elements: All the array elements are numbered, starting from 0, thus marks [3] is not the third, but the fourth element."
+ },
+ {
+  "t": "h2",
+  "x": "Example: marks[2] – 3rd element"
+ },
+ {
+  "t": "p",
+  "x": "marks[0] – 1st element We can use the variable as index. Thus marks[i] – ith element. As the value of i changes, refers different elements in array."
+ },
+ {
+  "t": "h2",
+  "x": "Summary about Arrays"
+ },
+ {
+  "t": "li",
+  "x": "An array is a collection of similar elements."
+ },
+ {
+  "t": "li",
+  "x": "The first element in array is numbered 0, and the last element is one less than the total size of the array."
+ },
+ {
+  "t": "li",
+  "x": "An array is also known as subscripted variable."
+ },
+ {
+  "t": "li",
+  "x": "Before using an array, its type and dimension must be declared."
+ },
+ {
+  "t": "li",
+  "x": "How big an array is, its elements are always stored in contiguous memory locations."
+ },
+ {
+  "t": "li",
+  "x": "Individual elements accessed by index indicating relative position in collection."
+ },
+ {
+  "t": "li",
+  "x": "Index of an array must be an integer."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax"
+ },
+ {
+  "t": "h1",
+  "x": "3. Arrays, Pointers and Structures"
+ },
+ {
+  "t": "p",
+  "x": "Arrays Array initialization Passing array elements to function Two dimensional arrays Syntax for 3D array declaration Pointers Pointer to pointer Pointer to void (generic pointer) Array of pointers Pointer to function Dynamic memory management Memory allocation function Realloc Structures Nesting of structures Array of structures Structures & functions Union Declaration Bit ﬁ elds"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "int n[6]= {2,4,8,12,20,25}; // Array initialized with list of values int num[10] = {2,4,12,20,35}; // remaining 5 elements are initialized with // values int b[10] = {0}; // Entire array elements initialized with 0."
+ },
+ {
+  "t": "h2",
+  "x": "Note:"
+ },
+ {
+  "t": "li",
+  "x": "Till the array elements are not given any specific value, they are supposed to contain garbage values."
+ },
+ {
+  "t": "li",
+  "x": "If the number of elements used for initialization is lesser than the size of array, then the remaining elements are initialized with zero."
+ },
+ {
+  "t": "li",
+  "x": "Where the array is initialized with all the elements, mentioning the dimension is optional."
+ },
+ {
+  "t": "h2",
+  "x": "Array Elements in Memory"
+ },
+ {
+  "t": "p",
+  "x": "Consider the following declaration – int num[5]. What happens in memory when we make this declaration?"
+ },
+ {
+  "t": "li",
+  "x": "10 bytes get received in memory, 2 bytes each for 5 integers."
+ },
+ {
+  "t": "li",
+  "x": "Since array is not initialized, all five values in it would be garbage. This happens because the default storage class is auto. If it is declared as static, all the array elements would be initialized with 0."
+ },
+ {
+  "t": "p",
+  "x": "20012 20014 20016 20018 20020 Note: In C, the compiler does not check whether the subscript used for array exceeds the size of array. Data entered with a subscript exceeding the array size will simply be placed in memory out size the array, and there will be no error/warning message to warn the programmer."
+ },
+ {
+  "t": "h2",
+  "x": "Passing array elements to function"
+ },
+ {
+  "t": "p",
+  "x": "Array elements can be passed to a function by value or by reference."
+ },
+ {
+  "t": "h2",
+  "x": "Example: A program to pass an array by value:"
+ },
+ {
+  "t": "p",
+  "x": "void main( ) { void display(int[ ]);// Declaration int marks[ ] = {10,15,20,25,30}; display (marks);// function call } void display(int n[ ] )// function definition { int i; for(i ⟨eq⟩ i++) printf(“%d “, n[ ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Output:"
+ },
+ {
+  "t": "p",
+  "x": "Here, we are passing the entire array by name. The formal parameter to receive is declared as an array, so it receives entire array elements. To pass the individual elements of an array, we have to use index of element with array name. Example: display (marks[ i ] ); sends only the ith element as parameter."
+ },
+ {
+  "t": "h2",
+  "x": "Example: A program to demonstrate call by reference:"
+ },
+ {
+  "t": "p",
+  "x": "void main( ) { void display (int *); int marks[ ] = {5, 10 15, 20, 25}; display(&marks[0]); } void display(int *p) { int i; for(i = 0; i < 5; i++) printf(“%d “,*(p+i)); }"
+ },
+ {
+  "t": "h2",
+  "x": "Output:"
+ },
+ {
+  "t": "p",
+  "x": "Here, we pass the address of very first element. Hence, the variable in which this address is collected (p) is declared as a pointer variable."
+ },
+ {
+  "t": "h2",
+  "x": "Note: Array elements are stored in contiguous memory"
+ },
+ {
+  "t": "p",
+  "x": "location, by passing the address of the first element; entire array elements can be accessed."
+ },
+ {
+  "t": "h1",
+  "x": "Two-dimensional Arrays"
+ },
+ {
+  "t": "p",
+  "x": "In C a two-dimensional array looks like an array of arrays, i.e., a two-dimensional array is the collection of one-dimensional arrays. Example: int x[4][2]; By convention, first dimension says the number of rows in array and second dimension says the number of columns in each row. In memory, whether it is one-dimensional or a twodimensional array, the array elements are stored in one continuous chain. The arrangement of array elements of a two-dimensional array in memory is shown below: X [0][0] x [0][1] x [1][0] x [1][1] x [2][0] X [2][1] X [3][0] X [3][1]"
+ },
+ {
+  "t": "h2",
+  "x": "Initialization"
+ },
+ {
+  "t": "p",
+  "x": "We can initialize two-dimensional array as one-dimensional array: int a[4] [2] = {0,1,2,3,4,5,6,7} The nested braces can be used to show the exact nature of array, i.e., int a[4][2] = {{0,1},{2,3}{4,5},{6,7}} Here, we define each row as a one-dimensional array of two elements enclosed in braces."
+ },
+ {
+  "t": "h2",
+  "x": "Note: If the array is completely initialized with supplied"
+ },
+ {
+  "t": "p",
+  "x": "values, then we can omit the size of first dimension of an array (the left most dimension)."
+ },
+ {
+  "t": "li",
+  "x": "For accessing elements of multi-dimensional arrays, we must use multiple subscripts with array name."
+ },
+ {
+  "t": "li",
+  "x": "Generally, we use nested loops to work with multidimensional array."
+ },
+ {
+  "t": "h1",
+  "x": "Multidimensional Arrays"
+ },
+ {
+  "t": "p",
+  "x": "C allows array of two or more dimensions and maximum numbers of dimensions a C program can have depends on the compiler, we are using. Generally, an array having one dimension is called 1D array; array having two dimensions is called 2D array and so on."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax:"
+ },
+ {
+  "t": "p",
+  "x": "type array-name[d1] [d2] [d3] [d4]…[dn]; where dn is the size of last dimension."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "int table[5][5][20]; float arr[5][6][5][6][5]; In our example array “table” is a 3D. (A 3D array is an array of array of array)"
+ },
+ {
+  "t": "h2",
+  "x": "Declaration and Initialization of 3D array"
+ },
+ {
+  "t": "p",
+  "x": "A 3D array can be assumed as an array of arrays; it is an array of 2D arrays and as we know 2D array itself is an array of 1D arrays. A diagram can help you to understand this. 2nd 2D array 1st 2D array 0th 2D array"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "void main( ) { int i, j, k; int arr [3] [3] [3] = { {11, 12, 13}, {14, 15, 16}, {17, 18, 19} }, {21, 22, 23}, {24, 25, 26}, {27, 28, 29} }, {31, 32, 33}, {34, 35, 36}, {37, 38, 39} } }; printf(“3D Array Elements \\n”); for (i = 0; i<3; i++) { for(j =0; j <3; j++) { for (k= 0; k<3; k++) { printf (“% d\\t”, arr[i][j][k]); } printf (“\\n”); } printf (“\\n); } }"
+ },
+ {
+  "t": "h2",
+  "x": "Syntax for 3D Array Declaration"
+ },
+ {
+  "t": "p",
+  "x": "data–type array–name [table] [row] [column]; To store values in any 3D array, first point to table number, row number and lastly to column number."
+ },
+ {
+  "t": "h1",
+  "x": "Pointers"
+ },
+ {
+  "t": "p",
+  "x": "Pointer is a variable which contains address of another variable. C’s clever use of pointers makes it the excellent language. Consider the declaration: int i = 3; The declaration tells the C compiler to:"
+ },
+ {
+  "t": "li",
+  "x": "Reserve space in memory to hold in integer value."
+ },
+ {
+  "t": "li",
+  "x": "Associate the name i with this memory location."
+ },
+ {
+  "t": "li",
+  "x": "Store the value 3 at this location."
+ },
+ {
+  "t": "p",
+  "x": "Memory map is: i Location Name Value at location Location Number (address) Computer may choose different location at different times for same variable. The important point is the address is a number. The expression ‘&i’ gives the address of variable ‘i’. p = &i; Assigns the address of ‘i’ to variable ‘p’. The variable ‘p’ is declared as: int *p; * tells the compiler that variable ‘p’ is an address variable. Memory map of i, *p is – *p i Now, pointer ‘p’ is referring to the variable ‘i’. The variable ‘i’ can be accessed in two ways:"
+ },
+ {
+  "t": "li",
+  "x": "By using the name of variable."
+ },
+ {
+  "t": "li",
+  "x": "By using the pointer variable referring to location ‘i’."
+ },
+ {
+  "t": "p",
+  "x": "The operator ‘*’ can also be used along with pointer variable in expressions. The operator ‘*’ acts as indirection operator. x int x, *p; p = & x; *p = 4 p x ? ? ? Value of p has Value of x has been changed x p p Usage of ‘p’ refers to value of ‘p’, where as ‘*p’ refers to value at the address stored in ‘p’, i.e., value of ‘i’. Example: int *p; float *x; char *ch ; Here, p, x and ch are pointer variables, i.e., variables capable of holding address. Since addresses are always whole numbers, pointers would always contain whole numbers. The declaration float *x does not mean that x contains floating value, x will contain address of floating point variable. Similarly, ‘ch’ contains address of char value."
+ },
+ {
+  "t": "h2",
+  "x": "Pointer to Pointer"
+ },
+ {
+  "t": "p",
+  "x": "We know, pointer is a variable that contains address of another variable. Now this variable address might be stored in another pointer. Thus, we now have a pointer that contains address of another pointer, known as pointer to pointer."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "void main() { int i = 3, *p, **q; p = &i; q =&p; printf(“\\n Address of i = %u”, &i); printf(“\\n Address of i = %u”, p); printf(“\\n Address of i = %u”, *q); printf(“\\n Address of p= %u”, &p); printf(\\n Address of p= %u, q); printf(“\\n Address of q = %u”, &q) printf(‘\\n value of i= %d”,i); printf(‘\\n value of i= %d”,*(&i)); printf(‘\\n value of i= %d”,*p); printf(‘\\n value of i= %d”,**q); } If the memory map is **q *p i Then the output is: Address of i = 2000 Address of i = 2000 Address of i = 2000 Address of p = 2010 Address of p = 2010 Address of q = 2050 Value of i = 3 Value of i = 3 Value of i = 3 Value of i = 3 Note: We can extend pointer to a pointer to pointer. In principal, there is no limit on how far we can go on extending this definition."
+ },
+ {
+  "t": "h2",
+  "x": "Pointers for Inter-function Communication"
+ },
+ {
+  "t": "p",
+  "x": "We know that functions can be called by value and called by reference."
+ },
+ {
+  "t": "li",
+  "x": "If the actual parameter should not change in called function, pass the parameter-by value."
+ },
+ {
+  "t": "li",
+  "x": "If the value of actual parameter should get changed in called function, then use pass-by reference."
+ },
+ {
+  "t": "li",
+  "x": "If the function has to return more than one value, return these values indirectly by using call-by-reference."
+ },
+ {
+  "t": "h2",
+  "x": "Example: The following program demonstrates how to"
+ },
+ {
+  "t": "p",
+  "x": "return multiple values. void main( ) { void areaperi(int, int *, int *); int r; float a,p; printf(“\\n Enter radius of a circle”); scanf(“%d”, &r); areaperi(r, &a, &p); printf(“Area = %f”, a); printf(“\\n Perimeter = %f”, p); } void areaperi(int x, int *p, int *q) { *p = 3.14*x*x; *q = 2 * 3.14*x; }"
+ },
+ {
+  "t": "h2",
+  "x": "Output:"
+ },
+ {
+  "t": "p",
+  "x": "Enter radius of circle 5 Area = 78:500000 Perimeter = 31.400000 Compatibility: Pointers have a type associated with them. They are not just pointer types, but rather are pointers to a specific type. The size of all pointers is same, which is equal to size of int. Every pointer holds the address of one memory location in computer, but size of variable that the pointer references can be different."
+ },
+ {
+  "t": "h2",
+  "x": "Pointer to Void (Generic Pointer)"
+ },
+ {
+  "t": "p",
+  "x": "A pointer to void is a generic type; this can point to any type. Its limitation is that the pointed data cannot be referenced directly. Since void pointer has no object type, so its length is undetermined; it cannot be dereference unless it is cast."
+ },
+ {
+  "t": "h2",
+  "x": "Example: The following example demonstrates generic"
+ },
+ {
+  "t": "p",
+  "x": "pointer. void main ( ) { int a = 10; float x = 5.7; void *p; p = &a; printf(“\\n value of a = %d”, *((int*)p)); p= &x; printf (“\\n value of x = % f”, *((float *)p)); }"
+ },
+ {
+  "t": "h2",
+  "x": "Operations can be Performed on Pointers"
+ },
+ {
+  "t": "p",
+  "x": "1. Addition of a number to a pointer. Example: int i = 4, *j, *k; j =&i; j = j +1; k = j +5; 2. Subtraction of a number from a pointer. Example: int i = 4, * j, * k; j = &i; j = j −1; k = j – 3; 3. Subtraction of one pointer from another. One pointer variable can be subtracted from another (provided both variables point to same array elements). The resulting value indicates the number of bytes (elements) separating (the corresponding array elements)."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "void main ( ) { int a[ ] = {5,10,15,20,25} ,*i, *j; i = &a[0]; j = &a[4]; printf(“%d, %d”, j−i,*j−*i); }"
+ },
+ {
+  "t": "h2",
+  "x": "Output: 4, 20"
+ },
+ {
+  "t": "p",
+  "x": "The expression j-i prints 4 but not 8. because j and i pointing to integers that are 4 integers apart. 4. Comparison of two pointer variables. Pointer variables can be compared provided both pointing to the same data type."
+ },
+ {
+  "t": "h2",
+  "x": "Notes: Do not attempt the following operations on pointers:"
+ },
+ {
+  "t": "p",
+  "x": "1. Addition of two pointers. 2. Multiplication of a pointer with a number or another pointer. 3. Division of a pointer with a number or another pointer."
+ },
+ {
+  "t": "h2",
+  "x": "Important points about pointer arithmetic"
+ },
+ {
+  "t": "li",
+  "x": "A pointer when incremented always points to an immediately next location."
+ },
+ {
+  "t": "li",
+  "x": "A pointer when decremented always points to an element precedes the current element."
+ },
+ {
+  "t": "h2",
+  "x": "Notice the difference with:"
+ },
+ {
+  "t": "p",
+  "x": "(*p)++ Here, the expression would have been evaluated as the value pointed by p increased by one. The value of p would not be modified if we write *p++ = *q++; Because ++ has a higher precedence than *, both p and q are increased, but because both increase operators (++) are used as postfix and not prefix, the value assigned to *p is *q before both p and q are increased. And then both are increased, it would be equivalent to *p = *q ++p; ++q;"
+ },
+ {
+  "t": "h2",
+  "x": "Implementation of arrays in C"
+ },
+ {
+  "t": "p",
+  "x": "Array name is the pointer to the first element in array. The following discussion explains how pointers are used for implementing arrays in C. int n[ ] = {10,20,30,40,50}; n"
+ },
+ {
+  "t": "li",
+  "x": "We know that mentioning the array name gets the base address."
+ },
+ {
+  "t": "p",
+  "x": "int *p = n; Now ‘p’ points to 0th element of array ‘n’."
+ },
+ {
+  "t": "li",
+  "x": "0th element can be accessed as *array_ name."
+ },
+ {
+  "t": "li",
+  "x": "we can say that *array _ name and *(array _ name+0) are same. This indicates the following are same."
+ },
+ {
+  "t": "p",
+  "x": "num[i] *(num + i) *(i+num) (num is an array; i is an index)"
+ },
+ {
+  "t": "h1",
+  "x": "Array of Pointers"
+ },
+ {
+  "t": "p",
+  "x": "The way there can be an array of ints or array of floats, similarly there can be an array of pointers. An array of pointers is the collection of addresses. These arrays of pointers may point to isolated elements or an array element."
+ },
+ {
+  "t": "h2",
+  "x": "Example 1: Array of pointers pointing to isolated elements:"
+ },
+ {
+  "t": "p",
+  "x": "int i = 5, j=10, k =15; int *ap[3]; ap[0] = &i; ap[1] = &j; ap[2] = &k; Example 2: Array of pointers pointing to elements of an array: int a[ ] = {0,20,45,50,70}; int *p[5], i ; for(i = 0; i <5 ; i++ ) p[i] = &a[i] ; Example 3: Array of pointers pointing to elements of different arrays; int a[ ] = {5,10,20,25}; int b[ ] = {0,100,200,300,400}; int c[ ] = {50,150,250,350,450}; int *p[3]; p[0] = a; p[1] = b; p[2]=c; Example 4: Array of pointers pointing to 0th element of each row of a two-dimensional array int a[3][2] = {{1,2} {3,4}, {5,6}}; int *p[3]; p[0] = a[0]; p[1] =a[1];p[2] = a[2];"
+ },
+ {
+  "t": "h1",
+  "x": "Pointer to Function"
+ },
+ {
+  "t": "p",
+  "x": "Function is a set of instructions stored in memory, so the function also contains the base address. This address can hold by using a pointer called pointer to function."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax:"
+ },
+ {
+  "t": "p",
+  "x": "return_type (*function_pointer)(parameter – list ); Example: int (*fp)(float, char, char);"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "// pointer to functions # include <iostream> Using name space std; int addition(int a, int b) { return (a + b); } int subtraction(int a, int b) { return (a – b) ; } int operation (int x, int y, int (*funtocall) (int, int)) { int g; g = (*functocall)(x, y); return (g); } int main( ) { int m, n; int (*minus)(int, int) = substraction; m = operation(7, 5, addition); n = operation(20, m, minus); cout < < n; return 0; } In the example, minus is a pointer to a function that has two parameters of type int. It is immediately assigned to point to the function subtraction, all in a single line."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Program to demonstrate function pointer"
+ },
+ {
+  "t": "p",
+  "x": "int add(int, int); int sub(int, int); void main( ) { Int (*fp) (int, int); fp = add; printf(“\\n 4+5=%d”, fp(4,5)); fp = sub; printf (“\\n ⟨eq⟩ %d”, fp(4,5)); } int add(int x, int y) { return x + y; } int sub(int x,int y) { return x – y; } Output: ⟨eq⟩ – 5 = –1 Pointer to structure The main usage of pointer to structure is we can pass structure as parameter to function as call by reference. The other usage is to create linked lists and other dynamic data structures which depend on dynamic allocation. Consider the declaration struct employee { char name[20]; Int age; float salary; }; struct employee ∗ p; Variable of structures can be accessed using ‘.’ Operator (or) → operator that is (∗p).age = 20 ; (or) p → age = 20; (∗p).salary = 40, 231.0; (or) p → salary = 40,231.0;"
+ },
+ {
+  "t": "h1",
+  "x": "Dynamic Memory Management"
+ },
+ {
+  "t": "p",
+  "x": "We can allocate the memory to objects in two ways—static and dynamic allocation. Static memory allocation requires declaration and definition of memory fully specified in the source program. The number of bytes required cannot be changed during run time. Dynamic memory allocation uses predefined functions to allocate and de-allocate memory for data dynamically during the execution of program. We can refer to dynamically allocated memory only through pointers. Conceptual view of memory: Main( ) Functions Program memory Global Heap Stack Data Memory Memory"
+ },
+ {
+  "t": "h2",
+  "x": "Memory Allocation Function"
+ },
+ {
+  "t": "li",
+  "x": "Static memory allocation uses stack memory for variables."
+ },
+ {
+  "t": "li",
+  "x": "Dynamic memory management allocates memory from heap."
+ },
+ {
+  "t": "p",
+  "x": "The following are the four memory management functions available in alloc.h and stdlib.h. 1. Malloc (Block memory allocation): Malloc function allocates block of memory that contained the number of bytes specified in parenthesis. It returns ‘void’ pointer to the first byte of allocated memory. The allocated memory is not initialized. If the memory allocation is not successful then it return NULL pointer."
+ },
+ {
+  "t": "h2",
+  "x": "Declaration"
+ },
+ {
+  "t": "p",
+  "x": "void *malloc (size_t size); The type size_t is defined as unsigned int in several header files including stdio.h. Syntax: pointer = (type*) malloc(size ); 2. Calloc (contiguous memory allocation): Calloc is primarily used to allocate memory for arrays. It initializes the allocated memory with null characters."
+ },
+ {
+  "t": "h2",
+  "x": "Declaration: void *calloc (size_t ele_count, size_t"
+ },
+ {
+  "t": "p",
+  "x": "ele_size); Syntax: ptr = (type*)calloc(ele-count,ele-size); 3. Realloc (reallocation of memory): The realloc function is highly inefficient. When given a pointer to a previously allocated block of memory, realloc changes the size of block by deleting or extending the memory at the end of block. If the memory cannot be extended, then realloc allocates completely new block, copies the contents from existing memory location to new location, and deletes the old location."
+ },
+ {
+  "t": "h2",
+  "x": "Declaration: void *realloc (void *ptr, size_t new_"
+ },
+ {
+  "t": "p",
+  "x": "size); Syntax: ptr = (type*)realloc(ptr, new_ size); 4. Free (Releasing memory): When the memory allocated by malloc, calloc or realloc is no longer needed, they can be freed using the function free( ). Declaration: void free(void *ptr); Syntax: free(ptr); Free function de-allocates complete memory referenced by the pointer. Part of the memory block cannot be de-allocated."
+ },
+ {
+  "t": "h1",
+  "x": "Structures"
+ },
+ {
+  "t": "p",
+  "x": "Arrays are used to store large set of data and manipulate them but the disadvantage is that all the elements stored in an array are to be of the same data type. When we require using a collection of different data items of different data types, we can use a structure."
+ },
+ {
+  "t": "li",
+  "x": "Structure is a method of packing data of different types."
+ },
+ {
+  "t": "li",
+  "x": "A structure is a convenient method of handling a group of related data items of different data types."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax for declaration"
+ },
+ {
+  "t": "p",
+  "x": "struct sturct_name { Data_type_1 var1; Data_type_2 var2; : Data_type_n varn; };"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "struct lib – books { char title [20]; char author[15]; int pages; float price; }; The keyword struct declares a structure to hold the details of four fields namely title, author, pages and price, these are members of the structures. We can declare structure variables using the tag name anywhere in the program. Example: struct lib – books book1, book2, book3;"
+ },
+ {
+  "t": "li",
+  "x": "Declares book1, book2, book3 as variables of type struct lib – books, each declaration has four elements of the structure lib– books."
+ },
+ {
+  "t": "p",
+  "x": "Memory map of book1: Book1 Title 20 bytes Author 15 bytes Pages 2 bytes Price 4 bytes"
+ },
+ {
+  "t": "li",
+  "x": "Memory will not be allocated to the structure until it is instantiated. i.e., till the declaration of a variable to structure."
+ },
+ {
+  "t": "li",
+  "x": "To access the members of a structure variable, C provides the member of (.) operator."
+ },
+ {
+  "t": "p",
+  "x": "Example: To access author of book 1 – book1. author Syntax: structure_var.member_name;"
+ },
+ {
+  "t": "li",
+  "x": "The structures can also be initialized as any other variable of C."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "struct lib-books book4={“Let us C”, “yashwanth”, 450, 200.95}; Note: The values must provide in the same order as they appear in structure declaration."
+ },
+ {
+  "t": "li",
+  "x": "One structure variable can be assigned to another structure variable."
+ },
+ {
+  "t": "li",
+  "x": "Structure variables cannot be compared."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "# include <stdio.h> void main( ) { Struct s1{ int id–no; char name[20]; char address[20]; char combination[3]; int age; } newstudent; printf (“ Enter student Information”); printf (“Enter student id – no”); scanf (“%d”, &newstudent.id_no): printf (“ Enter the name of the student”); scanf (“%s”, & newstudent.name); printf (“ Enter the address of the student”); scanf (“%s”, &newstudent.address); printf(“Enter the combination of the student”)’; scanf(“%s”, &newstudent.combination”); printf (“ Enter the age of student); scanf (“%d “, &newstudent.age”); printf (“ student information”); printf (“ student id–no = %d”, newstudent. id – no); printf(“student name = %s”, newstudent. name); printf(“student address = %s“, newstudent. address); printf (“students combination = %s”, newstudent. combination); printf(“Age of student = %d”, newstudent. age); }"
+ },
+ {
+  "t": "h2",
+  "x": "Nesting of Structures"
+ },
+ {
+  "t": "p",
+  "x": "The structures can be nested in two ways:"
+ },
+ {
+  "t": "li",
+  "x": "Placing the structure variable as a member in another structure declaration."
+ },
+ {
+  "t": "li",
+  "x": "Declaration of the entire structure in another structure."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "struct date { int day; int month; int year; }; struct student { int id–no; char name[20]; char address [20]; int age; structure date doa; } oldstudent, newstudent; The structure ‘student’ contains another structure date as one of its members. To access the day of date of admission (doa) of old student – oldstudent.doa.day."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "struct outer { int o1; float o2; struct inner { int i1; float i2; }; } out1, out2; The innermost members in a nested structure can be accessed by chaining all the concerned structure variables, from outermost to innermost; accessing i1 for out1-out1. inner.i1;"
+ },
+ {
+  "t": "h2",
+  "x": "Array of Structures"
+ },
+ {
+  "t": "p",
+  "x": "It is possible to define an array of structures. For example, if we are maintaining information of all the students in the college and if 100 students are studying in the college, we need to use an array than single variables."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "structure information { int id – no; char name[20]; char address[20]; char combination[3]; int age; } student[100];"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "# include <stdio.h> { struct info { int id _ no; char name[20]; char address[20]; char combination[3]; int age; } struct info std[100]; int, i ,n; printf (“ Enter the number of students”); scanf (“%d”, &n); scanf(“Enter id–no, name, address, combination and age”); for (i = 0; i<n; i ++) scanf(“ %d %s %s %s %d”, &std[i].id_no, std[i].name, std[i].address, std[i]. combination,&std [i].age); printf(“student information”); for (i ⟨eq⟩ n; i ++) printf(“%d %s %s % s % d”, std[i].id_no, std[i].name, std[i].address, std[i]. combination, std[i]. age);"
+ },
+ {
+  "t": "h2",
+  "x": "Structures and Functions"
+ },
+ {
+  "t": "li",
+  "x": "An entire structure can be passed as a parameter like any other variable."
+ },
+ {
+  "t": "li",
+  "x": "A function can also return a structure variable."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "# include <stdio.h> struct employee { int emp–id; char name[25]; char department[10]; float salary; }; void main( ) { static struct employee emp1 = { 12, “shyam”, “computer”, 7500.00}; /* sending entire employee structure */ display(emp1); } /* function to pass entire structure variable */ display(empf) struct employee empf { printf (“ %d %s % s %f”, empf.empid, empf. name, empf.department, empf.salary); }"
+ },
+ {
+  "t": "h1",
+  "x": "Union"
+ },
+ {
+  "t": "p",
+  "x": "Union, like structure contains members whose individual data types may differ from one another. The members that compose union all share the same storage area within the computer’s memory whereas each member within a structure is assigned its own unique storage area. Thus, unions are used to conserve memory."
+ },
+ {
+  "t": "h2",
+  "x": "Declaration"
+ },
+ {
+  "t": "p",
+  "x": "union item { int m; float p; char c; }Code; This declares a variable code of type union item. The union contains three members each with a different data type. However, we can use only one of them at a time. The compiler allocates a piece of storage that is large enough to access a union member; we can use the same syntax that we use to access structure members, i.e., Code.m Code.p Code.c are all valid member variables. During accessing, we should make sure that we are accessing the member whose value is currently stored."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "union marks { float perc; char grade; } main( ) { union marks student1; student1.perc = 98.5; printf(“marks are %f address is %16ℓu”, student1.perc, &student1. perc); student1. grade = ‘c’; printf(“grade is %c address is %16ℓu”, student1. grade, &student1. grade); }"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "# include <stdio.h> void main ( ) { Union u–example { float decval; int p-num; double my–value; }U1; U1.my–value = 125.5; U1.pnum = 10; U1.decval = 1000.5f; printf(“decval = %f pnum = %d my-value = % lf “, U1. decval, U1.pnum, U1.my–value); printf(“ U1 size = %d decval size =%d, pnum size = %d my-value size = % d”, sizeof (U1), sizeof (U1.decval), sizeof (U1.pnum), sizeof (U1.my-value)); }"
+ },
+ {
+  "t": "h2",
+  "x": "Bit Fields"
+ },
+ {
+  "t": "p",
+  "x": "When a program variable ‘x’ is declared as int, then ‘x’ takes the values from (-215) to (215 – 1), if x in the program takes only two values, 1 and 0, which requires only one bit, then the remaining 15 bits are waste. In order to not to have this wastage, we can use bit fields with the several variables with the small enough maximal values, which can pack into a single memory location"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "struct student { Int gender ⟨eq⟩ gender takes only 0,1 values Int marriage ⟨eq⟩ marriage takes 4(0, 1, 2, 3) values Int marks ⟨eq⟩ marks takes values from 0 – 127 }"
+ },
+ {
+  "t": "h1",
+  "x": "Data Structure"
+ },
+ {
+  "t": "p",
+  "x": "Data structure represents the logical arrangement of data in computer memory for easily accessing and maintenance."
+ },
+ {
+  "t": "h1",
+  "x": "Linked List"
+ },
+ {
+  "t": "p",
+  "x": "A linked list is a data structure that consists of a sequence of nodes, each of which contains data field and a reference (i.e., link) to next node in sequence."
+ },
+ {
+  "t": "li",
+  "x": "Generally node of linked list is represented as self-referential structure."
+ },
+ {
+  "t": "li",
+  "x": "The linked list elements are accessed with special pointer(s) called head and tail."
+ },
+ {
+  "t": "li",
+  "x": "The principal benefit of a linked list over a conventional array is that the list elements can easily be added or removed without reallocation or reorganization of the entire structure because the data items need not be stored contiguously in memory or on disk."
+ },
+ {
+  "t": "li",
+  "x": "Linked lists allow insertion and removal of nodes at any point in the list."
+ },
+ {
+  "t": "li",
+  "x": "Finding a node that contains a given data, or locating the place where a new node should be inserted may require scanning most or all of the list elements."
+ },
+ {
+  "t": "li",
+  "x": "The list element does not have to occupy contiguous memory."
+ },
+ {
+  "t": "li",
+  "x": "Adding, insertion or deletion of list elements can be accomplished with the minimal disruption of neighbouring nodes."
+ },
+ {
+  "t": "h1",
+  "x": "Single-Linked List"
+ },
+ {
+  "t": "p",
+  "x": "List in which each node contains only one link field."
+ },
+ {
+  "t": "h2",
+  "x": "Node structure"
+ },
+ {
+  "t": "p",
+  "x": "struct { int ele; struct node ∗ next; }; typedef struct node Node;"
+ },
+ {
+  "t": "h2",
+  "x": "nodes of type list node"
+ },
+ {
+  "t": "p",
+  "x": "Creating a linked list with 2 nodes struct node { Int ele; struct node ∗ next ; }; typedef struct node Node ; Node ∗ ptr1, ∗ ptr2; ptr1 = getnode (); ptr2 = getnode (); if((ptr1) && (ptr2)) { Printf(“No memory”); exit(1); } Ptr1 → ele = 10;"
+ },
+ {
+  "t": "h1",
+  "x": "4. Linked Lists, Stacks and Queues"
+ },
+ {
+  "t": "p",
+  "x": "Data structure Linked list Single-linked list Double-linked list Circular linked list Double circular-linked list Stack Queue Double-ended queue Circular queue Priority queue Array implementation Linked list implementation Linked list implementation of priority queue"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "p",
+  "x": "Ptr1 → next = ptr2; Ptr2 → ele = 20; Ptr2 → next = NULL; Head = ptr1; the linked list appears as below \\ Head"
+ },
+ {
+  "t": "h2",
+  "x": "Operations on SLL (single-linked list)"
+ },
+ {
+  "t": "li",
+  "x": "Insert at Head"
+ },
+ {
+  "t": "li",
+  "x": "Insert at Tail"
+ },
+ {
+  "t": "li",
+  "x": "Insert in Middle"
+ },
+ {
+  "t": "li",
+  "x": "Delete Head"
+ },
+ {
+  "t": "li",
+  "x": "Delete Tail"
+ },
+ {
+  "t": "li",
+  "x": "Delete Middle"
+ },
+ {
+  "t": "p",
+  "x": "Declare two special pointers called head and tail as follows: Node ∗Head, ∗Tail; Head = Tail = NULL; Head or tail is NULL represents list is empty. Steps for Insertion: 1. Allocate memory 2. Read data 3. Adjust references"
+ },
+ {
+  "t": "h2",
+  "x": "Insert head element"
+ },
+ {
+  "t": "p",
+  "x": "1. void ins _ Head (int x) 2. { 3. Node ∗temp; 4. temp = (Node ∗) malloc(sizeof (Node)); 5. temp → ele = x; 6. temp → next = Head; 7. Head = temp; 8. if (Tail = = NULL) 9. Tail = Head; 10 }"
+ },
+ {
+  "t": "li",
+  "x": "Step 4 allocates memory"
+ },
+ {
+  "t": "li",
+  "x": "Step 5 read data"
+ },
+ {
+  "t": "li",
+  "x": "Steps from 6 to 9 adjust reference"
+ },
+ {
+  "t": "li",
+  "x": "‘if’ condition represents first insertion"
+ },
+ {
+  "t": "h2",
+  "x": "Insert tail element"
+ },
+ {
+  "t": "p",
+  "x": "1. void ins_tail (int x) 2. { 3. Node ∗temp; 4. temp = (Node ∗) malloc (sizeof (Node)); 5. temp → ele = x; 6. temp → next = NULL; 7. Tail = temp; 8. if (Head = = NULL) 9. Head = Tail; 10. }"
+ },
+ {
+  "t": "li",
+  "x": "Step 4 allocates memory"
+ },
+ {
+  "t": "li",
+  "x": "Step 5 read data"
+ },
+ {
+  "t": "li",
+  "x": "Steps from 6 to 9 adjust reference"
+ },
+ {
+  "t": "li",
+  "x": "‘if’ condition represents first insertion"
+ },
+ {
+  "t": "h2",
+  "x": "Insert in middle/random position of list"
+ },
+ {
+  "t": "p",
+  "x": "1. void ins _ mid (int n, int pos) 2. { int i = 1; 3. Node ∗ temp, N, P; //N,P represent ­previous //& next nodes 4. if (Head = = NULL) 5. { 6. ins _ head(n); 7. return; 8. } 9. temp = (Node ∗) malloc(sizeof(Node)); 10. temp → ele = n; 11. P = head; 12. while (i < pos -1) 13. ⟨eq⟩ next; i++; } 14. ⟨eq⟩ next; 15. temp → next = N; 16. P → next = temp; 17. }"
+ },
+ {
+  "t": "li",
+  "x": "step 4 checks, whether the insertion is into an empty list."
+ },
+ {
+  "t": "li",
+  "x": "If list is empty, invokes ins–head( ) function."
+ },
+ {
+  "t": "li",
+  "x": "If list is not empty, then step 9 allocates memory."
+ },
+ {
+  "t": "li",
+  "x": "Step 10 reads data."
+ },
+ {
+  "t": "li",
+  "x": "Steps from 11 to 14 make the reference to the previous and next nodes of new node to be inserted."
+ },
+ {
+  "t": "li",
+  "x": "Steps 15 and 16 create the reference to new node from previous node and from new node to next node."
+ },
+ {
+  "t": "p",
+  "x": "Example 1: Head = Tail = NULL n = 5, P = NULL; Here the list is empty. So, Head Tail"
+ },
+ {
+  "t": "h2",
+  "x": "Example 2:"
+ },
+ {
+  "t": "p",
+  "x": "Head Tail Insert element (n) 20 at position(pos) 3. In current list, element 5 is the first element, 10 is the second and 15 is the third element. To insert an element at pos = 3, the new node has to be placed between elements 10 and 15. Condition in step 4 is false so step 9 executes and allocates memory. temp On completion of step 10 – temp Step 11 Head Tail p Step 12, 13 While (i < pos – 1) ⟨eq⟩ next; i++; } i < pos 1 < 2 Condition true, so Head p i becomes 2, ⟨eq⟩ condition false Step 14 makes a reference to next of previous element. Head p N Tail Steps 15 and 16 execute as follows: Head p N Tail temp Step 16 Step 16 Step 15 Now the element 20 becomes the 3rd element in the list."
+ },
+ {
+  "t": "h2",
+  "x": "Deletion"
+ },
+ {
+  "t": "li",
+  "x": "Identify the node"
+ },
+ {
+  "t": "li",
+  "x": "Adjust the links, such that deallocation of that node does not make the list as unconnected components."
+ },
+ {
+  "t": "li",
+  "x": "Return/display element to delete."
+ },
+ {
+  "t": "li",
+  "x": "Deallocate memory."
+ },
+ {
+  "t": "h2",
+  "x": "Delete head element"
+ },
+ {
+  "t": "p",
+  "x": "1. void del _ head() 2. { 3. int x; Node * temp; 4. if (Head = = NULL) 5. { 6. printf(\"List empty\"); 7. return; 8. } 9. x = Head → ele; 10. temp = Head; 11. if (Head = = Tail) 12. Head = Tail = NULL; 13. else 14. Head = Head → next; 15. printf (\"Deleted element \"%d\", x); 16. free(temp); 17. } Step 4 – Checks for list empty Step 9 – Reads element to delete Step 10 – Head referred by temp pointer Step 11 – Checks for last deletion Step 14 – \u0007Moves the head pointer to next element in the list Step 15 – Displays element to delete Step 16 – Deallocates memory"
+ },
+ {
+  "t": "h2",
+  "x": "Delete tail element"
+ },
+ {
+  "t": "p",
+  "x": "1. void del _ tail() 2. { 3. int x; 4. Node * temp; 5. if (Head = = NULL) 6. { 7. printf(\"\\n list empty\") 8. return ; 9. } 10. temp = Head; 11. while(temp → next ! = Tail) 12. temp = temp → next; 13. x = Tail → ele; 14. Tail = temp; 15. temp = temp → next; 16. Tail → next = NULL; 17. printf(\"\\n Deleted element : %d\", x) 18. free (temp); 19. } Step 4 – Checks for list empty Step 10, 11, 12 – \u0007Move the temp pointer to last but one node of the list Step 13 – Reads tail element to delete Step 14 – \u0007Moves tail pointer to last but one node Step 15 – \u0007Moves the temp pointer to last node of the list Step 16 – \u0007Removes the reference from tail node to temp node, i.e., tail node becomes the last element Step 17 – Displays elements to delete Step 18 – Deallocate memory"
+ },
+ {
+  "t": "h2",
+  "x": "Delete middle element"
+ },
+ {
+  "t": "p",
+  "x": "1. void del _ mid (int pos) 2. { 3. int i = 1, x; 4. Node * temp P, N; 5. if(Head = = NULL) 6. { 7. printf (\"\\n list empty\") 8. return; 9. } 10. P = head; 11. while (i < pos -1) 12. ⟨eq⟩ next; i++ ; } 13. temp = P → next; 14. N = temp → next; 15. P → next = N; 16. x = temp → ele; 17. printf(\"\\n Element to Delete %d\", x); 18. free(temp); 19. } Step 5 – Checks for empty list Step 10, 11, 12 – \u0007Move previous pointer P to previous node of node to delete. Step 13 – Temp points to node to delete Step 14 – N points to temp next Step 15 – Creates link from P to N Steps 16, 17, 18 – Read and display elements to delete and deallocate memory. A B C Node Node.next Node.next.next A B C Node Node.next Node.next.next"
+ },
+ {
+  "t": "h2",
+  "x": "Linked list using dynamic variables"
+ },
+ {
+  "t": "p",
+  "x": "Node in the linked list contains data part that is ele and link part which points to the next node, and some other external pointer will be pointing to this as these take some storage, a programmer when creating a list, should check with the available storage. For this we make use of get node () Function which is defined as follows: struct node { int ele struct node ∗ next ; }; typedef struct node Node; Node getnode () { Node ptr; ptr = (Node ∗) malloc (size of (struct node)): return (ptr); } If ptr returns NULL, then it is underflow (there is no available memory) otherwise, it returns start address of memory location."
+ },
+ {
+  "t": "h2",
+  "x": "Search an element"
+ },
+ {
+  "t": "p",
+  "x": "1. void search (int x) 2. { 3. Node ∗ temp = head; 4. int c = 1; 5. while (temp! = NULL) 6. { 7. if (temp → ele = = x) 8. { 9. printf(\"\\n Element found at % d”, c); 10. break; 11. } 12. c++; 13. } 14. if (temp = = NULL) 15. printf(\"\\n search unsuccessful\"); 16. } Step 7 – \u0007Checks temp data with search element. Repeats this step until the element is found or reaches the last node Step 9 – \u0007Displays the position of search element in the list, if found Step 14, 15 – \u0007Represents search element not exists in list"
+ },
+ {
+  "t": "h2",
+  "x": "Display"
+ },
+ {
+  "t": "p",
+  "x": "1. void display ( ) 2. { 3. Node ∗temp = Head; 4. printf(\"\\n list elements: \"); 5. while (temp ! = NULL) 6. { 7. printf(\"%d\", temp → ele); 8. temp = temp → next; 9. } 10. } Step 7 – Displays temp data Step 8 – Moves temp pointer to next node"
+ },
+ {
+  "t": "h2",
+  "x": "singly liked list"
+ },
+ {
+  "t": "p",
+  "x": "Consider a linked list ‘L’ with head as pointer pointing to the first node contains data element ‘ele’ and a pointer called ‘next’ which points to the next node. Reverse is the routine which will reverse the list, there are three node pointers P, Q, R with P pointing to the first node, Q pointing to NULL. 1. START 2. if (P = NULL) 1. print (“List is null”); 2. Exit 3. While (P) 4. R = Q; 5. Q = P; 6. ⟨eq⟩ next; 7. Q → next = R 8. End While 9. Head = Q; 10. STOP"
+ },
+ {
+  "t": "h2",
+  "x": "Double-linked List (DLL)"
+ },
+ {
+  "t": "p",
+  "x": "Double-linked list is a linked list in which, each node contains data part and two link fields. Node structure: struct Dnode { struct Dnode ∗prev; int ele; struct Dnode ∗next; };"
+ },
+ {
+  "t": "li",
+  "x": "prev – points to previous node in list"
+ },
+ {
+  "t": "li",
+  "x": "next – points to next node in list"
+ },
+ {
+  "t": "li",
+  "x": "The operations which can be performed in SLL can also be preformed on DLL."
+ },
+ {
+  "t": "li",
+  "x": "The major difference is that we have to adjust double reference as compared to SLL."
+ },
+ {
+  "t": "li",
+  "x": "We can traverse or display the list elements in forward as well as in reverse direction."
+ },
+ {
+  "t": "h2",
+  "x": "Circular-linked List (CLL)"
+ },
+ {
+  "t": "p",
+  "x": "Circular-linked list is completely same as SLL, except, in CLL the last (Tail) node points to first (Head) node of list. So, the Insertion and Deletion operation at Head and Tail are little different from SLL."
+ },
+ {
+  "t": "h2",
+  "x": "Double Circular-linked List (DCL)"
+ },
+ {
+  "t": "p",
+  "x": "Double circular-linked list can be traversed in both directions again and again. DCL is very similar to DLL, except the last node’s next pointer points to first node of list and first node’s previous pointer points to last node of list. So, the insertion and deletion operations at head and tail in DCL are little different in adjusting the reference as compared to DLL. Storing ordered table as linked list: The table is stored as a linked list, it is retrieved and stored with two pointers, one pointer will point to node holding a record having the smallest key and other pointer performs the search."
+ },
+ {
+  "t": "h2",
+  "x": "Stack"
+ },
+ {
+  "t": "p",
+  "x": "A stack is a last in first out (LIFO) abstract data type and data structure. A stack can have any abstract data type as an element, but is characterized by only two fundamental operations. √ PUSH √ POP"
+ },
+ {
+  "t": "li",
+  "x": "The PUSH operation adds an item to the top of the stack, hiding any items already on the stack or initializing the stack if it is empty."
+ },
+ {
+  "t": "li",
+  "x": "The POP operation removes an item from the top of the stack, and returns the poped value to the caller."
+ },
+ {
+  "t": "li",
+  "x": "Elements are removed from the stack in the reverse order to the order of their insertion. Therefore, the lower elements are those that have been on the stack for longest period."
+ },
+ {
+  "t": "h2",
+  "x": "Implementation"
+ },
+ {
+  "t": "p",
+  "x": "A stack can be easily implemented either through an array or a linked list. The user is only allowed to POP or PUSH items onto the array (or) linked list. 1. Array Implementation: Array implementation aims to create an array where the first element inserted is placed st[0] which will be deleted last. The program must keep track of position top (last) element of stack."
+ },
+ {
+  "t": "h2",
+  "x": "Operations"
+ },
+ {
+  "t": "p",
+  "x": "Initially Top = –1;//represents stack empty (i) Push (S, N, TOP, x) { if (TOP = = N – 1) printf(“overflow”); else TOP = TOP + 1; S[TOP] = x; } (ii) POP (S, N, TOP, x) { if (TOP = = –1) printf(“underflow”); else x = S[TOP] TOP = TOP – 1 return x; } 2. Dynamic Implementation: The Array implementation is also called static implementation, because the stack size is fixed. The stack implementation using linked list is called dynamic implementation, because the stack size can grow and shrink as the elements added or removed from the stack."
+ },
+ {
+  "t": "li",
+  "x": "The PUSH operation on stack is same as insert head in SLL."
+ },
+ {
+  "t": "li",
+  "x": "The POP operation is same as delete head in SLL."
+ },
+ {
+  "t": "p",
+  "x": "Algorithm to add and delete to a link stack and link"
+ },
+ {
+  "t": "h2",
+  "x": "queue"
+ },
+ {
+  "t": "p",
+  "x": "Link stack: head Top data1 data2 data1 The linked stack with head and top pointers is shown above The algorithm to push the elements into stack is given below, the method push (item) Steps: 1. ptr = getnode (Node) 2. ptr.data = item 3. ptr.next = Top 4. Top = new 5. Head.next = Top 6. Stop. for deletion of elements from stack, its algorithm is pop(), it is given below Steps: 1. if (Top = NULL) 1. print “stack is empty” 2. exit 2. Else 1. ptr = Top.next 2. item = Top.data 3. Head.next = ptr 4. Top = ptr 3. End if 4. Stop. Linked queue representation head data1 data2 next rear front datan The linked queue with head, front and rear point is shown above. The algorithm to enqueue the elements into queue is given below, the method enqueue (item) Steps: 1. ptr = getNode (Node) 2. ptr.data = item 3. ptr.next = NULL 4. if (front = NULL) \u0007front = ptr else rear.next = ptr; 5. end if 6. rear = ptr 7. Stop For deletion of elements from queue that is ptr dequeue () is given below Steps: 1. if (front = NULL) 1. print “underflow”. 2. exit 2. ptr = front; 3. front = ptr.next 4. Head.next = front 5. item = ptr.data 6. free(ptr) 7. end."
+ },
+ {
+  "t": "h1",
+  "x": "Uses of Stack"
+ },
+ {
+  "t": "li",
+  "x": "Function calls: When a function is called all local storage for the function is allocated on system ‘stack’, and return address also pushed on to system stack."
+ },
+ {
+  "t": "li",
+  "x": "Recursion stacks can be used to implement recursion if the programming language does not provide recursion facility."
+ },
+ {
+  "t": "li",
+  "x": "Reversing a list"
+ },
+ {
+  "t": "li",
+  "x": "Parsing: Stacks are used by compilers to check the syntax of program."
+ },
+ {
+  "t": "li",
+  "x": "For evaluating expressions."
+ },
+ {
+  "t": "h2",
+  "x": "Expression Notations"
+ },
+ {
+  "t": "p",
+  "x": "Infix expression: Here binary operator comes between the operands. Postfix expression: Here the binary operator comes after both the operands."
+ },
+ {
+  "t": "h2",
+  "x": "Example: ab+"
+ },
+ {
+  "t": "p",
+  "x": "Prefix expression: Here the binary operator comes before both the operands."
+ },
+ {
+  "t": "h2",
+  "x": "Infix to postfix conversion"
+ },
+ {
+  "t": "li",
+  "x": "If operand, output to postfix expression"
+ },
+ {
+  "t": "li",
+  "x": "If operator, push it onto stack"
+ },
+ {
+  "t": "li",
+  "x": "In case of parenthesis, when an opening parenthesis is read, it is pushed onto stack and when a closing parenthesis is read, all operators up to the first opening parenthesis must be popped from the stack into the post fix notation."
+ },
+ {
+  "t": "h2",
+  "x": "Evaluation of postfix expression"
+ },
+ {
+  "t": "p",
+  "x": "We use operand stack for evaluation. Scan the post fix expression,"
+ },
+ {
+  "t": "li",
+  "x": "When an operand encounters while scanning, push on to stack."
+ },
+ {
+  "t": "li",
+  "x": "While scanning post fix expression, if operator found then"
+ },
+ {
+  "t": "li",
+  "x": "Pop top two operands from stack"
+ },
+ {
+  "t": "li",
+  "x": "Perform the operation on those two operands"
+ },
+ {
+  "t": "li",
+  "x": "Push, result on to stack top"
+ },
+ {
+  "t": "li",
+  "x": "Finally, the stack contains only one value, which represents result of the expression."
+ },
+ {
+  "t": "h2",
+  "x": "(multiple stack)"
+ },
+ {
+  "t": "p",
+  "x": "Let us consider an array whose size is ‘max’ with multiple stack A, B having top A and top B, push and pop operations on one stack A is given below."
+ },
+ {
+  "t": "h2",
+  "x": "Algorithm for push A(x)"
+ },
+ {
+  "t": "p",
+  "x": "Initially A[Max], top A = –1, top B = MAX; 1. if (top A = top B) a. print “ overflow” b. exit 2. top A = top A + 1 3. A[top A] = x 4. stop"
+ },
+ {
+  "t": "h2",
+  "x": "Algorithm for pop A(x)"
+ },
+ {
+  "t": "p",
+  "x": "1. if (top A = – 1) a. print “underflow” b. exit 2. y = A[top A] 3. top A = top A – 1 4. return y 5. stop"
+ },
+ {
+  "t": "h2",
+  "x": "Algorithm for push B(x)"
+ },
+ {
+  "t": "p",
+  "x": "1. if (top B – 1 = top A) a. print “overflow” b. exit 2. top B = top B –1 3. A[top B] = x 4. stop"
+ },
+ {
+  "t": "h2",
+  "x": "Algorithm for pop B(x)"
+ },
+ {
+  "t": "p",
+  "x": "1. if (top B = max) a. print “underflow” b. exit 2. y = A [top B] 3. top B = top B – 1 4. return y 5. stop"
+ },
+ {
+  "t": "h1",
+  "x": "Queue"
+ },
+ {
+  "t": "p",
+  "x": "A queue is an ordered collection of items from which items may be deleted at one end (called that front of queue) and into which items may be inserted at the other end (called rear of queue). Queue is a linear data structure maintains the data in first in−first out (FIFO) order."
+ },
+ {
+  "t": "h2",
+  "x": "Implementation"
+ },
+ {
+  "t": "p",
+  "x": "Queue can be implemented in the following ways: 1. Array static implementation: queue cannot be extended beyond the array size. 2. Linked list dynamic implementation: Queue size increases as the elements added/inserted to queue. Queue shrinks when an element deleted from queue."
+ },
+ {
+  "t": "h2",
+  "x": "Array Implementation"
+ },
+ {
+  "t": "p",
+  "x": "const int SIZE = 10; int q[SIZE]; int f = –1, r = –1; //f = r = –1 represents queue empty Rear Front"
+ },
+ {
+  "t": "h2",
+  "x": "Insertion"
+ },
+ {
+  "t": "p",
+  "x": "1. void insert (int x) 2. { 3. if (r = = SIZE –1) 4. { 5. printf(“Q FULL”) 6. return; 7. } 8. r++; 9. q[r] = x; 10. if (f = = –1) 11. f = r; 12. } Step 3 – Checks for queue full Step 8 – Increments rear (r) Step 9 – Inserts ‘x’ into queue Step 10 – Checks whether insertion is first Step 11 – If first insertion, updates front (f)"
+ },
+ {
+  "t": "h2",
+  "x": "Deletion"
+ },
+ {
+  "t": "p",
+  "x": "1. void deletion() 2. { 3. int x; 4. if (f = = –1) 5. { 6. if (“\\n Q Empty”); 7. return; 8. } 9. x = q[f]; 10. if (f = = r) 11. ⟨eq⟩ –1; 12. else 13. f++; 14. printf(“\\n deleted element %d”, x); 15. } Step 4 – Checks for queue empty Step 9 – Deletes ‘q’ front element Step 10 – Checks whether queue having only one element Step 11 – \u0007Rear and front initializes to –1, if queue is having only one element Step 13 – Queue front points to next element Step 14 – Deleted element is printed"
+ },
+ {
+  "t": "h2",
+  "x": "Display"
+ },
+ {
+  "t": "p",
+  "x": "1. void display( ) 2. { 3. int i = f; 4. if (f = = –1) 5. { 6. printf(“Queue Empty”); 7. return; 8. } 9. printf (“\\n Queue Elemetns”); 10. for(; i < = r; i++) 11. printf(“ %d”, q[i]); 12. } Step 4 – Checks for ‘q’ empty Step 10 and 11 – Display ‘q’ elements"
+ },
+ {
+  "t": "h2",
+  "x": "Double-ended Queue"
+ },
+ {
+  "t": "p",
+  "x": "A double-ended queue (deque) is an abstract data structure that implements a queue for which elements can only be added to or removed from the front (head) (or) rear (tail) end. Rear Rear Front Insertions and deletions are possible at both ends."
+ },
+ {
+  "t": "h2",
+  "x": "Double-ended Queue"
+ },
+ {
+  "t": "li",
+  "x": "Insert – Front is same as insert – Head"
+ },
+ {
+  "t": "li",
+  "x": "Insert – Rear is same as insert – Tail"
+ },
+ {
+  "t": "li",
+  "x": "Delete front is same as delete – Head"
+ },
+ {
+  "t": "li",
+  "x": "Delete – Rear is same as delete – Tail"
+ },
+ {
+  "t": "h2",
+  "x": "Circular Queue"
+ },
+ {
+  "t": "p",
+  "x": "As the items from a queue get deleted, the space for that item is reclaimed. Those queue positions continue to be empty. This problem is solved by circular queues. Instead of using a linear approach, a circular queue takes a circular approach; this is why a circular queue does not have a beginning or end. The advantage of using circular queue over linear queue is efficient usage of memory."
+ },
+ {
+  "t": "h2",
+  "x": "circular queue"
+ },
+ {
+  "t": "p",
+  "x": "Circular Queue Insertion: To add an element ‘X’ to a Queue ‘Q’ of size ‘N’ with front and rear pointers as ‘F’ and ‘R’ is done with insert (X), Initially ⟨eq⟩ 0. Insert (X) Steps: 1. if (((R = N ) & & (F = 1)) or ((R + 1) = F)) a. print “overflow” b. exit 2. if (R = N) then R = 0; Else ⟨eq⟩ 1; 3. Q[R] = x; 4. if (F = 0) F = 1 5. Stop. To delete an element we implement an algorithm delete (). ‘y’ contains the deleted element. delete() Steps: 1. if (F = 0) a. print “underflow” b. exit 2. y = Q[F] 3. if (F = R) ⟨eq⟩ else If (F = N) F = 1 Else ⟨eq⟩ 4. Return y 5. Stop."
+ },
+ {
+  "t": "h2",
+  "x": "Priority Queue"
+ },
+ {
+  "t": "p",
+  "x": "In priority queue, the intrinsic ordering of elements does determine the results of its basic operations. There are two types of priority queues."
+ },
+ {
+  "t": "li",
+  "x": "Ascending priority queue is a collection of items in which items can be inserted arbitrarily and from which only the smallest items can be removed."
+ },
+ {
+  "t": "li",
+  "x": "Descending priority queue is similar but allows deletion of the largest item."
+ },
+ {
+  "t": "h2",
+  "x": "Array Implementation"
+ },
+ {
+  "t": "li",
+  "x": "The insertion operation on priority queue selects the position to the element to insert."
+ },
+ {
+  "t": "li",
+  "x": "Makes the position empty/free by moving the existing element (if required)."
+ },
+ {
+  "t": "li",
+  "x": "Place the element in required position."
+ },
+ {
+  "t": "li",
+  "x": "Deletion operation simply deletes front of queue."
+ },
+ {
+  "t": "h2",
+  "x": "Linked-list Implementation"
+ },
+ {
+  "t": "li",
+  "x": "Insertion operation create a node"
+ },
+ {
+  "t": "li",
+  "x": "Reads element into node"
+ },
+ {
+  "t": "li",
+  "x": "Find out the location"
+ },
+ {
+  "t": "li",
+  "x": "Insert the node into list, by adjusting the reference"
+ },
+ {
+  "t": "li",
+  "x": "Deletion operation simply deletes head elements, making the head next as head element"
+ },
+ {
+  "t": "h2",
+  "x": "Queue"
+ },
+ {
+  "t": "li",
+  "x": "Insertion in queue is same as insert-tail of queue"
+ },
+ {
+  "t": "li",
+  "x": "Deletion from queue is same as delete head"
+ },
+ {
+  "t": "h1",
+  "x": "5. Trees"
+ },
+ {
+  "t": "p",
+  "x": "Tree 2-Tree Binary tree Properties of binary trees Complete binary tree Full binary tree Binary tree representation Linked representation Binary search tree Binary tree traversing methods AVL tree Binary heap Max-heap Min-heap Expression tree"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "tree"
+ },
+ {
+  "t": "p",
+  "x": "Tree is non-linear data structure designated at a special node called root and elements are arranged in levels without containing cycles. (or) The tree is 1. Rooted at one vertex 2. Contains no cycles 3. There is a sequence of edges from any vertex to any other 4. Any number of elements may connect to any node (including root) 5. A unique path traverses from root to any node of tree 6. Tree stores data in hierarchical manner 7. The elements are arranged in layers"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "li",
+  "x": "Root node is A."
+ },
+ {
+  "t": "li",
+  "x": "A’s children are B, C and D."
+ },
+ {
+  "t": "li",
+  "x": "E, F and D are leaves."
+ },
+ {
+  "t": "li",
+  "x": "Nodes B, C are called as intermediate nodes."
+ },
+ {
+  "t": "li",
+  "x": "A is parent of B, C and D."
+ },
+ {
+  "t": "li",
+  "x": "B is parent of E and C is parent of F."
+ },
+ {
+  "t": "li",
+  "x": "Number of children of a node is called degree of node."
+ },
+ {
+  "t": "h1",
+  "x": "2-tree"
+ },
+ {
+  "t": "p",
+  "x": "A tree in which every node contains either 0 or 2 children."
+ },
+ {
+  "t": "h1",
+  "x": "Binary tree"
+ },
+ {
+  "t": "p",
+  "x": "It is a special type of tree where each node of tree contains either 0 or 1 or 2 children. (or) Binary Tree is either empty, or it consists of a root with two binary trees called left-sub tree and right sub-tree of root (left or right or both the sub trees may be empty)."
+ },
+ {
+  "t": "h2",
+  "x": "Properties of binary tree"
+ },
+ {
+  "t": "li",
+  "x": "Binary tree partitioned into three parts."
+ },
+ {
+  "t": "li",
+  "x": "First subset contains root of tree."
+ },
+ {
+  "t": "li",
+  "x": "Second subset is called left subtree."
+ },
+ {
+  "t": "li",
+  "x": "Another subset is called right subtree."
+ },
+ {
+  "t": "li",
+  "x": "Each subtree is a binary tree."
+ },
+ {
+  "t": "li",
+  "x": "Degree of any node is 0/1/2."
+ },
+ {
+  "t": "li",
+  "x": "The maximum number of nodes in a tree with height ‘h’ is 2h+1 -1."
+ },
+ {
+  "t": "li",
+  "x": "The maximum number of nodes at level ‘i’ is 2i-1."
+ },
+ {
+  "t": "li",
+  "x": "For any non-empty binary tree, the number of terminal nodes with n2, nodes of degree 2 is N0 = n2 + 1"
+ },
+ {
+  "t": "li",
+  "x": "The maximum number of nodes in a tree with depth d is 2d - 1."
+ },
+ {
+  "t": "h2",
+  "x": "Types of binary tree"
+ },
+ {
+  "t": "p",
+  "x": "Complete binary tree It is a binary tree, in which at every level, except possibly the last, is completely filled and all nodes at the last level are as left as possible."
+ },
+ {
+  "t": "h2",
+  "x": "Depth"
+ },
+ {
+  "t": "li",
+  "x": "Having 4 levels"
+ },
+ {
+  "t": "li",
+  "x": "Height of the tree is 3"
+ },
+ {
+  "t": "li",
+  "x": "Depth of the tree is 4"
+ },
+ {
+  "t": "li",
+  "x": "The numbers at each node represents level order index."
+ },
+ {
+  "t": "li",
+  "x": "The level order Index, are assigned to nodes in the following manner"
+ },
+ {
+  "t": "li",
+  "x": "Root of the tree is ‘1’"
+ },
+ {
+  "t": "li",
+  "x": "For a node ‘x’, the LOI is (2 * LOI (parent)), if ‘x’ is left child of its parent."
+ },
+ {
+  "t": "li",
+  "x": "For a node ‘y’, the LOI (2 * LOI (Parent) +1), if ‘y’ is right child of its parent."
+ },
+ {
+  "t": "p",
+  "x": "Now complete binary tree can be defined as a binary tree, which contains a sequence of numbers to its nodes as LOI’s without any break in sequence. Full binary tree It is a binary tree, for which all leaf nodes are at same level and all intermediate nodes contains exactly 2 children. (or) A tree with depth ‘K’ contains exactly 2K – 1 nodes. Strictly binary tree A binary tree in which every node contains exactly 0 or 2 children. Skewed binary tree A binary tree in which elements are added only in one direction."
+ },
+ {
+  "t": "h2",
+  "x": "Application"
+ },
+ {
+  "t": "li",
+  "x": "A binary tree is useful data structure when two way decisions must be made at each point of process."
+ },
+ {
+  "t": "h2",
+  "x": "Binary tree representation"
+ },
+ {
+  "t": "p",
+  "x": "The binary trees can be represented in two ways."
+ },
+ {
+  "t": "li",
+  "x": "Linked list"
+ },
+ {
+  "t": "h2",
+  "x": "Array representation The elements of a binary tree are"
+ },
+ {
+  "t": "p",
+  "x": "placed in an array using the level order index of each element. i 2i + 1 2i + 2 When LOI of Root is 0:"
+ },
+ {
+  "t": "h2",
+  "x": "Linked representation Each node contains one data field"
+ },
+ {
+  "t": "p",
+  "x": "and two link fields. Fist link point to the left child and another point to the right child. In absence of any child, corresponding link field contains NULL."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "A B B C C A Trade-off’s between array and linked,"
+ },
+ {
+  "t": "h2",
+  "x": "representations"
+ },
+ {
+  "t": "li",
+  "x": "Array representation is somewhat simpler. It must ensure elements are placed in array at proper position."
+ },
+ {
+  "t": "li",
+  "x": "Linked representation requires pointer to its left and right child."
+ },
+ {
+  "t": "li",
+  "x": "Array representation saves memory for almost complete binary trees."
+ },
+ {
+  "t": "li",
+  "x": "Linked representation allocates the number and nodes equal to the number of elements in tree."
+ },
+ {
+  "t": "li",
+  "x": "Array representation does not work efficiently for skewed binary trees."
+ },
+ {
+  "t": "li",
+  "x": "Array representation limits the size of binary tree to the array size."
+ },
+ {
+  "t": "li",
+  "x": "In linked representation, tree can be extended by adding an element dynamically and can be shrinked by deleting an element dynamically."
+ },
+ {
+  "t": "h2",
+  "x": "Binary search tree"
+ },
+ {
+  "t": "p",
+  "x": "It is a special type of binary tree that satisfies the following properties."
+ },
+ {
+  "t": "li",
+  "x": "All the elements of left sub tree of root are smaller than root."
+ },
+ {
+  "t": "li",
+  "x": "All the elements of right sub tree of root are greater than root."
+ },
+ {
+  "t": "li",
+  "x": "The above two properties satisfy for each subtree."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Figure 1 A data structure to encode binary search tree The binary search tree node contains three fields, data field, left child, right child. Left child is a pointer which points to the predecessor of the node and right child is a pointer which points to the successor of the node. A data structure to encode binary search tree is Left child Data Right child The declaration is Struct node { Struct node * left child; Int data; Struct node * Right child; }; Insertion If a value to be inserted is smaller than the root, value, it must go in the left subtree, if larger it must go in the right subtree. This reasoning applies recursively until we reach a node where the required subtree does not exist and that is where we place the new value. Example: It must go in 6’s left subtree, 3’s left subtree, 1’s right subtree, 1 has no right subtree, so we make a singleton with 2 and it becomes 1’s right subtree."
+ },
+ {
+  "t": "h2",
+  "x": "Deletion:"
+ },
+ {
+  "t": "p",
+  "x": "1. If a leaf node has to be deleted, just delete it and the rest of the tree is exactly as it was, so it is still a BST. 2. Suppose the node we are deleting has only one sub tree Example, In the following tree, ‘3’ has only one sub-tree To delete a node with 1 subtree, we just ‘link past’ the node, i.e., connect the parent of the node directly to the node’s only subtree. This always works, whether the one subtree is on the left or on the right. Deleting 3 gives us. 3. Deletion of node which has 2 subtrees Example: Delete 6. X"
+ },
+ {
+  "t": "h2",
+  "x": "Choose value ‘X’"
+ },
+ {
+  "t": "p",
+  "x": "1. Everything in the left subtree must be smaller than X. 2. Everything in the right subtree must be bigger than X. We must choose X to be the largest value in the left subtree. In our example, 3 is the largest value in the left subtree. So we replace root node 6 with 3. Note: We could do the same thing with the right subtree. Just use the smallest value in the right subtree."
+ },
+ {
+  "t": "h2",
+  "x": "Notes:"
+ },
+ {
+  "t": "li",
+  "x": "The largest element in left subtree is the right most element."
+ },
+ {
+  "t": "li",
+  "x": "The smallest element in right subtree is the left most element."
+ },
+ {
+  "t": "h2",
+  "x": "Binary tree traversing methods"
+ },
+ {
+  "t": "p",
+  "x": "The binary tree contains 3 parts: V – root L – Left subtree R – Right subtree"
+ },
+ {
+  "t": "h2",
+  "x": "Pre-order: (V, L, R)"
+ },
+ {
+  "t": "li",
+  "x": "Visit root of the tree first"
+ },
+ {
+  "t": "li",
+  "x": "Traverse the left - subtree in pre-order"
+ },
+ {
+  "t": "li",
+  "x": "Traverse the right - subtree in preorder"
+ },
+ {
+  "t": "h2",
+  "x": "In-order: (L, V, R)"
+ },
+ {
+  "t": "li",
+  "x": "Traverse the left – subtree in in-order"
+ },
+ {
+  "t": "li",
+  "x": "Visit Root of the tree"
+ },
+ {
+  "t": "li",
+  "x": "Traverse right - sub tree in in-order"
+ },
+ {
+  "t": "h2",
+  "x": "Post-order: (L, R, V)"
+ },
+ {
+  "t": "li",
+  "x": "Traverse the left subtree in post-order."
+ },
+ {
+  "t": "li",
+  "x": "Traverse the Right - subtree in post-order"
+ },
+ {
+  "t": "li",
+  "x": "Visit root of the tree"
+ },
+ {
+  "t": "h2",
+  "x": "Points to remember"
+ },
+ {
+  "t": "li",
+  "x": "Pre-order traversal contains root element as first element in traverse list."
+ },
+ {
+  "t": "li",
+  "x": "Post-order traversal contains root element as last in traversal list."
+ },
+ {
+  "t": "li",
+  "x": "For BST, in-order traversal is a sorted list."
+ },
+ {
+  "t": "li",
+  "x": "A unique binary tree can constructed if either pre-order or post-order traversal list provided with In order traversal list."
+ },
+ {
+  "t": "li",
+  "x": "If either pre-order or post-order only given then BST cannot be constructed."
+ },
+ {
+  "t": "h2",
+  "x": "Applications"
+ },
+ {
+  "t": "p",
+  "x": "1. Binary trees can represent arithmetic expressions."
+ },
+ {
+  "t": "li",
+  "x": "An infix expression will have a parent operator and two children operands."
+ },
+ {
+  "t": "p",
+  "x": "Consider the expression ((3 + (7 * 2)) -1) Each parenthesised expression becomes a tree. Each operand is a leaf, each operator is an internal node. * − + 2. To evaluate the expression tree: Take any two leaves Apply the parents operator to them Replace the operator with the value of the sub expression. * * + 3. Binary trees in a famous file compression algorithm Huffman coding tree"
+ },
+ {
+  "t": "li",
+  "x": "Each character is stored in a leaf"
+ },
+ {
+  "t": "li",
+  "x": "The code is found by following the path 0 go left, 1 go right."
+ },
+ {
+  "t": "h2",
+  "x": "AVL Tree"
+ },
+ {
+  "t": "p",
+  "x": "An AVL tree is a self-balancing binary search tree, in which the heights of the two child subtrees of any node differ by atmost one. Insertions and deletions may require the tree to be rebalanced by one or more tree rotations."
+ },
+ {
+  "t": "li",
+  "x": "The balance factor of a node is the height of its left subtree minus the height of its right subtree (sometimes opposite) and a node with balance factor—1, 0 or -1 is considered balanced. A node with any other balance factor is considered unbalanced and requires rebalancing the tree."
+ },
+ {
+  "t": "li",
+  "x": "The balance factor is either stored directly at each node or computed from the heights of the subtrees."
+ },
+ {
+  "t": "h2",
+  "x": "Insert operations"
+ },
+ {
+  "t": "p",
+  "x": "Step I: \u0007Insert a node into the AVL tree as it is inserted in a BST. Step II: \u0007Examine the search path to see if there is a pivot node."
+ },
+ {
+  "t": "h2",
+  "x": "Case I:"
+ },
+ {
+  "t": "p",
+  "x": "There is no pivot node. No adjustment required. Case II: \u0007The pivot node exists and the subtree of the pivot node to which the new node is added has smaller height. No adjustment required. Case III: \u0007The pivot node exists and the subtree to which the new node is added has the larger height, Adjustment required."
+ },
+ {
+  "t": "h2",
+  "x": "Not an AVL tree"
+ },
+ {
+  "t": "p",
+  "x": "Example 3 is not an AVL tree, because the balance factor of root node is +2. AVL tree becomes height in-balanced tree in following cases: 1. Left-Left case: An insertion in left subtree of left child of pivot node."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "A G P B Insert ‘X’ as left to node ‘P’. Here ‘G’ is pivot node. A G P X B +2 +2 +1"
+ },
+ {
+  "t": "h2",
+  "x": "Rotation as follows:"
+ },
+ {
+  "t": "li",
+  "x": "Intermediate node ‘P’ becomes root of subtree."
+ },
+ {
+  "t": "li",
+  "x": "Root of subtree ‘G’ (pivot) becomes right subtree."
+ },
+ {
+  "t": "li",
+  "x": "New node ‘X’ remains same as left child of ‘P’."
+ },
+ {
+  "t": "h2",
+  "x": "Left–Right Case"
+ },
+ {
+  "t": "p",
+  "x": "An insertion of left subtree of right child of pivot node. A G P B Example 1: Insert ‘X’ as right child of ‘P’. A G P B X +2 +2 −1 R L Is not an AVL tree. Height in-balance at node ‘G’."
+ },
+ {
+  "t": "h2",
+  "x": "In Left–Right rotation:"
+ },
+ {
+  "t": "li",
+  "x": "New node ‘X’ becomes root of subtree."
+ },
+ {
+  "t": "li",
+  "x": "Root of subtree ‘G’ (pivot) becomes right child of ‘X’."
+ },
+ {
+  "t": "li",
+  "x": "Intermediate node ‘P’ becomes left child of new node."
+ },
+ {
+  "t": "h2",
+  "x": "Right–Right case"
+ },
+ {
+  "t": "p",
+  "x": "An insertion of right subtree of right child of pivot node."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "A G P B −1 −1 Insert ‘X’ as right child of ‘P’ A G P X B −2 −2 −1 R R Is not an AVL tree, because of height in-balance at node ‘G’."
+ },
+ {
+  "t": "h2",
+  "x": "Solution:"
+ },
+ {
+  "t": "p",
+  "x": "To make the tree as balanced tree, perform the right–right rotation as follows: A G P B X −2 −2 −1 A P X B −1 G ⇒"
+ },
+ {
+  "t": "h2",
+  "x": "In Right–Right rotation:"
+ },
+ {
+  "t": "li",
+  "x": "Intermediate node ‘P’ becomes root of subtree."
+ },
+ {
+  "t": "li",
+  "x": "Root of subtree ‘G’ (pivot) becomes left child of ‘P’."
+ },
+ {
+  "t": "li",
+  "x": "New node ‘X’ remains as right child to ‘P’."
+ },
+ {
+  "t": "h2",
+  "x": "Right–Left case"
+ },
+ {
+  "t": "p",
+  "x": "An insertion of right subtree of left child of pivot node. A G P B −1 −1 Insert ‘X’ as left child of ‘P’ A G P B +1 −2 −2 X Is not AVL tree, because height in-balance at node ‘G’."
+ },
+ {
+  "t": "h2",
+  "x": "Solution:"
+ },
+ {
+  "t": "p",
+  "x": "To make the above tree as balanced, perform Right–Left rotation as follows: A G P B X L R −2 −2 +1 A X P B −1 G ⇒"
+ },
+ {
+  "t": "h2",
+  "x": "In Right–Left Rotation:"
+ },
+ {
+  "t": "li",
+  "x": "New node ‘X’ becomes root of subtree."
+ },
+ {
+  "t": "li",
+  "x": "Root of subtree ‘G’ (pivot) becomes left child of ‘X’."
+ },
+ {
+  "t": "li",
+  "x": "Intermediate node ‘P’ becomes right of ‘X’."
+ },
+ {
+  "t": "h2",
+  "x": "Note: Left–Right and Right–Left rotation are also called as"
+ },
+ {
+  "t": "h1",
+  "x": "Binary Heap"
+ },
+ {
+  "t": "p",
+  "x": "A binary heap is a heap data structure created using a binary tree. It can be seen as a binary tree with two additional constraints. The shape property: The tree is a complete binary tree; that is, all levels of the tree, except possibly the last one (deepest) level of the tree is not complete, the nodes of that level are filled, from left to right."
+ },
+ {
+  "t": "h2",
+  "x": "Max-Heap"
+ },
+ {
+  "t": "p",
+  "x": "A heap in which each node is greater than or equal to its children is called max-heap. Max-Heap generally used for heap sort."
+ },
+ {
+  "t": "h2",
+  "x": "Min-Heap"
+ },
+ {
+  "t": "p",
+  "x": "A heap in which, each node is smaller than or equal to its children is called Min-Heap. Min-heap generally used to implement priority queue."
+ },
+ {
+  "t": "h2",
+  "x": "Note: By default heap represent Max-Heap:"
+ },
+ {
+  "t": "p",
+  "x": "Insert 15: Is not satisfying heap property. So Heapify ⇒ ⇒ Delete 5: Deletion of a node from heap is always deletes a leaf node. So interchange the value of last leaf node with node 5. Now delete node ‘5’ Is satisfying heap property."
+ },
+ {
+  "t": "h2",
+  "x": "Delete 15:"
+ },
+ {
+  "t": "p",
+  "x": "Interchange 4 and 15 Now delete Node ‘15’ Is not satisfying heap property. So heapify Note: Insertion or deletion operation on a heap may require heapify process."
+ },
+ {
+  "t": "h2",
+  "x": "Expression Tree"
+ },
+ {
+  "t": "p",
+  "x": "The expressions can also represented by using a binary tree called expression tree. Expression tree contains:"
+ },
+ {
+  "t": "li",
+  "x": "Operators as intermediate nodes."
+ },
+ {
+  "t": "li",
+  "x": "Operands as leaf nodes (or) childs to operator nodes."
+ },
+ {
+  "t": "li",
+  "x": "The operator at lowest level will be having highest priority."
+ },
+ {
+  "t": "h2",
+  "x": "Traversing:"
+ },
+ {
+  "t": "p",
+  "x": "Pre-order: ⟨eq⟩ In-order: ⟨eq⟩ Post-order: ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Note: In-order traversal of expression tree generates In-fix"
+ },
+ {
+  "t": "p",
+  "x": "expression. Similarly pre-order and post-order generates prefix and postfix, respectively."
+ }
+]

@@ -6,6 +6,7 @@ __pycache__
 # holds a live login token — never commit
 .auth.json
 
-# large generated artefacts
+# large generated artefacts (rebuilt by build_site_data.py)
 downloads/
 site/data.js
+site/notes.js

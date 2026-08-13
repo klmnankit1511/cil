@@ -464,6 +464,141 @@
     $('#againBtn').addEventListener('click', () => viewPractice(s.subject.id));
   }
 
+  /* ---------------------------------------------------------- learn */
+
+  let NOTES = null;          // { subjectId: [{title, blocks}] }, loaded on demand
+
+  /** notes.js is ~2.4 MB, so it is only fetched the first time Learn is opened.
+      A script tag (not fetch) keeps this working from file:// as well as http. */
+  function loadNotes(then) {
+    if (NOTES) return then();
+    if (window.MCQ_NOTES) { NOTES = indexNotes(); return then(); }
+
+    app.innerHTML = `<section class="view"><div class="empty">
+      <div class="spinner"></div><p>Loading study material…</p></div></section>`;
+
+    const tag = document.createElement('script');
+    tag.src = 'notes.js';
+    tag.onload = () => { NOTES = indexNotes(); then(); };
+    tag.onerror = () => {
+      app.innerHTML = `<section class="view"><div class="empty">${ICON.empty}
+        <p>Could not load <code>notes.js</code>.</p>
+        <p style="font-size:14px">Run <code>python build_site_data.py</code> to generate it.</p>
+      </div></section>`;
+    };
+    document.head.appendChild(tag);
+  }
+
+  function indexNotes() {
+    const out = {};
+    for (const s of (window.MCQ_NOTES?.subjects || [])) out[s.file] = s.chapters;
+    return out;
+  }
+
+  const noteName = (id) => PRETTY[id] || id.replace(/_/g, ' ');
+
+  function viewLearn(subjectId, chapterIdx) {
+    loadNotes(() => {
+      const ids = Object.keys(NOTES);
+      if (!subjectId || !NOTES[subjectId]) return learnIndex(ids);
+      renderReader(subjectId, Math.max(0, Math.min(+chapterIdx || 0, NOTES[subjectId].length - 1)));
+    });
+  }
+
+  function learnIndex(ids) {
+    const card = (id) => {
+      const chapters = NOTES[id];
+      const words = chapters.reduce((a, c) =>
+        a + c.blocks.reduce((n, b) => n + b.x.split(' ').length, 0), 0);
+      return `
+        <button class="subject-card" data-go="#/learn/${encodeURIComponent(id)}/0">
+          <div class="row"><h3>${esc(noteName(id))}</h3><span class="chev">${ICON.chev}</span></div>
+          <div class="meter-legend">
+            <span>${chapters.length} chapters</span>
+            <span>${num(Math.round(words / 1000))}k words</span>
+          </div>
+        </button>`;
+    };
+    const totalWords = ids.reduce((a, id) => a + NOTES[id].reduce((x, c) =>
+      x + c.blocks.reduce((n, b) => n + b.x.split(' ').length, 0), 0), 0);
+
+    app.innerHTML = `
+      <section class="view">
+        <div class="hero">
+          <span class="eyebrow"><i class="dot"></i> Read before you drill</span>
+          <h1>Study material</h1>
+          <p class="lede">The chapter notes from the course books &mdash;
+            ${num(Math.round(totalWords / 1000))}k words across ${ids.length} subjects,
+            laid out to read rather than to page through.</p>
+        </div>
+        <div class="grid-subjects">${ids.map(card).join('')}</div>
+      </section>`;
+    stagger('.subject-card', 30);
+  }
+
+  function renderReader(id, idx) {
+    const chapters = NOTES[id];
+    const ch = chapters[idx];
+    const readKey = `${id}:${idx}`;
+    const read = new Set(store.get('read', []));
+
+    // equations the PDF flattened beyond recovery are marked, not printed as rubble
+    const eq = (s) => esc(s).replaceAll('⟨eq⟩', '<code class="eq">equation</code>');
+
+    const body = ch.blocks.map((b) => {
+      if (b.t === 'h2') return `<h3>${eq(b.x)}</h3>`;
+      if (b.t === 'li') return `<li>${eq(b.x)}</li>`;
+      return `<p>${eq(b.x)}</p>`;
+    }).join('').replace(/(<li>.*?<\/li>)+/gs, (m) => `<ul>${m}</ul>`);
+
+    app.innerHTML = `
+      <section class="view learn">
+        <aside class="toc">
+          <button class="btn ghost back" data-go="#/learn">${ICON.left} All subjects</button>
+          <div class="toc-title">${esc(noteName(id))}</div>
+          <nav class="toc-list">
+            ${chapters.map((c, i) => `
+              <a href="#/learn/${encodeURIComponent(id)}/${i}"
+                 class="${i === idx ? 'on' : ''} ${read.has(`${id}:${i}`) ? 'done' : ''}">
+                <span class="n">${i + 1}</span>${esc(c.title)}</a>`).join('')}
+          </nav>
+        </aside>
+
+        <article class="reader">
+          <div class="reader-head">
+            <span class="chip">Chapter ${idx + 1} of ${chapters.length}</span>
+            <span class="chip">${num(ch.blocks.reduce((n, b) => n + b.x.split(' ').length, 0))} words</span>
+            <span class="spacer"></span>
+            <button class="btn ghost" id="markBtn">
+              ${read.has(readKey) ? ICON.check + ' Read' : 'Mark as read'}</button>
+          </div>
+          <h1>${esc(ch.title)}</h1>
+          <div class="prose">${body}</div>
+
+          <div class="reader-foot">
+            ${idx > 0 ? `<button class="btn" data-go="#/learn/${encodeURIComponent(id)}/${idx - 1}">
+              ${ICON.left} Previous</button>` : '<span></span>'}
+            <span class="spacer"></span>
+            ${idx < chapters.length - 1
+              ? `<button class="btn primary" data-go="#/learn/${encodeURIComponent(id)}/${idx + 1}">
+                   Next chapter ${ICON.chev}</button>`
+              : `<button class="btn primary" data-go="#/practice/${encodeURIComponent(id)}">
+                   Practise this subject ${ICON.chev}</button>`}
+          </div>
+        </article>
+      </section>`;
+
+    $('#markBtn').addEventListener('click', () => {
+      read.has(readKey) ? read.delete(readKey) : read.add(readKey);
+      store.set('read', [...read]);
+      toast(read.has(readKey) ? 'Marked as read' : 'Marked unread');
+      renderReader(id, idx);
+    });
+
+    const active = app.querySelector('.toc-list a.on');
+    if (active) active.scrollIntoView({ block: 'nearest' });
+  }
+
   /* ---------------------------------------------------------- browse */
 
   const browseState = { term: '', subject: '', explained: false, saved: false, limit: 40 };
@@ -578,6 +713,7 @@
     moveInk();
 
     if (name === 'practice') viewPractice(arg ? decodeURIComponent(arg) : '');
+    else if (name === 'learn') viewLearn(arg ? decodeURIComponent(arg) : '', hash.split('/')[3]);
     else if (name === 'browse') viewBrowse();
     else viewHome();
 

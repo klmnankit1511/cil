@@ -1,0 +1,3294 @@
+[
+ {
+  "t": "h1",
+  "x": "Addressing Modes"
+ },
+ {
+  "t": "p",
+  "x": "Computer Computer system Computer component Machine instruction Instruction types Types of operands Types of operations Procedure call instruction Addressing modes Computer performance"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "Computer"
+ },
+ {
+  "t": "p",
+  "x": "A computer is a data-processing machine which is operated automatically under the control of a list of instructions (called a program) stored in its main memory. Data Control Main memory Central processing unit (CPU)"
+ },
+ {
+  "t": "h2",
+  "x": "Computer System"
+ },
+ {
+  "t": "li",
+  "x": "A computer system consists usually of a computer and its peripherals."
+ },
+ {
+  "t": "li",
+  "x": "Computer peripherals include input devices, output devices and secondary memories."
+ },
+ {
+  "t": "h2",
+  "x": "Computer Architecture: Computer Architecture refers to those"
+ },
+ {
+  "t": "p",
+  "x": "attributes of a system visible to a programmer, i.e., the attributes that have direct impact on the logical execution of a program."
+ },
+ {
+  "t": "h2",
+  "x": "Computer Organization: Computer organization refers to opera-"
+ },
+ {
+  "t": "p",
+  "x": "tional units and their interconnections that realize the architectural specifications."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Whether the multiply instruction will be implemented"
+ },
+ {
+  "t": "p",
+  "x": "by a special multiply unit or by a mechanism that makes repeated use of the add unit of the system."
+ },
+ {
+  "t": "h2",
+  "x": "Computer Components"
+ },
+ {
+  "t": "li",
+  "x": "R1, R2 … Rn: General Purpose Registers."
+ },
+ {
+  "t": "li",
+  "x": "PC: Program counter. Holds address of next instruction to be executed. PC = PC + I (I = instruction length)"
+ },
+ {
+  "t": "li",
+  "x": "IR: Instruction Register. It holds the instruction which is fetched from memory."
+ },
+ {
+  "t": "li",
+  "x": "MAR: Memory Address Register: MAR specifies the address in memory for the next read or write."
+ },
+ {
+  "t": "li",
+  "x": "MBR: Memory Buffer Register. It contains the data to be written into memory or receives the data read from memory."
+ },
+ {
+  "t": "li",
+  "x": "Input–outputAR: Input–output Address Register. It specifies a particular input–output device."
+ },
+ {
+  "t": "li",
+  "x": "Input–outputBR: Input–output Buffer Register. Used for the exchange of data between an input–output module and the CPU."
+ },
+ {
+  "t": "li",
+  "x": "ALU: Arithmetic and Logic Unit. Used to perform arithmetic and logical operations."
+ },
+ {
+  "t": "p",
+  "x": "PC System bus I/O module CPU Main memory IR MAR MBR I/OAR I/OBR ALU CU R0 R1 Rn ⟨eq⟩ Buffers Instruction Instruction Instruction Data Data Data"
+ },
+ {
+  "t": "li",
+  "x": "CU: Control Unit. It causes operations to happen within the processor. Also generates timing signals."
+ },
+ {
+  "t": "li",
+  "x": "Memory: It consists of set of locations, defined by sequential numbered address."
+ },
+ {
+  "t": "li",
+  "x": "Input–output module: Transfer data from external device to CPU and memory and vice versa."
+ },
+ {
+  "t": "li",
+  "x": "System bus: A bus that connects major computer components is called a system bus."
+ },
+ {
+  "t": "h1",
+  "x": "Machine Instructions"
+ },
+ {
+  "t": "li",
+  "x": "The operation of the CPU is determined by the instructions it executes. These instructions are called machine instructions or computer instructions."
+ },
+ {
+  "t": "li",
+  "x": "The collection of different instructions that the CPU can execute is referred to as the CPU’s instruction set."
+ },
+ {
+  "t": "h2",
+  "x": "Elements of Machine Instructions"
+ },
+ {
+  "t": "p",
+  "x": "Each instruction must contain the information required by the processor for execution. The elements of a machine instruction are 1. Operation code: Specifies the operation 2. Source operand reference: Inputs for operation. 3. Result operand reference 4. Next instruction reference"
+ },
+ {
+  "t": "h2",
+  "x": "Instruction representation"
+ },
+ {
+  "t": "li",
+  "x": "Each instruction is represented by a sequence of bits."
+ },
+ {
+  "t": "li",
+  "x": "Example: 20-bit instruction format: Opcode Operand reference 20-bits Operand reference"
+ },
+ {
+  "t": "h2",
+  "x": "Number of addresses"
+ },
+ {
+  "t": "p",
+  "x": "Most of the instructions have one, two or three operand addresses, with the address of next instruction being implicit."
+ },
+ {
+  "t": "h2",
+  "x": "(i) 3-address instructions: Computers with 3-address"
+ },
+ {
+  "t": "p",
+  "x": "instruction formats can use each address field to specify either a processor register or a memory operand."
+ },
+ {
+  "t": "h2",
+  "x": "Example: 3-address instruction format for the evalu-"
+ },
+ {
+  "t": "p",
+  "x": "ation of X = (P + Q) × (R + S) is ADD R1, P, Q ADD R2, R, S MUL X, R1, R2. Here R1, R2 are processor registers."
+ },
+ {
+  "t": "h2",
+  "x": "(ii) 2-address instructions: These are most common in"
+ },
+ {
+  "t": "p",
+  "x": "commercial computers. Each address field can specify either a processor register or a memory word. Example: For evaluating X = (P + Q) × (R + S), The 2-address instructions are MOV R1, P ADD R1, Q MOV R2, R ADD R2, S MUL R1, R2 MOV X, R1. (The first symbol of instruction is both source and destination)"
+ },
+ {
+  "t": "h2",
+  "x": "(iii) One-address instructions: Use an implied accumula-"
+ },
+ {
+  "t": "p",
+  "x": "tor (AC) register for all data manipulations. Example: 1-address instructions to evaluate R = (P + Q) × (R + S). LOAD P ADD Q STORE T LOAD R ADD S MUL T STORE X. Here ‘T ’ is a temporary memory location required to store the intermediate result."
+ },
+ {
+  "t": "h2",
+  "x": "(iv) Zero­-address instructions: A stack organized com-"
+ },
+ {
+  "t": "p",
+  "x": "puter does not use an address field for the instructions ADD and MUL. The push and pop instructions require an address field to specify the operand that communicates with the stack."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Zero-address instructions for the evalua-"
+ },
+ {
+  "t": "p",
+  "x": "tion of X = (P + Q) × (R + S) PUSH P PUSH Q ADD PUSH R PUSH S ADD MUL POP X."
+ },
+ {
+  "t": "h2",
+  "x": "(v) RISC instructions: The instruction set of a reduced"
+ },
+ {
+  "t": "p",
+  "x": "instruction set computer (RISC) processor is restricted to the use of load and store instruction when communicating between memory and CPU. All other instructions are executed with in the register of the CPU without referring to memory. Example: RISC instruction to evaluate, X = (P + Q) × (R + S) LOAD R1, P LOAD R2, Q LOAD R3, R LOAD R4, S ADD R1, R1, R2 ADD R3, R3, R4 MUL R1, R1, R3 STORE X, R1"
+ },
+ {
+  "t": "h2",
+  "x": "Types of Operands"
+ },
+ {
+  "t": "p",
+  "x": "Machine instructions operate on data. The most important general categories of data are"
+ },
+ {
+  "t": "li",
+  "x": "Addresses"
+ },
+ {
+  "t": "li",
+  "x": "Characters"
+ },
+ {
+  "t": "li",
+  "x": "Logical data."
+ },
+ {
+  "t": "h2",
+  "x": "Types of Operations"
+ },
+ {
+  "t": "p",
+  "x": "The number of different opcodes varies widely from machine to machine. A useful and typical categorization is the following 1. Data transfer 2. Arithmetic 3. Logic 4. Conversion 5. Input–output 6. System control 7. Transfer of control"
+ },
+ {
+  "t": "h2",
+  "x": "(i) Data transfer operations: This type of instructions"
+ },
+ {
+  "t": "p",
+  "x": "transfers data from one location to another. Example: move, store, load, exchange, clear, set, push, pop. (ii) Arithmetic operations: Perform some function in ALU. Example: add, subtract, multiply, divide, absolute, negate, increment, decrement"
+ },
+ {
+  "t": "h2",
+  "x": "(iii) Logical operations: Perform some logical operation"
+ },
+ {
+  "t": "p",
+  "x": "in ALU and set condition codes and flags. Example: AND, OR, NOT, EX-OR, Test, Compare, set control variables, shift, Rotate. Let R1 = 10100101, R2 = 00001111 then (R1) AND (R2) = 00000101. AND is also called mask operation. (R1) OR (R2) = 10101111. NOT (R1) = 01011010. (R1) EX-OR (R2) = 10101010."
+ },
+ {
+  "t": "h2",
+  "x": "(a) Logical left shift:"
+ },
+ {
+  "t": "p",
+  "x": "S Here the bits of a word are shifted left. The left most bits is lost and 0 is shifted in right most bit position (i.e., bit empty). Example: R1 = 1010 0101 Logical left shift R1: After left shift R1 = 0100 1010. (b) \u0007Logical right shift: Here the bits of a word are shifted right. The right most bit lost and ‘0’ is shifted in left most bit position. Example: R1 = 1010 0101 Logical right shift R1 = 0101 0010 Logical shift operations are useful primarily for isolating fields within a word and also used to displace unwanted information."
+ },
+ {
+  "t": "h2",
+  "x": "(c) \u0007Arithmetic left shift: Arithmetic shift operation"
+ },
+ {
+  "t": "p",
+  "x": "treats the data as a signed integer and does not shift the sign bit. In Arithmetic left shift, a logical left shift is performed on all bits but the sign bit, which is retained. S Example: R1 = 1010 0101 Arithmetic Left shift R1 = 1100 1010. (d) \u0007Arithmetic right shift: Here, the sign bit is replicated into the bit position to its right. S Example: R1 = 1010 0101 Arithmetic Right shift R1 = 1101 0010"
+ },
+ {
+  "t": "h2",
+  "x": "Notes:"
+ },
+ {
+  "t": "p",
+  "x": "1. \u0007With numbers in 2’s complement form, a right arithmetic shift corresponds to a division by 2, with truncation for odd numbers. 2. \u0007Both arithmetic left shift and logical left shift correspond to a multiplication by 2 when there is no overflow."
+ },
+ {
+  "t": "h2",
+  "x": "(e) \u0007Left rotate (Cyclic left shift): Rotate operations"
+ },
+ {
+  "t": "p",
+  "x": "preserve all the bits being operated on. Here the bits from LSB will move one bit position to the left and MSB will placed in LSB position. Example: R1 = 1010 0101 Left Rotate R1 = 0100 1011"
+ },
+ {
+  "t": "h2",
+  "x": "(f) \u0007Right rotate (Cyclic right shift): Here the bits"
+ },
+ {
+  "t": "p",
+  "x": "from MSB will be shifted to one bit position right and LSB is placed in MSB."
+ },
+ {
+  "t": "h2",
+  "x": "(v) Transfer of control: This type of operations updates"
+ },
+ {
+  "t": "p",
+  "x": "the program counter. Used for subroutine call/return, manage parameter passing and linkage. Example: Jump, jump unconditional, return, execute, skip, skip conditional, Halt, Wait, NOP, etc."
+ },
+ {
+  "t": "h2",
+  "x": "(vii) Conversion operations: These are similar to arith-"
+ },
+ {
+  "t": "p",
+  "x": "metic and logical operations. May also involve special logic to perform conversion."
+ },
+ {
+  "t": "h2",
+  "x": "Procedure Call Instruction"
+ },
+ {
+  "t": "p",
+  "x": "A procedure is a self-contained computer program that is incorporated into a large program. It allows us to use the same piece of code many times. The procedure mechanism involves two basic instructions: 1. A call instruction that branches from the present location to the procedure. 2. A return instruction that returns from the procedure to the place from where it was called."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Main programe Call and returns Execution sequence Call f1 f1 Call f1 Call f2 return return f2 We can call a procedure from a variety of points, so the processor must somehow save the return address to return appropriately. We can store the return address in the following places. 1. Register 2. Start of called procedure 3. Top of stack. If the register approach is used, call X causes the following actions: RN ← PC + L PC ← X Where RN is a used to store return address, PC is the program counter and L is instruction length. To store the return address at the start of the procedure for call X, the following tasks required. X ← PC + L PC ← X + 1 We can pass the parameters using registers or store in memory after call instruction or use stack."
+ },
+ {
+  "t": "h2",
+  "x": "Example 1: Consider the following program fragment in"
+ },
+ {
+  "t": "p",
+  "x": "the assembly language of a certain hypothetical processor. The processor has three 8-bit general purpose registers R1, R2, R3."
+ },
+ {
+  "t": "h2",
+  "x": "Meaning"
+ },
+ {
+  "t": "p",
+  "x": "X: CMP R1,0 Compare R1 and 0, set flags appropriately in status register. JZ Z Jump if zero to target Z. MOV R2, R1 Copy contents of R1 to R2. SHR R1 Shift Right R1 SHL R1 Shift left R1 CMP R2, R1 Compare R2 and R1 and set flag in status register JZ Y Jump if zero to Y. INC R3 Increment R3 Y: SHR R1 Shift Right R1 by 1-bit JMP X Jump to X Z: ... Let R1, R2, R3 contain the values 3, 0, 0 respectively. What are the final values of R1, R2, R3 when control reaches Z? (A) 0, 0, 0 (B) 0, 1, 2 (C) 0, 1, 1 (D) 0, 2, 1"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "R1 = 0000 0011 R2 = 0000 0000 R3 = 0000 0000 CMP R1, 0, As R1 ≠ 0 ⇒ Zero flag = 0. Jump to Z if Zf = 1; but Zf = 0 MOV R2, R1; R2 ← R1 i.e., R2 = 0000 0011 SHIFT right R1; R1 ⟨eq⟩ shr(R1) = 00000001 SHIFT left R1; R1 ⟨eq⟩ shl (R1) = 0000 0010 Compare R2, R1; R1 ≠ R2 ⇒ ZF = 0 As Zero flag is not set, increment R3: R3 = 0000 0001 Shift Right R1; i.e., 0000 0001. Jump to X. Compare R1, 0; As R1 ≠ 0 ⇒ ZF = 0. Move R2, R1; R2 ← 0000 0001. Shift right R1; R1 = 0000 0000. Shift left R1; R1 = 0000 0000. Compare R2, R1; R1 ≠ R2 ⇒ ZF = 0. Increment R3; R3 = 0000 0010. Shift Right R1; 0000 0000. Jump to X. Compare R1, 0; As R1 = 0 ⇒ ZF = 1 As ZF = 1, jump to Z. ∴ R1 = 0; R2 = 1; R3 = 2."
+ },
+ {
+  "t": "h1",
+  "x": "Addressing Modes"
+ },
+ {
+  "t": "p",
+  "x": "The different ways in which the location of an operand is specified in an instruction are referred to as addressing modes. Computers use addressing mode techniques for the purpose of accommodating the following provisions: 1. Facilitates pointers to memory. 2. Facilitates counters for loop control 3. Facilitates indexing of data 4. Facilitates program relocation. 5. Reduce the number of bits in the addressing field of the instruction. The most common addressing techniques are i. Implied mode ii. Immediate mode iii. Direct mode iv. Indirect mode v. Register mode vi. Register Indirect mode vii. Auto-increment or Auto-decrement mode viii. Displacement mode"
+ },
+ {
+  "t": "li",
+  "x": "PC relative mode"
+ },
+ {
+  "t": "li",
+  "x": "Indexed mode"
+ },
+ {
+  "t": "li",
+  "x": "Base register mode"
+ },
+ {
+  "t": "h2",
+  "x": "Example: CPL (complement accumulator)"
+ },
+ {
+  "t": "p",
+  "x": "Here operand in accumulator is implied in the definition of instruction."
+ },
+ {
+  "t": "li",
+  "x": "All register-reference instructions that use an accumulator are implied mode instructions."
+ },
+ {
+  "t": "li",
+  "x": "Zero-address instructions in a stack-oriented computer are implied-mode instructions."
+ },
+ {
+  "t": "h2",
+  "x": "(ii) Immediate mode: The operand is specified in the"
+ },
+ {
+  "t": "p",
+  "x": "instruction itself. Instruction format in immediate mode is Opcode Operand Example: Move A, 50."
+ },
+ {
+  "t": "li",
+  "x": "These are useful for initializing registers to constant value or to set initial values of variables."
+ },
+ {
+  "t": "li",
+  "x": "No memory reference is required other than the instruction fetch."
+ },
+ {
+  "t": "li",
+  "x": "The size of number is restricted to the size of the address (operand) field."
+ },
+ {
+  "t": "h2",
+  "x": "(iii) Direct mode:"
+ },
+ {
+  "t": "li",
+  "x": "Here the address of the operand is equal to the address part of the instruction."
+ },
+ {
+  "t": "li",
+  "x": "Required only one memory reference and no special calculation required."
+ },
+ {
+  "t": "li",
+  "x": "Limitation is limited address space."
+ },
+ {
+  "t": "h2",
+  "x": "(iv) Indirect mode:"
+ },
+ {
+  "t": "li",
+  "x": "The address field of the instruction gives the address of the operand which is stored in memory."
+ },
+ {
+  "t": "li",
+  "x": "The advantage of this approach is that for a word length of N, an address space of 2N is available."
+ },
+ {
+  "t": "li",
+  "x": "The disadvantage is that the instruction execution requires two memory references to fetch the operand."
+ },
+ {
+  "t": "p",
+  "x": "Operand Memory Address Instruction EA (Here EA is effective address of operand)"
+ },
+ {
+  "t": "h2",
+  "x": "(v) Register mode:"
+ },
+ {
+  "t": "li",
+  "x": "Here the operands are in registers that reside within the CPU."
+ },
+ {
+  "t": "li",
+  "x": "Only small address field required in instructions."
+ },
+ {
+  "t": "li",
+  "x": "No time consuming memory references are required."
+ },
+ {
+  "t": "li",
+  "x": "Address space is very limited."
+ },
+ {
+  "t": "h2",
+  "x": "(vi) Register indirect mode: In this mode the instruction"
+ },
+ {
+  "t": "p",
+  "x": "specifies a register in the CPU whose contents give the address of the operand in memory. Address field of the instruction uses fewer bits to select a register than would have required to specify a memory address directly. Address Register Registers Instruction Operand Memory Effective address: The effective address is defined to be the memory address obtained from the computation based on the addressing mode, consists the actual address of the operand."
+ },
+ {
+  "t": "h2",
+  "x": "(vii) Auto increment and auto decrement mode: This is"
+ },
+ {
+  "t": "p",
+  "x": "similar to register indirect mode except that the register is incremented or decremented after (or before) its value is used to access memory. Address Register Registers Instruction Operand Memory"
+ },
+ {
+  "t": "li",
+  "x": "After fetch operand, increment or decrement address."
+ },
+ {
+  "t": "li",
+  "x": "Used to access table of data."
+ },
+ {
+  "t": "h2",
+  "x": "(viii) PC-relative mode: Here the content of the program"
+ },
+ {
+  "t": "p",
+  "x": "counter is added to the address part of the instruction to get the effective address. The address part of the instruction is usually a signed number which can be either positive or negative. The effective address will be a displacement relative to address of the inst ruction. Registers Instruction Address PC Operand Memory + Effective address = PC + address part Example: Let PC = 900 and address part of the 2-word instruction = 20. Instruction PC The instruction at location 900 is read memory during fetch phase and the PC will be incremented by instruction length i.e., 2. Then PC = 902. ∴ \u0007The effective address using PC-relative ⟨eq⟩ 922."
+ },
+ {
+  "t": "li",
+  "x": "This addressing mode is used with branch-type instructions."
+ },
+ {
+  "t": "li",
+  "x": "Requires shorter address field."
+ },
+ {
+  "t": "p",
+  "x": "(ix) Indexed mode: Here the content of the index register is added to the address part of the instruction to obtain the effective address. The address field of the instruction defines the beginning address of a data array in memory. The distance between the beginning address and the address of the operand is the index value stored in the index register, is a positive displacement from the address. Address Index registers Operand Memory Registers + Effective Address = Index Register + Address part of instruction. This approach is opposite to the interpretation of baseregister addressing. This is used to provide an efficient mechanism for performing iterative operations. To store an array using indexed mode, the address part consists of the address of first element of array and the index register specifies the index value. Example: Let address part of instruction = 300 Index register = 5 and each element of array requires 2 bytes then address of 5th element ⟨eq⟩ × 2 = 310. (x) Base Register mode: Here the content of a base register is added to the address part of the instruction to obtain the effective address. Base register has a base address and the address field of the instruction gives a displacement relative to the base address. Address Base registers Operand Registers Memory + This addressing mode is used in computers to facilitate the relocation of programs in memory, i.e., when programs and data are moved from one segment of memory to another, as required in multiprogramming system, the address values of instructions must reflect this change of position. With a base register, the displacement values of instructions do not have to change. Only the value of the base register requires updating to reflect the beginning of a new memory segment. Example 2: If base register is 200 and address part of the instruction is 31, then effective address ⟨eq⟩ 231. If the program’s base address is changed from 200 to 400, then new effective address will be ⟨eq⟩ 431."
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (C)"
+ },
+ {
+  "t": "p",
+  "x": "Array indexing uses indexed mode. For increment operations use Auto increment mode. To initialize variables use immediate mode."
+ },
+ {
+  "t": "h2",
+  "x": "Example 4: The instruction format of a CPU is"
+ },
+ {
+  "t": "p",
+  "x": "Opcode Mode One memory word Register Mode and Register together specifies the operand. Register specifies a CPU register and mode specifies an addressing mode. Let mode = 3, specifies that the register contains the address of the operand, after fetching the operand, the contents of register are incremented by 1. An instruction at memory location 3000 specifies mode = 3 and register refers to program counter (PC). Then what is the address of the operand? (A) 3000 (B) 3001 (C) 3002 (D) Data insufficient"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "3 3001 PC → 3001 ∴ Address of operand = 3001"
+ },
+ {
+  "t": "h2",
+  "x": "Example 5: Consider the following machine instruction:"
+ },
+ {
+  "t": "p",
+  "x": "MUL P[R0], @Q The first operand (destination) ‘P[R0]’ uses indexed addressing mode with R0 as the index register. The second operand (source) ‘@Q’ uses indirect addressing mode. P and Q are memory addresses residing at the second and third words respectively. The first word of instruction specifies the opcode, the index register designation, source and destination addressing modes. During the execution of MUL, the result is stored in destination. How many memory cycles needed during the execution cycle of the instruction? (A) 3 (C) 5 (B) 4 (D) 6"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (C)"
+ },
+ {
+  "t": "p",
+  "x": "The first operand P[R0] uses indexed mode. So it requires two memory references: on reference to the address part and next one to obtain the operand. The second operand @Q uses indirect addressing mode, so it requires two memory references, one to obtain the address, and the second, to obtain operand. Finally one more memory reference required to store result. Total five references."
+ },
+ {
+  "t": "h1",
+  "x": "Computer Performance"
+ },
+ {
+  "t": "h2",
+  "x": "Response time: The time between the start and completion"
+ },
+ {
+  "t": "p",
+  "x": "of a task. This is also referred as execution time. Throughput: The total amount of work done in a given time."
+ },
+ {
+  "t": "h1",
+  "x": "CPU Control Design"
+ },
+ {
+  "t": "p",
+  "x": "Arithmetic and logic unit Fixed-point arithmetic operation Floating point arithmetic operation BCD Data path CPU control design Instruction cycle Control unit Control of processor Function of control unit Design of control unit Types of micro-instructions Micro-instruction sequencing RISC and CISC RISC characteristic CISC characteristic"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "Alu (Arithmetic And Logic Unit)"
+ },
+ {
+  "t": "p",
+  "x": "ALU performs arithmetic and logical operations on data (see Figure 1). ALU Registers Flags Registers Control unit"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 1 ALU inputs and outputs"
+ },
+ {
+  "t": "li",
+  "x": "Data are presented to ALU in registers and the results of an operation are stored in registers."
+ },
+ {
+  "t": "li",
+  "x": "Registers are temporary storage locations within the processor that are connected by signal paths to ALU."
+ },
+ {
+  "t": "li",
+  "x": "The control unit provides signals that control the operation of ALU and the movement of data into and out of the ALU."
+ },
+ {
+  "t": "li",
+  "x": "Here we will discuss"
+ },
+ {
+  "t": "p",
+  "x": "1. Fixed-point arithmetic operations 2. Floating-point arithmetic operations 3. BCD data arithmetic operations"
+ },
+ {
+  "t": "h2",
+  "x": "Fixed-point representation"
+ },
+ {
+  "t": "p",
+  "x": "The numbers may be positive, zero or negative. So we have two types of numbers: Unsigned numbers Only zero and positive integers can be represented. All bits represent magnitude and no need of sign."
+ },
+ {
+  "t": "h2",
+  "x": "Signed numbers In signed representation, the most significant bit"
+ },
+ {
+  "t": "p",
+  "x": "represents the sign. If the number is positive, the MSB is 0 and remaining bits represent magnitude. If the number is negative, we have three techniques to represents that number: 1. Signed magnitude representation: In signed magnitude representation, the MSB represents sign and remaining bits represents magnitude. If the number is negative then the MSB is 1. Example: Signed magnitude representation of –10 = Magnitude Sign 2. Signed 1’s complement representation:In signed 1’s complement representation, the MSB bit is 1. The remaining bits of its signed magnitude bits are inverted i.e., convert 0’s to 1’s and 1’s to 0’s to obtain 1’s complement."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Signed 1’s complement (-10) = Magnitude Sign 3. Signed 2’s complement representation: To get signed 2’s complement representation, add 1 to the signed 1’s complement of that number."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Signed 2’s complement (-10) = Magnitude Sign"
+ },
+ {
+  "t": "h2",
+  "x": "Fixed-point arithmetic operations"
+ },
+ {
+  "t": "p",
+  "x": "We will discuss the following operations using signed magnitude data and signed 2’s complement data. 1. Addition 2. Subtraction 3. Multiplication 4. Division"
+ },
+ {
+  "t": "h2",
+  "x": "data Consider two numbers whose magnitude is represented"
+ },
+ {
+  "t": "p",
+  "x": "as A and B. When the signed numbers are added or subtracted, there are eight different conditions to consider, depending on the sign of the numbers and operation performed."
+ },
+ {
+  "t": "h2",
+  "x": "Algorithm for addition (subtraction): When the signs of"
+ },
+ {
+  "t": "p",
+  "x": "A and B identical (different), add the two magnitudes and attach the sign of A to the result. When the signs of A and B are different (identical), compare the magnitudes and subtract the smaller number from the larger. Choose the sign of result based on magnitudes of A and B. Example: All eight cases for the numbers A = 5, B = 2. (+A) + (+B) = (+5) + (+2) ⟨eq⟩ 0111= +7 (+A) + (-B) = (+5) + (-2) ⟨eq⟩ Take 2’s complement of -2 and add it to 5 ----- 1] 011 ↑ Discard ∴ result = + 3 (A > B) (–A) + (+B) = (–5) + (+2) ⟨eq⟩ add 2’s complement of –5 to 2 As MSB is 1 take 2’s complement to get original number i.e., 011. Result = 1011 = –3 (∵A > B) (-A) + (-B) = (-5) + (-2) ⟨eq⟩ Result = 1111 = -7 Similarly we can perform the subtractions using signed magnitude data."
+ },
+ {
+  "t": "h2",
+  "x": "Hardware implementation:"
+ },
+ {
+  "t": "p",
+  "x": "B register A register Complementer Parallel adder Bs E AVF As Load sum Input carry Output carry (Mode control) M Sum Figure 2 Hardware implementation for addition and subtraction. Figure 2 shows the hardware implementation for addition and subtraction operations. It consists of registers A and B and sign flip-flops As and Bs. Subtraction is done by adding A to the 2’s complement of B. The output carry is transferred to flip-flop E and add overflow flip-flop AVF holds the overflow bit when A and B are added. The addition is done through the parallel adder. The output of adder is sent to ‘A’ register. The complementer provides an output of B or complement of B depending on the state of mode control M. When M = 0, the output equal to A+B, when M= 1, the output equal to A B + +1, i.e., A – B."
+ },
+ {
+  "t": "h2",
+  "x": "Addition: In 2’s complement representation, addition pro-"
+ },
+ {
+  "t": "p",
+  "x": "ceeds as if the two numbers were unsigned integers. If the result of the operation is positive, we get a positive number in 2’s complement form, which is same as in unsigned integer form. If the result of the operation is negative, we get a negative number in 2’s complement form."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "+5 = 0101 +2 ⟨eq⟩ +7 +5: 0101 -2: 1110 10011 = +3 -5: 101 +2: 0010 As the result is negative, take 2’s complement of result to get original number, i.e., 0011 and the answer is -3. -5: 1011 -2: 1110 11001 As the result is negative take 2’s complement to get original number, i.e., ⟨eq⟩ 0111. ∴ Answer is -7. Note: If two numbers are added and they are both positive or both negative, then overflow occurs if the result has the opposite sign."
+ },
+ {
+  "t": "h2",
+  "x": "Subtraction: To subtract subtrahend from minuend, take"
+ },
+ {
+  "t": "p",
+  "x": "the 2’s complement of subtrahend and add it to the minuend."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "+5: 0101 +2: 0010 To subtract these two numbers add 2’s complement of 2 to 5. +5: 0101 -2: 1110 10011 = +3 +5: 0101 - 2: 1110 2’s complement of -2 = 0010. +5: 0101 +2: 0010 0111 = +7 Similarly for the other cases we can perform the subtraction."
+ },
+ {
+  "t": "h2",
+  "x": "Figure 3 Hardware implementation for signed 2’s complement"
+ },
+ {
+  "t": "p",
+  "x": "addition and subtraction: BR register AC register Complement and parallel adder V Overflow"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 4 Flowchart for addition in 2’s complement form"
+ },
+ {
+  "t": "p",
+  "x": "Augend in AC Addend in BR AC ← AC + BR V ← Overflow Add End"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 5 Flowchart for subtraction of 2’s complement data"
+ },
+ {
+  "t": "p",
+  "x": "Minuend in AC subtrahend in BR AC ← AC + BR + 1 V ← Overflow End Subtract"
+ },
+ {
+  "t": "h2",
+  "x": "Multiplication of signed magnitude data"
+ },
+ {
+  "t": "p",
+  "x": "Multiplicand in B Multiplier in Q Qn SC EA ← A + B shr EAQ SC ← SC − 1 END Multiply operation As ← Qs ⊕ Bs Qs ← Qs ⊕ Bs A ← 0, E ← 0 SC ← ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 6 Flowchart for multiplication of signed magnitude data"
+ },
+ {
+  "t": "p",
+  "x": "Multiplication of two fixed point binary numbers in signed magnitude representation is a process of successive shift and add operations (see Figure 6). Example 1: Multiply the two numbers -7 and +8, using 5-bit registers. -7 = 10111 +8 = 01000 By excluding sign-bits, the multiplicand, B = 0111 and multiplier Q = 1000. Initially A = 0000, SC is sequence counter contains number of bits in multiplier magnitude. Here SC = 4"
+ },
+ {
+  "t": "h2",
+  "x": "Multiplicand"
+ },
+ {
+  "t": "p",
+  "x": "B = 0111 E A Q SC Multiplier in Q Last bit of Q, Qn= 0 ⇒ Shr EAQ Qn= 0 ⇒ Shr EAQ Qn= 0 ⇒ Shr EAQ Qn = 1 ⇒ Add B to A Shr EAQ B × ⟨eq⟩ Sign = Qs ⊕ Bs = 1 ⊕ 0 = 1 ∴ Result = –56 Hardware for signed magnitude data multiplication: B1, A1, Q1 represent the respective signs of the registers B, A, Q. Final result will be in AQ, which consist of 2n-bits. (Here each register has n-bits). B2 B3 Bn A2 A3 An Q2 Q3 Qn E n − 1 bit adder Shift and add control logic"
+ },
+ {
+  "t": "h2",
+  "x": "Multiplication of Singed 2’s complement data The straight"
+ },
+ {
+  "t": "p",
+  "x": "forward multiplication will not work if either the multiplicand or the multiplier is negative. There are number of ways to perform multiplication of signed 2’s complement data. One such a technique is Booth’s multiplication algorithm. The following flowchart depicts about Booth’s algorithm (see figure 7)."
+ },
+ {
+  "t": "h2",
+  "x": "Figure 7 Booth’s multiplication algorithm"
+ },
+ {
+  "t": "p",
+  "x": "Multiplicand in BR Multiplier in QR QnQn +1 SC END Multiply AC ← 0 Qn +1 ← 0 SC ← ⟨eq⟩ AC ← AC + BR AC ← AC + BR + 1 Arithmatic shift right (AC and QR) SC ← SC − 1 An additional 1-bit register placed logically to the right of the LSB(Qn) of Q register designated Qn+1. Example 2: Multiply the two numbers -7 and +8 using booth’s algorithm, using 5 bits. BR = -7 = 11001 QR = +8 = 01000 Initially AC = 00000, Qn+1 = 0, SC = 5"
+ },
+ {
+  "t": "h2",
+  "x": "Qn Qn+1"
+ },
+ {
+  "t": "p",
+  "x": "BR = 11001 BR + = 00111 AC QR Qn+1 SC Initial 00000 01000 ashr(AC and QR) 00000 00100 ashr(AC and QR) 00000 00010 ashr(AC and QR) 00000 00001 subtract BR ashr(AC and QR) 00000 00111 00111 00011 10000 add BR ashr(AC and QR) 00011 11001 11100 11110 10000 01000 ∴ Result = 1111001000 = –56"
+ },
+ {
+  "t": "h2",
+  "x": "Hardware implementation for Booth’s algorithm:"
+ },
+ {
+  "t": "p",
+  "x": "BR register AC register QR register Complementer and parallel adder Qn +1 Qn Sequence counter (SC)"
+ },
+ {
+  "t": "h2",
+  "x": "Note: These two multiplication algorithms are sequential"
+ },
+ {
+  "t": "p",
+  "x": "but we can also do the operation by means of a combinational circuit that forms the product bits all at once. The circuit consist of AND gates and adders."
+ },
+ {
+  "t": "h2",
+  "x": "Division of signed magnitude data: Division of signed"
+ },
+ {
+  "t": "p",
+  "x": "magnitude data is a process of successive compare, shift and subtract operations."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Dividend = 0111000000 Divisor = 10001 10001) 0111000000 (11010 ­–10001 010110 –10001 0010100 –10001 000110"
+ },
+ {
+  "t": "h2",
+  "x": "Hardware implementation:"
+ },
+ {
+  "t": "li",
+  "x": "The hardware implementation of division is same as multiplication, instead of shifting the divisor to the right, the dividend or partial remainder is shifted to the left, thus leaving the two numbers in the required relative position."
+ },
+ {
+  "t": "li",
+  "x": "The divisor is stored in the B register and the doublelength dividend is stored in registers A and Q. The dividend is shifted to the left and the divisor is subtracted by adding its 2’s complement value. The information about the relative magnitude is available in E."
+ },
+ {
+  "t": "li",
+  "x": "If E = 1, it signifies that A ≥ B. A quotient bit 1 is inserted into Qn and the partial remainder is shifted to the left to repeat the process."
+ },
+ {
+  "t": "li",
+  "x": "If E = 0, it signifies that A < B so the quotient is Qn remains a 0. The value of B is added to restore the partial remainder in A to its previous value. The partial remainder is shifted to the left and the process is repeated again until all quotient bits are formed."
+ },
+ {
+  "t": "li",
+  "x": "Finally, the quotient is in Q and remainder is in A. This method is called restoring method."
+ },
+ {
+  "t": "h2",
+  "x": "Divide overflow:"
+ },
+ {
+  "t": "li",
+  "x": "A divide overflow condition occurs if the high-order half bits of the dividend constitute a number greater than or equal to the divisor."
+ },
+ {
+  "t": "li",
+  "x": "A division by zero must be avoided."
+ },
+ {
+  "t": "h2",
+  "x": "Other algorithms for division: Two other methods are"
+ },
+ {
+  "t": "p",
+  "x": "available for dividing numbers: Comparison method: To divide the two numbers A and B in comparison method, they are compared prior to the subtraction operation. If A ≥ B, B is subtracted from A. If A < B nothing is done. The partial remainder is shifted left and the numbers are compared again."
+ },
+ {
+  "t": "h2",
+  "x": "Non-restoring method: To divide two numbers A and B"
+ },
+ {
+  "t": "p",
+  "x": "is non-restoring method, B is not added if the difference is negative but instead, the negative difference is shifted left and then B is added."
+ },
+ {
+  "t": "h2",
+  "x": "Floating-point representation"
+ },
+ {
+  "t": "p",
+  "x": "Fixed-point representation allows representation of numbers with fractional component as well. But this approach has limitations. It is not possible to represent very large numbers and very small numbers in fixed point representation. In floating-point representation, the numbers can be represented in the form, ± S × B ± E The three fields are Sign: plus or minus Significand: S Exponent: E are stored in a binary word. The base B is implicit and need not be stored because it is same for all the numbers. It is assumed that the radix point is to the right of the left most or most significant bit of the significand, i.e., there is one bit to the left of the radix point."
+ },
+ {
+  "t": "h2",
+  "x": "32-bit floating-point format: The left most bit stores the"
+ },
+ {
+  "t": "p",
+  "x": "sign of the number. The exponent value is stored in next 8-bits. This is represented in biased representation. Sign of significand Biased exponent Significand 23-bits 8-bits"
+ },
+ {
+  "t": "h2",
+  "x": "Biased representation: In biased representation, a fixed"
+ },
+ {
+  "t": "p",
+  "x": "value, called the bias, is subtracted from the exponent field to get the true exponent value. Bias = (2k-1 - 1), where k = number of bits in binary exponent. In IEEE 32-bit floating point representation, bias ⟨eq⟩ 127. And the range of true exponents is -127 to +128. The advantage of biased representation is that non-negative floating point numbers can be treated as integers for comparison purposes. The last portion of word is the siginificand."
+ },
+ {
+  "t": "h2",
+  "x": "Normalized numbers:"
+ },
+ {
+  "t": "li",
+  "x": "To simplify operation on floating point numbers, it is typically required that they must be normalized."
+ },
+ {
+  "t": "li",
+  "x": "A normalized number is one in which the most significant digit of significand is non-zero."
+ },
+ {
+  "t": "li",
+  "x": "For base-2 representation, a normalized number is therefore one in which the MSB of the significand is one."
+ },
+ {
+  "t": "li",
+  "x": "Normalized non-zero number is one in the form ± 1.bbb… b × 2 ± E, where b is either binary digit 0 or 1."
+ },
+ {
+  "t": "p",
+  "x": "Figure 8 Range of expressible numbers in a 32-bit ﬂ oating point format Negetive overflow Negetive overflow Positive underflow Positive overflow Expressible negetive numbers Expressible positive numbers Zero − (2 − 2−23) × 2128 (2 − 2−23) × 2128 − 2−127 2−127 Number line"
+ },
+ {
+  "t": "li",
+  "x": "As the MSB is always one, it is unnecessary to store this bit. Thus the 23-bit field is used to store a 24-bit signifi - cand with a value in the half open internal (1, 2)."
+ },
+ {
+  "t": "li",
+  "x": "A number may be normalized by shifting the radix point to the right of the leftmost 1 bit and adjusting the exponent accordingly."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "In 32-bit floating representation of -1.6328125× 2 - 20, Sign = 1 (as the number is negative) (.6328125)10 = (.1010001…)2 Exponent = -20 Biased exponent ⟨eq⟩ ∴ -1.6328125 × ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "IEEE standard for binary ﬂ oating-point representation"
+ },
+ {
+  "t": "p",
+  "x": "Sign bit Biased exponent Fraction 23-bits 8-bits Single precision format Sign bit Biased exponent Fraction 52-bits 11-bits Double precision Format"
+ },
+ {
+  "t": "h2",
+  "x": "(i) Addition and subtraction: The algorithm consists"
+ },
+ {
+  "t": "p",
+  "x": "the following phases: 1. Check for zeros 2. Align the significands/mantissas 3. Add or subtract the significands 4. Normalize the result"
+ },
+ {
+  "t": "h2",
+  "x": "(ii) Multiplication: The steps to multiply two floating"
+ },
+ {
+  "t": "p",
+  "x": "point numbers are 1. Check for zeros 2. Add the exponents 3. Multiply the significands 4. Normalize the result"
+ },
+ {
+  "t": "h2",
+  "x": "(iii) Division: The steps to divide two floating point"
+ },
+ {
+  "t": "p",
+  "x": "numbers are 1. Check for zeros 2. Initialize registers and evaluate the sign 3. Align the dividend 4. Subtract the exponents 5. Divide the significands"
+ },
+ {
+  "t": "h2",
+  "x": "Arithmetic Operations"
+ },
+ {
+  "t": "p",
+  "x": "Computers capable of performing decimal arithmetic must store the data in binary-coded form. Example: BCD of 239 = 0010 0011 1001"
+ },
+ {
+  "t": "h2",
+  "x": "BCD addition"
+ },
+ {
+  "t": "p",
+  "x": "In BCD each digit do not exceed 9, so the sum of two BCD digits cannot be greater than ⟨eq⟩ 19, the 1 in the sum being an input carry. When the binary sum of two BCD digits is greater than 1001, we obtain a non-valid BCD representation. The addition of binary 6 (0110) to the binary sum converts it to the correct BCD representation and also produces an output carry as required."
+ },
+ {
+  "t": "h2",
+  "x": "BCD subtraction"
+ },
+ {
+  "t": "li",
+  "x": "Perform the subtraction by taking the 9’s or 10’s complement of the subtrahend and adding it to the minuend."
+ },
+ {
+  "t": "li",
+  "x": "The 9’s complement of a decimal digit represented in BCD can be obtained by complementing the bits in the coded representation of the digit, provided a correction is included."
+ },
+ {
+  "t": "p",
+  "x": "There are two possible correction methods: 1. Binary 1010 is added to each complemented digit and the carry discarded after each addition."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "9’s complement of 7 = 2 7 in BCD = 0111. Complement of 7 = 1000 Add 1010 = 1010 1] 0010 = 2 ↑ Discard 2. Binary 0110 is added before the digit is complemented."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "BCD of 7 = 0111 Add 0110 = 0110 Complement ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Example 4: Which of the following multiplier bit pattern"
+ },
+ {
+  "t": "p",
+  "x": "of Booth’s multiplication algorithm gives worst case performance? (A) 01010101….0101 (B) 000000….0000 (C) 11111111….1111 (D) 011110111110….01110"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (A)"
+ },
+ {
+  "t": "p",
+  "x": "Booth’s multiplication algorithm works well with consecutive 0’s or 1’s. But it gives worst case performance when the multiplier consists of alternative 0’s and 1’s. (As 01, 10 pattern leads to addition and subtractions)."
+ },
+ {
+  "t": "h2",
+  "x": "Example 5: Consider the following 32-bit floating point"
+ },
+ {
+  "t": "p",
+  "x": "representation scheme as shown in the format below: Sign Exponent Fraction A value is specified by three fields: Sign field: 1 bit (0 for positive and 1 for negative values) Fraction: 24-bits (with binary point being at the left end of fraction bits) Exponent:7-bits (in excess-64 signed integer representation) The base of exponentiation is 16. The sign bit is in MSB. Then the normalized floating point representation of - 6.5 is (A) E8000042 (B) E1000012 (C) D8000841 (D) D0000042"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (D)"
+ },
+ {
+  "t": "p",
+  "x": "Here sign = 1 as the number is negative. (-6.5)10 = (-0110.1)2 = (-1.101 × 22) Fraction = 101000000000000000000000 Exponent = Excess - 64 exponent ⟨eq⟩ ∴ (-6.5)10 ⟨eq⟩ D0000042."
+ },
+ {
+  "t": "h1",
+  "x": "Data Path"
+ },
+ {
+  "t": "p",
+  "x": "Data path consists of the components of the processor that performs arithmetic operations. Components of data path: ALU is just one data path building block. Other components are 1. \u0007Computational Components, which consist of combinational circuits (output follow inputs) Example: ALU. 2. \u0007State components, which consists of sequential circuits (output changes on clock edge) Example: Registers. Example: The sequence of steps for the addition of two registers content are 1. R1out, Xin 2. R2out, Choose X, ADDITION, Yin 3. Yout, R3in (Each step executed in a single clock cycle)."
+ },
+ {
+  "t": "li",
+  "x": "Data path and control unit forms the processing unit of a computer. The Data path includes ALU, multiplexers, all registers (like PC, IR) etc."
+ },
+ {
+  "t": "h2",
+  "x": "Example Data Path Design:"
+ },
+ {
+  "t": "p",
+  "x": "Read address of instruction PC Increment PC memory fetch IC +"
+ },
+ {
+  "t": "h1",
+  "x": "CPU Control Design"
+ },
+ {
+  "t": "h2",
+  "x": "Instruction Cycle"
+ },
+ {
+  "t": "p",
+  "x": "A program residing in the memory unit of the computer consists of a sequence of instructions. The program is executed in the computer by going through a cycle for each instruction. Each instruction cycle in turn is subdivided into a sequence of sub cycles. For example, the phases of instruction cycle may be 1. Fetch 2. Decode 3. Read effective address 4. Execute, etc. Next instruction Fetch Execute Instruction cycle The cycle will be repeated, till all the instructions are executed. Each phase is made up of more fundamental operations, called micro-operations. Example micro-operations: Transfer between registers, simple ALU operation, etc."
+ },
+ {
+  "t": "h2",
+  "x": "Control Unit"
+ },
+ {
+  "t": "p",
+  "x": "The control unit of a processor performs two tasks: 1. It causes the processor to execute micro-operations in the proper sequence, determined by the program being executed. 2. It generates the control signals that cause each microoperation to be executed. We now discuss the micro-operations of various phases of instruction cycle."
+ },
+ {
+  "t": "h2",
+  "x": "Micro-operation"
+ },
+ {
+  "t": "li",
+  "x": "These are the functional or atomic operations of a processor."
+ },
+ {
+  "t": "p",
+  "x": "Fetch Execute Decode Micro Operation Micro Operation Instruction Cycle Instruction Cycle Program Execution Instruction Cycle Instruction Cycle Fetch Cycle: ‘Fetch’ stage of an instruction occurs at the beginning of each instruction, which causes an instruction to be fetched from memory. The micro-operations involved in fetch phase are t1: MAR ← PC (move contents of PC to MAR) t2: \u0007MBR← memory; PC ← (PC) + I (move contents of MAR location to MBR and increment PC by I) t3: IR← (MBR) ⋅ (move contents of MBR to IR) Here I is instruction length. Each micro-operation can be performed within the time of a single time unit. Execute Cycle: For a machine with N different opcodes, there will be N different sequence of micro-operations. For the execution of following instruction. Add R1, X, the micro-operations will be t1: MAR← (IR(Address)) t2: MBR← memory t3: R1← (R1) + (MBR)"
+ },
+ {
+  "t": "h2",
+  "x": "(i) Functional requirements of control unit: Let us"
+ },
+ {
+  "t": "p",
+  "x": "consider the following concepts to the characterization of a CU. 1. Define the basic elements of the processor. 2. Describe the micro-operations that the processor performs. 3. Determine the functions that the control unit must perform to cause the micro-operations to be performed."
+ },
+ {
+  "t": "h2",
+  "x": "(ii) Basic elements of processor:"
+ },
+ {
+  "t": "li",
+  "x": "Registers"
+ },
+ {
+  "t": "li",
+  "x": "Internal data path: Used to move data between registers and between register and ALU."
+ },
+ {
+  "t": "li",
+  "x": "External data path: Used to link registers to memory and input–output modules, often by means of a system bus."
+ },
+ {
+  "t": "li",
+  "x": "Control unit: Causes operations to happen within the processor."
+ },
+ {
+  "t": "h2",
+  "x": "(iii) Micro-operations of processor:"
+ },
+ {
+  "t": "li",
+  "x": "Transfer data from one register to another."
+ },
+ {
+  "t": "li",
+  "x": "Transfer data from a register to an external interface."
+ },
+ {
+  "t": "li",
+  "x": "Transfer data from an external interface to a register."
+ },
+ {
+  "t": "li",
+  "x": "Perform an arithmetic or logic operation, using registers for input and output."
+ },
+ {
+  "t": "h2",
+  "x": "(iv) Control unit tasks:"
+ },
+ {
+  "t": "li",
+  "x": "Sequencing: The control unit causes the processor to step through a series of micro-operations in the proper sequence, based on the program being executed."
+ },
+ {
+  "t": "li",
+  "x": "Execution: The control unit causes each microoperation to be executed."
+ },
+ {
+  "t": "p",
+  "x": "(v) Control signals: For the control unit to perform its function, it must have inputs that allow it to determine the state of the system and outputs that allows it to control the behaviour of the system. These are external specifications of the control unit. Internally, the control unit must have the logic required to perform its sequencing and execution functions. Control unit Instruction register Clock Flags Control signals from control bus Control signals within CPU Control signals to control bus Control bus"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 9 Block diagram of control unit"
+ },
+ {
+  "t": "p",
+  "x": "(a) Clock: This is how the control unit ‘keeps time.’ The control unit causes one micro-operation to be performed for each clock pulse. This is referred as processor cycle time or clock cycle time."
+ },
+ {
+  "t": "h2",
+  "x": "(b) Instruction registers: The opcode of current"
+ },
+ {
+  "t": "p",
+  "x": "instruction is used to determine which microoperations to perform during the execute cycle. (c) Flags: Used to determine the status of the processor and outcome of previous ALU operations."
+ },
+ {
+  "t": "h2",
+  "x": "(d) Control signals from control bus: The control bus"
+ },
+ {
+  "t": "p",
+  "x": "portion of system bus provides signals to the control unit."
+ },
+ {
+  "t": "h2",
+  "x": "(e) Control signals within the processor:"
+ },
+ {
+  "t": "p",
+  "x": "1. \u0007Those that cause data to be moved from register to another. 2. Those that activate specific ALU functions."
+ },
+ {
+  "t": "h2",
+  "x": "(f) Control signals to control bus:"
+ },
+ {
+  "t": "p",
+  "x": "1. Control signals to memory. 2. Control signals to input–output modules. Totally, there are three types of control signals: 1. Those that activate ALU function. 2. Those that activate a data path. 3. Those that are signals on the external system bus."
+ },
+ {
+  "t": "h2",
+  "x": "Functions of Control Unit"
+ },
+ {
+  "t": "li",
+  "x": "The control unit directs the entire computer system to carry out stored program instructions."
+ },
+ {
+  "t": "li",
+  "x": "The control unit must communicate with both the Arithmetic Logic Unit and Main memory."
+ },
+ {
+  "t": "li",
+  "x": "The control unit instructs the arithmetic logic unit by which, logical or arithmetic operation is to be performed."
+ },
+ {
+  "t": "li",
+  "x": "The control unit coordinate the activities of the other two units as well as all peripheral and auxiliary storage devices linked to the computer."
+ },
+ {
+  "t": "h2",
+  "x": "Design of Control Unit"
+ },
+ {
+  "t": "p",
+  "x": "Control unit generates control signals using one of the two organizations (1) Hardwired control unit (2) Micro-programmed control unit."
+ },
+ {
+  "t": "h2",
+  "x": "Hardwired control unit"
+ },
+ {
+  "t": "li",
+  "x": "It is implemented as logic circuits (gates, flip-flops, decoders, etc.) in the hardware."
+ },
+ {
+  "t": "li",
+  "x": "It is very complicated if we have a large control unit."
+ },
+ {
+  "t": "li",
+  "x": "In this organization, if the design has to be modified or changed. It requires changes in wiring among the various components. Thus the modification of all the combinational circuits may be very difficult."
+ },
+ {
+  "t": "h2",
+  "x": "Architecture of hardwired control unit An example hard-"
+ },
+ {
+  "t": "p",
+  "x": "wired control unit is shown in Figure 9. OP code Address I Control unit T1T0 3 × 8 Decoder 4 × 16 Decoder 4 bit sequence counter D0 D7 D1 D2 D3 D6 D5 D4"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 10 Hardwired control unit"
+ },
+ {
+  "t": "li",
+  "x": "Instruction Register"
+ },
+ {
+  "t": "li",
+  "x": "Number of control logic gates"
+ },
+ {
+  "t": "li",
+  "x": "Two decoders"
+ },
+ {
+  "t": "li",
+  "x": "4-bit sequence counter."
+ },
+ {
+  "t": "li",
+  "x": "An instruction read from memory is placed in the instruction register (IR)"
+ },
+ {
+  "t": "li",
+  "x": "The instruction register is divided into three parts: the I bit, operation code and Address part."
+ },
+ {
+  "t": "li",
+  "x": "First 12-bits (0-11) to specify an address, next 3-bits specify the operation code (op code) field of the instruction and last left most bit specify the addressing mode I."
+ },
+ {
+  "t": "p",
+  "x": "I = 0 for direct address I = 1 for indirect address"
+ },
+ {
+  "t": "li",
+  "x": "First 12-bits are applied to the control logic gates."
+ },
+ {
+  "t": "li",
+  "x": "The Opcode bits (12-14) are decoded with 3 × 8 decoder."
+ },
+ {
+  "t": "li",
+  "x": "The eight outputs (D0 through D7) from a decoder go to the control logic gates to perform specific operation."
+ },
+ {
+  "t": "li",
+  "x": "Last bit 15 is transferred to a I flip flop designated by symbol I."
+ },
+ {
+  "t": "li",
+  "x": "The 4-bit sequence counter SC can count in binary from 0 through15."
+ },
+ {
+  "t": "li",
+  "x": "The counter output is decoded into 16 timing pulses T0 through T15."
+ },
+ {
+  "t": "li",
+  "x": "The sequence counter can be incremented by INR input or clear by CLR input synchronically."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages:"
+ },
+ {
+  "t": "li",
+  "x": "Hardwired control unit is fast because control signals are generated by combinational circuits."
+ },
+ {
+  "t": "li",
+  "x": "The delay in generation of control signals depends upon the number of gates."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages:"
+ },
+ {
+  "t": "li",
+  "x": "More is the control signal required by CPU, more complex will be the design of control unit."
+ },
+ {
+  "t": "li",
+  "x": "Modifications in control signal are very difficult. That means it requires rearranging of wires in the hardware circuit."
+ },
+ {
+  "t": "li",
+  "x": "It is difficult to correct mistake in original design or adding new features."
+ },
+ {
+  "t": "h2",
+  "x": "Micro-programming control unit"
+ },
+ {
+  "t": "li",
+  "x": "A micro-programmed Control unit is implemented using programming approach. A sequence of micro-operations are carried out by executing a program consisting of microinstructions."
+ },
+ {
+  "t": "li",
+  "x": "Micro-program, consisting of micro instructions is stored in the control memory of the control unit."
+ },
+ {
+  "t": "li",
+  "x": "Execution of micro-instruction is responsible for generation of a set of control signals."
+ },
+ {
+  "t": "li",
+  "x": "One or more micro-instructions to be executed."
+ },
+ {
+  "t": "li",
+  "x": "Address of next micro-instruction to be executed."
+ },
+ {
+  "t": "h2",
+  "x": "(a) Micro-operations: The operations performed on"
+ },
+ {
+  "t": "p",
+  "x": "the Data stored inside the registers are called Microoperations."
+ },
+ {
+  "t": "h2",
+  "x": "(b) Micro-programs: Micro-programming is the concept"
+ },
+ {
+  "t": "p",
+  "x": "for generating control signals using programs. These programs are called Micro-programs."
+ },
+ {
+  "t": "h2",
+  "x": "(c) Micro-instructions: The instructions that make"
+ },
+ {
+  "t": "p",
+  "x": "Micro-programs are called micro-instructions."
+ },
+ {
+  "t": "h2",
+  "x": "(d) Micro-code: Micro-program is a group of micro-"
+ },
+ {
+  "t": "p",
+  "x": "instructions. Micro-program can also be termed as micro-code."
+ },
+ {
+  "t": "h2",
+  "x": "(e) Control memory: Micro-programs are stored in the"
+ },
+ {
+  "t": "p",
+  "x": "read-only memory (ROM). That memory is called control memory."
+ },
+ {
+  "t": "h2",
+  "x": "(f) Architecture of Micro-Programmed Control Unit:"
+ },
+ {
+  "t": "p",
+  "x": "Control word Control data register Control memory Control address register Next address generator"
+ },
+ {
+  "t": "li",
+  "x": "The address of micro-instruction that is to be executed is stored in the control address register (CAR)."
+ },
+ {
+  "t": "li",
+  "x": "Micro-instruction corresponding to the address stored in CAR is fetched from control memory and is stored in the control data register (CDR)."
+ },
+ {
+  "t": "li",
+  "x": "This micro-instruction contains control word to execute one or more micro-operations."
+ },
+ {
+  "t": "li",
+  "x": "After the execution of all micro-operations of micro-instructions, the address of next micro-instructions is located."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages:"
+ },
+ {
+  "t": "li",
+  "x": "The design of micro-program control unit is less complex because micro-programs are implemented using software routines."
+ },
+ {
+  "t": "li",
+  "x": "The micro-programmed control unit is more flexible because design modifications, correction and enhancement is easily possible."
+ },
+ {
+  "t": "li",
+  "x": "The new or modified instruction set of CPU can be easily implemented by simply rewriting or modifying the contents of control memory."
+ },
+ {
+  "t": "li",
+  "x": "The fault can be easily diagnosed in the micro-program control unit using diagnostic tools by maintaining the contents of flags, registers and counters."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages:"
+ },
+ {
+  "t": "li",
+  "x": "The micro-program control unit is slower than hardwired control unit. That means to execute an instruction in micro-program control unit requires more time."
+ },
+ {
+  "t": "li",
+  "x": "The micro-program control unit is expensive than hardwired control unit in case of limited hardware resources."
+ },
+ {
+  "t": "li",
+  "x": "The design duration of micro-program control unit is more than hardwired control unit for smaller CPU."
+ },
+ {
+  "t": "h2",
+  "x": "Horizontal micro-instruction"
+ },
+ {
+  "t": "li",
+  "x": "Individual bits in horizontal micro-instructions correspond to individual control lines."
+ },
+ {
+  "t": "li",
+  "x": "These are long and allow maximum parallelism since each bit controls a single control line."
+ },
+ {
+  "t": "li",
+  "x": "No decoding needed."
+ },
+ {
+  "t": "p",
+  "x": "Microinstruction address Jump condition - unconditional - zero - overflow - indirect bit System bus control signals Internal CPU control signals"
+ },
+ {
+  "t": "h2",
+  "x": "Vertical micro-instruction"
+ },
+ {
+  "t": "li",
+  "x": "Here, control lines are coded into specific fields within a micro-instruction."
+ },
+ {
+  "t": "li",
+  "x": "Decoders are needed to map a field of k-bits to 2k possible combinations of control lines."
+ },
+ {
+  "t": "p",
+  "x": "Microinstruction address Jump condition Function codes"
+ },
+ {
+  "t": "h2",
+  "x": "Example: A 3-bit field in a micro-instruction could be"
+ },
+ {
+  "t": "p",
+  "x": "used to specify any one of eight possible lines."
+ },
+ {
+  "t": "li",
+  "x": "Hence these instructions are much shorter than horizontal ones."
+ },
+ {
+  "t": "li",
+  "x": "Control fields encoded in the same field cannot be activated simultaneously. Therefore vertical micro-instructions allow only limited parallelism."
+ },
+ {
+  "t": "li",
+  "x": "Decoding is necessary."
+ },
+ {
+  "t": "h2",
+  "x": "Micro-instruction Sequencing"
+ },
+ {
+  "t": "p",
+  "x": "Two concerns are involved in the design of a micro-instruction sequencing technique: 1. The size of micro-instruction: Minimizing size of control memory reduces the cost of that component. 2. The address-generation time: A desire to execute micro-instructions as fast as possible. In executing a micro program, the address of next microinstruction to be executed is in one of these categories. 1. Determined by IR 2. Next sequential address 3. Branch"
+ },
+ {
+  "t": "h2",
+  "x": "Micro-instructions Execution"
+ },
+ {
+  "t": "p",
+  "x": "The Micro-instruction cycle has two parts: 1. Fetch 2. Execution The effect of execution of a micro-instruction is to generate control signals. Some of the signals control points internal to the processor. The remaining signals go to the external control bus or other external interface. Micro-instructions can be classified in a variety of ways. 1. Vertical/horizontal 2. Packed/unpacked 3. Hard/soft micro-programming 4. Direct/indirect encoding."
+ },
+ {
+  "t": "h1",
+  "x": "RISC and CISC"
+ },
+ {
+  "t": "p",
+  "x": "One of the important aspects of computer architecture is the design of the instruction set for the processor. The instruction set chosen for a particular computer determines the way that machine language programs are constructed. There are two categories of computers based on instructions: 1. Complex instruction set computer (CISC) 2. Reduced instruction set computer (RISC) CISC: A computer with a large number of instructions is classified as a complex instruction set computer."
+ },
+ {
+  "t": "h2",
+  "x": "RISC: A computer which has fewer instructions with sim-"
+ },
+ {
+  "t": "p",
+  "x": "ple constructs, so they can be executed much faster with in the CPU without having to use memory as often. This type of computer is classified as RISC."
+ },
+ {
+  "t": "h2",
+  "x": "CISC characteristics"
+ },
+ {
+  "t": "li",
+  "x": "CISC provides a single machine instruction for each statement, That is written in a high level language so that compilation process is simplified and the over all computer performance improved."
+ },
+ {
+  "t": "li",
+  "x": "It has variable length instruction formats."
+ },
+ {
+  "t": "li",
+  "x": "It provides direct manipulation of operands residing in memory."
+ },
+ {
+  "t": "li",
+  "x": "Some instructions that perform specialized tasks and are used infrequently."
+ },
+ {
+  "t": "li",
+  "x": "A large variety of addressing modes"
+ },
+ {
+  "t": "h2",
+  "x": "Drawback of CISC architecture As more instructions and"
+ },
+ {
+  "t": "p",
+  "x": "addressing modes are incorporated into a computer, the more hardware logic is needed to implement and support them and hence this causes the computations to slow down."
+ },
+ {
+  "t": "h2",
+  "x": "RISC characteristics"
+ },
+ {
+  "t": "li",
+  "x": "Reduce execution time by simplifying the instruction set of the computer."
+ },
+ {
+  "t": "li",
+  "x": "Fewer numbers of instructions"
+ },
+ {
+  "t": "li",
+  "x": "Relatively fewer addressing modes"
+ },
+ {
+  "t": "li",
+  "x": "Memory access is limited to load and store instructions."
+ },
+ {
+  "t": "li",
+  "x": "All operations are done with in the register of the CPU."
+ },
+ {
+  "t": "li",
+  "x": "Fixed - length, easily decoded instruction format."
+ },
+ {
+  "t": "li",
+  "x": "Single-cycle instruction execution."
+ },
+ {
+  "t": "li",
+  "x": "Hardwired rather than micro-programmed control."
+ },
+ {
+  "t": "li",
+  "x": "Relatively large number of registers."
+ },
+ {
+  "t": "li",
+  "x": "Uses overlapped register windows to speed - up procedure call and return."
+ },
+ {
+  "t": "li",
+  "x": "Efficient instruction pipeline."
+ },
+ {
+  "t": "li",
+  "x": "Efficient translation of high - level language programs into machine language programs by the compiler."
+ },
+ {
+  "t": "p",
+  "x": "Example 6: An instruction set of a processor has 200 signals which can be divided into 5 groups of mutually exclusive signals as follows. Group 1: 30 Signals Group 2: 90 Signals Group 3: 20 Signals Group 4: 10 Signals Group 5: 50 Signals How many bits of the control words can be saved by using vertical micro-programming over horizontal microprogramming? (A) 27 (B) 173 (C) 200 (D) 227"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: Horizontal micro-programming requires 200"
+ },
+ {
+  "t": "p",
+  "x": "signals. But vertical micro-programming uses encoding. So Group 1 requires 5-bits (∵ 25 = 32) Group 2 requires 7-bits (∵ 27 = 128) Group 3 requires 5-bits (∵ 25 = 32) Group 4 requires 4-bits (∵ 24 = 16) Group 5 requires 6-bits (∵ 26 = 64) ∴ \u0007Total bits required using vertical micro programming = 27 ∴ Number of bits saved = 200 – 27 = 173"
+ },
+ {
+  "t": "h2",
+  "x": "Exercise"
+ },
+ {
+  "t": "h1",
+  "x": "3. Memory Interface, I/O Interface"
+ },
+ {
+  "t": "p",
+  "x": "Memory interface RAM ROM Memory interfacing Input–output interfacing Handshaking Data transfer mode Design techniques for interrupts Direct memory access Input–output processor"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "Memory Interface"
+ },
+ {
+  "t": "h2",
+  "x": "Basic Concepts"
+ },
+ {
+  "t": "p",
+  "x": "Computer memory is used to store programs and data. The maximum size of a memory that can be used in any computer is determined by the addressing scheme. Example: If the memory address has 16-bits, then the size of memory will be 216 Bytes. k-bit address bus Memory CPU n-bit data bus Control lines Upto 2k addressable lines Word length = n bits MAR MBR If MAR is k-bits long and MDR is n-bits long, then the memory may contain up to 2k addressable locations and the n-bits of data are transferred between the processor and memory. This transfer takes place over processor bus. The processor bus has 1. Address line 2. Data line 3. Control line Control line is used for coordinating data transfer. Processor reads the data from the memory by loading the address of the required memory location into MAR and setting the R W / line to 1. The memory responds by placing the data from the addressed location onto the data lines and confirms the actions. Upon confirmation, the processor loads the data onto the data lines, into MDR register. The processor writes the data into the memory location by loading the address of this location into MAR and loading the data into MDR sets the R W / line to 0."
+ },
+ {
+  "t": "li",
+  "x": "Memory Access Time: It is the time that elapses between the initiation of an operation and the completion of that operation."
+ },
+ {
+  "t": "li",
+  "x": "Memory Cycle Time: It is the minimum time delay that required between the initiations of two successive memory operations."
+ },
+ {
+  "t": "h2",
+  "x": "RAM (Random Access Memory)"
+ },
+ {
+  "t": "p",
+  "x": "In RAM, if any location that can be accessed for a read/write operation in fixed amount of time, it is independent of the location’s address:"
+ },
+ {
+  "t": "li",
+  "x": "Memory cells are usually organized in the form of array, in which each cell is capable of storing one bit of information."
+ },
+ {
+  "t": "li",
+  "x": "Each row of cells constitutes a memory word and all cells of a row are connected to a common line called as word line."
+ },
+ {
+  "t": "li",
+  "x": "The cells in each column are connected to sense/write circuit by two bit lines."
+ },
+ {
+  "t": "p",
+  "x": "The data input and data output of each sense/write circuit are connected to a single bidirectional data line that can be connected to a data bus."
+ },
+ {
+  "t": "li",
+  "x": "CS: Chip select input selects a given chip in the ­multi-chip memory system."
+ },
+ {
+  "t": "h2",
+  "x": "Static memories"
+ },
+ {
+  "t": "p",
+  "x": "Memories that consist of circuits capable of retaining their state as long as power is applied are known as static memories."
+ },
+ {
+  "t": "h2",
+  "x": "SRAM (static RAM) SRAM consists of two inverters, two"
+ },
+ {
+  "t": "p",
+  "x": "transistors. In order to read the state of the SRAM cell, the word line is activated to close switches T1 and T2. Bit lines Word line T1 T2 l2 l1 b b′"
+ },
+ {
+  "t": "h2",
+  "x": "Advantages of SRAM:"
+ },
+ {
+  "t": "p",
+  "x": "1. It has low power consumption, because the current flows in the cell only when the cell is being activated or accessed. 2. SRAM can be accessed quickly."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages of SRAM: SRAMs are said to be volatile"
+ },
+ {
+  "t": "p",
+  "x": "memories, because their contents are lost when the power is interrupted."
+ },
+ {
+  "t": "h2",
+  "x": "DRAM (Dynamic RAM) Less expensive RAMs can be"
+ },
+ {
+  "t": "p",
+  "x": "implemented if simplex cells are used, such cells cannot retain their state indefinitely. Hence they are called dynamic RAMs. The information stored in a dynamic memory cell in the form of a charge on a capacitor and this charge can be maintained only for tens of milliseconds. The contents must be periodically refreshed by restoring the capacitor charge to its full value."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Single-transistor dynamic memory cell:"
+ },
+ {
+  "t": "p",
+  "x": "Word line Bit line C T If charge on capacitor > threshold value, then bit line will have ‘1’. If charge on capacitor < threshold value, then bit line will have ‘0’."
+ },
+ {
+  "t": "h2",
+  "x": "SRAM"
+ },
+ {
+  "t": "p",
+  "x": "1. Volatile 1. Volatile 2. \u0007Simple to build and slower than SRAM 2. Faster than DRAM 3. Need refresh circuitry 3. More expensive to build 4. \u0007Favoured for large ­memory units 4. Favoured for cache memory Latency It is the amount of time it takes to transfer a word of data to or from the memory."
+ },
+ {
+  "t": "li",
+  "x": "For the transfer of a single word, the latency provides the complete indication of memory performance."
+ },
+ {
+  "t": "li",
+  "x": "For a block transfer, the latency denotes the time it takes to transfer the first word of data."
+ },
+ {
+  "t": "p",
+  "x": "Bandwidth It is defined as the number of bits or bytes that can be transferred in one second. Note: All dynamic memories have to be refreshed."
+ },
+ {
+  "t": "h2",
+  "x": "Figure 2 RAM chip block diagram"
+ },
+ {
+  "t": "p",
+  "x": "CS1 CS2 RD 128 × 8 RAM WR AD1 − AD7 8-bit bidirectional data bas CS1 Read Write 7-bit address CS2 Address Decoder Data i/o lines R/W CS Memory cells W0 b 7 b 7 b 7′ b1 b1 b1′ b0 b0 b0′ A0 A1 A2 A3 W1 W2 Sense/Write circuit Sense/Write circuit Sense/Write circuit Figure 1 Organization of bit cells in a memory chip"
+ },
+ {
+  "t": "h2",
+  "x": "Read-only Memory (ROM)"
+ },
+ {
+  "t": "p",
+  "x": "Both SRAM and DRAM chips are volatile, which means that they lose the stored information if power is turned off. If the normal operation involves only reading of stored data, use ROM memory. Word line T P Connected to store 0. Not connected to store 1."
+ },
+ {
+  "t": "h2",
+  "x": "Types of ROM"
+ },
+ {
+  "t": "p",
+  "x": "Different types of non-volatile ROM are: 1. PROM (Programmable ROM):"
+ },
+ {
+  "t": "li",
+  "x": "Allows the data to be loaded by the user."
+ },
+ {
+  "t": "li",
+  "x": "Less expensive, faster, flexible."
+ },
+ {
+  "t": "li",
+  "x": "Allows the stored data to be erased and new data to be loaded."
+ },
+ {
+  "t": "li",
+  "x": "Flexible, retain information for a long time."
+ },
+ {
+  "t": "li",
+  "x": "Contents erased by UV light."
+ },
+ {
+  "t": "li",
+  "x": "Programmed and erased electrically."
+ },
+ {
+  "t": "li",
+  "x": "Allows the erasing of all cell contents selectively."
+ },
+ {
+  "t": "li",
+  "x": "Requires different voltage for erasing, writing and reading of stored data."
+ },
+ {
+  "t": "p",
+  "x": "4. Flash memory: Allows to read the contents of a single cell but it is only possible to write the entire contents of a block."
+ },
+ {
+  "t": "h2",
+  "x": "Figure 4 Block diagram of ROM chip"
+ },
+ {
+  "t": "p",
+  "x": "CS1 CS2 512 × 8 ROM AD1 − AD9 8-bit unidirectional data bas Chip select 1 Chip select 2 9-bit address"
+ },
+ {
+  "t": "h2",
+  "x": "Memory Interfacing"
+ },
+ {
+  "t": "p",
+  "x": "The interfacing circuit enables the access of processor to memory. The function of memory interfacing is that the processor should be able to read from and write into a given register of a memory chip. To perform this, the microprocessor should be 1. able to select the chip. 2. identify the register. 3. enable the appropriate buffer."
+ },
+ {
+  "t": "h1",
+  "x": "Input–output Interfacing"
+ },
+ {
+  "t": "h2",
+  "x": "Basic Concepts of I/O Module"
+ },
+ {
+  "t": "p",
+  "x": "I/O module contains logic for performing a communication function between the peripherals and the bus. The peripherals are not connected to the system bus directly. The reasons for this are 1. Peripherals are electromechanical and electromag­ netic devices and their manner of operation is different from the operation of the CPU and memory, which are electronicdevices. So a conversion of signal values may be required. 2. The data transfer rate of peripherals is usually slower than the transfer rate of the CPU and hence a synchronization mechanism may be needed. 3. Data codes and formats in peripherals differ from the word format in the CPU and memory. 4. The operating modes of peripherals are different from each other and each must be controlled so as not to disturb the operation of other peripherals connected to the CPU. To resolve these differences, computer systems include special hardware components between the CPU and peripherals to supervise and synchronize all input and output transfers. These components are called ‘interface’ units. By using this interfacing, 1. interface to the processor and memory via the system bus or central switch. 2. interface to one or more peripheral devices by tailored data links."
+ },
+ {
+  "t": "h2",
+  "x": "Input–output devices"
+ },
+ {
+  "t": "li",
+  "x": "Input and Output devices provide a means for people to make use of a computer."
+ },
+ {
+  "t": "li",
+  "x": "Some I/O devices function as an interface between a computer system and other physical system."
+ },
+ {
+  "t": "h2",
+  "x": "Input–output interface"
+ },
+ {
+  "t": "p",
+  "x": "Input/output Interface provides a method for transferring information between internal storage (such as memory and CPU Register) and external I/O devices. It resolves the difference between the computer and peripheral devices."
+ },
+ {
+  "t": "h2",
+  "x": "Input–output bus and interface modules"
+ },
+ {
+  "t": "p",
+  "x": "Each peripheral has an interface module associated with it. The interface module decodes the device address (device code), decodes signals for the peripheral controller, synchronizes the data flow and supervises the transfer rate between peripheral and CPU or memory. Interface Interface Interface Keyboard and display terminal Printer Data Address Control Magnetic disk Processor"
+ },
+ {
+  "t": "h2",
+  "x": "Function of buses"
+ },
+ {
+  "t": "p",
+  "x": "1. Memory bus: It is used for information transfer between CPU and main memory. 2. I/O bus: It is used for information transfers between CPU and I/O devices through their I/O interface."
+ },
+ {
+  "t": "h2",
+  "x": "Isolated versus memory mapped I/O"
+ },
+ {
+  "t": "li",
+  "x": "Separate I/O read/write control lines in addition to memory read/write control lines."
+ },
+ {
+  "t": "li",
+  "x": "Separate (isolated) memory and I/O address space"
+ },
+ {
+  "t": "li",
+  "x": "Distinct input and output instructions."
+ },
+ {
+  "t": "li",
+  "x": "A single set of Read/write control lines (i.e., no distinction between memory and I/O transfer)."
+ },
+ {
+  "t": "li",
+  "x": "Memory and I/O address share the common address space (reduces memory address range available)."
+ },
+ {
+  "t": "li",
+  "x": "No specific input or output instruction."
+ },
+ {
+  "t": "li",
+  "x": "The same memory reference instructions can be used for I/O transfer."
+ },
+ {
+  "t": "li",
+  "x": "Considerable flexibility in handling I/O operations."
+ },
+ {
+  "t": "h2",
+  "x": "Asynchronous serial transfer"
+ },
+ {
+  "t": "p",
+  "x": "In serial data transmission, each bit in the message is sent in sequence one at a time. Serial transmission can be synchronous or asynchronous. In synchronous transmission, the two units share a common clock frequency and bits are transmitted continuously at the rate dictated by the clock pulses. In asynchronous transmission, binary information is sent only when it is available and the line remains idle when there is no information to be transmitted. In serial asynchronous transmission technique, each character consists of three parts: 1. start bits 2. character bits 3. stop bits"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Character bits 1 1 Stop bits Star bit A transmitted character can be detected by the receiver from the knowledge of the transmission rules: 1. When a character is not being sent, the line is kept in the 1-state. 2. The initiation of a character transmission is detected from the start bit, which is always 0. 3. The character bits always follow the start bit. 4. After the last bit of the character is transmitted, a stop bit is detected when the line returns to the 1-state for at least one bit time."
+ },
+ {
+  "t": "li",
+  "x": "The baud rate is defined as the rate at which serial information is transmitted and is equivalent to the data transfer in bits per second."
+ },
+ {
+  "t": "p",
+  "x": "Strobe control Employs a single control line to time each transfer. Strobe may be activated by either the source or the destination units."
+ },
+ {
+  "t": "h2",
+  "x": "(a) Source initiated transfer:"
+ },
+ {
+  "t": "p",
+  "x": "Destination unit Source unit Data bus Strobe Data Valid data Strobe"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 5 Source initiated strobe for data transfer"
+ },
+ {
+  "t": "li",
+  "x": "The data bus carries the binary information from source unit to the destination unit."
+ },
+ {
+  "t": "li",
+  "x": "The strobe is a single line that informs the destination unit when a valid data word is available in the bus."
+ },
+ {
+  "t": "h2",
+  "x": "(b) Destination initiated strobe for data transfer:"
+ },
+ {
+  "t": "p",
+  "x": "Destination unit Source unit Data bus Strobe Data Valid data Strobe"
+ },
+ {
+  "t": "li",
+  "x": "The destination unit activates the strobe pulse, informing the source to provide the data. The source unit responds by placing the requested binary information on the data bus."
+ },
+ {
+  "t": "li",
+  "x": "The data must be valid and remain in the bus long enough for the destination unit to accept it."
+ },
+ {
+  "t": "li",
+  "x": "The falling edge of the strobe pulse can be used again to trigger a destination register. The destination unit then disables the strobe."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantage of strobe method: Source unit which initi-"
+ },
+ {
+  "t": "p",
+  "x": "ated the transfer has no way of knowing whether the destination unit has actually received the data item that was placed in the bus. The handshake method solves this problem by introducing a second control signal that provides a reply to the unit that initiates the transfer."
+ },
+ {
+  "t": "h2",
+  "x": "Principle of two-wire handshaking: One control line is"
+ },
+ {
+  "t": "p",
+  "x": "in the same direction as the data flow in the bus from the source to the destination. It is used by the source unit to inform the destination unit whether there are valid data in the bus. The other control line is in the other direction from the destination to the source. It is used by the destination unit to inform the source whether it can accept data. The sequence of control during the transfer depends on the unit that initiates the transfer. Destination unit Source unit Data bus Data valid Data accepted Data bus Valid data Data valid Data accepted"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 6 Source initiated transfer using hand shaking"
+ },
+ {
+  "t": "p",
+  "x": "Similarly a destination unit may also initiate the transfer."
+ },
+ {
+  "t": "h2",
+  "x": "Advantage: Handshaking scheme provides a high degree"
+ },
+ {
+  "t": "p",
+  "x": "of flexibility and reliability because the successful completion of a data transfer relies on active participation by both units."
+ },
+ {
+  "t": "h2",
+  "x": "Modes of transfer"
+ },
+ {
+  "t": "p",
+  "x": "There are three different data transfer modes between the central computer (CPU or Memory) and peripherals: 1. Program-controlled I/O 2. Interrupt-initiated I/O 3. Direct memory access Program-controlled input–output With programmed I/O, the I/O module will perform the requested action and then set the appropriate bits in the I/O status register. The I/O module takes no further action to alert the CPU. In particular it does not interrupt the CPU. Thus, it is the responsibility of the CPU to periodically check the status of the I/O module until it finds that the operation is complete. Done? Check status CPU I/O CPU Memory I/O CPU Error condition Yes Next instruction No Ready Not ready Issue read command to I/O module Read status of I/O module Read word from I/O module Write word into memory I/O CPU"
+ },
+ {
+  "t": "h2",
+  "x": "Interrupt initiated input–output The problem with pro-"
+ },
+ {
+  "t": "p",
+  "x": "grammed I/O is that the CPU has to wait a long time for the I/O module of concern to be ready for either reception or transmission of data. The CPU, while waiting must repeatedly interrogate the status of the I/O module. As a result, the level of the performance of the entire system is severely degraded. An alternation is for the CPU to issue an I/O command to a module and then go on to do some other useful work. The I/O module will then interrupt the CPU to request service when it is ready to exchange data with the CPU. The CPU then executes the data transfer, as before and then resumes its former processing. Done? Check status Error condition Yes Next instruction No Ready Issue read command to I/O module Read status of I/O module Read word from I/O module Write word into memory Do something else Interrupt CPU I/O I/O CPU I/O CPU CPU Memory"
+ },
+ {
+  "t": "h2",
+  "x": "Interrupt Processing: In all computers, there is a mecha-"
+ },
+ {
+  "t": "p",
+  "x": "nism by which the normal processing of the processor is interrupted by other modules like I/O, memory. The interrupts may be of the following class: 1. Program: Generated by some condition that occurs as a result of an instruction execution. Examples: Arithmetic overflow, division by zero, etc. 2. Timer: Generated by timer within the processor. 3. I/O: Generated by an I/O controller, to signal normal completion of an operation or to signal a variety of error conditions. 4. Hardware failure: Generated by a failure such as power failure or memory parity error. Interrupts are provided primarily as a way to improve processing efficiency. Hardware Software Device controller or other system hardware issues an interrupt Processor finishes execution of current instruction Processor signals acknowledgement of interrupt Processor pushes PSW and PC onto control stack Processor loads new PC value based on interrupt Save remainder of process state information Process interrupt Restore Process State Information Restore old PSW and PC"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 7 Interrupt Processing Flowchart"
+ },
+ {
+  "t": "p",
+  "x": "Consider the following figures, which show the ­contents of memory and registers before and after interrupt ­instruction processing. Main memory ⟨eq⟩ Start Return Interrupt service routine User’s program Processor PC Registers SP Control stack ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 8 Interrupt occurs after instruction at location N"
+ },
+ {
+  "t": "p",
+  "x": "Control stack ⟨eq⟩ Start Return Interrupt service routine N User’s program Main memory Processor PC Registers SP ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Interrupt priority: Priority determines which interrupt"
+ },
+ {
+  "t": "p",
+  "x": "is to be served first when two or more requests are made simultaneously. Priority also determines which interrupts are permitted to interrupt the computer while another is being serviced. Higher priority interrupts can make requests while servicing a lower priority interrupt."
+ },
+ {
+  "t": "h2",
+  "x": "Design techniques for interrupts: Two design issues arise"
+ },
+ {
+  "t": "p",
+  "x": "in implementing interrupt I/O: 1. Since there will almost invariably be multiple I/O module, how does the CPU determine which device issued the interrupt. 2. If multiple interrupts have occurred, how does the CPU decide which one to process. Four general categories of techniques are there which are common in use:"
+ },
+ {
+  "t": "h2",
+  "x": "(a) Multiple interrupt lines: In this technique, multiple"
+ },
+ {
+  "t": "p",
+  "x": "interrupt lines are provided between the CPU and the I/O modules. However, it is impractical to dedicate more than a few bus lines or CPU pins to interrupt lines. Consequently, even if multiple lines are used, it is likely that each line will have multiple I/O modules attached to it. Thus, one of the other three techniques must be used one each line. (b) Software poll: When the CPU detects an interrupt, it braches to an interrupt-service routine whose job is to poll each I/O module to determine which module generated the interrupt. The poll could be in the form of a separate command line. The CPU receives the command and places the address of a particular I/O module on the address lines. The I/O module responds positively if it set the interrupt. Alternatively, each I/O module could contain an addressable status register. The CPU then read the status register of each I/O module to identify the interrupting module. Once the correct module is identified, the CPU branches to a device service routine specified to that device. It is time consuming."
+ },
+ {
+  "t": "h2",
+  "x": "(c) Daisy chain: Daisy chain in effect provides a"
+ },
+ {
+  "t": "p",
+  "x": "hardware poll. For interrupts all I/O modules share a common interrupt request line. The interrupt acknowledge line is daisy chained through the modules. When the CPU is interrupted, it sends out an interrupt acknowledgement. This signal propagates through a series of I/O modules until it gets to a requesting module. The requesting module typically responds by placing a word on the data lines. This word is referred to as a vector and is either the address of the I/O module or some other unique identifier. In either case, the CPU uses the vector as a pointer to the appropriate device-service routine. This avoids the need to execute a general interruptservice routine first. This technique is referred to as a vectored Interrupt."
+ },
+ {
+  "t": "h2",
+  "x": "(d) Bus arbitration: Bus arbitration is also another"
+ },
+ {
+  "t": "p",
+  "x": "technique which makes use of vectored Interrupts. With bus arbitration, an I/O module must first gain control of the bus before it can raise the interrupt request line. Thus only one module can raise the line at a time. When the CPU detects the interrupt, it responds on the interrupt acknowledge line. The requesting module then places its vector on the data lines."
+ },
+ {
+  "t": "h2",
+  "x": "Drawbacks of programmed and interrupt-driven I/O:"
+ },
+ {
+  "t": "p",
+  "x": "1. The I/O transfer rate is limited by the speed with which the processor can test and service a device. 2. The processor is tied up in managing I/O transfer; a number of instructions must be executed for each I/O transfer. Both methods have an adverse impact on both processor activity and I/O transfer rate. When large volume of data is to be moved, a more efficient technique is required: Direct Memory Access (DMA)."
+ },
+ {
+  "t": "h2",
+  "x": "DMA function: DMA involves an additional module on the"
+ },
+ {
+  "t": "p",
+  "x": "system bus. Data count Write Read Interrupt DMA acknowledgement DMA request Address line Data lines Data register Address register Control logic"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 10 DMA Block Diagram"
+ },
+ {
+  "t": "p",
+  "x": "The DMA module is capable of mimicking the processor and indeed, of taking over control of the system from the processor. It needs to do this to transfer data to and from memory over the system bus. For this purpose, the DMA module must use the bus only when the processor does not need it or it must force the processor to suspend operation temporarily. The latter technique is more common and is referred as cycle stealing."
+ },
+ {
+  "t": "h2",
+  "x": "DMA configurations"
+ },
+ {
+  "t": "li",
+  "x": "Inexpensive, inefficient"
+ },
+ {
+  "t": "li",
+  "x": "Each transfer of a word consumes two bus cycles."
+ },
+ {
+  "t": "p",
+  "x": "Processor DMA I/O I/O Memory 2. Single bus, integrated DMA I/O There is a path between the DMA module and one or more I/O modules that does not include system bus. Processor DMA DMA I/O I/O I/O Memory 3. I/O bus"
+ },
+ {
+  "t": "li",
+  "x": "Reduces the number of I/O interfaces in the DMA module to one."
+ },
+ {
+  "t": "li",
+  "x": "Easily expandable configuration."
+ },
+ {
+  "t": "p",
+  "x": "System bus Processor DMA Memory I/O bus I/O I/O I/O With DMA, when the CPU wishes to read or write a block of data, it issues a command to the DMA module, by sending the following information to the DMA module. 1. Whether a read or write is requested. 2. The address of the I/O device involved. 3. The starting location in memory to read from or write to. 4. The number of words to be read or written. The CPU then continues with other work. It has delegates this I/O operation to the DMA module, and that module will take care of it. The DMA module transfers the entire block of data, one word at a time, directly to or from memory, without going through the CPU. When the transfer is complete, the DMA module sends an interrupt signal to the CPU. Thus, the CPU is involved only at the beginning and end of the transfer. Issue read block command to DMA module Do something else Read status of DMA module Interrupt Next instruction CPU DMA DMA CPU DMA transfer can either happen as: 1. Burst transfer"
+ },
+ {
+  "t": "li",
+  "x": "A block sequence consisting of a number of memory words is transferred in continuous burst."
+ },
+ {
+  "t": "li",
+  "x": "DMA controller is master of memory Buses."
+ },
+ {
+  "t": "li",
+  "x": "This mode of transfer is needed for fast devices such as Magnetic Disks, where transmission cannot be stopped or slowed down."
+ },
+ {
+  "t": "li",
+  "x": "CPU is usually much faster than I/O (DMA), thus CPU uses the most of the memory cycles."
+ },
+ {
+  "t": "li",
+  "x": "DMA controller steals the memory cycles from CPU."
+ },
+ {
+  "t": "li",
+  "x": "For those stolen cycles, CPU remains idle."
+ },
+ {
+  "t": "li",
+  "x": "For those slow CPU, DMA Controller may steal most of the memory."
+ },
+ {
+  "t": "li",
+  "x": "Cycle stealing, which may cause CPU remain idle long time."
+ },
+ {
+  "t": "h2",
+  "x": "Input–Output Processor (IOP)"
+ },
+ {
+  "t": "p",
+  "x": "An IOP is a processor, having a direct memory access capability, used to communicate with I/O devices. In this configuration, the computer system can be divided into a memory unit and a number of processors comprised of the CPU and one or more IOPs. Each IOP takes care of input and output tasks, relieving the CPU from the house keeping chores involved in I/O transfers."
+ },
+ {
+  "t": "li",
+  "x": "IOP is similar to a CPU except that it is designed to handle the details of I/O processing."
+ },
+ {
+  "t": "li",
+  "x": "Unlike DMA, the IOP can fetch and execute its own instructions."
+ },
+ {
+  "t": "p",
+  "x": "The following figure shows a computer with two processors: Memory unit CPU IOP Peripherals Memory bus I/O bus PD PD PD PD"
+ },
+ {
+  "t": "h1",
+  "x": "Flynn’S Classification"
+ },
+ {
+  "t": "p",
+  "x": "In parallel processing, the system is able to perform concurrent data processing to achieve faster execution time. A classification introduced by M.J. Flynn considers the organization of a computer system by the number of instructions and data items that are manipulated simultaneously. According to this classification, there are four major groups of computers: 1. Single instruction stream, single data stream (SISD):"
+ },
+ {
+  "t": "li",
+  "x": "Single computer containing a control unit, a processor unit and a memory unit"
+ },
+ {
+  "t": "li",
+  "x": "Instructions executed sequentially; parallel processing may be achieved by multiple functional units or by pipeline processing."
+ },
+ {
+  "t": "p",
+  "x": "2. Single instruction stream, Multiple data stream (SIMD):"
+ },
+ {
+  "t": "li",
+  "x": "Include many processing units under the supervision of a common control unit."
+ },
+ {
+  "t": "li",
+  "x": "All processors receive the same instruction from the control unit but operate on different items of data."
+ },
+ {
+  "t": "p",
+  "x": "3. Multiple instruction stream, Single data stream (MISD):"
+ },
+ {
+  "t": "li",
+  "x": "No practical system has been constructed."
+ },
+ {
+  "t": "p",
+  "x": "4. Multiple instruction stream, Multiple data stream (MIMD):"
+ },
+ {
+  "t": "li",
+  "x": "Capable of processing several programs at the same time."
+ },
+ {
+  "t": "p",
+  "x": "One type of parallel processing that does not fit Flynn’s classification is pipelining."
+ },
+ {
+  "t": "h1",
+  "x": "Pipelining"
+ },
+ {
+  "t": "p",
+  "x": "Pipelining is a technique of decomposing a sequential process into sub operations, with each subprocess being executed in special dedicated segment that operates with all other segments. In pipelining, new inputs are accepted at one end before previously accepted inputs appear as outputs at the other end."
+ },
+ {
+  "t": "h2",
+  "x": "Two-stage Pipeline"
+ },
+ {
+  "t": "p",
+  "x": "As a simple approach, consider subdividing instruction processing into two stages: 1. Fetch instruction 2. Execute instruction"
+ },
+ {
+  "t": "li",
+  "x": "There are times during the execution of an instruction when main memory is not being accessed. This time can be used to fetch the next instruction in parallel with the execution of the current one. This is called instruction prefetch or fetch overlap."
+ },
+ {
+  "t": "li",
+  "x": "This process will speed up instruction execution. If the fetch and execute stages were of equal duration, the instruction cycle time would be halved."
+ },
+ {
+  "t": "li",
+  "x": "But there are some problems in this technique: (i) The execution time is generally longer than the fetch time."
+ },
+ {
+  "t": "p",
+  "x": "(ii) A conditional branch instruction makes the address of the next instruction to be fetched unknown."
+ },
+ {
+  "t": "li",
+  "x": "These two factors reduce the potential effectiveness of the two-stage pipeline, but some speed up occurs. To gain further speed up, the pipeline must have more stage(s)."
+ },
+ {
+  "t": "h2",
+  "x": "Six-stage Pipeline"
+ },
+ {
+  "t": "p",
+  "x": "Let the six stages be F: Fetch Instruction D: Decode Instruction C: Calculate Operand Address O: Operand Fetch"
+ },
+ {
+  "t": "h1",
+  "x": "4. Instruction Pipelining"
+ },
+ {
+  "t": "p",
+  "x": "Flynn’s classiﬁ cation Pipelining Six-stages of pipelining Pipeline performance Pipeline hazards Structural hazards Data hazards Control hazards Conditional branch Dealing with branches"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "li",
+  "x": "A deeper pipeline means that there are more stages in the pipeline. This generally means that the processor’s frequency can be increased as the cycle time is lowered. This happen because there are fewer components in each stage of the pipeline, so the propagation delay is decreased for the overall stage."
+ },
+ {
+  "t": "li",
+  "x": "An instruction pipeline is said to be fully pipelined if it can accept a new instruction in every clock cycle."
+ },
+ {
+  "t": "li",
+  "x": "A pipeline that is not fully pipelined has wait cycle that delays the progress of the pipeline."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages of pipelining:"
+ },
+ {
+  "t": "li",
+  "x": "The cycle time of the processor is reduced, thus increasing instruction issue rate in most cases."
+ },
+ {
+  "t": "li",
+  "x": "Some combinational circuits such as adders or multipliers can be made faster by adding more circuitry. If pipelining is used instead it can save circuitry versus a more complex combinational circuit."
+ },
+ {
+  "t": "h2",
+  "x": "Limitations of pipelining:"
+ },
+ {
+  "t": "p",
+  "x": "1. If the stages are not of equal duration, there will be some waiting involved at various stages. 2. Conditional branch instruction may invalidate several instruction fetches. 3. The contents of one stage may depend on the contents of other stages of previous instructions, which is still in pipeline."
+ },
+ {
+  "t": "h1",
+  "x": "Pipeline Performance"
+ },
+ {
+  "t": "p",
+  "x": "The cycle time t of an instruction pipeline is the time needed to advance a set of instructions one stage through the pipeline. Cycle time = max[ti]+ d = tm + d, ⟨eq⟩ where ti = Time delay of the circuitry in the ith stage of the pipeline. tm = maximum stage delay. K = number of stages in instruction pipeline d = \u0007time delay of a latch, needed to advance signals and data from one stage to the next. Suppose that n instructions are processed without any branches. Let Tk,n be the total time required for a pipeline with K stages to execute n instructions. Then Tk,n = [K+(n−1)]t Example 1: Let n = 7, K = 6, t= 1. Then Tk,n = [6 + (7 − 1)] × 1 = 12 cycles. Now consider a processor with equivalent functions but no pipeline and assume that the instruction cycle time is kt. The speed up factor for the instruction pipeline compared to execution without the pipeline is defined as S T T nk k n nk ⟨eq⟩ τ τ Note: Larger the number of stages, greater the potential for speed up. But practically, the potential gains of additional pipeline stages are countered by increase in cost, delays between stages, and the fact that braches will be encountered requiring the flushing of the pipeline."
+ },
+ {
+  "t": "h2",
+  "x": "Arithmetic pipeline:"
+ },
+ {
+  "t": "li",
+  "x": "Pipeline arithmetic units are usually found in very highspeed computers."
+ },
+ {
+  "t": "li",
+  "x": "These are used to implement floating point operations, multiplication of fixed point numbers and similar computations encountered in scientific problems."
+ },
+ {
+  "t": "h1",
+  "x": "Pipeline Hazards"
+ },
+ {
+  "t": "li",
+  "x": "Pipeline hazards are situations that prevent the next instruction in the instruction stream from executing during its designated clock cycle. The instruction is said to be stalled. When an instruction is stalled, all instructions later in the pipeline than the stalled instructions are also stalled. Instructions earlier than the stalled one can continue. No new instructions are fetched during the stall."
+ },
+ {
+  "t": "p",
+  "x": "Note: Keeping a pipeline at its maximal rate is prevented by pipeline hazard."
+ },
+ {
+  "t": "h2",
+  "x": "Different types of Hazards:"
+ },
+ {
+  "t": "p",
+  "x": "1. Structural Hazards 2. Data Hazards 3. Control Hazards"
+ },
+ {
+  "t": "h2",
+  "x": "Structural Hazards"
+ },
+ {
+  "t": "p",
+  "x": "Structural hazards occur when a certain resource is requested by more than one instruction at the same time. Example 2: Instruction MVI B, X fetches in the O stage operand X from memory. The memory does not accept another access during that cycle. Clock cycle stall Instruction ⟨eq⟩ MVI B, ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Penalty: 1 cycle"
+ },
+ {
+  "t": "p",
+  "x": "Certain resources are duplicated in order to avoid structural hazards (ALU, floating-point unit) can be pipelined themselves in order to support several instructions at a time. A classical way to avoid hazards at memory access is by providing separate data and instruction caches. Note: Structural hazards are due to resource conflict."
+ },
+ {
+  "t": "h2",
+  "x": "Data Hazards"
+ },
+ {
+  "t": "p",
+  "x": "In a pipeline execution of two instructions I1 and I2 a certain stage of the pipeline I2 needs the result produced by I1, but this result has not yet been generated, then we have a data hazard. Example 3: I1 : ADD R3, R2 R3 ← R3 + R2 I2 : MUL R1, R3 R1← R1 * R3 Clock cycle stall stall Instruction i + 2 F D C O E W F D C O E W F D C O E W ADD R3, R2 MUL R1, R3"
+ },
+ {
+  "t": "h2",
+  "x": "Penalty: 2 cycles Before executing the O stage (operand"
+ },
+ {
+  "t": "p",
+  "x": "fetch stage), the MUL instruction is stalled until the ADD instruction has written the result into R3."
+ },
+ {
+  "t": "h2",
+  "x": "Data dependencies"
+ },
+ {
+  "t": "p",
+  "x": "Data dependency exists between two instructions if the data data used by an instruction depends on the data created by other instructions. Two type of dependencies exist between instructions: 1. True data dependency 2. Name dependencies (i) Anti-dependency (ii) Output dependency"
+ },
+ {
+  "t": "h2",
+  "x": "True data dependency"
+ },
+ {
+  "t": "li",
+  "x": "This is also called as Read-After-Write Hazard (RAW)."
+ },
+ {
+  "t": "li",
+  "x": "This type of dependency occurs when the value produced by an instruction is required by a subsequent instruction."
+ },
+ {
+  "t": "li",
+  "x": "This is also known as a flow dependency because dependency is due to flow of data in a program."
+ },
+ {
+  "t": "p",
+  "x": "Example: ADD R3, R2, R1; R3 ← R2 + R1 SUB R4, R3, 1; R4 ← R3 – 1"
+ },
+ {
+  "t": "li",
+  "x": "Here R3 is read before it is written by ‘ADD’ instruction."
+ },
+ {
+  "t": "li",
+  "x": "In RAW hazard (i + 1)st instruction tries to read a source before it is written by ‘ith’ instruction. So (i + 1)st instruction incorrectly gets the old value."
+ },
+ {
+  "t": "li",
+  "x": "This kind of hazard can be reduced by using forwarding (or Bypassing)."
+ },
+ {
+  "t": "h2",
+  "x": "Name dependencies"
+ },
+ {
+  "t": "li",
+  "x": "This is also called as Write-After-Read hazard"
+ },
+ {
+  "t": "li",
+  "x": "This kind of dependency occurs when an instruction writes to a location which has been read by a previous instruction."
+ },
+ {
+  "t": "li",
+  "x": "Here (i + 1)st instruction tries to write an operand before it is read by i th instruction. So i th instruction incorrectly gets the new value."
+ },
+ {
+  "t": "p",
+  "x": "Example: I1: ADD R3, R2, R1 ;R3 ← R2 + R1 I2: SUB R2, R5, 1; R2 ← R5 – 1 I2 must not produce its result in R2 before I1 read R2, otherwise I1 would use the value produced by I2 rather than the previous value of R2. 2. Output dependency:"
+ },
+ {
+  "t": "li",
+  "x": "\u0007This is also called as Write - After - Write (WAW) hazard."
+ },
+ {
+  "t": "li",
+  "x": "\u0007This dependency occurs when a location is written by two instructions."
+ },
+ {
+  "t": "li",
+  "x": "\u0007i.e., (i + 1)th instruction tries to write an operand before it is written by ith instruction."
+ },
+ {
+  "t": "p",
+  "x": "The writes end up being performed in the wrong order. Example: I1: ADD R3, R2, R1;R3 ← R2 + R1 I2: SUB R2, R3, 1; R2 ← R3 -1 I3: R3, R2, R5; R3 ← R2 + R5 There is a possibility of WAW hazard between I1 and I3."
+ },
+ {
+  "t": "h2",
+  "x": "Handling data dependency There are ways to handle date"
+ },
+ {
+  "t": "p",
+  "x": "dependency. 1. Hardware interlocks 2. Operand forwarding 3. Delayed load 1. Hardware interlocks:"
+ },
+ {
+  "t": "li",
+  "x": "To avoid data dependency, insert hardware interlock."
+ },
+ {
+  "t": "li",
+  "x": "An interlock is a circuit that detects instructions whose source operands are destinations of instructions farther up in the pipeline."
+ },
+ {
+  "t": "li",
+  "x": "Uses special hardware to detect a conflict and then avoid it by routing the data through special paths between pipeline segments."
+ },
+ {
+  "t": "li",
+  "x": "Some of the penalty produced by data hazards can be avoided using a technique called forwarding (Bypassing)."
+ },
+ {
+  "t": "li",
+  "x": "The ALU result is always fed back to the ALU input."
+ },
+ {
+  "t": "p",
+  "x": "If the hardware detects that the value needed for the current operation is the one produced by the previous operation (but which has not yet been written back). It selects the forwarded result as the ALU input, instead of the value read from register or memory. MUL MUL ALU From register or memory From register or memory to register memory Clock cycle F D C O E W F D C stall O E W ADD R3, R2 MUL R1, R3 Penalty: 1 cycle After the E stage of the MUL instruction the result is available by forwarding. Therefore the penalty is reduced to one cycle. Delayed Load: Here the compiler of a computer will detect the data conflicts and reorder the instructions as necessary to delay the loading of the conflicting data by inserting nooperation instruction."
+ },
+ {
+  "t": "h2",
+  "x": "Control Hazards"
+ },
+ {
+  "t": "p",
+  "x": "Control hazards are produced by Branch Instructions."
+ },
+ {
+  "t": "h2",
+  "x": "Unconditional branch"
+ },
+ {
+  "t": "li",
+  "x": "Jump loop stall stall Loop Loop Clock cycle stall F D C O E W F D C O E W F D C O E W"
+ },
+ {
+  "t": "h2",
+  "x": "Penalty: 3 cycles"
+ },
+ {
+  "t": "li",
+  "x": "The instruction following the branch is fetched before the D stage is finished in 2nd clock. It is not known that a branch is executed. Later the fetched instruction is discarded."
+ },
+ {
+  "t": "li",
+  "x": "After the O stage of the branch instruction the address of the target is known and it can be fetched."
+ },
+ {
+  "t": "h2",
+  "x": "Loop: If condition satisfies and branch is taken:"
+ },
+ {
+  "t": "p",
+  "x": "stall stall ADD B JZ Loop Clock cycle stall F D C O E W F F D C O E W D C O E W Loop Penalty:3 cycles At this moment both the condition (set by ADD) and the target address are known. If condition not satisfied and branch not taken: stall F ADD B JZ Loop Clock cycle stall F D C O E W F D D C O E W C O E W Penalty:2 cycles Instruction i + 1 At this moment the condition is known and instruction i + 1 can go on."
+ },
+ {
+  "t": "li",
+  "x": "With conditional branch, we have a penalty even if the branch has not been taken. This is because we have to wait until the branch condition is available."
+ },
+ {
+  "t": "h2",
+  "x": "Dealing with branches"
+ },
+ {
+  "t": "p",
+  "x": "One of the major problems in designing an instruction pipeline is the occurrence of branch instructions. A variety of approaches have been taken for dealing with braches 1. Multiple streams 2. Prefetch branch target 3. Branch target buffer 4. Loop buffer 5. Branch prediction 6. Delayed branch"
+ },
+ {
+  "t": "h2",
+  "x": "Multiple streams A branch instruction may cause to"
+ },
+ {
+  "t": "p",
+  "x": "choose one of two instructions to fetch next, then allow the pipeline to fetch both instructions, making use of streams. There are two problems with this approach: 1. With multiple pipelines there are contention delays for access to the registers and to memory. 2. Additional branch instructions may enter the pipeline before the original branch decision is resolved."
+ },
+ {
+  "t": "h2",
+  "x": "Prefetch branch target When a conditional branch is rec-"
+ },
+ {
+  "t": "p",
+  "x": "ognized, the target of the branches is prefetched, in addition to the instruction following the branch. This target is then saved until the branch instruction is executed."
+ },
+ {
+  "t": "h2",
+  "x": "Branch targets buffer (BTB) BTB is an associative mem-"
+ },
+ {
+  "t": "p",
+  "x": "ory included in the fetch segment of the pipeline. Each entry in the BTB consists of the address of a previously executed branch instruction and target instructions for that branch. It also stores the next few instructions after the branch target instruction. When the pipeline decodes a branch instruction, it searches the associative memory BTB for the address of the instruction. If it is in BTB, the instruction is available directly and prefetch continues from the new path. If the instruction is not in BTB, the pipeline shifts to a new instruction stream and stores the target instruction in the BTB."
+ },
+ {
+  "t": "h2",
+  "x": "Advantage: Branch instructions that occurred previously"
+ },
+ {
+  "t": "p",
+  "x": "are readily available in the pipeline without interruption. Loop Buffer A loop buffer is a small, very high speed memory maintained by the instruction fetch stage of the pipeline and containing the n most recently fetched instructions in sequence. If a branch is to be taken, the hardware first checks whether the branch target is within the buffer. If so, the next instruction is fetched from the buffer. The Advantages of loop buffer are 1. Loop buffer will contain some instructions sequentially ahead of the current instruction fetch address. Thus instructions fetched in sequence will be available without the usual memory access time. 2. If the branch occurs to a target just a few locations ahead of the address of the branch instruction, the target will already be in the buffer. 3. This strategy is well suited in dealing with loops."
+ },
+ {
+  "t": "h2",
+  "x": "Branch prediction Various techniques can be used to pre-"
+ },
+ {
+  "t": "p",
+  "x": "dict whether a branch will be taken or not. The common techniques are 1. Predict never taken Static 2. Predict always taken 3. Predict by opcode { Static 4. Taken/not taken switch 5. Brach history table { Dynamic"
+ },
+ {
+  "t": "li",
+  "x": "The first two approaches are static, i.e., no dependency on execution history. Here always assume that the branch will not be taken and continue to fetch instructions in sequence, or always assume that the branch will be taken and always fetch from the branch target."
+ },
+ {
+  "t": "li",
+  "x": "The third approach is also static. Takes the decision based on the opcode of the branch instruction in a program."
+ },
+ {
+  "t": "li",
+  "x": "Dynamic branch strategies attempt to improve the accuracy of prediction by recording the history of conditional branch instructions in a program."
+ },
+ {
+  "t": "h2",
+  "x": "(a) Taken/not taken switch:"
+ },
+ {
+  "t": "li",
+  "x": "Use two bits to record the result of the last two instances of the execution of the associated instruction or record a state in some other fashion."
+ },
+ {
+  "t": "p",
+  "x": "Not taken Not taken Not taken Taken Taken Taken Not taken Taken Predict taken Predict not taken Predict not taken Predict taken"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 1 Branch prediction state diagram"
+ },
+ {
+  "t": "li",
+  "x": "As long as each succeeding conditional branch instruction that is encountered is taken, the decision process predicts that the next branch will be taken."
+ },
+ {
+  "t": "li",
+  "x": "If a single prediction is wrong, the algorithm continues to predict that the next branch is taken."
+ },
+ {
+  "t": "li",
+  "x": "Only if two successive branches are not taken does the algorithm shift to not taken branch."
+ },
+ {
+  "t": "p",
+  "x": "Drawback: If the decision is made to take the branch, the target instruction cannot be fetched until the target address, which is an operand in the conditional branch instruction is decoded. (b) Branch history table: It is a small cache memory associated with the instruction fetch stage of the pipeline."
+ },
+ {
+  "t": "li",
+  "x": "Each entry in the table consist of three elements: 1. The address of branch instruction."
+ },
+ {
+  "t": "p",
+  "x": "2. Some number of history bits that record the state of use of that instruction. 3. Information about target instruction."
+ },
+ {
+  "t": "h2",
+  "x": "Delayed branch A complier detects the branch instructions"
+ },
+ {
+  "t": "p",
+  "x": "and rearranges the machine language code sequence by inserting useful instructions that keep a pipeline operating without interruptions."
+ },
+ {
+  "t": "h1",
+  "x": "Characteristics Of Memory System"
+ },
+ {
+  "t": "p",
+  "x": "1. Location: The term refers to whether memory is internal or external to the computer. The location of memory may be"
+ },
+ {
+  "t": "li",
+  "x": "Processor"
+ },
+ {
+  "t": "li",
+  "x": "Internal (main)"
+ },
+ {
+  "t": "li",
+  "x": "External (secondary)"
+ },
+ {
+  "t": "p",
+  "x": "2. Capacity: The capacity of internal memory is expressed in terms of bytes. The capacity specified using"
+ },
+ {
+  "t": "li",
+  "x": "Word size"
+ },
+ {
+  "t": "li",
+  "x": "Number of words"
+ },
+ {
+  "t": "li",
+  "x": "For internal memory, the unit of transfer is equal to the number of data lines into and out of the memory module."
+ },
+ {
+  "t": "p",
+  "x": "The unit of transfer need not equal a word or an addressable unit."
+ },
+ {
+  "t": "li",
+  "x": "For external memory, data are often transferred in much larger units than a word, and these are referred to as blocks."
+ },
+ {
+  "t": "p",
+  "x": "4. Access method: The various methods of accessing units of data are"
+ },
+ {
+  "t": "h2",
+  "x": "(ii) Direct access: Individual blocks or records have a"
+ },
+ {
+  "t": "p",
+  "x": "unique address based on physical location."
+ },
+ {
+  "t": "h2",
+  "x": "(iii) Random access: Each addressable location in"
+ },
+ {
+  "t": "p",
+  "x": "memory has a unique, physically wired-in addressing mechanism. The time to access a given location is independent of the sequence of prior accesses and is constant."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Main memory"
+ },
+ {
+  "t": "p",
+  "x": "(iv) Associative: This is a random access type of memory that enables one to make a comparison of desired bit locations within a word for a specified match. 5. Performance: Three performance parameters are:"
+ },
+ {
+  "t": "h2",
+  "x": "(i) Access time (latency):"
+ },
+ {
+  "t": "li",
+  "x": "For random access memory, this is the time it takes to perform a read or write operation."
+ },
+ {
+  "t": "li",
+  "x": "For non-random-access memory, access time is the time it takes to position the read-write mechanism at the desired location."
+ },
+ {
+  "t": "h2",
+  "x": "(ii) Memory cycle time: For a random access memory"
+ },
+ {
+  "t": "p",
+  "x": "it consists of the access time plus any additional time required before a second access can commence. (iii) Transfer rate: This is rate at which data can be transferred into or out of memory unit. Characteristics of memory system Memory hierarchy Locality of reference Cache memory Basic operation of cache Elements of cache design Replacement algorithm Secondary storage Disk Diskette Magnetic tape Optimal memory"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "p",
+  "x": "For Random access memory, Transfer rate = Cycle Time For non-random access memory, ⟨eq⟩ Where, TN = Average time to read or write N-bits. TA = Average access time N = Number of bits R = Transfer rate in bits per second 6. Physical type: The physical type of a memory will be i. Semiconductor ii. Magnetic iii. Optical iv. Magneto-optimal 7. Physical characteristics: The memory may be"
+ },
+ {
+  "t": "li",
+  "x": "Volatile/non-volatile"
+ },
+ {
+  "t": "li",
+  "x": "Erasable/non-erasable"
+ },
+ {
+  "t": "p",
+  "x": "8. Organization: There is a trade–off among the three key characteristic of memory. i. Cost ii. Capacity iii. Access time"
+ },
+ {
+  "t": "h1",
+  "x": "Memory Hierarchy"
+ },
+ {
+  "t": "p",
+  "x": "Consider the following memory hierarchy, which shows the various memory components."
+ },
+ {
+  "t": "h2",
+  "x": "Figure 1 Memory Hierarchy"
+ },
+ {
+  "t": "p",
+  "x": "Inboard memory Outboard storage Offline Storage Magnetic tape Magnetic disk Main memory Cache Ragister As one goes down the hierarchy, the following occur: 1. Decreasing cost per bit 2. Increasing capacity 3. Increasing access time 4. Decreasing frequency of access of the memory by the processor."
+ },
+ {
+  "t": "h2",
+  "x": "Locality of Reference"
+ },
+ {
+  "t": "p",
+  "x": "During the course of execution of a program, memory references by the processor, for both instructions and data, tend to cluster. This is referred as principal of locality."
+ },
+ {
+  "t": "h2",
+  "x": "(i) Registers: The fastest, smallest and most expensive"
+ },
+ {
+  "t": "p",
+  "x": "type of memory consists of the registers internal to the processor."
+ },
+ {
+  "t": "h2",
+  "x": "(ii) Main memory: The principal internal memory"
+ },
+ {
+  "t": "p",
+  "x": "system of the computer is main memory. Each location in main memory has a unique address."
+ },
+ {
+  "t": "h2",
+  "x": "(iii) Cache: Main memory is usually extended with a"
+ },
+ {
+  "t": "p",
+  "x": "higher speed, smaller cache. The cache is not visible to the programmer or, indeed, to the processor. It is a device for staging the movement of data between main memory and processor registers to improve performance. These three forms of memory are volatile and employ semi conductor technology."
+ },
+ {
+  "t": "h2",
+  "x": "(iv) Magnetic tapes and disks: Data are stored more"
+ },
+ {
+  "t": "p",
+  "x": "permanently on external mass storage devices, of which the most common are hard disk and removable media."
+ },
+ {
+  "t": "li",
+  "x": "External, non-volatile memory is also referred to as secondary or auxiliary memory."
+ },
+ {
+  "t": "li",
+  "x": "Used to store program and data files, which are visible to the programmer in the form of files and records."
+ },
+ {
+  "t": "h1",
+  "x": "Cache Memory"
+ },
+ {
+  "t": "p",
+  "x": "The locality of reference property states that over a short interval of time, the address generated by a typical program refer to a few localized areas of memory repeatedly, while the remainder of memory is accessed relatively infrequently (Because of frequent loops and subroutine calls). If the active portions of the program and data are placed in a fast small memory, the average memory access time can be reduced, thus reducing the total execution time of the program. Such a fast small memory is referred to as a cache memory. Cache memory is intended to give memory speed approaching that of the fastest memories available and at the same time provide a large memory size at the price of less expensive types of semiconductor memories. The following figure shows the structure of cache/main memory system. CPU Main memory Cache Word transfer Block transfer The fundamental idea of cache organization is that by keeping the most frequently accessed instructions and data in the fast memory, the average memory access time will approach the access time of cache."
+ },
+ {
+  "t": "h2",
+  "x": "Basic Operation of Cache"
+ },
+ {
+  "t": "li",
+  "x": "When the CPU need to access memory, the cache is examined. If the word is found in cache, it is read otherwise main memory is accessed to read the word."
+ },
+ {
+  "t": "li",
+  "x": "The performance of cache memory is measured in terms of hit ratio."
+ },
+ {
+  "t": "li",
+  "x": "When the CPU refers to memory and find the word in cache, it is called hit."
+ },
+ {
+  "t": "li",
+  "x": "If the word is not found in cache and is in Main Memory, it is called miss."
+ },
+ {
+  "t": "p",
+  "x": "Hit ratio hits hits misses = + Average access time = hc + (1 -h)(c + m)m Where, c → Cache access time m → Main memory access time h → hit ratio"
+ },
+ {
+  "t": "li",
+  "x": "Let main memory consists of up to 2n addressable words, with each word having a unique n-bit address."
+ },
+ {
+  "t": "li",
+  "x": "For mapping purposes, this memory is considered to consist of a number of fixed length blocks of K words each."
+ },
+ {
+  "t": "li",
+  "x": "The cache consists of C lines."
+ },
+ {
+  "t": "li",
+  "x": "Each line contains K words, plus a tag of a few bits."
+ },
+ {
+  "t": "li",
+  "x": "The number of words in a line is referred to as the line size."
+ },
+ {
+  "t": "li",
+  "x": "The number of lines is considerably less than the number of main memory blocks i.e., C << M."
+ },
+ {
+  "t": "li",
+  "x": "Each line includes a tag that identifies which particular block is currently being stored."
+ },
+ {
+  "t": "p",
+  "x": "The tag is usually a portion of the main memory address. Word length Block length Block Block Memory address (k words) (a) (b) Block (k words) 2n − 1 Line number tag c − 1"
+ },
+ {
+  "t": "h2",
+  "x": "Elements of Cache Design"
+ },
+ {
+  "t": "li",
+  "x": "Associative"
+ },
+ {
+  "t": "li",
+  "x": "Set-associative"
+ },
+ {
+  "t": "p",
+  "x": "3. Replacement algorithm 4. Write policy"
+ },
+ {
+  "t": "li",
+  "x": "Write through"
+ },
+ {
+  "t": "li",
+  "x": "Write back"
+ },
+ {
+  "t": "li",
+  "x": "Write once"
+ },
+ {
+  "t": "li",
+  "x": "Single or two level"
+ },
+ {
+  "t": "li",
+  "x": "Unified or split"
+ },
+ {
+  "t": "h2",
+  "x": "Cache size"
+ },
+ {
+  "t": "p",
+  "x": "The size of the cache to be small enough so that the overall average cost per bit is close to that of main memory alone and large enough so that the overall average access time is close to that of the cache alone."
+ },
+ {
+  "t": "h2",
+  "x": "Mapping function"
+ },
+ {
+  "t": "p",
+  "x": "Because there are fewer cache lines than main memory blocks, an algorithm is needed for mapping main memory blocks into cache lines. Three techniques can be used for mapping. (i) Direct (ii) Associative (iii) Set-associative"
+ },
+ {
+  "t": "h2",
+  "x": "Direct mapping Maps each block of main memory into"
+ },
+ {
+  "t": "p",
+  "x": "only one possible cache line. Figure 2 illustrates the general mechanism. The mapping is expressed as i = j modulo m, where i = cache line number j = main memory block number m = number of lines in the cache For purpose of cache access, each main memory address can be viewed as consisting of three fields."
+ },
+ {
+  "t": "li",
+  "x": "The least significand w bits identify a unique word or byte within a block of main memory."
+ },
+ {
+  "t": "li",
+  "x": "The remaining s-bits specify one of the 2s blocks of main memory. The cache logic interpret these s-bits as a tag of s-r bits. (most significand portion)"
+ },
+ {
+  "t": "li",
+  "x": "A line field of r-bits, to identify one of 2r lines."
+ },
+ {
+  "t": "p",
+  "x": "To summarize, Address length = (s + w) bits Number of Addressable units = 2s + w words or bytes Block size = line size = 2w words or bytes Number of blocks in main memory ⟨eq⟩ Number of lines in cache = M = 2r. Size of Tag = (s -r) bits The effect of this mapping is that blocks of main memory are assigned to lines of the cache as follows:"
+ },
+ {
+  "t": "h2",
+  "x": "Cache Line Main Memory Blocks Assigned"
+ },
+ {
+  "t": "p",
+  "x": "0, m, 2m, … 2s– m 1, m +1, 2m +1, … 2s– ⟨eq⟩ – 1 m –1, 2m – 1, 3m – 1,… 2s– 1 Example 1: Let cache capacity = 64 KB Line size = 4 B Main memory capacity = 16 MB = 224 B Using direct mapping, Address length ⟨eq⟩ 24-bits Block size = 22 B Tag Line Word Memory Memory address Compare ⟨eq⟩ Line 0 Block 0 Line 1 Block 1 Line M − 1 Tag Tag Cache Data If hit Hit Miss"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 3 Direct Mapping"
+ },
+ {
+  "t": "p",
+  "x": "Number of blocks in main memory = = Number of lines in cache ⟨eq⟩ r2 ∴ Size of tag = s -r ⟨eq⟩ ∴ Main memory address = Tag Line Word The mapping becomes"
+ },
+ {
+  "t": "h2",
+  "x": "Starting Memory Address of Blocks (Hexa)"
+ },
+ {
+  "t": "p",
+  "x": "00000, 010000, … FF0000 000004, 010004, … FF0004 ⟨eq⟩ – 1 00FFFC, 01FFFC,… FFFFFC Note: No two blocks that map into the same line number have the same tag number."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages:"
+ },
+ {
+  "t": "li",
+  "x": "Simple and cheap"
+ },
+ {
+  "t": "li",
+  "x": "The tag field is short; only those bits have to be stored which are not used to address the cache."
+ },
+ {
+  "t": "li",
+  "x": "Access is very fast."
+ },
+ {
+  "t": "p",
+  "x": "Disadvantages: A given block fits into a fixed cache location, i.e., a given cache line will be replaced whenever there is a reference to another memory block which fits to the same line, regardless what the status of the other cache line is. This can produce a low hit ratio, even if only a very small part of the cache is effectively used."
+ },
+ {
+  "t": "h2",
+  "x": "Associative mapping This technique overcomes the disad-"
+ },
+ {
+  "t": "p",
+  "x": "vantage of direct mapping by permitting each main memory block to be loaded into any line of the cache. Here the cache control logic interprets a memory address as two fields. 1. Tag 2. Word Figure shows associative mapping technique:"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 4 Associative mapping"
+ },
+ {
+  "t": "p",
+  "x": "Tag Word Main memory Memory address Compare S S + W Line 0 Block 0 Line 1 Block 1 Block j Line M − 1 Tag Tag Cache Data If hit Hit Miss To determine whether a block is in the cache, the cache control logic must simultaneously examine every line tag for a match. No field in the address corresponds to line number, so that the number of lines in the cache is not determined by the address format. To summarize, Address length = (s + w) bits \u0007Number of addressable units = 2s + w words or bytes Block size = line size = 2wwords or bytes Number of blocks in main memory ⟨eq⟩ Number of lines in cache = undetermined Size of tag = s-bits Example 2: Cache size = 64 KB Line size = 4 B Main memory capacity = 16 MB Number of blocks in main memory= 2 = 222. ∴ Size of tag = 24 – 2 = 22-bits For example, the tag of the hexadecimal main memory address 16339C is 058CE7 Main memory address = Tag Word"
+ },
+ {
+  "t": "h2",
+  "x": "Advantages: Associative mapping provides the highest"
+ },
+ {
+  "t": "p",
+  "x": "flexibility concerning the line to be replaced when a new block is read into a cache."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages:"
+ },
+ {
+  "t": "li",
+  "x": "The tag field is long"
+ },
+ {
+  "t": "li",
+  "x": "Fast access can be achieved only using high performance associative memories for the cache, which is difficult and expensive."
+ },
+ {
+  "t": "h2",
+  "x": "Set-associative mapping: It exhibits strengths of both"
+ },
+ {
+  "t": "p",
+  "x": "the direct and associative approaches and reduces their disadvantages. Here the cache is divided into V sets, each of which consists of K lines i.e., m = V × K i = j modulo V Where i = cache set number j = main memory block number m = number of lines in cache As there are K lines in each set, this is referred as K-way set associative mapping. The cache control logic interprets a memory address simply as three fields. 1. Tag 2. Set 3. Word The d set bits specify one of V = 2d sets. The S-bits of the tag and the set fields specify one of the 2S blocks of main memory. Figure 3 shows Set-associative mapping. Tag Set Word Main memory Memory address Compare ⟨eq⟩ Block 0 Block 1 Block j Set 0 Tag Cache Data Hit Miss"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 5 K-way set associative cache"
+ },
+ {
+  "t": "p",
+  "x": "Here the tag in a memory address is much smaller and is only compared to the K tags within a single set. To summarize, Address length = (s + w) bits Number of Addressable units = 2s+w words or bytes. Block size = line size = 2w words or bytes. Number of blocks in main memory ⟨eq⟩ Number of lines in set = K Number of sets V = 2d Number of lines in cache = KV = K × 2d ∴ Size of tag = (s -d) bits Example 3: Cache capacity = 64 KB Block size = 4 B Main memory capacity = 16 MB Number of blocks in main memory = = For 2-way set associative mapping, Number of lines in a set K = 2 Number of sets = V = 2d Number of lines in cache = × ⟨eq⟩ × 2d= 214 ⇒ 2d ⟨eq⟩ ∴ Size of Tag ⟨eq⟩ Hence main memory address = Tag Set Word In practice, 2 and 4-way set associative mapping are used with very good results. Larger sets do not produce further significant performance improvement. If a set consist of a single line, i.e., it is direct mapping; If there is one single set consisting of all lines i.e., it is associative mapping."
+ },
+ {
+  "t": "h2",
+  "x": "Replacement algorithms"
+ },
+ {
+  "t": "p",
+  "x": "Once the cache has been filled, when a new block is brought into the cache, one of the existing blocks must be replaced. For direct mapping, there is only possible line for any particular block, and no choice is possible. For associative and set associative techniques, a replacement algorithm is needed. Four of the most common replacement algorithms are"
+ },
+ {
+  "t": "h2",
+  "x": "(i) LRU (Least recently used): Replaces the block in"
+ },
+ {
+  "t": "p",
+  "x": "the set that has been in the cache longest with no reference to it."
+ },
+ {
+  "t": "h2",
+  "x": "(iii) LFU (Least frequently used): Replace the block in"
+ },
+ {
+  "t": "p",
+  "x": "the set that has experienced the fewest references."
+ },
+ {
+  "t": "h2",
+  "x": "Write policy"
+ },
+ {
+  "t": "p",
+  "x": "When a block that is resident in the cache is to be replaced, there are two cases to consider. (i) If the old block in the cache has not been altered, then it may be over-written with a new block without first writing out the old block. (ii) If at least one write operation has been performed on a word in that line of the cache, then main memory must be updated by writing the line of cache out of the block of memory before bringing in the new block. The write policies are"
+ },
+ {
+  "t": "h2",
+  "x": "(a) \u0007Write through: All write operations are made to"
+ },
+ {
+  "t": "p",
+  "x": "main memory as well as to the cache, ensuring that main memory is always valid."
+ },
+ {
+  "t": "h2",
+  "x": "(b) \u0007Write back: This technique minimizes memory"
+ },
+ {
+  "t": "p",
+  "x": "writes. It updates are made only in the cache. When a block is replaced it is written back to main memory if and only if it is updated."
+ },
+ {
+  "t": "h2",
+  "x": "\u0007Drawback: There some portions of main memory"
+ },
+ {
+  "t": "p",
+  "x": "are invalid and hence accesses by I/O modules can be allowed only through the cache."
+ },
+ {
+  "t": "h2",
+  "x": "Line size"
+ },
+ {
+  "t": "p",
+  "x": "Larger blocks reduce the number of blocks that fit into a cache. Because each block fetch overwrites older cache contents, a small number of blocks results in data being over written shortly after they are fetched. As a block becomes larger, each additional word is farther from the requested word, therefore less likely to be needed in the near future."
+ },
+ {
+  "t": "h2",
+  "x": "Number of caches"
+ },
+ {
+  "t": "p",
+  "x": "Multilevel caches We may have on-chip cache as well as external cache. This is a two level cache organization, with the internal cache designated as level 1, and external cache designated as level 2."
+ },
+ {
+  "t": "h1",
+  "x": "Secondary Storage"
+ },
+ {
+  "t": "h2",
+  "x": "Disk"
+ },
+ {
+  "t": "p",
+  "x": "Disk consists of platters, each with two surfaces. Each surface consists of concentric rings called tracks. Each track consists of sectors separated by gaps. Sectors Tracks Surface 5 Surface 4 Surface 3 Surface 2 Surface 1 Surface 0 Platter 0 Platter 1 Platter 2 Spindle Disk operation: The disk surface spins at a fixed rotational rate. There is a read/write head attached to the end of the arm and flies over the disk surface on a thin cushion of air. By moving radially the arm can position the read/write head over any track. Spindle Arm Read/ Write heads moves in union from cylinder to cylinder"
+ },
+ {
+  "t": "h2",
+  "x": "Disk access time: Average time to access some target"
+ },
+ {
+  "t": "p",
+  "x": "sector: Tae = Tavg seek + Tavg rotation + Tavg transfer Where Tavg seek is typical 9 ms. Tavg rotation = 1 RPMS 60 Sec/1min × × Tavg rotation RPM (avgsector/track) / = × ×60 Sec 1min"
+ },
+ {
+  "t": "h2",
+  "x": "Notes:"
+ },
+ {
+  "t": "p",
+  "x": "1. Seek time is the Time to position heads over cylinder containing target sectors (Tavg seek). 2. Rotational Latency is the time waiting for first bit of target sector to pass under read/write head. (Tavg rotation). 3. Transfer Time is the time to read the bits in the target sector (Tavg transfer)."
+ },
+ {
+  "t": "li",
+  "x": "Data are recorded on the surface of a hard disk made of metal coated with magnetic material."
+ },
+ {
+  "t": "li",
+  "x": "The disks and the drive are usually built together and encased in an air tight container to protect the disk from pollutants such as smoke particle and dust. Several disks are usually started on a common drive shaft with each disk having its own read/ write head."
+ },
+ {
+  "t": "h2",
+  "x": "Diskette"
+ },
+ {
+  "t": "p",
+  "x": "Data are recorded on the surface of a floppy disk made of polyester coated with magnetic material. A special diskette drive must be used to access data stored in the floppy disk. It works much like a record turntable of Gramophone."
+ },
+ {
+  "t": "h2",
+  "x": "Main features"
+ },
+ {
+  "t": "li",
+  "x": "Direct access"
+ },
+ {
+  "t": "li",
+  "x": "Portable, convenient to use"
+ },
+ {
+  "t": "h2",
+  "x": "Main Standards"
+ },
+ {
+  "t": "li",
+  "x": "51/4 inch capacity ≅ 360 KB/ disk"
+ },
+ {
+  "t": "li",
+  "x": "31/2 inch capacity ≅ 1.44 MB/disk (about 700 pages of A4 text)"
+ },
+ {
+  "t": "h2",
+  "x": "Magnetic Tape"
+ },
+ {
+  "t": "p",
+  "x": "Magnetic tape is made up from a layer of plastic which is coated with iron oxide. The oxide can be magnetized in different directions to represent data. The operation uses a similar principle as in the case of a tape recorder."
+ },
+ {
+  "t": "h2",
+  "x": "Main features"
+ },
+ {
+  "t": "li",
+  "x": "Sequential access (access time about 1.55)"
+ },
+ {
+  "t": "li",
+  "x": "High value of storage (50 MB/tape)"
+ },
+ {
+  "t": "li",
+  "x": "Inexpensive"
+ },
+ {
+  "t": "p",
+  "x": "It is often used for Batch up or archive purpose."
+ },
+ {
+  "t": "h2",
+  "x": "CD-ROM (Compact disk ROM): The disk surface is"
+ },
+ {
+  "t": "p",
+  "x": "imprinted with microscopic holes which record digital information. When a low-powered power beam shines on the surface, the intensity of the reflected light changes as it encounters a hole. The change is detected by a photo sensor and converted into a digital signal."
+ },
+ {
+  "t": "li",
+  "x": "Huge capacity: 775 MB/disk (≈550 diskette)"
+ },
+ {
+  "t": "li",
+  "x": "Inexpensive replication, cheap production."
+ },
+ {
+  "t": "li",
+  "x": "Removable, read only."
+ },
+ {
+  "t": "li",
+  "x": "Long access time (could be half a second) WORM (Write Once Read Memory) CD: A lower beam of modest intensity equipped in the disk drive is used to imprint the hole pattern."
+ },
+ {
+  "t": "li",
+  "x": "Good for archival storage by providing a permanent record of large volumes of data."
+ },
+ {
+  "t": "h2",
+  "x": "Erasable Optical Disk: Combination of Laser technology"
+ },
+ {
+  "t": "li",
+  "x": "Can be repeatedly written and overwritten."
+ },
+ {
+  "t": "li",
+  "x": "High reliability and longer life than magnetic disks."
+ }
+]

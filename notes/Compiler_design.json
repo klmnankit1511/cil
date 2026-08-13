@@ -1,0 +1,3426 @@
+[
+ {
+  "t": "h1",
+  "x": "Language Processing System"
+ },
+ {
+  "t": "h2",
+  "x": "Interpreter"
+ },
+ {
+  "t": "p",
+  "x": "It is a computer program that executes instructions written in a programming language. It either executes the source code directly or translates source code into some efficient intermediate representation and immediately executes this. Interpreter Output Source program Input Example: Early versions of Lisp programming language, BASIC."
+ },
+ {
+  "t": "h2",
+  "x": "Translator"
+ },
+ {
+  "t": "p",
+  "x": "A software system that converts the source code from one form of the language to another form of language is called as translator. There are 2 types of translators namely (1) Compiler (2) Assembler. Compiler converts source code of high level language into low level language. Assembler converts assembly language code into binary code."
+ },
+ {
+  "t": "h2",
+  "x": "Compilers"
+ },
+ {
+  "t": "p",
+  "x": "A compiler is a software that translates code written in high-level language (i.e., source language) into target language. Example: source languages like C, Java, . . . etc. Compilers are user friendly. The target language is like machine language, which is efficient for hardware. Compiler Error messages Low level program (target program) High level program (source program)"
+ },
+ {
+  "t": "h2",
+  "x": "Passes"
+ },
+ {
+  "t": "p",
+  "x": "The number of iterations to scan the source code, till to get the executable code is called as a pass. Compiler is two pass. Single pass requires more memory and multipass require less memory."
+ },
+ {
+  "t": "h2",
+  "x": "Analysis–synthesis model of compilation"
+ },
+ {
+  "t": "p",
+  "x": "There are two parts of compilation: Synthesis (back end) Analysis (front end) Compilation Analysis It breaks up the source program into pieces and creates an intermediate representation of the source program. This is more language specific. Synthesis It constructs the desired target program from the intermediate representation. The target program will be more machine specific, dealing with registers and memory locations. Language processing system Lexical analysis Syntax analysis Context free grammars and ambiguity Types of parsing Top down parsing Bottom up parsing Conﬂ icts Operator precedence grammar LR parser Canonical LR parser(CLR)"
+ },
+ {
+  "t": "h2",
+  "x": "Front end vs back end of a compiler"
+ },
+ {
+  "t": "p",
+  "x": "The front end includes all analysis phases and intermediate code generator with part of code optimization. Source program Tokens Parser Syntax tree 3adress code Intermediate code generator Symbol table Lexical analyzer Error handler The back end includes code optimization and code generation phases. The back end synthesizes the target program from intermediate code."
+ },
+ {
+  "t": "h2",
+  "x": "Context of a compiler"
+ },
+ {
+  "t": "p",
+  "x": "In addition to a compiler, several other programs may be required to create an executable target program, like preprocessor to expand macros. The target program created by a compiler may require further processing before it can be run. The language processing system will be like this: Source program with macros Preprocessor Compiler Assembler Loader/linker Modified source program Target assembly program Relocatable machine code Absolute machine code Library files, relocatable object files"
+ },
+ {
+  "t": "h2",
+  "x": "Phases"
+ },
+ {
+  "t": "p",
+  "x": "Compilation process is partitioned into some subproceses called phases. In order to translate a high level code to a machine code, we need to go phase by phase, with each phase doing a particular task and parsing out its output for the next phase."
+ },
+ {
+  "t": "h2",
+  "x": "Lexical analysis or scanning"
+ },
+ {
+  "t": "p",
+  "x": "It is the first phase of a compiler. The lexical analyzer reads the stream of characters making up the source program and groups the characters into meaningful sequences called lexemes."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the statement: if (a < b)"
+ },
+ {
+  "t": "p",
+  "x": "In this sentence the tokens are if, (a, <, b,). Number of tokens = 6 Identifiers: a, b Keywords: if Operators: ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Syntax analyzer or Parser"
+ },
+ {
+  "t": "li",
+  "x": "Tokens are grouped hierarchically into nested collections with collective meaning."
+ },
+ {
+  "t": "li",
+  "x": "A context free grammar (CFG) specifies the rules or productions for identifying constructs that are valid in a programming language. The output is a parse/syntax/ derivation tree."
+ },
+ {
+  "t": "p",
+  "x": "Example: Parse tree for –(id + id) using the following grammar: ⟨eq⟩ –E (G1) E → (E) E → id ⟨eq⟩ id id"
+ },
+ {
+  "t": "h2",
+  "x": "Semantic analysis"
+ },
+ {
+  "t": "li",
+  "x": "It checks the source program for semantic errors."
+ },
+ {
+  "t": "li",
+  "x": "Type checking is done in this phase, where the compiler checks that each operator has matching operands for semantic consistency with the language definition."
+ },
+ {
+  "t": "li",
+  "x": "Gathers the type information for the next phases."
+ },
+ {
+  "t": "p",
+  "x": "Example 1: The bicycle rides the boy. This statement has no meaning, but it is syntactically correct."
+ },
+ {
+  "t": "h2",
+  "x": "Example 2:"
+ },
+ {
+  "t": "p",
+  "x": "int a; bool b; char c; ⟨eq⟩ b; We cannot add integer with a Boolean variable and assign it to a character variable."
+ },
+ {
+  "t": "h2",
+  "x": "Intermediate code generation"
+ },
+ {
+  "t": "p",
+  "x": "The intermediate representation should have two important properties: (i) It should be easy to produce. (ii) Easy to translate into the target program ‘Three address code’ is one of the common forms of Intermediate code. Three address code consists of a sequence of instructions, each of which has at most three operands."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "id1 = id2 + id3 × 10; t1: = inttoreal(10) t2:= id3 × t1 t3:= id2 + t2 id1 = t3"
+ },
+ {
+  "t": "h2",
+  "x": "Code optimization"
+ },
+ {
+  "t": "p",
+  "x": "The output of this phase will result in faster running machine code."
+ },
+ {
+  "t": "h2",
+  "x": "Example: For the above intermediate code the optimized"
+ },
+ {
+  "t": "p",
+  "x": "code will be t1:= id3 × 10.0 id1: = id2 + t1 In this we eliminated t2 and t3 registers."
+ },
+ {
+  "t": "h2",
+  "x": "Code generation"
+ },
+ {
+  "t": "li",
+  "x": "In this phase, the target code is generated."
+ },
+ {
+  "t": "li",
+  "x": "Generally the target code can be either a relocatable machine code or an assembly code."
+ },
+ {
+  "t": "li",
+  "x": "Intermediate instructions are each translated into a sequence of machine instructions."
+ },
+ {
+  "t": "li",
+  "x": "Assignment of registers will also be done."
+ },
+ {
+  "t": "h2",
+  "x": "Example: MOVF"
+ },
+ {
+  "t": "p",
+  "x": "id3, R2 MULF ≠ 60.0, R2 MOVF id2, R1 ADDF R2, R1 MOVF R1, id1"
+ },
+ {
+  "t": "h2",
+  "x": "Symbol table management"
+ },
+ {
+  "t": "p",
+  "x": "A symbol table is a data structure containing a record for each variable name, with fields for the attributes of the name. What is the use of a symbol table? 1. To record the identifiers used in the source program. 2. Its type and scope 3. If it is a procedure name then the number of arguments, types of arguments, the method of parsing (by reference) and the type returned."
+ },
+ {
+  "t": "h2",
+  "x": "Error detection and reporting"
+ },
+ {
+  "t": "p",
+  "x": "(i) Lexical phase can detect errors where the characters remaining in the input ‘do not form any token’. (ii) Errors of the type, ‘violation of syntax’ of the language are detected by syntax analysis. (iii) Semantic phase tries to detect constructs that have the right syntactic structure but no meaning. Example: adding two array names etc."
+ },
+ {
+  "t": "h1",
+  "x": "Lexical Analysis"
+ },
+ {
+  "t": "p",
+  "x": "Lexical Analysis is the first phase in compiler design. The main task of the lexical analyzer is to read the input characters of the source program, group them into lexemes, and produce as output a sequence of tokens for each lexeme in the source program. The stream of tokens is sent to the parser for syntax analysis. There will be interaction with the symbol table as well. Parser Lexical analyzer Symbol table Error handler Source program Tokens Get next tokens"
+ },
+ {
+  "t": "h2",
+  "x": "Lexeme: Sequence of characters in the source program"
+ },
+ {
+  "t": "p",
+  "x": "that matches the pattern for a token. It is the smallest logical unit of a program. Example: 10, x, y, <, >, = Tokens: These are the classes of similar lexemes. Example: Operators: <, >, = Identifiers: x, y Constants: 10 Keywords: if, else, int"
+ },
+ {
+  "t": "h2",
+  "x": "Operations performed by lexical analyzer"
+ },
+ {
+  "t": "p",
+  "x": "1. Identification of lexemes and spelling check 2. Stripping out comments and white space (blank, new line, tab etc). 3. Correlating error messages generated by the compiler with the source program. 4. If the source program uses a macro-preprocessor, the expansion of macros may also be performed by lexical analyzer."
+ },
+ {
+  "t": "h2",
+  "x": "Example 1: Take the following example from Fortran"
+ },
+ {
+  "t": "p",
+  "x": "DO 5 I = 1.25 Number of tokens = 5 The 1st lexeme is the keyword DO Tokens are DO, 5, I, =, 1.25."
+ },
+ {
+  "t": "h2",
+  "x": "Example 2: An example from C program"
+ },
+ {
+  "t": "p",
+  "x": "for (int i = 1; i < = 10; i + +) \u0007Here tokens are for, (, int, i, =, 1,;, i, < =, 10,;, i, ++,) Number of tokens = 13"
+ },
+ {
+  "t": "h2",
+  "x": "LEX compiler"
+ },
+ {
+  "t": "p",
+  "x": "Lexical analyzer divides the source code into tokens. To implement lexical analyzer we have two techniques namely hand code and the other one is LEX tool. LEX is an automated tool which specifies lexical analyzer, from the rules given by the regular expression. These rules are also called as pattern recognizing rules."
+ },
+ {
+  "t": "h1",
+  "x": "Syntax Analysis"
+ },
+ {
+  "t": "p",
+  "x": "This is the 2nd phase of the compiler, checks the syntax and constructs the syntax/parse tree. Input of parser is token and output is a parse/ syntax tree."
+ },
+ {
+  "t": "h2",
+  "x": "Constructing parse tree"
+ },
+ {
+  "t": "p",
+  "x": "Construction of derivation tree for a given input string by using the production of grammar is called parse tree. Consider the grammar ⟨eq⟩ E/E ⟨eq⟩ id The parse tree for the string ω= id + id * id is E S E E E id id id + * ω= id + id * id"
+ },
+ {
+  "t": "h2",
+  "x": "Role of the parser"
+ },
+ {
+  "t": "p",
+  "x": "1. Construct a parse tree. 2. Error reporting and correcting (or) recovery. A parser can be modeled by using CFG (Context Free Grammar) recognized by using pushdown automata/table driven parser. 3. CFG will only check the correctness of sentence with respect to syntax not the meaning. Token Parser Get next token Syntax errors Lexical errors Lexical analyzer Parse tree Source program How to construct a parse tree? Parse tree’s can be constructed in two ways. (i) Top-down parser: It builds parse trees from the top (root) to the bottom (leaves). (ii) Bottom-up parser: It starts from the leaves and works up to the root. In both cases, the input to the parser is scanned from left to right, one symbol at a time."
+ },
+ {
+  "t": "h2",
+  "x": "Parser generator"
+ },
+ {
+  "t": "p",
+  "x": "Parser generator is a tool which creates a parser."
+ },
+ {
+  "t": "h2",
+  "x": "Example: compiler – compiler, YACC"
+ },
+ {
+  "t": "p",
+  "x": "The input of these parser generator is grammar we use and the output will be the parser code. The parser generator is used for construction of the compilers front end."
+ },
+ {
+  "t": "h2",
+  "x": "Scope of declarations"
+ },
+ {
+  "t": "p",
+  "x": "Declaration scope refers to the certain program text portion, in which rules are defined by the language. Within the defined scope, entity can access legally to declared entities. The scope of declaration contains immediate scope always. Immediate scope is a region of declarative portion with enclosure of declaration immediately. Scope starts at the beginning of declaration and scope continues till the end of declaration. Whereas in the over loadable declaration, the immediate scope will begin, when the callable entity profile was determined. The visible part refers text portion of declaration, which is visible from outside."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax Error Handling"
+ },
+ {
+  "t": "p",
+  "x": "1. Reports the presence of errors clearly and accurately. 2. Recovers from each error quickly. 3. It should not slow down the processing of correct programs. Error Recovery Strategies Global correction Error productions Panic mode Phrase level Panic mode On discovering an error, the parser discards input symbols one at a time until one of the synchronizing tokens is found. Phrase level A parser may perform local correction on the remaining input. It may replace the prefix of the remaining input. Error productions Parser can generate appropriate error messages to indicate the erroneous construct that has been recognized in the input. Global corrections There are algorithms for choosing a minimal sequence of changes to obtain a globally least cost correction."
+ },
+ {
+  "t": "h1",
+  "x": "and Ambiguity"
+ },
+ {
+  "t": "p",
+  "x": "A grammar is a set of rules or productions which generates a collection of finite/infinite strings. It is a 4-tuple defined as G = (V, T, P, S) Where V = set of variables T = set of terminals P = set of production rules S = start symbol"
+ },
+ {
+  "t": "h2",
+  "x": "Example: S → (S)/e"
+ },
+ {
+  "t": "p",
+  "x": "S → (S)\b (1) S → e\b (2) Here S is start symbol and the only variable. (,), e is terminals. (1) and (2) are production rules."
+ },
+ {
+  "t": "h2",
+  "x": "Sentential forms"
+ },
+ {
+  "t": "p",
+  "x": "s ⇒ a, Where a may contain non-terminals, then we say that a is a sentential form of G."
+ },
+ {
+  "t": "h2",
+  "x": "Sentence: A sentence is a sentential form with no"
+ },
+ {
+  "t": "p",
+  "x": "non-terminals. Example: –(id + id) is a sentence of the grammar (G1). Derivations Left most derivations Right most derivations E ⇒ −E ⇒ −(E) ⇒ −(E + E) ⇒ −(id + E) ⇒ −(id + id) E ⇒ −E ⇒ −(E) ⇒ −(E + E) ⇒ −(E + id) ⇒ −(id + id) Right most derivations are also known as canonical derivations. ⟨eq⟩ id id"
+ },
+ {
+  "t": "h2",
+  "x": "Ambiguity"
+ },
+ {
+  "t": "p",
+  "x": "A grammar that produces more than one parse tree for some sentence is said to be ambiguous. Or A grammar that produces more than one left most or more than one right most derivations is ambiguous. For example consider the following grammar: String → String + String/String – String /0/1/2/…/9 9 – 5 + 2 has two parse trees as shown below String String String String String − +"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 1 Leftmost derivation"
+ },
+ {
+  "t": "p",
+  "x": "* String String String String String − +"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 2 Rightmost derivation"
+ },
+ {
+  "t": "li",
+  "x": "Ambiguity is problematic because the meaning of the program can be incorrect."
+ },
+ {
+  "t": "li",
+  "x": "Ambiguity can be handled in several ways"
+ },
+ {
+  "t": "p",
+  "x": "1. Enforce associativity and precedence 2. Rewrite the grammar by eliminating left recursion and left factoring."
+ },
+ {
+  "t": "h2",
+  "x": "Removal of ambiguity"
+ },
+ {
+  "t": "p",
+  "x": "The grammar is said to be ambiguous if there exists more than one derivation tree for the given input string. The ambiguity of grammar is undecidable; ambiguity of a grammar can be eliminated by rewriting the grammar."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "⟨eq⟩ E/id} → ambiguous grammar ⟨eq⟩ T/T rewritten grammar T → id (unambiguous grammar)"
+ },
+ {
+  "t": "h2",
+  "x": "Left recursion"
+ },
+ {
+  "t": "p",
+  "x": "Left recursion can take the parser into infinite loop so we need to remove left recursion. Elimination of left recursion A → Aa/b is a left recursive. It can be replaced by a non-recursive grammar: A → bA′ A′ → aA′/e In general A → Aa1/Aa2/…/Aam/b1/b2/…/bn We can replace A productions by A → b1 A′/b2 A′/–bn A′ A′ → a1 A′/a2 A′/–am A′"
+ },
+ {
+  "t": "h2",
+  "x": "Example 3: Eliminate left recursion from"
+ },
+ {
+  "t": "p",
+  "x": "⟨eq⟩ T/T ⟨eq⟩ F/F F → (E)/id Solution ⟨eq⟩ T/T it is in the form A → Aa/b So, we can write it as E → TE′ E′→ +TE′/e Similarly other productions are written as T → FT ′ T1 → × FT ′/∈ F → (E)/id"
+ },
+ {
+  "t": "h2",
+  "x": "Left factoring"
+ },
+ {
+  "t": "p",
+  "x": "A grammar with common prefixes is called non-deterministic grammar. To make it deterministic we need to remove common prefixes. This process is called as Left Factoring. The grammar: A → ab1/ab2 can be transformed into A → aA′ A′ → b1/b2"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: S → Ietss ′/A"
+ },
+ {
+  "t": "h1",
+  "x": "Types of Parsing"
+ },
+ {
+  "t": "p",
+  "x": "Parsers Topdown parsers (predictive parser) Bottom up parsers Recursive descent parsing Non-recursive descent parsing Operator precedence parsing (LR parsers) SLR LALR CLR"
+ },
+ {
+  "t": "h1",
+  "x": "Topdown Parsing"
+ },
+ {
+  "t": "p",
+  "x": "A parse tree is constructed for the input starting from the root and creating the nodes of the parse tree in preorder. It simulates the left most derivation."
+ },
+ {
+  "t": "h2",
+  "x": "Backtracking Parsing"
+ },
+ {
+  "t": "p",
+  "x": "If we make a sequence of erroneous expansions and subsequently discover a mismatch we undo the effects and roll back the input pointer. This method is also known as brute force parsing."
+ },
+ {
+  "t": "h2",
+  "x": "Example: S → Cad"
+ },
+ {
+  "t": "p",
+  "x": "A → ab/a Let the string w = cad is to generate: S A c d a b The string generated from the above parse tree is cabd. but, w = cad, the third symbol is not matched. So, report error and go back to A. Now consider the other alternative for production A. S A c d a String generated ‘cad’ and w = cad. Now, it is successful. In this we have used back tracking. It is costly and time consuming approach. Thus an outdated one."
+ },
+ {
+  "t": "h2",
+  "x": "Predictive Parsers"
+ },
+ {
+  "t": "p",
+  "x": "By eliminating left recursion and by left factoring the grammar, we can have parse tree without backtracking. To construct a predictive parser, we must know, 1. Current input symbol 2. Non-terminal which is to be expanded A procedure is associated with each non-terminal of the grammar."
+ },
+ {
+  "t": "h2",
+  "x": "Recursive descent parsing"
+ },
+ {
+  "t": "p",
+  "x": "In recursive descent parsing, we execute a set of recursive procedures to process the input. The sequence of procedures called implicitly, defines a parse tree for the input."
+ },
+ {
+  "t": "h2",
+  "x": "Non-recursive predictive parsing"
+ },
+ {
+  "t": "li",
+  "x": "It maintains a stack explicitly, rather than implicitly via recursive calls."
+ },
+ {
+  "t": "li",
+  "x": "A table driven predictive parser has → An input buffer → A stack → A parsing table → Output stream Predictive parsing program Output x a + b $ y z $ Parsing table M Input"
+ },
+ {
+  "t": "h2",
+  "x": "Constructing a parsing table"
+ },
+ {
+  "t": "p",
+  "x": "To construct a parsing table, we have to learn about two functions: 1. FIRST ( ) 2. FOLLOW ( )"
+ },
+ {
+  "t": "h2",
+  "x": "FIRST(X) To compute FIRST(X) for all grammar symbols"
+ },
+ {
+  "t": "p",
+  "x": "X, apply the following rules until no more terminals or e can be added to any FIRST set. 1. If X is a terminal, then FIRST(X) is {X}. 2. If X → e is a production, then add e to FIRST(X). 3. If X is non-terminal and X → Y1Y2 – Yk is a production, then place ‘a’ in FIRST(X) if for some i, a is an FIRST (Yi) and ∈ is in all of FIRST(Y1), …, FIRST(Yi–1); that is, Y1, …, Yi – 1 ⇒ ∈. If ∈ is in FIRST (Yj) for all j = 1, 2, …, k, then add ∈ to FIRST(X). For example, everything in FIRST (Y1) is surely in FIRST(X). If Y1 does not derive ∈, then add nothing more to FIRST(X), but if Y1 ⇒ ∈, then add FIRST (Y2) and so on."
+ },
+ {
+  "t": "h2",
+  "x": "FOLLOW (A): To compute FOLLOW (A) for all non-"
+ },
+ {
+  "t": "p",
+  "x": "terminals A, apply the following rules until nothing can be added to any FOLLOW set. 1. Place $ in FOLLOW(S), where S is the start symbol and $ is input right end marker. 2. If there is a production A → aBb, then everything in FIRST (b) except e is placed in FOLLOW (B). 3. If there is a production A → aB or a production A → aBb, where FIRST (b) contains e, then everything in FOLLOW (A) is in FOLLOW (B)."
+ },
+ {
+  "t": "h2",
+  "x": "parsing table"
+ },
+ {
+  "t": "p",
+  "x": "1. For each production A → a of the grammar, do steps 2 and 3. 2. For each terminal a in FIRST (a), add A →a to M [A, a] 3. If e is in FIRST (a), add A → a to M [A, b] for each terminal b in FOLLOW (A). If e is in FIRST (a) and $ is in FOLLOW (A), add A → a to M [A, $] 4. Make each undefined entry of M be error. * * By applying these rules to the above grammar, we will get the following parsing table."
+ },
+ {
+  "t": "h2",
+  "x": "Input Symbol"
+ },
+ {
+  "t": "p",
+  "x": "id ⟨eq⟩ $ E E → TE ′ E → TE ′ E ′ E ′ → + TE ′ E ′ → e E ′ ⟨eq⟩ FT ′ T → FT ′ T ′ T ′ → e T ′ → * FT ′ T ′ → e T ′ ⟨eq⟩ id F → (E) The parser is controlled by a program. The program consider x, the symbol on top of the stack and ‘a’ the current input symbol. 1. If ⟨eq⟩ $, the parser halts and announces successful completion of parsing. 2. If ⟨eq⟩ $, the parser pops x off the stack and advances the input pointer to the next input symbol. 3. If x is a non-terminal, the program consults entry M[x, a] of the parsing table M. This entry will be either an x-production of the grammar or an error entry. If M[x, a] = {x → UVW}, the parser replaces x on top of the stack by WVU with U on the top. If M[x, a] = error, the parser calls an error recovery routine. For example, consider the moves made by predictive parser on input id + id * id, which are shown below:"
+ },
+ {
+  "t": "h2",
+  "x": "Action"
+ },
+ {
+  "t": "p",
+  "x": "E$ id+id*id$ TE′$ id+id*id$ Output E → TE′ FT′E′$ id+id*id$ Output T → FT′ idT′E′$ id+id*id$ Output F → id id T′E′$ +id*id$ Match id id E′$ +id*id$ Output T′→ e id +TE′$ +id*id$ Output E′→ +TE′ id+ TE′$ id*id$ Match+ id+ FT′E′$ id*id$ Output T → FT′ id+ idT′E′$ id*id$ Output F → id id+id T′E′$ *id$ Match id id+id *FT′E′$ *id$ Output T′ → *FT′ id+id* FT′E′$ id$ Match* id+id* idT′E′$ id$ OutputF → id id+id*id T′E′$ $ Match id id+id*id E′$ $ Output T′→ e id+id*id $ $ Output E′→ e"
+ },
+ {
+  "t": "h1",
+  "x": "Bottom up Parsing"
+ },
+ {
+  "t": "li",
+  "x": "This parsing constructs the parse tree for an input string beginning at the leaves and working up towards the root."
+ },
+ {
+  "t": "li",
+  "x": "General style of bottom-up parsing is shift-reduce parsing."
+ },
+ {
+  "t": "h2",
+  "x": "Shift–Reduce Parsing"
+ },
+ {
+  "t": "p",
+  "x": "Reduce a string to the start symbol of the grammar. It simulates the reverse of right most derivation. In every step a particular substring is matched (in left right fashion) to the right side of some production and then it is substituted by the non-terminal in the left hand side of the production. For example consider the grammar S → aABe A → Abc/b B → d In bottomup parsing the string ‘abbcde’ is verified as abbcde aAbcde aAde → reverse order aABe S"
+ },
+ {
+  "t": "h2",
+  "x": "Stack implementation of shift–reduce parser"
+ },
+ {
+  "t": "p",
+  "x": "The shift reduce parser consists of input buffer, Stack and parse table. Input buffer consists of strings, with each cell containing only one input symbol. Stack contains the grammar symbols, the grammar symbols are inserted using shift operation and they are reduced using reduce operation after obtaining handle from the collection of buffer symbols. Parse table consists of 2 parts goto and action, which are constructed using terminal, non-terminals and compiler items. Let us illustrate the above stack implementation. → Let the grammar be S → AA A → aA A → b Let the input string ‘w’ be abab$ w= abab$"
+ },
+ {
+  "t": "h2",
+  "x": "Action"
+ },
+ {
+  "t": "p",
+  "x": "$ abab$ Shift $a bab$ Shift $ab ab$ Reduce (A → b) $aA ab$ Reduce (A → aA) $A ab$ Shift $Aa b$ Shift $Aab $ Reduce (A → b) $AaA $ Reduce (A → aA) $AA $ Reduce (S → AA) $S $ Accept"
+ },
+ {
+  "t": "h2",
+  "x": "Rightmost derivation"
+ },
+ {
+  "t": "p",
+  "x": "S ⇒ aABe ⇒ aAde ⇒ aAbcde ⇒ abbcde For bottom up parsing, we are using right most derivation in reverse. Handle of a string Substring that matches the RHS of some production and whose reduction to the non-terminal on the LHS is a step along the reverse of some rightmost derivation. S Ar r rm ⇒ ⇒ ∗ α αβ Right sentential forms of a unambiguous grammar have one unique handle."
+ },
+ {
+  "t": "h2",
+  "x": "Example: For Grammar, S → Aabe"
+ },
+ {
+  "t": "p",
+  "x": "A → Abc/b ⟨eq⟩ aABe ⇒ aAde ⇒ aAbcde ⇒ abbcde Note: Handles are underlined."
+ },
+ {
+  "t": "h2",
+  "x": "Handle pruning The process of discovering a handle and"
+ },
+ {
+  "t": "p",
+  "x": "reducing it to the appropriate left hand side is called handle pruning. Handle pruning forms the basis for a bottomup parsing. To construct the rightmost derivation: S = r0 ⇒ r1 ⇒ r2 ____ ⇒ rn = w Apply the following simple algorithm: For i ← n to 1 Find the handle Ai → Bi in ri Replace Bi with Ai to generate ri–1 Consider the cut of a parse tree of a certain right sentential form: A S b a w Here A → b is a handle for abw. Shift reduce parsing with a stack There are 2 problems with this technique: (i) To locate the handle (ii) Decide which production to use"
+ },
+ {
+  "t": "h2",
+  "x": "General construction using a stack"
+ },
+ {
+  "t": "p",
+  "x": "1. ‘Shift’ input symbols onto the stack until a handle is found on top of it. 2. ‘Reduce’ the handle to the corresponding non-terminal. 3. ‘Accept’ when the input is consumed and only the start symbol is on the stack. 4. Errors – call an error reporting/recovery routine. Viable prefixes The set of prefixes of a right sentential form that can appear on the stack of a shift reduce parser are called viable prefixes."
+ },
+ {
+  "t": "h2",
+  "x": "Conflicts"
+ },
+ {
+  "t": "p",
+  "x": "Shift/reduce conflict Conflicts Reduce/reduce conflict"
+ },
+ {
+  "t": "h2",
+  "x": "Shift/reduce conflict"
+ },
+ {
+  "t": "p",
+  "x": "Example: stmt → if expr then stmt | if expr then stmt else stmt | any other statement If exp then stmt is on the stack, in this case we can’t tell whether it is a handle. i.e., ‘shift/reduce’ conflict."
+ },
+ {
+  "t": "h2",
+  "x": "Example: S → Aa/Bb"
+ },
+ {
+  "t": "p",
+  "x": "⟨eq⟩ ac it gives reduce/reduce conflict."
+ },
+ {
+  "t": "h2",
+  "x": "Operator Precedence Grammar"
+ },
+ {
+  "t": "p",
+  "x": "In operator grammar, no production rule can have:"
+ },
+ {
+  "t": "li",
+  "x": "e at the right side."
+ },
+ {
+  "t": "li",
+  "x": "two adjacent non-terminals at the right side."
+ },
+ {
+  "t": "p",
+  "x": "Example 1: ⟨eq⟩ /E – E/ id is operator grammar."
+ },
+ {
+  "t": "h2",
+  "x": "Precedence relation If"
+ },
+ {
+  "t": "p",
+  "x": "a < b then b has higher precedence than a a = b then b has same precedence as a a > b then b has lower precedence than a Common ways for determining the precedence relation between pair of terminals: 1. Traditional notations of associativity and precedence. Example: × has higher precedence than + × .> + (or) + <. × 2. First construct an unambiguous grammar for the language which reflects correct associativity and precedence in its parse tree."
+ },
+ {
+  "t": "h2",
+  "x": "associativity and precedence"
+ },
+ {
+  "t": "p",
+  "x": "Let us use $ to mark end of each string. Define $ <. b and b ⋗ $ for all terminals b. Consider the grammar is: ⟨eq⟩ E/E × E/id not operator grammar Let the operator precedence table for this grammar is: id + × $ id ⋗ ⋗ ⋗ + ⋖ ⋗ ⋖ ⋗ × ⋖ ⋗ ⋗ ⋗ $ ⋖ ⋖ ⋖ accept 1. Scan the string from left until ⋗ is encountered 2. Then scan backwards (to left) over any = until ⋖ is encountered. 3. The handle contains everything to the left of the first ⋗ and to the right of the ⋖ is encountered. After inserting precedence relation is $id + id * id $ is $ ⋖ id ⋗ + ⋖ id ⋗ * ⋖ id ⋗ $"
+ },
+ {
+  "t": "h2",
+  "x": "Precedence functions Instead of storing the entire table of"
+ },
+ {
+  "t": "p",
+  "x": "precedence relations table, we can encode it by precedence functions f and g, which map terminal symbols to integers: 1. f(a) ⋖ f(b) whenever a ⋖ b 2. f(a) ⋗ f(b) whenever a ≗ b 3. f(a) > f(b) whenever a ⋗ b"
+ },
+ {
+  "t": "h2",
+  "x": "Finding precedence functions for a table"
+ },
+ {
+  "t": "p",
+  "x": "1. Create symbols f(a) and g(a) for each ‘a’ that is a terminal or $. 2. Partition the created symbols into as many groups as possible in such away that a = b then f (a) and g (b) are in the same group 3. Create a directed graph If a < b then place an edge from g(b) to f(a) If a > b then place an edge from f(a) to g(b) 4. If the graph constructed has a cycle then no precedence function exists. If there are no cycles, let f(a) be the length of the longest path being at the group of f(a). Let g(a) be the length of the longest path from the group of g(a)."
+ },
+ {
+  "t": "h2",
+  "x": "precedence parsing"
+ },
+ {
+  "t": "li",
+  "x": "It can not handle unary minus."
+ },
+ {
+  "t": "li",
+  "x": "Difficult to decide which language is recognized by grammar."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages"
+ },
+ {
+  "t": "p",
+  "x": "1. Simple 2. Powerful enough for expressions in programming language."
+ },
+ {
+  "t": "h2",
+  "x": "Error cases"
+ },
+ {
+  "t": "p",
+  "x": "1. No relation holds between the terminal on the top of stack and the next input symbol. 2. A handle is found, but there is no production with this handle as the right side."
+ },
+ {
+  "t": "h2",
+  "x": "Error recovery"
+ },
+ {
+  "t": "p",
+  "x": "1. Each empty entry is filled with a pointer to an error routine. 2. Based on the handle tries to recover from the situation. To recover, we must modify (insert/change) 1. Stack or 2. Input or 3. Both We must be careful that we don’t get into an infinite loop."
+ },
+ {
+  "t": "h2",
+  "x": "LR Parsers"
+ },
+ {
+  "t": "li",
+  "x": "In LR (K), L stands for Left to Right Scanning, R stands for Right most derivation, K stands for number of look ahead symbols."
+ },
+ {
+  "t": "li",
+  "x": "LR parsers are table-driven, much like the non-recursive LL parsers. A grammar which is used in construction of LR parser is LR grammar. For a grammar to be LR it is sufficient that a left-to-right shift-reduce parser be able to recognize handles of right-sentential forms when they appear on the top of the stack."
+ },
+ {
+  "t": "li",
+  "x": "The Time complexity for such parsers is O (n3)"
+ },
+ {
+  "t": "li",
+  "x": "LR parsers are faster than LL (1) parser."
+ },
+ {
+  "t": "li",
+  "x": "LR parsing is attractive because   The most general non-backtracking shift reduce parser."
+ },
+ {
+  "t": "p",
+  "x": "  The class of grammars that can be passed using LR methods is a proper superset of predictive parsers. LL (1) grammars ⊂ LR (1) grammars.   LR parser can detect a syntactic error in the left to right scan of the input."
+ },
+ {
+  "t": "li",
+  "x": "LR parsers can be implemented in 3 ways:"
+ },
+ {
+  "t": "p",
+  "x": "1. Simple LR (SLR): The easiest to implement but the least powerful of the three. 2. Canonical LR (CLR): most powerful and most expensive. 3. Look ahead LR (LALR): Intermediate between the remaining two. It works on most programming language grammars."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages of LR parser"
+ },
+ {
+  "t": "p",
+  "x": "1. Detecting a handle is an overhead, parse generator is used. 2. The main problem is finding the handle on the stack and it was replaced with the non-terminal with the left hand side of the production."
+ },
+ {
+  "t": "h2",
+  "x": "The LR parsing algorithm"
+ },
+ {
+  "t": "li",
+  "x": "It consists of an input, an output, a stack, a driver program and a parsing table that has two parts (action and goto)."
+ },
+ {
+  "t": "li",
+  "x": "The driver/parser program is same for all these LR parsers, only the parsing table changes from parser to another."
+ },
+ {
+  "t": "p",
+  "x": "Predictive parsing program Sm xm : : : So S1 x1 Stack Input Output a1 a2 ai an ... ... $ s t a t e s Action table terminals and $ Goto table non-terminals different actions State number Stack: To store the string of the form, So x1 S1 … xmSm where Sm: state xm: grammar symbol Each state symbol summarizes the information contained in the stack below it."
+ },
+ {
+  "t": "h2",
+  "x": "Parsing table: Parsing table consists of two parts:"
+ },
+ {
+  "t": "p",
+  "x": "1. Action part 2. Goto part ACTION Part: Let, Sm → top of the stack ai → current symbol Then action [Sm, ai] which can have one of four values: 1. Shift S, where S is a state 2. Reduce by a grammar production A → b 3. Accept 4. Error GOTO Part: If goto (S, A) = X where S → state, A → non-terminal, then GOTO maps state S and non-terminal A to state X."
+ },
+ {
+  "t": "h2",
+  "x": "Configuration"
+ },
+ {
+  "t": "p",
+  "x": "(So x1S1 x2S2 – xmSm, aiai+1 – an$) The next move of the parser is based on action [Sm, ai] The configurations are as follows. 1. If action [Sm, ai] = shift S (So x1S1 x2S2--- xmSm, aiai+1 --- an$) 2. If action [Sm, ai] = reduce A → b then (So x1S1 x2S2--- xm–rSm–r, AS, aiai+1 --- an$) Where S = goto [Sm–r, A] 3. If action [Sm, ai] = accept, parsing is complete. 4. If action [Sm, ai] = error, it calls an error recovery routine."
+ },
+ {
+  "t": "h2",
+  "x": "State"
+ },
+ {
+  "t": "p",
+  "x": "id + × ( ) $ E T F S5 S4 S6 acc r2 S7 r2 r2 r4 r4 r4 r4 S5 S4 r6 r6 r6 r6 S5 S4 S5 S4 S6 S1 r1 S7 r1 r1 r3 r3 r3 r3 r5 r5 r5 r5 Moves of LR parser on input string id*id+id is shown below:"
+ },
+ {
+  "t": "h2",
+  "x": "Action"
+ },
+ {
+  "t": "p",
+  "x": "id * id + id$ Shift 5 0id 5 * id + id$ reduce 6 means reduce with 6th production F → id and goto [0, ⟨eq⟩ 0F 3 * id + id$ reduce 4 i.e T → F goto [0, ⟨eq⟩ 0T 2 * id + id$ Shift 7 0T2 * 7 id + id$ Shift 5 0T2 * 7 id 5 + id$ reduce 6 i.e F → id goto [7, ⟨eq⟩ 0T2 ⟨eq⟩ id$ reduce 3 i.e T → T *F 0T 2 + id$ goto [0, ⟨eq⟩ 0E 1 + id$ reduce 2 i.e E → T & goto [0, ⟨eq⟩ 0E1 + 6 id$ Shift 6 0E1 + 6 id 5 $ Shift 5 0E1 + 6F 3 $ reduce 6 & goto [6, ⟨eq⟩ 0E1 + 6T 9 $ reduce 4 & goto [6, ⟨eq⟩ 0E1 $ reduce 1 & goto [0, ⟨eq⟩ 0E1 $ accept"
+ },
+ {
+  "t": "h2",
+  "x": "Constructing SLR parsing table"
+ },
+ {
+  "t": "p",
+  "x": "LR (0) item: LR (0) item of a grammar G is a production of G with a dot at some position of the right side of production."
+ },
+ {
+  "t": "h2",
+  "x": "Example: A → BCD"
+ },
+ {
+  "t": "p",
+  "x": "Possible LR (0) items are A → .BCD A → B.CD A → BC.D A → BCD. A → B.CD means we have seen an input string derivable from B and hope to see a string derivable from CD. The LR (0) items are constructed as a DFA from grammar to recognize viable prefixes. The items can be viewed as the states of NFA. The LR (0) item (or) canonical LR (0) collection, provides the basis for constructing SLR parser. To construct LR (0) items, define (a) An augmented grammar (b) closure and goto Augmented grammar (G′) If G is a grammar with start symbol S, G′ the augmented grammar for G, with new start symbol S′ and production S′ → S. Purpose of G′ is to indicate when to stop parsing and announce acceptance of the input."
+ },
+ {
+  "t": "h2",
+  "x": "Closure operation Closure (I) includes"
+ },
+ {
+  "t": "p",
+  "x": "1. Intially, every item in I is added to closure (I) 2. If A →a.Bb is in closure (I) and b→g is a production then add B → .g to I."
+ },
+ {
+  "t": "h2",
+  "x": "Goto operation"
+ },
+ {
+  "t": "p",
+  "x": "Goto (I, x) is defined to be the closure of the set of all items [A →aX.b] such that [A →a.Xb] is in I. Items Kernel items: S′ → .S and all items whose dots are not at the left end Non-kernel items: Which have their dots at the left end."
+ },
+ {
+  "t": "h2",
+  "x": "Construction of sets of Items"
+ },
+ {
+  "t": "p",
+  "x": "Procedure items (G′) Begin C: = closure ({[S′ → .S]}); repeat For each set of items I in C and each grammar symbol x Such that goto (I, x) is not empty and not in C do add goto (I, x) to C; Until no more sets of items can be added to C, end;"
+ },
+ {
+  "t": "h2",
+  "x": "Example: LR (0) items for the grammar"
+ },
+ {
+  "t": "p",
+  "x": "E′ ⟨eq⟩ T/T ⟨eq⟩ F/F F → (E)/id is given below: I0: E′ → .E E → .E ⟨eq⟩ .T T → .T ⟨eq⟩ .F F → .(E) F → .id I1: got (I0, E) E′ → E. E → E. + T I2: goto (I0, T) E → T. T → T. * F I3: goto (I0, F) T → F. I4: goto (I0, ⟨eq⟩ (.E) E → .E ⟨eq⟩ .T E → .T ⟨eq⟩ .F F → .(E) F → .id I5: goto (I0, id) F → id. I6: got (I1, +) E → E+ .T T → .T ⟨eq⟩ .F F → .(E) F → .id I7: goto (I2, *) T → T* .F F → .(E) F → .id I8: goto (I4, E) F → (E.) I9: goto (I6, T) E → E+ T. T → T.* F I10: goto (I7, F) T → T* F. I11: goto (I8,)) F → (E). For viable prefixes construct the DFA as follows: I0 I1 I6 I9 to I3 to I4 F ( to I5 to I7 ⟨eq⟩ I2 I7 I10 to I4 to I5 id id ( to I7 * T F I3 F to I2 to I3 F T I4 I5 I8 I11 to I6 id id ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "SLR parsing table construction"
+ },
+ {
+  "t": "p",
+  "x": "1. Construct the canonical collection of sets of LR (0) items for G′. 2. Create the parsing action table as follows: (a) \u0007If a is a terminal and [A → a.ab] is in Ii, goto (Ii, a) = Ij then action (i, a) to shift j. Here ‘a’ must be a terminal. (b) \u0007If [A → a.] is in Ii, then set action [i, a] to ‘reduce A → a’ for all a in FOLLOW (A); (c) If [S′ → S.] is in Ii then set action [i, $] to ‘accept’. 3. Create the parsing goto table for all non-terminals A, if goto (Ii, A) = Ij then goto [i, A] = j. 4. All entries not defined by steps 2 and 3 are made errors. 5. Initial state of the parser contains S′ → S. The parsing table constructed using the above algorithm is known as SLR (1) table for G."
+ },
+ {
+  "t": "h2",
+  "x": "Note: Every SLR (1) grammar is unambiguous, but every"
+ },
+ {
+  "t": "p",
+  "x": "unambiguous grammar is not a SLR grammar."
+ },
+ {
+  "t": "h2",
+  "x": "Solution: For the construction of SLR parsing table, add"
+ },
+ {
+  "t": "p",
+  "x": "S′ → S production. S′ ⟨eq⟩ *R L → id R → L LR (0) items will be I0: S′ → .S S → .L ⟨eq⟩ .R L → .*R L → .id R → .L I1: goto (I0, S) S′ → S. I2: goto (I0, L) S → L. ⟨eq⟩ L. I3: got (I0, R) S → R. I4: goto (I0, *) L → *.R R → .L L → .*R L → .id I5: goto(I0, id) L → id. I6: goto(I2, ⟨eq⟩ .R R → .L L → .*R L → .id I7: goto(I4, R) L → *R. I8: goto(I4, L) R → L. I9: goto(I6, R) ⟨eq⟩ R. The DFA of LR(0) items will be I0 I1 S I4 I5 I7 R * * id I2 L = R I5 id I3 R I6 I9 I8 L I8 L I4 * I5 id"
+ },
+ {
+  "t": "h2",
+  "x": "Goto"
+ },
+ {
+  "t": "p",
+  "x": "= * id $ S L R S4 S5 acc S6,r5 r5 S4 S5 S4 S5 FOLLOW (S) = {$} FOLLOW (L) = {=} FOLLOW (R) = {$, =} For action [2, =] = S6 and r5 ∴ Here we are getting shift – reduce conflict, so it is not SLR (1)."
+ },
+ {
+  "t": "h2",
+  "x": "Canonical LR Parsing (CLR)"
+ },
+ {
+  "t": "li",
+  "x": "To avoid some of invalid reductions, the states need to carry more information."
+ },
+ {
+  "t": "li",
+  "x": "Extra information input into a state by including a terminal symbol as a second component of an item."
+ },
+ {
+  "t": "li",
+  "x": "The general form of an item [A → a.b, a] Where A →ab is a production."
+ },
+ {
+  "t": "p",
+  "x": "a is terminal/right end marker ($). We will call it as LR (1) item."
+ },
+ {
+  "t": "h2",
+  "x": "LR (1) item"
+ },
+ {
+  "t": "p",
+  "x": "It is a combination of LR (0) items along with look ahead of the item. Here 1 refers to look ahead of the item. Construction of the sets of LR (1) items Function closure (I): Begin Repeat For each item [A → a.Bb, a] in I, Each production B → .g in G′, And each terminal b in FIRST (b a) Such that [B → .g, b] is not in I do Add [B → .g, b] to I; End; Until no more items can be added to I;"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: The initial set of items is"
+ },
+ {
+  "t": "p",
+  "x": "I0: S′ → .S, $ S → .CC, $ A → a.Bb, a Here A = S, a= ∈, B = C, b= C and a = $ First (ba) is first (C$) = first (C) = {c, d} So, add items [C → .cC, c] [C → .cC, d] ∴ Our first set I0: S′ → .S, $ S → .CC, $ C → .coca, c/d C → .d, c/d. I1: goto (I0, X) if X = S S′ → S., $ I2 : goto (I0, C) S → C.C, $ C → .cC, $ C → .d, $ I3: goto (I0, c) C → c.C, c/d C → .cC, c/d C → .d c/d I4: goto (I0, d) C → d., c/d I5: goto (I2, C) S → CC., $ I6: goto (I2, c) C → c.C; $ C → ..cC, $ C → ..d, $ I7: goto (I2, d) C → d. $ I8: goto (I3, C) C → cC., c/d I9: goto (I6, C) C → cC., $ CLR table is:"
+ },
+ {
+  "t": "h2",
+  "x": "Goto"
+ },
+ {
+  "t": "p",
+  "x": "c $ S C I0 S3 S4 I1 acc I2 S6 S7 I3 S3 S4 I4 R3 r3 I5 r1 I6 S6 S7 I7 r3 I8 R2 r2 I9 r2 Consider the string derivation ‘dcd’: S ⇒ CC ⇒ CcC ⇒ Ccd ⇒ dcd"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: The canonical set of items is"
+ },
+ {
+  "t": "p",
+  "x": "I0: S′ → .S, $ S → .L = R, $ S → .R, $ L → .* R, = [first (= R$) ⟨eq⟩ .id, = R → .L, $ I1: got (I0, S) S′ → S., $ I2: goto (I0, L) S → L. = R, $ R → L., $ I3: goto (I0, R) S → R., $ I4: got (I0, ⟨eq⟩ R, = R → .L, ⟨eq⟩ R, = L → .id, = I5: goto (I0, id) L → id.,= I6: goto (I7, L) R → L., $ I7: goto (I2, ⟨eq⟩ .R, R → .L, $ L → .*R, $ L → .id, $ I8: goto (I4, R) L → *R., = I9: goto (I4, L) R → L., = I10: got (I7, R) ⟨eq⟩ R., $ I11: goto (I7, *) L → *.R, $ R → .L, $ L → .*R, $ L → .id, $ I12: goto (I7, id) L → id. , $ I13: goto (I11, R) L → *R., $ I0 I1 S I13 R I2 L = L I3 R I5 id I4 I8 I9 R I7 I6 to I6 to I12 L L id I10 I11 R I12 id ⟨eq⟩ We have to construct CLR parsing table based on the above diagram. In this, we are going to have 13 states The shift –reduce conflict in the SLR parser is reduced here."
+ },
+ {
+  "t": "h2",
+  "x": "States"
+ },
+ {
+  "t": "p",
+  "x": "id * = $ S L R S5 S4 acc S7 r5 r2 S5 S4 r4 r5 s12 s11 r3 r5 r1 S12 S11 r4 r3"
+ },
+ {
+  "t": "h2",
+  "x": "Input"
+ },
+ {
+  "t": "p",
+  "x": "0id 5 0L2 0L2 = 7 0L2 = 7! d12 0L2 = 7L6 0L 2= 7R10 0S1 (accept) Id = id $ = id $ = id $ id $ $ $ $ $ Every SLR (1) grammar is LR (1) grammar. CLR (1) will have ‘more number of states’ than SLR Parser."
+ },
+ {
+  "t": "h2",
+  "x": "LALR Parsing Table"
+ },
+ {
+  "t": "li",
+  "x": "The tables obtained by it are considerably smaller than the canonical LR table."
+ },
+ {
+  "t": "li",
+  "x": "LALR stands for Lookahead LR."
+ },
+ {
+  "t": "li",
+  "x": "The number of states in SLR and LALR parsing tables for a grammar G are equal."
+ },
+ {
+  "t": "li",
+  "x": "But LALR parsers recognize more grammars than SLR."
+ },
+ {
+  "t": "li",
+  "x": "YACC creates a LALR parser for the given grammar."
+ },
+ {
+  "t": "li",
+  "x": "YACC stands for ‘Yet another Compiler’."
+ },
+ {
+  "t": "li",
+  "x": "An easy, but space-consuming LALR table construction is explained below:"
+ },
+ {
+  "t": "p",
+  "x": "1. Construct C = {I0, I1, –In}, the collection of sets of LR (1) items. 2. Find all sets having the common core; replace these sets by their union 3. Let C′ = {JO, J1 --- Jm} be the resulting sets of LR (1) items. If there is a parsing action conflict then the grammar is not a LALR (1). 4. Let k be the union of all sets of items having the same core. Then goto (J, X) = k"
+ },
+ {
+  "t": "li",
+  "x": "If there are no parsing action conflicts then the grammar is said to LALR (1) grammar."
+ },
+ {
+  "t": "li",
+  "x": "The collection of items constructed is called LALR (1) collection."
+ },
+ {
+  "t": "h2",
+  "x": "Example 9: Construct LALR parsing table for the"
+ },
+ {
+  "t": "p",
+  "x": "following grammar: S′ ⟨eq⟩ CC C → cC/d Solution: We already got LR (1) items and CLR parsing table for this grammar. After merging I3 and I6 are replaced by I36. I36: C → c.C, c/d/$ C → .cC, c/d/$ C → .d, c/d/$ I47: By merging I4 and I7 C → d. c/d/$ I89: I8 and I9 are replaced by I89 C → cC., c/d/$ The LALR parsing table for this grammar is given below:"
+ },
+ {
+  "t": "h2",
+  "x": "goto"
+ },
+ {
+  "t": "p",
+  "x": "c d $ S C S36 S47 acc S36 S47 S36 S47 r3 R3 r3 r1 r2 r2 r2"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the grammar:"
+ },
+ {
+  "t": "p",
+  "x": "S′ ⟨eq⟩ aAd S → bBd S → aBe S → bAe ⟨eq⟩ Which generates strings acd, bcd, ace and bce LR (1) items are I0: S′ → .S, $ S → .aAd, $ S → .bBd, $ S → .aBe, $ S → .bAe, $ I1: goto (I0, S) S′→ S., $ I2: goto (I0, a) S → a.Ad, c S → a.Be, c A → .c,d B → .c,e I3: goto (I0, b) S → b.Bd, c S → b.Ae, c A → .c, e B → .c, e I4: goto (I2, A) S → aA.d, c I5: goto (I2, B) S → aB.e, c I6: goto (I2, c) A → c., d B → c., e I7: goto (I3, c) A → c., e B → c., d I8: goto (I4, d) S → aAd., c I9: goto (I5, e) S → aBe., c If we union I6 and I7 A → c., d/e B → c., d/e It generates reduce/reduce conflict."
+ },
+ {
+  "t": "h2",
+  "x": "Notes:"
+ },
+ {
+  "t": "p",
+  "x": "1. The merging of states with common cores can never produce a shift/reduce conflict, because shift action depends only on the core, not on the lookahead. 2. SLR and LALR tables for a grammar always have the same number of states (several hundreds) whereas CLR have thousands of states for the same grammar."
+ },
+ {
+  "t": "h2",
+  "x": "Applies to"
+ },
+ {
+  "t": "p",
+  "x": "SLR (1) LR(0) item Different from LR(1) SLR (1) ⊂ LR(1) LR (1) LR(1) item LR(1) – Largest class of LR grammars LALR(1) LR(1) item Same as LR(1) LALR(1) ⊂ LR(1) CLR(1) LALR(1) SLR(1) LR(0) LL(1) Every LR (0) is SLR (1) but vice versa is not true."
+ },
+ {
+  "t": "h2",
+  "x": "and CLR parsers"
+ },
+ {
+  "t": "p",
+  "x": "Differences among SLR, LALR and CLR are discussed below in terms of size, efficiency, time and space."
+ },
+ {
+  "t": "h2",
+  "x": "CLR Parser"
+ },
+ {
+  "t": "p",
+  "x": "Size Smaller Smaller Larger 2. Method It is based on FOLLOW function This method is applicable to wider class than SLR This is most powerful than SLR and LALR. 3. Syntactic features Less exposure compared to other LR parsers Most of them are expressed Less 4. Error detection Not immediate Not immediate Immediate 5. Time and space complexity Less time and space More time and space complexity More time and space complexity"
+ },
+ {
+  "t": "h1",
+  "x": "2. Syntax Directed Translation"
+ },
+ {
+  "t": "p",
+  "x": "Syntax directed translation Syntax directed deﬁ nition Dependency graph Constructing syntax trees for expressions Types of SDD’s S-attributed deﬁ nition L-attributed deﬁ nitions Synthesized attributes on the parser Syntax directed translation schemes Bottom up evaluation of inherited attributes"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "Syntax Directed Translation"
+ },
+ {
+  "t": "p",
+  "x": "To translate a programming language construct, a compiler may need to know the type of construct, the location of the first instruction, and the number of instructions generated . . . etc. So, we have to use the term ‘attributes’ associated with constructs. An attribute may represent type, number of arguments, memory location, compatibility of variables used in a statement which cannot be represented by CFG alone. So, we need to have one more phase to do this, i.e., ‘semantic analysis’ phase. Semantic analysis Semantically checked syntax tree Syntax tree In this phase, for each production CFG, we will give some semantic rule."
+ },
+ {
+  "t": "h2",
+  "x": "Syntax directed translation scheme"
+ },
+ {
+  "t": "p",
+  "x": "A CFG in which a program fragment called output action (semantic action or semantic rule) is associated with each production is known as Syntax Directed Translation Scheme. These semantic rules are used to 1. Generate intermediate code. 2. Put information into symbol table. 3. Perform type checking. 4. Issues error messages."
+ },
+ {
+  "t": "h2",
+  "x": "Notes:"
+ },
+ {
+  "t": "p",
+  "x": "1. Grammar symbols are associated with attributes. 2. Values of the attributes are evaluated by the semantic rules associated with production rules."
+ },
+ {
+  "t": "h2",
+  "x": "Notations for Associating Semantic Rules"
+ },
+ {
+  "t": "p",
+  "x": "There are two techniques to associate semantic rules: Syntax directed deﬁ nition (SDD) It is high level specification for translation. They hide the implementation details, i.e., the order in which translation takes place. Attributes + CFG + Semantic rules = Syntax directed definition (SDD)."
+ },
+ {
+  "t": "h2",
+  "x": "Translation schemes These schemes indicate the order in which"
+ },
+ {
+  "t": "p",
+  "x": "semantic rules are to be evaluated. This is an input and output mapping."
+ },
+ {
+  "t": "h1",
+  "x": "Syntax Directed Definitions"
+ },
+ {
+  "t": "p",
+  "x": "A SDD is a generalization of a CFG in which each grammar symbol is associated with a set of attributes. There are two types of set of attributes for a grammar symbol. 1. Synthesized attributes 2. Inherited attributes Each production rule is associated with a set of semantic rules. Semantic rules setup dependencies between attributes which can be represented by a dependency graph. The dependency graph determines the evaluation order of these semantic rules. Evaluation of a semantic rule defines the value of an attribute. But a semantic rule may also have some side effects such as printing a value."
+ },
+ {
+  "t": "h2",
+  "x": "Attribute grammar: An attribute grammar is a syntax"
+ },
+ {
+  "t": "p",
+  "x": "directed definition in which the functions in semantic rules ‘cannot have side effects’. Annotated parse tree: A parse tree showing the values of attributes at each node is called an annotated parse tree. The process of computing the attribute values at the nodes is called annotating (or decorating) of the parse tree. In a SDD, each production A → ∝ is associated with a set of semantic rules of the form: b = f (c1, c2,… cn) where f : A function b can be one of the following: b is a ‘synthesized attribute’ of A and c1, c2,…cn are attributes of the grammar symbols in A → ∝. The value of a ‘synthesized attribute’ at a node is computed from the value of attributes at the children of that node in the parse tree."
+ },
+ {
+  "t": "h2",
+  "x": "Semantic Rule"
+ },
+ {
+  "t": "p",
+  "x": "expr → expr1 + term expr.t: = expr1.t||term.t||’+’ expr → expr1 – term expr.t: = expr1.t||term.t||’-‘ expr → term expr.t: = term.t term → 0 term.t: = ‘0’ term → 1 term.t: = ‘1’ ⟨eq⟩ term → 9 term.t: = ‘9’ expr⋅t = 9 expr⋅t = 95 − expr⋅t = 95 − 2+ term⋅t = 2 term⋅t = 9 term⋅t ⟨eq⟩ is an ‘inherited attribute’ of one of the grammar symbols on the right side of the production. An ‘inherited attribute’ is one whose value at a node is defined in terms of attributes at the parent and/or siblings of that node. It is used for finding the context in which it appears."
+ },
+ {
+  "t": "h2",
+  "x": "Example: An inherited attribute distributes type informa-"
+ },
+ {
+  "t": "p",
+  "x": "tion to the various identifiers in a declaration. For the grammar D → TL T → int T → real L → L1, id L → id That is, The keyword int or real followed by a list of identifiers. In this T has synthesized attribute type: T.type. L has an inherited attribute in L.in Rules associated with L call for procedure add type to the type of each identifier to its entry in the symbol table."
+ },
+ {
+  "t": "h2",
+  "x": "Semantic Rule"
+ },
+ {
+  "t": "p",
+  "x": "D → TL L.in = T.type T → int T.type = integer T → real T.type = real L → L1, id addtype L1.in = L.in(id.entry, L.in) L → id addtype (id.entry, L.in) The annotated parse tree for the sentence real id1, id2, id3 is shown below: D T⋅type = real L ⋅in = real L .in = real L ⋅in = real , , Id1 id2 id3 real"
+ },
+ {
+  "t": "h1",
+  "x": "Synthesized Attribute"
+ },
+ {
+  "t": "p",
+  "x": "The value of a synthesized attribute at a node is computed from the value of attributes at the children of that node in a parse tree. Consider the following grammar: L → En E → E1 ⟨eq⟩ T1*F ⟨eq⟩ (E) F → digit. Let us consider synthesized attribute value with each of the non-terminals E, T and F. Token digit has a synthesized attribute lexical supplied by lexical analyzer."
+ },
+ {
+  "t": "h2",
+  "x": "Semantic Rules"
+ },
+ {
+  "t": "p",
+  "x": "expr → expr1 + term expr.t: = expr1.t||term.t||’+’ expr → expr1 – term expr.t: = expr1.t||term.t ||‘-‘ expr → term expr.t: = term.t term → 0 term.t: = ‘0’ ⟨eq⟩ term→ 9 term.t := ‘9’ Example 2: Write a SDD for the following grammar to determine number.val. number → number digit digit.val := 0 digit.val := 1 digit.val ⟨eq⟩ digit→ 0|1| ⟨eq⟩ number.val:=number.val * 10 + digit.val Annotated tree for 131 is number⋅val = 13∗10 number⋅val = 1 digit⋅val = 1 number⋅val∗10 + + digit⋅val digit⋅val number⋅val"
+ },
+ {
+  "t": "h1",
+  "x": "Dependency Graph"
+ },
+ {
+  "t": "p",
+  "x": "The interdependencies among the attributes at the nodes in a parse tree can be depicted by a directed graph called dependency graph."
+ },
+ {
+  "t": "li",
+  "x": "Synthesized attributes have edges pointing upwards."
+ },
+ {
+  "t": "li",
+  "x": "Inherited attributes have edges pointing downwards and/ or sidewise."
+ },
+ {
+  "t": "p",
+  "x": "Example 1: A.a:= f (X.x, Y.y) is a semantic rule for A → XY. For each semantic rule that consists of a procedure call: A⋅a X⋅x Y⋅y"
+ },
+ {
+  "t": "h2",
+  "x": "Example 2:"
+ },
+ {
+  "t": "p",
+  "x": "+ E1 E2 E val val val Example 3: real p, q; T⋅type = real L⋅in = real L1⋅in = real id⋅entry = q id⋅entry = p add type (q⋅real) add type (P⋅real)"
+ },
+ {
+  "t": "h2",
+  "x": "Evaluation order"
+ },
+ {
+  "t": "p",
+  "x": "A topological sort of directed acyclic graph is an ordering m1, m2, . . . mk of nodes of the graph S. t edges go from nodes earlier in the ordering to later nodes. mi → mj means mi appears before mj in the ordering. If b: = f (c1, c2, …, ck), the dependent attributes c1, c2,...ck are available at node before f is evaluated."
+ },
+ {
+  "t": "h2",
+  "x": "Abstract syntax tree"
+ },
+ {
+  "t": "p",
+  "x": "It is a condensed form of parse tree useful for representing language constructs. Example if-then-else B S1 S1"
+ },
+ {
+  "t": "h1",
+  "x": "for Expressions"
+ },
+ {
+  "t": "p",
+  "x": "Each node in a syntax tree can be implemented as a record with several fields. In the node for an operator, one field identifies the operator and the remaining fields contain pointers to the nodes for the operands. 1. mknode (op, left, right) 2. mkleaf (id, entry). Entry is a pointer to symbol table. 3. mkleaf (num, val)"
+ },
+ {
+  "t": "h2",
+  "x": "Semantic Rules"
+ },
+ {
+  "t": "p",
+  "x": "E→E1+T E.nptr := mknode (‘+’, E1.nptr, T.nptr) E→E1 – T E.nptr := mknode (‘-‘, E1.nptr, T.nptr) E→T E.nptr := T.nptr T→ (E) T.nptr := E.nptr T→id T.nptr := mkleaf(id, id.entry) T→num T.nptr := mkleaf(num, num.val) Construction of a syntax tree for a – 4 + c E⋅nptr E⋅nptr E⋅nptr T⋅nptr T⋅nptr T⋅nptr ⟨eq⟩ id id id id num num to entry for a to entry for c"
+ },
+ {
+  "t": "h1",
+  "x": "Types Of Sdd’S"
+ },
+ {
+  "t": "p",
+  "x": "Syntax Directed definitions (SDD) are used to specify syntax directed translations. There are two types of SDD. 1. S-Attributed Definitions 2. L-Attributed Definitions."
+ },
+ {
+  "t": "h2",
+  "x": "S-attributed deﬁ nitions"
+ },
+ {
+  "t": "li",
+  "x": "Only synthesized attributes used in syntax direct definition."
+ },
+ {
+  "t": "li",
+  "x": "S-attributed grammars interact well with LR (K) parsers since the evaluation of attributes is bottom-up. They do not permit dependency graphs with cycles."
+ },
+ {
+  "t": "h2",
+  "x": "L-attributed deﬁ nitions"
+ },
+ {
+  "t": "li",
+  "x": "Both inherited and synthesized attribute are used."
+ },
+ {
+  "t": "li",
+  "x": "L-attributed grammar support the evaluation of attributes associated with a production body, dependency–graph edges can go from left to right only."
+ },
+ {
+  "t": "li",
+  "x": "Each S-attributed grammar is also a L-attributed grammar."
+ },
+ {
+  "t": "li",
+  "x": "L-attributed grammars can be incorporated conveniently in top down parsing."
+ },
+ {
+  "t": "li",
+  "x": "These grammars interact well with LL (K) parsers (both table driven and recursive descent)."
+ },
+ {
+  "t": "h2",
+  "x": "Parser Stack"
+ },
+ {
+  "t": "p",
+  "x": "A translator for an S-attributed definition often be implemented with LR parser generator. Here the stack is implemented by a pair of array state and val."
+ },
+ {
+  "t": "li",
+  "x": "Each state entry is pointed to a LR (1) parsing table."
+ },
+ {
+  "t": "li",
+  "x": "Each val[i] holds the value of the attributes associated with the node. For A → xyz, the stack will be: Top → State Val Z Z.z Y Y.y X X.x Example: Consider the following grammar: S → E $ {print(E.val)} E → E + E {E.val := E.val + E.val} E → E*E {E.val := E.val * E.val} E → (E) {E.val := E.val} E → I {I.val := I.val * 10 + digit} I → I digit I → digit {I.val := digit} Implementation S → E $ print (val [top]) E → E + E val[ntop] := val[top] + val[top-2] E → E*E val[ntop] := val[top] * val[top-2] E → (E) val[ntop] := val[top-1] E → I val[ntop] := val[top] I → I digit val[ntop] := 10*val[top] + digit I → digit val[ntop] := digit L-attributed Deﬁ nitions A syntax directed definition is L-attributed if each inherited attribute of Xj, 1≤ j ≤ n, on the right side of A → X1 X2…Xn, depends only on 1. The attributes of symbols X1, X2, . . ., Xj-1 to the left of Xj in the production."
+ },
+ {
+  "t": "p",
+  "x": "2. The inherited attributes of A. Every S-attributed definition is L-attributed, because the above two rules apply only to the inherited attributes."
+ },
+ {
+  "t": "h1",
+  "x": "Schemes"
+ },
+ {
+  "t": "p",
+  "x": "A translation scheme is a CFG in which attributes are associated with grammar symbols and semantic actions are enclosed between braces { } are inserted within the right sides of productions."
+ },
+ {
+  "t": "h2",
+  "x": "Example: E → TR"
+ },
+ {
+  "t": "p",
+  "x": "R → op T {print (op.lexeme)} R1|∈ T → num {print (num.val)} Using this, the parse tree for 9 – 5 + 2 is E T T T R1 R1 R {print(‘2’)} {print(‘5’)} {print(‘9’)} {print(‘+’)} {print(‘−’)} ∈ − + If we have both inherited and synthesized attributes then we have to follow the following rules: 1. An inherited attribute for a symbol on the right side of a production must be computed in an action before that symbol. 2. An action must not refer to a synthesized attribute of a symbol on the right side of the action. 3. A synthesized attribute for the non–terminal on the left can only be computed after all attributes it references, have been computed."
+ },
+ {
+  "t": "h2",
+  "x": "Note: In the implementation of L-attributed definitions dur-"
+ },
+ {
+  "t": "p",
+  "x": "ing predictive parsing, instead of syntax directed translations, we will work with translation schemes."
+ },
+ {
+  "t": "h2",
+  "x": "translation scheme"
+ },
+ {
+  "t": "p",
+  "x": "Consider following grammar, which has left recursion ⟨eq⟩ {print (‘+’) ;} When transforming the grammar, treat the actions as if they were terminal symbols. After eliminating recursion from the above grammar. E → TR R → +T {print ⟨eq⟩"
+ },
+ {
+  "t": "h1",
+  "x": "of Inherited Attributes"
+ },
+ {
+  "t": "li",
+  "x": "Using a bottom up translation scheme, we can implement any L-attributed definition based on LL (1) grammar."
+ },
+ {
+  "t": "li",
+  "x": "We can also implement some of L-attributed definitions based on LR (1) using bottom up translations scheme."
+ },
+ {
+  "t": "li",
+  "x": "The semantic actions are evaluated during the reductions."
+ },
+ {
+  "t": "li",
+  "x": "During the bottom up evaluation of S-attributed definitions, we have a parallel stack to hold synthesized attributes."
+ },
+ {
+  "t": "p",
+  "x": "Where are we going to hold inherited attributes? We will convert our grammar to an equivalent grammar to guarantee the following:"
+ },
+ {
+  "t": "li",
+  "x": "All embedding semantic actions in our translation scheme will be moved to the end of the production rules."
+ },
+ {
+  "t": "li",
+  "x": "All inherited attributes will be copied into the synthesized attributes (may be new non-terminals)."
+ },
+ {
+  "t": "p",
+  "x": "Thus we will evaluate all semantic actions during reductions, and we find a place to store an inherited attribute. The steps are 1. Remove an embedding semantic action Si, put new non-terminal Mi instead of that semantic action. 2. Put Si into the end of a new production rule Mi→ ∈. 3. Semantic action Si will be evaluated when this new production rule is reduced. 4. Evaluation order of semantic rules is not changed. i.e., if A → {S1} X1{S2}X2…{Sn}Xn After removing embedding semantic actions: A → M1X1M2X2…MnXn M1 → ∈{S1} M2 → ∈{S2} . . . Mn→ ∈ {Sn} For example, E → TR R → +T {print (‘+’)} R1 ⟨eq⟩ id {print (id.name)} ⇓ remove embedding semantic actions E → TR R → +TMR1 ⟨eq⟩ id {print (id.name)} M → ∈ {print (‘+’)}"
+ },
+ {
+  "t": "h2",
+  "x": "Translation with inherited attributes"
+ },
+ {
+  "t": "p",
+  "x": "Let us assume that every non-terminal A has an inherited attribute A.i and every symbol X has a synthesized attribute X.s in our grammar. For every production rule A → X1, X2 . . . Xn, introduce new marker non-terminals M1, M2, . . . Mn and replace this production rule with A → M1X1M2X2 . . . MnXn The synthesized attribute of Xi will not be changed. The inherited attribute of Xi will be copied into the synthesized attribute of Mi by the new semantic action added at the end of the new production rule Mi → ∈ Now, the inherited attribute of Xi can be found in the synthesized attribute of Mi. A → {B.i = f1(. .) B { c.i = f2(. .)} c {A.s = f3(. .)} ⇓ A → {M1.i = f1(. .)} M1 {B.i = M1.s} B {M2.i = f2(. .)}M2 {c.i = M2.S} c {A.s = f3 (. .)} M1 → ∈ {M1.s = M1.i} M2 → ∈ {M2.s = M2.i}"
+ },
+ {
+  "t": "h1",
+  "x": "Introduction"
+ },
+ {
+  "t": "p",
+  "x": "In the analysis–synthesis model, the front end translates a source program into an intermediate representation (IR). From IR the back end generates target code. Source code Front end Intermediate representation Back end Target representation Target independent, source dependent Mostly target dependent, source independent Target dependent, source independent There are different types of intermediate representations:"
+ },
+ {
+  "t": "li",
+  "x": "High level IR, i.e., AST (Abstract Syntax Tree)"
+ },
+ {
+  "t": "li",
+  "x": "Medium level IR, i.e., Three address code"
+ },
+ {
+  "t": "li",
+  "x": "Low level IR, i.e., DAG (Directed Acyclic Graph)"
+ },
+ {
+  "t": "li",
+  "x": "Postfix Notation (Reverse Polish Notation, RPN)."
+ },
+ {
+  "t": "p",
+  "x": "In the previous sections already we have discussed about AST and RPN. Beneﬁ ts of Intermediate code generation: The benefits of ICG are 1. We can obtain an optimized code. 2. Compilers can be created for the different machines by attaching different backend to existing front end of each machine. 3. Compilers can be created for the different source languages."
+ },
+ {
+  "t": "h2",
+  "x": "Directed acyclic graphs for expression: (DAG)"
+ },
+ {
+  "t": "li",
+  "x": "A DAG for an expression identifies the common sub expressions in the given expression."
+ },
+ {
+  "t": "li",
+  "x": "A node N in a DAG has more than one parent if N represents a common sub expression."
+ },
+ {
+  "t": "li",
+  "x": "DAG gives the compiler, important clues regarding the generation of efficient code to evaluate the expressions."
+ },
+ {
+  "t": "p",
+  "x": "Example 1: DAG for a + a*(b – c) + (b – c)*d P7 P13 P12 P11 d a b c P6 + + − P5P10 P1P2 P3P8 P4P9 * * P1 = makeleaf (id, a) P2 = makeleaf (id, a) = P1 P3 = makeleaf (id, b) P4 = makeleaf (id, c) P5 = makenode (-, P3, P4) P6 = makenode (*, P1, P5) P7 = makenode (+, P1, P6) P8 = makeleaf (id, b) = P3 P9 = makeleaf (id, c) = P4 P10 = makenode (-, P8, P9) = P5 Introduction Directed Acyclic Graphs (DAG) Three address code Symbol table operations Assignment statements Boolean expression Flow control of statements Procedure calls Code generation Next use information Run-time storage management DAG representations of basic blocks Peephole optimization"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "p",
+  "x": "P11 = makeleaf (id, d) P12 = makenode (*, P10, P11) P13 = makenode (+, P7, P12) Example 2: a: = a – ⟨eq⟩"
+ },
+ {
+  "t": "h1",
+  "x": "Three-Address Code"
+ },
+ {
+  "t": "p",
+  "x": "In three address codes, each statement usually contains 3 addresses, 2 for operands and 1 for the result. Example: -x = y OP z"
+ },
+ {
+  "t": "li",
+  "x": "x, y, z are names, constants or complier generated temporaries,"
+ },
+ {
+  "t": "li",
+  "x": "OP stands for any operator. Any arithmetic operator (or) Logical operator."
+ },
+ {
+  "t": "p",
+  "x": "Example: Consider the statement ⟨eq⟩ -z + y* -z ⟨eq⟩ Unary-minus Unary-minus The corresponding three address code will be like this:"
+ },
+ {
+  "t": "h2",
+  "x": "Syntax Tree"
+ },
+ {
+  "t": "p",
+  "x": "DAG t1 = -z t1 = -z t2 = y * t1 t2 = y * t1 t3 = -z t5 = t2 + t2 t4 = y * t3 X = t5 t5 = t4 + t2 X = t5 The postfix notation for syntax tree is: xyz unaryminus *yz unaryminus *+=."
+ },
+ {
+  "t": "li",
+  "x": "Three address code is a ‘Linearized representation’ of syntax tree."
+ },
+ {
+  "t": "li",
+  "x": "Basic data of all variables can be formulated as syntax directed translation. Add attributes whenever necessary."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider"
+ },
+ {
+  "t": "p",
+  "x": "below SDD with following specifications: E might have E. place and E.code E.place: the name that holds the value of E. E.code: the sequence of intermediate code starts evaluating E. Let Newtemp: returns a new temporary variable each time it is called. New label: returns a new label. Then the SDD to produce three–address code for expressions is given below:"
+ },
+ {
+  "t": "h2",
+  "x": "Semantic Rules"
+ },
+ {
+  "t": "p",
+  "x": "S→ id ASN E S. code = E.code \\\\ gen (ASN, id.place, E.place ) E. Place = newtemp (); E→ E1 PLUS E2 E. code = E1. code || E2. code || gen (PLUS, E. place, E1. place, E2. place); E. place = newtemp(); E→ E1MUL E2 E. code = E1. code || E2.code || gen (MUL, E. place, E1. place, E2. place); E. Place = Newtemp(); E→ UMINUS E1 E. code = E1 code || gen (NEG, E. Place, E1. place); E. code = E1.code E→ LP E1 RP E. Place = E1. Place E→ IDENT E.place = id. place E. code = empty.list ();"
+ },
+ {
+  "t": "h2",
+  "x": "Assignment"
+ },
+ {
+  "t": "li",
+  "x": "Binary assignment: x: = y OP z Store the result of y OP z to x."
+ },
+ {
+  "t": "li",
+  "x": "Unary assignment: x: = op y Store the result of unary operation on y to x."
+ },
+ {
+  "t": "h2",
+  "x": "Copy"
+ },
+ {
+  "t": "li",
+  "x": "Simple Copy x: = y Store y to x"
+ },
+ {
+  "t": "li",
+  "x": "Indexed Copy x: = y[i] Store the contents of y[i] to x"
+ },
+ {
+  "t": "li",
+  "x": "x[i]:= y Store y to (x + i)th address."
+ },
+ {
+  "t": "h2",
+  "x": "Address and pointer manipulation"
+ },
+ {
+  "t": "p",
+  "x": "x : = &y Store address of y to ⟨eq⟩ *y Store the contents of y to x *x : = y Store y to location pointed by x ."
+ },
+ {
+  "t": "h2",
+  "x": "Jump"
+ },
+ {
+  "t": "li",
+  "x": "Unconditional jump:- goto L, jumps to L."
+ },
+ {
+  "t": "li",
+  "x": "Conditional:"
+ },
+ {
+  "t": "p",
+  "x": "if (x relop y) goto L1; else { goto L2; } Where relop is ⟨eq⟩ or ≠."
+ },
+ {
+  "t": "h2",
+  "x": "Procedure call"
+ },
+ {
+  "t": "p",
+  "x": "Param x1; Param x2; . . . Param xn; Call p, n, x; Call procedure p with n parameters and store the result in x. return x Use x as result from procedure."
+ },
+ {
+  "t": "h2",
+  "x": "Declarations"
+ },
+ {
+  "t": "li",
+  "x": "Global x, n1, n2: Declare a global variable named x at offset n1 having n2 bytes of space."
+ },
+ {
+  "t": "li",
+  "x": "Proc x, n1, n2: Declare a procedure x with n1 bytes of parameter space and n2 bytes of local variable space."
+ },
+ {
+  "t": "li",
+  "x": "Local x, m: Declare a local variable named x at offset m from the procedure frame."
+ },
+ {
+  "t": "li",
+  "x": "End: Declare the end of the current procedure."
+ },
+ {
+  "t": "h2",
+  "x": "Adaption for object oriented code"
+ },
+ {
+  "t": "li",
+  "x": "x = y field z: Lookup field named z within y, store address to x"
+ },
+ {
+  "t": "li",
+  "x": "Class x, n1, n2: declare a class named x with n1 bytes of class variables and n2 bytes of class method pointers."
+ },
+ {
+  "t": "li",
+  "x": "Field x, n: Declare a field named x at offset n in the class frame."
+ },
+ {
+  "t": "li",
+  "x": "New x: Create a new instance of class name x."
+ },
+ {
+  "t": "h2",
+  "x": "Address Statements"
+ },
+ {
+  "t": "p",
+  "x": "Three address statements can be implemented as records with fields for the operator and the operands. There are 3 types of representations: 1. Quadruples 2. Triples 3. Indirect triples"
+ },
+ {
+  "t": "h2",
+  "x": "Quadruples"
+ },
+ {
+  "t": "p",
+  "x": "A quadruple has four fields: op, arg1, arg2 and result."
+ },
+ {
+  "t": "li",
+  "x": "Unary operators do not use arg2."
+ },
+ {
+  "t": "li",
+  "x": "Param use neither arg2 nor result."
+ },
+ {
+  "t": "li",
+  "x": "Jumps put the target label in result."
+ },
+ {
+  "t": "li",
+  "x": "The contents of the fields are pointers to the symbol table entries for the names represented by these fields."
+ },
+ {
+  "t": "li",
+  "x": "Easier to optimize and move code around."
+ },
+ {
+  "t": "p",
+  "x": "Example 1: For the expression ⟨eq⟩ -z + y * -z, the quadruple representation is OP Arg1 Arg2"
+ },
+ {
+  "t": "h2",
+  "x": "Result"
+ },
+ {
+  "t": "p",
+  "x": "(0) * A B t1 (1) + x t2 (2) Param t1 (3) Param t2 (4) Call Write"
+ },
+ {
+  "t": "h2",
+  "x": "Triples"
+ },
+ {
+  "t": "p",
+  "x": "Triples have three fields: OP, arg1, arg2."
+ },
+ {
+  "t": "li",
+  "x": "Temporaries are not used and instead references to instructions are made."
+ },
+ {
+  "t": "li",
+  "x": "Triples are also known as two address code."
+ },
+ {
+  "t": "li",
+  "x": "Triples takes less space when compared with Quadruples."
+ },
+ {
+  "t": "li",
+  "x": "Optimization by moving code around is difficult."
+ },
+ {
+  "t": "li",
+  "x": "The DAG and triple representations of expressions are equivalent."
+ },
+ {
+  "t": "li",
+  "x": "For the expression a = y* – z + y*–z the Triple representation is Op Arg1 Arg2 (0) Uminus z (1) * y (0) (2) Uminus z (3) * y (2) (4) + (1) (3) (5) = a (4)"
+ },
+ {
+  "t": "h2",
+  "x": "Array – references"
+ },
+ {
+  "t": "p",
+  "x": "Example: For A [I]: = B, the quadruple representation is Op Arg1 Arg2"
+ },
+ {
+  "t": "h2",
+  "x": "Result"
+ },
+ {
+  "t": "p",
+  "x": "(0) ⟨eq⟩ T1 (1) = B T2 The same can be represented by Triple representation also. [] = is called L-value, specifies the address to an element. Op Arg1 Arg2 (0) ⟨eq⟩ (1) = (0) B Example 2: A: = B [I] Op Arg1 Arg2 (0) ⟨eq⟩ (1) = A (0) = [ ] is called r-value, specifies the value of an element."
+ },
+ {
+  "t": "h2",
+  "x": "Indirect Triples"
+ },
+ {
+  "t": "li",
+  "x": "In indirect triples, pointers to triples will be there instead of triples."
+ },
+ {
+  "t": "li",
+  "x": "Optimization by moving code around is easy."
+ },
+ {
+  "t": "li",
+  "x": "Indirect triples takes less space when compared with Quadruples."
+ },
+ {
+  "t": "li",
+  "x": "Both indirect triples and Quadruples are almost equally efficient."
+ },
+ {
+  "t": "h2",
+  "x": "Statement"
+ },
+ {
+  "t": "h1",
+  "x": "Symbol Table Operations"
+ },
+ {
+  "t": "li",
+  "x": "Mktable (previous);"
+ },
+ {
+  "t": "li",
+  "x": "create a new symbol table."
+ },
+ {
+  "t": "li",
+  "x": "Link it to the symbol table previous."
+ },
+ {
+  "t": "li",
+  "x": "Enter (table, name, and type, offset)"
+ },
+ {
+  "t": "li",
+  "x": "insert a new identifier name with type and offset into table"
+ },
+ {
+  "t": "li",
+  "x": "Check for possible duplication."
+ },
+ {
+  "t": "li",
+  "x": "Add width (table, width);"
+ },
+ {
+  "t": "li",
+  "x": "increase the size of symbol table by width."
+ },
+ {
+  "t": "li",
+  "x": "Enterproc (table, name, new table)"
+ },
+ {
+  "t": "li",
+  "x": "Enter a procedure name into table."
+ },
+ {
+  "t": "li",
+  "x": "The symbol table of name is new table."
+ },
+ {
+  "t": "li",
+  "x": "Lookup (name, table);"
+ },
+ {
+  "t": "li",
+  "x": "Check whether name is declared in the symbol table, if it is in the table then return the entry."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Declaration → M1D M1→ ∈{TOP (Offset): = 0 ;} D→ D ID D→ id: T {enter (top (tblptr), id.name, T.type top (offset)); top (offset): = top (offset) + T. width ;} T→ integer {T.type : = integer; T. width: = 4 :} T→ double {T.type: = double; T.width = 8 ;} T→ * T1 {T. type: = pointer (T. type); T.width = 4;} Need to remember the current offset before entering the block, and to restore it after the block is closed."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Block → begin M4 Declarations statements end"
+ },
+ {
+  "t": "p",
+  "x": "{pop (tblptr); pop (offset) ;} M4 → ∈{t: = mktable (top (tblptr); push (t, tblptr); push (top (offset), offset) ; Can also use the block number technique to avoid creating a new symbol table."
+ },
+ {
+  "t": "h2",
+  "x": "Field names in records"
+ },
+ {
+  "t": "li",
+  "x": "A record declaration is treated as entering a block in terms of offset is concerned."
+ },
+ {
+  "t": "li",
+  "x": "Need to use a new symbol table."
+ },
+ {
+  "t": "h2",
+  "x": "Example: T→ record M5 D end"
+ },
+ {
+  "t": "p",
+  "x": "{T. type: = (top (tblptr)); T. width = top (offset); pop (tblptr); pop (offset) ;} M5 → ∈ {t: = mktable (null); push (t, tblptr); push {(o, offset) ;}"
+ },
+ {
+  "t": "h1",
+  "x": "Assignment Statements"
+ },
+ {
+  "t": "p",
+  "x": "Expressions can be of type integer, real, array and record. As part of translation of assignments into three address code, we show how names can be looked up in the symbol table and how elements of array can be accessed."
+ },
+ {
+  "t": "h2",
+  "x": "Code generation for assignment statements gen ([address"
+ },
+ {
+  "t": "p",
+  "x": "# 1], [assignment], [address #2], operator, address # 3); Variable accessing Depending on the type of [address # i], generate different codes. Types of [address # i]:"
+ },
+ {
+  "t": "li",
+  "x": "Local temp space"
+ },
+ {
+  "t": "li",
+  "x": "Parameter"
+ },
+ {
+  "t": "li",
+  "x": "Local variable"
+ },
+ {
+  "t": "li",
+  "x": "Non-local variable"
+ },
+ {
+  "t": "li",
+  "x": "Global variable"
+ },
+ {
+  "t": "li",
+  "x": "Registers, constants,…"
+ },
+ {
+  "t": "p",
+  "x": "Error handling routine error – msg (error information); The error messages can be written and stored in other file. Temp space management:"
+ },
+ {
+  "t": "li",
+  "x": "This is used for generating code for expressions."
+ },
+ {
+  "t": "li",
+  "x": "newtemp (): allocates a temp space."
+ },
+ {
+  "t": "li",
+  "x": "freetemp (): free t if it is allocated in the temp space"
+ },
+ {
+  "t": "h2",
+  "x": "Label management"
+ },
+ {
+  "t": "li",
+  "x": "This is needed in generating branching statements."
+ },
+ {
+  "t": "li",
+  "x": "newlabel (): generate a label in the target code that has never been used."
+ },
+ {
+  "t": "h2",
+  "x": "Names in the symbol table"
+ },
+ {
+  "t": "p",
+  "x": "S→ id: = E {p: = lookup (id-name, top (tblptr)); If p is not null then gen (p, “:=”, E.place); Else error (“var undefined”, id. Name) ;} E→E1+ E2 {E. place = newtemp (); gen (E.place, “: = “, E1.place, \"+”, E2.Place); free temp (E1.pace); freetemp (E2. place) ;} E→ –E1 {E. place = newtemp (); gen (E.place, “: =”, “uminus”, E1.place); Freetemp (E1. place ;)} E→(E1) {E. place = E1. place ;} E→ id {p: = lookup (id.name, top (tblptr); If p ≠ null then E.place = p. place else error (“var undefined”, id. name) ;}"
+ },
+ {
+  "t": "h2",
+  "x": "Type conversions"
+ },
+ {
+  "t": "p",
+  "x": "Assume there are only two data types: integer, float. For the expression, E → E1 + E2 If E1. type = E2. type then generate no conversion code E.type = E1. type; Else E.type = float; temp1 = newtemp (); If E1. type = integer then gen (temp1,’:=’ int - to - float, E1.place); gen (E,’:=’ temp1, ‘+’, E2.place); Else gen (temp1,’:=’ int - to - float, E2. place); gen (E,’:=’ temp1, ‘+’, E1. place); Free temp (temp1);"
+ },
+ {
+  "t": "h2",
+  "x": "Addressing array elements"
+ },
+ {
+  "t": "p",
+  "x": "Let us assume low: lower bound w: element data width"
+ },
+ {
+  "t": "h2",
+  "x": "1D Array: A[i]"
+ },
+ {
+  "t": "li",
+  "x": "Start_addr + (i – low ⟨eq⟩ (start_addr - low *w)"
+ },
+ {
+  "t": "li",
+  "x": "The value called base, (start_addr – low * w) can be computed at compile time and then stored at the symbol table."
+ },
+ {
+  "t": "p",
+  "x": "Example: array [-8 …100] of integer. To declare [-8] [-7] … [100] integer array in Pascal."
+ },
+ {
+  "t": "h2",
+  "x": "2D Array A [i1, i2]"
+ },
+ {
+  "t": "p",
+  "x": "Row major order: row by row. A [i] means the ith row. 1st row A [1, 1] A [1, 2] 2nd row A [2, 1] A [2, 2] A [i, j] = A [i] [j] Column major: column by column. A [1, 1] : A [1, 2] A [2, 1] A [2, 2] 1st Column 2nd column Address for A [i1, i2]: Start _ addr + ((i, - low1) *n2 + (i2 – low2))*w Where low1 and low2 are the lower bounds of i1 and i2. n2 is the number of values that i2 can take. High2 is the upper bound on the valve of i2. n2 = high2 – low2 + 1 We can rewrite address for A [i1, i2] as ((i1 × n2) + i2) × w + (start _ addr - ((low1 × n2) + low2) × w). The value (start _ addr - low1 × n2 × w – low2 × w) can be computed at compiler time and then stored in the symbol table."
+ },
+ {
+  "t": "h2",
+  "x": "Multi-Dimensional Array A [i1, i2,…ik]"
+ },
+ {
+  "t": "p",
+  "x": "Address for A [i1, i2,…ik] ⟨eq⟩ π π ⟨eq⟩ start addr low w ni low w low w i k i k n k i _ ⟨eq⟩ π π It can be computed incrementally in grammar rules: f (1) = i1; f (j) = f (j -1) * nj + ij; f (k) is the value we wanted to compute. Attributes needed in the translation scheme for addressing array elements: Elegize: size of each element in the array Array: \u0007a pointer to the symbol table entry containing information about the array declaration. Ndim: the current dimension index Base: base address of this array Place: where a variable is stored. Limit (array, n) = nm is the number of elements in the mth coordinate."
+ },
+ {
+  "t": "h2",
+  "x": "Translation scheme for array elements"
+ },
+ {
+  "t": "p",
+  "x": "Consider the grammar S → L: ⟨eq⟩ L→ id L→ [Elist] Elist→ Elist1, E Elist→ id [E] E→ id E→ E + E E→ (E)"
+ },
+ {
+  "t": "li",
+  "x": "S → L: = E {if L. offset = null then /* L is a simple id */ gen (L. place, “:=”, E.place); Else gen (L. place, “[“, L. offset, “]”,”:=”, E.place);"
+ },
+ {
+  "t": "li",
+  "x": "E → E1 + E2 {E.place = newtemp (); gen (E. place, “:=”, E1.place, \"+”, E2."
+ },
+ {
+  "t": "li",
+  "x": "E → (E1) {E.place= E1.place}"
+ },
+ {
+  "t": "li",
+  "x": "E →L {if L. offset = null then /* L is a simple id */ E.place:= L .place); Else begin E.place:=newtemp(); gen (E.place, “:=”,L.place, “[“,L.offset, ‘]”); end }"
+ },
+ {
+  "t": "li",
+  "x": "L → id {P! = lookup (id.name, top (tblptr)); If P ≠ null then Begin L.place: = P.place: L.offset:= null; End Else Error (“Var underfined”, id. Name) ;}"
+ },
+ {
+  "t": "li",
+  "x": "L → Elist {L. offset: = newtemp (); gen (L. offset, “:=”, Elist.elesize, “*”, Elist.place ); freetemp (Elist.place); L.Place := Elist . base ;}"
+ },
+ {
+  "t": "li",
+  "x": "Elist→ Elist1, E {t: =newtemp (); m: = Elist1."
+ },
+ {
+  "t": "p",
+  "x": "ndim+1; gen (t, “:=” Elist1.place, “*”, limit (Elist1. array, m)); Gen (t, “:=”, t\"+”, E.place); freetemp (E.place); Elist.array: = Elist.array; Elist.place:= t; Elist.ndim:= m ;} Elist → id [E {Elist.Place:= E.place; Elist. ndim:=1; P! = lookup (id.name, top (tblptr)); check for id errors; Elist.elesize:= P.size; Elist.base: = p.base; Elist.array:= p.place ;}"
+ },
+ {
+  "t": "li",
+  "x": "E → id {P:= lookup (id,name, top (tblptr);"
+ },
+ {
+  "t": "p",
+  "x": "Check for id errors; E. Place: = Populace ;}"
+ },
+ {
+  "t": "h1",
+  "x": "Boolean Expressions"
+ },
+ {
+  "t": "p",
+  "x": "There are two choices for implementation of Boolean expressions: 1. Numerical representation 2. Flow of control"
+ },
+ {
+  "t": "h2",
+  "x": "Numerical representation"
+ },
+ {
+  "t": "p",
+  "x": "Encode true and false values. Numerically, 1:true 0: false. Flow of control: Representing the value of a Boolean expression by a position reached in a program. Short circuit code: Generate the code to evaluate a Boolean expression in such a way that it is not necessary for the code to evaluate the entire expression."
+ },
+ {
+  "t": "li",
+  "x": "If a1 or a2 a1 is true then a2 is not evaluated."
+ },
+ {
+  "t": "li",
+  "x": "If a1 and a2 a1 is false then a2 is not evaluated."
+ },
+ {
+  "t": "h2",
+  "x": "Numerical representation"
+ },
+ {
+  "t": "p",
+  "x": "E → id1 relop id2 {B.place:= newtemp (); gen (“if”, id1.place, relop.op, id2. place,”goto”, next stat +3); gen (B.place,”:=”, “0”); gen (“goto”, nextstat+2); gen (B.place,”:=”, “1”)’} Example 1: Translate the statement (if a < b or c < d and e < f) without short circuit evaluation. 100: if a < b goto 103 101: t1:= 0 102: goto 104 103: t1:= 1 /* true */ 104: if c < d goto 107 105: t2:= 0 /* false */ 106: goto 108 107: t2:= 1 108: if e < f goto 111 109: t3:= 0 110: goto 112 111: t3 := 1 112: t4 := t2 and t3 113: t3:= t1 or t4"
+ },
+ {
+  "t": "h1",
+  "x": "Flow of Control Statements"
+ },
+ {
+  "t": "p",
+  "x": "B→ id1 relop id2 { B.true: = newlabel (); B.false:= newlabel (); B.code:= gen (“if”, id1. relop, id2, “goto”, B.true, “else”, “goto”, B. false) || gen (B.true, “:”) } S→if B then S1 S.code:= B.code || S1 .code ||gen (B.false, ‘:’) || is the code concatenation operator. 1. If – then implementation: S →if B then S1 {gen (Befalls,” :”);} B.Code S1.Code To B.true To B.false B.true: B.false: 2. If – then – else P→S {S.next:= newlabel (); P.code:= S.code || gen (S.next,” :”)} S → if B then S1 else S2 {S1.next:= S.next; S2.next:= S.next; Gen (“goto” S.next) || B. false,” :”) ||S2.code} Need to use inherited attributes of S to define the attributes of S1 and S2 B.Code S1.Code S2.Code Goto S.next B.true: B.false: S.next To B. true To B.false 3. While loop: B→ id1 relop id2 B.true:= newlabel (); B.false:= newlabel (); B.code:=gen (‘if’, id.relop, id2, ‘goto’, B.true ‘else’, ‘goto’, B. false) || gen (B.true ‘:’); S→ while B do S1 S.begin:= newlabel (); S.code:=gen (S.begin,’:’)|| B.code||S1.code || gen (‘goto’, S.begin) || gen (B.false, ‘:’); B.Code S1.Code Goto S.next B. true B.false S.begin B.true: B.false: 4. Switch/case statement: The c - like syntax of switch case is switch epr { case V [1]: S [1] . . . case V [k]: S[k] default: S[d] }"
+ },
+ {
+  "t": "h2",
+  "x": "Translation sequence"
+ },
+ {
+  "t": "li",
+  "x": "Evaluate the expression."
+ },
+ {
+  "t": "li",
+  "x": "Find which value in the list matches the value of the expression, match default only if there is no match."
+ },
+ {
+  "t": "li",
+  "x": "Execute the statement associated with the matched value."
+ },
+ {
+  "t": "p",
+  "x": "How to find the matched value? The matched value can be found in the following ways: 1. Sequential test 2. Lookup table 3. Hash table 4. Back patching Two different translation schemes for sequential test are shown below: 1. Code to evaluate E into t Goto test L[i]: code for S [1] goto next L[k]: code for S[k] goto next L[d]: code for S[d] Go to next test: If t = V [1]: goto L [1] . . . goto L[d] Next: 2. Can easily be converted into look up table If t <> V [i] goto L [1] Code for S [1] goto next L [1]: if ⟨eq⟩ [2] goto L [2] Code for S [2] Goto next L [k - 1]: if ⟨eq⟩ [k] goto L[k] Code for S[k] Goto next . . . L[k]: code for S[d] Next: Use a table and a loop to find the address to jump V[1] L[1] V [2] V [3] L[2] L[3] L[2]: S [2] L[1]: S [1] 3. Hash table: When there are more than two entries use a hash table to find the correct table entry. 4. Back patching:"
+ },
+ {
+  "t": "li",
+  "x": "Generate a series of branching statements with the targets of jumps temporarily left unspecified."
+ },
+ {
+  "t": "li",
+  "x": "To determine label table: each entry contains a list of places that need to be back patched."
+ },
+ {
+  "t": "li",
+  "x": "Can also be used to implement labels and gotos."
+ },
+ {
+  "t": "h1",
+  "x": "Procedure Calls"
+ },
+ {
+  "t": "li",
+  "x": "Space must be allocated for the activation record of the called procedure."
+ },
+ {
+  "t": "li",
+  "x": "Arguments are evaluated and made available to the called procedure in a known place."
+ },
+ {
+  "t": "li",
+  "x": "Save current machine status."
+ },
+ {
+  "t": "li",
+  "x": "When a procedure returns:"
+ },
+ {
+  "t": "li",
+  "x": "Place returns value in a known place."
+ },
+ {
+  "t": "li",
+  "x": "Restore activation record."
+ },
+ {
+  "t": "h2",
+  "x": "Example: S → call id (Elist)"
+ },
+ {
+  "t": "p",
+  "x": "{for each item P on the queue Elist. Queue do gen (‘PARAM’, q); gen (‘call:’, id.place) ;} Elist → Elist, E {append E.place to the end of Elist.queue} Elist → E {initialize Elist.queue to contain only E.place} Use a queue to hold parameters, then generate codes for params. Code for E1, store in t1 . . . Code for Ek, store in tk PARAM t1 : . . PARAM tk Call P"
+ },
+ {
+  "t": "h2",
+  "x": "Terminology:"
+ },
+ {
+  "t": "p",
+  "x": "Procedure declaration: Parameters, formal parameters"
+ },
+ {
+  "t": "h2",
+  "x": "Procedure call:"
+ },
+ {
+  "t": "p",
+  "x": "Arguments, actual parameters. The values of a variable: x = y r – value: value of the variable, i.e., on the right side of assignment. Ex: y, in above assignment. l – value: The location/address of the variable, i.e., on the leftside of assignment. Ex: x, in above assignment. There are different modes of parameter passing 1. call-by-value 2. call-by-reference 3. call-by-value-result (copy-restore) 4. call-by-name"
+ },
+ {
+  "t": "h2",
+  "x": "Call by value"
+ },
+ {
+  "t": "p",
+  "x": "Calling procedure copies the r values of the arguments into the called proceduce’s Activation Record. Changing a formal parameter has no effect on the actual parameter."
+ },
+ {
+  "t": "h2",
+  "x": "Example: void add (int C)"
+ },
+ {
+  "t": "p",
+  "x": "{ C = C+ 10; printf (‘\\nc = %d’, &C); } main () { int a = 5; printf (‘a=%d’, &a); add (a); printf (‘\\na = %d’, &a); } In main a will not be affected by calling add (a) It prints ⟨eq⟩ Only the value of C in add ( ) will be changed to 15."
+ },
+ {
+  "t": "h2",
+  "x": "Usage:"
+ },
+ {
+  "t": "p",
+  "x": "1. Used by PASCAL and C++ if we use non-var parameters. 2. The only thing used in C."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages:"
+ },
+ {
+  "t": "p",
+  "x": "1. No aliasing. 2. Easier for static optimization analysis. 3. Faster execution because of no need for redirecting."
+ },
+ {
+  "t": "h2",
+  "x": "Call by reference"
+ },
+ {
+  "t": "p",
+  "x": "Calling procedure copies the l-values of the arguments into the called procedure’s activation record. i.e., address will be passed to the called procedure."
+ },
+ {
+  "t": "li",
+  "x": "Changing formal parameter affects the corresponding actual parameter."
+ },
+ {
+  "t": "li",
+  "x": "It will have some side effects."
+ },
+ {
+  "t": "h2",
+  "x": "Example: void add (int *c)"
+ },
+ {
+  "t": "p",
+  "x": "{ *c = *c + 10; printf(‘\\nc=%d’, *c); } void main() { int a = 5; printf (‘\\na = %d’, a); add (&a); printf (‘\\na = %d’, a); output: ⟨eq⟩ That is, here the actual parameter is also modified."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages"
+ },
+ {
+  "t": "p",
+  "x": "1. Efficiency in passing large objects. 2. Only need to copy addresses."
+ },
+ {
+  "t": "h2",
+  "x": "Call-by-value-result"
+ },
+ {
+  "t": "p",
+  "x": "Equivalent to call-by-reference except when there is aliasing. That is, the program produces the same result, but not the same code will be generated."
+ },
+ {
+  "t": "h2",
+  "x": "Aliasing: Two expressions that have the same l-values are"
+ },
+ {
+  "t": "p",
+  "x": "called aliases. They access the same location from different places. Aliasing happens through pointer manipulation. 1. Call by reference with global variable as an argument. 2. Call by reference with the same expression as argument twice."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages:"
+ },
+ {
+  "t": "p",
+  "x": "1. If there is no aliasing, we can implement it by using call – by – reference for large objects. 2. No implicit side effect if pointers are not passed."
+ },
+ {
+  "t": "h2",
+  "x": "Call by-name"
+ },
+ {
+  "t": "li",
+  "x": "Procedure body is substituted for the call in calling procedure."
+ },
+ {
+  "t": "li",
+  "x": "Each occurrence of a parameter in the called procedure is replaced with the corresponding argument."
+ },
+ {
+  "t": "li",
+  "x": "Similar to macro expansion."
+ },
+ {
+  "t": "li",
+  "x": "A parameter is not evaluated unless its value is needed during computation."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "void show (int x) { for (int y = 0; y < 10; y++) x++; } main () { int j; j = –1; show (j); } Actually it will be like this main () { int j; j = - 1; For (in y= 0; y < 10; ⟨eq⟩"
+ },
+ {
+  "t": "li",
+  "x": "Instead of passing values or address as arguments, a function is passed for each argument."
+ },
+ {
+  "t": "li",
+  "x": "These functions are called thunks."
+ },
+ {
+  "t": "li",
+  "x": "Each time a parameter is used, the thunk is called, then the address returned by the thunk is used."
+ },
+ {
+  "t": "p",
+  "x": "y = 0: use return value of thunk for y as the ℓ -value."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages"
+ },
+ {
+  "t": "li",
+  "x": "More efficient when passing parameters that are never used."
+ },
+ {
+  "t": "li",
+  "x": "This saves lot of time because evaluating unused parameter takes a longtime."
+ },
+ {
+  "t": "h1",
+  "x": "Code Generation"
+ },
+ {
+  "t": "p",
+  "x": "Code generation is the final phase of the compiler model. Input (or) Source program Front end Intermediate code code Code optimization Intermediate Code generation Target program The requirements imposed on a code generator are 1. Output code must be correct. 2. Output code must be of high quality. 3. Code generator should run efficiently."
+ },
+ {
+  "t": "h2",
+  "x": "Issues in the Design of a Code Generator"
+ },
+ {
+  "t": "p",
+  "x": "The generic issues in the design of code generators are"
+ },
+ {
+  "t": "li",
+  "x": "Input to the code generator"
+ },
+ {
+  "t": "li",
+  "x": "Target programs"
+ },
+ {
+  "t": "li",
+  "x": "Memory Management"
+ },
+ {
+  "t": "li",
+  "x": "Instruction selection"
+ },
+ {
+  "t": "li",
+  "x": "Register Allocation"
+ },
+ {
+  "t": "li",
+  "x": "Choice of Evaluation order"
+ },
+ {
+  "t": "h2",
+  "x": "Input to the code generator"
+ },
+ {
+  "t": "p",
+  "x": "Intermediate representation with symbol table will be the input for the code generator."
+ },
+ {
+  "t": "li",
+  "x": "High Level Intermediate representation"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Abstract Syntax Tree (AST)"
+ },
+ {
+  "t": "li",
+  "x": "Medium – level intermediate representation"
+ },
+ {
+  "t": "h2",
+  "x": "Example: control flow graph of complex operations"
+ },
+ {
+  "t": "li",
+  "x": "Low – Level Intermediate representation"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Quadruples, DAGS"
+ },
+ {
+  "t": "li",
+  "x": "Code for abstract stack machine, i.e., postfix code."
+ },
+ {
+  "t": "h2",
+  "x": "Target programs"
+ },
+ {
+  "t": "p",
+  "x": "The output of the code generator is the target program. The output may take on a variety of forms: 1. Absolute machine language 2. Relocatable machine language 3. Assembly language"
+ },
+ {
+  "t": "h2",
+  "x": "Absolute machine language"
+ },
+ {
+  "t": "li",
+  "x": "Final memory area for a program is statically known."
+ },
+ {
+  "t": "li",
+  "x": "Hard coded addresses."
+ },
+ {
+  "t": "li",
+  "x": "Sufficient for very simple systems."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages:"
+ },
+ {
+  "t": "li",
+  "x": "Fast for small programs"
+ },
+ {
+  "t": "li",
+  "x": "No separate compilation"
+ },
+ {
+  "t": "h2",
+  "x": "Relocatable code It Needs"
+ },
+ {
+  "t": "li",
+  "x": "Relocation table"
+ },
+ {
+  "t": "li",
+  "x": "Relocating linker + loader (or) runtime relocation in Memory management Unit (MMU)."
+ },
+ {
+  "t": "h2",
+  "x": "Assembly language Generates assembly code and use an"
+ },
+ {
+  "t": "p",
+  "x": "assembler tool to convert this to binary (object) code. It needs (i) assembler (ii) linker and loader. Advantage: Easier to handle and closer to machine."
+ },
+ {
+  "t": "h2",
+  "x": "Memory management"
+ },
+ {
+  "t": "p",
+  "x": "Mapping names in the source program to addresses of data objects in runtime memory is done by the front end and the code generator."
+ },
+ {
+  "t": "li",
+  "x": "A name in a three address statement refers to a symbol entry for the name."
+ },
+ {
+  "t": "li",
+  "x": "Stack, heap, garbage collection is done here."
+ },
+ {
+  "t": "h2",
+  "x": "Instruction selection"
+ },
+ {
+  "t": "p",
+  "x": "Instruction selection depends on the factors like"
+ },
+ {
+  "t": "li",
+  "x": "Uniformity"
+ },
+ {
+  "t": "li",
+  "x": "Completeness of the instruction"
+ },
+ {
+  "t": "li",
+  "x": "Instruction speed"
+ },
+ {
+  "t": "li",
+  "x": "Machine idioms"
+ },
+ {
+  "t": "li",
+  "x": "Choose set of instructions equivalent to intermediate representation code."
+ },
+ {
+  "t": "li",
+  "x": "Minimize execution time, used registers and code size."
+ },
+ {
+  "t": "p",
+  "x": "Example: ⟨eq⟩ in three address statements: MOV y, R0 / * load y into R0 * / ADD z, R0 MOV R0, x /* store R0 into x*/"
+ },
+ {
+  "t": "h2",
+  "x": "Register allocation"
+ },
+ {
+  "t": "li",
+  "x": "Instructions with register operands are faster. So, keep frequently used values in registers."
+ },
+ {
+  "t": "li",
+  "x": "Some registers are reserved."
+ },
+ {
+  "t": "p",
+  "x": "Example: SP, PC … etc. Minimize number of loads and stores."
+ },
+ {
+  "t": "h2",
+  "x": "Evaluation order"
+ },
+ {
+  "t": "li",
+  "x": "The order of evaluation can affect the efficiency of the target code."
+ },
+ {
+  "t": "li",
+  "x": "Some orders require fewer registers to hold intermediate results."
+ },
+ {
+  "t": "h2",
+  "x": "Target Machine"
+ },
+ {
+  "t": "li",
+  "x": "Byte addressable with 4 bytes per word"
+ },
+ {
+  "t": "li",
+  "x": "It has n general purpose registers R0, R1, R2, …Rn-1"
+ },
+ {
+  "t": "li",
+  "x": "It has 2 address instructions of the form OP source, destination [cost: 1 + added]"
+ },
+ {
+  "t": "p",
+  "x": "Example: The op may be MOV, ADD, MUL. Generally cost will be like this"
+ },
+ {
+  "t": "h2",
+  "x": "Cost"
+ },
+ {
+  "t": "p",
+  "x": "Register Register Memory Memory Register Memory Register Memory"
+ },
+ {
+  "t": "h2",
+  "x": "Cost"
+ },
+ {
+  "t": "p",
+  "x": "Absolute M M Register R R Indexed C(R) C+contents(R) Indirect register *R Contents (R) Indirect indexed *C(R) Contents (C+contents (R)) Example: x: = y – z MOV y, R0 → cost = 2 SUB z, R0 → cost = 2 MOV R0, x → cost = 2"
+ },
+ {
+  "t": "h1",
+  "x": "Runtime Storage Management"
+ },
+ {
+  "t": "h2",
+  "x": "Storage Organization"
+ },
+ {
+  "t": "p",
+  "x": "To run a compiled program, compiler will demand the operating system for the block of memory. This block of memory is called runtime storage. This run time storage is subdivided into the generated target code, Data objects and Information which keeps track of procedure activations. The fixed data (generated code) is stored at the statically determined area of the memory. The Target code is placed at the lower end of the memory. The data objects are stored at the statically determined area as its size is known at the compile time. Compiler stores these data objects at statically determined area because these are compiled into target code. This static data area is placed on the top of the code area. The runtime storage contains stack and the heap. Stack contains activation records and program counter, data object within this activation record are also stored in this stack with relevant information. The heap area allocates the memory for the dynamic data (for example some data items are allocated under the program control) The size of stack and heap will grow or shrink according to the program execution."
+ },
+ {
+  "t": "h2",
+  "x": "Activation Record"
+ },
+ {
+  "t": "p",
+  "x": "Information needed during an execution of a procedure is kept in a block of storage called an activation record."
+ },
+ {
+  "t": "li",
+  "x": "Storage for names local to the procedures appears in the activation record."
+ },
+ {
+  "t": "li",
+  "x": "Each execution of a procedure is referred as activation of the procedure."
+ },
+ {
+  "t": "li",
+  "x": "If the procedure is recursive, several of its activation might be alive at a given time."
+ },
+ {
+  "t": "li",
+  "x": "Runtime storage is subdivided into 1. Generated target code area 2. Data objects area 3. Stack 4. Heap Code Static data Stack Heap … …"
+ },
+ {
+  "t": "li",
+  "x": "Sizes of stack and heap can change during program execution."
+ },
+ {
+  "t": "p",
+  "x": "For code generation there are two standard storage allocations: 1. Static allocation: The position of an activation record in memory is fixed at compile time. 2. Stack allocation: A new activation record is pushed on to the stack for each execution of the procedure. The record is poped when the activation ends. Control stack The control stack is used for managing active procedures, which means when a call occurs, the execution of activation is interrupted and status information of the stack is saved on the stack. When control is returned from a call, the suspended activation is resumed after storing the values of relevant registers it also includes program counter which sets to point immediately after the call. The size of stack is not fixed."
+ },
+ {
+  "t": "h2",
+  "x": "Scope of declarations Declaration scope refers to the cer-"
+ },
+ {
+  "t": "p",
+  "x": "tain program text portion, in which rules are defined by the language. Within the defined scope, entity can access legally to declared entities. The scope of declaration contains immediate scope always. Immediate scope is a region of declarative portion with enclosure of declaration immediately. Scope starts at the beginning of declaration and scope continues till the end of declaration. Whereas in the over loadable declaration, the immediate scope will begin, when the callable entity profile was determined. The visible part refers text portion of declaration, which is visible from outside."
+ },
+ {
+  "t": "h2",
+  "x": "Flow Graph"
+ },
+ {
+  "t": "p",
+  "x": "A flow graph is a graph representation of three address statement sequences."
+ },
+ {
+  "t": "li",
+  "x": "Useful for code generation algorithms."
+ },
+ {
+  "t": "li",
+  "x": "Nodes in the flow graph represents computations."
+ },
+ {
+  "t": "li",
+  "x": "Edges represent flow of control."
+ },
+ {
+  "t": "h2",
+  "x": "Basic Blocks"
+ },
+ {
+  "t": "p",
+  "x": "Basic blocks are sequences of consecutive statements in which flow of control enters at the beginning and leaves at the end without a halt or branching. 1. First determine the set of leaders"
+ },
+ {
+  "t": "li",
+  "x": "First statement is leader"
+ },
+ {
+  "t": "li",
+  "x": "Any target of goto is a leader"
+ },
+ {
+  "t": "li",
+  "x": "Any statement that follows a goto is a leader."
+ },
+ {
+  "t": "p",
+  "x": "2. For each leader its basic block consists of the leader and all statements up to next leader. Initial node: Block with first statement is leader."
+ },
+ {
+  "t": "h2",
+  "x": "Example: consider the following fragment of code that"
+ },
+ {
+  "t": "p",
+  "x": "computes dot product of two vectors x and y of length 10. begin Prod: = 0; i: = 1; repeat begin Prod: = Prod + x [i] * y [i]; i: = i + 1; end until i < = 10; end B1 (1) Prod : = 0 (2) I: = 1 B2 (3) t1:= 4*i (4) t2: =x[t1] (5) t3: =4 * i (6) t4: =y [t3] (7) t5: =t2* t4 (8) t6; =Prod + t5 (9) Prod := t6 (10) t7: = i+1 (11) i:= t7 (12) if ⟨eq⟩ goto (3) \\The flow graph for this code will be b1 b2 Here b1 is the initial node/block."
+ },
+ {
+  "t": "li",
+  "x": "Once the basic blocks have been defined, a number of transformations can be applied to them to improve the quality of code."
+ },
+ {
+  "t": "li",
+  "x": "Structure preserving transformations"
+ },
+ {
+  "t": "li",
+  "x": "Algebraic transformations"
+ },
+ {
+  "t": "li",
+  "x": "Basic blocks compute a set of expressions. These expressions are the values of the names live on exit from the block."
+ },
+ {
+  "t": "li",
+  "x": "Two basic blocks are equivalent if they compute the same set of expressions."
+ },
+ {
+  "t": "h2",
+  "x": "Structure preserving transformations:"
+ },
+ {
+  "t": "p",
+  "x": "1. Common sub-expression elimination: ⟨eq⟩ – ⟨eq⟩ – ⟨eq⟩ -d ⟨eq⟩ 2. Dead code elimination: Code that computes values for names that will be dead i.e., never subsequently used can be removed. 3. Renaming of temporary variables 4. Interchange of two independent adjacent statements"
+ },
+ {
+  "t": "h2",
+  "x": "Algebraic Transformations"
+ },
+ {
+  "t": "p",
+  "x": "Algebraic identities represent other important class optimizations on basic blocks. For example, we may apply arithmetic identities, such as ⟨eq⟩ x, ⟨eq⟩ – 0 = x x/1 = x"
+ },
+ {
+  "t": "h2",
+  "x": "Next-Use Information"
+ },
+ {
+  "t": "li",
+  "x": "Next-use info used in code generation and register allocation."
+ },
+ {
+  "t": "li",
+  "x": "Remove variables from registers if not used."
+ },
+ {
+  "t": "li",
+  "x": "Statement of the form A = B or C defines A and uses B and C."
+ },
+ {
+  "t": "li",
+  "x": "Scan each basic block backwards."
+ },
+ {
+  "t": "li",
+  "x": "Assume all temporaries are dead or exit and all user variables are live or exit."
+ },
+ {
+  "t": "h2",
+  "x": "Algorithm to compute next use information"
+ },
+ {
+  "t": "p",
+  "x": "Suppose we are scanning i: x: = y op z in backward scan"
+ },
+ {
+  "t": "li",
+  "x": "attach to i, information in symbol table about x, y, z."
+ },
+ {
+  "t": "li",
+  "x": "set x to not live and no next-use in symbol table"
+ },
+ {
+  "t": "li",
+  "x": "set y and z to be live and next-use in symbol table."
+ },
+ {
+  "t": "p",
+  "x": "Consider the following code: 1: t1 ⟨eq⟩ 2: t2 ⟨eq⟩ 3: t3 = 2 * t2 4: t4 = t1 + t2 5: t5 ⟨eq⟩ 6: t6 = t4 + t5 7: x = t6 Statements: 7: no temporary is live 6: t6: use (7) t4 t5 not live 5: t5: use (6) 4: t4: use (6), t1 t3 not live 3: t3: use (4) t2 not live 2: t2: use (3) 1: t1: use (4) Symbol Table: t1 dead use in 4 t2 dead use in 3 t3 dead use in 4 t4 dead use in 6 t5 dead use in 6 t6 dead use in 7 The six temporaries in the basic block can be packed into two locations t1 and t2: 1: t1 ⟨eq⟩ 2: t2 ⟨eq⟩ 3: t2 = 2 * t2 4: t1 = t1 + t2 5: t2 ⟨eq⟩ 6: t1 = t1 + t2 7: x = t1"
+ },
+ {
+  "t": "h2",
+  "x": "Code Generator"
+ },
+ {
+  "t": "li",
+  "x": "Consider each statement"
+ },
+ {
+  "t": "li",
+  "x": "Remember if operand is in a register"
+ },
+ {
+  "t": "li",
+  "x": "Descriptors are used to keep track of register contents and address for names"
+ },
+ {
+  "t": "li",
+  "x": "There are 2 types of descriptors 1. Register Descriptor 2. Address Descriptor"
+ },
+ {
+  "t": "h2",
+  "x": "Register Descriptor"
+ },
+ {
+  "t": "p",
+  "x": "Keep track of what is currently in each register. Initially all registers are empty."
+ },
+ {
+  "t": "h2",
+  "x": "Address Descriptors"
+ },
+ {
+  "t": "li",
+  "x": "Keep track of location where current value of the name can be found at runtime."
+ },
+ {
+  "t": "li",
+  "x": "The location might be a register, stack, memory address or a set of all these."
+ },
+ {
+  "t": "p",
+  "x": "Issues in design of code generation The issues in the design of code generation are 1. Intermediate representation 2. Target code 3. Address mapping 4. Instruction set. Intermediate Representation It is represented in post fix, 3-address code (or) quadruples and syntax tree (or) DAG. Target Code The Target Code could be absolute code, relocatable machine code (or) assembly language code. Absolute code will execute immediately as it is having fixed address relocatable, requires linker and loader to get the code from appropriate location for the assembly code, assemblers are required to convert it into machine level code before execution."
+ },
+ {
+  "t": "h2",
+  "x": "Address mapping In this, mapping is defined between"
+ },
+ {
+  "t": "p",
+  "x": "intermediate representations to target code address. It is based on run time environment like static, stack or heap. Instruction set It should provide a complete set in such a way that all its operations can be implemented."
+ },
+ {
+  "t": "h2",
+  "x": "Code Generation Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "For each three address statement x = y op z do"
+ },
+ {
+  "t": "li",
+  "x": "Invoke a function getreg to determine location L where x must be stored. Usually L is a register."
+ },
+ {
+  "t": "li",
+  "x": "Consult address descriptor of y to determine y′. Prefer a register for y′. If value of y is not already in L generate MOV y′, L."
+ },
+ {
+  "t": "p",
+  "x": "OP z′, L Again prefer a register for z. Update address descriptor of x to indicate x is in L. If L is a register update its descriptor to indicate that it contains x and remove x from all other register descriptors."
+ },
+ {
+  "t": "li",
+  "x": "If current value of y and/or z have no next use and are dead or exit from block and are in registers then change the register descriptor to indicate that it no longer contain y and /or z."
+ },
+ {
+  "t": "h2",
+  "x": "Function getreg"
+ },
+ {
+  "t": "p",
+  "x": "1. If y is in register and y is not live and has no next use after x = y OP z then return register of y for L. 2. Failing (1) return an empty register. 3. Failing (2) if x has a next use in the block or OP requires register then get a register R, store its contents into M and use it. 4. Else select memory location x as L. Example: D: = (a - b) + (a - c) + (a -c)"
+ },
+ {
+  "t": "h2",
+  "x": "addr desc"
+ },
+ {
+  "t": "p",
+  "x": "t= a -b MOV a, R0 SUB b, R0 R0 contains t t in R0 u = a – c MOV a, R1 SUB c, R1 R0 contains t R1 contains u t in R0 u in R1 ⟨eq⟩ ADD R1, R0 R0 contains v R1 contains u u in R0 v in R0 ⟨eq⟩ ADD R1, R0 MOV R0,d Ro contains d d in R0 d in R0 and memory"
+ },
+ {
+  "t": "h2",
+  "x": "Conditional Statements"
+ },
+ {
+  "t": "p",
+  "x": "Machines implement conditional jumps in 2 ways: 1. Based on the value of the designated register (R) Branch if values of R meets one of six conditions. (i) Negative (ii) Zero (iii) Positive (iv) Non-negative (v) Non-zero (vi) Non-positive Example: Three address statement: if x < y goto z It can be implemented by subtracting y from x in R, then jump to z if value of R is negative. 2. Based on a set of condition codes to indicate whether last quantity computed or loaded into a location is negative (or) Zero (or) Positive."
+ },
+ {
+  "t": "li",
+  "x": "compare instruction set codes without actually computing the value."
+ },
+ {
+  "t": "h2",
+  "x": "Example: CMP x, y"
+ },
+ {
+  "t": "li",
+  "x": "Maintains a condition code descriptor, which tells the name that last sets the condition codes."
+ },
+ {
+  "t": "p",
+  "x": "Example: X: ⟨eq⟩ If x < 0 goto z By MOV y, Ro ADD z, Ro MOV Ro, x CJN z."
+ },
+ {
+  "t": "h1",
+  "x": "of Basic Blocks"
+ },
+ {
+  "t": "li",
+  "x": "DAGS are useful data structures for implementing transformations on basic blocks."
+ },
+ {
+  "t": "li",
+  "x": "Tells, how value computed by a statement is used in subsequent statements."
+ },
+ {
+  "t": "li",
+  "x": "It is a good way of determining common sub expressions."
+ },
+ {
+  "t": "li",
+  "x": "A DAG for a basic block has following labels on the nodes:"
+ },
+ {
+  "t": "li",
+  "x": "Leaves are labeled by unique identifiers, either variable names or constants."
+ },
+ {
+  "t": "li",
+  "x": "Interior nodes are labeled by an operator symbol."
+ },
+ {
+  "t": "li",
+  "x": "Nodes are also optionally given as a sequence of identifiers for labels."
+ },
+ {
+  "t": "p",
+  "x": "Example: 1: t1:= 4 * i 2: t2:= a [t1] 3: t3:= 4 * i 4: t4:= b [t3] 5: t5:= t2 * t4 6: t6:= prod + t5 7: prod: = t6 8: t7:= i + 1 9: i= t7 10: if ⟨eq⟩ got (1) ⟨eq⟩ 6, prod t 5 t 4 t1, t3 t7, i (1) io i prod ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Code Generation from DAG:"
+ },
+ {
+  "t": "p",
+  "x": "S1 ⟨eq⟩ S1 ⟨eq⟩ S2 = add(A) - 4 S2 = add(A) - 4 S3 = S2 [S1] S3 = S2 [S1] S4 ⟨eq⟩ S5 = add(B) - 4 S5 = add(B) - 4 S6 = S5[S4] S6 = S5[S4] S7 = S3 *S6 S7 = S3 *S6 S8 = prod + S7 prod = prod + S7 prod = S8 S9 ⟨eq⟩ S9 ⟨eq⟩ if ⟨eq⟩ got (1) if ⟨eq⟩ got (1)"
+ },
+ {
+  "t": "h2",
+  "x": "Rearranging order of the code"
+ },
+ {
+  "t": "p",
+  "x": "Consider the following basic block t1:= a + b t2:= c + d t3:= e – t2 x = t1 -t3 and its DAG ⟨eq⟩ +t2 t1 a b y c d Three address code for the DAG: (Assuming only two registers are available) MOV a, Ro ADD b, Ro MOV c, R1 MOV Ro, t1 Register Spilling MOV e, Ro Register Reloading SUB R1, Ro MOV t1, R1 SUB Ro,R1 MOV R1,x Rearranging the code as t2:= c + d t3:= e – t2 t1:= ⟨eq⟩ t1 – t3 The rearrangement gives the code: MOV c, Ro ADD d, Ro MOV e, R1 SUB Ro, R1 MOV a, Ro ADD b, Ro SUB R1, R0 MOV R1, x"
+ },
+ {
+  "t": "h2",
+  "x": "Error detection and Recovery The errors that arise while"
+ },
+ {
+  "t": "p",
+  "x": "compiling 1. Lexical errors 2. Syntactic errors 3. Semantic errors 4. Run-time errors"
+ },
+ {
+  "t": "h2",
+  "x": "Lexical errors If the variable (or) constants are declared"
+ },
+ {
+  "t": "p",
+  "x": "(or) defined, not according to the rules of language, special symbols are included which were not part of the language, etc is the lexical error. Lexical analyzer is constructed based on pattern recognizing rules to form a token, when a source code is made into tokens and if these tokens are not according to rules then errors are generated."
+ },
+ {
+  "t": "h2",
+  "x": "Consider a c program statement"
+ },
+ {
+  "t": "p",
+  "x": "printf (‘Hello World’); Main printf, (, ‘, Hello world,’ , ),; are tokens. Printf is not recognizable pattern, actually it should be printf. It generates an error."
+ },
+ {
+  "t": "h2",
+  "x": "Syntactic error These errors include semi colons, missing"
+ },
+ {
+  "t": "p",
+  "x": "braces etc. which are according to language rules. The parser reports the errors"
+ },
+ {
+  "t": "h2",
+  "x": "Semantic errors This type of errors arises, when operation"
+ },
+ {
+  "t": "p",
+  "x": "is performed over incompatible type of variables, double declaration, assigning values to undefined variables etc. Runtime errors The Runtime errors are the one which are detected at runtime. These include pointers assigned with NULL values and accessing a variable which is out of its boundary, unlegible arithmetic operations etc. After the detection of errors. The following recovery strategies should be implemented. 1. Panic mode recovery 2. Phrase level recovery 3. Error production 4. Global correction."
+ },
+ {
+  "t": "h1",
+  "x": "Peephole Optimization"
+ },
+ {
+  "t": "li",
+  "x": "Target code often contains redundant instructions and suboptimal constructs."
+ },
+ {
+  "t": "li",
+  "x": "Improving the performance of the target program by examining a short sequence of target instructions (peephole) and replacing these instructions by a shorter or faster sequence is peephole optimization."
+ },
+ {
+  "t": "li",
+  "x": "The peephole is a small, moving window on the target program. Some well known peephole optimizations are 1. Eliminating redundant instructions 2. Eliminating unreachable code 3. Flow of control optimizations or Eliminating jumps over jumps 4. Algebraic simplifications 5. Strength reduction 6. Use of machine idioms Elimination of Redundant Loads and stores Example 1: (1) MOV Ro, a (2) MOV a, Ro We can delete instruction (2), because the value of a is already in R0."
+ },
+ {
+  "t": "h2",
+  "x": "Example 2: Load x, R0"
+ },
+ {
+  "t": "p",
+  "x": "Store R0, x If no modifications to R0/x then store instruction can be deleted"
+ },
+ {
+  "t": "h2",
+  "x": "Example 4: (1) store R0, x"
+ },
+ {
+  "t": "p",
+  "x": "(2) Load x, R0 Second instruction can be deleted from both examples 3 and 4."
+ },
+ {
+  "t": "h2",
+  "x": "Example 5: Store R0, x"
+ },
+ {
+  "t": "p",
+  "x": "Load x, R0 Here load instruction can be deleted."
+ },
+ {
+  "t": "h2",
+  "x": "Eliminating Unreachable code"
+ },
+ {
+  "t": "p",
+  "x": "An unlabeled instruction immediately following and unconditional jump may be removed."
+ },
+ {
+  "t": "li",
+  "x": "May be produced due to debugging code introduced during development."
+ },
+ {
+  "t": "li",
+  "x": "May be due to updates in programs without considering the whole program segment."
+ },
+ {
+  "t": "p",
+  "x": "Example: Let print = 0 if print = 1 goto L1 goto L2 L1: print in if print ! = 1 goto L2 print instructions L2: goto L2 print instructions L2: if 0! = 1 goto L 2 print instructions L 2: In all of the above cases print instructions are unreachable. \\ Print instructions can be eliminated."
+ },
+ {
+  "t": "h2",
+  "x": "Flow of control optimizations The unnecessary jumps can"
+ },
+ {
+  "t": "p",
+  "x": "be eliminated. Jumps like: Jumps to jumps, Jumps to conditional jumps, Conditional jumps to jumps. (A) (B) (C) (D)"
+ },
+ {
+  "t": "h2",
+  "x": "Example 1: we can replace the jump sequence"
+ },
+ {
+  "t": "p",
+  "x": "goto L1 … L1: got L2 By the sequence Got L2 L1: got L2, … If there are no jumps to L1 then it may be possible to eliminate the statement L1: goto L2."
+ },
+ {
+  "t": "h2",
+  "x": "Example 2:"
+ },
+ {
+  "t": "p",
+  "x": "Sometimes skips “goto L3” Only one jump to L goto L1 ... L1: if a < b goto L2 L3: ... if a < b goto L2 goto L3: ... L3:"
+ },
+ {
+  "t": "h2",
+  "x": "Reduction in strength"
+ },
+ {
+  "t": "li",
+  "x": "x2 is cheaper to implement as x * x than as a call to exponentiation routine."
+ },
+ {
+  "t": "li",
+  "x": "Replacement of multiplication by left shift."
+ },
+ {
+  "t": "li",
+  "x": "Replace division by right shift."
+ },
+ {
+  "t": "h2",
+  "x": "Use of machine Idioms"
+ },
+ {
+  "t": "li",
+  "x": "Auto increment and auto decrement addressing modes can be used whenever possible."
+ },
+ {
+  "t": "h2",
+  "x": "Example: replace add #1, R by INC R"
+ },
+ {
+  "t": "h1",
+  "x": "Code Optimization Basics"
+ },
+ {
+  "t": "p",
+  "x": "The process of improving the intermediate code and the target code in terms of both speed and the amount of memory required for execution is known as code optimization. Compilers that apply code–improving transformations are called optimizing compilers."
+ },
+ {
+  "t": "h2",
+  "x": "optimizing compiler are"
+ },
+ {
+  "t": "p",
+  "x": "1. A transformation must preserve the meaning of programs. 2. It must speed up programs by a measurable amount. 3. A transformation must be worth the effort."
+ },
+ {
+  "t": "h2",
+  "x": "Places for improvements"
+ },
+ {
+  "t": "p",
+  "x": "1. Source Code: User can – profile a program – change an algorithm – transform loops 2. Intermediate code can be improved by improving – Loops – Procedure calls – Address calculations 3. Target code can be improved by – Using registers – Selecting instructions – Peephole transformations"
+ },
+ {
+  "t": "h2",
+  "x": "Optimizing compiler organization"
+ },
+ {
+  "t": "li",
+  "x": "Control flow analysis"
+ },
+ {
+  "t": "li",
+  "x": "Data flow analysis"
+ },
+ {
+  "t": "li",
+  "x": "Transformations"
+ },
+ {
+  "t": "p",
+  "x": "Issues in design of code optimization The issues in the design of code optimization are 1. Target machine characteristics 2. Target CPU architecture 3. Functional units"
+ },
+ {
+  "t": "h2",
+  "x": "Target machine Optimization is done, according to the target"
+ },
+ {
+  "t": "p",
+  "x": "machine characteristics. Altering the machine description parameters, one can optimize single piece of compiler code. Target CPU architecture The issues to be considered for the optimization with respect to CPU architecture 1. Number of CPU registers 2. RISC Instruction set 3. CISC instruction set 4. Pipelining"
+ },
+ {
+  "t": "h2",
+  "x": "Functional units Based on number of functional units, optimiza-"
+ },
+ {
+  "t": "p",
+  "x": "tion is done. So that instructions can be executed simultaneously."
+ },
+ {
+  "t": "h1",
+  "x": "Principle Sources Of Optimization"
+ },
+ {
+  "t": "p",
+  "x": "Some code improving transformation is Local transformations and some are Global transformations. Code optimization basics Principle sources of optimization Loop invariant code motion Strength reduction on induction variables Loops in ﬂ ow graphs Pre-header Global data ﬂ ow analysis Deﬁ nition and usage of variables Use-deﬁ nition (u-d ) chaining Data ﬂ ow equations"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "p",
+  "x": "Local Transformations can be performed by looking only at a statement in a basic block. Otherwise it is global transformation."
+ },
+ {
+  "t": "h2",
+  "x": "Function Preserving Transformations"
+ },
+ {
+  "t": "p",
+  "x": "These transformations improve the program without changing the function it computes. Some of these transformations are 1. Common sub expression elimination 2. Copy propagation 3. Dead-code elimination 4. Loop optimization - Code motion - Induction variable elimination - Reduction in strength"
+ },
+ {
+  "t": "h2",
+  "x": "Common sub expression elimination The process of iden-"
+ },
+ {
+  "t": "p",
+  "x": "tifying common sub expressions and eliminating their computation multiple times is known as common sub expression elimination."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the following program segment:"
+ },
+ {
+  "t": "p",
+  "x": "int sum_n, sum_n2, sum_n3; int sum (int n) { Sum_n = ((n)*(n+1))/2; sum_n2 = ((n)*(n+1)*(2n+1))/6; sum_n3 = (((n)*(n+1))/2)*(((n)*(n+1))/2; } Three Address code for the above input is (0) Proc-begin sum (1) t0: ⟨eq⟩ (2) t1: = n * t0 (3) t2: = t1/2 (4) sum_n = t2 (5) t3: ⟨eq⟩ (6) t4: = n * t3 (7) t5: 2 * n (8) t6: = t5 + 1 (9) t7: = t4 * t6 (10) t8: = t7/6 (11) sum_n2: = t8 (12) t9: ⟨eq⟩ (13) t10: n * t9 (14) t11: t10/2 (15) t12: ⟨eq⟩ (16) t13: = n * t12 (17) t14: = t13/2 (18) t15: = t11 * t14 (19) sum_n3: = t15 (20) label Lo (21) Proc end sum The computations made in quadruples (1) – (3), (12) – (14), (15) – (17) are essentially same. That is, ((n)*(n + 1))/2 is computed. It is the common sub expression. This common sub expression is computed four times in the above example. It is possible to optimize the code to have common sub expressions computed only once and then reuse the computed values further. ∴ Optimized intermediate code will be (0) proc-begin sum (1) t0: ⟨eq⟩ (2) t1: = n * t0 (3) sultan: = t1/2 (4) t5: ⟨eq⟩ (5) t6: = t5 + 1 (6) t7: = t1 * t6 (7) sum_n2: = t7/6 (8) sum_n3: sum_n * sum_n (9) proc-end sum"
+ },
+ {
+  "t": "h2",
+  "x": "Constant folding The constant expressions in the input"
+ },
+ {
+  "t": "p",
+  "x": "source are evaluated and replaced by the equivalent values at the time of compilation. For example 10*3, 6 + 101 are constant expressions and they are replaced by 30, 107 respectively."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the following ‘C’ code:"
+ },
+ {
+  "t": "p",
+  "x": "int arr1 [10]; int main ( ) { arr1 [0] = 3; arr1 [1] = 4; } Unoptimized three address code equivalent to the above ‘C’ code is (0) proc-begin main (1) t0: = 0*4 (2) t1: = &arr1 (3) t1 [t0]: = 3 (4) t2: = 1*4 (5) t3: = &arr1 (6) t3 [t2]: = 4 (7) Label L0 (8) Proc – end main In the above code, 0*4 is a constant expression its value = 0. 1*4 is a constant expression, its value = 4. ∴ After applying constant folding, optimized code will be (0) proc-begin main (1) t0: = 0 (2) t1: = &arr1 (3) t1 [t0]: = 3 (4) t2: = 4 (5) t3: = &arr1 (6) t3 [t2]: = 4 (7) label L0 (8) proc – end main"
+ },
+ {
+  "t": "h2",
+  "x": "Copy propagation In copy propagation, if there is an"
+ },
+ {
+  "t": "p",
+  "x": "expression x = y then use the variable ‘y’ instead of ‘x’. This propagated in the statements following x = y."
+ },
+ {
+  "t": "h2",
+  "x": "Example: In the previous example, there are two copy"
+ },
+ {
+  "t": "p",
+  "x": "statements. (1) t0 = 0 (2) t2 = 4 After applying copy propagation, the optimized code will be (0) proc-begin main (1) t0: = 0 (2) t1: = &arr1 (3) t1 [0]: = 3 (4) t2: = 4 (5) t3: = &arr1 (6) t3 [4]: = 4 (7) Label L0 (8) proc-end main In the three address code shown above, quadruples (1) and (4) are no longer used in any of the following statements. ∴ (1) and (4) can be eliminated. Three address code after dead store elimination (0) proc-begin main (1) t1: = &arr1 (2) t1 [0]: = 3 (3) t3: = &arr1 (4) t3 [4]: = 4 (5) Label L0 (6) proc-end main In the above example, we are propagating constant values. It is also known as constant propagation."
+ },
+ {
+  "t": "h2",
+  "x": "Variable propagation Propagating another variable instead"
+ },
+ {
+  "t": "p",
+  "x": "of the existing one is known as variable propagation."
+ },
+ {
+  "t": "h2",
+  "x": "Example: int func(int a, int b, int c)"
+ },
+ {
+  "t": "p",
+  "x": "{ int d, e, f; d = a; If (a > 10) ⟨eq⟩ b; } Else ⟨eq⟩ c; } f = d*e; return (f); } Three address code (unoptimized): (0) proc-begin func ⟨eq⟩ (2) if a >10 goto L0 (3) goto L1 (4) label : L0 ⟨eq⟩ (6) goto L2 (7) label : L1 ⟨eq⟩ (9) label : L2 ⟨eq⟩ (11) return f (12) goto L3 (13) label : L3 (14) proc-end func Three address code after variable (copy) propagation: (0) proc-begin func (1) d: = a (2) If a >10 goto .L0 (3) goto L1 (4) label: L0 (5) e: ⟨eq⟩ (6) goto L2 (7) label: L1 (8) e: ⟨eq⟩ (9) label: L2 (10) f: = a*e (11) return f (12) goto L3 (13) label: L3 (14) proc-end func After dead store elimination: In the above code (1) d: = a is no more used ∴ Eliminate the dead store d: = a (0) proc-begin func (1) If a > 10 goto L0 (2) goto L1 (3) label: L0 (4) e: ⟨eq⟩ (5) goto L2 (6) label: L1 (7) e: a + c (8) label: L2 (9) f: = a*e (10) return f (11) goto L3 (12) label: L3 (13) proc-end func"
+ },
+ {
+  "t": "h2",
+  "x": "Dead code elimination Eliminating the code that never"
+ },
+ {
+  "t": "p",
+  "x": "gets executed by the program is known as Dead code ­elimination. It reduces the memory required by the program"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the following Unoptimized Interme­"
+ },
+ {
+  "t": "p",
+  "x": "diate code: (0) proc-begin func (1) debug: = 0 (2) If debug = = 1 goto L0 (3) goto L1 (4) label: L0 (5) param c (6) param b (7) param a (8) param lc1 (9) call printf 16 (10) retrieve to (11) label: L1 (12) t1: ⟨eq⟩ (13) t2: = t1 + c (14) v1: = t2 (15) Return v1 (16) goto L2 (17) label: L2 (18) proc-end func In copy propagation, debug is replaced with 0, wherever debug is used after that assignment. ∴ Statement 2 will be changed as If ⟨eq⟩ goto L0 0 = = 1, always returns false. ∴ The control cannot flow to label: L0 This makes the statements (4) through (10) as dead code. (2) Can also be removed as part of dead code elimination. (1) Cannot be eliminated, because ‘debug’ is a global ­variable. The optimized code after elimination of dead code is shown below. (0) proc-begin func (1) debug: = 0 (2) goto L1 (3) label: L1 (4) t1: ⟨eq⟩ (5) t2: = t1 + c (6) v1: = t2 (7) return v1 (8) goto L2 (9) label: L2 (10) proc-end func"
+ },
+ {
+  "t": "h2",
+  "x": "Algebraic transformations We can use algebraic identities"
+ },
+ {
+  "t": "p",
+  "x": "to optimize the code further. For example Additive Identity: ⟨eq⟩ Multiplicative Identity: a*1 = a Multiplication with 0: a*0 = 0"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the following code fragment:"
+ },
+ {
+  "t": "p",
+  "x": "struct mystruct { int a [20]; int b; } xyz; int func(int i) { xyz.a[i] = 34; } The Unoptimized three address code: (0) proc-begin func (1) t0: = &xyz (2) t1: = 0 (3) t2: = i*4 (4) t1: = t2 + t1 (5) t0 [t1] = 34 (6) label: L0 (7) proc-end func Optimized code after copy propagation and dead code elimination is shown below: The statement t1: = 0 is eliminated. (0) proc-being func (1) t0 =: = &xyz (2) t2: = i*4 ⟨eq⟩ (4) t0 [t1]: = 34 (5) label: L0 (6) proc-end func After applying additive identity: (0) proc-begin func (1) t0: = &xyz (2) t2: = i*4 ⟨eq⟩ (4) t0 [t1]: = 34 (5) label: L0 (6) proc-end func After copy propagation and dead store elimination: (0) proc-begin func (1) t0: = &xyz (2) t2 : = i*4 (3) t0 [t2]: = 34 (4) label: L0 (5) proc-end func"
+ },
+ {
+  "t": "h2",
+  "x": "Strength reduction transformation This transformation"
+ },
+ {
+  "t": "p",
+  "x": "replaces expensive operators by equivalent cheaper ones on the target machine. For example y: = x*2 is replaced by y: ⟨eq⟩ as addition is less expensive than multiplication. Similarly Replace y: = x*32 by y: ⟨eq⟩ Replace y: = x/8 by y: ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Loop optimization We can optimize loops by"
+ },
+ {
+  "t": "p",
+  "x": "(1) Loop invariant code motion transformation. (2) Strength reduction on induction variable transformation."
+ },
+ {
+  "t": "h2",
+  "x": "Loop invariant code motion"
+ },
+ {
+  "t": "p",
+  "x": "The statements within a loop that compute value, which do not vary throughout the life of the loop are called loop invariant statements. Consider the following program fragment: int a [100]; int func(int x, int y) { int i; int n1, n2; i = 0; n1 = x*y; n2 = x – y; while (a[i] > (n1*n­ 2)) ⟨eq⟩ 1; return(i); } The Three Address code for above program is (0) proc-begin func (1) ⟨eq⟩ (2) n1 : = x*y (3) n2 : = x – y (4) label : L0 (5) t2 : = i*4 ( ) : & 3t = arr (7) t4 : = t3[t2] ⟨eq⟩ (9) if t4 > t5 goto L1 (10) goto L2 (11) label : L1 (12) ⟨eq⟩ (13) goto L0 (14) label : L2 (15) return i (16) goto L3 (17) label : L3 (18) proc-end func In the above code statements (6) and (8) are invariant. After loop invariant code motion transformation the code will be (0) proc-begin func (1) ⟨eq⟩ (2) n1 : = x*y (3) n2 : = x-y (4) t3 : = &arr (5) t5 : n1*n2 (6) label : L0 (7) t2 : = i*4 (8) t4 : = t3[t2] (9) if t4 > t5 goto L1 (10) goto L2 (11) label : L1 (12) ⟨eq⟩ (13) goto L0 (14) label : L2 (15) return i (16) goto L3 (17) label : L3 (18) proc-end func"
+ },
+ {
+  "t": "h2",
+  "x": "Induction variable: A variable that changes by a fixed"
+ },
+ {
+  "t": "p",
+  "x": "quantity on each of the iterations of a loop is an induction variable."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the following code fragment:"
+ },
+ {
+  "t": "p",
+  "x": "int i; int a[20]; int func( ) { while(i<20) { a[i] = 10; ⟨eq⟩ 1; } } The three-address code will be (0) proc-begin func (1) label : L0 (2) if i < 20 goto L1 (3) goto L2 (4) label : L1 (5) t0 : = i*4 (6) t1 : = &a (7) t1[t0] : = 10 (8) ⟨eq⟩ (9) goto L0 (10) label : L2 (11) label : L3 (12) proc-end func After reduction of strength the code will be Here (5) t0 = i*4 is moved out of the loop and (8) is followed by t0 = t0 + 4. (0) proc-begin func (0a) t0 : = i*4 (1) label : L0 (2) if i < 20 goto L1 (3) goto L2 (4) label:L1 (5) (6) t1 : = &a (7) t1[t0] : = 10 (8) ⟨eq⟩ (8a) t0 : = t0 + 4 (9) goto L0 (10) label : L2 (11) label : L3­ (12) proc-end func"
+ },
+ {
+  "t": "h1",
+  "x": "Loops in Flow Graphs"
+ },
+ {
+  "t": "p",
+  "x": "Loops in the code are detected during the data flow analysis by using the concept called ‘dominators’ in the flow graph."
+ },
+ {
+  "t": "h2",
+  "x": "Dominators"
+ },
+ {
+  "t": "p",
+  "x": "A node d of a flow graph dominates node n, if every path from the initial node to ‘n’ goes through ‘d’. It is represented as d dom n."
+ },
+ {
+  "t": "h2",
+  "x": "Notes:"
+ },
+ {
+  "t": "p",
+  "x": "1. Each and every node dominates itself. 2. Entry of the loop dominates all nodes in the loop."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the following code fragment:"
+ },
+ {
+  "t": "p",
+  "x": "int func(int a) { int x, y; x = a; y = a; While (a < 100) { y = y*x; x = x+1; } return(y); } The Three Address code after local optimization will be (0) proc-begin func (1) x: = a (2) y: = a (3) label: L0 (4) if a < 100 goto L1 (5) goto L2 (6) label: L1 (7) t0: = y*x (8) y: = t0 (9) t1: ⟨eq⟩ (10) x: = t1 (11) goto L0 (12) label: L2 (13) return y (14) goto L3 (15) label: L3 (16) proc-end func The Flow Graph for above code will be: proc – begin func ⟨eq⟩ Label: L0 If a < 100 goto L1 goto L2 label : L2 return y goto L3 Label : L3 proc – end func label : L1 t0 : = y ∗ ⟨eq⟩ t0 t1 ⟨eq⟩ t1 goto L0 B5 B4 B2 B1 B0 B3 To reach B2, it must pass through B1 ∴ B1 dominates B2. Also B0 dominates B2. dominators [B1] = {B0, B1} (or) dominators [1] = {0, 1} The dominators for each of the nodes in the flow graph are dominators [0] = {0} dominators [1] = {0, 1} dominators [2] = {0, 1, 2} dominators [3] = {0, 1, 3} dominators [4] = {0, 1, 2, 4} dominators [5] = {0, 1, 2, 4, 5}"
+ },
+ {
+  "t": "h2",
+  "x": "Edge"
+ },
+ {
+  "t": "p",
+  "x": "An edge in a flow graph represents a possible flow of control. In the flow graph, B0 to B1 edge is represented as 0 → 1. Head and tail: In the edge a → b, the node b is called head and the node a is called as tail."
+ },
+ {
+  "t": "h2",
+  "x": "Back edges: There are some edges in which dominators"
+ },
+ {
+  "t": "p",
+  "x": "[tail] contains the head. The presence of a back edge indicates the existence of a loop in a flow graph. In the previous graph, 3 → 1 is a back edge. Consider the following table:"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider below flow graph:"
+ },
+ {
+  "t": "p",
+  "x": "B7 B6 B5 B4 B2 B1 B0 B3 The dominators of each node are dominators [0] = {0} dominators [1] = {0, 1} dominators [2] = {0, 2} dominators [3] = {0, 1, 3} dominators [4] = {0, 2, 4} dominators [5] = {0, 1, 3, 5} dominators [6] = {0, 2, 4, 6} dominators [7] = {0, 7}"
+ },
+ {
+  "t": "h2",
+  "x": "Dominators [tail]"
+ },
+ {
+  "t": "p",
+  "x": "0 → 1 {0, 1} {0} 0 → 2 {0, 2} {0} 1 → 3 {0, 1, 3} {0, 1} 3 → 1 {0, 1} {0, 1, 3} 3 → 5 {0, 1, 3, 5} {0, 1, 3} Backedge 5 → 7 {0, 7} {0, 1, 3, 5} 2 → 4 {0, 2, 4} {0, 2} 6 → 2 {0, 2} {0, 2, 4, 6} Backedge 4 → 6 {0, 2, 4, 6} {0, 2, 4} 6 → 7 {0, 7} {0, 2, 4, 6} Here {B6, B2, B4} form a loop (L1), {B3, B1} form another loop (L2) In a loop, the entry of the loop dominates all nodes in the loop. Header of the loop The entry of the loop is also called as the header of the loop. Loop exit block In loop L1 can be exited from the basic block B6. It is called loop exit block. The block B3 is the loop exit block for the loop L2. It is possible to have multiple exit blocks in a loop."
+ },
+ {
+  "t": "h2",
+  "x": "Dominator tree"
+ },
+ {
+  "t": "p",
+  "x": "A tree, which represents dominate information in the form of tree is a dominator tree. In this,"
+ },
+ {
+  "t": "li",
+  "x": "The initial node is the root."
+ },
+ {
+  "t": "li",
+  "x": "Each node d dominates only its descendents in the tree."
+ },
+ {
+  "t": "h2",
+  "x": "Consider the flow graph"
+ },
+ {
+  "t": "p",
+  "x": "The dominators of each node are dominators [1] = {1} dominators [2] = {1, 2} dominators [3] = {1, 3} dominators [4] = {1, 3, 4} dominators [5] = {1, 3, 4, 5} dominators [6] = {1, 3, 4, 6} dominators [7] = {1, 3, 4, 7} dominators [8] = {1, 3, 4, 7, 8} dominators [9] = {1, 3, 4, 7, 8, 9} dominators [10] = {1, 3, 4, 7, 8, 10} The dominator tree will be:"
+ },
+ {
+  "t": "h2",
+  "x": "Pre-header"
+ },
+ {
+  "t": "p",
+  "x": "A pre-header is a basic block introduced during the loop optimization to hold the statements that are moved from within the loop. It is a predecessor to the header block. B7 B6 B6 B4 B2 B2 B1 B1 B0 B0 B3 B3 B5 B5 Header Pre-header After pre-header Header loop L loop L"
+ },
+ {
+  "t": "h2",
+  "x": "Reducible Flow Graphs"
+ },
+ {
+  "t": "p",
+  "x": "A flow graph G is reducible if and only if we can partition the edges into two disjoint groups: (1) Forward edges (2) Backward edges with the following properties. (i) \u0007The forward edges form an acyclic graph in which every node can be reached from the initial node of G. (ii) \u0007The back edges consist only of edges whose heads dominates their tails."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider previous flow graph"
+ },
+ {
+  "t": "p",
+  "x": "In the above flow graph, there are five back edges 4 → 3, 7 → 4, 8 → 3, 9 → 1 and 10 → 7 Remove all backedges. The remaining edges must be the forward edges. The remaining graph is acyclic. ∴ It is reducible."
+ },
+ {
+  "t": "h1",
+  "x": "Global Dataflow Analysis"
+ },
+ {
+  "t": "p",
+  "x": "Point: A point is a place of reference that can be found at 1. Before the first statement in a basic block. 2. After the last statement in a basic block. 3. In between two adjacent statements within a basic block."
+ },
+ {
+  "t": "h2",
+  "x": "Example 1:"
+ },
+ {
+  "t": "p",
+  "x": "a. = 10 b. = 20 c. ⟨eq⟩ B1 Here, In B1 there are 4 points"
+ },
+ {
+  "t": "h2",
+  "x": "Example 2:"
+ },
+ {
+  "t": "p",
+  "x": "B1 There is 4 point in the basic block B1, given by P1 – B1, P2 – B1, P3 – B1 and P4 – B1. Path: A path is a sequence of points in which the control can flow. A path from P1 to Pn is a sequence of points P1, P2 ,…, Pn such that for each i between 1 and n-1, either (a) Pi is the point immediately preceding a statement and Pi+1 is the point immediately following that statement in the same block. (OR) (b) Pi is the end of some block and Pi+1 is the beginning of a successor block."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Path is between the points P0 – b0 and P6 – b2: The sequence of points P0 – b0, P1 – b0, P2 – b0, P3 – b0 , P4 – b2, P5 – b2 and P6 – b2. Path between P3 – b1 and P6 – b2: There is no sequence of points. Path between P0 – b0 and P7 – b3: There are two paths. (1) Path 1 consists of the sequence of points, P0 – b0, P1 – b0, P2 – b0, P3 – b0, P3 – b0, P4 – b1 and P7 – b3 . (2) Path 2 consists of the sequence of points P0 – b0, P1 – b0, P2 – b0, P3 – b0, P4 – b2, P5 – b2, P6 – b2, P7 – b2 and P7 – b3"
+ },
+ {
+  "t": "h2",
+  "x": "Definitions"
+ },
+ {
+  "t": "p",
+  "x": "It is either an assignment to the variable or reading of a value for the variable. Use Use of identifier x means any occurrence of x as an operand."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the statement"
+ },
+ {
+  "t": "p",
+  "x": "⟨eq⟩ z; In this statement some value is assigned to x. It defines x and used y and z values."
+ },
+ {
+  "t": "h2",
+  "x": "Global Data-Flow-Analysis"
+ },
+ {
+  "t": "p",
+  "x": "Data Flow Analysis (DFA) is a technique for gathering information about the possible set of values calculated at various points in a program."
+ },
+ {
+  "t": "li",
+  "x": "An example of a data-flow analysis is reaching definitions."
+ },
+ {
+  "t": "li",
+  "x": "A single way to perform data-flow analysis of program is to setup data flow equations for each node of the control flow graph."
+ },
+ {
+  "t": "h2",
+  "x": "Use definition (U-d) chaining"
+ },
+ {
+  "t": "p",
+  "x": "The use of a value is any point where that variable or constant is used in the right hand side of an assignment or is evaluating an expression. The definition of a value occurs implicitly at the beginning of the whole program for a variable. A point is defined either prior to or immediately after a statement."
+ },
+ {
+  "t": "h2",
+  "x": "Reaching definitions"
+ },
+ {
+  "t": "p",
+  "x": "A definition of a variable A reaches a point P if there is a path in the flow graph from that definition to P, such that no other definitions of A appear on the path."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "B1 B3 B4 B2 B5 if A = B goto B5 ⟨eq⟩ if A = B goto B3 The definition A: = 3 can reach point p in B5. To determine the definitions that can reach a given program first assign distinct numbers to each definition, since it is associated with a unique quadruple."
+ },
+ {
+  "t": "li",
+  "x": "For each simple variable A, make a list of all definitions of A anywhere in the program."
+ },
+ {
+  "t": "li",
+  "x": "Compute two sets for each basic block B."
+ },
+ {
+  "t": "p",
+  "x": "Gen [B] is the set of generated definitions within block B and that reach the end of the block. 1. Kill [B], which is the set of definitions outside of B that define identifiers that also have definitions within B. 2. IN [B], which are all definitions reaching the point just before B’s first statement. Once this is known, the definitions reaching any use of A within B are found by: Let u be the statement being examined, which uses A. 1. If there are definitions of A within B before u, the last is the only one reaching u. 2. If there is no definition of A within B prior to u, those reaching u are in IN [B]."
+ },
+ {
+  "t": "h2",
+  "x": "Data Flow Equations"
+ },
+ {
+  "t": "p",
+  "x": "1. For all blocks B, OUT [B] = (IN [B] – KILL [B]) U GEN [B] A definition d, reaches the end of B if (a) d ∈ IN [B] and is not killed by B. (or) (b) d is generated in B and is not subsequently redefined here. 2. IN [B] = U OUT [P] ∀ P preceding B A definition reaches the beginning of B iff it reaches the end of one of its predecessors."
+ },
+ {
+  "t": "h2",
+  "x": "Computing U-d Chains"
+ },
+ {
+  "t": "p",
+  "x": "If a use of variable ‘a’ is preceded in its block by a definition of ‘a’, this is the only one reaching it. If no such definition precedes its use, all definitions of ‘a’ in IN [B] are on its chain."
+ },
+ {
+  "t": "h2",
+  "x": "Uses of U-d Chains"
+ },
+ {
+  "t": "p",
+  "x": "1. If the only definition of ‘a’ reaching this statement involves a constant, we can substitute that constant for ‘a’. 2. If no definitions of ‘a’ reaches this point, a warning can be given. 3. If a definition reaches nowhere, it can be eliminated. This is part of dead code elimination."
+ }
+]

@@ -1,0 +1,1738 @@
+[
+ {
+  "t": "h1",
+  "x": "Number and Letter Series"
+ },
+ {
+  "t": "li",
+  "x": "Number Series"
+ },
+ {
+  "t": "li",
+  "x": "Difference Series"
+ },
+ {
+  "t": "li",
+  "x": "Product Series"
+ },
+ {
+  "t": "li",
+  "x": "Squares/Cubes Series"
+ },
+ {
+  "t": "li",
+  "x": "Miscellaneous Series"
+ },
+ {
+  "t": "li",
+  "x": "Combination Series"
+ },
+ {
+  "t": "li",
+  "x": "Letter Series"
+ },
+ {
+  "t": "h2",
+  "x": "CHAPTER HIGHLIGHTS"
+ },
+ {
+  "t": "h1",
+  "x": "Introduction"
+ },
+ {
+  "t": "p",
+  "x": "Number and Letter Series form an important part of the Reasoning section in various competitive examinations. There are two or three broad categories of questions that appear in various exams from this particular chapter. In the first category of questions, a series of numbers/ letters is given with one number/letter (or two numbers/letters) missing, represented by a blank or a question mark. The given series of numbers/letters will be such that each one follows its predecessor in a certain way, i.e. according to a definite pattern. Students are required to find out the way in which the series is formed and, hence, work out the missing number/numbers or letter/letters to complete the series. For the purpose of our discussion, we will refer to this category of questions as Number Series Type I or Letter Series Type I questions. Under Type I questions, there are a large variety of patterns that are possible, and the student requires a proper understanding of various patterns to be able to do well in these types of questions. In the second category of questions, a series of numbers/ letters is given, and the student is required to count how many numbers/letters in that series satisfy a given condition and mark that as the answer. For the purpose of our understanding, we will refer to this category of questions as Number Series Type II or Letter Series Type II questions. These questions will mainly involve counting of numbers/ letters satisfying a given condition."
+ },
+ {
+  "t": "h1",
+  "x": "NUMBer Series"
+ },
+ {
+  "t": "p",
+  "x": "For better understanding, we will classify this into the following broad categories. 1. Diff erence series 2. Product series 3. Squares/cubes series 4. Miscellaneous series 5. Combination series"
+ },
+ {
+  "t": "h2",
+  "x": "Diﬀ erence Series"
+ },
+ {
+  "t": "p",
+  "x": "The diff erence series can be further classified as follows. 1. Number series with a constant diff erence. 2. Number series with an increasing or decreasing diff erence. In the number series with a constant diff erence, there is always a constant diff erence between two consecutive numbers. For example, the numbers of the series 1, 4, 7, 10, 13, … are such that any number is obtained by adding a constant figure of 3 to the preceding term of the series. If we have to find the next number in the aforementioned series, we need to add a 3 to the last term 13. Thus, 16 is the next term of the series. Under the series with constant diff erence, we can have series of odd numbers or series of even numbers also."
+ },
+ {
+  "t": "h1",
+  "x": "1. In the series with increasing/decreasing difference, the dif-"
+ },
+ {
+  "t": "p",
+  "x": "ference between consecutive terms keeps increasing (or decreasing, as the case may be). For example, let us try to find out the next number in the series 2, 3, 5, 8, 12, 17, 23, … Here, the difference between the first two terms of the series is 1; the difference between the second and third terms is 2; the difference between the third and the fourth terms is 3; and so on. That is, the difference between any pair of consecutive terms is one more than the difference between the first number of this pair and the number immediately preceding this number. Here, since the difference between 17 and 23 is 6, the next difference should be 7. So, the number that comes after 23 should be (23 + 7) = 30. We can also have a number series where the difference is in decreasing order (unlike in the previous example where the difference is increasing). For example, let us find out the next term of the series 10, 15, 19, 22, 24, … 10, 15, 19, 22, +5 +4 +3 +2 Here, the differences between 1st and 2nd, 2nd and 3rd, 3rd and 4th numbers, etc., are 5, 4, 3, 2, and so on. Since the difference between 22 and 24 is 2, the next difference should be 1. So, the number that comes after 24 should be 25."
+ },
+ {
+  "t": "h2",
+  "x": "Product Series"
+ },
+ {
+  "t": "p",
+  "x": "A product series is usually a number series where the terms are obtained by a process of multiplication. Here also, there can be different types of series. We will look at these through examples. Consider the series 2, 4, 8, 16, 32, 64, … 2, 4, 8, 16, 32, 64 × 2 × 2 × 2 × 2 × 2 Here, each number in the series is multiplied by 2 to get the next term. So, the term that comes after 64 is 128. So, each term is multiplied by a fixed number to get the next term. Similarly, we can have a series where we have numbers obtained by dividing the previous term with a constant number. For example, in the series 64, 32, 16, 8, …, each number is obtained by dividing the previous number by 2 (or in other words, by multiplying the previous term by 1 2 ). So, here, the next term will be 4 (obtained by dividing 8 with 2). Consider the series 4, 20, 80, 240, … 20, 80, 240, +5 +4 +3 Here, the first term is multiplied by 5 to get the second term; the second term is multiplied by 4 to get the third term; the third term is multiplied by 3 to get the fourth term. Hence, to get the fifth term, we have to multiply the fourth term by 2, i.e. the fifth term is 480. So, each term is multiplied by a decreasing factor (or it could also be an increasing factor) to get the next term. That is, with whatever number a particular term is multiplied to get the next term, this ­latest term is multiplied by a number different from the previous multiplying factor to get the next term of the series. All the multiplying factors follow a certain pattern (normally of increasing or decreasing order). Consider the series 2, 6, 12, 20, 30, … 2, 6, 12, 20, +4 +6 +8 +10 This can be looked at a series of increasing differences. The differences of consecutive pairs of terms are 4 (between 2 and 6), 6 (between 6 and 12), 8 (between 12 and 20), 10 (between 20 and 30), and so on. Hence, the difference between 30 and the next term should be 12, and, so, the next term will be 42. But, this series can also be looked at as a product series. 2, 6, 12, 20, ↓ ↓ ↓ ↓ ↓ 1 × 2 2 × 3 3 × 4 4 × 5 5 × 6 The first term is the product of 1 and 2; the second term is the product of 2 and 3; the third term is the product of 3 and 4; the fourth term is the product of 4 and 5; the fifth term is the product of 5 and 6. Hence, the next term will be the product of 6 and 7, that is 42."
+ },
+ {
+  "t": "h2",
+  "x": "Squares/Cubes Series"
+ },
+ {
+  "t": "p",
+  "x": "There can be series where all the terms are related to the squares of numbers or cubes of numbers. With squares/ cubes of numbers as the basis, there can be many variations in the pattern of the series. Let us look at various possibilities of series based on squares/cubes. Each term of the series may be the square of a natural number, such as 1, 4, 9, 16, … 1, 4, 9, ↓ ↓ ↓ ↓ The numbers are squares of 1, 2, 3, 4 …, respectively. The number which follows 16 (which is the square of 4) will be 25 (which is the square of 5). The terms of the series may be the squares of odd ­numbers (e.g. 1, 9, 25, 49, …) or even numbers (e.g. 4, 16, 36, 64, …). The terms of the series could be such that a number and its square are both given one after the other and such pairs are given in some specific pattern. For example, take the series 2, 4, 3, 9, 4, 16, … 2, 4, 3, 9, 4, 16, +1 +1 Here, 2 is followed by its square 4; then comes the number 3 (which is one more than 2) followed by its square 9 and so on. Hence, the next number in the series is 5, and the one after that is its square, i.e. 25. Similarly, each term could be the square root of its ­predecessor. For example, in the series 81, 9, 64, 8, 49, 7, 36, …, 81 is the square of 9, 64 the square of 8, and so on. Therefore, the next number which follows in the series should be the square root of 36, i.e. 6. The terms of the series could be the squares of natural numbers increased or reduced by certain number. For example, in the series 3, 8, 15, 24, … 3, 8, 15, ↓ ↓ ↓ ↓ 22 – 1 32 – 1 42 – 1 52 – 1 We have {Squares of natural numbers – 1} as the terms. The first term is 22 – 1; the second term is 32 – 1; the third term is 42 – 1, and so on. Hence, the next term will be 62 – 1, i.e. 35. [Please note that the above series can also be looked at as a series with increasing differences. The differences between the 1st and 2nd terms, the 2nd and 3rd terms, and so on are 5, 7, 9, and so on. Hence, the next difference should be 11 giving us the next term as 35.] There could also be a series with {squares of natural numbers + some constant}. Like we have seen series with squares of numbers, we can have similar series with cubes of numbers. For example, take the series 1, 8, 27, 64, … 1, 8, 27, ↓ ↓ ↓ ↓ Here, all the terms are cubes of natural numbers. So, the next term will be 53, i.e. 125. Consider the series 2, 9, 28, 65, … 2, 9, 28, ↓ ↓ ↓ ↓ ⟨eq⟩ Here, the terms are {Cubes of natural numbers + 1}. The first term is 13 + 1; the second term is 23 + 1; the third term is 33 + 1, and so on. Hence, the next term will be 53 + 1, i.e. 125."
+ },
+ {
+  "t": "h2",
+  "x": "Miscellaneous Series"
+ },
+ {
+  "t": "p",
+  "x": "There are series that do not come under the other patterns and are of general nature but are important and are fairly common. Even here, some times, there can be a specific pattern in some cases. Take the series 3, 5, 7, 11, 13, … . This is a series of consecutive PRIME NUMBERS. It is an important series and the student should look out for this as one of the patterns. The next term in this series is 17. There can also be variations using prime numbers. Take the series 9, 25, 49, 121, … . In this series, the terms are squares of prime numbers. Hence, the next term is 132, i.e. 169. Take the series 15, 35, 77, … . The first term is 3 × 5; the second term is 5 × 7; the third term is 7 × 11; here, the terms are product of two consecutive prime numbers. So, the next term will be the product of 11 and 13, i.e. 143. Take the series 8, 24, 48, 120, 168, … Here, the 2nd term is 3 times the first term and the 3rd term is 2 times the 2nd term, but after that, it does not follow this pattern any more. If you look at the terms carefully, you will find that the terms are {one less than squares of prime numbers}. Hence, the next term will be 172 – 1, i.e. 288. Consider the series 1, 4, 9, 1, 6, 2, 5, 3, … At first sight, there is nothing we can say about the series. This is actually a series formed by squares of natural numbers. However, if any of the squares is in two or more digits, each of the digits is written as a separate term of the series. Thus, the first terms are 1, 4, and 9, the squares of 1, 2, and 3, respectively. After this, we should get 16 (which is the square of 4). Since this has two digits 1 and 6, these two digits are written as two different terms 1 and 6 in the series. Similarly, the next square 25 is written as two different terms 2 and 5 in the series. So, the next square 36 should be written as two terms 3 and 6. Of these, 3 is already given. So, the next term of the series is 6. Consider the series 1, 1, 2, 3, 5, 8, … 1, 1, 2, 3, 5, ↓ ↓ ↓ ↓ ⟨eq⟩ Here, each term, starting with the third number, is the sum of the two preceding terms. After taking the first two terms as given (1 and 1), then onwards, to get any term, we need to add the two terms that come immediately before that position. Hence, to get the next term of the series, we should take the two preceding terms 5 and 8 and add them up to get 13. So, the next term of the series is 13. The term after this will be ⟨eq⟩ 13)."
+ },
+ {
+  "t": "h2",
+  "x": "Combination Series"
+ },
+ {
+  "t": "p",
+  "x": "A number series which has more than one type of (­arithmetic) operation performed or more than one series combined together is a combination series. The series that are combined can be two series of the same type or could be different types of series as described earlier. Let us look at some examples. First, let us look at those series that are formed by more than one arithmetic operation performed on the terms to get the subsequent terms. Consider the series: 2, 6, 10, 3, 9, 13, 4, 12, … Here, the first term 2 is multiplied by 3 to get the second term, and 4 is added to get the third term. The next term is 3 (one more than the first term 2), and it is multiplied by 3 to get 9 (which is the next term) and then 4 is added to get the next term 13. The next term 4 (which is one more than 3), which is multiplied with 3 to get 12. Then, 4 is added to this to get the next number 16. Consider the series: 1, 2, 6, 21, 88, …. Here, we can observe that 88 is close to 4 times 21. It is in fact 21 × 4 + 4. So, if we now look at the previous term 21, it is related to the previous term 6 as 6 × 3 + 3. Now we get the general pattern: to get any term, multiply the previous term with k and then add k where k is a natural number with values in increasing order from 1. So, to get the second term, the first term has to be multiplied with 1 and then 1 is added. To get the third term, the second term is multiplied with 2 and then 2 is added and so on. Hence, after 88, the next term is 88 × 5 + 5, i.e. 445. Now, let us look at a series that is formed by combining two (or more) different series. The two (or more) series can be of the same type or of different types described earlier. Consider the series: 8, 12, 9, 13, 10, 14, …. Here the 1st, 3rd, 5th, … terms, which are 8, 9, 10, …, form one series whereas the 2nd, 4th, 6th, etc. terms, which are 12, 13, 14, form another series. Here, both series that are being combined are two simple constant difference series. Therefore, the missing number will be the next term of the first series 8, 9, 10, …, which is equal to 11. Consider the series: 0, 7, 2, 17, 6, 31, 12, 49, 20, …. Here, the series consisting of 1st, 3rd, 5th, … terms (i.e. the series consisting of the odd terms), which is 0, 2, 6, 12, 20, … is combined with another series consisting of 2nd, 4th, 6th, … terms (i.e. the series consisting of the even terms) which is 7, 17, 31, 49, … . The first series has the differences in increasing order 2, 4, 6, 8, 10, and so on. The second series also has the difference in increasing order 10, 14, 18, …. Since, the last term 20 belongs to the first series, a number from the second series should follow next. The next term of the second series will be obtained by adding 22 to 49, that is 71. Consider the series: 1, 1, 2, 4, 3, 9, 4, 16, …. Here, one series consisting of odd terms, which is 1, 2, 3, 4, …, is combined with the series of even terms which is 1, 4, 9, 16, …. The first series is a series of natural numbers. The second series is the squares of natural numbers. Hence, the next term is 5. Consider the series: 1, 1, 4, 8, 9, 27, …. Here, the series of squares of natural numbers is combined with the series of cubes of natural numbers. The next term in the series will be 4. Consider the series: 2, 4, 5, 9, 9, 16, 14, ? , 20, …. Here, we have to find out the term that should come in place of the question mark. The odd terms form one series 2, 5, 9, 14, 20, … where the difference is increasing. The differences are 3, 4, 5, 6, … This series is combined with the series of even terms 4, 9, 16, … where the terms are squares of numbers 2, 3, 4, … . Hence, the term that should come in place of the question mark is the next term of the second series which is 52, i.e. 25. A general approach to the number Series: The best way of approaching the number series questions is to first observe the difference between terms. If the difference is constant, it is a constant difference series. If the difference is increasing or decreasing by a constant number, then it is a series with a constant increasing or decreasing difference. If there is no constant increasing or decreasing difference, then try out the product series approach. For this, first divide the second term with the first term, third with the second, and so on. If the numbers obtained are the same, then it is a product series. Alternatively, try writing each term of the series as a product of two factors and see if there is any pattern that can be observed. If still there is no inference, but the difference is increasing or decreasing in a rapid manner, then check out the square series. If the increase is very high, and it is not a square series, then try out the cube series. If the difference is alternately decreasing and increasing (or increasing for some time and alternately decreasing), then it should most probably be a mixed series. Therefore, test out the series with alternate numbers. If still the series is not solved, try out the general series."
+ },
+ {
+  "t": "h1",
+  "x": "Letter Series"
+ },
+ {
+  "t": "p",
+  "x": "The questions here are similar to the questions in Number Series Type I. Instead of numbers, we have letters of the alphabet given here. We have to first identify the pattern that the series of letters follow. Then, we have to find the missing letter based on the pattern already identified. Ins number series, we saw different patterns that the numbers in the series can follow—like squares, cubes. In letter series, obviously, patterns like squares, cubes will not be possible. In letter series, in general, we have a series with constant or increasing or decreasing differences. The position of the letters in the English alphabet is considered to be the value of the alphabet in questions on letter series. Also, when we are counting, after we count from A to Z, we again start with A, i.e. we treat the letters as being cyclic in nature. Like in number series, in this type of letter series also, we can have a ‘combination’ of series, i.e. two series are combined and given. We need to identify the pattern in the two series to find out the missing letter. Sometimes, there will be some special types of series also. Let us look at a few examples to understand questions on letter series."
+ },
+ {
+  "t": "h2",
+  "x": "Example 1"
+ },
+ {
+  "t": "p",
+  "x": "Find the next letter in the series D, G, J, M, P, ______. (A) Q (B) R (C) S (D) T"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "Three letters are added to each letter to get the next letter in the series. i.e. D+3, G+3, J+3, M+3, P+3, S\b P + 3 and P = 16 and ⟨eq⟩ and the 19th letter in the alphabet is S."
+ },
+ {
+  "t": "h2",
+  "x": "Example 2"
+ },
+ {
+  "t": "p",
+  "x": "Find the next letter in the series A, B, D, H, ______. (A) L (B) N (C) R (D) P"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "Each letter in the given series is multiplied with 2 to get the next letter in the series. A × 2 ⇒ 1 × 2 = 2 and the 2nd letter is B, B × 2 ⇒ 2 × 2 = 4 and the 4th letter is D. Similarly, H × 2 ⇒ 8 × 2 = 16 and the 16th letter is P."
+ },
+ {
+  "t": "h2",
+  "x": "Example 3"
+ },
+ {
+  "t": "p",
+  "x": "What is the next letter in the series? B, D, G, K, P, ______ (A) S (B) V (C) W (D) X"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "B+2, D+3, G+4, K+5, P+6, ______ ⟨eq⟩ and the 22nd letter is V."
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "The given series is an alternate series. I+1, J+1, K+1, L is one series and X–1, W–1, V–1, ______ is the other series. X – 1 = W, W – 1 = V and V – 1 = 22 – 1 = 21 and the 21st letter is U."
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "The given numbers are alternate prime numbers in decreasing order, starting with 97. Hence, the next number in the series is 47."
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "75+216, 291+125, 416+64, 480+27, 507, _____ The differences are cubes of consecutive natural numbers in decreasing order. Hence, the next number in the series in 507 + (B)3 = 515."
+ },
+ {
+  "t": "h1",
+  "x": "Analogies"
+ },
+ {
+  "t": "li",
+  "x": "Number Analogies"
+ },
+ {
+  "t": "li",
+  "x": "Letter Analogies"
+ },
+ {
+  "t": "li",
+  "x": "Verbal Analogies"
+ },
+ {
+  "t": "h2",
+  "x": "CHAPTER HIGHLIGHTS"
+ },
+ {
+  "t": "h1",
+  "x": "Analogy"
+ },
+ {
+  "t": "p",
+  "x": "Analogy means ‘similarity’ or ‘similar relationship’. In questions on number or letter analogies, a pair, that has a certain relationship between them, is given. This number/ letter pair is followed by a third number/letter. The student is expected to identify the relationship between the pair given and find out a FOURTH number such that the relationship between the third and the fourth is similar to the relationship that exists between the first and the second. (In some cases, it may not be the fourth one that has to be found out. The fourth one will be given and the student has to find out one of the other three, whichever is not given)."
+ },
+ {
+  "t": "h1",
+  "x": "NUMber Analogies"
+ },
+ {
+  "t": "p",
+  "x": "Typical relationships between the numbers in a given pair can be any of the following:"
+ },
+ {
+  "t": "li",
+  "x": "One number is a multiple of the other."
+ },
+ {
+  "t": "li",
+  "x": "One number is the square or square root of the other."
+ },
+ {
+  "t": "li",
+  "x": "One number is the cube or cube root of the other."
+ },
+ {
+  "t": "li",
+  "x": "The two numbers are squares of two other numbers which themselves are related. For example, the two numbers are squares of two consecutive integers or squares of two consecutive even integers or squares of two consecutive odd integers."
+ },
+ {
+  "t": "li",
+  "x": "The two numbers are such that they are obtained by subtracting a certain number from the squares or cubes of the two related numbers."
+ },
+ {
+  "t": "li",
+  "x": "The two numbers are such that they are obtained by adding a certain number to the squares or cubes of the two related numbers."
+ },
+ {
+  "t": "li",
+  "x": "The two numbers can be consecutive, even, odd, or prime numbers."
+ },
+ {
+  "t": "p",
+  "x": "There can be many more combinations that one can think of but the student has to note an important point in solving questions on number analogies. In number series-related questions, since a series of numbers (more than two numbers) will be given, the relationship or pattern can be identified uniquely. In number analogies, since only two numbers are given, it may be possible to think of more than one relationship existing between the two numbers in the given pair. But, it should be kept in mind that generally, simple addition of one number or subtraction of one number is not what is given in number analogies. The questions try to test the insight that the student has got into the relationship between the numbers. Let us take a few examples and understand the questions on number analogies."
+ },
+ {
+  "t": "h1",
+  "x": "2. Solved Examples"
+ },
+ {
+  "t": "h2",
+  "x": "Example 1"
+ },
+ {
+  "t": "p",
+  "x": "Find the missing number ⟨eq⟩ _____. (A) 61 (B) 63 (C) 65 (D) 60"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "When the numbers in the question are considered the students tend to consider 25 and 36 as squares of two consecutive natural numbers. But, the answer choices does not consist of an answer suitable to the above logic. Hence, it is important that, the student keeps the answer choices in view in arriving at the logic. ⟨eq⟩ Similarly, ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Example 2"
+ },
+ {
+  "t": "p",
+  "x": "Find the missing number ⟨eq⟩ _____. (A) 102 (B) 117 (C) 123 (D) 138"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "The given analogy can be written as ⟨eq⟩ _____. 5 and 7 are successive odd numbers. Similarly, next odd number to 9 is 11 and ⟨eq⟩ 123."
+ },
+ {
+  "t": "h2",
+  "x": "Example 3"
+ },
+ {
+  "t": "p",
+  "x": "Find the missing number. ⟨eq⟩ _____. (A) 33 (B) 28 (C) 41 (D) 37"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "h1",
+  "x": "Letter Analogies"
+ },
+ {
+  "t": "p",
+  "x": "The questions in this area are similar to verbal analogies. Here, the questions are based on the relationship between two groups of letters (instead of two words as in verbal analogies). Typically, three sets of letters are given followed by a question mark (where a fourth set of letters is supposed to inserted). The student has to find the relation or order in which the letters have been grouped together in the first two sets of letters on the left hand side of the symbol : : and then find a set of letters to fit in place of the question mark so that the third and the fourth set of letters will also have the same relationship as the first and the second. The sequence or order in which the letters are grouped can be illustrated by the following examples."
+ },
+ {
+  "t": "h2",
+  "x": "Example 4"
+ },
+ {
+  "t": "p",
+  "x": "BDEG : DFGI : : HKMO : _____. (A) ILNP (B) JMOP (C) JMOQ (D) JNOQ"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "Two letters are added to each letter to get the next letters in the analogy. B D E G; Similarly, H K M O +2 +2 +2 +2 +2 +2 +2 +2 D F G I J M O Q"
+ },
+ {
+  "t": "h2",
+  "x": "Example 5"
+ },
+ {
+  "t": "p",
+  "x": "ACDF : CGJN : : BEHI : _____. (A) DJNQ (B) DINQ (C) DINR (D) DHNQ"
+ },
+ {
+  "t": "h2",
+  "x": "Example 6"
+ },
+ {
+  "t": "p",
+  "x": "SUWY : LPTX : : PRTV : _____. (A) INRU (B) INQU (C) IMRU (D) IMQU"
+ },
+ {
+  "t": "h2",
+  "x": "Example 7"
+ },
+ {
+  "t": "p",
+  "x": "BCDE : DFHH : : FGHI : _____. (A) LJPL (B) LKPL (C) JKPJ (D) IKPL"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "h1",
+  "x": "Verbal Analogies"
+ },
+ {
+  "t": "p",
+  "x": "Here, the questions are based on relationship between two words. In these kind of questions, three words are followed by a blank space, which the student has to fill up in such a way that the third and the fourth words have the same relationship between them as the first and the second words have. The following examples help in understanding the concepts."
+ },
+ {
+  "t": "h2",
+  "x": "Example 8"
+ },
+ {
+  "t": "p",
+  "x": "Gum : Stick : : Needle : _____ (A) Cloth (B) Prick (C) Taylor (D) Stitch"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "Gum is used to stick and needle is used to stitch."
+ },
+ {
+  "t": "h2",
+  "x": "Example 9"
+ },
+ {
+  "t": "p",
+  "x": "Socks : Feet : _____ : Hands (A) Arms (B) Shirt (C) Gloves (D) Fingers"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "Socks are worn on feet, similarly gloves are worn on hands."
+ },
+ {
+  "t": "h2",
+  "x": "Example 10"
+ },
+ {
+  "t": "p",
+  "x": "Soft : Hard : : Cold : _____ (A) Hot (B) Shirt (C) Gloves (D) Fingers"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "Soft and hard are antonyms; similarly, the antonym of cold is hot."
+ },
+ {
+  "t": "h1",
+  "x": "Odd Man Out"
+ },
+ {
+  "t": "li",
+  "x": "Odd Man Out"
+ },
+ {
+  "t": "li",
+  "x": "Alphabet Classiﬁ cation"
+ },
+ {
+  "t": "li",
+  "x": "Word Classiﬁ cation"
+ },
+ {
+  "t": "li",
+  "x": "Number Classiﬁ cation"
+ },
+ {
+  "t": "h2",
+  "x": "CHAPTER HIGHLIGHTS"
+ },
+ {
+  "t": "h1",
+  "x": "Introduction"
+ },
+ {
+  "t": "p",
+  "x": "Finding the odd man out from the given alternatives is a very common type of questions that one comes across in diff erent competitive examinations. In the questions on odd man out, all the items—except one—follow a certain pattern (in their formation) or belong to a group. The item that does not follow the pattern or does not belong to the group has to be marked as the answer choice. The problems of this variety often fall under the category of CLASSIFICATION. When a given set of elements is classified under a single head, one of the items will not fall into that group to which the rest belong, i.e. it will not have the common property, which the others will have. Hence, it becomes the odd man out. Questions on classification can be asked in any form. Some of the commonly asked ones are given below."
+ },
+ {
+  "t": "h1",
+  "x": "Alphabet Classification"
+ },
+ {
+  "t": "p",
+  "x": "In this type, a group of jumbled letters typically consisting of three letters, (but can be four or two or just a single letter) are put together. The pattern or order in which they are grouped is to be studied and we need to find out which groups have the same pattern or relationship between the letters. There will be one choice, which will have a pattern diff erent from the rest and that is our answer."
+ },
+ {
+  "t": "h2",
+  "x": "Example 1"
+ },
+ {
+  "t": "p",
+  "x": "Find the odd one among the following. (A) ZW (B) TQ (C) SP (D) NL"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "Z–3W, T–3Q, S–3P, N–2L Hence, NL is the odd one."
+ },
+ {
+  "t": "h2",
+  "x": "Example 2"
+ },
+ {
+  "t": "p",
+  "x": "Find the odd one among the following. (A) CFD (B) GJH (C) KNM (D) JMK"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "C+3F−2D, G+3J−2H, K+3N−1M, J+3M−2K Hence, KNM is the odd one."
+ },
+ {
+  "t": "h1",
+  "x": "3. Word Classification"
+ },
+ {
+  "t": "p",
+  "x": "Here, different items are classified based on common properties like names, places, professions, and parts of speech. A few examples are illustrated further."
+ },
+ {
+  "t": "h2",
+  "x": "Example 3"
+ },
+ {
+  "t": "p",
+  "x": "Find the odd one among the following. (A) Mercury (B) Moon (C) Jupiter (D) Saturn"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "All others except Moon are planets, whereas Moon is a satellite."
+ },
+ {
+  "t": "h2",
+  "x": "Example 4"
+ },
+ {
+  "t": "p",
+  "x": "Find the odd one among the following. (A) SORE (B) SOTLU (C) NORGAE (D) MEJNIAS"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "The words are jumbled. The actual words are ROSE, LOTUS, ORANGE, and JASMINE. All, except ­ORANGE, are flowers, whereas ORANGE is a fruit."
+ },
+ {
+  "t": "h2",
+  "x": "Example 6"
+ },
+ {
+  "t": "p",
+  "x": "(A) Shoe (B) Spectacle (C) Scissor (D) Shirt"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "h1",
+  "x": "Number Classification"
+ },
+ {
+  "t": "p",
+  "x": "In this case, we need to choose the odd number from the given alternatives. The numbers may belong to a particular set, i.e. they may be odd, even, prime, rational, squares, cubes, and they may also be coded into binary digits (­involving 0’s and 1’s), etc. and only one of the choices will not follow the rule that others do and that is our answer. A few illustrations are given further."
+ },
+ {
+  "t": "h2",
+  "x": "Example 7"
+ },
+ {
+  "t": "p",
+  "x": "Find the odd one among the following. (A) 17 (B) 27 (C) 37 (D) 47"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "All the given numbers except 27 are prime ­numbers, whereas 27 is a composite number."
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "The given numbers can be written as (21)2, (17)2, (19)2, (7)3. All except 343 are the squares, whereas 343 is a cube."
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "All expect 120 can be expressed as n2 ⟨eq⟩ 1, ⟨eq⟩ 1\b ⟨eq⟩ but 120 = 112 – 1."
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "All expect 352 are odd numbers but whereas 352 is an even number."
+ },
+ {
+  "t": "h1",
+  "x": "Coding and Decoding"
+ },
+ {
+  "t": "h2",
+  "x": "CHAPTER HIGHLIGHTS"
+ },
+ {
+  "t": "h1",
+  "x": "Coding And Decoding"
+ },
+ {
+  "t": "p",
+  "x": "Before looking at the diﬀ erent types of questions and some of the codes that can be used with the help of examples, let us first understand what we mean by coding and decoding. When we say coding, a particular code or pattern is used to express a word in English language as a diﬀ erent word or in a diﬀ erent form. The coded word itself does not make any sense unless we know the pattern or code that has been followed. Decoding refers to the process of arriving at the equivalent English word from the code word given. In the questions, a particular code is given and on the basis of this given code, we have to find out how another word (in English language) can be coded. The correct code for the given word has to be selected from the answer choices on the basis of the code given in the question."
+ },
+ {
+  "t": "h2",
+  "x": "Example 1"
+ },
+ {
+  "t": "p",
+  "x": "In a certain code language, if the word ‘ PARTNER’ is coded as OZQSMDQ, then what is the code for the word ‘ SEGMENT’ in that language? (A) TFHNFOU (B) RDFLDMS (C) RDELDMS (D) RDFEDNS"
+ },
+ {
+  "t": "h2",
+  "x": "Example 2"
+ },
+ {
+  "t": "p",
+  "x": "In a certain code language, if the word RECTANGLE’ is coded as TGEVCPING, then how is the word ‘RHOMBUS’ coded in that language? (A) TJOQDWV (B) TJQNDWU (C) TJQODWU (D) TJQOEWU"
+ },
+ {
+  "t": "h2",
+  "x": "Example 3"
+ },
+ {
+  "t": "p",
+  "x": "In a certain code language, if the word ‘SPHERE’ is coded as EREHPS, then how is the word ‘EXHIBITION’ coded in that language? (A) NOTITBIHXE (B) NOITIDIHXE (C) NOITIBIHWE (D) NOITIBIHXE"
+ },
+ {
+  "t": "h1",
+  "x": "4. Solution"
+ },
+ {
+  "t": "p",
+  "x": "Word: S P H E R E Logic: The letters in the given word are reversed. Code: E R E H P S Similarly, the code for EXHIBITION, is Word: E X H I B I T I O N Logic: The letters in the given word are reversed. Code: N O I T I B I H X E"
+ },
+ {
+  "t": "h2",
+  "x": "Example 4"
+ },
+ {
+  "t": "p",
+  "x": "In a certain code language, if the word ‘­REJECTION’ is coded as SGMIHZPWW, then how is the word ‘MECHANIC’ coded in that language? (A) NGFLFTPK (B) NGPLFTPK (C) NGFKFTPK (D) NGPTPKIL"
+ },
+ {
+  "t": "h2",
+  "x": "Example 5"
+ },
+ {
+  "t": "p",
+  "x": "In a certain code language, if the word ‘­PLAYER’ is coded as AELPRY, then how is the word ‘MANAGER’ coded in that language? (A) AEAGMNR (B) AAGEMNR (C) AAEGMNR (D) AAEGNMR"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "Word: P L A Y E R Logic: \u0007The letters in the word are arranged in the increasing order of their value as in the alphabet. Code: A E L P R Y Similarly, the code for MANAGER is AAEGMNR."
+ },
+ {
+  "t": "h2",
+  "x": "Example 6"
+ },
+ {
+  "t": "p",
+  "x": "In a certain code language, if the number 1 is assigned to all the letters in odd numbered places in the alphabet and the remaining letters are assigned the number 2, then what is the code for the word ‘INDIAN’? (A) 121212 (B) 111222 (C) 112212 (D) 122112"
+ },
+ {
+  "t": "h2",
+  "x": "Example 7"
+ },
+ {
+  "t": "p",
+  "x": "In a certain code language, if CRICKET is coded as 3923564, ROCKET is coded as 913564, and KETTLE is coded as 564406, then how is LITTLE coded in that language? (A) 244060 (B) 024406 (C) 020446 (D) 200446"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "As we observe that the letters and their corresponding codes are given in an order, i.e. the code for C is 3, R is 9, I is 2, and so on. Hence, the code for LITTLE is 024406. Direction for questions 8 to 10: In a certain code ­language, the codes for some words are as follow. NATION - agvnab REMOTE - rzgrbe STAIR - efgnv FORMAL - bensyz COMMON - zabzpb FOR - ebs On the basis of the above coding pattern, answer the following questions. 8. What is the code for ‘SCREEN’? (A) fepcra (B) fpersa (C) fpreba (D) fperra 9. What is the code for ‘RATION’? (A) ensvba (B) engvba (C) engrba (D) engvca 10. What is the code for ‘CREATOR’? (A) prengbc (B) persbgc (C) perngbe (D) pebryc"
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 8 to 10:"
+ },
+ {
+  "t": "p",
+  "x": "The given words and their codes are as follow (A) NATION - agvnab (B) REMOTE - rzgrbi (C) STAIR - efgnv (D) FORMAL - bensyz (E) COMMON - zabzpb (6) FOR - ebs In the 1st word, the letter N is repeated and so is the code a. Hence, for N, the code is a. Similarly, from the 2nd word, the code for E is ‘r’. In 1st and 6th words, the letter o is common and so is the code b. Hence, the code for o is b. In the 5th word, the letter m is repeated and so is the code z. Hence, the code for m is z. Similarly, the codes for the remaining letters can be determined. The letters and their respective codes are as follows: Letter A C E F I L M N O R S T Code letter n p R s v y z a b e f G 8. The code for ‘SCREEN’ is fperra. Hence, the correct option is (D). 9. The code for ‘RATION’ is engvba. Hence, the correct option is (B). 10. The code for ‘CREATOR’ is perngbe. Hence, the correct option is (C)."
+ },
+ {
+  "t": "h1",
+  "x": "Blood Relations"
+ },
+ {
+  "t": "li",
+  "x": "Blood Relations"
+ },
+ {
+  "t": "li",
+  "x": "Grandparents"
+ },
+ {
+  "t": "li",
+  "x": "Parents and In-Laws"
+ },
+ {
+  "t": "li",
+  "x": "Siblings, Spouse, and In-Laws"
+ },
+ {
+  "t": "li",
+  "x": "Children and In-Laws"
+ },
+ {
+  "t": "li",
+  "x": "Grand Children"
+ },
+ {
+  "t": "h2",
+  "x": "CHAPTER HIGHLIGHTS"
+ },
+ {
+  "t": "h1",
+  "x": "Blood Relations"
+ },
+ {
+  "t": "p",
+  "x": "There are two types of questions based on blood relations that are given in diﬀ erent competitive examinations. For the sake of convenience, we will refer to the two types of questions as Type I and Type II. (Please note that the questions on blood relationships are not categorised as above in the actual exam papers. It is being done purely from the point of better understanding.) In the exams, the success of a candidate in the questions on blood relations depends upon his knowledge about various blood relations. Some of the relationships given below help in solving the problems. The easiest and non-confusing way to solve these types of problems would be to draw a family tree diagram and increase the levels in the hierarchy as shown below: 1ststage : 2ndstage : 3rdstage : 4thstage : 5thstage : (Grandfather, Grandmother, Granduncle, Grandaunt) (Father, Mother, Uncle, Aunt, Father-in-law, Mother-in-law) (Brother, Sister, Cousin, Wife, Husband, Brother-in-law, Sister-in-law) (Son, Daughter, Niece, Nephew, Son-in-law, Daughter-in-law) (Grandson, Granddaughter) GRANDPARENTS PARENTS and IN-LAWS CHILDREN and IN-LAWS GRAND CHILDREN SIBLINGS, SPOUSE, and IN-LAWS Mother’s or Father’s son : Brother Mother’s or Father’s daughter : Sister Mother’s or Father’s brother : Uncle Mother’s or Father’s sister : Aunt Mother’s or Father’s mother : Grandmother Mother’s or Father’s father : Grandfather Grandmother’s brother : Granduncle Grandmother’s sister : Grandaunt Grandfather’s brother : Granduncle Grandfather’s sister : Grandaunt"
+ },
+ {
+  "t": "h1",
+  "x": "5. Sister’s or Brother’s son"
+ },
+ {
+  "t": "p",
+  "x": ": Nephew Sister’s or Brother’s daughter : Niece Uncle or Aunt’s son or daughter : Cousin Son’s wife : Daughter-in-law Daughter’s husband : Son-in-law Husband’s or Wife’s sister : Sister-in-law Husband’s or Wife’s brother : Brother-in-law Sister’s husband : Brother-in-law Brother’s wife : Sister-in-law Children of same parents : \u0007Siblings (could be all brothers, all sisters or some brothers and some sisters) Children : Son, Daughter Children’s Children : \u0007Grandchildren (Grandson, Granddaughter) In addition, remember the word spouse, which means either husband or wife. Grandfather and grandmother will come in the first stage; mother, father, uncle, and aunt will come in the second stage; sister, brother, and cousin will come at the third stage; son, daughter, niece, and nephew will come in the fourth stage; and finally, granddaughters and grandsons will come. These stages are made from the point of view of an individual. In Type-I questions, the relationship between two people is given through a roundabout way of relating them through other people. We have to go through the series of relationships and finally determine the relationship between the two people given in the question. The relationship can be given as a simple statement or as a statement made by a person. In the first example given, a person is involved in making a statement, whereas in the second question, there is no person involved in making a statement."
+ },
+ {
+  "t": "h2",
+  "x": "Example 1"
+ },
+ {
+  "t": "p",
+  "x": "A’s father’s mother-in-law’s only daughter’s son is B. How is A related to B? (A) Brother (B) Sister (C) Nephew (D) Cannot be determined"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "A’s father’s mother-in-law’s only daughter is A’s mother. A’s mother’s son is A’s brother. But A can be either brother or sister to B."
+ },
+ {
+  "t": "h2",
+  "x": "Example 2"
+ },
+ {
+  "t": "p",
+  "x": "If A’s father is B, C is the father of B, and D is A’s mother, then how is C related to D? (A) Father (B) Grandfather (C) Father-in-law (D) Uncle"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "A’s father is B and mother is D. Therefore, D is B’s wife and C is the father of B. Hence, C is D’s ­father-in-law. C B A D father father wife"
+ },
+ {
+  "t": "h2",
+  "x": "Example 3"
+ },
+ {
+  "t": "p",
+  "x": "A + B means A is the son of B. A – B means A is the daughter of B. A × B means A is the father of B. A ÷ B means A is the mother of B. If M × N + O – P ÷ Q, then how is M related to Q? (A) Husband (B) Cousin (C) Brother-in-law (D) Uncle"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "M × N + O – P ÷ Q means M is the father of N, N is the son of O, O is the daughter of P, P is the mother of Q. M is the father of N and N is the son of O means M is the husband of O. O is the daughter of P and P is the mother of Q means O is the sister of Q. M is the husband of O and O is the sister of Q means M is the brother-in-law of Q. P M N O sister father wife Q mother"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "P + Q ÷ R × S – T means P is the son of Q. Q is the mother of R, R is the father of S, and S is the daughter of T. Hence, S is the nephew of P. P × Q ÷ R – S + T means P is the father of Q, Q is the mother of R, R is the daughter of S, and S is the son of T. Hence, S is the son-in-law of P. P + Q × R – S ÷ T means P is the son of Q, Q is the father of R, R is the daughter of S, and S is the mother of T. Hence, S is the mother of P. P × Q – R ÷ S × T means P is the father of Q, Q is the daughter of R, R is the mother of S, and S is the father of T. Hence, S is the son of P."
+ },
+ {
+  "t": "h2",
+  "x": "Example 5"
+ },
+ {
+  "t": "p",
+  "x": "Pointing to a person, Raju said, ‘He is the only brother of my father’s mother’s daughter’. How is the person related to Raju? (A) Brother (B) Father (C) Uncle (D) Nephew"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "Raju’s father’s mother’s daughter is Raju’s father’s sister. Raju’s father’s sister’s only brother is Raju’s father. Hence, the person is Raju’s father."
+ },
+ {
+  "t": "h2",
+  "x": "Example 6"
+ },
+ {
+  "t": "p",
+  "x": "A’s mother’s father is the husband of B’s ­mother. How is A related to B, if A and B are both male. (A) Uncle (B) Father (C) Nephew (D) Son"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "A’s mother’s father is the husband of B’s mother. That means A’s mother is the sister of B. Hence, all the nephew of B."
+ },
+ {
+  "t": "h2",
+  "x": "Example 7"
+ },
+ {
+  "t": "p",
+  "x": "Pointing to a photograph Ramesh said, ‘she is the sister of my father’s mother’s only child’s son.’ How is the person in the photograph related to Ramesh? (A) Sister (B) Aunt (C) Mother (D) Cousin"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "My father’s mother’s only child is my father. My father’s son’s sister is in the photograph. Hence, she is Ramesh’s sister. mother father (Ramesh) sister ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Example 8"
+ },
+ {
+  "t": "p",
+  "x": "B’s father’s father is the husband of C’s ­mother’s mother. How is B related to C? (A) Brother (B) Sister (C) Cousin (D) Cannot be determined"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "B’s father’s father is B’s grandfather. B’s grandfather is the husband of C’s mother’s mother, i.e. grandmother. It is possible that B and C are sibling’s and the persons mentioned are their paternal/maternal grand parents. It is also possible that B and C are cousins. Hence, the relationship cannot be determined. mother father (C) ( ) (B) ⟨eq⟩ father/mother mother/father husband ( )"
+ },
+ {
+  "t": "h2",
+  "x": "Direction for questions 9 and 10:"
+ },
+ {
+  "t": "p",
+  "x": "A × B means A is the daughter of B A * B means A is the son of B A + B means A is the mother of B A – B means A is the brother of B A ÷ B means A is the sister of B A = B means A is the father of B"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "P – Q ÷ R = S means P is the brother of Q, Q is the sister of R, and R is the father of S. As we do not know whether S is the son or daughter of R, we cannot determine that S is the nephew. P – Q × R * S means P is the brother of Q, Q is the daughter of R, and R is the son of S. Here, S is the grandfather of P. S * R – Q ÷ P means S is the son of R. R is the brother of Q, and Q is the sister of P. Hence, S is the nephew of P."
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "T = S – R * V means T is the father of S, S is the brother of R, and R is the son of V. Therefore, T is the husband of V."
+ },
+ {
+  "t": "h1",
+  "x": "Venn Diagrams"
+ },
+ {
+  "t": "li",
+  "x": "Venn Diagrams"
+ },
+ {
+  "t": "li",
+  "x": "Venn Diagram Type I"
+ },
+ {
+  "t": "li",
+  "x": "Venn Diagram Type II"
+ },
+ {
+  "t": "h2",
+  "x": "CHAPTER HIGHLIGHTS"
+ },
+ {
+  "t": "h1",
+  "x": "Venn Diagrams"
+ },
+ {
+  "t": "p",
+  "x": "Venn Diagrams are diagrammatic representation of sets, using geometrical ﬁ gures like circles, triangles, and rectangles. Each geometrical ﬁ gure represents a group as shown in the examples. The area common to two or more ﬁ gures represent those elements which are common to two or more groups. There are various models in Venn diagrams, which we will discuss with examples."
+ },
+ {
+  "t": "h1",
+  "x": "Venn Diagram Type I"
+ },
+ {
+  "t": "p",
+  "x": "In this type, two, three, or four diff erent groups could be given with some elements common to two or more groups. Let us observe the diagram given. A B C a d r e f b c n m Here, A, B, and C are three diff erent groups, and the various regions can be explained as follows: Only A = a Only B = b Only C = c A and B only = d B and C only = e C and A only = f All the three (A, B, and C) = r Both A and ⟨eq⟩ Both B and ⟨eq⟩ Both C and ⟨eq⟩ Neither A, nor B, nor C = n A, B, or C and none =m Also, m= (A ∪ B ∪ C) + n Here, the rectangle represents the sample space, which consists of three groups A, B, and C, and also n, which is the number of people belonging to neither A, nor B, nor C. Some more formulae are as given under: 1. A′ = (b + e + c) + n; where A′ = A complement (not in A) 2. B′ = (a + f + c) + n; where B′ = B complement (not in B) 3. C′ = (a + d + b) + n; where C′ = C complement (not in C) 4. ⟨eq⟩ – (A ∩ B) 5. A Δ B = (A – B) ∪ (B − A) 6. Number of people (or things) belonging to at least one out of the three groups = A ∪ B ∪ C = (a + b + c) + (d ⟨eq⟩ ↑ ↑ ↑ exactly one exactly two exactly three 7. ⟨eq⟩ (A ∪ B ∪ C) + (d ⟨eq⟩ 2r = (a + b + c) + 2 (d ⟨eq⟩ 3r"
+ },
+ {
+  "t": "h1",
+  "x": "6. Solved Examples"
+ },
+ {
+  "t": "p",
+  "x": "Direction for questions 1 to 3: These questions are based on the data given. In a class of 165 students, 45 students are passed in Maths a well as in English, whereas 60 students are failed in Maths and 65 students are failed in English. Example 1: How many students are passed in exactly one subject? (A) 160 (B) 100 (C) 115 (D) 165 Example 2: How many students are failed in both the subjects? (A) 25 (B) 20 (C) 45 (D) 5"
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 1 to 3:"
+ },
+ {
+  "t": "p",
+  "x": "Since, 60 students are failed in Maths. \\ 165 – 60 = 105 students passed in Maths similarly, 65 students failed in English. \\ 165 – 65 = 100 students passed in English. The respective Venn diagrams is as follows, which shows the number of students who passed the subject. Maths = 105 English ⟨eq⟩ students passed in Maths as well as English. \\ a = 105 – 45 = 60 students passed only in Maths and b = 100 – 45 = 55 students passed only English. Number of students passed in atleast one subject ⟨eq⟩ 160. Hence, n = 165 – 160 = 5 students failed in both. Solution 1: ⟨eq⟩ students passed exactly in one subject. Hence, the correct option is (C). Solution 2: 5 students failed in both the subjects. Hence, the correct option is (D). Solution 3: As 55 students passed only in English which implies that 55 students failed only in Maths. Hence, the correct option is (A). Direction for questions 4 to 7: These questions are based on the given diagram. µ = 150 Q R P"
+ },
+ {
+  "t": "h2",
+  "x": "Example 4: How many elements are there in Q′"
+ },
+ {
+  "t": "p",
+  "x": "(complement of Q)? (A) 100 (B) 49 (C) 101 (D) 50 Example 5: How many elements are there in P′ ∩ Q′ ∩ R′? (A) 35 (B) 8 (C) 58 (D) 48"
+ },
+ {
+  "t": "h2",
+  "x": "Example 6: How many elements are there in R?"
+ },
+ {
+  "t": "p",
+  "x": "(A) 16 (B) 57 (C) 41 (D) 8 Example 7: How many elements are there in P ∩ (Q ∪ R)? (A) 32 (B) 48 (C) 54 (D) 44"
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 4 to 7:"
+ },
+ {
+  "t": "p",
+  "x": "Solution 4: Number of elements in Q′ = (m) – (number of elements in Q) = 150 – (14 ⟨eq⟩ 9) ⇒ 150 – 49 = 101. Hence, the correct option is (C). Solution 5: Number of elements in P′ ∩ Q′ ∩ R′ =m – (P ∪ Q ∪ R) = 150 – (12 ⟨eq⟩ 14) = 150 – 92 = 58. Hence, the correct option is (C). Solution 6: Number of elements in ⟨eq⟩ Hence, the correct option is (B). Solution 7: Number of elements in Q ∪ R = (14 ⟨eq⟩ 16)\b Number of elements in P = (12 ⟨eq⟩ 8) P ∩ (Q ∪ R) is the region common to P and Q ∪ R Number of elements in P ∩ (Q ∪ R) ⟨eq⟩ +15 = 32. Hence, the correct option is (A)."
+ },
+ {
+  "t": "h1",
+  "x": "Venn Diagram Type II"
+ },
+ {
+  "t": "p",
+  "x": "In this type, Venn diagrams are used to establish relationship between the given groups. In other words, two or more groups are given, and the Venn diagram, which most correctly establishes a relation between them, has to be chosen out of the various Venn diagrams given in the choices. Let us look at some of the examples given."
+ },
+ {
+  "t": "h2",
+  "x": "Examples: Animals, Cat, Dog"
+ },
+ {
+  "t": "p",
+  "x": "Animals Cat Dog Here, in animals we have many species of which cat and dog are two different kinds of species, having nothing in common. So the above diagram is the most appropriate representation of the given groups."
+ },
+ {
+  "t": "h2",
+  "x": "Examples: Month, week, day"
+ },
+ {
+  "t": "p",
+  "x": "Month Week Day We know that day is a part of the week and week is a part of the month. So, the given diagram is the most appropriate representation of the given groups."
+ },
+ {
+  "t": "h2",
+  "x": "Examples: Mars, Earth, Jupiter"
+ },
+ {
+  "t": "p",
+  "x": "We know that Mars, Earth, and Jupiter are three independent entities having nothing in common. So the above-given diagram is the most appropriate representation of the given groups."
+ },
+ {
+  "t": "h1",
+  "x": "Seating Arrangements"
+ },
+ {
+  "t": "li",
+  "x": "Seating Arrangement"
+ },
+ {
+  "t": "li",
+  "x": "Linear Sequencing"
+ },
+ {
+  "t": "li",
+  "x": "Circular Arrangement"
+ },
+ {
+  "t": "h2",
+  "x": "CHAPTER HIGHLIGHTS"
+ },
+ {
+  "t": "h1",
+  "x": "Linear Sequencing"
+ },
+ {
+  "t": "p",
+  "x": "Linear sequencing is essentially arranging the items given in a sequence (in a single line). The questions of this type are also referred to as ‘seating arrangement’. The word ‘seating arrangement’ should not be misconstrued—it should not be treated as consisting of questions involving only persons sitting as per specified conditions. Essentially, these questions involve arranging subjects (people or things) satisfying the given conditions. The arrangement is done only on one ‘axis’ and, hence, the position of the subjects assumes importance here in terms of order: first position, second position, etc. Let us look at the examples: Direction for questions 1 to 5: Read the data given below carefully and answer the questions that follow. Seven persons Paul, Queen, Rax, Sam, Tom, Unif, and Vali are sitting in a row facing us. Rax and Sam sit next to each other. There must be exactly four persons between Queen and Vali. Sam sits to the immediate right of Queen."
+ },
+ {
+  "t": "h2",
+  "x": "Solved Examples"
+ },
+ {
+  "t": "p",
+  "x": "Example 1: If Paul and Tom are separated exactly by two persons, then who sits to the immediate left of Vali? (A) Paul (B) Tom (C) Unif (D) Rax Example 2: If Queen is not sitting at either extreme of the row, then who among the following has as many persons on his left as on his right? (A) Sam (B) Unif (C) Rax (D) Vali Example 3: If Queen sits at one extreme, then who is at the other extreme? (A) Paul (B) Tom (C) Vali (D) Cannot be determined Example 4: Tom sits to the right of Queen, and Paul is separated from Tom by exactly three persons. Then, who is sitting to the immediate left of Vali? (A) Unif (B) Paul (C) Tom (D) Rax Example 5: In how many diff erent ways can the seven persons sit in a row? (A) 3 (B) 2 (C) 10 (D) 12"
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 1 to 5:"
+ },
+ {
+  "t": "p",
+  "x": "Let us write down the conditions given in short form and then represent them pictorially. Also, let us treat the left of the persons sitting as ‘left’ and their right as ‘right’ for interpreting the conditions. Rax and Sam sit next to each other → RS or SR. There are exactly 4 persons between Queen and Vali → Q — — — — V or V — — — — Q. Sam sits to the immediate right of Queen → SQ."
+ },
+ {
+  "t": "h1",
+  "x": "7. Now, let us analyse the data/conditions that we are given"
+ },
+ {
+  "t": "p",
+  "x": "and then put the three conditions together. Let us number the seats from our left to right as Seat 1 to Seat 7. Since S is to the right of Q and since R and S have to be next to each other, R can come only to the immediate right of S. Thus, R, S, and Q, will be in the order RSQ. Since there are four persons between Q and V, Q can be placed in seats 1, 2, 6,’ or 7. But if Q is in Seat 1 or 2, then, there are no seats for R and S. Hence, there are only two seats available for Q. Let us fix the positions of R, S, and V in each of these two positions of Q and write them down. The directions left and Right are as shown below. R L Arrangement I: 1 2 3 4 5 6 7 V R S Q Arrangement II: 1 2 3 4 5 6 7 V R S Q These are the only two arrangements possible for the four persons V, R, S, and Q. The other three persons Paul, Tom, and Unif can sit in the three vacant seats in any order, as no information is given about them. Now let us look at each of the questions. Example 1: Paul and Tom are separated by exactly two persons. Arrangement I is the only one possible as in Arrangement II, Paul and Tom cannot have exactly two persons between them. So, we have the arrangement as follows: T/P, V, U, P/T, R, S, Q So, Unif must be sitting to the immediate left of Vali. Hence, the correct option is (C). Example 2: If Queen is not at the extreme right, then only Arrangement II above is possible. The person who has as many persons on his left as on his right can only be the person who is sitting in the middle seat, i.e., seat 4. In this arrangement, Rax is sitting in seat 4. Hence, the correct option is (C). Example 3: ‘Queen sits at one extreme’ means that we should look at arrangement I. In this arrangement, any one out of the three persons Paul, Tom, and Unif can be in seat 1, i.e. extreme right. Hence, the correct option is (D). Example 4: If Tom and Paul are separated by exactly three persons, then only Arrangement II is possible. So, Tom and Paul have to be in seats 3 and 7, Since, we are also given that Tom is to the right of Queen, Tom has to be in seat 3 and Paul, in seat 7. So, the arrangement must be as follows: V, U, T, R, S, Q, P The person sitting to the immediate left of Vali is Unif. Hence, the correct option is (A)."
+ },
+ {
+  "t": "h2",
+  "x": "Example 5: We have two possible arrangements—"
+ },
+ {
+  "t": "p",
+  "x": "Arrangement I and Arrangement II that we looked at already. In each arrangement, the remaining three people can sit in the remaining three seats in 6 ways. Thus, a total of 12 ways of seating the seven persons is possible. Hence, the correct option is (D). Direction for questions 6 to10: Read the data given carefully and answer the questions that follow. Seven boys—Rajan, Shyam, Vardhan, Mithra, Vimal, Raj and Kishan—are sitting in a row. Shyam sits to the immediate left of Vardhan and third to the right of Rajan, whereas Mithra, who sits at the left extreme, is next to Kishan. Example 6: Who is sitting to the immediate right of Shyam? (A) Mithra (B) Kishan (C) Vimal (D) Vardhan"
+ },
+ {
+  "t": "h2",
+  "x": "Example 7: If Vardhan and Kishan exchange places with"
+ },
+ {
+  "t": "p",
+  "x": "each other without changing the rest of the arrangement that is already done, who will be sitting to the immediate left of Rajan? (A) Kishan (B) Raj (C) Vimal (D) Vardhan Example 8: If only Shyam sits between Raj and Vardhan, who is exactly in the middle of the row? (A) Raj (B) Vardhan (C) Vimal (D) Rajan"
+ },
+ {
+  "t": "h2",
+  "x": "Example 9: Which of the following cannot confirm the"
+ },
+ {
+  "t": "p",
+  "x": "seating arrangement of all the boys? (A) \u0007Raj is to the immediate right of Rajan, whereas Vimal is to the left of Shyam. (B) Mithra and Raj have two persons between them. (C) Raj and Kishan have two persons between them. (D) \u0007Rajan and Shyam have two persons in between them. Example 10: After arranging all the boys as per the conditions given in the data, if Rajan now exchanges his place with Mithra, and Vardhan exchanges his place with Vimal, then how many persons will be there between Vimal and Rajan? (A) Three (B) Two (C) Five (D) Cannot be determined"
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for question 6 to10:"
+ },
+ {
+  "t": "p",
+  "x": "Let us denote left and right as shown below: L R Now, let us represent the data given in pictorial form (we use R for Raj and Rn for Rajan; Va for Vardhan; Vi for Vimal; S for Shyam; M for Mithra; and K for Kishan). Mithra sits at the left extreme—next to Kishan → M K — — — — —. Shyam sits to the immediate left of Vardhan and third to the right of Rajan → Rn — — S Va. Putting both the arrangements together, Va can go only to extreme right position. Thus, we have the arrangement as M K Rn — — S Va. Raj and Vimal occupy the two vacant seats between Rajan and Shyam."
+ },
+ {
+  "t": "h2",
+  "x": "Example 6: From the seating arrangement figure, Vardhan"
+ },
+ {
+  "t": "p",
+  "x": "is to the immediate right of Shyam. Hence, the correct option is (D). Example 7: If Kishan and Vardhan exchange places, as can be seen from the arrangement, the person to the immediate left of Rajan will be Vardhan. Hence, the correct option is (D). Example 8: If Shyam sits between Raj and Vardhan, then the seating arrangement is as follows: Mithra, Kishan, ­Rajan, Vimal, Raj, Shyam, Vardhan. Then, Vimal will be exactly in the middle of the row. Hence, the correct option is (D)."
+ },
+ {
+  "t": "h2",
+  "x": "Example 9: Statement (A) makes the arrangement as:"
+ },
+ {
+  "t": "p",
+  "x": "Mithra, Kishan, Rajan, Raj, Vimal, Shyam, Vardhan Statement (B) gives the seating arrangement as: Mithra, Kishan, Rajan, Raj, Vimal, Shyam, Vardhan. Statement (C) makes the seating arrangement as: Mithra, Kishan, Rajan, Vimal, Raj, Shyam, Vardhan. So, only statement (D) cannot make the seating arrangement unique while others can. Hence, the correct option is (D). Important point to note is that, on the basis of the given data, we know that the places of only Raj and Vimal have not been fixed. Hence, if there is an additional statement that we are considering to determine the arrangement uniquely, it should have at least one of the two people Raj and Vimal. In this case, choice (D) does not have either one of the two names, and, hence, this statement cannot help us determine the arrangement uniquely. So, this becomes the answer choice. Hence, the correct option is (D)."
+ },
+ {
+  "t": "h2",
+  "x": "Example 10: The arrangement is"
+ },
+ {
+  "t": "p",
+  "x": "M K Rn R/Vi Vi/R S Va Rajan exchanges his place with Mithra, and Vimal with Vardhan, then we have the following arrangement: Rn K M R/Va Va/R S Vi. While we still do not know the exact position of Vardhan (or which place Vimal sits), we can see that there are five persons between Rajan and Vimal. Hence, the correct option is (C). In addition to the questions that we saw, where a set of questions are based on the data given, there are also ‘standalone’ questions. In these questions, on the basis of the data given, only one question is asked. Given below is an example of this type."
+ },
+ {
+  "t": "h2",
+  "x": "Direction for question 11: Select the correct alternative"
+ },
+ {
+  "t": "p",
+  "x": "from the given choices. Example 11: Four persons A, B, C, and D arrive to attend a meeting. D arrives 10 minutes after B and 20 minutes before A, who arrives 10 minutes before C. Who is the first person to arrive at the meeting? (A) A (B) B (C) C (D) D"
+ },
+ {
+  "t": "h2",
+  "x": "Solution for question 11:"
+ },
+ {
+  "t": "p",
+  "x": "C arrived after A. A arrived after D. D arrived after B. This implies that B arrived first. Hence, the correct option is (B)."
+ },
+ {
+  "t": "h1",
+  "x": "Circular Arrangement"
+ },
+ {
+  "t": "p",
+  "x": "Questions on circular arrangement involve seating of people around a table or arrangement of things in a circular manner (e.g. different coloured beads strung to form a necklace). In case of people sitting around a table, the table could be of any shape—rectangular, square, circular, or any other. The data given in such sets of questions specify the positions of some or all of the individuals (or things) in the arrangement. The positions are specified through conditions involving specified persons sitting (or not sitting) opposite each other or a particular person sitting to the right or left of another person, etc. Once you read the data, first draw the shape specified in the data and then draw the slots in the seating arrangement. Six people around a circular table Eight people around a circular table Statements like ‘A and B are sitting farthest from each other’ or ‘A and B sit across the table’ imply that A and B sit opposite each other. On the other hand, you should remember that, unlike in straight-line arrangement, the words ‘immediately’ and ‘directly’ do not play any role in circular arrangement. In general, there is no left side or right side (unless we are talking of ‘immediate right’ or ‘immediate left’). So, if it is given that C sits to right of B, then it is clear that C must be to the immediate right of B. Go ‘anti-­clockwise’ if anybody’s right has to be located, and go ‘clockwise’ if somebody’s left has to be located. Let us take some examples. Direction for questions 12 to 16: Read the following information and answer the questions that follow. P, Q, R, S, and T sit around a table. P sits two seats to the left of R and Q sits two seats to the right of R. 12. If S sits in between Q and R, who sits to the immediate right of P? (A) T (B) S (C) Q (D) R 13. Which of the following cannot be the correct seating arrangement of the five persons in either the clockwise direction or the anticlockwise direction? (A) P, Q, R, S, T (B) P, S, R, T, Q (C) P, Q, S, R, T (D) P, T, R, S, Q 14. If S is not sitting next to Q, who is sitting between Q and S? (A) R (B) P (C) T (D) Both (R) and (P) 15. If a new person U joins the group such that the initial conditions for the seating arrangement should be observed and also a new condition that U does not sit next to R be satisfied, then which of the following statements is true? (A) U sits to the immediate right of S. (B) U sits to the immediate left of T. (C) U sits to the immediate left of P. (D) Either (A) or (B) above 16. If a new person U joins the group such that the initial conditions for the seating arrangement should be observed and also a new condition that U does not sit next to P, S or T be satisfied, then who will be the neighbours of P (one on either side)? (A) S and T (B) S and Q (C) T and R (D) R and Q"
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 12 to 16:"
+ },
+ {
+  "t": "p",
+  "x": "S or T T or S R Q P P sits two seats to the left of R, and Q sits two seats to the right of R. We can represent this information in the diagram below. 12. If S sits between Q and R, then the arrangement is as follows. P S T R Q As can be seen from the diagram, T is to the immediate right of P. Hence, the correct option is (A). 13. We will take each choice and see whether it fits in the arrangement that we represented through a diagram in the analysis of the data (the same diagram is reproduced below). S or T T or S R Q P We can see that the arrangement given in choice (A) is not possible,’ and, hence, the answer choice is (A). Hence, the correct option is (A). 14. If S is not next to Q, then the seating arrangement is fixed as follows. P T S R Q Now P is between Q and S. Hence, the correct option is (B). 15. On the basis of the diagram that we drew, we find that to accommodate U we have to create a new slot between P and Q. S or T T or S R Q P U Hence, choice (C) is the correct answer. 16. We create a new slot for the sixth person. But since U will not sit next to P, S, or T, he will have to sit between R and Q. The arrangement will then look as follows: U T or S R Q P T or S As we can see from the diagram, the neighbours of P will be T and S. Hence, the correct option is (A). Direction for questions 17 to 21: Read the following information and answer the questions that follow. There are 10 persons at a round table conference, consisting of a Professor, a Lawyer, a Doctor, a Scientist, an Accountant, a Grocer, two Computer Specialists, and two Marketing Executives. The Professor sits opposite to the Lawyer. The Scientist and the Doctor sit opposite each other. The two Marketing Executives sit opposite each other with one of them sitting to the immediate left of the scientist. The Professor sits to the immediate right of the Scientist. 17. If the two Computer Specialists sit opposite each other but neither of them is immediately next to any Marketing Executive, who sits to the immediate right of the professor? (A) Computer Specialist (B) Marketing Executive (C) Grocer (D) Accountant 18. If the Grocer and Accountant do not sit opposite each other, then which of the following must be TRUE? (A) \u0007The Computer Specialist cannot sit beside the Lawyer. (B) \u0007One of the Computer Specialists is next to a Marketing Executive. (C) \u0007The Professor cannot have the Scientist and a Computer Specialist on his either side. (D) \u0007The Computer Specialists must sit next to one another. 19. If the Grocer and the Accountant each have a Marketing Executive as his immediate neighbour, then which of the following is definitely FALSE? (A) \u0007The two Computer Specialists are opposite each other. (B) \u0007A Computer Specialist is an immediate neighbour of the Scientist. (C) \u0007The Grocer is next to a Computer Specialist. (D) \u0007A Computer Specialist is an immediate neighbour of the Lawyer. 20. If a Computer Specialist is the immediate neighbour of a Marketing Executive and the Grocer is the immediate neighbour of the Lawyer, how many different kinds of seating arrangements are possible? (Assume that the two Computer Specialists are indistinguishable from each other and the two Marketing Executives are indistinguishable from each other.) (A) 3 (B) 6 (C) 16 (D) 8 21. The maximum number of persons you can count if you start counting with the Scientist and end with a Marketing Executive (excluding both) is (A) 0 (B) 8 (C) 5 (D) 6"
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 17 to 21:"
+ },
+ {
+  "t": "p",
+  "x": "The Professor sits to the immediate right of the Scientist and opposite to the Lawyer. The Scientist sits opposite to the Doctor and one Marketing Executive is to the immediate left of the Scientist. Choosing to place the Scientist in one of the 10 seats, we have the arrangement as follows. Doctor ME Professor Scientist Lawyer ME The vacant seats are one each for the two Computer Specialists, one for the Grocer and one for the Accountant. 17. The two Computer Specialists sit opposite each other. Neither of them is next to any Marketing Executive. So, the arrangement must be as follows Doctor ME Professor Scientist Lawyer ME Grocer or Accountant CS Grocer or Accountant CS So, a Computer Specialist sits to the immediate right of the professor. Hence, the correct option is (A). 18. The Grocer and the Accountant do not sit opposite each other. Then, the arrangements can be as follows: Doctor ME Professor Scientist Lawyer ME The Grocer and the Accountant can occupy the following pairs of seats: 3 and 4, 1 and 4, 1 and 2, or 2 and 3. Then, the two Computer Specialists may occupy one of the pairs of seats 1 and 2, 2 and 3, 3 and 4, or 4 and 1. We check for the choices given in the question, one by one, and find that whichever combination is taken, there is a Computer Specialist in seat 1 or seat 3, both of, which are next to the Marketing Executives seats. So, choice (B), which states that one of the Computer Specialists is next to a Marketing Executive, is true. Hence, the correct option is (B). 19. The Grocer and the Accountant have one each of the Marketing Executives on their immediate side. So, the arrangement must be as follows. Grocer or Accountant Doctor ME Professor Scientist Lawyer ME Accountant or Grocer Now the Computer Specialists must sit in chairs 1 and 2 only. But, no Computer Specialist can be the immediate neighbour of the Scientist. Choice (B) is definitely FALSE. (Note that choices (A), (C), and (D) are true). Hence, choice (B) is the correct answer. Hence, the correct option is (B). 20. Given that the Grocer is the immediate neighbour of the Lawyer, we have the three slots numbered 1, 2, and 3 (in the following diagram) free for the two Computer Specialists and the Accountant. Since a Computer Specialist has to be next to a Marketing Executive, he should be in slot 1 or 3. By fixing the Accountant in any one of the three slots 1, 2, or 3, we can ensure that there is a Computer Specialist next to a Marketing Executive. Hence, there are three possible seating arrangements. Doctor Scientist Lawyer ME Grocer ME Professor Scientist Hence, the correct option is (A). 21. Based on the seating arrangement that we discussed, the number of persons between the Scientist and a Marketing Executive can be 3 or 8 (counted clockwise) or 0 or 5 (counted anticlockwise). Maximum number that can be counted is 8. Hence, the correct option is (B)."
+ },
+ {
+  "t": "h1",
+  "x": "Puzzles"
+ },
+ {
+  "t": "li",
+  "x": "Distribution"
+ },
+ {
+  "t": "li",
+  "x": "Order Sequence"
+ },
+ {
+  "t": "li",
+  "x": "Selections"
+ },
+ {
+  "t": "li",
+  "x": "Questions on Routes/Networks"
+ },
+ {
+  "t": "h2",
+  "x": "CHAPTER HIGHLIGHTS"
+ },
+ {
+  "t": "h1",
+  "x": "Puzzles"
+ },
+ {
+  "t": "p",
+  "x": "In this type of problems, you have to match two or more ‘variables’. (Variable means a ‘subject’ as used in the discussion of linear arrangement.) In double line-up, the data given may talk of four people living in four houses each of a diff erent colour. What we need to find out is the colour of the house of each of the four persons. There is no first position or second position of the houses. Sometimes, double line-up is also called as ‘distribution’. An example of data given for this variety of questions is: ‘Each of the four persons A, B, C, and D wears a diff erent coloured shirt—red, pink, blue, and white. A has a red shirt and D does not have a pink shirt’. From the statement, it becomes clear that no person among A, B, C, and D can have shirts of two diff erent colours among red, pink, blue, and white. As discussed in the questions on single line-up, questions can be solved easily by representing the given data pictorially. In case of double line-up, it will help us if we represent the data in the form of a matrix or a table. Let us see how to draw a matrix for the data given."
+ },
+ {
+  "t": "h2",
+  "x": "White"
+ },
+ {
+  "t": "p",
+  "x": "A ✓ B C D ✕ As it is given that A has red shirt, it is clear that he does not have any other colour shirt. Similarly B, C, D do not have red shirt. So, in all the other cells in the row belonging to A, we put a cross (‘✕’). Then, the table will look as follows:"
+ },
+ {
+  "t": "h2",
+  "x": "White"
+ },
+ {
+  "t": "p",
+  "x": "A ✓ ✕ ✕ ✕ B ✕ C ✕ D ✕ ✕ In this manner, we can fill up the cells on the basis of the data given to us. Once, we use up all the data, we will draw any conclusions that can be drawn and then answer the questions given in the set."
+ },
+ {
+  "t": "h2",
+  "x": "Let us Take a Few Examples"
+ },
+ {
+  "t": "p",
+  "x": "Direction for questions 1 to 5: These questions are based on the following information. P, Q, R, S, T, U, V, an d W are eight employees of a concern. Each is allotted a diff erent locker, out of eight lockers numbered 1 to 8 in a cupboard. The lockers are arranged in four rows with two lockers in each row. Lockers 1 and 2 are in the top row from left to right, respectively, while lockers 7 and 8 are in the bottom row— arranged from left to right, respectively. Lockers 3 and 4 are in the second row from the top—arranged from right to left, respectively. So are lockers 5 and 6—arranged from right to"
+ },
+ {
+  "t": "h1",
+  "x": "8. left, respectively—in the second row from the bottom. P has"
+ },
+ {
+  "t": "p",
+  "x": "been allotted locker 1 while V has been allotted locker 8. T’s locker is just above that of Q which is just above that of R, whereas W’s locker is in the bottom row."
+ },
+ {
+  "t": "h2",
+  "x": "Solved Examples"
+ },
+ {
+  "t": "p",
+  "x": "Example 1: Which of the following cannot be the correct locker number–occupant pair? (A) 3-Q (B) 7-W (C) 4-U (D) 6-R Example 2: If U’s locker is not beside Q’s locker, whose locker is just above that of W? (A) U (B) S (C) R (D) Q Example 3: Which of these pairs cannot have lockers that are diagonally placed? (A) P-Q (B) S-R (C) U-R (D) Either (B) or (C)"
+ },
+ {
+  "t": "h2",
+  "x": "Example 4: Which of the following groups consists only"
+ },
+ {
+  "t": "p",
+  "x": "occupants of odd numbered lockers? (A) Q, R, W (B) R, V, W (C) T, R, Q (D) P, T, Q Example 5: If U’s locker is in the same row as that of R, and S exchanges his locker with V, then who is the new neighbour of V in the same row? (Assume that nothing else is disturbed from the original arrangement) (A) P (B) Q (C) R (D) U"
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 1 to 5:"
+ },
+ {
+  "t": "p",
+  "x": "Let us first try to locate the lockers in the cupboard as per the conditions given. Then, we will do the allotment to the persons. Lockers 1 and 2 are in the top row and lockers 7 and 8 are in the bottommost row. In these two rows, the lockers are numbered from left to right. In the other two rows, the lockers are numbered from right to left. L R Top Row Bottom Row Now let us look at the conditions given for the allotment of the lockers. P has locker 1. V has locker 8. 1-P 8-V Locker of W is in the bottom row → W’s locker must be 7. 1-P 7-W 8-V T’s locker is just above that of Q, which is just above that of R → The lockers of T, Q, and R must be 2, 3, and 5, respectively (there are no other group of lockers which satisfy this condition). 1-P 2-T 3-Q 5-R 7-W 8-V S and U have lockers 4 and 6 left for them. Thus, on the basis of the data given to us, we can show the final arrangement of lockers as below: 1-P 2-T 4-S/U 3-Q 6-U/S 5-R 7-W 8-V Now we can answer the questions easily on the basis of the above. Example 1: By looking at the final arrangement of lockers above, we find that choice (D) does not represent the correct combination of locker number-occupant pair. Hence, the correct option is (D). Example 2: If U’s locker is not beside Q’s locker, then U’s locker must be locker 6. So, it is U’s locker that will be ­immediately above W’s. Hence, the correct option is (A). Example 3: R’s locker is in the same row as that of exactly one of S or U and diagonally placed to the other one. Hence, ‘either S-R or U-R’ is the answer. Hence, the correct option is (D). Example 4: The odd-numbered lockers 1, 3, 5, and 7, which belong to P, Q, R, and W, respectively. Of the choices, we find that Q, R, W appear in choice (A). Hence, this is the correct choice. Hence, the correct option is (A). Example 5: U’s locker is in the same row as that of R, which means that locker 6 belongs to U. So, locker 4 belongs to S. Now, V and S exchange lockers. Then, the new neighbour of V is Q. Hence, the correct option is (B). Direction for questions 6 to 10: These questions are based on the following information. There are four trees—lemon, coconut, mango, and neem—each at a different corner of a rectangular plot. A well is located at one corner and a cabin at another ­corner. Lemon and coconut trees are on either side of the gate, which is located at the centre of the side opposite to the side, at whose extremes, the well and the cabin are located. The mango tree is not at the corner where the cabin is located. Example 6: Which of the following pairs can be diagonally opposite to each other in the plot? (A) Neem tree and lemon tree (B) Cabin and neem tree (C) Mango tree and well (D) Coconut tree and lemon tree Example 7: If the lemon tree is diagonally opposite to the well, then the coconut tree is diagonally opposite to the (A) Mango tree (B) Well (C) Cabin (D) Gate Example 8: If the coconut tree and the neem tree cannot be at adjacent corners of the plot, then which of the following will necessarily have to be at diagonally opposite corners of the plot? (A) Coconut tree and well (B) Lemon tree and cabin (C) Lemon tree and coconut tree (D) Lemon tree and well"
+ },
+ {
+  "t": "h2",
+  "x": "Example 9: Which of the following must be TRUE?"
+ },
+ {
+  "t": "p",
+  "x": "(A) Cabin and well are not at adjacent corners. (B) \u0007Cabin and coconut tree cannot be at the adjacent ­corners. (C) Neem tree and well are at adjacent corners. (D) Neem tree and well are not at adjacent corners."
+ },
+ {
+  "t": "h2",
+  "x": "Example 10: Which of the following is definitely"
+ },
+ {
+  "t": "p",
+  "x": "FALSE? (A) Mango tree is adjacent to the well at one corner. (B) Neem tree is adjacent to the cabin at one corner. (C) Coconut tree is at the corner adjacent to the well. (D) \u0007Lemon tree is not on the same side of the plot as the gate."
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 6 to 10:"
+ },
+ {
+  "t": "p",
+  "x": "Lemon and coconut trees are on either sides of the gate. Lemon Or Coconut Gate Coconut Or Lemon The well and the cabin are at either end of the wall opposite to the gate. Mango tree and cabin are not at the same corner. So, neem tree and well are not at the same corner. This means that mango tree and the well are at the same corner and neem tree and the cabin are at the same corner. Gate (Well, Mango) Or (Cabin, Neem) Lemon or Coconut (Cabin, Neem) or (Well, Mango) Coconut or Lemon Example 6: Let us take each choice and check with the above diagram to see if it is possible or not. Neem and lemon trees can be diagonally opposite each other. Hence, this is the correct answer choice. (In an exam, you do not need to check the other choices since the first choice is correct. But, for the sake of clarity and proper understanding, we will check all the choices.) From the diagram given, we can see that cabin and neem tree cannot be located diagonally opposite each other. Mango tree and well cannot be located diagonally opposite to each other. Coconut and lemon trees cannot be located diagonally opposite each other. Hence, the correct option is (A). Example 7: If lemon tree is diagonally opposite to the well, then we can have the following two possible ­arrangements. Neem Cabin Well Mango Lemon Gate Coconut Well Mango Coconut Cabin Neem Lemon Gate OR The coconut tree is diagonally opposite the cabin and neem. Hence, the correct option is (C). Example 8: Since coconut and neem trees cannot be at adjacent corners, the following arrangements are possible. (Well, Mango) (Cabin, Neem) Coconut Lemon (Cabin, Neem) (Well, Mango) Lemon Coconut OR From these diagrams, we find that choice (D) is the correct answer. Hence, the correct option is (D). Example 9: We can check each statement with the diagram that we drew initially. We find that the statement in choice (C) which says that neem tree and the well are at the adjacent corners is true. Hence, choice (C) is the correct answer. Hence, the correct option is (C)."
+ },
+ {
+  "t": "h2",
+  "x": "Example 10: We check each statement with the diagram"
+ },
+ {
+  "t": "p",
+  "x": "that we drew initially to find out which of the statements has to be false. We find that choice (D) has to be false. Hence, the correct option is (D)."
+ },
+ {
+  "t": "h2",
+  "x": "Direction for question 11: Select the correct answer from"
+ },
+ {
+  "t": "p",
+  "x": "the given choices. Example 11: A, B, C, and D play four different games among baseball, cricket, kabaddi and volleyball. A does not play baseball or cricket. B does not play kabaddi or volleyball. C plays volleyball and D plays either baseball or volleyball. Who plays cricket? (A) A (B) B (C) C (D) D"
+ },
+ {
+  "t": "h2",
+  "x": "Solution for question 11:"
+ },
+ {
+  "t": "p",
+  "x": "C plays volleyball. A does not play cricket and D does not play cricket as he plays either baseball or volleyball. \\ B should play cricket. Hence, the correct option is (B)."
+ },
+ {
+  "t": "h1",
+  "x": "Order Sequence"
+ },
+ {
+  "t": "p",
+  "x": "The term ‘order sequence’ is self-explanatory. In questions for this category, you will be asked to deal with relative positions of subjects. The absolute values of the subjects is not what you should be interested in. It is comparison between different subjects that you have to deal with. The data also specify the relationships like ‘A is greater than B’ or ‘C is not less than D’, and so on. You have to decide the positions of the subjects in ascending or descending order on the parameters given. The subjects of comparison can be people or things. In short, data will be given to compare the quality or quantity. The parameters on which the subjects are compared can be heights or weights of people, the money with them, complexion, sizes of things, etc. In such questions, you will come across typical statements like ‘A is taller than B,’ ‘B is not shorter than C’, and so on. You may use the following symbols to symbolically represent the conditions given and, then later, represent all the subjects pictorially. Greater than > Less than < Greater than or equal ≥ Less than or equal ≤. ‘Not greater than’ is the same as ‘less than or equal to’. Similarly, ‘not less than’ is the same as ‘greater than or equal to’. Words like ‘Who, And, Which, But’ used in the data play a significant role in analysing the data. ‘And’ and ‘But’ play the same role, whereas ‘Who’ and ‘Which’ play the same role. Let us take one statement. ‘A is taller than B, who is shorter than C and taller than D but shorter than E, who is taller than F and G but shorter than H’. By using appropriate symbols, the above statement can be represented as follows. A > B; B < C; B > D; B < E; E > F; E > G; E < H Questions on the given data can be as follows. 1. Who is the tallest? 2. Who is the shortest? 3. Who is the second tallest in the group? etc. Let us take some examples."
+ },
+ {
+  "t": "h2",
+  "x": "Direction for questions 12 to 16: Read the information"
+ },
+ {
+  "t": "p",
+  "x": "given and answer the questions that follow. A, B, C, D, and E are five cars while P, Q, and R are three motorcycles. A is the fastest of the cars and R is the slowest of the motorcycles. C is costlier than D and Q but cheaper than B. Among cars, A is not the costliest. D is cheaper than E and there is no car whose cost lies between the cost of these two. E is faster than three of the cars and all the motorcycles. Q is costlier than R but cheaper than P, who is faster than Q."
+ },
+ {
+  "t": "h2",
+  "x": "Example 12: Which of the following cars cannot stand"
+ },
+ {
+  "t": "p",
+  "x": "exactly in the middle position among cars as far as their cost is concerned? (A) A (B) C (C) E (D) D"
+ },
+ {
+  "t": "h2",
+  "x": "Example 13: Which of the following statements is true"
+ },
+ {
+  "t": "p",
+  "x": "about the motorcycles? (A) P is the costliest as well as the fastest motorcycle. (B) \u0007The fastest motorcycle is not the costliest motorcycle. (C) \u0007The slowest motorcycle is also the cheapest ­motorcycle. (D) Both (A) and (C) Example 14: If P is costlier than E, how many cars are cheaper than P? (A) 1 (B) 2 (C) 3 (D) Cannot be determined Example 15: If P is cheaper than A, which is not costlier than E, which of these is the cheapest of all the cars and motorcycles put together? (A) R (B) Q (C) E (D) Cannot be determined Example 16: Which of these is the slowest of the cars, if B and C are faster than D? (A) B (B) D (C) E (D) A"
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 12 to 16:"
+ },
+ {
+  "t": "p",
+  "x": "Let us first write down all the comparisons given for costs and speeds. Then we will tabulate them. Speed A → fastest car E → Faster than three of the cars ➔ \u0007E is the second fastest car R → slowest motorcycle P > Q Cost ⟨eq⟩ Not the costliest among cars ⟨eq⟩ No other car lies between these two ⟨eq⟩ Now let us tabulate these data. Speed Cars Fastest A E Slowest Motorcycles Fastest P Q R Slowest Cost Cars Costliest B C E D Cheapest Here, we know that A is not the costliest car but we do not know where it will fit in. It can come anywhere after B except between E and D. Motorcycles Costliest P Q R Cheapest In addition, we have to also keep in mind that C > Q in cost. (From this, we can conclude that B > Q, B > R, C > R in cost.) Example 12: In terms of cost of the cars, A can come between B and C or between C and E or to the right of E. In each of the cases, the middle car will be C, A, and E, respectively. Hence, among the cars given, D cannot be in the middle. Hence, the correct option is (D). Example 13: By looking at the tables, we can make out that choices (A) and (C) are both correct, and, hence, the correct answer is choice (D). Hence, the correct option is (D). Example 14: If P is costlier than E, we can also conclude that it is costlier than D but we cannot conclude anything about the relationship between the cost of P and that of B, C and A. Hence, the correct option is (D). Example 15: Since A is not costlier than E, it means that A is at the same level of E or cheaper than E. We cannot conclude which of these two positions A is in. Hence, we cannot conclude which the cheapest of all the vehicles is. {Please note that if A is the cheapest car, then R will be the cheapest of all the vehicles. However, if A is at the same level as E in cost, then there is a possibility of R or D being the cheapest of all the vehicles.} Hence, the correct option is (D). Example 16: If B and C are faster than D, then the order will be as follows: A E B/C C/B D Hence, D is the slowest of all the cars. Hence, the correct option is (B)."
+ },
+ {
+  "t": "h2",
+  "x": "Direction for questions 17 to 21: Read the information"
+ },
+ {
+  "t": "p",
+  "x": "given and answer the questions that follow. J, K, L, M, and N are five boys in a class. They are ranked in the order of heights—from the tallest to the shortest—and in order of cleverness—from the cleverest to the dullest. K is taller than N, but not as clever as J and L, whereas M is the cleverest of all but shorter than J. While L is shorter than M but taller than K, L is not as clever as J. No two persons got the same ranks in any of these parameters. Example 17: Who is the third in the order of heights? (A) J (B) N (C) K (D) L Example 18: If N is not the last in at least one of the two comparisons, which of the following is the dullest of all the five? (A) K (B) L (C) M (D) J Example 19: If L is the third in order of cleverness, who is the dullest of all? (A) M (B) N (C) L (D) Cannot be determined Example 20: Who among the following is cleverer as well as taller than K? (A) L and J only (B) N (C) L and N (D) J, L and M"
+ },
+ {
+  "t": "h2",
+  "x": "Example 21: How many people are definitely shorter"
+ },
+ {
+  "t": "p",
+  "x": "than K? (A) 1 (B) 2 (C) 3 (D) None of these"
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 17 to 21:"
+ },
+ {
+  "t": "p",
+  "x": "Let us first write down all the conditions given and then tabulate the data. Cleverness ⟨eq⟩ is the cleverest. J > L Height ⟨eq⟩ Now, let us put together all the information we have. Cleverness Cleverest M J L K Dullest We do not know where N will come in the order of cleverness but he will definitely be after M. Height Tallest J M L K N Shortest Example 17: From the table, we can clearly see that L is ranked third in order of heights. Hence, the correct option is (D). Example 18: N is the last in terms of height. Since we are given that he is not the last in at least one of the lists, he cannot be the last in cleverness. So, K is the dullest of all. Hence, the correct option is (A). Example 19: If L is the third in the order of cleverness, as can be seen from the table, either N or K can be the dullest. Hence, the correct option is (D). Example 20: By looking at the tables we made and from the answer choices, we find that L, J, and M are taller as well as cleverer than K. Hence, the correct option is (D). Example 21: Only N is shorter than K. Hence, the correct option is (A)."
+ },
+ {
+  "t": "h2",
+  "x": "Direction for question 22: Select the correct alternative"
+ },
+ {
+  "t": "p",
+  "x": "from the given choices. Example 22: P, Q, R, S, and T are five girls competing in a running race. R and P have at least two girls ahead of each of them. T and P do not have more than one girl behind each of them. Who arrives at the finishing line after two girls as well as before two other girls, if no two girls finish the race at the same time? (A) Q (B) S (C) T (D) R"
+ },
+ {
+  "t": "h2",
+  "x": "Solution for question 22:"
+ },
+ {
+  "t": "p",
+  "x": "R and P have at least two girls before them ➔ R and P have to be in two out of 3rd, 4th, and 5th positions. T and P have not more than one girl behind each of them ➔ T and P have to be in the 4th or 5th positions. These two statements together mean that R will have to be in the third position. Hence, the correct option is (D)."
+ },
+ {
+  "t": "h1",
+  "x": "Selections"
+ },
+ {
+  "t": "p",
+  "x": "In this category of questions, a small group of items or persons has to be selected from a larger group satisfying the given conditions. The conditions will specify as to when a particular item or person can be included or cannot be included in the subgroup. For example, the condition may specify that two particular persons should always be together or that two particular persons should not be together. Sometimes, the conditions given for selection or nonselection of items or persons may be based on logical connectives if-then, either-or, unless, etc. You should be careful in interpreting the logical connectives used in the conditions."
+ },
+ {
+  "t": "h2",
+  "x": "Direction for questions 23 to 27: These questions are"
+ },
+ {
+  "t": "p",
+  "x": "based on the following information. Amit, Bittu, Chintu, Dumpy, Falgun, Hitesh, Ronit, Purav, and Saurav are nine players from among whom three teams consisting of 4 members, 3 members, and 2 members, respectively, must be formed subject to the following conditions. Chintu must have three more players with him while Dumpy must have only two more with him. Chintu and Saurav cannot be in the same team. Purav and Bittu cannot be in the same team. Ronit and Hitesh must be in the same team. Example 23: If Dumpy, Falgun, Purav form the team of 3 members, then which of the following must be TRUE? (A) Hitesh must be in a team with Bittu. (B) \u0007Saurav must form a two-member team with Amit or Chintu. (C) \u0007Saurav must form a two-member team with Bittu or Amit. (D) \u0007Chintu should form a team of 4 members with Hitesh, Ronit, and Amit. Example 24: If Dumpy takes Amit as a part of his threemember team, which of the following must go into Chintu’s team? (A) Bittu and Hitesh (B) Hitesh and Ronit (C) Purav and Ronit (D) Purav and Falgun Example 25: If Chintu and Falgun are together and Saurav is in the team of two members, then how many sets of different teams are possible? (A) 4 (B) 3 (C) 2 (D) 1 Example 26: If Chintu does not have Purav in his team and the two member team consists of Saurav and Amit, then Chintu should take (A) Hitesh, Bittu, and Ronit. (B) Bittu but not Ronit. (C) Bittu and Falgun. (D) Hitesh and Ronit. Example 27: If Purav is in the same team as Chintu and Falgun, then Saurav must be in the same team as (A) Bittu (B) Bittu and Amit. (C) Amit (D) Bittu and Dumpy."
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 23 to 27:"
+ },
+ {
+  "t": "p",
+  "x": "It is given that: Chintu must form a team of 4 members only Dumpy must form a team of 3 members only. Since Chintu and Dumpy are in two different teams, let us, for convenience, denote the two teams as the respective teams of these two persons. Let us call the team with four members as the first team and the team with three members as the second team. The third team should have two persons. Number of members Chintu Dumpy Saurav Saurav Now let us take the other conditions and fill them up in the table. Chintu and Saurav cannot be in the same team. ➔ Saurav will be in the second or the third team. Purav and Bittu cannot be in the same team. Hitesh and Ronit must be in the same team. We cannot represent these two conditions right now in the table but we will use them as we go along. Example 23: If Dumpy, Falgun, Purav form the team of 3 members, then Saurav should be in the third team. Since Hitesh and Ronit must be in the same team, they have to be in the first team. That leaves only Amit or Bittu to be with Saurav in the third team. Hence, the correct option is (C). (Also, note that we can eliminate choice (B) easily.) Example 24: Dumpy takes Amit as a member of his team. If we take Hitesh and Ronit as the two members of the third team, then Saurav has to be in the second team, in which case we will have both Purav and Bittu coming into the same team—the first team—which is not possible. Since Saurav cannot be in Chintu’s team and Purav and Bittu cannot be in the same team, the three people required for Chintu’s team will have to be Hitesh and Ronit checkfont Falgun or Purav or Bittu. Hence, the correct option is (B). Example 25: Let us analyse the conditions. It is given that Chintu and Falgun are together, whereas Saurav is in the team of two members. Let us fill up these details in the box that we made and then see in how many ways we can fill up the remaining cells in the box. Chintu Dumpy Saurav Falgun First let us look at Hitesh and Ronit who must be in the same team. They can go into the first team or the second team. Let us consider these two cases. Case 1: Hitesh and Ronit go into the first team. Then, one out of Bittu and Purav will to go into the third team and the other into the second team. This gives rise to two ways of forming the teams: one with Bittu in the second team and the other with Bittu in the third team. Case 2: Hitesh and Ronit go into the second team. In this case too, one out of Bittu and Purav will go into the third team and the other into the second team. Hence, this will also give rise to two ways of forming the teams. Hence, there are total four ways of forming the teams. Hence, the correct option is (A). Example 26: Let us use the table that we built in the initial analysis and fill up the details that we have in this problem. Since the two member team is already formed and Chintu does not take Purav, hence Purav will have to go into the second team. Chintu Dumpy Saurav Purav Amit Since Ronit and Hitesh have to be in the same team, they should go into the first team. Since Bittu cannot go with Purav, he should also be in the first team. This leaves Falgun for the second team. Thus, we can fill up the table as follows: Chintu Dumpy Saurav Ronit Purav Amit Hitesh Falgun Bittu Hence, the correct option is (A). Example 27: If Purav is with Chintu and Falgun, then Bittu cannot be with them. Since Ronit and Hitesh should be together, the only other person left is Amit. These four members form the first team. If Hitesh and Ronit together form the two member team, then Bittu and Saurav will be part of the three member team. Instead, if Hitesh and Ronit are in the three-member team, then Saurav and Bittu will form the two-member team. In either case, Saurav and Bittu are together in one team. Hence, the correct option is (A)."
+ },
+ {
+  "t": "h2",
+  "x": "Direction for questions 28 to 31: These questions are"
+ },
+ {
+  "t": "p",
+  "x": "based on the following information. A, B, C, D, E, F, and G are seven players. They form two teams of two players each and one team of three players. A and B cannot be in the same team. B and C cannot be in the same team whereas E and F must be in the same team. G and D cannot be in the same team. Example 28: If C, D, and A form a team of three players, which of the following can be the members of one of the other teams? (A) A and E (B) G and B (C) E and F (D) Both (B) and (C) Example 29: If E, F, and G form a team of three members, then in how many ways can the remaining two teams of two players each be formed? (A) 2 (B) 4 (C) 3 (D) 1 Example 30: If D and A are not in the same team, then altogether in how many ways can the teams of two members be formed? (A) 4 (B) 7 (C) 8 (D) 5 Example 31: If B, E, and F form a team of three members, which of the following cannot be the two teams of two members each? (A) AC, GD (B) AD, CG (C) AG, CD (D) Both (A) and (B)"
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 28 to 31:"
+ },
+ {
+  "t": "p",
+  "x": "Let Team I be of 3 players, Team II be of 2 players, and Team III be of 2 players. It is given that A and B cannot be together. We will represent it as A × B. Similarly, we have B × C and G × D. E and F must be in the same team. So, E and F can form a team of 2 members on their own or can form a team of 3 members with another person. Let us now take up the questions and work them out. Example 28: Given that C, D, A form a team of 3 members, one of the other teams has to have E and F together. Hence, B and G should form one team. Hence, the correct option is (D). Example 29: Given that E, F, G form a team of 3 players. Since A and B or B and C cannot be in the same team, we must necessarily have A and C together in one team and B and D in the other team. So the teams can be formed only in one way. Hence, the correct option is (D). Example 30: Given that A and D are not in the same team. Hence, A × B, B × C, G × D, and A × D. We already know that E and F must be in the same team. They may form a team of 3 members or they themselves be a team of 2 members. Let us consider these two possibilities and then fill up the other teams. They can be formed as follows:"
+ },
+ {
+  "t": "h2",
+  "x": "Team III"
+ },
+ {
+  "t": "p",
+  "x": "1. A E F B D C G 2. A E F C D B G 3. B E F A G C D 4. C E F A G B D 5. D E F A C B G 6. G E F A C B D 7. A C G B D E F Thus the teams can be formed in 7 ways. Hence, the correct option is (B). Example 31: If B, E, F form a team of 3 members, then the two members teams must be formed from A, C, D, G. The teams can be AD and CG or AG and CD. As D and G cannot form a team, AC and GD cannot be formed. Choice (A). {Please note that we can answer this question from the answer choices—from choice (A), we find that G and D are together in one team which is not possible. Thus, choice (A) is the answer.} Hence, the correct option is (A)."
+ },
+ {
+  "t": "h2",
+  "x": "Direction for question 32: Select the correct alternative"
+ },
+ {
+  "t": "p",
+  "x": "from the given choices. Example 32: At least two boys out of A, B, C, and D and at least two girls out of P, Q, R, and S have to be chosen to form a group of 5 members. Neither A nor C can go with Q. Neither P nor S can go with B. Q and R cannot be together. Which of the following is an acceptable team? (A) ARCQP (B) ASQPD (C) ASQRP (D) PSRAD"
+ },
+ {
+  "t": "h2",
+  "x": "Solution for question 32:"
+ },
+ {
+  "t": "p",
+  "x": "The required group of 5 members must be formed with at least two boys from A, B, C, D and at least 2 girls from P, Q, R, S. Answers 1, 2, and 3 can be ruled out as A and Q cannot be together. In choice (D), P, S, R, A, D can be together without violating any of the given conditions. Hence, the correct option is (D). Questions on routes/networks involve different points or locations between which there is some movement or communication. The way the movement or communication is effected is described in the data/conditions. Sometimes, these are also referred to as ‘maps’ because the routes given resemble a map. The data given in these types of questions may not always have the word ‘route’ or ‘network’ in them but a network is indicated by some sort of connectivity between two ‘points’. The way the statements are worded is important. The wording includes statements like 1. Some poles are connected through wires. 2. Some towers send signals to one another. 3. Some cabins, market, cities, etc. are connected via. passages or roads and so on. The connectivity between the two ‘points’ can be only oneway or two-way. In one-way connectivity, the flow will be in only one direction, whereas in two-way connectivity, the flow will be in both directions between the points. Read the data carefully and then draw the diagram or network. The words ‘from’ and ‘to’ play an important role in these questions, and, hence, care should be taken while interpreting the data. While drawing a diagram, arrow marks can be used very effectively to indicate the direction of connectivity as explained below. 1. If the statement mentions that there is a one-way route from city A to B then it can be represented as follows. A B 2. If the statement mentions that cities X and Y have roads on which you can travel in either direction, it means that it is a two-way connectivity. Then it can be represented as follows. X Y 3. If the statement mentions that all the projected roads are one-ways and there is a route from point K to P and then from P to K, then it should be represented as follows. P K i.e. from P to K is one route and from K to P is another route. Now, consider the following network. K O P L J M N In this network, let us say that a person starts from J and he wants to reach K. We want to find out the number of distinct routes he can take without touching any point twice. Starting from J, the possible directions of movement are from J to N, J to M, and J to P, but if he goes from J to N then coming back or travelling in some other direction is not possible. Hence, the person has only two options for movement from J (J to M and J to P). Now, if he goes to M, he has to go to L from M. At L, it appears that he has two options—he can go to P or to J. But, since he started from J and as he cannot touch any point twice, he cannot go to J. So, there is only one option at L—that is going to P. So, to reach P from J, there are two options—one directly to P from J and the other via. M and L. Once he reaches P, he has only one way of reaching K—along the diagonal PK. If he goes to O from P, then he cannot travel to K from O (the route is one way in the O to K). Thus, the total number of ways from J to K is two (JPK and JMLPK). Thus, one has to look at all the possible routes carefully in the above-discussed manner. In the aforementioned example, if the route between J and L is two-way and then we have to find out the number of ways to reach O stating from J, the routes we have will be as follows: JPO, JPKO, JMLPO, JMLPKO, JLPO, JLPKO This gives us a total of six distinct ways of reaching O from J. Direction for questions 33 to 37: Read the following information and answer the questions given below. P, Q, R, S, T, U, V are seven places on a map. The following places are connected by two-way roads: P and Q; P and U; R and U; R and S; U and V; S and T; Q and R; T and V. No other road exists. Example 33: The shortest route (the route with the least number of intermediate places) from P to V is (A) P-R-V (B) P-T-V (C) P-Q-R-U-V (D) P-U-V Example 34: How many distinct routes exist from S to U (without touching any place more than once)? (A) 3 (B) 2 (C) 1 (D) 4"
+ },
+ {
+  "t": "h2",
+  "x": "Example 35: The route covering the maximum number of"
+ },
+ {
+  "t": "p",
+  "x": "places and going from P to R does not pass through (A) U (B) T (C) S (D) Q Example 36: If U to V and S to R are only one-way routes, then which of the following places lose contact with P? (A) V (B) T (C) S (D) No place loses contact with P Example 37: If the number of places to which a place is connected directly considered as the measure of importance, then which of the following places is of the highest importance? (A) Q (B) P (C) R (D) S"
+ },
+ {
+  "t": "h2",
+  "x": "Solutions for questions 33 to 37:"
+ },
+ {
+  "t": "p",
+  "x": "The route map of the places is as follows: Q R S T U P V Example 33: As is seen, P-U-V is the shortest way (with only one intermediate point) from P to V. Hence, the correct option is (D). Example 34: To travel from S to U, the routes available are: S-R-U; S-T-V-U, and S-R-Q-P-U—a total of 3 routes. Hence, the correct option is (A). Example 35: First let us write down the route from P to R with the maximum number of intermediate points. By observation, we find that it is P-U-V-T-S-R. It does not touch Q. Hence, the correct option is (D). Example 36: If U to V and S to R are only one-way routes, from the figure, we find that all places can still be reached from P. Hence, none of the places loses contact with P. Hence, the correct option is (D). Example 37: For each of the places given in the ­choices, Q, P, R, and S, let us see how many places are directly ­connected. Q is directly connected to 2 places. P is directly connected to 2 places. R is directly connected to 3 places. S is directly connected to 2 places. Hence, the correct option is (C). Direction for questions 38 to 41: Read the following information and answer the questions given. Five cities P, Q, R, S, and T are connected by different modes of transport as follows: P and Q are connected by boat as well as by rail. S and R are connected by bus and by boat. Q and T are connected only by air. P and R are connected only by boat. T and R are connected by rail and by bus. Example 38: Which of the following pair of cities are connected by any of the routes directly [without going through any other city]? (A) P and T (B) T and S (C) Q and R (D) None of these Example 39: Which mode of transport would help one to reach R starting from Q but without changing the mode of transport? (A) Boat (B) Rail (C) Bus (D) Air Example 40: If a person visits each of the places starting from P and gets back to P, which of the following places must he visit twice? (A) Q (B) R (C) S (D) T"
+ },
+ {
+  "t": "h2",
+  "x": "Example 41: Between which two cities among the pairs"
+ },
+ {
+  "t": "p",
+  "x": "of cities given below are there maximum travel options available? (If there is more than one route possible between two cities, consider the route with least number of cities enroute.) (A) Q and S (B) P and R (C) P and T (D) Q and R"
+ },
+ {
+  "t": "h2",
+  "x": "Example 38:"
+ },
+ {
+  "t": "p",
+  "x": "P Q T R S boat, rail air bus, boat boat rail, bus P and T are connected through Q. T and S are connected through R Q and R are connected through T or P. Q and S are connected through R and P or T. So, none of the pairs in the choices are directly connected. Hence, the correct option is (D). Example 39: From Q to P, he can reach by boat. From P to R also he can travel by boat. So, a person should travel by boat to reach R from Q without changing the mode of transport. Hence, the correct option is (A). Example 40: If a person wants to visit all the places and again return to P, then he can go in the order of P→ ⟨eq⟩ and then ⟨eq⟩ (OR) ⟨eq⟩ and then ⟨eq⟩ He must visit R twice. Hence, the correct option is (B). Example 41: One has to travel between any of the two ­cities with a restriction that if there is more than one possible route, he has to go by the least number of cities enroute. It is better to take the pair of cities given in each of the choices. Choice (A) Q and S: A person can go from Q to T to R to S (or) Q to P to R to S or vice versa. In both the routes, there are two cities enroute. We can calculate the number of options in the entire route by multiplying the options available in each segment of the route. For the route Q-T-R-S, the number of options = 1 × 2 × 2 = 4 For the route Q-P-R-S, the number of options = 2 × 1 × 2 = 4 Choice (B) P and R: The route between P and R has only one mode of travel, that is boat. Choice (C) P and T: A person can go by PQT in either way or by PRT in either way. If it is by PQT, then the options are boat–air or rail–air, i.e. two ways. If it is by PRT, then the options are boat-rail or boat-bus in either way. Hence, they are only two options. Choice (D) Q and R: If a person travels between Q and R, then he can go by QTR or by QPR. If he goes by QTR, then the options are air–rail or air–bus, that gives two options or if he goes by QPR, then the options are rail–boat or boat– boat, that will again give us two options. So, it is very clear that Q and S have maximum number of travel options available between them. Hence, the correct option is (A)."
+ },
+ {
+  "t": "h2",
+  "x": "Direction for question 42: Select the correct alternative"
+ },
+ {
+  "t": "p",
+  "x": "from the given choices. Example 42: Four computers P, Q, A, and B are interconnected for the transmission of data. A and B each can send data to both P and Q but B cannot receive data from A. P and Q can have data flow in both directions between them but they cannot transmit the data so received to B but can otherwise send the data directly to B. Which of the following routes can be followed if B has to receive data from A? I. AQPB II. APB III. AQB IV. APQB (A) I and III (B) II and III (C) III and IV (D) All four"
+ },
+ {
+  "t": "h2",
+  "x": "Solution for question 42:"
+ },
+ {
+  "t": "p",
+  "x": "AQPB and APQB can be eliminated because P and Q cannot send the data to B. The paths AQB and APB do not violate any conditions and hence can be possible routes to send data from A to B. Hence, the correct option is (B)."
+ },
+ {
+  "t": "h1",
+  "x": "Clocks and Calendars"
+ },
+ {
+  "t": "li",
+  "x": "Leap and Non-leap Year"
+ },
+ {
+  "t": "li",
+  "x": "Counting the Number of Odd Days"
+ },
+ {
+  "t": "h2",
+  "x": "CHAPTER HIGHLIGHTS"
+ },
+ {
+  "t": "h1",
+  "x": "Clocks"
+ },
+ {
+  "t": "p",
+  "x": "The hour hand and the minute hand of a clock move in relation to each other continuously, and at any given point of time, they make an angle between 0° and 180° with each other. If the time shown by the clock is known, the angle between the hands can be calculated. Similarly, if the angle between two hands is known, the time shown by the clock can be found out. When we say angle between the hands, we normally refer to the acute/obtuse angles (upto 180°) between the two hands and not the reﬂ ex angle (> 180°). For solving the problems on clocks, the following points will be helpful."
+ },
+ {
+  "t": "li",
+  "x": "Minute hand covers 360° in 1 hour, i.e. in 60 minutes."
+ },
+ {
+  "t": "p",
+  "x": "Hence, MINUTE HAND COVERS 6° PER MINUTE."
+ },
+ {
+  "t": "li",
+  "x": "Hour hand covers 360° in 12 hours. Hence, hour hand covers 30° per hour. Hence, HOUR HAND COVERS 1/2° PER MINUTE."
+ },
+ {
+  "t": "p",
+  "x": "The following additional points also should be remembered. In a period of 12 hours, the hands make an angle of"
+ },
+ {
+  "t": "li",
+  "x": "0° with each other (i.e. they coincide with each other), 11 times."
+ },
+ {
+  "t": "li",
+  "x": "180° with each other (i.e., they point exactly in opposite directions), 11 times."
+ },
+ {
+  "t": "li",
+  "x": "90° or any other angle with each other, 22 times."
+ },
+ {
+  "t": "p",
+  "x": "We can also solve the problems on clocks using the method of ‘Relative Velocity’."
+ },
+ {
+  "t": "h2",
+  "x": "NOTE"
+ },
+ {
+  "t": "p",
+  "x": "In 1 minute, minute hand covers 6° and hour hand covers 1/2°. Therefore, relative velocity = 6 – 1/2 = 5 1 2 ° per minute. Alternately, in 1 hour, the minute hand covers 60 minute divisions, whereas the hour hand covers 5 minute divisions. \\ Relative speed = 60 – 5 = 55 minutes per hour. However, adopting the approach of actual angles covered is by far the simplest and does not create any confusion."
+ },
+ {
+  "t": "h2",
+  "x": "Points to Note"
+ },
+ {
+  "t": "li",
+  "x": "Any angle other than (0° and 180°) is made 22 times in a period of 12 hours."
+ },
+ {
+  "t": "li",
+  "x": "In a period of 12 hours, there are 11 coincidences of the two hands, when the two hands are in a straight line facing opposite directions."
+ },
+ {
+  "t": "li",
+  "x": "The time gap between any two coincidences is 12/11 hours or 65 5 11 minutes."
+ },
+ {
+  "t": "li",
+  "x": "If the hands of a clock (which do not show the correct time) coincide every p minutes, then"
+ },
+ {
+  "t": "p",
+  "x": "If ⟨eq⟩ then the watch is going slow or losing time. If ⟨eq⟩ then the watch is going fast or gaining time. To calculate the angle ‘q’ between the hands of a clock, we use the following formula (where m = minutes and h = hours)"
+ },
+ {
+  "t": "h1",
+  "x": "9. 1. q= 11"
+ },
+ {
+  "t": "p",
+  "x": "⟨eq⟩ ⎛ ⎝⎜ ⎞ ⎠⎟ when 2. q= ⟨eq⟩ ⎛ ⎝⎜ ⎞ ⎠⎟ when"
+ },
+ {
+  "t": "h2",
+  "x": "Example 1"
+ },
+ {
+  "t": "p",
+  "x": "What is the angle between the minute hand and the hour hand of a clock at 3 hours 40 minutes? (A) 20° (B) 70° (C) 90° (D) 130°"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "The angle between the hands can be calculated by ⟨eq⟩ where m is minutes and h is hours. Here, m = 40 and h = 3 \\ q= 11 × − × = |220 – 90| = 130°\b The angle between the two hands is 130°."
+ },
+ {
+  "t": "h2",
+  "x": "Example 2"
+ },
+ {
+  "t": "p",
+  "x": "Find the time between 2 and 3 O’clock at which the minute hand and the hour hand make an angle of 60° with each other."
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "In the formula q= ⟨eq⟩ q= 60° and h = 2\b \\ 60 = 11 2 m – 30 × 2\b 2 m = 120\b ⟨eq⟩ past 2\b (or) 60 = 30 × 2 – 11 2 m \b \\ 2 m = 0\b m = 0\b Therefore, the angle between the hour hand and the minute hand is 60° at 2 O’clock and at 21 9 11 minutes past 2 O’clock."
+ },
+ {
+  "t": "h2",
+  "x": "Example 3"
+ },
+ {
+  "t": "p",
+  "x": "Find the time between 2 and 3 O’clock at which the minute hand and the hour hand overlap."
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "When the two hands overlap, the angle between them is 0°. q= 11 m h − \b \\ q= 0° and h = 2\b m = 30 × 2\b ⟨eq⟩ min past 2.\b"
+ },
+ {
+  "t": "h2",
+  "x": "Example 4"
+ },
+ {
+  "t": "p",
+  "x": "Find the time between 2 and 3 O’clock at which the minute hand and the hour hand are perpendicular to each other."
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "When two hands are perpendicular, q= 90° and h = 2 \\ q= 11 m h − ⎛ ⎝⎜ ⎞ ⎠⎟ or h m − ⎛ ⎝⎜ ⎞ ⎠⎟ \b 90 = 11 m – 30 × 2; m = 150\b ⟨eq⟩ minutes past 2\b (or) 90 = 30 × 2 – 11 m\b ⇒ m = –30\b As m cannot be negative, this case is not possible. So, the hands are perpendicular to each other only once i.e. at 27 3 11 minutes past 2 O’clock."
+ },
+ {
+  "t": "h2",
+  "x": "Example 5"
+ },
+ {
+  "t": "p",
+  "x": "Find the time between 2 and 3 O’clock at which the minute hand and the hour hand are on the same straight line but are pointing in opposite directions."
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "When two hands are pointing opposite directions and are on a straight line the angle between them would be 180°. i.e. q= 180° and h = 2. 180°= 11 m – 30 h; ⟨eq⟩ 240\b ⟨eq⟩ \b So, at 43 7 11 minutes past 2 O’clock the hands will be at 180°."
+ },
+ {
+  "t": "h1",
+  "x": "Calendar"
+ },
+ {
+  "t": "p",
+  "x": "Suppose you are asked to find the day of the week on 30th June, 1974, it would be a tough job to find it if you do not know the method. The method of finding the day of the week lies in the number of ‘odd days’. Every 7th day will be the same day count wise, i.e. if today is Monday, then the 7th day counting from Tuesday onwards will once again be Monday. Odd days is the days remaining after completion of an exact number of weeks. Odd days is the reminder obtained on dividing the total number of days with seven."
+ },
+ {
+  "t": "h2",
+  "x": "NOTE"
+ },
+ {
+  "t": "p",
+  "x": "Example: 52 days ÷ 7 = 3 odd days. Leap and Non-leap Year: A non-leap year has 365 days, whereas a leap year has one extra day because of 29 days in the month of February. Every year which is divisible by 4 is called a leap year. Leap year consists of 366 days (52 complete weeks + 2 days), the extra two days are the odd days. So, a leap year has two odd days. An non-leap year consists of 365 days (52 complete weeks + 1 day). The extra one day is the odd day. Every century, year which is a multiple of 400, is a leap year. A century year which is not divisible by 400 is a non-leap year."
+ },
+ {
+  "t": "h2",
+  "x": "NOTE"
+ },
+ {
+  "t": "p",
+  "x": "Example: 400, 800, 1200, 1600 … are leap years. 500, 700, 900, 1900 … are non-leap years. Counting the number of Odd Days: 100 years consist of 24 leap years + 76 ordinary years. (100 years when divided by 4, we get 25. But at the 100th year is not a leap year, hence only 24 leap years). = 2 × 24 odd days + 1 × 76 odd days = 124 days\b = 17 weeks + 5 days\b The extra 5 days are the odd days. So, 100 years contain 5 odd days. Similarly, for 200 years we have 10 extra days (1 week + 3 days). \\ 200 years contains 3 odd days. Similarly, 300 years contain 1 odd day and 400 years contain 0 odd days. Counting of number of odd days, when only one date is given: Here, we take January 1st 1 AD as the earlier date and we assume that this day is a Monday. We take its previous day, i.e. Sunday as the reference day. After this the abovementioned method is applied to count the number of odd days and find the day of the week for the given date. Counting number of odd days, when two dates are given: Any month which has 31 days has 3 odd days. (∵ 31 ÷ 7 leaves 3 as remainder) and any month which has 30 days has 2 odd days (30 ÷ 7 leaves 2 as remainder). Then, the total number of odd days are calculated by adding the odd days for each month. The value so obtained is again divided by 7 to get the final number of odd days. The day of the week of the second date is obtained by adding the odd days to the day of the week of the earlier date."
+ },
+ {
+  "t": "h2",
+  "x": "Example 6"
+ },
+ {
+  "t": "p",
+  "x": "If you were born on 14th April, 1992, which was a Sunday, then on which day of the week does your birthday fall in 1993? (A) Monday (B) Tuesday (C) Wednesday (D) Cannot be determined"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "14th April 1992 to 14th April 1993 is a complete year, which has 365 days. Hence, the number of odd days from 14th April 1992 to 14th April 1993 is 1. Hence, 14th April 1993 is one day after Sunday, i.e. Monday."
+ },
+ {
+  "t": "h2",
+  "x": "Example 7"
+ },
+ {
+  "t": "p",
+  "x": "If 1st Jan, 1992, is a Tuesday then on which day of the week will 1st Jan, 1993, fall? (A) Wednesday (B) Thursday (C) Friday (D) Saturday"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "Since 1992 is a leap year there are 2 odd days. Hence, 1st January 1992 is two days after Tuesday, i.e., Thursday."
+ },
+ {
+  "t": "h2",
+  "x": "Example 8"
+ },
+ {
+  "t": "p",
+  "x": "If 1st April, 2003 was Monday, then which day of the week will 25th December of the same year be? (A) Tuesday (B) Wednesday (C) Thursday (D) Friday"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "The number of days from 1st April to 25th ­December (29 ⟨eq⟩ 25) days = 268 days ⟨eq⟩ odd days. Hence, 25th December is two days after Monday, i.e. Wednesday."
+ },
+ {
+  "t": "h2",
+  "x": "Example 9"
+ },
+ {
+  "t": "p",
+  "x": "Which year will have the same calendar as that of 2005? (A) 2006 (B) 2007 (C) 2008 (D) 2011"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "Year: ⟨eq⟩ Odd days : 1+ 1+ 1+ 2+ 1 + 1 Total number of odd days from 2005 to 2010 are 7 ≅ 0 odd days. Hence, 2011 will have the same calendar as that of 2005."
+ },
+ {
+  "t": "h2",
+  "x": "Example 10"
+ },
+ {
+  "t": "p",
+  "x": "What day of the week was 18th April 1901? (A) Monday (B) Tuesday (C) Wednesday (D) Thursday"
+ },
+ {
+  "t": "h2",
+  "x": "Solution"
+ },
+ {
+  "t": "p",
+  "x": "18th April 1901 ⇒ (1600 + 300) years + 1st ­January to 18th April 1901. 1600 years have – 0 odd days 300 years have – 1 odd day The number of days from 1st January, 1901 to 18th April 1901 is (31 ⟨eq⟩ 18) days 108 days @ 3 odd days \\ Total number of odd days ⟨eq⟩ Hence, 18th April 1901 is Thursday."
+ }
+]

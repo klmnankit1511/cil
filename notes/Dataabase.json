@@ -1,0 +1,2618 @@
+[
+ {
+  "t": "h1",
+  "x": "Introduction"
+ },
+ {
+  "t": "p",
+  "x": "A database is a collection of related data. By data, we mean facts that can be recorded and that have implicit meaning."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the names, telephone numbers and addresses"
+ },
+ {
+  "t": "p",
+  "x": "of the people. We can record this data in an indexed address book and store it as Excel file on a hard drive using a personal computer. This is a collection of related data with an implicit meaning and hence is a database. A database management system (DBMS) is a collection of programs that enables users to create and maintain a database. The DBMS is a general-purpose software system that facilitates the processes of defining, constructing, manipulating and sharing databases among various users and applications. 1. Defining the database involves specifying the data types, structures, and constraints for the data to be stored in the database. 2. Constructing the database is the process of storing the data itself on some storage medium that is controlled by the DBMS 3. Manipulating a database includes such functions as querying the database to retrieve specific data, updating the database to reflect changes. 4. Sharing a database allows multiple users and programs to access the database concurrently. 5. Fundamental characteristics of the database approach is that it provides some level of data abstraction by hiding details of data storage that are not needed by users."
+ },
+ {
+  "t": "h2",
+  "x": "Data Model"
+ },
+ {
+  "t": "p",
+  "x": "A data model is a collection of concepts that can be used to describe the structure of a database. It provides the necessary means to achieve abstraction."
+ },
+ {
+  "t": "h1",
+  "x": "Schemas"
+ },
+ {
+  "t": "p",
+  "x": "In any data model, it is important to distinguish between the description of the database and the database itself. The description of a database is called the database schema, which is specified during database design and is not expected to change frequently. The actual data in a database may change frequently, for example the student database changes every time we add a student or enter a new grade for a student. The data in the database at a particular moment in time is called a database state or snapshot. It is also called the current set of occurrences or instances in the database. The distinction between database schema and database state is very important. When we define a new database, we specify its database schema only to the DBMS. At this point, the corresponding database state is the empty state with no data. We get the initial state of the database when the database is first loaded with the initial data. The DBMS stores the description of the schema constructs and constraints, also called the metadata in the DBMS catalog so that DBMS software can refer to the schema whenever it needs. The schema is sometimes called the intension, and the database state an extension of the schema. Data model Schemas Three-schema architecture ER model Types of attributes Mapping cardinality Complex attributes Entity types, entity sets and value sets Weak entity set Relational database NULL in tuples Inherent constraint Referential and entity integrity constraint"
+ },
+ {
+  "t": "h2",
+  "x": "Three-schema Architecture"
+ },
+ {
+  "t": "p",
+  "x": "The goal of the three-schema architecture is to separate the user applications and the physical database."
+ },
+ {
+  "t": "h2",
+  "x": "Levels of Abstraction"
+ },
+ {
+  "t": "p",
+  "x": "View 1 View 2 View 3 Conceptual schema Physical schema 1. The external or view level includes a number of external schemas or user views. Each external schema describes the part of the database that a particular user group is interested in and hides the rest of the database. 2. The conceptual level has a conceptual schema, which describes the structure of the whole database for a community of users. The conceptual schema hides the details of physical storage structures and concentrates on describing entities, data types, relationships, user operations, and constraints. 3. The internal level has an internal schema, which describes the physical storage structures of the database. It describes the complete details of data storage and access paths for the database."
+ },
+ {
+  "t": "h1",
+  "x": "ER Model"
+ },
+ {
+  "t": "p",
+  "x": "Entity relationship model is a popular high-level conceptual data model. This model and its variations are used for the conceptual design of database applications, and many database design tools employ its concepts. ER model describes data as entities, relationships and attributes. The basic object that the ER model represents is an entity."
+ },
+ {
+  "t": "h2",
+  "x": "Entity"
+ },
+ {
+  "t": "p",
+  "x": "It is an object that exists and is distinguishable from other objects (or) Entity is a “thing” in the real world with an independent existence. (or) An entity is something that has a distinct, separate existence, although it need not be a material existence. In particular, abstractions and legal functions are usually regarded as entities. In general, there is no presumption that an entity is animate. 1. An object with a physical existence Example: A particular person, car, house, employee. 2. An object with a conceptual existence Example: A company, a job, a university course. Each entity has attributes, the particular properties that describe it. Example: An employee entity can be described by employee’s name, age, address, salary and job."
+ },
+ {
+  "t": "h2",
+  "x": "Entity Set"
+ },
+ {
+  "t": "p",
+  "x": "Set of entities of same type that shares the same properties. Example: All persons, all companies etc."
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "C-143 John MG Road Sec.bad C-174 Mary SP Road Hyd.bad C-183 Tony KD Road Sec.bad C-192 Satya SG Road Eluru"
+ },
+ {
+  "t": "h2",
+  "x": "Amount"
+ },
+ {
+  "t": "p",
+  "x": "L-30 $3000 L-31 $4000 L-32 $3500 L-33 $4500 L-34 $5000 An entity is represented by a set of attributes and by a descriptive properties possessed by all members of an entity set."
+ },
+ {
+  "t": "h2",
+  "x": "Types of Attributes"
+ },
+ {
+  "t": "p",
+  "x": "1. Simple versus composite 2. Single valued versus multivalued 3. Stored versus derived."
+ },
+ {
+  "t": "h2",
+  "x": "Composite attribute: Composite attributes can be divided"
+ },
+ {
+  "t": "p",
+  "x": "into smaller subparts, which represent more basic attribute that has their own meaning (Figure 1). Example: A common example is Address, it can be broken down into a number of subparts such as street address, city, postal code; street address is further broken down into Number, street Name and Apartment number. Address Street address City State Zip Number Street House-No Figure 1 A hierarchy of composite attributes. Street address is a composite attribute. Attributes that are not divisible are called simple (or) atomic attributes. Single-valued versus multivalued attributes: Most attributes have a single value for a particular entity, such attributes are called single-valued attribute."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Age is a single-valued attribute"
+ },
+ {
+  "t": "p",
+  "x": "Multivalued attributes: An attribute can have a set of values for the same entity."
+ },
+ {
+  "t": "h2",
+  "x": "Example: College degrees attribute for a person"
+ },
+ {
+  "t": "p",
+  "x": "Example: Name is also a multivalued attribute (Figure 2). Name First name Middle name Last name Figure 2 Multivalued attribute. Stored versus derived attributes: Two (or) more attribute values are related. Example: Age can be derived from a person’s date of birth. The age attribute is called derived attribute and is said to be derivable from the DOB attribute, which is called a stored attribute. Domain: The set of permitted values for each attribute. Example: A person’s age must be in the domain {0-130}"
+ },
+ {
+  "t": "h1",
+  "x": "Relationship Sets"
+ },
+ {
+  "t": "p",
+  "x": "A relationship is an association among several entities. Relationship sets that involve two entity sets are binary. Generally, most relationships in databases are binary. Relationship sets may involve more than two entity sets."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Employee of a bank may have responsibilities at"
+ },
+ {
+  "t": "p",
+  "x": "multiple braches, with different jobs at different branches, then there is a ternary relation between employee, job and branch."
+ },
+ {
+  "t": "h2",
+  "x": "Mapping Cardinality"
+ },
+ {
+  "t": "p",
+  "x": "For a binary relationship set, mapping cardinality must be: 1. One-to-one 2. One-to-many 3. Many-to-one 4. Many-to-many One-to-one: An entity in A is associated with at most one entity in B and an entity in B is associated with at most one entity in A (Figure 3). a1 a2 a3 a4 b1 b2 b3 b4 Figure 3 One-to-one relationship set. One-to-many: An entity in A is associated with any number of entities in B. But an entity in B is associated with at most one entity in A (Figure 4). a1 a2 a3 b1 b2 b3 b4 b5 Figure 4 One-to-many relationship set. Many-to-one: An entity in A is associated with at most one entity in B. But an entity in B can be associated with any number of entities in A (Figure 5). b1 b2 b3 a1 a2 a3 a4 a5 Figure 5 Many-to-one relationship set. Many-to-many: An entity in A is associated with any number of entities in B. But an entity in B can be associated with any number of entities in A (Figure 6). a1 a2 a3 a4 b1 b2 b3 b4 Figure 6 Many-to-many relationship set."
+ },
+ {
+  "t": "h2",
+  "x": "Table 3 Example of One-to-many Relationship Set"
+ },
+ {
+  "t": "p",
+  "x": "Arun Bunny Kate Mary John A-101 $3000 A-102 A-103 A-104 A-105 $3500 $2000 $2500 $4000 In Table 3, many-to-one relationship is not possible."
+ },
+ {
+  "t": "h2",
+  "x": "Complex Attributes"
+ },
+ {
+  "t": "p",
+  "x": "Composite and multivalued attributes can be nested in an arbitrary way. We can represent arbitrary nesting by grouping components of a composite attribute between parentheses () and separating the components with commas, and by displaying multivalued attributes between braces { }. Such attributes are called complex attributes. Example: A person can have more than one residence and each residence can have multiple phones, an attribute AddressPhone for a person can be specified as shown below. {AddressPhone ({Phone (Areacode, phoneNumber)}, Address (StreetAddress (StreetNumber, streetName, ApartmentNumber), city, state, zip))}"
+ },
+ {
+  "t": "h2",
+  "x": "Entity types, entity sets and value sets"
+ },
+ {
+  "t": "p",
+  "x": "An entity type defines a collection of entities that have the same attributes. Each entity type in the database is described by its name and attribute. The following figure shows two entity types, named STUDENT and EMPLOYEE and a list of attributes for each ENTITY TYPE NAME ATTRIBUTES: ENTITY SET (EXTENSION) STUDENT R.No, Name, Grade EMPLOYEE Name, Salary, Age S1. (86, Arun, A) S2. (87, Pavan, B) S3. (89, Karan, A) e1. (Kamal, 20K, 42) e2. (Bharat, 25K, 41) e3. (Bhanu, 26K, 41) The collection of all entities of a particular entity type in the database at any point in time is called an entity set."
+ },
+ {
+  "t": "h2",
+  "x": "Types of relations"
+ },
+ {
+  "t": "p",
+  "x": "1. Unary relation. 4. Quadnary relation. 2. Binary relation. 5. N-ary relation 3. Ternary relation. Number of entity types Degree Cardinality Optionality 1. Unary 2. Binary 3. Ternary N–ary ⟨eq⟩ Optional Mandatory Relationship Unary relation If a relationship type is between entities in a single entity type then it is called a unary relationship type. Employee Managed-by In employee entity, we will have all the employees including ‘manager’, this relation indicates, employees are managed by manager."
+ },
+ {
+  "t": "h2",
+  "x": "Binary relation If a relationship type is between entities"
+ },
+ {
+  "t": "p",
+  "x": "in one type and entities in another type then it is called a binary relation, because two entity types are involved in the relation. Customer Purchased Product The above relation indicates that customers purchased product (or) products are purchased by customers."
+ },
+ {
+  "t": "h2",
+  "x": "Quadnary relation If a relationship type is among entities"
+ },
+ {
+  "t": "p",
+  "x": "of four different types, then it is called quadnary relation. Register Course Student Department Lecturer In the above ER-diagram, any two entities can have a relation."
+ },
+ {
+  "t": "h2",
+  "x": "N-ary relation ‘N’ number of entities will participate in"
+ },
+ {
+  "t": "p",
+  "x": "a relation, and each entity can have a relation with all the other entities. E1 EN E6 E4 E2 E3 E5"
+ },
+ {
+  "t": "h1",
+  "x": "and Participation Constraints"
+ },
+ {
+  "t": "p",
+  "x": "The cardinality ratio for a binary relationship specifies the maximum number of relationship instances that an entity can participate in 1. The participation constraint specifies whether the existence of an entity depends on its being related to another entity via the relationship type. This constraint specifies the minimum number of relationship instances that each entity can participate in, and is some times called the minimum cardinality constraint. 2. There are two types of participation constraints: a. Total participation b. Partial participation"
+ },
+ {
+  "t": "h2",
+  "x": "Example: If a company policy states that every employee"
+ },
+ {
+  "t": "p",
+  "x": "must work for a department, then an employee entity can exist only if it participates (or) works for at least one department. e1 e2 e3 e4 . . d1 ⟨eq⟩ r1 r2 r3 r4 . . EMPLOYEE WORKS-FOR DEPARTMENT Every entity in the EMPLOYEE set must be related to a DEPARTMENT entity via WORK-FOR. Total participation is also called existence dependency. If we do not expect every employee to manage a department, so the participation of EMPLOYEE in the relationship type is partial, means not necessarily all employees’ entities are related to some department entity. Cardinality ratio and participation constraints are taken together as the structural constraints of a relationship type. In ER diagrams, total participation is displayed as a double line connecting the participating entity type to the relationship, whereas partial participation is represented by a single line."
+ },
+ {
+  "t": "h2",
+  "x": "ER Diagrams (Figure 7 and 8)"
+ },
+ {
+  "t": "p",
+  "x": "Customer Borrower Loan C-name Cust-street Cust-city Cust-id L No Amount Figure 7 ER diagram. Notations: → Represents entity → Represents relationship sets –––– → \u0007Represents links between attributes to entity sets and entity sets to relationship sets → Represents attributes → Represents multivalued attributes → Represents primary key attribute Customer Last name Phone-no DOB Age Cust-id First name Middle name Name Figure 8 ER diagram. → Derived attribute → Multivalued attribute → Weak entity → Weak entity set relation → Composite attribute E N R E E R E R E Total Participation of E2 in R1 Cardinality ratio 1: n (min, max) Structural constraint on participation of E In R"
+ },
+ {
+  "t": "h2",
+  "x": "One-to-one"
+ },
+ {
+  "t": "p",
+  "x": "Each entity of one entity set is related to at most one entity of the other set. Only one matching record exists between two tables."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Assume each owner is allowed to have only"
+ },
+ {
+  "t": "p",
+  "x": "one dog and each dog must belong to one owner. The own relationship between dog and owner is one-to-one. One-toone relationships can often combine the data into one table."
+ },
+ {
+  "t": "h2",
+  "x": "Examples:"
+ },
+ {
+  "t": "p",
+  "x": "1. One birdfeeder is located in one place in the yard. 2. One state has one governor. 3. One yard has one address. 4. One patient has one phone number. 2. One student has one ID. Customer Borrower Loan One customer is associated to one loan via borrower"
+ },
+ {
+  "t": "h2",
+  "x": "Examples:"
+ },
+ {
+  "t": "p",
+  "x": "1. One birdfeeder is visited by many birds. 2. One student can have many degrees. 3. One Book can be written by many authors. 4. One yard contains many bird feeders. 5. One patient has many prescriptions. In the one-to-many relationship, a loan is associated with one customer via borrower."
+ },
+ {
+  "t": "h2",
+  "x": "Many-to-one"
+ },
+ {
+  "t": "p",
+  "x": "Customer Borrower Loan A customer is associated with at most one loan via borrower."
+ },
+ {
+  "t": "h2",
+  "x": "Examples:"
+ },
+ {
+  "t": "p",
+  "x": "1. Many students are taught by many teachers. 2. Many patients are treated by many doctors. 3. Many medications are taken by many patients. 4. Many customers buy many products. 5. Many books are written by many authors. Customer Borrower Loan Customer is associated with several loans and loan is associated with several customers."
+ },
+ {
+  "t": "h2",
+  "x": "Relationship"
+ },
+ {
+  "t": "p",
+  "x": "Employee Works-on Branch E-name Street City E-id B-city Assets Job Title Level B-name Figure 9 ER diagram with a ternary relationship."
+ },
+ {
+  "t": "h2",
+  "x": "Weak Entity Set"
+ },
+ {
+  "t": "p",
+  "x": "An entity set that does not have a primary key is called weak entity set. Weak entity set is represented by → Underline the primary key of a weak entity with a dashed line."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Loan Loan payment Payment L-no Amount P-date Amount P-no"
+ },
+ {
+  "t": "h1",
+  "x": "Relational Database"
+ },
+ {
+  "t": "h2",
+  "x": "Relational Model"
+ },
+ {
+  "t": "p",
+  "x": "The relational model represents the database as a collection of relations. When a relation is thought of as a table of values, each row in the table represents a collection of related data values. Each row in the table represents a fact that typically corresponds to a real-world entity. The table name and column names are used to help in interpreting the meaning of the values in each row. In formal relational model terminology, a row is called a tuple, a column header is called an attribute, and the table is called a relation."
+ },
+ {
+  "t": "h2",
+  "x": "Domain"
+ },
+ {
+  "t": "p",
+  "x": "A domain is a set of atomic values. A common method of specifying a domain is to specify a data type from which the data values forming the domain are drawn. It is also useful to specify a name for the domain, to help in interpreting its values"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "1. Set of telephone numbers: The set of valid numbers in a particular country. 2. Employee id numbers: The set of valid employee numbers in a company. 3. Names: The set of character strings that represent names of persons. 4. Grade-point average: Possible values of computed grade point averages, each must be real (floating point) number between 0 and 4 5. Research department names: The set of research department names in a specialization, such as computer science, chemistry and applied mathematics. 6. Research department codes: The set of Research department codes, such as CS, CHE, AM. The preceding is called logical definitions of domains. The data type for research department names is set of character strings that represent valid department names. A domain is thus given a name, data type, and format. Additional information for interpreting the values of a domain can also be given, for example a numeric domain such as person weights should have the units of measurements, such as kilograms or pounds. 1. The relational model is often described as having the following three aspects:"
+ },
+ {
+  "t": "li",
+  "x": "Structural aspect: The data in the database is perceived by the user as tables."
+ },
+ {
+  "t": "li",
+  "x": "Integrity aspect: Those tables has to satisfy certain integrity constraints."
+ },
+ {
+  "t": "li",
+  "x": "Manipulative aspect: The operators available to the user for manipulating those tables, for purposes of data retrieval, these operators derive tables form tables, the most important operators are ‘SELECT’, ‘PROJECT’ and JOIN."
+ },
+ {
+  "t": "h2",
+  "x": "Relation Schema"
+ },
+ {
+  "t": "p",
+  "x": "A relation schema ‘R’ denoted by R(A1, A2, . . . An) is made up of a relation name R and a list of attributes A1, A2, . . . An. Each Attribute Ai is the name of role played by some domain D in the relation schema R. D is called the domain of Ai and is denoted by dom(Ai). A relation schema is used to describe a relation and R is called the name of this relation. The degree of a relation is the number of attributes ‘n’ of its relation schema."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "A relation schema of degree ‘7’, which describes an employee is given below: EMPLOYEE (Name, EId, HomePhone, Address, Office phone, Age, Salary) Using the data type of each attribute, the definition is written as: EMPLOYEE (Name: String, EId: INT, Homephone: INT, Address: String, OfficePhone: String, Age: Real, Salary: INT) For this relation schema, EMPLOYEE is the name of the relation, which has ‘7’ attributes. 2. A relation ‘r’ of the relation schema R(A1, A2 . . . An), also denoted by r(R), is a set of n-tuples. r= {t1, t2 . . . tm}. Each n-tuple ‘t’ is an ordered list of n values t = <V1, V2 . . . Nn>, where each value Vi, ⟨eq⟩ n, is an element of dom(Ai) or is a special null value. 3. The ith value in tuple t, which corresponds to the attribute Ai, is referred to as t[Ai]. 4. The following figure shows EMPLOYEE relation. Each type in a relation represents a particular employee entity. We display the relation as a table where each tuple is shown as a row and each attribute corresponds to a column header, indicating a role or interpretation of the values in that column. Null values represent attributes whose values are unknown or do not exist for some individual EMPLOYEE tuple."
+ },
+ {
+  "t": "h2",
+  "x": "Salary"
+ },
+ {
+  "t": "p",
+  "x": "Mahesh 30-01 870-223366 Warangal NULL 40 k Ramesh 30-02 040-226633 Hyderabad NULL 40 k Suresh 30-03 040-663322 Kolkata 040-331123 42 k Dinesh 30-04 040-772299 Bangalore 040-321643 40 k Fig: The attributes and tuples of a relation EMPLOYEE. The earlier definition of a relation can be restated as follows: A relation r(R) is a mathematical relation of degree ‘n’ on the domains dom(A1), ⟨eq⟩ dom(An), which is a subset of the Cartesian product of the domains that define R: r(R) C (dom(A1) × dom(A2) . . . × dom(An))"
+ },
+ {
+  "t": "h2",
+  "x": "Characteristics of Relations"
+ },
+ {
+  "t": "p",
+  "x": "There are certain characteristics that make a relation different from a file or a table. Ordering of tuples in a relation: A relation is defined as a set of tuples. Tuples in a relation do not have any particular order. In a file, records are stored on disk in order. This ordering indicates first, second, ith, and last records in the file. Similarly, when we display a relation as a table, the rows are displayed in a certain order. Tuple ordering is not part of a relation definition, because a relation attempts to represent facts at a logical or abstract level. Many logical orders can be specified on a relation. Tuples in the EMPLOYEE relation could be logically ordered by values of Name or by EID or by Age or by some other attribute. When a relation is implemented as a file or displayed as a table, a particular ordering may be specified on the records of the file or the rows of the table."
+ },
+ {
+  "t": "h1",
+  "x": "NULL in Tuples"
+ },
+ {
+  "t": "p",
+  "x": "Each value in a tuple is an atomic value; that is, it is not divisible into components. Hence, composite and multivalued attributes are not allowed. This model is sometimes called the flat relational model. Multivalued attributes must be represented by separate relations, and composite attributes are represented only by their simple component attributes in the basic relational model. NULLS are used to represent the values of attributes that may be unknown or may not apply to tuple. For example, some student tuples have null in their office phones because they do not have an office. In this case, the meaning behind NULL is not applicable. If a student has a NULL for home phone, it means either he/she does not have a home phone or he/she has one but we do not know it, in this case the meaning of NULL is ‘Unknown’."
+ },
+ {
+  "t": "h1",
+  "x": "Relational Model Constraints"
+ },
+ {
+  "t": "p",
+  "x": "In a relational database, there will be many relations, and the tuples in those relations are related in various ways. There are many restrictions or constraints on the actual values in a database state. Constraints on database can generally be divided into three main categories as follows: 1. Constraints that are inherent in the data model, we call them inherent model-based constraints. 2. Constraints that can be directly expressed in the schemes of the data model, by specifying them in the DDL (Data Definition Language). We call these schema-based constraints. 3. Constraints that cannot be directly expressed in the schemas of the data model, and they must be expressed and enforced by the application programs are application-based constraints."
+ },
+ {
+  "t": "h2",
+  "x": "Inherent Constraint"
+ },
+ {
+  "t": "p",
+  "x": "The constraint that a relation cannot have duplicate tuples is an inherent constraint. Another important category of constraints is data dependencies, which include ‘functional dependencies’ and ‘multivalued dependencies’. They are used mainly for testing the ‘goodness’ of the design of a relational database and are utilized in a process called normalization."
+ },
+ {
+  "t": "h2",
+  "x": "Schema-based Constraints"
+ },
+ {
+  "t": "p",
+  "x": "1. Domain constraints 2. Key constraints 3. Constraints on nulls (Not null constraint) 4. Entity integrity constraints 5. Referential integrity constraints 6. Unique constraint 7. Check constraint"
+ },
+ {
+  "t": "h2",
+  "x": "Domain constraints"
+ },
+ {
+  "t": "p",
+  "x": "Domain constraints specify that within each tuple, the value of each attribute ‘X’ must be an atomic value from the domain dom(X). The data types associated with domains include standard numeric data types for integers 1. Short integer 2. Integer 3. Long integer 4. Real numbers"
+ },
+ {
+  "t": "li",
+  "x": "Double-precision float"
+ },
+ {
+  "t": "p",
+  "x": "5. Characters 6. Booleans 7. Fixed-length strings 8. Variable-length strings 9. Date, time, time stamp 10. Money data types"
+ },
+ {
+  "t": "h2",
+  "x": "Key constraints"
+ },
+ {
+  "t": "p",
+  "x": "A relation is a set of tuples. All elements of a set are distinct; hence, all tuples in a relation must also be distinct. This means no two tuples can have the same combination of values for all their attributes. 1. There are other subsets of attributes of a relation schema R with the property that no two tuples in any relation state ‘r’ of R should have the same combination of values of these attributes. Suppose that we denote one subset of attributes by ‘SK’, then for two distinct tuples t1 and t2 in a relation state ‘r’ of R, we have the following constraint: t1[SK] = t2[SK] 2. Any such set of attributes SK is called a super key of the relation schema R. SK specifies a uniqueness constraint that no two distinct tuples in any state r or R can have the same value for SK. 3. Every relation has at least one default super key, the set of all its attributes. A key, ‘K’ of a relation schema R is a super key of R with the additional property that removing any attributes ‘X’ from K leaves a set of attributes K’ that is not a super key of R any more. A key satisfies the following two constraints: 1. Two distinct tuples in any state of the relation cannot have identical values for all the attributes in the key. 2. A super key from which we cannot remove any attributes and still have the uniqueness constraints mentioned in above condition is known as a minimal super key. \u0007 The first condition applies to both keys and super keys. The second condition is required only for keys. Example: Consider the employee relation in Page no. 9. The attribute set {EId} is a key of employee because no two employee tuples can have the same value for EId. Any set of attributes that include EId will form a super key. 1. {EId, Homephone, Name} 2. {EId, Age, Salary} 3. {Name, EId, Address} However, the super key {EId, Name, Age} is not a key of EMPLOYEE, because removing Name or age or both from the set leaves us with a super key. Any super key formed from a single attributes is also a key. A key with multiple attributes must require all its attributes to have the uniqueness property. A relation schema may have more than one key. In that case, each of the keys is called a candidate key. Example: Employee relation has three candidate keys. {Name, EId, Homephone} One of the candidate keys is chosen as primary key of the relation. Another constraint on attributes specifies whether null values are permitted in tuples or not. If we want some tuples to have a valid (or) non-null value, we need to use NOT NULL constraint on that attribute."
+ },
+ {
+  "t": "h2",
+  "x": "Referential and entity integrity constraint"
+ },
+ {
+  "t": "p",
+  "x": "The entity Integrity constraint states that no primary key value can be null. If we have NULL values in the primary key column, we cannot identify some tuples in a relation. 1. Key constraints and entity Integrity constraints are specified on individual relations 2. Referential integrity constraint is specified between relations and used to maintain the consistency among tuples in the two relations. 3. Referential Integrity constraints states that a tuple in one relation that refers to another relation must refer to an existing tuple in that relation. 4. To understand the concept of Referential Integrity, first we have to understand the concept of FOREIGN KEY. 5. Suppose we have two relations R1 and R2. A set of attributes FK in relation schema R1 is a foreign key of R1 that references relation R2 if it satisfies the following two rules:"
+ },
+ {
+  "t": "li",
+  "x": "The attributes in FK have the same domains as the primary key attributes PK of R2, FK will have to refer to PK."
+ },
+ {
+  "t": "li",
+  "x": "A value of FK in a tuple t1 of the current state r1(R1) either occurs as a value of PK for some tuple t2 in the current state r2(R2) or is null. We have t1[FK] = t2[PK], and we say that the tuple t1 references to the tuple t2. In this definition, R1 is called the referencing relation and R2 is the referenced relation."
+ },
+ {
+  "t": "p",
+  "x": "6. A foreign key can refer to its own relation. We can diagrammatically display referential integrity constraints by drawing a directed Arc from each foreign key to the relation it references. The arrow head may point to the primary key of the referenced relation."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "DNO SALARY GENDER DOB EID LNAME FNAME EMPLOYEE DMANAGER DLOCATION DNAME DNO DEPARTMENT RELATIONSHIP DOB GENDER DEPENDENT-NAME EID DEPENDENT HOURS PROJ-NO EID WORKS 7. Referential integrity rule: The database must not contain any unmatched foreign key values. If ‘B’ References ‘A’, then A must exist."
+ },
+ {
+  "t": "h2",
+  "x": "NOT NULL constraint"
+ },
+ {
+  "t": "p",
+  "x": "1. NOT NULL constraint restricts a column from having a NULL value. NOT NULL constraint can be applied to any column in a table. 2. We cannot give NULL values under that column 3. NOT NULL Constraint enforces a column to contain a proper value. 4. This constraint cannot be defined at table level."
+ },
+ {
+  "t": "h2",
+  "x": "Example: CREATE TABLE"
+ },
+ {
+  "t": "p",
+  "x": "student(RNo:INT Name:varchar(70) NOT NULL age:INT) Suppose a row is inserted into the following table, Insert into student values <11, NULL, 20> In the schema, we enforced NOT NULL constraint on Name column, means Name cannot have NULL value, when the above insert command is executed, the system gives, NOT NULL constraint violation."
+ },
+ {
+  "t": "h2",
+  "x": "UNIQUE constraint"
+ },
+ {
+  "t": "p",
+  "x": "The column on which UNIQUE constraint is enforced should not have any duplicate values. 1. UNIQUE constraint can be enforced on any column except the primary key column. 2. By default primary key column will not accept any duplicate values that are handled by key constraint. 3. UNIQUE constraint can be applied at column level or table level."
+ },
+ {
+  "t": "h2",
+  "x": "Example: CREATE TABLE"
+ },
+ {
+  "t": "p",
+  "x": "student (RNo:INT Name:varchar(60) Grade:CHAR(1)) Assume that the table contains following tuples Student R no."
+ },
+ {
+  "t": "h2",
+  "x": "Grade"
+ },
+ {
+  "t": "p",
+  "x": "Sita Anu Bala B A A Suppose the following tuple is inserted into the student table. 1. Insert into student values <14, ‘Anu’, ‘B’> 2. UNIQUE constraint is enforced on Name column, in the student table we have ‘Anu’, and again the new tuple contains name ‘Anu’, this Insert command violates the UNIQUE constraint."
+ },
+ {
+  "t": "h2",
+  "x": "CHECK constraint"
+ },
+ {
+  "t": "p",
+  "x": "This constraint is used to restrict a value of a column between a range. 1. When a value is inserted into particular column, before storing that, a check will be performed to see whether the values lie within the specified range. 2. If the value entered is out of range, it will not accept and violation happens. 3. It is like checking a condition before saving data into a column."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Create table student (RNo:INT CHECK"
+ },
+ {
+  "t": "p",
+  "x": "(Rno>0) Name:varchar(60) Dept:varchar(4)) Suppose the following tuple is inserted into student table. 1. Insert into student values <-4, ‘Bhanu’, ‘CS’> 2. CHECK constraint is enforced on RNo column, the RNo should be greater than ‘0’, but ‘-4’ is given. 3. CHECK constraint is violated. Creating table from a table: A view is called a derived table (or) virtual table, because the data stored in views is taken from already existing tables. A view can also be defined as a logical subset of data from one or more tables. Syntax: CREATE view view-name As SELECT column-names FROM table-name WHERE condition Example: Consider the following table “sales”. Sales"
+ },
+ {
+  "t": "h2",
+  "x": "Customer"
+ },
+ {
+  "t": "p",
+  "x": "Order 3 Order 4 Order 5 Order 6 Order 7 Order 8 Ana Adam Brat John Ana Ana Query to create a view: CREATE view sales-view As SELECT * FROM Sales WHERE customer = ‘Ana’ 1. The data fetched from select statement will be stored in an object called ‘sales-view’. 2. To display the contents stored in view, execute the following statement. SELECT * FROM Sales-view Removal of specific rows: Consider the following SQL query: Delete * FROM Sales The above query will delete all the tuples from sales. To remove specific rows, we have to specify the condition in WHERE clause. Consider the table “sales” given in the above example. Remove the rows from sales table whose previous balance is 3000. SQL query: Delete * FROM Sales WHERE Previous-balance = 3000 Output:"
+ },
+ {
+  "t": "h2",
+  "x": "Customer"
+ },
+ {
+  "t": "p",
+  "x": "Order 4 Order 6 Order 7 Order 8 Adam John Ana Ana Referential actions: Referential Integrity can be violated if the value of any foreign key refers to a tuple that does not exist in the referenced relation. When certain violations occur, we need to perform some alternate action. Those actions are as follows: 1. ON DELETE CASCADE 2. ON UPDATE CASCADE 3. ON DELETE SET NULL 4. ON DELETE SET DEFAULT"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "SN1 Suma Hyderabad SN2 Hari Chennai SN3 Anu Hyderabad SN4 Mahesh Bombay SN5 Kamal Delhi PARTS:"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "PN1 X Red 13.0 Chennai PN2 Y Green 13.5 Bombay PN3 X Yellow 13.2 Hyderabad PN4 Y Green 14.1 Calcutta PN5 Z Red 14.3 Hyderabad PN6 Z Blue 14.2 Bombay PROJECT:"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "PJ1 Display Chennai PJ2 OCR Bombay PJ3 RAID Chennai PJ4 SORTER Hyderabad PJ5 EDS Chennai PJ6 Tape Bombay PJ7 Console Hyderabad SHIPMENTS:"
+ },
+ {
+  "t": "h2",
+  "x": "Quantity"
+ },
+ {
+  "t": "p",
+  "x": "SN1 PN1 PJ1 SN1 PN1 PJ4 SN2 PN3 PJ1 SN2 PN3 PJ2 SN2 PN3 PJ3 SN2 PN3 PJ4 SN2 PN3 PJ5 SN2 PN3 PJ6 SN2 PN3 PJ7 SN2 PN5 PJ2 SN3 PN3 PJ1 SN3 PN4 PJ2 SN4 PN6 PJ3 SN4 PN6 PJ7 SN5 PN2 PJ2 SN5 PN2 PJ4 SN5 PN5 PJ5 SN5 PN5 PJ7 SN5 PN6 PJ2 SN5 PN1 PJ4 SN5 PN3 PJ4 SN5 PN4 PJ4 SN5 PN5 PJ4 SN5 PN6 PJ4 Consider the following statement: DELETE FROM SUPPLIER WHERE SUPPLIER - NUMBER = ‘SN1’ It deletes the supplier tuple for supplier ‘SN1’. The database has some other tables which have ‘SN1’ tuple (Shipments table). The application does not delete those suppliers, then it will find a violation, and an exception will be raised. An alternate approach is possible, one that might be preferable in some cases, and that is for the system to perform an appropriate ‘compensating action’ that will guarantee that the overall result does still satisfy the constraint. In the example, the compensating action would be for the system to delete the shipments for supplier SN1 “automatically”. We can achieve this effect by extending the foreign key as indicated below: CREATE TABLE SHIPMENT{.....}....... FOREIGN KEY {SUPPLIER - NUMBER} REFERENCES SUPPLIER ON DELETE CASCADE The specification ON DELETE CASCADE defines a delete rule for this particular foreign key, and the specification CASCADE is the referential action for that delete rule. The meaning of these specifications is that a DELETE operation on the suppliers relvar will ‘Cascade” to delete matching tuples (if any) in the shipments relvar as well. Same procedure is applied for all the referential actions."
+ },
+ {
+  "t": "h1",
+  "x": "Triggers"
+ },
+ {
+  "t": "p",
+  "x": "Triggers are precompiled procedures that are stored along with the database and invoked automatically whenever some specified event occurs. Suppose we have a view called HYDERABAD - SUPPLIER defined as follows: CREATE VIEW HYDERABAD-SUPPLIER AS SELECT SUPPLIER - NUMBER, SUPPLIERNAME, STATUS FROM SUPPLIER WHERE CITY = ‘HYDERABAD’, Normally, if the user tries to insert a row into this view, SQL will actually insert a row into the underlying base table SUPPLIERS with CITY value whatever the default is for the CITY column. Assuming that default is not Hyderabad, the net effect is that the new row will not appear in the view; therefore, let us create a triggered procedure as follows: CREATE TRIGGER HYDERABAD - SUPPLIER - INSERT INSTEAD OF INSERT ON HYDERABAD - SUPPLIER REFERENCING NEW ROW AS R FOR EACH ROW INSERT INTO SUPPLIERS (SUPPLIER - NUMBER, SUPPLIER - NAME, STATUS, CITY) VALUES (R. SUPPLIER - NUMBER, R. SUPPLIER - NAME, R. STATUS, ‘HYDERABAD’); Inserting a row into the view will now cause a row to be inserted into the underlying base table with CITY value equal to Hyderabad inserted of the default value. In general, CREATE TRIGGER specifies, among other things, an event, a condition, and an action. The event is an operation on the database (“INSERT ON HYDERABAD - SUPPLIER” in the example) 1. The “condition” is a Boolean expression that has to evaluate to TRUE in order for the action to be executed. 2. The ‘action’ is the triggered procedure (“INSERT INTO SUPPLIERS . . .) 3. The event and condition together are sometimes called the triggering event. The combination of all three (event, condition, and action) is usually called a trigger. 4. Possible events include INSERT, DELETE, UPDATE, reaching end-of-transaction (COMMIT) reaching a specified time of day, exceeding a specified elapsed time, violating a specified constraint, etc. 5. A database that has associated triggers is sometimes called an active database."
+ },
+ {
+  "t": "h2",
+  "x": "Base Table Constraints"
+ },
+ {
+  "t": "p",
+  "x": "SQL-base table constraints are specified on either CERATE TABLE or ALTER TABLE. Each such constraint is a candidate key constraint, a foreign key constraint, or a CHECK constraint. Candidate keys: An SQL candidate key definition takes one of the following two forms: PRIMARY KEY (< column name comma list>) UNIQUE (< column name comma list>) The following example illustrates base table constraints of all three kinds: CREATE TABLE SHIPMENTS (SUPPLIER-NUMBER. SUPPLIER-NUMBER NOT NULL, PART - NUMBER PART-NUMBER NOT NULL, QUANTITY NOT NULL PRIMARY KEY (SUPPLIER - NUMBER, PART NUMBER) FOREIGN KEY (SUPPLIER-NUMBER) REFERENCES SUPPLIERS ON DELETE CASCADE ON UPDATE CASCADE, FOREIGN KEY (PART-NUMBER) REFERENCES PARTS ON DELETE CASCADE ON UPDATE CASCADE CHECK(QUANTITY ≤ QUANTITY (0) AND QUANTITY ≤ QUANTITY (1000)); A check constraint of the form CHECK (< column name > IS NOT NULL) can be replaced by a simple NOT NULL specification in the definition of the column."
+ },
+ {
+  "t": "h1",
+  "x": "2. Structured Query Language"
+ },
+ {
+  "t": "p",
+  "x": "Relational algebra Select operator Project operator Set operators Union compatible relations Union operation Aggregate operators Correlated nested queries Relational calculus Tuple relational calculus Tuple relational calculus DML Super key SQL commands"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "Relational Algebra"
+ },
+ {
+  "t": "p",
+  "x": "1. A set of operators (unary or binary) that take relation instances as arguments and return new relations. 2. Gives a procedural method of specifying a retrieval query 3. Forms the core component of a relational query engine 4. SQL queries are internally translated into RA expressions 5. Provides a framework for query optimization SQL query Relational algebra expression Query expression plan Executable code"
+ },
+ {
+  "t": "h2",
+  "x": "Relational Operations"
+ },
+ {
+  "t": "p",
+  "x": "A collection of simple ‘low-level’ operations used to manipulate relations. 1. It provides a procedural way to query a database. 2. Input is one (or) more relations. 3. Output is one relation. Relational operations Unary operators Binary operators 1. Select 1. Union 2. Project 2. Intersection 3. Difference 4. Join 5. Divide 6. Cartesian product"
+ },
+ {
+  "t": "h2",
+  "x": "Select Operator (s)"
+ },
+ {
+  "t": "p",
+  "x": "Select operator is an unary operator. It can be used to select those tuples of a relation that satisfy a given condition. Notation: sθ (r) s : Select operator(read as sigma) θ: Selection condition r : Relation name Result is a relation with the same scheme as r consisting of the tuples in r that satisfy condition θ Syntax: scondition (relation)"
+ },
+ {
+  "t": "h2",
+  "x": "Hobby"
+ },
+ {
+  "t": "p",
+  "x": "John 12, SP Road Stamp collection John 12, SP Road Coin collection Mary 16, SP Road Painting Brat 18, GP Road Stamp collection In the output table, John name has appeared once, project operation eliminated duplicates. 2. pName, address (person) Output:"
+ },
+ {
+  "t": "h2",
+  "x": "Address"
+ },
+ {
+  "t": "p",
+  "x": "John 12, SP Road Mary 16, SP Road Bart 18,GP Road Expressions: pid,name (shobby = ‘stamp collection’ OR Hobby= ‘coin collection’ (person)) Output: Id"
+ },
+ {
+  "t": "h2",
+  "x": "Name"
+ },
+ {
+  "t": "p",
+  "x": "John Bart The above given relational algebra expression gives Ids, names of a person whose hobby is either stamp collection (or) coin collection."
+ },
+ {
+  "t": "h2",
+  "x": "Set Operators"
+ },
+ {
+  "t": "p",
+  "x": "Union (∪), Intersection (∩), set difference (–) are called set operators. Result of combining two relations with a set operator is a relation ⇒ all its elements must be tuples having same structure. Hence scope of set operations is limited to union compatible relations."
+ },
+ {
+  "t": "h2",
+  "x": "Union Compatible Relations"
+ },
+ {
+  "t": "p",
+  "x": "Two relations are union compatible if 1. Both have same number of columns 2. Names of attributes are same 3. Corresponding fields have same type 4. Attributes with the same name in both relations have same domain. 5. Union compatible relations can be combined using Union, Intersection, and set difference."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Consider the given tables. Person (SSN, Name, Address, Hobby) Professor (Id, Name, office, phone) person and professor tables are not union compatible."
+ },
+ {
+  "t": "h2",
+  "x": "Union"
+ },
+ {
+  "t": "p",
+  "x": "The result of union will be a set consisting of all tuples appearing in either or both of the given relations. Relations cannot contain a mixture of different kinds of tuples, they must be ‘tuple – homogeneous’. The union in the relational algebra is not the completely general mathematical union; rather, it is a special kind of union, in which we require the two input relations to be of the same type. σ Hobby = ‘stamp. Collection’(person) The above given statement displays all tuples (or) records with hobby ‘stamp collection’. Output: Id"
+ },
+ {
+  "t": "h2",
+  "x": "Hobby"
+ },
+ {
+  "t": "p",
+  "x": "John 12, SP Road Stamp collection Brat 18, GP Road Stamp collection Selection condition can use following operators: ⟨eq⟩ 1. <attribute> operator <attribute> 2. <attribute> operator <constant> Example: Salary ≥ 1000 3. <Condition> AND/OR <condition>"
+ },
+ {
+  "t": "h2",
+  "x": "Example: (Experience > 3) AND (Age < 58)"
+ },
+ {
+  "t": "p",
+  "x": "4. NOT <condition> Selection operation examples: 1. σId > 112 OR Hobby = ‘paint’ (person) It displays the tuples whose ID > 112 or Hobby is paint 2. σId > 112 AND Id < 115 (person) It displays tuples whose ID is greater than 112 and less than 115 3. σNOT (hobby = ‘paint’) (person) It displays tuples whose hobby is not paint 4. σHobby ≠ ‘paint’ (person) It displays tuples whose hobby is not paint, displays all tuples other than hobby paint. Selection operator: Produces table containing subset of rows of argument table which satisfies condition."
+ },
+ {
+  "t": "h2",
+  "x": "Project Operator (p)"
+ },
+ {
+  "t": "p",
+  "x": "The project operator is unary operator. It can be used to keep only the required attributes of a relation instance and throw away others. Notation: \u0007pA2, A2, … Ak(r) Where A1, A2, … AK is a list L of desired attributes in the scheme of r. Result = \u0007{ ( V1, V2, … VK)/Vi ∈ DOM (Ai), 1< i < k and there is some tuple t in r, such that t.A1 = v1, t.A2 = v2, … t.AK = VK} pAttribute List (Relation) Take table 2.1 as reference. 1. pName (person) Output:"
+ },
+ {
+  "t": "h2",
+  "x": "Difference"
+ },
+ {
+  "t": "p",
+  "x": "Like union and intersection, the relational difference operator also requires its operands to be of the same type. Given are two relations ‘a’ and ‘b’ of the same type, Then, the difference between those two relations, ‘a’ MINUS ‘b’ (in that order), is a relation of the same type, with body consisting of all types t such that t appears in a and not b. 1. MINUS has a directionality to it, just as subtraction does in ordinary arithmetic (e.g., ‘6 – 3’ and ‘3 – 6’ are not the same thing) 2. Redundant duplicate rows are always eliminated from the result of UNION, INTERSECTION, EXCEPT operations. 3. SQL also provides the qualified variants UNION ALL, INTERSECT ALL and EXCEPT ALL, where duplicates are retained Set difference operation returns the tuples in the first table which are not matching with the tuples of other table."
+ },
+ {
+  "t": "h2",
+  "x": "Percentage"
+ },
+ {
+  "t": "p",
+  "x": "Suresh 65% Pinky 75% * R – S ≠ S –R (both are different)"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "SN1 SN3 MAHESH SURESH HYDERABAD HYDERABAD B"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "SN3 SN4 SURESH RAMESH HYDERABAD CHENNAI UNION (A ∪ B)"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "SN1 SN3 SN4 MAHESH SURESH RAMESH HYDERABAD HYDERABAD CHENNAI INTERSECTION (A ∩ B)"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "SN3 SURESH HYDERABAD R – S = S – R = The general definition of relational union operator: Given are two relations ‘a’ and ‘b’ of the same type. The union of those two relations, a union b, is a relation of the same type, with body consisting of all tuples ‘t’ such that ‘t’ appears in a or b or both. * Union operation eliminates duplicates. Here is a different but equivalent definition: Given are two relations ‘a’ and ‘b’ of the same type. The union of those two relations, a union b, is a relation of the same type, with body consisting of all tuples t such that t is equal to (i.e., is a duplicate of) some tuple in a or b or both."
+ },
+ {
+  "t": "h2",
+  "x": "Union Operation (U)"
+ },
+ {
+  "t": "p",
+  "x": "When union operation is applied on two tables it gives all the tuples in both without Repetition."
+ },
+ {
+  "t": "h2",
+  "x": "Percentage"
+ },
+ {
+  "t": "p",
+  "x": "Suresh 65% Bindu 55% Pinky 75% Sita 35% Roll no."
+ },
+ {
+  "t": "h2",
+  "x": "Percentage"
+ },
+ {
+  "t": "p",
+  "x": "Arun 45% Bindu 55% Sita 35% Pinky 75% Sita 35%"
+ },
+ {
+  "t": "h2",
+  "x": "Intersection"
+ },
+ {
+  "t": "p",
+  "x": "Like union, Intersection operator requires its operands to be of the same type. Given are two relations a and b of the same type, then, the intersection of those two relations, ‘a’ INTERSECT ‘b’, is a relation of the same type, with body consisting of all tuples t such that t appears in both ‘a’ and ‘b’. Intersection operation returns tuples which are common to both tables"
+ },
+ {
+  "t": "h2",
+  "x": "Cartesian Product"
+ },
+ {
+  "t": "p",
+  "x": "The Cartesian product of two sets is the set of all ordered pairs such that in each pair, the first element comes from the first set and the second element comes from second set. The result consists of all the attributes from both of the two input headings. We define the Cartesian product of two relations ‘a’ and ‘b’, as ‘a’ times ‘b’, where a and b have no common attribute names (If we need to construct the Cartesian product of two relations that do have any such common attribute names, therefore, we must use the RENAME operator first to rename attributes appropriately). The Cartesian product operation is also known as CROSS PRODUCT. This is also a binary set operation, but the relations on which it is applied need not to be union compatible. This operation is used to combine tuples from two relations in a combinational fashion."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "A B X1 X2 X3 X4 C D Y1 Y2 Y3 Y4 A B C D X1 X2 Y1 Y2 X1 X2 Y3 Y4 X3 X4 Y1 Y2 X3 X4 Y3 Y4"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Transcript (Stuid, Coursecode, Semester, Grade)"
+ },
+ {
+  "t": "p",
+  "x": "Teaching (ProfId, coursecode, semester) pstuId,coursecode (Transcript) × pprofId,coursecode (Teaching) The above expression returns"
+ },
+ {
+  "t": "h2",
+  "x": "Aggregate Operators"
+ },
+ {
+  "t": "p",
+  "x": "SQL Supports the usual aggregate operators COUNT, SUM, AVG, MAX, MIN, EVERY and ANY, but there are a few SQL-specific points. 1. The argument can optionally be preceded by the keyword DISTINCT, for example SUM (DISTINCT column -name) to indicate that duplicates are to be eliminated before the aggregation is done. For MAX, MIN, EVERY and ANY, however, DISTINCT has no effect and should not be specified. 2. The operator COUNT (*), for this DISTINCT is not allowed, and is provided to count all rows in a table without any duplicate elimination. 3. Any NULLS in the argument column are eliminated before the aggregation is done, regardless of whether DISTINCT is specified, except in the case of COUNT (*), where nulls behave as if they were values. 4. After NULLS if any have been eliminated, if what is left is an empty set, COUNT returns zero. The other operators return NULL. AVG, MIN, MAX, SUM, COUNT These functions operate on the multiset of values of column of a relation and returns a value. 1. Find the average account balance at the Perryridge branch."
+ },
+ {
+  "t": "h2",
+  "x": "Solution: SELECT AVG (balance) FROM account"
+ },
+ {
+  "t": "p",
+  "x": "WHERE branch.name = ‘perryridge’ 2. Find the number of tuples in customer relation."
+ },
+ {
+  "t": "h2",
+  "x": "Solution: SELECT count (*) FROM customer"
+ },
+ {
+  "t": "p",
+  "x": "3. Find the number of depositors for each branch."
+ },
+ {
+  "t": "h2",
+  "x": "Solution: SELECT"
+ },
+ {
+  "t": "p",
+  "x": "branch.name, COUNT (distinct customer-name) FROM depositor, account WHERE depositor. account-no = account account-no GROUPBY branch-name."
+ },
+ {
+  "t": "h2",
+  "x": "Nested Queries"
+ },
+ {
+  "t": "p",
+  "x": "Some queries require that existing values in the database be fetched and then used in a comparison condition. Such queries can be conveniently formulated by using nested queries, which are complete SELECT – FROM –WHERE blocks within the WHERE clause of another query. The other query is called the outer query."
+ },
+ {
+  "t": "h2",
+  "x": "In-Comparison Operator"
+ },
+ {
+  "t": "p",
+  "x": "The comparison operator IN, which compares a value ‘v’ with a set of values ‘V’ and evaluates to TRUE if ‘v’ is one of the elements in V. R S R × S = 1. In co-related nested queries, the inner query depends on the outer query for its value. 2. Sub-query is executed repeatedly, once for each row that is selected by the outer query. 3. A correlated subquery is a sub query that contains a reference to a table that also appears in the outer query."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the following correlated nested query:"
+ },
+ {
+  "t": "p",
+  "x": "SELECT * FROM table1 WHERE col1 ≥ ALL \u0007(SELECT col1 FROM table2 WHERE table2. col2 = table1. col2) 1. The subquery contains reference to a column of table1, even though the sub-queries FROM clause does not mention a table table1 2. SQL has to check outside the sub-query and find Table 1 in the outer query 3. Suppose that Table 1 contains a row where col1 = 3 and col2 = 4 and Table 2 contains a row where col1 = 5 and col2 = 4 4. The expression WHERE col1 ≥ All (SELECT col1 FROM table2 3 ≥ 5 (false) (WHERE condition TRUE) Table1. col2 = table2. col2 4 = 4 So the expression as a whole is FALSE. 5. It is evaluated from outside to inside"
+ },
+ {
+  "t": "h2",
+  "x": "Relational Calculus"
+ },
+ {
+  "t": "p",
+  "x": "Relational calculus can define the information to be retrieved 1. In this, there is no specific series of operations. 2. Relational algebra defines the sequence of operations. 3. Relational calculus is closer to how users would formulate queries, in terms of information requirements, rather than in terms of operations. Relational Calculus Tuple Relational calculus (variables range over tuples) Domain Relational Calculus (variables range over domain attributes) 4. Relational calculus is based on predicate logic, gives the usual quantifiers to construct complex queries."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Select distinct PNO from project where PNO"
+ },
+ {
+  "t": "p",
+  "x": "IN (select PNO from project, department, employee where P. DNO = D. DNO AND MANAGER. NO = ENO AND LNAME = ‘RAMYA’) The first query selects. The project numbers that have a ‘Ramya’ involved as manager, while the second selects the project numbers of projects that have a ‘Ramya’ involved as worker. If a nested returns a single value, in such cases, it is permissible to use = instead of IN for the comparison operator. In general, the nested query will return a table, Which is a set of multiset of tuples. * \u0007SQL allows the use of tuples of values in comparisons by placing them within parentheses."
+ },
+ {
+  "t": "h2",
+  "x": "Example: SELECT DISTINCT ENO FROM WORKS -"
+ },
+ {
+  "t": "p",
+  "x": "ON WHERE (PNO, HOURS) IN (SELECT PNO, HOURS FROM WORKS - ON WHERE ENO = 929). This query will select the employee numbers of all employees who work on the same (PROJECT, HOURS) combination on some project a particular employee whose ENO = ‘929’ works on. In this example, the IN operator compares the subtuple of values in parentheses (PNO, HOURS) for each tuple in works on with the set of unioncompatible tuples produced by the nested query. Correlated nested queries: Nested queries can be evaluated by executing the sub query (or) Inner query once and substituting the resulting value (or) values into the WHERE clause of the outer query. Example: ∃ × ((X ∈ Boats) ∧ X.color) = ‘Red’) There exists a tuple X in the boats relation whose color is red. (or) ∃ × ∈ Boats (X.color = ‘Red’)"
+ },
+ {
+  "t": "h2",
+  "x": "Examples:"
+ },
+ {
+  "t": "p",
+  "x": "1. Find all sailors with rating above 8. Sid"
+ },
+ {
+  "t": "h2",
+  "x": "Rating"
+ },
+ {
+  "t": "p",
+  "x": "Age Yuppy Sailors: Rubber grove rusty Solution: {s|s ∈ sailors ∧ s. rating > 8}"
+ },
+ {
+  "t": "h2",
+  "x": "Rating"
+ },
+ {
+  "t": "p",
+  "x": "Age R = yuppy rusty 2. Find names and ages of sailors with rating > 8. Solution: {R | ∃ S ∈ sailors (s.rating > 8 ∧ R.sname = s.name ∧ R.age = s.age)"
+ },
+ {
+  "t": "h2",
+  "x": "Examples:"
+ },
+ {
+  "t": "p",
+  "x": "3. Find sailors rated > 7 who have reserved boat = 103. Solution: {S | S ∈ sailors ∧ s.rating > 7 ∧ ∃ R (R ∈ reserves ∧ R.sid = s.sid ∧ R.bid = 103)} 4. Find sailors rated > 7 who have reserved a red boat. Solution: {S | S ∈ sailors ∧ s.rating > 7 ∧ ∃ R (R ∈ reserves ∧ R.sid = s.sid ∧∃B( Boats ∧ B.bid = R.bid ∧ B.color = ‘Red’))}"
+ },
+ {
+  "t": "h2",
+  "x": "Examples"
+ },
+ {
+  "t": "p",
+  "x": "1. Find sailors who have reserved all boats. Solution: {S | S ∈ sailors ∧ ∀ B ∈ boats (∃ R ∈ reserves (s.sid = R.sid ∧ B.bid = R.bid))}"
+ },
+ {
+  "t": "h2",
+  "x": "Domain Relational Calculus"
+ },
+ {
+  "t": "p",
+  "x": "1. Tuple relational and domain relational are semantically similar. 2. In TRC, tuples share an equal status as variables, and field referencing can be used to select tuple parts."
+ },
+ {
+  "t": "h2",
+  "x": "S alary"
+ },
+ {
+  "t": "p",
+  "x": "John Brat Mary Adam Smith James Frank Jennifer Borg Joyce Query 1: Display the employees whose salary is above 2000. {E | ∃ E ∈ Employee(E.salary > 2000)}"
+ },
+ {
+  "t": "h2",
+  "x": "Salary"
+ },
+ {
+  "t": "p",
+  "x": "John Mary James Jennifer Query 2: Display the employee Ids whose salary is above 1000 and below 3000. {P | ∃ E ∈ Employee ((E.salary > 1000 ∧ E.salary < 3000) ∧ P.EId = E.EId)} P is a table, in which EIds are stored, from tuples which satisfies the given condition."
+ },
+ {
+  "t": "h1",
+  "x": "Tuple Relational Calculus"
+ },
+ {
+  "t": "p",
+  "x": "A non-procedural language, where each query is of the form {t| p(t)}. It is a set of all tuples t such that predicate p is true for t, t is a tuple variable, t [A] denotes the value of tuple ‘t’ on attribute A. {T| p (T)} T is a tuple and P (T) denotes a formula in which tuple variable T appears. 1. ∀ × (P(X)) ∀ is called the universal or ‘for all’ quantifier because every tuple in ‘the universe of’ tuples must make F true to make the quantified formula true. Only true if p(X) is true for every X in the universe. Example: ∀ × (x.color = ‘Red’) means everything that exists is red. Example: ∀ × ((x ∈ Boats) ⇒ (X. color = ‘Red’)) ‘⇒’ is a logical implication. a ⇒ b means that if a is true, b must be true (or) ∃ × ∈ Boats (X.color = ‘Red’) For every ‘x’ in the boats relation, the color must be red. 2. ∃ × (P(X)) ∃ is called the existential or ‘there exists’ quantifier because any tuple that exists in ‘the universe of’ tuples may take F true, to make the quantified formula true."
+ },
+ {
+  "t": "h2",
+  "x": "Features"
+ },
+ {
+  "t": "p",
+  "x": "1. Strong data protection 2. Robust transactional support 3. High performance 4. High availability 5. Security and flexibility to run anything 6. Easy to manage 7. User friendly"
+ },
+ {
+  "t": "h2",
+  "x": "General Structure"
+ },
+ {
+  "t": "p",
+  "x": "SELECT ... FROM ... WHERE SQL is divided into two languages 1. DML (data manipulation language) SELECT: \u0007Extracts data from a database table. UPDATE: \u0007Updates data in a database table. DELETE: \u0007Deletes data from a database table. INSERT INTO: Inserts new data into database table. 2. DDL (data definition language) CREATE TABLE - creates a new database table. ALTER TABLE - Alters a database table. DROP TABLE - deletes a database table. CREATE INDEX - Creates an index (search key). DROP INDEX - Deletes an index. RENAME – Changes the name of the table."
+ },
+ {
+  "t": "h2",
+  "x": "Types of keys:"
+ },
+ {
+  "t": "p",
+  "x": "1. Candidate key 2. Primary key 3. Super key 4. Foreign key 5. Composite primary key In relational database, ‘keys’ play a major role. Keys are used to establish and identify relation between relations (or) tables. Keys are used to ensure that each record within a table can be uniquely identified by combining one or more fields (or) column headers within a table. Candidate key: A candidate key is a column or set of columns in a table that contains unique values, with these we can uniquely identify any database record without referring to any other columns data. Each table may have one or more candidate keys, among the available candidate keys, one key is preserved for primary key. A candidate key is a subset of a super key."
+ },
+ {
+  "t": "h2",
+  "x": "Course Id"
+ },
+ {
+  "t": "p",
+  "x": "CS00345 Jim Black C2 CS00254 Carry Norris C1 CS00349 Peter Murray C1 CS00196 John Mc Cloud C3 CS00489 Brat Holland C4 CS00553 Mary Smith C5 3. In DRC formed variables are explicit. 4. DRC query has the following form. {<x1, x2, … xn > /P(<x1, x2, … , xn>} Result included all tuples <x1, x2, … xn > That make the formula p(<x1, x2, … xn>) true. 5. Formula given in DRC is recursively defined. First start with simple atomic formula and expand the formulas by using the logical connectives. 6. A variable that is not bound is free. 7. The variable X1, X2,…, Xn that appear in the left side of ‘/’ must be the only free variable in the formula p(…)."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the employee table given in the above"
+ },
+ {
+  "t": "p",
+  "x": "Example. The use of quantifiers ∃ x and ∀ x in a formula is said to bind x"
+ },
+ {
+  "t": "h2",
+  "x": "Query 1: Display the Employees whose salary is above"
+ },
+ {
+  "t": "p",
+  "x": "2000? {<I, F, L, S> / <I, F, L, S> ∈ Employee ∧ S > 2000} Query 2: Display the EIds of Employees, whose salary is above 1000 and below 3000? {<I> / ∃F, L, S(<I, F, L, S > ∈ Employee ∧(S > 1000 ∧S < 3000))}"
+ },
+ {
+  "t": "h1",
+  "x": "SQL (Structured Query Language)"
+ },
+ {
+  "t": "p",
+  "x": "When a user wants to get some information from a database file, he/she can issue a query. A query is a user-request to retrieve data (or) information with a certain condition. SQL is a query language that allows user to specify the conditions (instead of algorithms)"
+ },
+ {
+  "t": "h2",
+  "x": "Concept of SQL"
+ },
+ {
+  "t": "p",
+  "x": "The user specifies a certain condition. The program will go through all the records in the database file and select those records that satisfy the condition. The result of the query will be stored in the form of a table."
+ },
+ {
+  "t": "h2",
+  "x": "Features of SQL"
+ },
+ {
+  "t": "p",
+  "x": "1. SQL is a language of database. It includes database creation, deletion, fetching rows and modifying rows. 2. SQL is a structured query language for storing, manipulating and retrieving data stored in relational database. 3. It allows users to describe the data. 4. It allows users to create and drop database and tables. 5. It allows users to create view, functions in a database. 6. Allows users to set permissions on tables and views. 7. The standard SQL commands to interact with relational database are CREATE, SELECT, UPDATE, INSERT, DROP and DELETE. 8. The commands can be classified as follows:"
+ },
+ {
+  "t": "li",
+  "x": "Data query language: SELECT – It retrieves particular rows which satisfies the given condition."
+ },
+ {
+  "t": "li",
+  "x": "Data definition language: CREATE, ALTER, DROP."
+ },
+ {
+  "t": "li",
+  "x": "Data manipulation language: INSERT, UPDATE, DELETE"
+ },
+ {
+  "t": "p",
+  "x": "In the above table, we have studentId that uniquely identifies the students in a student table. This would be a candidate key. In the same table, we have student’s first name and last name, which are also candidate keys. 1. If we combine first name and last name then also it becomes a candidate key. 2. Candidate key must (have)"
+ },
+ {
+  "t": "li",
+  "x": "Unique values"
+ },
+ {
+  "t": "li",
+  "x": "No null values"
+ },
+ {
+  "t": "li",
+  "x": "Minimum number of fields to ensure uniqueness."
+ },
+ {
+  "t": "li",
+  "x": "Uniquely identify each record in the table."
+ },
+ {
+  "t": "p",
+  "x": "3. The candidate keys which are not selected for primary key are known as secondary keys or alternative keys. Primary key: A primary key is a candidate key that is most suitable (or) appropriate to become main key of the table. 1. It is a special relational database table column ((or) combination of columns) 2. Primary key main features are"
+ },
+ {
+  "t": "li",
+  "x": "It must contain a unique value for each row of data."
+ },
+ {
+  "t": "li",
+  "x": "It cannot contain null values."
+ },
+ {
+  "t": "h2",
+  "x": "Example: We Can Choose Primary Key As Studentid Which"
+ },
+ {
+  "t": "p",
+  "x": "is mentioned in the table given in above example. Composite primary key: A key that consists of two or more attributes that uniquely identify an entity is called composite key or composite primary key."
+ },
+ {
+  "t": "h2",
+  "x": "Sale-details"
+ },
+ {
+  "t": "p",
+  "x": "C1 O – 2 Sold C1 O – 3 Sold C2 O – 2 Sold C2 O – 3 Sold Composite primary key is {cust-Id, order-Id} Super key: A super key is a combination of attributes that can be uniquely used to identify a database record. A table can have any number of super keys. 1. Candidate key is a special subset of super keys."
+ },
+ {
+  "t": "h2",
+  "x": "Address"
+ },
+ {
+  "t": "p",
+  "x": "DOB Assume that we can guarantee uniqueness only for SSN field, then the following are some of the super keys possible. 1. {Name, SSN, DOB} 2. {ID, Name, SSN} In a set of attributes, there must be at least one key (could be primary key or candidate key) Foreign key: A foreign key is a column or group of columns in a relational database table that provides connectivity between data in two tables. 1. The majority of tables in a relational database system adhere to the concept of foreign key. 2. In complex databases, data must be added across multiple tables, thus the link or connectivity has to be maintained among the tables. 3. The concept of Referential Integrity constraint is derived from Foreign key."
+ },
+ {
+  "t": "h2",
+  "x": "Dname"
+ },
+ {
+  "t": "p",
+  "x": "In the above specified tables, Dept-No is common to both the tables, In Dept table it is called as primary key and in Emp table it is called as foreign key. These two tables are connected with the help of ‘Dept-No’ field 1. For any column acting as a foreign key, a corresponding value should exist in the link (or) connecting table. 2. While inserting data and removing data from the foreign key column, a small incorrect insertion or deletion destroys the relationship between the two tables."
+ },
+ {
+  "t": "h2",
+  "x": "SELECT statement"
+ },
+ {
+  "t": "p",
+  "x": "The most commonly used SQL command is SELECT statement. The SQL SELECT statement is used to query or retrieve data from a table in the database. A query may retrieve information from specified columns or from all of the columns in the table. To create a simple SQL SELECT statement, you must specify the column(s) names and the table name. Syntax: SELECT column-name (s) from table name"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "Hansen Ola SpRoad,-20 Hyd Svendson Tove GPRoad,-18 Secbad Petterson Kari RpRoad,-19 Delhi 1. SELECT lastname FROM persons Output: Lastname Hansen Svendson Petterson BETWEEN - Between an inclusive range. LIKE - Search for a pattern"
+ },
+ {
+  "t": "h2",
+  "x": "Year"
+ },
+ {
+  "t": "p",
+  "x": "Hansen Ola SPRoad, 16 Hyd Svendson Tiva GPRoad, 18 Sec Smith Ole RPRoad, 19 Hyd Petterson Kari SPRoad, 17 Sec 1. SELECT * FROM persons Output: It displays the entire table 2. SELECT * FROM persons WHERE city = ‘Hyd’ Output:"
+ },
+ {
+  "t": "h2",
+  "x": "Year"
+ },
+ {
+  "t": "p",
+  "x": "Hansen Ola SPRoad, 16 Hyd Smith Ole RPRoad, 19 Hyd"
+ },
+ {
+  "t": "h2",
+  "x": "LIKE condition"
+ },
+ {
+  "t": "p",
+  "x": "The LIKE operator is used to list all rows in a table whose column values match a specified pattern. It is useful when you want to search rows to match a specific pattern, or when you do not know the entire value. For this purpose, we use a wildcard character ‘%’. The LIKE condition is used to specify a search for a pattern in a column. A ‘%’ sign can be used to define wildcards (missing letters in the pattern) both before and after the pattern. Syntax: SELECT column FROM table WHERE column LIKE pattern 1. SELECT * FROM persons WHERE Firstname LIKE ‘O%’"
+ },
+ {
+  "t": "h2",
+  "x": "Year"
+ },
+ {
+  "t": "p",
+  "x": "Hansen Ola SPRoad, 16 Hyd Smith Ole RPRoad, 19 Hyd 2. SELECT * FROM persons WHERE Firstname LIKE ‘%a’"
+ },
+ {
+  "t": "h2",
+  "x": "Year"
+ },
+ {
+  "t": "p",
+  "x": "Hansen Ola SPRoad, 16 Hyd Svendson Tiva GPRoad, 18 Sec. bad 2. SELECT lastname, firstname FROM persons Output:"
+ },
+ {
+  "t": "h2",
+  "x": "DISTINCT statement"
+ },
+ {
+  "t": "p",
+  "x": "Returns distinct values. It eliminates duplicate values. Syntax: Select DISTINCT column_name (s) from table-name"
+ },
+ {
+  "t": "h2",
+  "x": "Order.No"
+ },
+ {
+  "t": "p",
+  "x": "IBM DELL WIPRO DELL 1. SELECT company FROM orders Output: Company IBM DELL WIPRO DELL 2. SELECT DISTINCT company FROM orders"
+ },
+ {
+  "t": "h2",
+  "x": "WHERE statement"
+ },
+ {
+  "t": "p",
+  "x": "The WHERE clause is used when you want to retrieve specific information from a table excluding other irrelevant data. By using WHERE clause, we can restrict the data that is retrieved. The condition provided in the WHERE clause filters the rows retrieved from the table and gives only those rows which were expected. WHERE clause can be used along with SELECT, DELETE, UPDATE statements. The WHERE clause is used to specify a selection condition. All conditions are specified in this clause. Syntax: SELECT column FROM table WHERE column operator value. Operates used in where clause: = < > (not equal) (or) ! ⟨eq⟩ 3. SELECT * FROM persons WHERE firstname LIKE ‘%la%’"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: SQL statement returns persons whose firstname"
+ },
+ {
+  "t": "p",
+  "x": "contains ‘la’. The word sequence ‘la’ may come at any place in the word."
+ },
+ {
+  "t": "h2",
+  "x": "String operations"
+ },
+ {
+  "t": "p",
+  "x": "1. ‘%idge%’ matches ‘Rockridge’, ‘Ridgeway’, ‘Perryridge’. 2. ‘_____’ matches a string of three characters. 3. ‘_____%’ matches a string of at least rhree characters."
+ },
+ {
+  "t": "h2",
+  "x": "INSERT INTO statement"
+ },
+ {
+  "t": "p",
+  "x": "This statement is used to insert new rows into a table. While inserting a row, if you are adding values for all the columns of the table you need not specify the column(s) name in the SQL query. But you need to make sure the order of the values is in the same order as the columns in the table. When adding a row, only the characters or data values should be enclosed with single quotes and ensure the data type of the value and the column matches. One can specify the columns for which you want to insert data Syntax: INSERT INTO table-name (column1, column2 . . .) VALUES (value 1, value2 . . .) 1. INSERT INTO persons VALUES (‘Hetland’, ‘Camilla’, ‘HPRoad 20’, ‘Hyd’)"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "Hansen Ola S.P Road 16 Hyd Svesdon Tiva GP Road 18 Secbad Smith Ole RP Road 19 Hyd Petterson Kari SP Road 17 Secbad Hetlan Camilla HPRoad, 20 Hyd 2. Insert data into specified columns INSERT INTO persons (Lastname, Address) VALUES (‘Rasmussen’, ‘street 67’) Output:"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "Hansen Ola SP Road 16 Hyd Svesdon .Tiva GP Road 18 Secbad Smith Ole RP Road 19 Hyd Petterson Kari SP Road 17 Secbad Hetlan Camilla HP Road 20 Hyd Rasmussen Street 67"
+ },
+ {
+  "t": "h2",
+  "x": "UPDATE"
+ },
+ {
+  "t": "p",
+  "x": "The update statement is used to modify the data in a table. Syntax: UPDATE table_name SET Column_name = new_value WHERE column_name = some_value. 1. Add a first name (Nine) to the person whose last name is ‘Rasmussen’? Solution: UPDATE person SET Firstname = ‘Nine’ WHERE Lastname = ‘Rasmussen’ 2. Change the address and add the name of the city as Hyd of a person with last name Rasmussen?"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: UPDATE person"
+ },
+ {
+  "t": "p",
+  "x": "SET Address = ‘street 12’, city = ‘Hyd’ WHERE Lastname = ‘Rasmussen’"
+ },
+ {
+  "t": "h2",
+  "x": "DELETE statement"
+ },
+ {
+  "t": "p",
+  "x": "The DELETE statement is used to delete rows from a table. The WHERE clause in the SQL delete command is optional, and it identifies the rows in the column that gets deleted. If you do not include the WHERE clause, all the rows in the table will be deleted. Syntax: DELETE FROM table_name WHERE column_name = some_value 1. Delete all rows?"
+ },
+ {
+  "t": "h2",
+  "x": "Cartesian product"
+ },
+ {
+  "t": "p",
+  "x": "The Cartesian product of two sets is the set of all ordered pairs of elements such that the first element in each pair belongs to the first set and the second element in each pair belongs to the second set. It is denoted by cross(X). For example, given two sets: S1 = {1, 2, 3} and S2 = {4, 5, 6} The Cartesian product S1 × S2 is the set {(1, 4), (1, 5), (1, 6), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6)}"
+ },
+ {
+  "t": "h2",
+  "x": "Male"
+ },
+ {
+  "t": "p",
+  "x": "Name Job Name Job Komal Clerk Rohit Clerk Ankita Sales Raju Sales Assume that the tables refer to male and female staff, respectively. Now, in order to obtain all possible inter-staff marriages, the cartesian product can be taken. Male-Female"
+ },
+ {
+  "t": "h2",
+  "x": "Male job"
+ },
+ {
+  "t": "p",
+  "x": "Komal Clerk Rohit Clerk Komal Clerk Raju Sales Ankita Sales Rohit Clerk Ankita Sales Raju Sales"
+ },
+ {
+  "t": "h2",
+  "x": "Examples:"
+ },
+ {
+  "t": "p",
+  "x": "1. Find the Cartesian product of borrower and loan?"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: SELECT * FROM borrower, loan"
+ },
+ {
+  "t": "p",
+  "x": "2. Find the name, loan-no, and loan amount of all customers having a loan at the Perryridge branch?"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: SELECT customer_name, borrower. loan_"
+ },
+ {
+  "t": "p",
+  "x": "number, amount FROM borrower, loan WHERE borrower. loan-no = Loan.loan_no AND branch_name = ‘perryridge’ 3. Find all loan numbers for loans made at the perryridge branch with loan amount greater than 1200? Solution: SELECT loan-no FROM loan WHERE branch. name = ‘perryridge’ AND amount > 1200"
+ },
+ {
+  "t": "h2",
+  "x": "Comparison operator"
+ },
+ {
+  "t": "p",
+  "x": "Relation algebra includes six comparison operators ⟨eq⟩ These are proposition forming operators on terms. For example, ⟨eq⟩ asserts that x is not equal to 0. It also includes three logical operators (AND, OR, NOT). These are proposition forming operators on propositions."
+ },
+ {
+  "t": "h2",
+  "x": "Example: x > 0 and x < 8"
+ },
+ {
+  "t": "p",
+  "x": "Comparison results can be combined using the logical connections AND, OR NOT 1. Find the loan-no of those loans with amounts between 90,000 and 1,00,000?"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: SELECT loan-no FORM loan WHERE amount"
+ },
+ {
+  "t": "p",
+  "x": "BETWEEN 90,000 AND 1,00,000. SQL allows renewing relations and attributes using ‘AS’ clause 2. Find the name, loan-no and loan amount of all customers, rename the column name loan-no as loan.id?"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: SELECT customer.name, borrower.loan no AS"
+ },
+ {
+  "t": "p",
+  "x": "loan.id, amount FROM borrower, loan, WHERE borrower. loan-no = loan.loan-no"
+ },
+ {
+  "t": "h2",
+  "x": "Ordering of Tuples"
+ },
+ {
+  "t": "p",
+  "x": "It lists the tuples in alphabetical order. Example: List in alphabetic order, the names of all customers having a loan in Perryridge branch?"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: SELECT customer-name FROM borrower"
+ },
+ {
+  "t": "p",
+  "x": "WHERE branch.name = ‘perryridge’ ORDERBY customername We may specify ‘desc’ for descending order (or) ‘asc’ for ascending order. - ‘asc’ is default. Example: ORDERBY customer-name desc."
+ },
+ {
+  "t": "h2",
+  "x": "Join (⋈)"
+ },
+ {
+  "t": "p",
+  "x": "SQL Join is used to get data from two (or) more tables, which appear as single table after joining. 1. Join is used for combining columns from two or more tables by using values common to both tables. 2. Self Join: A table can also join to itself is known as self join. Types of JOIN 1. INNER JOIN 2. OUTER JOIN (i) LEFT OUTER JOIN (ii) RIGHT OUTER JOIN (iii) FULL OUTER JOIN 1. INNER JOIN (or) EQUI JOIN It is a simple JOIN in which result is based on matching tuple, depending on the equality condition specified in the query. Syntax: SELECT Column-names FROM table name1 INNER JOIN table name 2 WHERE table name 1. Column name = table name 2.column – name."
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "Bangalore Delhi Hyderabad SELECT * FROM Class INNER JOIN Info WHERE Class.SID = Info.SID Result: SID"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "Ana Bala Sudha Banglore Delhi Hyderabad NATURAL JOIN: NATURAL JOIN is a type of INNER JOIN which is based on column having same name and same data type present in two tables on which join is performed. Syntax: SELECT * FROM table-name1 NATURAL JOIN table-name 2"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the tables class and Info, and the"
+ },
+ {
+  "t": "p",
+  "x": "following Query SELECT * FROM class NATURAL JOIN Info Result: SID"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "Ana Bala Sudha Bangalore Delhi Hyderabad Both tables being joined have SID column (same name and same data type), the tuples for which value of SID matches in both the tables, appear in the result. Dangling tuple: When NATURAL JOIN is performed on two tables, there would be some missing tuples in the result of NATURAL JOIN Those missing tuples are called Dangling tuples. In the above example, the number of dangling tuples is 1 that is Adam OUTER JOIN: Outer Join is based on both matched and unmatched data. LEFT OUTER JOIN: Left outer Join returns the tuples available in the left side table with the matched data of 2 tables and null for the right tables column."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the table’s class and Info"
+ },
+ {
+  "t": "p",
+  "x": "SELECT * FROM class LEFT OUTER JOIN Info ON(class.SID = Info. SID) Result: SID"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "Ana Bala Sudha adam Banglore Delhi Hyderabad NULL RIGHT OUTER JOIN: RIGHT OUTER JOIN returns the tuples available in the Right side table with the matched data of 2 tables and NULL for the left table’s column."
+ },
+ {
+  "t": "h2",
+  "x": "Query:"
+ },
+ {
+  "t": "p",
+  "x": "SELECT * FROM Class1 RIGHT OUTER JOIN Info1 ON(class1.SID = Info1.SID)"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "Arun NULL Chennai Noida FULL OUTER JOIN: The full outer Join returns the tuples with the matched data of two tables, remaining rows of both left table and Right table are also included."
+ },
+ {
+  "t": "h2",
+  "x": "Query:"
+ },
+ {
+  "t": "p",
+  "x": "SELECT * FROM class1 FULL OUER JOIN Info1 ON(class1.SID = Info1.SID)"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "Arun Kamal NULL Chennai NULL Noida ALTER command: ALTER command is used for altering the table structure 1. It is used to add a new column to existing table. 2. To rename existing column. 3. ALTER is used to drop a column. 4. It is used to change data type of any column or modify its size. Add new column: By using alter command, we can add a new column to the table. Syntax: ALTER table table-name ADD(column-name data type). Example: Consider a student table. SID"
+ },
+ {
+  "t": "h2",
+  "x": "Grade"
+ },
+ {
+  "t": "p",
+  "x": "Add a new column called address ALTER table student ADD (address char);"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Add multiple columns, parent-name, course-"
+ },
+ {
+  "t": "p",
+  "x": "Name, date-of-birth to student table. ALTER table student ADD (parent-name varchar(60), course-Name varchar(20), date-of-birth date); Example: Change the data type of column address to varchar? ALTER table student modify(address varchar(30))"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Rename a column address to Location"
+ },
+ {
+  "t": "p",
+  "x": "ALTER table student rename address to Location TRUNCATE command: Truncate command removes all tuples from a table, this command will not destroy the tables structure. Syntax: Truncate table table-name DROP Command: DROP query removes a table completely from database. This command will destroy the table structure. Syntax: Drop table table-name Rename: This command is used to rename a table. Syntax: Rename table old-table-name to new-table-name. Example: Rename table Employee to New-Employee. DROP a column: Alter command can be combined with DROP command to remove columns from a table. Syntax: alter table table-name DROP(column-name)"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Alter table student DROP (grade)"
+ },
+ {
+  "t": "h1",
+  "x": "Normalization"
+ },
+ {
+  "t": "p",
+  "x": "Database design theory includes design standards called normal forms. The process of making data and tables match these standards is called normalizing data or data normalization. By normalizing data, we eliminate redundant information and organize table to make it easier to manage the data and make future changes to the table and database structure. This process removes the insertion, deletion, and modification anomalies. In normalizing your data, we usually divide large tables into smaller, easier to maintain tables. We can then use the technique of adding foreign keys to enable connections between the tables. Data normalization is part of the database design process and is neither specific nor unique to any particular RDBMS. These are in order, such as first, second, third, Boyce-Codd, fourth, and fifth normal forms. Each normal form represents an increasingly stringent set of rules; that is, each normal form assumes that the requirements of the preceding forms have been met. Many relational database designers feel that, if their tables are in third normal form, most common design problems have been addressed. However, the higher-level normal forms can be of use and are included here. Database normalization is the process of removing redundant data from tables to improve storage efficiency, data integrity and scalability. 1. In the relational model, methods exists for quantifying how efficient a database is, these classifications are called q′. 2. Normalization generally involves splitting existing tables into multiple ones, which must be rejoined (or) linked each time a query is issued. 3. Edgar F. Codd originally established three normal forms: 1NF, 2NF, 3NF. There are others also, but 3NF is widely considered to be sufficient for most applications, most tables when reaching 3NF are also in BCNF (Boyce–Codd normal form). Normalization Anomalies First normal form Functional dependency Inference rules Second normal form Third normal form Higher normal forms (Boyce-Codd normal form) Fifth normal form Courses"
+ },
+ {
+  "t": "h2",
+  "x": "Publisher"
+ },
+ {
+  "t": "p",
+  "x": "Database system concepts Abraham Silber schatz Henry F. Korth 0072958863 My SQL, computers McGraw-Hill OS concepts Abraham Silberschatz Henry F. Korth 0471694665 Computers McGraw-Hill"
+ },
+ {
+  "t": "h2",
+  "x": "Problems:"
+ },
+ {
+  "t": "p",
+  "x": "1. This table is not very efficient with storage. 2. This design doesn’t protect data integrity. 3. This table doesn’t scale well."
+ },
+ {
+  "t": "h2",
+  "x": "Anomalies"
+ },
+ {
+  "t": "p",
+  "x": "An anomaly is a variation that differs in some way from what is said to be normal, with respect to maintaining a database. 1. The basic operations performed on Databases are Record insertion, Record updation, Record deletion. 2. It is desirable for these operations to be straight forward and efficient. 3. When relations are not fully normalized they exhibit anomalies. 4. The design goal of database is too easily to understand and to maintain. 5. Anomalies are problems that occur in un-normalized databases where all the data is stored in one table."
+ },
+ {
+  "t": "h2",
+  "x": "Types of anomalies"
+ },
+ {
+  "t": "p",
+  "x": "There are three types of anomalies that can arise in the database because of redundancy as follows: 1. Insertion anomaly 2. Deletion anomaly 3. Updation anomaly"
+ },
+ {
+  "t": "h2",
+  "x": "Insertion anomaly An insertion anomaly occurs when par-"
+ },
+ {
+  "t": "p",
+  "x": "ticular attributes cannot be inserted into the database without the presence of other attributes."
+ },
+ {
+  "t": "h2",
+  "x": "Client"
+ },
+ {
+  "t": "p",
+  "x": "Ana 1/1/2015 Madison Sudha 2/4/2014 Peterson Joey 3/2/2014 John * New Insertion anomaly occurs in the above table which stores records for a company’s sales representatives and the clients for whom they are responsible. 1. It is not possible to add records for newly hired Sales representatives until they have been assigned to one or more clients. 2. If we insert a record for newly hired, client column will be NULL, which is a required field for the table. 3. It is not possible to record newly hired in the table during training."
+ },
+ {
+  "t": "h2",
+  "x": "Deletion anomaly Deletion anomaly occurs when some"
+ },
+ {
+  "t": "p",
+  "x": "particular attributes are lost because of the deletion of other attributes. Example: Consider the following table ‘course’. S No C No"
+ },
+ {
+  "t": "h2",
+  "x": "Course"
+ },
+ {
+  "t": "p",
+  "x": "S41 C9201 John Sales S42 C9401 Brat Finance S40 C9201 Amit Sales S43 C9608 Arun Accounts Execute the following SQL query: Delete * From course Where S No = S43 If we delete a tuple where SNo = S43, he is the only (or) last student in the accounts department, we will lose data about student ‘S43, Arun’ as well as data about Accounts course that is ‘C9608, Accounts’."
+ },
+ {
+  "t": "h2",
+  "x": "Updation anomaly An updation anomaly occurs when one"
+ },
+ {
+  "t": "p",
+  "x": "or more instances of duplicated data are updated but not all."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the ‘course’ table given in the above"
+ },
+ {
+  "t": "p",
+  "x": "example. If we want to update course – No (Cno) of sales C9201 to C8686, in the course table. 1. It might happen that, the tuple with S No = S41 updated its CNo to C8686, but not the tuple with SNo = S43. 2. Inconsistency occurs in the table, because for the same course sales we have 2 different course Numbers. Determining keys For a table ‘R’, its schema R consists of all attributes of R, we say X is a key to R if X → R means X determines R R is dependent upon X If you know x then you know R"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider a relation schema R(ABCDE) and the"
+ },
+ {
+  "t": "p",
+  "x": "functional dependencies: AC ⟨eq⟩ DA → B The closure of AC determines all the attributes present in Relation R, so the key for R is ‘AC’. AC+ = {AC} (self determination) {ACD} (AC → D) {ACDB} (DA → B) {ACDBE} (B → E) \\ key = AC Any attribute which does not appear on the right-hand-side of a given functional dependency appears in any one of the candidate keys. 1. From the above example, neither A (or) C appears in the right hand side of any functional dependency."
+ },
+ {
+  "t": "h1",
+  "x": "First Normal Form (1NF)"
+ },
+ {
+  "t": "p",
+  "x": "In Table 1, we have two violations of 1NF such as: 1. More than one author field and 2. Subject field contains more than one piece of information with more than one value in a single field; thus, it would be very difficult to search for all books on a given subject."
+ },
+ {
+  "t": "h2",
+  "x": "Publisher"
+ },
+ {
+  "t": "p",
+  "x": "Database system concept Abrahem Silbers Chatt 0072958863 My SQL McGraw-Hill Database system concept Henry K. Forth 0072958863 Computers McGraw-Hill OS concepts Henry K. Forth 0471694665 Computers McGraw-Hill OD concepts Abraham Silber Schatz 0471694665 Computers McGraw-Hill In Table 2, we have two rows for a single book. Additionally, we would be violating the second NF. A better solution to the problem would be to separate the data into separate tables— an author table and a subject table to store our information, removing that information from the book table."
+ },
+ {
+  "t": "h2",
+  "x": "Publisher"
+ },
+ {
+  "t": "p",
+  "x": "00729 58863 Database System Concepts McGraw-Hill 04716 94665 OS concepts McGraw-Hill Each table has a primary key, used for joining tables together when querying the data. A table is in first normal form (1NF) if there are no repeating groups. A repeating group is a set of logically related fields or values that occur multiple times in one record. The sample tables below do not comply with first normal form. Look for fields that contain too much data and repeating group of fields. EMPLOYEES_PROJECTS_TIME A table with fields containing too much data."
+ },
+ {
+  "t": "h2",
+  "x": "Time"
+ },
+ {
+  "t": "p",
+  "x": "EN1-26 Sean O’Brien 30-452-T3, 30-457-T3, 32-244-T3 0.25, 0.40, 0.30 EN1-33 Amy Guya 30-452-T3, 30-382-TC, 32-244-T3 0.05, 0.35, 0.60 EN1-35 Steven Baranco 30-452-T3, 31-238-TC 0.15, 0.80 EN1-36 Elizabeth Roslyn 35-152-TC 0.90 EN1-38 Carol Schaaf 36-272-TC 0.75 EN1-40 Alexandra Wing 31-238-TC, 31-241-TC 0.20, 0.70 The example above is also related to another design issue, namely, that each field should hold the smallest meaningful value and that there should not be multiple values in a single field. Why is this table design a problem? There would be no way to sort by last names or to know which allocation of time belonged to which project. EMPLOYEES_PROJECTS_TIME Table 5 A table with repeating groups of fields."
+ },
+ {
+  "t": "h2",
+  "x": "Time3"
+ },
+ {
+  "t": "p",
+  "x": "EN1-26 O’Brien Sean 30-452-T3 0.25 30-457-T3 0.40 32-244-T3 0.30 EN1-33 Guya Amy 30-452-T3 0.05 30-382-TC 0.35 32-244-T3 0.60 EN1-35 Baranco Steven 30-452-T3 0.15 31-238-TC 0.80 EN1-36 Roslyn Elizabeth 35-152-TC 0.90 EN1-38 Schaaf Carol 36-272-TC 0.75 EN1-40 Wing Alexandra 31-238-TC 0.20 31-241-TC 0.70 If an employee was assigned to a fourth project, you would have to add two new fields to the table. Also, it would be very difficult to total the amount of time devoted to a particular project. The design problems addressed are very common, particularly among new designers who are accustomed to tracking data in a spreadsheet. Often, when building a spreadsheet, we arrange the data horizontally, laying it out across the spreadsheet. When designing tables, we have to think more vertically. Similar data belongs in the same column or field with a single value in each row. Now we will take the table you saw above and redesign it so it will comply with first normal form. Look at the repeating groups of data. Identify tables and fields that will hold this data without the repeating groups. Think vertically and remember that similar data belongs in the same field. Enter the sample data from the table to make sure you don’t have repeating groups. If necessary, include foreign key field(s) to connect the tables."
+ },
+ {
+  "t": "h2",
+  "x": "First Name"
+ },
+ {
+  "t": "p",
+  "x": "EN1-26 O’Brien Sean EN1-33 Guya Amy EN1-35 Baranco Steven EN1-36 Roslyn Elizabeth EN1-38 Schaaf Carol EN1-40 Wing Alexandra"
+ },
+ {
+  "t": "h2",
+  "x": "Time"
+ },
+ {
+  "t": "p",
+  "x": "30-328-TC EN1-33 0.35 30-452-T3 EN1-26 0.25 30-452-T3 EN1-33 0.05 30-452-T3 EN1-35 0.15 31-238-TC EN1-35 0.80 30-457-T3 EN1-26 0.40 31-238-TC EN1-40 0.20 31-241-TC EN1-40 0.70 32-244-T3 EN1-33 0.60 35-152-TC EN1-36 0.90 36-272-TC EN1-38 0.75 Mark the primary key field(s) and foreign keys in each table. Shown below with * indicating the Primary key."
+ },
+ {
+  "t": "h2",
+  "x": "First Name"
+ },
+ {
+  "t": "p",
+  "x": "EN1-26 O’Brien Sean EN1-33 Guya Amy EN1-35 Baranco Steven EN1-36 Roslyn Elizabeth EN1-38 Schaaf Carol EN1-40 Wing Alexandra"
+ },
+ {
+  "t": "h2",
+  "x": "Time"
+ },
+ {
+  "t": "p",
+  "x": "30-328-TC EN1-33 0.35 30-452-T3 EN1-26 0.25 30-452-T3 EN1-33 0.05 30-452-T3 EN1-35 0.15 31-238-TC EN1-35 0.80 30-457-T3 EN1-26 0.40 31-238-TC EN1-40 0.20 31-241-TC EN1-40 0.70 32-244-T3 EN1-33 0.60 35-152-TC EN1-36 0.90 36-272-TC EN1-38 0.75 If an employee was assigned to an additional project, it would involve merely adding a new record. Also, it would be much easier to search for a particular project number as they are all held in a single column."
+ },
+ {
+  "t": "h2",
+  "x": "Functional Dependency"
+ },
+ {
+  "t": "p",
+  "x": "A functional dependency is a relationship between fields so that the value in Field A determines the value in Field B, and there can be only one value in Field B. In that case, Field B is functionally dependent on Field A. Consider the following sample table:"
+ },
+ {
+  "t": "h2",
+  "x": "City"
+ },
+ {
+  "t": "p",
+  "x": "National Washington, DC JFK New York LaGuardia New York Logan Boston Dulles Washington, DC Each airport name is unique and each airport can be in only one city. Therefore, City is functionally dependent on Airport. The value in the Airport field determines what the value will be in the City field (making Airport the determinant field) and there can be only one value in the City field. This does not need to work in the reverse. As shown in the table, a city can have more than one airport, so Airport is not functionally dependent on City; the value in City does not necessarily determine what the value in Airport will be. You will sometimes see a functional dependency written in this format: Determinant field(s) → Functionally dependent field as in: Airport → City Functional dependency describes the relationship bet­ ween attributes in a relation. Example: If A and B are attributes of relation R, and B is functionally dependent on A (A → B) if each value of A is associated with one value of B. A B B is functionally Dependent on A Determinant refers to the attributed (or) group attributes on the left-hand side of the arrow of a functional dependency."
+ },
+ {
+  "t": "h2",
+  "x": "Inference Rules"
+ },
+ {
+  "t": "p",
+  "x": "The following inference rules IR 1 through IR 6 form a complete set for inferring functional and multi-valued dependencies from a given set of dependencies Assume that all attributes are included in a ‘universal’ relation schema R = {A1, A2,…AN) and that X, Y, Z and W are subsets of R. IR 1 (reflexive rule): if X ⊇ Y , then X → Y IR 2 (Augmentation rule): {X ⟨eq⟩ XZ → YZ IR 3 (transitive rule): {X → Y, Y → Z} ⟨eq⟩ IR 4 (complementation rule): {X → → Y} = {X → → (R – (X ∪ Y ))} IR5 (augmentation rule for MVD’s): if ⟨eq⟩ and W → Z then WX ⊇ YZ IR6 (transitive rule for MVD’s): {X → → Y, Y → → Z} ⟨eq⟩ (Z – Y )"
+ },
+ {
+  "t": "h1",
+  "x": "Second Normal Form"
+ },
+ {
+  "t": "p",
+  "x": "A table is said to be in second normal form if it is in first normal form and each non-key field is functionally dependent on the entire primary key. Look for values that occur multiple times in a non-key field. This tells us that we have too many fields in a single table. Example: In the example below, see all the repeating values in the name and Project Title fields. This is an inefficient way to store and maintain data. In a well-designed database, the only data that is duplicated is in key fields used to connect tables. The presumption is that the data in key fields will rarely change, while the data in non-key fields may change frequently. A table with a multifield primary key and repeating data in non-key fields"
+ },
+ {
+  "t": "h2",
+  "x": "Project Title"
+ },
+ {
+  "t": "p",
+  "x": "EN1-26 O’Brien Sean 30-452-T3 STAR manual EN1-26 O’Brien Sean 30-457-T3 ISO procedures EN1-26 O’Brien Sean 31-124-T3 Employee handbook EN1-33 Guya Amy 30-452-T3 STAR manual EN1-33 Guya Amy 30-482-TC Web Site EN1-33 Guya Amy 31-241-TC New catalogue EN1-35 Baranco Steven 30-452-T3 STAR manual EN1-35 Baranco Steven 31-238-TC STAR prototype EN1-36 Roslyn Elizabeth 35-152-TC STAR pricing EN1-38 Schaaf Carol 36-272-TC Order system EN1-40 Wing Alexandra 31-238-TC STAR prototype EN1-40 Wing Alexandra 31-241-TC New catalogue If a ProjectTitle changed, we would have to edit it in several records. And what would happen in this table if the EmployeeID was part of the primary key and we wanted to add a new ProjectNum and ProjectTitle even though no employees had yet been assigned? The primary key cannot contain a null value so you couldn’t add the new project. Additionally, if a project ended and you wanted to delete it, you would have to delete the individual values because, if we deleted the records containing the titles and an employee was assigned to only that project, you would also delete that employee’s record, something that we may not want to do. In the above example, the asterisks indicate the fields that make up the primary key of this table as it now stands. A multifield primary key is necessary because neither the EmployeeID nor the ProjectNum fields contain unique values. The reason there are repeated values in LastName, FirstName, and ProjectTitle is that these fields are dependent on only part of the primary key. The value in EmployeeID determines what the value in LastName will be, but the value in ProjectNum has nothing to do with it. Similarly, the value in ProjectNum determines the value in ProjectTitle, but EmployeeID does not. These non-key fields relate to only part of the primary key. They are not functionally dependent on the entire primary key. The solution to this lies in breaking the table into smaller tables that do meet second normal form. You will find that more tables are the solution to most problems encountered during data normalisation. Now we’ll take the table above and design new tables that will eliminate the repeated data in the non-key fields. 1. To decide what fields belong together in a table, think about which field determines the values in other fields. Create a table for those fields and enter the sample data. 2. Think about what the primary key for each table would be and about the relationship between the tables. If necessary, add foreign keys or a junction table. 3. Mark the primary key for each table and make sure that you don’t have repeating data in non-key fields."
+ },
+ {
+  "t": "h2",
+  "x": "First Name"
+ },
+ {
+  "t": "p",
+  "x": "EN1-26 O’Brien Sean EN1-33 Guya Amy EN1-35 Baranco Steven EN1-36 Roslyn Elizabeth EN1-38 Schaaf Carol EN1-40 Wing Alexandra"
+ },
+ {
+  "t": "h2",
+  "x": "Project Title"
+ },
+ {
+  "t": "p",
+  "x": "30-452-T3 STAR manual 30-457-T3 ISO procedures 30-482-TC Web site 31-124-T3 Employee handbook 31-238-TC STAR prototype 31-238-TC New catalog 35-152-TC STAR pricing 36-272-TC Order system Examine the tables to make sure there are no repeating values in non-key fields and that the value in each non-key field is determined by the value(s) in the key field(s). This removes the modification anomaly of having the repeated values."
+ },
+ {
+  "t": "h1",
+  "x": "Third Normal Form"
+ },
+ {
+  "t": "p",
+  "x": "A table is said to be in third normal form if it is in second normal form (2NF) and there are no transitive dependencies. A transitive dependency is a type of functional dependency in which the value in a non-key field is determined by the value in another non-key field and that field is not a candidate key. Again, look for repeated values in a non-key field as in the following example. A table with a single field primary key and repeating values in non-key fields."
+ },
+ {
+  "t": "h2",
+  "x": "Phone"
+ },
+ {
+  "t": "p",
+  "x": "30-452-T3 STAR manual Garrison 30-457-T3 ISO procedures Jacanda 30-482-TC Web site Friedman 31-124-T3 Employee handbook Jones 31-238-TC STAR prototype Garrison 31-241-TC New catalog Jones 35-152-TC STAR pricing Vance 36-272-TC Order system Jacanda The phone number is repeated each time a manager’s name is repeated. It is dependent on the manager, which is dependent on the project number (a transitive dependency). The Project Manager field is not a candidate key, because the same person manages more than one project. Again, the solution is to remove the field with repeating data to a separate table. Take the above table and create new tables to fix the problem. 1. Think about which fields belong together and create new tables to hold them. 2. Enter the sample data and check for unnecessarily (not part of primary key) repeated values. 3. Identify the primary key for each table and, if necessary, add foreign keys."
+ },
+ {
+  "t": "h2",
+  "x": "Project Mgr"
+ },
+ {
+  "t": "p",
+  "x": "30-452-T3 STAR manual Garrison 30-457-T3 ISO procedures Jacanda 30-482-TC Web site Friedman 31-124-T3 Employee handbook Jones 31-238-TC STAR prototype Garrison 31-241-TC New catalog Jones 35-152-TC STAR pricing Vance 36-272-TC Order system Jacanda"
+ },
+ {
+  "t": "h2",
+  "x": "Phone"
+ },
+ {
+  "t": "p",
+  "x": "Friedman Garrison Jacanda Jones Vance Reexamine your tables to make sure there are no unnecessarily repeating values in non-key fields and that the value in each non-key field is determined by the value(s) in the key field(s). In most cases, 3NF should be sufficient to ensure that your database is properly normalised."
+ },
+ {
+  "t": "h1",
+  "x": "(Boyce–Codd Normal Form)"
+ },
+ {
+  "t": "p",
+  "x": "A table is in third normal form (3NF), and all determinants are candidate keys. Boyce–Codd normal form (BCNF) can be thought of as a ‘new’ third normal form. It was introduced to cover situations that the ‘old’ third normal form did not address. The mean of a determinant (determines the value in another field) and candidate keys (qualify for designation as primary key). This normal form applies to situations where you have overlapping candidate keys. If a table has no non-key fields, it is automatically in BCNF (Figure 1). Look for potential problems in updating existing data (modification anomaly) and in entering new data (insertion anomaly). Imagine that we were designing a table for a college to hold information about courses, students, and teaching assistants. We have the following business rules: 1. Each course can have many students. 2. Each student can take many courses. 3. Each course can have multiple teaching assistants (TAs). 4. Each TA is associated with only one course. 5. For each course, each student has one TA. Some sample data:"
+ },
+ {
+  "t": "h2",
+  "x": "Student"
+ },
+ {
+  "t": "p",
+  "x": "TA ENG101 Jones Clark ENG101 Grayson Chen ENG101 Samara Chen MAT350 Grayson Powers MAT350 Jones O’Shea MAT350 Berg Powers To uniquely identify each record, we could choose CourseNum + Student as a primary key. This would satisfy third normal form also because the combination of CourseNum and Student determines the value in TA. Another candidate key would be Student + TA. In this case, you have overlapping candidate keys (Student is in both). The second choice, however, would not comply with third normal form, because the CourseNum is not determined by the combination of Student and TA; it only depends on the value in TA. This is the situation that Boyce-Codd normal form addresses; the combination of Student + TA could not be considered to be a candidate key. If we wanted to assign a TA to a course before any students enrolled, we couldn’t because Student is part of the primary key. Also, if the name of a TA changed, would have to update it in multiple records. If assume have just these fields, this data would be better stored in three tables: one with CourseNum and Student, another with Student and TA, and third with CourseNum and TA."
+ },
+ {
+  "t": "h2",
+  "x": "Student"
+ },
+ {
+  "t": "p",
+  "x": "ENG101 Jones ENG101 Grayson ENG101 Samara MAT350 Grayson MAT350 Jones MAT350 Berg"
+ },
+ {
+  "t": "h2",
+  "x": "Student"
+ },
+ {
+  "t": "p",
+  "x": "TA Jones Clark Grayson Chen Samara Chen Grayson Powers Jones O’Shea Berg Powers TA’s"
+ },
+ {
+  "t": "h2",
+  "x": "*Coursenum"
+ },
+ {
+  "t": "p",
+  "x": "*TA ENG101 Clark ENG101 Chen MAT350 O’Shea MAT350 Powers Figure 1 Tables that comply with BCNF."
+ },
+ {
+  "t": "h2",
+  "x": "Property ID"
+ },
+ {
+  "t": "p",
+  "x": "IS 36-272-TC EN1-15 CD-ROM IS VGA desktop monitor AC 35-152-TC EN1-15 AC Dot-matrix printer AC Calculator with tape TW 30-452-T3 EN1-10 486 PC TW 30-457-T3 EN1-15 TW 31-124-T3 EN1-15 Laser printer TW 31-238-TC EN1-15 Handheld scanner RI Fax machine MK Laser printer MK Answering machine TW 31-241-TC EN1-15 Standard 19200 bps modem SL 486 Laptop PC SL Electronic notebook"
+ },
+ {
+  "t": "h1",
+  "x": "Fourth Normal Form"
+ },
+ {
+  "t": "p",
+  "x": "A table is in Boyce-Codd normal form (BCNF) and there are no multi-valued dependencies. A multi-valued dependency occurs when, for each value in field A, there is a set of values for field B and a set of values for field C but fields B and C are not related. Look for repeated or null values in non-key fields. A multivalued dependency occurs when the table contains fields that are not logically related. An often used example is the following table:"
+ },
+ {
+  "t": "h2",
+  "x": "Producer"
+ },
+ {
+  "t": "p",
+  "x": "Once Upon a Time Julie Garland Alfred Brown Once Upon a Time Mickey Rooney Alfred Brown Once Upon a Time Julie Garland Muriel Humphreys Once Upon a Time Mickey Rooney Muriel Humphreys Moonlight Humphrey Bogart Alfred Brown Moonlight Julie Garland Alfred Brown A movie can have more than one star and more than one producer. A star can be in more than one movie. A producer can produce more than one movie. The primary key would have to include all three fields, and so this table would be in BCNF. But you have unnecessarily repeated values, with the data maintenance problems that causes and you would have trouble with deletion anomalies. The Star and the Producer really aren’t logically related. The Movie determines the Star and the Movie determines the Producer. The answer is to have a separate table for each of those logical relationships: one holding Movie and Star and the other with Movie and Producer, as shown below:"
+ },
+ {
+  "t": "h2",
+  "x": "*Star"
+ },
+ {
+  "t": "p",
+  "x": "Once Upon a Time Julie Garland Once Upon a Time Mickey Rooney Moonlight Humphrey Bogart Moonlight Julie Garland"
+ },
+ {
+  "t": "h2",
+  "x": "*Producer"
+ },
+ {
+  "t": "p",
+  "x": "Once Upon a Time Alfred Brown Once Upon a Time Muriel Humphreys Moonlight Alfred Brown Above, showing tables that comply with 4NF Below is another example of a common design error, and it’s easily spotted by all the missing or blank values. A table with many null values (Note: It also does not comply with 3NF and BCNF). It is the same problem here because not all of the data is logically related. As usual, the answer is more tables: one to hold the information on the equipment assigned to departments (with PropertyID as the primary key) and another with projects and departments. We would now the business rules to know whether a project might involve more than one department or manager and be able to figure out the primary key. Assuming a project can have only one manager and be associated with only one department, the tables would be as follows:"
+ },
+ {
+  "t": "h2",
+  "x": "Deptcode"
+ },
+ {
+  "t": "p",
+  "x": "CD-ROM IS VGA desktop monitor IS Dot-matrix printer AC Calculator with tape AC 486 PC TW Laser printer TW Handheld scanner TW Fax machine RI Laser printer MK Answering machine MK Standard 19200 bps modem TW 486 Laptop PC SL Electronic notebook SL"
+ },
+ {
+  "t": "h2",
+  "x": "Dept Code"
+ },
+ {
+  "t": "p",
+  "x": "36-272-TC EN1-15 IS 35-152-TC EN1-15 AC 30-452-T3 EN1-10 TW 30-457-T3 EN1-15 TW 31-124-T3 EN1-15 TW 31-238-TC EN1-15 TW 31-241-TC EN1-15 TW Figure 2 Tables that eliminate the null values and comply with 4NF."
+ },
+ {
+  "t": "h1",
+  "x": "Fifth Normal Form"
+ },
+ {
+  "t": "p",
+  "x": "A table is in fourth normal form (4 NF) and there are no cyclic dependencies. A cyclic dependency can occur only when you have a multifield primary key consisting of three or more fields. For example, let’s say your primary key consists of fields A, B, and C. A cyclic dependency would arise if the values in those fields were related in pairs of A and B, B and C, and A and C. Fifth normal form is also called projection-join normal form. A projection is a new table holding a subset of fields from an original table. When properly formed projections are joined, they must result in the same set of data that was contained in the original table. Look for the number of records that will have to be added or maintained Following is some sample data about buyers, the products they buy, and the companies they buy from."
+ },
+ {
+  "t": "h2",
+  "x": "Company"
+ },
+ {
+  "t": "p",
+  "x": "Chris Jeans Levi Chris Jeans Wrangler Chris Shirts Levi Lori Jeans Levi Figure 3 A table with cyclic dependencies. The primary key consists of all three fields. One data maintenance problem that occurs is that you need to add a record for every buyer who buys a product for every company that makes that product or they can’t buy from them. That may not appear to be a big deal in this sample of two buyers, two products, and two companies (2 × 2 × 2 = 8 total records). But what if we went to 20 buyers, 50 products, and 100 companies (20 × 50 × 100 = 100,000 potential records)? It quickly gets out of hand and becomes impossible to maintain. We might solve this by dividing this into the following two tables:"
+ },
+ {
+  "t": "h2",
+  "x": "Company"
+ },
+ {
+  "t": "p",
+  "x": "jeans Wrangler jeans Levi shirts Levi However, if you joined the two tables above on the Product field, it would produce a record not part of the original data set (it would say that Lori buys jeans from Wrangler). This is where the projection-join concept comes in. The correct solution would be three tables:"
+ },
+ {
+  "t": "h2",
+  "x": "*Company"
+ },
+ {
+  "t": "p",
+  "x": "Chris Levi Chris Wrangler Lori Levi Figure 4 Tables that comply with 5NF."
+ },
+ {
+  "t": "h1",
+  "x": "4. Transaction and Concurrency"
+ },
+ {
+  "t": "p",
+  "x": "Transactions and concurrency control Transaction Transaction properties Uncommitted data Transaction processing systems Concurrency control with locking methods Two-phase locking to ensure serializability Concurrency control with time stamping methods Concurrency control with optimistic methods Recoverability Equivalence of schedules Testing for conﬂ ict serializability"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "Introduction"
+ },
+ {
+  "t": "p",
+  "x": "A transaction is a logical unit of work. It begins, with the execution of a BEGIN TRANSACTION operation, and ends with the execution of a COMMIT or ROLLBACK operation. The logical unit of work that is, a transaction does not necessarily involve just a single database operation. Rather, it involves a sequence of several such operations as follows: 1. Database updates are kept in buffers in main memory and not physically written to disk until the transaction commits. That way, if the transaction terminates unsuccessfully, there will be no need to undo any disk updates. 2. Database updates are physically written to disk as part of the process of honouring the transaction’s COMMIT request. That way if the system subsequently crashes, we can be sure that there will be no need to redo any disk updates."
+ },
+ {
+  "t": "h2",
+  "x": "Transactions and Concurrency Control"
+ },
+ {
+  "t": "p",
+  "x": "Database transactions reflect real-world transactions that are triggered by events, such as buying a product, registering for a course, or making a deposit in your checking account. Transactions are likely to contain many parts, for example, a sales transaction consists of at least two parts. UPDATE inventory by subtracting number of units sold from the PRODUCT table’s available quantity on hand and UPDATE the ACCOUNTS RECEIVABLE table in order to bill the CUSTOMER. All parts of a transaction must be completed to prevent data integrity problems. Therefore, executing and managing transactions are important database system activities. Concurrency control is the management of concurrent transactions execution. When many users are able to access the database, the number of concurrent transactions tends to grow rapidly; as a result, concurrency control is especially important in multiuser database environments."
+ },
+ {
+  "t": "h1",
+  "x": "Transaction"
+ },
+ {
+  "t": "p",
+  "x": "A transaction is a logical unit of work that must be either entirely completed or aborted, no intermediate states are acceptable, that is, multicomponent transactions like the previously mentioned sale, must not be partially completed. If you read from and/or write to (update) the database, you create a transaction. Another example is using SELECT, to generate a list of table contents. Many realworld database transactions are formed by two or more database requests. A database request is the equivalent of a single SQL statement in an application program or transaction. Each database request generates several input/output operations. A transaction that changes the contents of a database must alter the database from one consistent state to another. A consistent database state is one in which all data integrity constraints are satisfied."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "1. Checking an account balance: SELECT ACC_NUM, ACC_BALANCE FROM CHECKACC WHERE ACC_NUM = ‘0908110638’; Even though we did not make any changes to the CHECKACC table, the SQL code represents a transaction, because we accessed the database. 2. Registering a credit sale of 100 units of product X to customer Y in the amount of $500.00 first, product X’s quantity on hand (QOH) needs to be reduced by 100. UPDATE PRODUCT SET PROD_QOH = PROD_QOH_100 WHERE PROD_CODE = ‘x’; Then, $500 needs to be added to customer Y’s accounts receivable UPDATE ACCT_RECEIVABLE SET ACCT_RECEIVABLE = ACCT_BALANCE + WHERE ACCT_NUM = ‘Y’; In Example 2, both the SQL, transactions must be completed in order to represent the real-world sales transaction. If both transactions are not completely executed, the transaction yields an inconsistent database. If a transaction yields an inconsistent database, the DBMS must be able to recover the database to a previous consistent state."
+ },
+ {
+  "t": "h2",
+  "x": "Transaction Properties"
+ },
+ {
+  "t": "p",
+  "x": "All transactions must display atomicity, consistency, isolation and durability. These are known as ACID properties of transactions."
+ },
+ {
+  "t": "h2",
+  "x": "Atomicity"
+ },
+ {
+  "t": "p",
+  "x": "It requires that all operations of a transaction be completed; if not, the transaction is aborted. Therefore, a transaction is treated as a single, logical unit of work."
+ },
+ {
+  "t": "h2",
+  "x": "Consistency"
+ },
+ {
+  "t": "p",
+  "x": "It describes the result of the concurrent execution of several transactions. The concurrent transactions are treated as though they were executed in serial order. This property is important in multiuser and distributed database, where several transactions are likely to be executed concurrently."
+ },
+ {
+  "t": "h2",
+  "x": "Isolation"
+ },
+ {
+  "t": "p",
+  "x": "It means that the data used during the execution of a transaction cannot be used by a second transaction until the first one is completed. Therefore, if a transaction T1 is being executed and is using the data item X1, that data item cannot be accessed by any other transaction (T2… Tn) until T1 ends. This property is particularly useful in multiuser database environment, because several different users can access and update the database at the same time."
+ },
+ {
+  "t": "h2",
+  "x": "Durability"
+ },
+ {
+  "t": "p",
+  "x": "It indicates the permanence of the database’s consistent state. When a transaction is completed, the database reaches a consistent state, and that state cannot be lost, even in the event of the system’s failure."
+ },
+ {
+  "t": "h2",
+  "x": "Transaction Management with SQL"
+ },
+ {
+  "t": "p",
+  "x": "The ISO standard defines a transaction model based on two SQL statements: COMMIT and ROLLBACK. The standard specifies that an SQL transaction automatically begins with a transaction-initiating SQL statement executed by a user or program (e.g., SELECT, INSERT, UPDATE). Changes made by a transaction are not visible to other concurrently executing transactions until the transaction completes. When a transaction sequence is initiated, it must continue through all succeeding SQL, statements until one of the following four events occur: 1. A COMMIT statement ends the transaction successfully, making the database changes permanent. A new transaction starts after COMMIT with the next transaction initiating statement. 2. For programmatic SQL, successful program termination ends the final transaction successfully, even if a commit statement has not been executed (equivalent to COMMIT) 3. For programmatic SQL, abnormal program termination aborts the transaction (equivalent to ROLLBACK)"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "UPDATE PRODUCT SET PROD_QOH = PROD_QOH_100 WHERE PROD_CODE = ‘345TYX’; UPDATE ACCREC SET AR_BALANCE = AR_BALANCE + 3500 WHERE AR_NUM = ‘60120010’; COMMIT;"
+ },
+ {
+  "t": "h1",
+  "x": "Concurrency Control"
+ },
+ {
+  "t": "p",
+  "x": "The coordination of simultaneous execution of transactions in a multiprocessing database system is known as concurrency control. The objective of concurrency control is to ensure the serializability of transaction in a multiuser database environment. Concurrency is important, because the simultaneous execution of transactions over a shared database can create several data integrity and consistency problems. Three main problems are lost updates, uncommitted data and inconsistent retrievals."
+ },
+ {
+  "t": "h2",
+  "x": "Lost Updates"
+ },
+ {
+  "t": "p",
+  "x": "Consider the following two concurrent transactions where PROD_QOH represents a particular PRODUCT’s quantity on hand. (PROD_QOH is an attribute in the Product table) Assume the current PROD_QOH value for the product concerned is 35."
+ },
+ {
+  "t": "h2",
+  "x": "Computation"
+ },
+ {
+  "t": "p",
+  "x": "T1: purchase 100 units PROD_QOH = PROD_QOH + 100 T2: sell 30 units PROD_QOH = PROD_QOH - 30 Table 1 shows the serial execution of these transactions under normal circumstances, yielding the correct answer: PROD_QOH = 105. But suppose that a transaction is able to read a product’s PROD_QOH value from the table before a previous transaction (using the same product) has been committed. The sequence depicted in Table 2 shows how the cost update problem can arise. Note that the first transaction (T1) has not yet been committed when the second transaction (T2) is executed. Therefore T2 still operates on the value 135 to disk which is promptly over written by T2. As a result, the addition of 100 units is “lost” during the process."
+ },
+ {
+  "t": "h2",
+  "x": "Uncommitted Data"
+ },
+ {
+  "t": "p",
+  "x": "Data are not committed when two transactions, T1 and T2 are executed concurrently and the first transaction (T1) is rolled back after the second transaction (T2) has already accessed the uncommitted data, thus violating the isolation property of transaction. Consider the same transactions from T1 and T2, from above. However, this time T1 is rolled back to eliminate the addition of the 100 units. Because T2 subtracts 30 from the original 35 units, the correct answer should be 5."
+ },
+ {
+  "t": "h2",
+  "x": "Computation"
+ },
+ {
+  "t": "p",
+  "x": "T1: purchase 100 units PROD_QOH = PROD_QOH + 100 (Rolled Back) T2: sell 30 units PROD_QOH = PROD_QOH_30 Table 2 shows how, under normal circumstances, the serial execution of these transactions yield the correct answer. The uncommitted data problem can arise when the ROLLBACK is completed after T2 has begun its execution."
+ },
+ {
+  "t": "h2",
+  "x": "Inconsistent Retrievals"
+ },
+ {
+  "t": "p",
+  "x": "Inconsistent retrievals occur when a transaction calculates some summary (aggregate) functions over a set of data, while other transactions are updating the data. The problem is that the transaction might read some data before they are changed and other data after they are changed, thereby yielding inconsistent results."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "1. T1 calculates the total PROD_QOH of the products stored in the PRODUCT table 2. At the same time, T2 updates the PROD_QOH for two of the PRODUCT table’s products (T2 represents the correction of a typing error: the user added 30 units to product 345TYX’s PROD_QOH but meant to add the 30 units to 125TYZ’s PROD_QOH to correct the problem, the user subtracts 30 from product 345TYX’s PROD_QOH and adds 30 to product 125TYZ’s PROD_QOH). The computed answer 485 is obviously wrong, because we know the correct answer to be 455."
+ },
+ {
+  "t": "h1",
+  "x": "Transaction Processing Systems"
+ },
+ {
+  "t": "p",
+  "x": "Transaction processing systems are systems with large databases and hundreds of concurrent users that are executing database transactions. For example, banking, credit card processing, stock markets, supermarket checkout, etc. They require high availability and fast response time for hundreds of concurrent users. 1. A transaction includes one or more database access operations. These can include insertion, deletion, modification, or retrieval operations. 2. Basic operations: The basic database access operations that a transaction can include are as follows:"
+ },
+ {
+  "t": "li",
+  "x": "read_item (X): Reads a database item named X into a program variable."
+ },
+ {
+  "t": "li",
+  "x": "Write_item (X): Writes the value of program variable X into the database item named X"
+ },
+ {
+  "t": "p",
+  "x": "Executing a read_item (X): Command includes the following steps: 1. Find the address of the disk block that contains item X 2. Copy that disk block into a buffer in main memory (if that disk block is not in main memory buffer). 3. Copy item X from the buffer to the program variable named x Executing a write_item (X) command includes the following steps: 1. Find the address of the disk block that contains item X 2. Copy that disk block into a buffer in main memory (if that disk block is not in main memory buffer) 3. Copy item X from the program variable named X into its correct location in the buffer 4. Store the updated block from the buffer back to disk. Step 4 actually updates the database on disk. The decision about when to store back a modified disk block that is in a main memory buffer is handled by the recovery manager of the DBMS in cooperation with the underlying operating system. BEGIN END PARTIALLY READ/ WRITE ACTIVE ABORT ABORT FAILED COMMIT COMMITTED TERMINATED Figure 1 Transactions execution state transition diagram. For the purpose of recovery, the system needs to keep track of when the transaction starts, terminates, and commits or aborts. Hence, the recovery manager keeps track of the following operations: 1. BEGIN_TRANSACTION: It shows the beginning of Execution of a transaction. 2. READ/WRITE: These specify read or write operations on the database items. 3. END_TRANSACTION: This specifies that READ and WRITE operations have ended and marks the end of transaction execution. 4. COMMIT_TRANSACTION: This shows a successful end of the transaction so that any changes executed by the transaction can be safely committed to the database and will not be undone. 5. ROLL BACK OR ABORT: This shows that the transaction has ended unsuccessfully, so that any changes or effects that the transaction may have applied to the database must be undone. 6. ACTIVE STATE: A transaction goes into an active state immediately after it starts execution where it can issue READ and WRITE operations. 7. PARTIALLY COMMITTED: When the transaction ends, it moves to the partially committed state 8. COMMIT: A transaction reaches its commit point when all its operations that access the database have been executed successfully, and the effect of all the transaction operations on the database have been recorded in the log. Beyond the commit point, the transaction is said to be committed, and its effect is assumed to be permanently recorded in the database. 9. FAILED_STATE: A transaction can go to the failed state if the transaction is aborted during its active state. The transaction may then have to be rolled back to undo the effect of its WRITE operations on the database. 10. TERMINATIED: The terminated state corresponds to the transactions leaving the system."
+ },
+ {
+  "t": "h1",
+  "x": "Locking Methods"
+ },
+ {
+  "t": "p",
+  "x": "A lock guarantees exclusive use of a data item to a transaction. In general, if transaction T1 holds a lock on a data item (e.g., an employee’s salary) then transaction T2 does not have access to that data item. A transaction acquires a lock prior to data access; the lock is released (unlocked) when the transaction is completed, so that another transaction can lock the data item for its exclusive use. All lock information is managed by a lock manager, which is responsible for assigning and policing the locks used by the transactions."
+ },
+ {
+  "t": "h2",
+  "x": "Lock Granularity"
+ },
+ {
+  "t": "p",
+  "x": "Lock granularity indicates the level of lock use. Locking can take place at the following levels: database level, table level, page level, row level and field (or attribute) level."
+ },
+ {
+  "t": "h2",
+  "x": "Database Level"
+ },
+ {
+  "t": "p",
+  "x": "In a database-level lock, the entire database is locked, thus preventing the use of any tables in the database by transaction T2 while transaction T1 is being executed. Transaction T1 and T2 cannot access the database concurrently, even if they use different tables. This level of locking is suitable for batch processes, but it is not unsuitable for online multiuser DBMSs."
+ },
+ {
+  "t": "h2",
+  "x": "Table Level"
+ },
+ {
+  "t": "p",
+  "x": "In a table-level lock, the entire table is locked, preventing access to any row by transaction T2 while transaction T1 is using Table 2 transactions can access the same database, as long as they access different tables. Transactions T1 and T2 cannot access the same table even if they try to use different rows, T2 must wait until T1 unlocks the table."
+ },
+ {
+  "t": "h2",
+  "x": "Page level"
+ },
+ {
+  "t": "p",
+  "x": "In a page level lock, the DBMS will lock an entire disk page (a disk page or page is the equivalent of a disk block, which can be described as a (referenced ) section of a disk). Transactions T1 and T2 access the same table while locking different disk pages. If T2 requires the use of a row located on a page that is locked by T1, T2 must wait until the page is unlocked by T1."
+ },
+ {
+  "t": "h2",
+  "x": "Row level"
+ },
+ {
+  "t": "p",
+  "x": "The row-level lock is much less restrictive than the locks discussed earlier. The DBMS allows concurrent transactions to access different rows of the same table, even if the rows are located on the same page. A lock exists for each row in each table of the database."
+ },
+ {
+  "t": "h2",
+  "x": "Field level"
+ },
+ {
+  "t": "p",
+  "x": "The field-level lock allows concurrent transactions to access same row as long as they require the use of different fields (attributes) within the row. Although, field-level locking clearly yields the most flexible multi user data access, it requires a high level of computer over head."
+ },
+ {
+  "t": "h2",
+  "x": "Lock Types"
+ },
+ {
+  "t": "p",
+  "x": "1. Binary locks 2. Shared/Exclusive locks"
+ },
+ {
+  "t": "h2",
+  "x": "Binary Locks"
+ },
+ {
+  "t": "p",
+  "x": "A binary lock has only two states: locked (1) or unlocked (0). If an object, that is, a database, table, page, or row is locked by a transaction, no other transaction can use that object. If an object is unlocked, any transaction can lock the object for its use. As a rule, a transaction must unlock the object after its termination. Every database operation requires that the affected object be locked. Therefore, every transaction requires a lock and unlock operation for each data item that is accessed. Such operations are automatically scheduled by the DBMS, the user need not concerned about locking or unlocking data items. Binary locks are now considered too restrictive to yield optimal concurrency conditions. For example if two transaction want to read the same database object, the DBMS will not allow this to happen, even though neither transaction updates the database (and therefore, no concurrency problems can occur) concurrency conflicts occur only when two transactions execute concurrently and one of them updates the database."
+ },
+ {
+  "t": "h2",
+  "x": "Shared/Exclusive locks"
+ },
+ {
+  "t": "p",
+  "x": "The tables “shared’ and “exclusive” indicate the nature of the lock. The following table comparatively explains both locks."
+ },
+ {
+  "t": "h2",
+  "x": "Shared Locks"
+ },
+ {
+  "t": "p",
+  "x": "An exclusive lock exists when access is specifically reserved for the transaction that locked the object. A shared lock exists when concurrent transactions are granted READ access on the basis of a common lock. The exclusive lock must be used when the potential for conflict exists. A shared lock produces no conflict as long as the concurrent transactions are read only. (An exclusive lock is issued when a transaction wants to write (update) a data item and no locks are currently held on that data item by any other transaction. A shared lock is issued when a transaction wants to read data from the database and no exclusive lock is held on that data item. Using the shared/exclusive locking concept, a lock can have three states: unlocked, shared (READ) and exclusive (WRITE). 2 READ transactions can be safely executed and shared locks allow several READ transactions to concurrently read the same data item. For example, if transaction T1 has a shared lock on data item X, and transaction T2 wants to read data item X, T2 may also obtain a shared lock on data item X. If transaction T2 updates data item X, then an exclusive lock is required by T2 over data item X. The exclusive lock is granted if and only if no other locks are held on the data item. Therefore, if a shared or exclusive lock is already held on data item X by transaction T1, an exclusive lock cannot be granted to transaction T2."
+ },
+ {
+  "t": "h2",
+  "x": "Potential problems with locks"
+ },
+ {
+  "t": "p",
+  "x": "Although locks prevent serious data inconsistencies, their use may lead to two major problems: 1. The resulting transaction schedule may not be serializable. 2. The schedule may create deadlocks. Database deadlocks are the equivalent of a traffic gridlock in a big city and are caused when two transactions wait for each other to unlock data. Both problems can be solved. Serializability is guaranteed through a locking protocol known as two-phase locking and deadlocks can be eliminated by using deadlock detection, and prevention techniques. We shall examine these techniques next."
+ },
+ {
+  "t": "h2",
+  "x": "Serializability"
+ },
+ {
+  "t": "p",
+  "x": "The two-phase locking protocol defines how transactions acquire and relinquish locks. It guarantees serializability, but it does NOT prevent deadlocks. The two phases are as follows: 1. A growing phase, in which a transaction acquires all the required locks without unlocking any data. Once all locks have been acquired, the transaction is in its locked point. 2. A shrinking phase, in which a transaction releases all locks and cannot obtain any new lock. The two-phase locking protocol is governed by the following rules” 1. Two transactions cannot have conflicting locks. 2. No unlock operation can precede a lock operation in the same transaction. 3. No data are affected until all locks are obtained, that is, until the transaction is in its locked point."
+ },
+ {
+  "t": "h1",
+  "x": "Deadlocks"
+ },
+ {
+  "t": "p",
+  "x": "Deadlocks exist when two transactions, T1 and T2, exist in the following mode: 1. T1 would like to access data item X and then data item Y. (So far, T1 has locked data item X and T1 is in progress, it will eventually require to lock data item Y.) 2. T2 needs to access data items X and Y, to begin. (So far, T2 has locked data item Y.) If T1 has not unlocked data item X, T2 cannot begin; if T2 has not unlocked data item Y, T1 cannot continue. Consequently, T1 and T2 wait indefinitely, each waiting for the other to unlock the required data item. Such in a realworld DBMS, many transactions can be executed simultaneously, thereby increasing the probability of generating deadlocks. Note that deadlocks are possible only if one of the transactions wants to obtain an exclusive lock on a data item; no deadlock condition can exist among shared locks. Three basic techniques exist to control deadlocks: 1. Deadlock prevention: A transaction requesting a new lock is aborted if there is a possibility that a deadlock can occur. If the transaction is aborted, all the changes made by this transaction are ROLLED BACK, and all locks obtained by the transaction are released. The transaction is then rescheduled for execution. Deadlock prevention works because it avoids the conditions that lead to deadlocking. 2. Deadlock detection: The DBMS periodically tests the database for deadlocks. If a deadlock is found, one of the transactions (the “victim”) is aborted (ROLLED BACK and restarted), and the other transaction continues. 3. Deadlock avoidance: The transaction must obtain all the locks it needs before it can be executed. The best deadlock control method depends on the database environment. For example, if the probability of deadlocks is low, deadlock detection is recommended. However, if the probability of deadlocks is high, deadlock prevention is recommended. If response time is not high on the system priority list, deadlock avoidance might be employed. Deadlock occurs when each transaction T in a set of two or more tractions is waiting for some item that is locked by some other transaction T1 in the set. Each transaction in the set is on a waiting queue, waiting for one of the other transactions in the set to release the lock on an item"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "T1 T2 Write lock (z) Read lock (z) Read lock (y) Write lock (y) Transaction T1 is waiting for Y which is locked by Transaction T2 and transaction T2 is waiting for z which is locked by transaction T1. The below graph is called wait for graph. Y Z T1 T2"
+ },
+ {
+  "t": "h2",
+  "x": "Deadlock Prevention"
+ },
+ {
+  "t": "p",
+  "x": "There are number of deadlock prevention schemes that make a decision about what to do with a transaction involved in a possible deadlock situation: 1. Should it be blocked and made to wait 2. Should it be aborted 3. Should the transaction pre-empt and abort another transaction."
+ },
+ {
+  "t": "h1",
+  "x": "with Time Stamping Methods"
+ },
+ {
+  "t": "p",
+  "x": "The time stamping approach to scheduling concurrent transactions assigns a global unique time stamp to each transaction. The time stamp value produces an explicit order in which transactions are submitted to the DBMS. Time stamps must have two properties: uniqueness and monotonicity. Uniqueness ensures that no equal time stamp values can exist, and monotonicity ensures that time increases. All database operations (READ and WRITE) within the same transaction must have the same time stamp. The DBMS executes conflicting operations in time stamp order, thereby ensuring serializability of the transactions. If two transactions conflict, one often is stopped, rescheduled, and assigned a new time stamp value. The concept of transaction time stamp TS(T), which is a unique identifier assigned to each transaction. The time stamps are based on the order in which transactions start. If transaction T1 starts before transaction T2, then T S (T1) < T S(T2) 1. Older transaction will have the smaller time stamp value 2. Two schemes that prevent deadlock are"
+ },
+ {
+  "t": "li",
+  "x": "Wound-wait"
+ },
+ {
+  "t": "p",
+  "x": "Suppose that transaction Tk tries to lock an item x but is not able to because x is locked by some other transaction TL with a conflicting lock. The rules followed by these schemes are as follows: 1. Wait-die: If Ts (Tk) < Ts (TL), then (Tk older than TL) Tk is allowed to wait; otherwise (Tk younger than TL) abort Tk and restart it later with the same time stamp 2. Wound-wait: If Ts (Tk) < Ts (TL) then (Tk older than TL) abort TL and restart it later with the same time stamp; otherwise (Tk younger than TL) Tk is allowed to wait Both schemes end up aborting the younger of the two transactions that may be involved in a deadlock"
+ },
+ {
+  "t": "h2",
+  "x": "Optimistic Methods"
+ },
+ {
+  "t": "p",
+  "x": "Optimistic methods are based on the assumption that the majority of the database operations do not conflict. A transaction is executed without restrictions until it is committed. Each transaction moves through two or three phases: Read phase: The transaction reads the database, executes the needed computations, and makes the updates to a private copy of the database values. Validation phase: The transaction is validated to assure that the changes made will not affect the integrity and consistency of the database. If the validation test is positive, transaction goes to the Write Phase. If the validation test is negative, transaction is restarted, and changes are discarded. Write phase: The changes are permanently applied to the database."
+ },
+ {
+  "t": "h1",
+  "x": "Serializability"
+ },
+ {
+  "t": "p",
+  "x": "Serializabilty is accepted as ‘criterion for correctness’ for the interleaved execution of a set of transactions, such an execution is considered to be correct if and only if it is serializable. 1. A set of transactions is serializable if and only if it is equivalent to some serial execution of the same transactions 2. A serial execution is one in which the transactions are run one at a time in some sequence Schedule: Given a set of transactions, any execution of those transactions interleaved or otherwise is called a schedule. 1. Executing the transactions one at a time, with no interleaving constitutes a serial schedule. A schedule that is not serial is an interleaved schedule (or) nonserial schedule. 2. Two schedules are said to be equivalent if and only if they are guaranteed to produce the same result as each other. Thus, a schedule is serializable, and correct, if and only if it is equivalent to some serial schedule."
+ },
+ {
+  "t": "h2",
+  "x": "Two-phase Locking Theorem"
+ },
+ {
+  "t": "p",
+  "x": "If all transactions obey the two phase locking protocol, then all possible interleaved schedule are serializable. 1. Before operating on any object (it could be a database tuple), a transaction must acquire a lock on the object 2. After releasing a lock, a transaction must never go on to acquire any more locks. A transaction that obeys this protocol thus has two phases: a lock acquisition or “growing phase and a lock releasing or “shrinking” phase Let ‘I’ be an interleaved schedule involving some set of transactions T, T2, T3, . . . Tn. If ‘I’ is serializable, then there exists at least one serial schedule ‘S’ involving T1, T2, . . . Tn such that ‘I’ is equivalent to ‘S’ is said to be a serialization of ‘I’ Let Ti and Tj be any two distinct transactions in the set T1, T2, T3, . . . Tn. Let Ti precede Tj in the serialization ‘S’. In the interleaved schedule I, then the effect must be as if Ti really did execute before Tj. In other words, if A and B are any two transactions involved is some serializable schedule, then either A logically precedes B or B logically precedes A in that schedule, that is, either B can see A’s output or A can see B’s. If the effect is not as if either A ran before B or B ran before A, then the schedule is not serializable and not correct. 1. A schedule ‘S’ of ‘n’ transactions T1, T2 . . . Tn is an ordering of the operations of the transactions subject to the constraint that, for each transaction Ti that participates in ‘S’, the same order in which they occur in Ti. 2. For the purpose of recovery and concurrency control, we are mainly interested in the ‘read item’ and ‘write item’ operations of the transactions, as well as the COMMIT and ABORT operations. A shorthand notation for describing a schedule uses the symbols, ‘R’, ‘W’, ‘C’ and ‘A’ for the operations read item, write item, commit, and abort respectively, and appends as subscript the transition-id (transaction number) to each operation in the schedule Example: The schedule of the given set of transactions can be written as follows: T1 T2 Read item (x); X = X – N; Read item (x); ⟨eq⟩ M; Write item (x) Read item (y) Write item (x) Write item (y) ⟨eq⟩ Write item (y) Commit Schedule: S: R1(X); R2(X); W1 (X); R1(Y);"
+ },
+ {
+  "t": "h2",
+  "x": "W2(X); W2(Y); W1(Y); C2"
+ },
+ {
+  "t": "p",
+  "x": "Conflicts: Two operations in a schedule are said to have conflict if they satisfy all three conditions, if 1. they belong to different transactions 2. they access the same data item 3. at least one of the operations is a write item For example, In the schedule ‘S’ given above, the operations r1(x) and w2(x) conflict, as do The operations r2 (x) and w1(x) and the operations w1(x) and w2(x). However the operations r1(x) and r2(x) do not conflict, since they are both read operations; The operations w1(x) and w2(y) do not conflict because they operate on distinct data items x and y. The operations r1(x) and w1(x) do not conflict, because they belong to the same transaction. Complete schedule: A schedule S of ‘n’ transactions T1, T2, T3 . . . Tn is said to be a complete schedule if the following conditions hold. 1. The operations is ‘S’ are exactly those operations in T1, T2, . . . Tn including a commit or abort operation as the last operation for each transaction in the schedule. 2. For any pair of operations from the same transaction Ti, their order of appearance in ‘S’ is the same as their order of appearance in Ti 3. For any two conflicting operations, one of the two must occur before the other in the schedule. The preceding condition (3) allows for two non-conflicting operations to occur in the schedule without defining which occurs first, thus leading to the definition of a schedule as a partial order of the operations in the ‘n’ transactions. It is difficult to encounter complete schedules in a transaction processing system, because new transactions are continually being submitted to the system. Hence, it is useful to define the concept of the ‘committed projection C(S) of schedule S; which include only the operations in S that belong to committed transactions, that is, transaction Ti whose commit operation is Ci."
+ },
+ {
+  "t": "h1",
+  "x": "Recoverability"
+ },
+ {
+  "t": "p",
+  "x": "Recoverability ensures that once a transaction T is committed, it should never be necessary to roll back T. The schedules that theoretically meet this criterion are called recoverable schedules and those that do not are called nonrecoverable, and hence should not be permitted A schedule ‘S’ is recoverable if no transaction T in ‘S’ commits until all transactions T1 that have written an item that T reads have committed A transaction T reads from transaction T1 in a schedule S if some item x is first written by T1 and later read by T. In addition, T1 should not have been aborted before T reads item x, and there should be no transactions that write x after T1 writes it and before T reads it (unless those transactions, if any, have aborted before T reads x)"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Consider the given schedule, check whether it is recoverable or not: S: R1(X); R2(X); W1(X); R1(Y); W2(X); C2, W1(Y); C1?"
+ },
+ {
+  "t": "h2",
+  "x": "Solution:"
+ },
+ {
+  "t": "p",
+  "x": "The given schedule can also be represented as follows: T1 T2 R1(x) R2(x) W1(x) R1(y) W2(x) C2 W1(y) C1 There are two WR conflicts, if the schedule consists of RW conflict, then we may say that the schedule is not recoverable (if the transaction which is performing read operation commits first)"
+ },
+ {
+  "t": "h2",
+  "x": "Cascadeless Schedule"
+ },
+ {
+  "t": "p",
+  "x": "In a recoverable schedule, no committed transaction ever needs to be rolled back. It is possible for a phenomenon known as cascading rollback to occur, when an uncommitted transaction has to be rolled back because it read an item from a transaction that failed. This is illustrated in the following schedule:"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "S: R1(X); W1(X); R2(X); R1(Y); W2(X); W1(Y); A1, A2 The above schedule is represented as follows: T1 T2 R1(x) W1(x) R2(x) R1(y) W2(x) W1(y) A1 A2 Transaction T2 has to be rolled back because it reads item x from T1, and T1 is then aborted, because cascading rollback can be quite time consuming since numerous transactions can be rolled back. It is important to characterize the schedules where this phenomenon is guaranteed not to occur. A scheduled is said to be cascadeless if every transaction in the schedule reads only items that were written by committed transaction. In this case, all items read will not be discarded, so no cascading rollback will occur."
+ },
+ {
+  "t": "h2",
+  "x": "Strict Schedule"
+ },
+ {
+  "t": "p",
+  "x": "A schedule is called strict schedule, in which transactions can neither read nor write an item x until the last transaction that wrote x has committed or aborted 1. All strict schedules are cascadeless 2. All cascadeless schedules are recoverable"
+ },
+ {
+  "t": "h1",
+  "x": "Equivalence of Schedules"
+ },
+ {
+  "t": "p",
+  "x": "There are several ways to define equivalence of schedules as follows: 1. Result equivalent 2. Conflict equivalent 3. View equivalent"
+ },
+ {
+  "t": "h2",
+  "x": "Result Equivalent"
+ },
+ {
+  "t": "p",
+  "x": "Two schedules are called result equivalent if they produce the same final state of the database. However, two different schedules may accidentally produce the same final state."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Check whether the two schedules are result"
+ },
+ {
+  "t": "p",
+  "x": "equivalent or not: S1 S2 Read item (x); Read item (x) ⟨eq⟩ 20; ⟨eq⟩ 1.1; Write item (x); Write item (x);"
+ },
+ {
+  "t": "h2",
+  "x": "Solution:"
+ },
+ {
+  "t": "p",
+  "x": "Schedules S1 and S2 will produce the same final database state if they execute on a database with an initial value of x = 200; but for other initial values of x, the schedules are not result equivalent For two schedules to be equivalent, the operations applied to each data item affected by the schedules should be applied to that item in both schedules in the same order. The other two definitions of equivalence of schedules generally used are conflict equivalence and view equivalence"
+ },
+ {
+  "t": "h2",
+  "x": "Conflict Equivalence"
+ },
+ {
+  "t": "p",
+  "x": "Two schedules are said to be conflict equivalent if the order of any two conflicting operations is the same in both schedules. If two conflicting operations are applied in different orders in two schedules, the effect can be different on the database or on other transactions in the schedule, and hence the schedules are not conflict equivalent."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "S1 S3 r1(x) W1(x) W2(x) W2(x) S2 S4 W2(x) W2(x) r1(x) W1(x) The value read by r1(x) can be different in the two schedules. Similarly, if two write operations occur in the order w1(x), w2(x) in s3, and in the reverse order w2(x), w1(x) in s4, the next r(x) operation in the two schedules will read potentially different values."
+ },
+ {
+  "t": "h2",
+  "x": "Testing for Conflict Serializability"
+ },
+ {
+  "t": "p",
+  "x": "The following algorithm can be used to test a schedule for conflict serializability. The algorithm takes read item and write item operations in a schedule to construct a precedence graph or serialization graph, which is a directed graph G(N, E) here N is a set of Nodes N = {T1, T2, …. Tn} and E is a set of directed edges E = {e1, e2, ….. Em} There is one node in the graph for each transaction. Ti in the schedule. Each edge ei in the graph is of the form (Tj→ Tk), ⟨eq⟩ n, ⟨eq⟩ n, Where Tj is the starting node of ei and Tk is the ending node of ei. Edge is created if one of the operations in Tj appears in the schedule before some conflicting operation in Tk"
+ },
+ {
+  "t": "h2",
+  "x": "Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "1. For each transaction Ti participating in schedule S, create a node labelled Ti in the precedence graph 2. For each case in S where Tj executes a read item (x) after Ti executes a write item (x), create an edge (Ti → Tj) in the graph 3. For each case in S where Tj executes a write item (x) after Ti executes a read item (x), create an edge (Ti → Tj) in the graph 4. For each case in S where Tj executes a write item (x) after Ti executes a write item (x), create an edge (Ti → Tj) in the precedence graph 5. The schedule S is serializable, if the precedence graph contains no cycles A cycle in a directed graph is a sequence of edges C = ((Tj → Tk), (Tk → Tp), . . . (Ti → Tj)) With the property that the starting node of each edge, except the first edge is the same as the ending node of the previous edge, and the starting node of the first edge is the same as the ending node of the last edge."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Check whether the given schedule is conflict"
+ },
+ {
+  "t": "p",
+  "x": "serializable or not by drawing precedence graph: T1 T2 T3 R1(x) W2(x) R3(x) W1(x) W3(x) R1(x)"
+ },
+ {
+  "t": "h2",
+  "x": "Solution:"
+ },
+ {
+  "t": "p",
+  "x": "First identify the conflicts: (T1 → T2) WR conflict (T2 → T1) WW conflict (T2 → T3) RW conflict (T3 → T1) WR conflict (T1 → T3) WW conflict Take transactions as nodes in the precedence graph: T1 T2 T3 The precedence graph has cycle, which says that the schedule is not serializable."
+ },
+ {
+  "t": "h2",
+  "x": "View Equivalence and View Serializability"
+ },
+ {
+  "t": "p",
+  "x": "View equivalence is less restrictive compared to conflict equivalence. Two schedules S and S′ are said to be view equivalent if the following three conditions hold: 1. The same set of transactions participate in S and S′, and S and S′ include the same operations of those transactions 2. For any operation ri(x) of Ti in S, if the value of x read by the operation has been written by an operation wj (x) of Tj, the same condition must hold for the value of x read by operation ri (x) of Tj in S′ 3. If the operation wk(y) of Tk is the last operation to write Y in S, then Wk (y) of Tk must also be the last operation to write item Y in S′ The idea behind view equivalence is that as long as each read operation of a transaction reads the result of the same write operation in both schedules, the write operations of each transaction must produce the same result. Hence the read operation is said to see the same view in both schedules: 1. A schedule S is said to be view serializable if it is view equivalent to a serial schedule. 2. All conflict serializable schedules are view serializable, but vice versa is not true."
+ },
+ {
+  "t": "h1",
+  "x": "files"
+ },
+ {
+  "t": "p",
+  "x": "Databases are stored on magnetic disks as files of records. Computer storage media form a storage hierarchy that includes two main categories. Primary storage This category includes storage media that can be operated on, directly by CPU, such as the computer main memory and cache memory. Primary storage provides fast access but is of limited storage capacity."
+ },
+ {
+  "t": "h2",
+  "x": "Secondary storage This category includes magnetic disks, optical"
+ },
+ {
+  "t": "p",
+  "x": "disks, and tapes. These devices usually have a larger capacity, less cost, and slower access to data. Data in secondary storage cannot be processed directly by the CPU, it must be copied into primary storage."
+ },
+ {
+  "t": "h2",
+  "x": "File Structure"
+ },
+ {
+  "t": "p",
+  "x": "Taxonomy of file structure Files access methods Random Sequential Sequential file Index file Hashed file Sequential file A sequential file is one in which records can only be accessed sequentially, one after another from beginning to end. Records are stored contiguously on the storage device. Index files These files are used to access a record in the file. The entire index file is loaded into main memory data and indexes are stored in the same file. The term ‘index file’ is used as a synonym for the term ‘database file’. The index file contains parameters that specify the name and location of file used to store DB. Indexing Indexing mechanism is used to speed up access to desired data. An index file consists of records (called index entries) of the form. Search-key Pointer Index files are typically much smaller than the original file. Ordered indices In ordered index, index entries are stored, sorted on the search-key value. Example: Author catalogue in library."
+ },
+ {
+  "t": "h1",
+  "x": "Memory Hierarchies"
+ },
+ {
+  "t": "p",
+  "x": "At the primary storage level, the memory hierarchy includes cache memory which is a static RAM. The next level of primary storage is DRAM (dynamic RAM) which provides the main work area for the CPU for keeping programs and data and is called the main memory. At the secondary storage level, the hierarchy includes magnetic disks, as well as mass storage in the form of CD-ROM (compact disk read-only memory) and tapes. Programs reside in DRAM and large permanent databases reside on secondary storage. Another form of memory, ﬂ ash memory, is non-volatile. Flash memories are high-density, high-performance memories using EEPROM (electrically erasable programmable read-only Files Memory hierarchies Description of disk devices File records Sorted ﬁ les Hashing techniques Extendible hashing Index update Clustering index B -Trees B +Trees Over ﬂ ow in internal node"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "p",
+  "x": "memory) technology. The advantage of flash memory is the fast access speed, the disadvantage is that an entire block must be erased and written over at a time. Finally, magnetic tapes are used for archiving and backup storage of data."
+ },
+ {
+  "t": "h1",
+  "x": "Description of Disk Devices"
+ },
+ {
+  "t": "p",
+  "x": "Magnetic disks are used for storing large amounts of data. The capacity of a disk is the number of bytes it can store. A disk is single sided if it stores information on only one of its surfaces and double sided if both surfaces are used. To increase storage capacity, disks are assembled into a disk pack, which may include many disks and hence many surfaces. Information is stored on a disk surface in concentric circles with small width, each having a distinct diameter. Each circle is called a track. For disk packs, the tracks with the same diameter on the various surfaces are called a cylinder because of the shape they would form if connected in space. A track usually contains a large amount of information; it is divided into smaller blocks (or) sectors. The division of track into equal-sized disk blocks (or pages) is set by the operating system during disk formatting. Blocks are separated by fixed-size inter-block gaps, which include specially coded control information written during disk initialization. This information is used to determine which block on the track follows each inter block gap. Transfer of data between main memory and disk takes place in units of disk blocks. The hardware address of a block is the combination of a cylinder number, track number and block number is supplied to the disk I/O hardware. The actual hardware mechanism that reads or writes a block is the disk read/write head, which is part of a system called a disk drive. A disk is mounted in the disk drive, which includes a motor that rotates the disk. To transfer a disk block, given its address, the disk controller must first mechanically position the read/write head on the correct track. The time required to do this is called the seek time. There is another delay called rotational delay or latency; the beginning of the desired block rotates into position under the read/write head. It depends on the RPM of the disk. Finally, some additional time is needed to transfer the data, which is called block-transfer time. Hence, the total time needed to locate and transfer an arbitrary block, given its address is the sum of the seek time, rotational delay and block transfer time. The seek time and rotational delay are usually much larger than the block transfer time."
+ },
+ {
+  "t": "h1",
+  "x": "File Records"
+ },
+ {
+  "t": "p",
+  "x": "Data is usually stored in the form of records. Each record consists of a collection of related data values or items where each value is of one or more bytes and corresponds to a particular field of the record. Records describe entities and their attributes. Record type A collection of field names and their corresponding data types constitutes a record type (or) record format. A file is a sequence of records. If every record in the file has exactly the same size (in bytes), the file is said to be made up of fixed-length records. If different records in the file have different sizes, the file is said to be made up of variable-length records."
+ },
+ {
+  "t": "h2",
+  "x": "Spanned Versus Unspanned Records"
+ },
+ {
+  "t": "p",
+  "x": "The records of a file must be allocated to disk blocks because a block is the unit of data transfer between disk and memory. When the block size is larger than the record size, each block will contain numerous records, although some files may have unusually large records that cannot fit in one block. Suppose that the block size is B bytes. For a file of fixedlength records of size R bytes, with B ≥ R, we can fit bfr = ⎣B/R⎦ records per block The value bfr is called the blocking factor for the file. Some times R may not divide B exactly, so we have some unused space in each block equal to B – (bfr * R) bytes. To utilize this unused space, we can store part of a record on one block and the rest on another. A pointer at the end of the first block points to the block containing the remainder of the record in case it is not the next consecutive block on disk. This organization is called spanned, because records can span more than one block. Whenever a record is larger than a block, we must use a spanned organization. If records are not allowed to cross block boundaries, the organization is called unspanned. This is used with fixed-length records having B > R, because it makes each record start at a known location in the block. For variable-length records, either a spanned or an unspanned organization can be used. For variable-length records using spanned organization, each block may store a different number of records. In this case, the blocking factor bfr represents the average number of records per block for the file. We can use bfr to calculate the number of blocks ‘b’ needed for a file of ‘r’ records. b = ⎡(r/bfr)⎤ blocks Record 1 Record 2 Record 3 Record 4 Record 5 Block x Block x + 1"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 2 Spanned"
+ },
+ {
+  "t": "p",
+  "x": "There are several standard techniques for allocating the blocks of a file on disk. In contiguous allocation, the file blocks are allocated to consecutive disk blocks. In linked allocation, each file block contains a pointer to the next file block. A combination of the two allocates clusters of consecutive disk blocks, and the clusters are linked. Clusters are sometimes called file segments (or) extents. Another possibility is to use indexed allocation, where one or more index blocks contain pointers to the actual file blocks."
+ },
+ {
+  "t": "h1",
+  "x": "Sorted Files (Ordered Records)"
+ },
+ {
+  "t": "p",
+  "x": "We can physically order the records of a file on disk based on the values of the one of their fields called the ordering field. This leads to an ordered or sequential file. If the ordering field is also a key field of the file, a field guaranteed to have a unique value in each record, then the field is called the ordering key for the file."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages"
+ },
+ {
+  "t": "p",
+  "x": "1. Reading the records in order of the ordering key values becomes extremely efficient, because no sorting is required. 2. Finding the next record from the current one in order of the ordering key usually requires no additional block access, because the next record is in the same block as the current one. 3. Using a search condition based on the value of an ordering key field results in faster access when the binary search technique is used. This constitutes an improvement over linear searches, although it is not often used for disk files. A binary search for disk files can be done on the blocks rather than on the records. Suppose that a file has ‘b’ blocks numbered 1, 2 ,…, b, the records are ordered by ascending value of their ordering key field and we are searching for a record whose ordering key field value is K. Assuming that disk addresses of the file blocks are available in the file header, the binary search usually accesses log2 (b) blocks, whether the record is found (or) not, an improvement over linear searches, where, on the average, (b/2) blocks are accessed when the record is found and ‘b’ blocks are accessed when the record is not found."
+ },
+ {
+  "t": "h2",
+  "x": "Record"
+ },
+ {
+  "t": "p",
+  "x": "Heap (unordered) Sequential scan (linear search) b/2 Ordered Ordered scan b/2 Ordered Binary search log2b Ordered files are rarely used in database applications unless an additional access path, called a primary index, is used; this results in an indexed sequential file. This further improves the random access time on the ordering key field."
+ },
+ {
+  "t": "h1",
+  "x": "Hashing Techniques"
+ },
+ {
+  "t": "p",
+  "x": "The other type of primary file organization is based on hashing, which provides very fast access to records on certain search conditions. This organization is usually called a hash file. The search condition must be an equality condition on a single field, called the hash field of the file. If the hash is also a key field of the file, in which case it is called the hash key. The idea behind hashing is to provide a function ‘h’, called a hash function or randomizing function, which is applied to the hash field value of a record and yields the address of the disk block in which the record is stored. We need only a single-block access to retrieve that record."
+ },
+ {
+  "t": "h2",
+  "x": "Internal Hashing"
+ },
+ {
+  "t": "p",
+  "x": "For internal files, hashing is implemented as a hash table through the use of an array of records. Suppose that the array index range is from 0 to M – 1, then we have M slots whose addresses corresponds to the array indexes. We choose a hash function that transforms the hash field value into an integer between 0 and M – 1. One common hash function is the h(K) = K mod M function, which returns the remainder of an integer hash field value K after division by M; this value is then used for the record address. Non-integer hash field values can be transformed into integers before the mod function is applied. For character strings, the numeric (ASCII) codes associated with characters can be used in the transformation. A collision occurs when the hash field value of a record that is being inserted hashes to an address that already contains a different record. In this situation, we must insert the new record in some other position, since its hash address is occupied. The process of finding another position is called collision resolution. There are different methods for collision resolution as follows:"
+ },
+ {
+  "t": "h2",
+  "x": "Open addressing Proceeding from the occupied position"
+ },
+ {
+  "t": "p",
+  "x": "specified by the hash address, the program checks the subsequent positions in order until an unused (empty) position is found."
+ },
+ {
+  "t": "h2",
+  "x": "Chaining For this method, various overflow locations"
+ },
+ {
+  "t": "p",
+  "x": "are kept, usually by extending the array with a number of overflow positions. In addition, a pointer field is added to each record location. A collision is resolved by placing the new record in an unused overflow location and setting the pointer of the occupied hash address location to the address of that overflow location. A linked list of overflow records for each hash address is thus maintained."
+ },
+ {
+  "t": "h2",
+  "x": "Multiple hashing The program applies a second hash"
+ },
+ {
+  "t": "p",
+  "x": "function if the first results in a collision. If another collision results, the program uses open addressing or applies a third hash function and then uses open addressing if necessary. If we expect to have ‘r’ records to store in the table, we should choose M locations for the address space such that (r/M) is between 0.7 and 0.9. It may also be useful to choose a prime number for M, since it has been demonstrated that this distributes the hash addresses better over the address space when the ‘mod’ hashing function is used. Other hash functions may require M to be a power of 2."
+ },
+ {
+  "t": "h2",
+  "x": "External Hashing"
+ },
+ {
+  "t": "p",
+  "x": "Hashing for disk files is called external hashing. To suit the characteristics of disk storage, the target address space is made of buckets, each of which holds multiple records. A bucket is either one disk block or a cluster of contiguous blocks. The hashing function maps a key into a relative bucket number, rather than assigning an absolute block address to the bucket. A table maintained in the file header converts the bucket number into the corresponding disk block address. The collision problem is less severe with buckets, because as many records as will fit in a bucket can hash to the same bucket without causing problems. If the capacity of bucket exceeds, we can use a variation of chaining in which a pointer is maintained in each bucket to a linked list of overflow records for the bucket. The pointers in the linked list should be record pointers, which include both a block address and a relative record position within the block. ⟨eq⟩ Block address on disk n−2 n−1 Bucket number Bucket 0 Bucket 1 Bucket 2 Record pointer Record pointer Record pointer NULL Overflow Record pointer Record pointer Record pointer Record pointer Record pointer Record pointer The hash function is h(k) = k mod 10 and the hashing scheme described above is called static hashing because a fixed number of buckets M is allocated. It can be a drawback for dynamic files. Suppose that we allocate M buckets for the address space and let ‘m’ be the maximum number of records that can fit in one bucket, then at most (m * M) records will fit in the allocated space. If the number of records turns out to be substantially fewer than (m * M), we are left with a lot of unused space. If the number of records increases to substantially more than (m * M), numerous collisions will result and retrieval will be slowed down because of the long lists of overflow records. In either case, we may have to change the number of blocks M allocated and then use a new hashing function (based on the new value of M) to redistribute the records. These organizations can be quite time consuming for large files. Newer dynamic file organizations based on hashing allows the number of buckets to vary dynamically with only localized reorganization."
+ },
+ {
+  "t": "h2",
+  "x": "File Expansion"
+ },
+ {
+  "t": "p",
+  "x": "The disadvantage of static hashing is that the hash address space is fixed. Hence, it is difficult to expand or shrink the file dynamically. The first scheme is extendible hashing, It stores an access structure in addition to the file hence it is similar to indexing. The main difference is that the access structure is based on the values that result after application of the hash function to the search field. In indexing, the access structure based on the values of the search field itself. The second technique, called linear hashing, does not require additional access structure. These hashing schemes take advantage of the fact that the result of applying a hashing function is a non-negative integer and hence can be represented as a binary number. The access structure is built on the binary representation of the hashing function result, which is a string of bits. We call this the hash value of a record. Records are distributed among buckets based on the values of the leading bits in their hash values."
+ },
+ {
+  "t": "h2",
+  "x": "Extendible Hashing"
+ },
+ {
+  "t": "p",
+  "x": "In extendible hashing, a type of directory, an array of 2d bucket addresses is maintained, where d is called the global depth of the directory. The integer value corresponding to the first (high-order) d bits of a hash value is used as an index to the array to determine a directory entry, and the address in that determines the bucket in which the corresponding records are stored. Several directory locations with the same first d′ bits for their hash values may contain the same bucket address if all the records that hash to these locations fit in a single bucket. A local depth d′ is stored with each bucket specifies the number of bits on which the bucket contents are based. Bucket A Bucket B Bucket C Bucket D The value of d can be increased and decreased by one at a time, thus doubling or halving the number of entries in the directory array. Doubling is needed if a bucket, whose local depth d′ is equal to the global depth d, overflows. Halving occurs if d > d′ for all the buckets after some locations occur. Most record retrievals require two block accesses: one to the directory and the other to the bucket. The main advantage of extendible hashing is the performance of the file does not degrade as the file grows, as opposed to static external hashing where collisions increases and the corresponding chaining causes additional accesses. No space is allowed in extendible hashing for future growth, but additional buckets can be allocated dynamically as needed. The space overhead for the directory table is negligible. Another advantage is that splitting causes minor reorganization in most cases, since only the records in one bucket are redistributed to the two new buckets. The only time a reorganization is more expensive is when the directory has to be doubled (or) halved. A disadvantage is that the directory must be searched before accessing the buckets themselves, resulting in two block accesses instead of one in static hashing."
+ },
+ {
+  "t": "h1",
+  "x": "Indexing"
+ },
+ {
+  "t": "p",
+  "x": "Indexes are auxiliary access structures, which are used to speed up the retrieval of records in response to certain search conditions. The index structure typically provides secondary access paths, which provide alternative ways of accessing the records without affecting the physical placement of records on disk. They enable efficient access to records based on the indexing fields that are used to construct the index. Any field of the file can be used to create an index and multiple indexes on different fields can be constructed on the same file. To find a record or records in the file based on a certain selection criterion on an indexing field, one has to initially access the index, which points to one or more blocks in the file where the required records are located. The most prevalent types of indexes are based on ordered files (single-level indexes) and tree data structures (multilevel indexes, B+ trees). Dense Index files: Index record appears for every searchkey value in the file. Brighton A-217 Brighton Downtown A-101 Downtown Mianus A-110 Downtown Perryridge A-215 Mianus A102 Perryridge Figure 3 Dense index file."
+ },
+ {
+  "t": "h2",
+  "x": "Sparse index files These files contain index records for"
+ },
+ {
+  "t": "p",
+  "x": "only some search-key values. Applicable when records are sequentially ordered on search key. Brighton A-217 Brighton Mianus A-101 Downtown Red wood A-110 Downtown A-215 Mianus A102 Perryridge A-201 Perryridge A-601 Red wood Figure 4 Sparse index file. Compared to dense index, sparse index takes less space and less maintenance over head for insertions and deletions. It is slower than dense index for locating records."
+ },
+ {
+  "t": "h2",
+  "x": "Index Update"
+ },
+ {
+  "t": "p",
+  "x": "Record deletion If delete key was the only record in the file with its particular search-key value, the search key is deleted from the index also. In dense index, delete the search key. In spare index, if deleted key value exists in the index, the value is replaced by next search-key value in the file. If the next search-key value already has an index entry, the entry is deleted instead of being replaced."
+ },
+ {
+  "t": "h2",
+  "x": "Record insertion In dense index, if the search-key value"
+ },
+ {
+  "t": "p",
+  "x": "doesn’t appear in the index insert it. If index stores an entry for each block of the file, no change needs to be made to the index unless a new block is created. If a new block is created, the first search-key value appearing in the new block is inserted into the index. A-217 A-101 A-110 A-215 A-102 A-201 A-218 A-222 A-305 Brighton Downtow Downtown Mianus Perryridge Perryridge Perryridge Redwoo Red will Figure 5 Secondary index. Secondary index example: 1. Index record points to a bucket that contains pointers to all the actual records with that particular search – key value 2. secondary index have to be dense"
+ },
+ {
+  "t": "h2",
+  "x": "Single-level Ordered Indexes"
+ },
+ {
+  "t": "p",
+  "x": "A file with a given record structure consisting of several fields (or attributes), an index access structure is usually defined on a single field of a file is called an indexing field or indexing attribute. The index typically stores each value of the index field along with a list of pointers to all disk blocks that contain records with that field value. The values in the index are ordered so that we can do a binary search on the index. The index file is much smaller than the data file, so searching the index using a binary search is reasonably efficient. Multilevel indexing does away the need for a binary search at the expense of creating indexes to the index itself."
+ },
+ {
+  "t": "h2",
+  "x": "Types of Ordered Indexes"
+ },
+ {
+  "t": "p",
+  "x": "1. Primary index 2. Clustering index 3. Secondary index Primary index A primary index is an ordered file whose records are of fixed length with two fields. The first field is of the same data type as the ordering key field called the primary key of the data file, and the second field is a pointer to a disk block (block address). There is one index entry (index record) in the index file for each block in the data file. Each index entry has the value of the primary key field for the record in a block and a pointer to that block as its two field values. The two field values of index entry i is <k(i), p(i)>."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "NAME RNO DOB GRADE AGE Abhi Agarkar Block 1 Block 2 Akash Akram Watson Williams Block n-1 Zaheer Zakir Zamal Block n To create a primary index on the ordered file shown in the above figure, we use the NAME field as primary key, because that the ordering key field on the file (assuming that each value of NAME is unique). Each entry in the index has a NAME value and a pointer. Some sample index entries are as follows: < k(1) = (Abhi), p(1) = address of block 1 > < k(2) = (Akram), p(2) = address of block 2 > < k(3) = (Brat), p(3) = address of block 3 > The below figure illustrates this primary index. The total number of entries in the index is the same as the number of disk blocks in the ordered data file. The first record in each block of the data file is called the anchor record of the block (or) block anchor. …. …. …. …. …. …. DATA FILE (PRIMARY KEY FIELD) NAME RNO DOB GRADE AGE Abhi Agarkar Akash Akram Watson Williams Zaheer Zakir Zamal (<k(i ), p(i )> entries) INDEX FILE BLOCK ANCHOR PRIMARY KEY VALUE Abhi Akram Watson Zakir BLOCK POINTER Figure 6 Primary index on the ordering key field of the file. Indexes can also be characterized as dense or sparse. A dense index has an index entry for every search-key value (every record) in the data file. A sparse (non-dense) index has index entries only for some of the search values. A primary index is non-dense (sparse) index, since it includes an entry for each disk block of the data file and the keys of its anchor record rather than for every search value. The index file for primary index needs fewer blocks than does the data file, for two reasons as follows: 1. There are fewer index entries than there are records in the data file. 2. Each index entry is typically smaller in size than a data record because it has only two fields. So more index entries than data records can fit in one block. A binary search on the index file requires fewer block accesses than a binary search on the data file. The binary search for an ordered data file required log2 b block accesses. But if the primary index file contains bi blocks, then to locate a record with a search-key value requires a binary search of that index and access to the block containing that record, a total of log2 b i + 1 accesses. A record whose primary key value is k lies in the block whose address is p(i), where k(i) ≤ k ≤ k(i + 1). The ith block in the data file contains all such records because of the physical ordering of the file records on the primary key field. To retrieve a record, given the value k of its primary key field, we do a binary search on the index file to find the appropriate index entry i, and then retrieve the data file block whose address is p(i). The following example illustrates the saving in block accesses that is attainable when a primary index is used to search for a record. Example: Suppose that we have an ordered file with r = 24,000 records stored on a disk with block size B = 512 bytes. File records are of fixed size and are unspanned, with record length R = 120 bytes. The blocking factor for the file would be bfr = B/R ⟨eq⟩ records per block The number of blocks needed for the file is b r bfr ⟨eq⟩ blocks A binary search on the data file would need log2 b = log2 6000 = 13 block accesses"
+ },
+ {
+  "t": "h2",
+  "x": "Example: For the above data, suppose that the ordering"
+ },
+ {
+  "t": "p",
+  "x": "key field of the file is V = 7 bytes long, a block pointer, P = 5 bytes long, and we have constructed a primary index for the file. The size of each index entry is Ri = (7 + 5) = 12 bytes, so the blocking factor for the index is bfri = (B/Ri) 512/12 = 42.66 = 42 entries per block. The total number of index entries ri is equal to number of blocks in the data file, which is 6000. The number of index blocks is hence bi = (ri/bfri) = 6000/42 = 142 blocks To perform a binary search on the index file would need log2bi = log2142 = 8 block accesses. To search for a record using the index, we need one additional block access to the data file for a total of ‘9’ block accesses."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantage: A major problem with a primary index is"
+ },
+ {
+  "t": "p",
+  "x": "insertion and deletion of records. If we attempt to insert a record in its correct position in the data file, we have to not only move records to make space for the new record but also change some index entries. Clustering Index If records of a file are physically ordered on a non-key field, which does not have a distinct value for each record, that field is called the clustering field. We can create a different type of index called clustering index to speed up the retrieval of records that have the same value for the clustering field. A clustering index is also an ordered file with two fields, the first field is of the same type as the clustering field of the data file, and the second field is a block pointer. There is one entry in the clustering index for each distinct value of the clustering field, containing the value and a pointer to the first block in the data file that has a record with that value for its clustering field. The record insertion and deletion still cause problems, because the data records are physically ordered. To alleviate the problem of insertion, reserve a whole block (or a cluster of contiguous blocks) for each value of the clustering field, all records with that value are placed in the block (or block cluster). A clustering index is an example of a non-dense index, because it has an entry for every distinct value of the indexing field which is a non-key."
+ },
+ {
+  "t": "h2",
+  "x": "Secondary Index A secondary index provides a secondary"
+ },
+ {
+  "t": "p",
+  "x": "means of accessing a file for which some primary access already exists. The secondary index may be on a field which is a candidate key and has a unique value in every record, or a non-key with duplicate values. The index is an ordered file with two fields. The second field is either a block pointer or a record pointer. There can be many secondary indexes for the same file. First consider a secondary index access structure on a key field that has a distinct value for every record such a field is some times called a secondary key. The records of the data file are not physically ordered by values of the secondary key field, we cannot use block anchors. That is why an index entry is created for each record in the data file, rather than for each block, as in the case of a primary index."
+ },
+ {
+  "t": "h2",
+  "x": "Btrees"
+ },
+ {
+  "t": "p",
+  "x": "1. A commonly used index structure 2. Non-sequential, ‘balanced’ 3. Adapts well to insertions and deletions 4. Consists of blocks holding at most n keys and n + 1 pointers. 5. We consider a variation actually called a B+ tree"
+ },
+ {
+  "t": "h2",
+  "x": "B+ Trees"
+ },
+ {
+  "t": "p",
+  "x": "B+ trees are a variant of B– trees. In B+ trees data stored only in leaves, leaves form a sorted linked list. Parameter – n Branching factor – n + 1 Keys 240 ≤ k Keys ⟨eq⟩ Keys ⟨eq⟩ Keys k < 30 Each node (except root) has at least n/2 keys. B– tree stands for balanced tree. All the paths through a B– tree from root to different leaf nodes are of the same length (balanced path length). All leaf nodes are at the same depth level. This ensures that number of disk accesses required for all the searches are same. The lesser the depth (level) of an index tree, the faster the search."
+ },
+ {
+  "t": "h2",
+  "x": "Insertion into B+ tree"
+ },
+ {
+  "t": "p",
+  "x": "Given nodes 8 5 1 7 3 12 Initially start with root node (has no children) Insert 1 (overflow) Insert 7"
+ },
+ {
+  "t": "h2",
+  "x": "Overflow in Leaf Node"
+ },
+ {
+  "t": "p",
+  "x": "Split the leaf node First, j = ceiling ((pleaf + 1)/2) entries are kept in the original node and the remaining moved to the new leaf. 1. Create a new internal node, and jth index value is replicated in the parent internal node. 2. A pointer is added to the newly formed leaf node. Insert 3 → overflow Insert 12 (overflow, split propagates, new level)"
+ },
+ {
+  "t": "h2",
+  "x": "Overflow in Internal Node"
+ },
+ {
+  "t": "p",
+  "x": "Split the internal node, the entries up to Pj where j = floor ((p + 1)/2) are kept in the original node and remaining moved to the new internal node 1. Create a new internal node and the jth index value is moved to the parent internal node (without replication) 2. Pointers are added to the newly formed nodes. 3. B+ tree ensures some space always left in nodes for new entries. Also makes sure all nodes are at least half full."
+ },
+ {
+  "t": "h2",
+  "x": "Deletion in B+ Trees"
+ },
+ {
+  "t": "p",
+  "x": "Delete 5,12,9 from the below B+ tree: Delete 5: 1 6 Delete 12: Under flow has occurred, so redistribute. Delete 9: Underflow (merge with left) redistribute."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages"
+ },
+ {
+  "t": "p",
+  "x": "1. B– Trees and B+ trees: B– tree is a data structure used for external memory. 2. B– trees are better than binary search trees if data is stored in external memory. 3. Each node in a tree should correspond to a block of data. 4. Each node can store many data items and has many successors. 5. The B– tree has fewer levels but search for an item takes more comparisons at each level. 6. If a B– tree has order ‘d’, then each node (except root) has at least d/2 children, then the depth of the tree is at most log d/2 (size) + 1. 7. In the worst case, we need (d - 1) comparisons in each node (using linear search) 8. Fewer disk accesses are required compared to binary Tree. 9. The usual data structure for an index is the B+ tree. 10. Every modern DBMS contains some variant of B– trees in addition with other index structures depending on the application. 11. B– trees and B+ trees are one and the same. They differ from B– trees in having all data in the leaf blocks. 12. Compared to binary trees, B– trees will have higher branching factor. 13. Binary trees can degenerate to a linear list, B– trees are balanced, so this is not possible. 14. In B+ tree, the values in inner nodes are repeated in the leaf nodes. 15. The height of the tree might decrease, because the data pointer is needed only in the leaf nodes, we can also get a sorted sequence. 16. In B– trees, all leaves have the same distance from root hence B– trees are balanced. This ensures that the chain of links followed to access a leaf node is never too long. 17. The time complexity of search operation in B– tree (tree height) is O(log n), where ‘n’ is the number of entries. 18. Advantage of B+ tree automatically reorganizes itself with small and local changes while doing insertions and deletions, reorganization of entire file is not required to maintain performance. 19. Disadvantage of B+ tree, extra Insertion and deletion overhead, space overhead. 20. B+ trees can be used as dynamic multilevel Indexes."
+ }
+]

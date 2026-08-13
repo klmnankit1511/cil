@@ -506,6 +506,82 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
               border-radius: var(--r-xl); }
 .card-empty p { margin: 6px 0; }
 
+/* ------------------------------------------------------------ learn / reader */
+
+.learn { display: grid; grid-template-columns: 268px minmax(0, 1fr); gap: 26px; align-items: start; }
+
+.toc { position: sticky; top: 86px; display: grid; gap: 12px; }
+.toc .back { justify-content: flex-start; padding: 7px 12px; }
+.toc-title { font-size: 12px; font-weight: 680; letter-spacing: .07em;
+             text-transform: uppercase; color: var(--text-3); padding: 0 4px; }
+.toc-list { display: grid; gap: 2px; max-height: calc(100vh - 220px); overflow-y: auto;
+            padding-right: 4px; }
+.toc-list a {
+  display: flex; gap: 10px; align-items: baseline;
+  padding: 8px 11px; border-radius: 9px;
+  font-size: 14px; line-height: 1.4; color: var(--text-2);
+  transition: background var(--fast) var(--ease), color var(--fast) var(--ease);
+}
+.toc-list a:hover { background: var(--surface-2); color: var(--text-1); }
+.toc-list a.on { background: var(--accent-soft); color: var(--accent-ink); font-weight: 620; }
+.toc-list a .n { flex: none; min-width: 18px; font-size: 12px; color: var(--text-3);
+                 font-variant-numeric: tabular-nums; }
+.toc-list a.on .n { color: var(--accent-ink); }
+.toc-list a.done:not(.on) { color: var(--text-3); }
+.toc-list a.done .n::after { content: " ✓"; color: var(--good); }
+
+.reader { padding: 30px 34px 34px; border-radius: var(--r-xl);
+          background: var(--surface-1); border: 1px solid var(--border);
+          box-shadow: var(--shadow-sm); animation: rise var(--slow) var(--ease) both; }
+.reader-head { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; margin-bottom: 18px; }
+.reader-head .spacer { margin-left: auto; }
+.reader > h1 { font-size: clamp(25px, 3.4vw, 33px); font-weight: 700; margin-bottom: 6px; }
+
+/* the reading column: measure, rhythm and hierarchy do the work here */
+.prose { max-width: 70ch; font-size: 16.6px; line-height: 1.78; color: var(--text-2); }
+.prose h3 {
+  margin: 30px 0 10px; font-size: 17.5px; font-weight: 660; color: var(--text-1);
+  letter-spacing: -.01em; scroll-margin-top: 90px;
+}
+.prose h3::before {
+  content: ""; display: block; width: 30px; height: 3px; border-radius: 2px;
+  background: var(--accent); margin-bottom: 10px; opacity: .85;
+}
+.prose p { margin: 0 0 15px; }
+.prose ul { margin: 0 0 16px; padding-left: 0; list-style: none; display: grid; gap: 8px; }
+.prose li { position: relative; padding-left: 22px; }
+.prose li::before {
+  content: ""; position: absolute; left: 4px; top: .68em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: .8;
+}
+.prose code { padding: 1px 5px; border-radius: 5px; background: var(--surface-2);
+              font: 500 .89em/1 ui-monospace, SFMono-Regular, monospace; }
+/* a formula the PDF text layer lost — shown as a placeholder, never as debris */
+.prose code.eq {
+  padding: 2px 8px; border-radius: 6px;
+  background: var(--surface-2); border: 1px dashed var(--border-strong);
+  color: var(--text-3); font-size: .8em; letter-spacing: .02em;
+  white-space: nowrap; vertical-align: 1px;
+}
+
+.reader-foot { display: flex; align-items: center; gap: 10px; margin-top: 34px;
+               padding-top: 22px; border-top: 1px solid var(--border); }
+.reader-foot .spacer { margin-left: auto; }
+
+.spinner {
+  width: 30px; height: 30px; margin: 0 auto 14px; border-radius: 50%;
+  border: 3px solid var(--surface-3); border-top-color: var(--accent);
+  animation: spin 800ms linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 940px) {
+  .learn { grid-template-columns: 1fr; }
+  .toc { position: static; }
+  .toc-list { max-height: 230px; }
+  .reader { padding: 22px 18px 26px; }
+}
+
 /* ------------------------------------------------------------ browse list */
 
 .qlist { display: grid; gap: 11px; }

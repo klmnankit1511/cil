@@ -1,0 +1,2686 @@
+[
+ {
+  "t": "h1",
+  "x": "Computer Network"
+ },
+ {
+  "t": "p",
+  "x": "Computer network is the collection of two or more computers that are interconnected with each other to perform data communication using the data communication protocol through communications media (wired or wireless) .So these computers can share information, data, programs, and use of hardware together. Data communications that can be done include text data, images, video and sound. Or A computer network, often simply referred, as a network is a collection of computers and devices interconnected by communication channels that facilitate communication and allow sharing of resources and information among interconnected devices. There are different networks: 1. LAN 2. MAN 3. WAN LAN A Local Area Network (LAN) is a network that is confined to a relatively small area. It is generally limited to a geographic area such as a lab, school, or building. LAN Computers rarely spans more than a mile apart. In a typical LAN configuration, one computer is designated as the file server. It stores all the software that controls the network, as well as the software that can be shared by the computers attached to the network. Computers connected to the file server are called workstations. The workstations can be less powerful than the file server, and they may have additional software on their hard drives. On many LANs, cables are used to connect the network interface cards in each computer. However, one LAN can be connected to other LANs over any distance via telephone lines and radio waves. Most LANs connect workstations and personal computers. Each node (individual computer) in a LAN has its own CPU which executes programs and it is also able to access data and devices anywhere on the LAN. This means that many users can share expensive devices, such as laser printers, as well as data. Users can also use LAN to communicate with each other, by sending e-mail or engaging in chat sessions."
+ },
+ {
+  "t": "h2",
+  "x": "Three characteristic features of LAN"
+ },
+ {
+  "t": "p",
+  "x": "1. The size of a LAN network. 2. The topology of the local area network. 3. The technology used for transmission. In simple LAN configuration, a single cable runs through the entire set up and the peripherals and computers are attached to the cable. Traditional LAN speeds are 10 Mbps to 100 Mbps. Modern LAN cables are capable of much higher data transfer per second. In case two or more systems need to use the LAN at the same time, then an arbitration mechanism is deployed to resolve the conflict. A first come first serve policy or a prioritized approach may be chosen."
+ },
+ {
+  "t": "h2",
+  "x": "LAN topologies"
+ },
+ {
+  "t": "p",
+  "x": "Topology Star Bus Ring Mesh Hybrid Tree Computer network LAN LAN topologies CSMA/CD WAN The OSI reference model LAN technologies Physical layer Data link layer Types of error MAC sub layer FDM/TDM"
+ },
+ {
+  "t": "h2",
+  "x": "Star Topology Each device has a dedicated point-to-point"
+ },
+ {
+  "t": "p",
+  "x": "link to a central controller called a hub. Most used LAN topology. If one device wants to send data to another, it sends the data to the controller, which then relays the data to the other connected device as shown in the figure. Central controller Each device needs only one link and one I/O port to connect it to any number of others."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages"
+ },
+ {
+  "t": "p",
+  "x": "1. Robust, if one link fails, only that link is affected. All other links remain active. 2. As long as hub is working, it can monitor link problems and by pass defective links."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages"
+ },
+ {
+  "t": "p",
+  "x": "1. If hub goes down, the whole system dead. 2. More cabling is required in a star than ring or bus. Bus Topology A bus topology is multipoint. One long cable acts as a backbone to link all the devices in a network. Carrier Sense Multiple Access/Collision Detection (CSMA/CD) is the accessing technique used. The traffic can go in either direction, i.e., it is bidirectional. Nodes are connected to the bus cable by drop lines and taps as shown in the figure. Drop line Drop line Drop line Cable end Cable end Tap Tap Tap"
+ },
+ {
+  "t": "h2",
+  "x": "Advantages"
+ },
+ {
+  "t": "p",
+  "x": "1. Ease of installation. 2. Require less cabling than mesh or star topologies."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages"
+ },
+ {
+  "t": "p",
+  "x": "1. Difficult to add new devices. 2. A fault in the bus cable stops all transmission. The damaged area reflects signals back in the direction of origin, creating noise in both directions."
+ },
+ {
+  "t": "h2",
+  "x": "Ring Topology Each device has a dedicated point-to-point"
+ },
+ {
+  "t": "p",
+  "x": "connection with only the two devices on either side of it. Each device in the ring incorporates a repeater; when a device receives a signal intended for another device, its repeater regenerates the bits and passes them along."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages"
+ },
+ {
+  "t": "p",
+  "x": "1. Easy to install and reconfigure. 2. Fault isolation is simplified as it issues alarm which alerts the network operator to the problem and its location."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages"
+ },
+ {
+  "t": "p",
+  "x": "1. A break in the ring can disable the entire network. 2. It is not relevant for higher-speed LANs."
+ },
+ {
+  "t": "h2",
+  "x": "Mesh topology Every station is interconnected to every"
+ },
+ {
+  "t": "p",
+  "x": "other station as shown in the figure. n(n – 1)/2 (duplex mode) links are required for communication in both directions. Each device on the network must have (n – 1) I/O ports to be connected to the other (n – 1) stations."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages"
+ },
+ {
+  "t": "p",
+  "x": "1. The use of dedicated links guarantees that each connection can carry its own data load, thus eliminating traffic problems. 2 This topology is robust. If one link becomes unusable, it does not incapacitate the entire system. 3. There is advantage of security, only the intended recipient sees the message on the dedicated line. 4. Fault identification and fault isolation is easy because of point-to-point links."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages"
+ },
+ {
+  "t": "p",
+  "x": "1. As the hardware(cables) required for connection is more, it is expensive. 2. Installation and reconnection are difficult. 3. The sheer bulk of the wiring can be greater than the available space. Hybrid Topology More than one topology in a network. Hub"
+ },
+ {
+  "t": "h2",
+  "x": "Advantages"
+ },
+ {
+  "t": "p",
+  "x": "1. Fault detection is easier. 2. We can add new stations without affecting the original architecture."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages"
+ },
+ {
+  "t": "p",
+  "x": "1. As different topologies are combined so complexity of design increases. Very less practical implementation. 2. The hub which is used to connect different topologies is very costly. Moreover the cost of whole infrastructure is very high."
+ },
+ {
+  "t": "h2",
+  "x": "Advantages"
+ },
+ {
+  "t": "p",
+  "x": "1. Expansion is easier; one can add new stations easily. 2. Errors can be easily detected. 3. Robust, if one link fails the remaining system is in communication."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages"
+ },
+ {
+  "t": "p",
+  "x": "1. With the increase in the number of nodes, complexity and maintenance become difficult. Examples: The most common type of local area network is an Ethernet LAN. The smallest home LAN can have exactly two computers; a large LAN can accommodate thousands of computers. Many LANs are divided into logical groups called subnets. An Internet Protocol (IP) ‘Class A’ LAN can in theory accommodate more than 16 million devices organized into subnets. MAN A metropolitan area network is a computer network that usually spans a city or a large campus. A MAN usually interconnects a number of local area networks (LANs) using a high-capacity backbone technology, such as fiber-optical links, and provides up-link services to wide area networks (or WAN) and the Internet. WAN Wide Area Networks (WANs) connect larger geographic areas, such as Florida, the United States, or the world. Dedicated transoceanic cabling or satellite uplinks may be used to connect this type of network. A WAN is complicated; it uses multiplexers to connect local and metropolitan networks to global communications networks like the Internet. To users, however, a WAN will not appear to be much different than a LAN. As the term implies, a WAN spans a large physical distance. The Internet is the largest WAN, spanning the Earth. A WAN is a geographically-dispersed collection of LANs. A network device called a router connects LAN to a WAN. In IP networking, the router maintains both a LAN address and a WAN address. A WAN differs from a LAN in several important ways. Most WANs (like the Internet) are not owned by any one organization but rather exist under collective or distributed ownership and management. WANs tend to use technology like ATM, Frame Relay and X.25 for connectivity over the longer distances. Residences typically employ one LAN and connect to the Internet WAN via an Internet Service Provider (ISP) using a broadband modem. The ISP provides a WAN IP address to the modem, and all of the computers on the home network use LAN (so-called private) IP addresses. All computers on the home LAN can communicate directly with each other but must go through a central gateway, typically a broadband router, to reach the ISP."
+ },
+ {
+  "t": "h1",
+  "x": "The OSI Reference Model"
+ },
+ {
+  "t": "p",
+  "x": "The concept of how a modern day network operates can be understood by dissecting it into seven layers. This seven layer model is known as the OSI Reference Model and defines how the vast majority of the digital networks on earth function. OSI is the acronym for Open Systems Interconnection. The important concept to realize about the OSI Reference Model is that it does not define a network standard, but rather provides guidelines for the creation of network standards."
+ },
+ {
+  "t": "h2",
+  "x": "Physical Layer"
+ },
+ {
+  "t": "p",
+  "x": "The first layer of a network is the Physical Layer. The Physical Layer is literally what its name implies: the physical infrastructure of a network. This includes the cabling or other transmission medium and the network interface hardware placed inside computers and other devices which enable them to connect to the transmission medium. The purpose of the Physical Layer is to take binary information from higher layers, translate it into a transmission signal or frequency, transmit the information across the transmission medium, receive this information at the destination and finally translate it back into binary before passing it up to the higher layers. Transmission signals or frequencies vary between network standards and can be as simple as pulses of electricity over copper wiring or as complex as flickers of light on optical lines or amplified radio frequency transmissions. The information that enters and exits the Physical Layer must be bits; either 0s or 1s in binary. The higher layers are responsible for providing the Physical Layer with binary information. Since almost all information inside a computer is already digital, this is not difficult to achieve. The Physical Layer does not examine the binary information nor does it validate it or make changes to it. The Physical Layer is simply intended to transport the binary information between higher layers located at points A and B."
+ },
+ {
+  "t": "h2",
+  "x": "Data Link Layer"
+ },
+ {
+  "t": "p",
+  "x": "The second layer in the OSI Model is the Data Link Layer, the only layer in the OSI model that specifically addresses both hardware and software. The Data Link Layer receives information on its software side from higher layers, places this information inside ‘frames’, and finally gives this frame to the Physical Layer, Layer 1, for transmission as pure binary. A frame essentially takes the information passed down from a higher layer and surrounds it with Physical Address information. This information is important for the Data Link Layer on the receiving end of the transmission. When the frame, in binary form, arrives at the destination node, it is passed from the transmission medium to the Data Link Layer (Layer 2) by the Physical Layer (Layer 1). The Data Link Layer on the receiving node checks the frame surrounding the information received to see if it’s Physical Address matches that of its own. If the Physical Address does not match, the frame and its encapsulated data is discarded. If the Physical Address is a match, then the information is removed from the frame and passed up to the next highest layer in the OSI Model. The Physical Addressing system allows multiple nodes to be on the same network medium, but retain the ability to address only a specific node with a transmission. The Physical Address used in the Data Link Layer’s Physical Addressing system is known as a MAC address and is embedded physically into the node’s Network Interface Card during manufacturing. Every NIC’s MAC address is unique in order to prevent addressing conflicts. It is this relationship that causes the Data Link Layer to be known as the only layer that addresses both hardware and software. In this layer the information on the network makes the move from the physical infrastructure of the network into the software realm. The remainders of the OSI reference model’s layers are entirely software."
+ },
+ {
+  "t": "h2",
+  "x": "Network Layer"
+ },
+ {
+  "t": "p",
+  "x": "OSI Layer 3 is known as the Network Layer. The purpose of the Network Layer is to direct network traffic to a destination node who’s Physical Address is not known. This is achieved through a system known as Logical Addressing. Logical Addresses are software addresses assigned to a node at Layer 3 of the OSI Model. Since these addresses are able to be defined by software rather than being random and permanent like Physical Addresses, Logical Addresses are able to be hierarchical. This allows extremely large networks to be possible. A smart device working at Layer 3 that handles network signals from each node directly rather than nodes just blindly repeating packets at Layer 1 until they happen to reach their destination. Such a device is known as a network router. A network router sits in the center of a network with all nodes having a direct link to it rather than being linked to each other. This strategic position allows the router to intercept and direct all traffic on the network. A routed network can be illustrated by a star formation, as shown in Diagram 1. On a routed network, Layer 3 packets are no longer broadcasted to all nodes, but rather received by the router and passed on only to the appropriate node. This is a valuable concept because it allows for the collision free-transport of packets across a network. Node Router"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 1"
+ },
+ {
+  "t": "p",
+  "x": "As being linked directly to all nodes in a local network, a router can be linked directly to other routers. This allows groups of nodes separated by distance to communicate with each other in a practical way. It would not be practical to have nodes separated by a great distance all connected to a single router. The amount of cabling required would be immense and depending on the number of nodes involved, the router may not posses the required number of physical connections. Routers can be chained in a line, or as shown in Diagram 2, can be connected by a central router. This concept is virtually infinitely scalable and is very efficient."
+ },
+ {
+  "t": "h2",
+  "x": "Figure 2"
+ },
+ {
+  "t": "p",
+  "x": "When a node starts a transmission, the OSI Layer 3 protocol takes the information passed down from higher layers and encapsulates it with the logical address of the destination node in a unit called a packet. This packet, then passes through the remaining lower layer protocols, is transmitted over the network medium from the node to the router. This router reads the logical address that the packet contains and compares it to a list of physical addresses of nodes that are directly connected to it. If the packet’s destination address matches an entry in this list, the packet is transmitted directly on the line that leads straight to the destination node. If the router does not know of a direct connection to the destination node, the packet is transmitted on a line leading directly to another router. This router then treats the packet much like the first router did upon receipt. The packet’s logical address is checked for matches against the list of logical addresses belonging to nodes directly connected to the router. If the packet reaches a router with connections only to other routers, as shown in Diagram 2, the router uses the logical address’s orderly numbering scheme to try and determine the closest router to the destination node and then transmits the packet to that router. An IP address 66.69.197.5"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 3"
+ },
+ {
+  "t": "p",
+  "x": "In IP, logical addresses look like four sets. Diagram 3 shows an example of an IP address. IP addresses are orderly on four levels, from left to right. The first section of the IP address refers to a top level router, or a router that is at the highest level of this particular branch of the network. In Diagram 3, the first number is 66. Therefore all IP addresses between 66.0.0.1 and 66.255.255.255 are managed by this router. Only one router is required in a routed network, but more may exist. A router may have a maximum of 255 nodes, which may be either ordinary nodes or other routers. This effectively means that each branch of a network, a group of nodes that have the first set of numbers in their IP address in common, could theoretically have over sixteen million end nodes."
+ },
+ {
+  "t": "h2",
+  "x": "Transport Layer"
+ },
+ {
+  "t": "p",
+  "x": "OSI Layer 4 is known as the Transport Layer, all information transferred is assumed to be at the correct destination node and is being passed up to Layer 4. The Transport Layer is responsible for the reliability of the link between two end users and for dividing the data that is being transmitted by assigning port numbers to its Layer 4 packages, known as segments. Ports can be thought of as virtual destination mailboxes or outlets. When information reaches a Layer 4 protocol, the segment is examined to determine the destination port of the data it contains. Once the port is determined, just as all of the past layers have done, the wrapper is discarded and the payload data passed up to the next layer’s protocol. Higher layer protocols that provide services such as email, web browsing, text chat, file transfer and more, each operate on their own unique Layer 4 port, allowing all of these protocols to be operated at once without interference. On the reliability front, Transport Layer protocols are be capable of running a checksum on the payload data, which they carry. This allows the protocol to determine the integrity of incoming payload data. If this data has been corrupted, the Layer 4 protocol will request the segment to be retransmitted."
+ },
+ {
+  "t": "h2",
+  "x": "Session Layer"
+ },
+ {
+  "t": "p",
+  "x": "OSI Layer 5, known as the Session Layer, still serves a purpose in the OSI Reference Model. The Session Layer draws the outline for protocols that manage the combination and synchronization of data from two separate higher layers. Layer 5 protocols are responsible for ensuring that the data is Synchronized and consistent before transmitted. A good example is the streaming of live multimedia audio and video, where perfect synchronization between video and audio is desired."
+ },
+ {
+  "t": "h2",
+  "x": "Presentation and Application Layers"
+ },
+ {
+  "t": "p",
+  "x": "The sixth and seventh layers in the OSI Reference Model are the Presentation Layer and the Application Layer. The primary purpose of these layers is to facilitate the movement of formatted information between applications interacting with end users on nodes. Commonly used top layer protocols are HTTP (for the secure transfer of web page related files), File Transfer Protocol (FTP), Simple Mail Transfer Protocol (SMTP, used for sending email messages), and SSH (Secure Shell), used to secure remote shell access for a computer operating system."
+ },
+ {
+  "t": "h2",
+  "x": "OSI reference model concept"
+ },
+ {
+  "t": "p",
+  "x": "User User Application Application Presentation Presentation Session Session Transport Transport Network Network Data link Data link Physical Physical Transmission Medium Segments Packets Frames Bits"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 4"
+ },
+ {
+  "t": "p",
+  "x": "The OSI Reference Model exists not to make hard rules or to shape the industry, but to provide a logical, wellresearched, and tested model after which the world’s best communication protocol stacks are modeled. The TCP/IP stack is very well-known for being the driving force behind most of the internet, and represents the third (IP) and fourth (TCP) layers of the OSI Model. Every layer in the OSI Model is a reference for a protocol which must facilitate communication between both higher and lower layers. The ‘U-shaped’ example shown in Diagram 4 provides a visual concept of how two users may be linked on a given network in reference to the OSI Model. Data starts and ends with the user. From the Application Layer of the first user, it must travel down through layers 7 to 1, across the transmission medium, then back up to layers 1 to 7 to be presented at the Application Layer to the user on the end of the transmission. Diagram 4, shows an example of a path between two nodes. Protocols defined by this reference are dependent on the next lowest layer protocol. So, for example, one could not run an Application Layer protocol on a node without the presence of Layer 1 through 6, protocols also being utilized on the node."
+ },
+ {
+  "t": "h1",
+  "x": "LAN technologies"
+ },
+ {
+  "t": "h2",
+  "x": "IEEE standard for networking"
+ },
+ {
+  "t": "p",
+  "x": "IEEE standard project 802 is designed for the enter – connectivity between LAN’s IEEE 802 maps to physical and data link layer"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Ethernet, Token ring etc, the IEEE standards for"
+ },
+ {
+  "t": "p",
+  "x": "the different groups are 802.1 – Higher layer LAN Protocol 802.3 – Ethernet 802.11 – Wireless LAN 802.15 – WPAN 802.16 – Broad band wireless Access 802.17 – Resilient packet Ring 802.18 – Radio Regulatory TAG 802.19 – Co existence TAG 802.20 – Mobile Broad band wireless access 802.21 – Media independent Hand off Active working grourp 802.2 – Logical link control working group 802.4 – Token Bus 802.5 – Token Ring 802.7 – Broad band area Network 802.8 – Fiber optic TAG 802.9 – Integrated service LAN 802.10 – Security working group 802.12 – Demand priority working group 802.14 – Cable modern working group In active or disbanded working groups"
+ },
+ {
+  "t": "h2",
+  "x": "Ethernet"
+ },
+ {
+  "t": "p",
+  "x": "We have 10 Mbps – Ethernet 100 Mbps – Fast ethernet 1 Gbps – Gigabit Ethernet 10 GE – 10 Gigabit Ethernet Best suited for LAN because it is capable of handling high speed bandwidth."
+ },
+ {
+  "t": "li",
+  "x": "Ethernet medium: Thick wire – 10B5 Thin wire – 10B2 Twisted pair – 10BT, 100BT, 1000BT Fibre – 10BF, 100BF, 1000BF CAT 4 – 10 Mbps CAT 5 – 10/100 Mbps CAT 6 – 10/100/1000 Mbps"
+ },
+ {
+  "t": "li",
+  "x": "Fundamental is CSMA/CD, Standard is 802.3."
+ },
+ {
+  "t": "li",
+  "x": "It defines two categories: 1. Base band. 2. Broad band"
+ },
+ {
+  "t": "li",
+  "x": "Baseband uses digital manchester encoding techniques."
+ },
+ {
+  "t": "li",
+  "x": "IP communication in ethernet is of 3 types: (i) Unicast (ii) multi cast (iii) broadcast"
+ },
+ {
+  "t": "li",
+  "x": "When user sends data he puts destination and source address."
+ },
+ {
+  "t": "p",
+  "x": "(i) In unicast, only intended users responds, however all can get the signal (individual MAC). (ii) In multicast, group of users will get the data (group MAC). (iii) In broadcast, all users on Ethernet can see the data (all MAC)."
+ },
+ {
+  "t": "li",
+  "x": "Every computer accepts 3 types of packets, to his own, to the group it belongs, to all."
+ },
+ {
+  "t": "h2",
+  "x": "CSMA (Carrier Sense Multiple Access)"
+ },
+ {
+  "t": "p",
+  "x": "CSMA protocols performance is better than ALOHA— Monitor the channel before and/or during data transmission."
+ },
+ {
+  "t": "h2",
+  "x": "1-Persistent Check whether the channel is free before"
+ },
+ {
+  "t": "p",
+  "x": "transmitting the data. If busy, wait until it becomes free and then immediately start Re-transmitting. Non-Persistent When the channel is busy, wait for a random period of time before trying again If the waiting time is too long, the channel utilization decreases. P-Persistent Used in slotted systems, If the channel is idle during the current slot, transmit with probability P, and defer until next slot with probability (1 – P) Two or more computers can get connected on same physical medium. All computers can communicate whenever they feel like. Any computer want to communicate, it senses the medium, if medium is free and not used by anyone it captures the medium and puts its data on to the channel. All computers listens to the sent data but only intended computer/system will respond. At this instance, sending computer is owner of the medium; no other system can be owner or can send the data. When two or more computers try to send data at same time by sensing the medium, collision occurs, which will be sensed by all the computers, then they keep integral wait unit of time for next transmission of data. Once the sending machine gets the corrupted collision message it retransmits using integral time."
+ },
+ {
+  "t": "h2",
+  "x": "MAC sublayer"
+ },
+ {
+  "t": "p",
+  "x": "The medium Access control (MAC) sub layer is the bottom half of the Data link layer. The upper half is commonly called logical link control (LLC) sublayer."
+ },
+ {
+  "t": "h2",
+  "x": "Frame format"
+ },
+ {
+  "t": "p",
+  "x": "Preamble SFD Destination address Source address Length or type Data and padding CRC 7 bytes 1 byte 6 bytes 6 bytes 2 bytes 46 to 1500 bytes 4 bytes Preamble The first field of the 802.3 frame contains 7 bytes (56 bits) of alternating 0’s and 1’s that alerts the receiving system to the coming frame and enables it to synchronize its input timing."
+ },
+ {
+  "t": "h2",
+  "x": "Start frame delimiter (SFD) The second field (1 byte:"
+ },
+ {
+  "t": "p",
+  "x": "10101011) signals the beginning of the frame. The SFD warns the station or stations that, this is the last chance for synchronization. The last 2-bits is 11 and alerts the receiver that the next field is the destination address. Destination address (DA) The DA field is 6 bytes and contains the physical address of the destination station to receive the packet. Source address (SA) The SA field is also 6 bytes and contains the physical address of the sender of the packet. Length field The original ethernet used this field as the type field to define the upper-layer protocol using the MAC frame. The IEEE standard uses it as the length field to define the number of bytes in the data field."
+ },
+ {
+  "t": "h2",
+  "x": "Data This field contains data encapsulated from the upper"
+ },
+ {
+  "t": "p",
+  "x": "layer protocols. It is of minimum 46 bytes and a maximum of 1500 bytes."
+ },
+ {
+  "t": "h2",
+  "x": "Ethernet follows binary exponential back off algorithm"
+ },
+ {
+  "t": "p",
+  "x": "to give waiting time for stations, which are involved in collisions. After collisions, waiting time for the stations will be K * 51.2 m sec, where K is randomly picked up from 0 to 2n – 1, ‘n’ is the collision number. But after 10 collisions, the randomization internal is frozen at a maximum of 1023 slots. If each station transmits during a contention slot with probability p, the probability A that some station acquires the channel in that slot is A = Kp (1 – p)k – 1 A is maximized when p = 1/k, with A → 1/e as K →∞ The probability that the contention internal has exactly j slots in it is A(1 – A)j – 1, hence mean number of slots per contention is given by jA ⟨eq⟩ CRC The last field contains error detection information."
+ },
+ {
+  "t": "h2",
+  "x": "Frame length"
+ },
+ {
+  "t": "p",
+  "x": "Ethernet has imposed restrictions on both the minimum and maximum lengths of a frame, as shown in figure below:. Destination address Source address Length PDU Data and padding CRC 6 bytes 6 bytes 2 bytes 4 bytes Minimum payload length: 46 bytes Maximum payload length: 1500 bytes Minimum frame length: 512 bits or 64 bytes Maximum frame length: 12,144 bits or 1518 bytes Minimum length of frame is 512 bytes or 64 bytes. If we count 18 bytes of header and trailer, then minimum length of data from the upper layer is 64 – 18 = 46 bytes. If the upper layer packet is less than 46, padding is added to make up the difference and used to find out collision. Maximum length of the frame is 1518 bytes. If we substract 18 bytes of header and trailer, the maximum length of the payload is 1500 bytes."
+ },
+ {
+  "t": "li",
+  "x": "The maximum length restriction has two reasons."
+ },
+ {
+  "t": "li",
+  "x": "First, memory was very expensive when ethernet was designed, a maximum length restriction helped to reduce the size of the buffer."
+ },
+ {
+  "t": "li",
+  "x": "Second, the maximum length restriction prevents one station from monopolizing the shared medium, blocking other stations that have data to send."
+ },
+ {
+  "t": "p",
+  "x": "Since each slot has a duration 2T, the mean contention internal, w, is 2T/A. Assuming optional p, the mean number of contention slots is never more than e, so w is atmost 2Te = 5.4 T. Channel efficiency ⟨eq⟩ 2B Le cF Where F = Frame length B = Network bandwidth L = Cable length C = Speed of signal propagation E = Contention slots per frame"
+ },
+ {
+  "t": "h2",
+  "x": "802.5 TOKEN Ring"
+ },
+ {
+  "t": "p",
+  "x": "Here ring topology is used and devices are physically arranged to form a ring. A token is passed among stations. If a station wants to send data, it must wait and capture the token. Only the token holders are permitted to transmit frame. Token ring allows each station to send one frame per turn."
+ },
+ {
+  "t": "h2",
+  "x": "Frame formats"
+ },
+ {
+  "t": "p",
+  "x": "SD AC FC Destination address Source address Data CRC ED FS 1 byte 1 byte 1 byte 2-6 bytes 2-6 bytes Up to 4500 bytes 4 bytes 1 byte 1 byte SD AC ED SD ED Token frame Abort frame 802.5 Token ring uses differential Manchester digital signal encoding. It supports data rates upto 16 mbps. Tokens ring protocol specifies three types of frames: Data, token, and abort. The token and abort frames are both truncated data frames."
+ },
+ {
+  "t": "h2",
+  "x": "Data frame"
+ },
+ {
+  "t": "p",
+  "x": "Start delimiter (SD) It is one byte long and is used to alert the receiving station for the arrival of a frame as well as to synchronize it’s timing. Access control (AC) It is one byte long and includes subfields. It has the format PPPTMRRR. First 3-bits are priority field. T denotes whether this is a data frame, token or an abort frame. Token bit is followed by monitor bit. The last 3 bits are the reservation field that can be set by stations wishing to resume access to ring. Frame control This field is one byte long and contains two fields. The first is a one bit field used to indicate the type of information (whether it is a control information or data). The second uses the remaining seven bits of the byte and contains information used by the token ring logic."
+ },
+ {
+  "t": "h2",
+  "x": "Destination address (DA) The six byte DA field contains"
+ },
+ {
+  "t": "p",
+  "x": "the physical address of the frame’s next destination. Source address (SA) The six byte SA field contains the physical address of the sending station. Data contains LLC data unit Data contains 0 or more bytes, maximum size of the data depends upon taken holding time. CRC The CRC field is 4 byte long and contains a CRC – 32 bit error detection sequence. End delimiter (ED) ED is a second flag field of one byte and indicates the end of the sender’s data and control information."
+ },
+ {
+  "t": "h2",
+  "x": "Frame status It is one byte long"
+ },
+ {
+  "t": "p",
+  "x": "A/C A/C A: Addressed recognized bit C: Copies bit It can be set by the receiver to indicate that the frame has been read/copied etc. When a frame arrives at the station with the destination address, the station turns A bits to 1. If station copies the frame to the station it also turns on the C bit. A station might fail to copy a frame due to lack of frame buffer or other reason. When the sending station receives the frame, it examines the A and C bits. Three combinations are possible: 1. A = 0, C = 0: destination not ready /present. 2. A = 1, ⟨eq⟩ destination present byte frame not accepted. 3. A = 1, ⟨eq⟩ destination present and frame copied."
+ },
+ {
+  "t": "h2",
+  "x": "Token frame"
+ },
+ {
+  "t": "p",
+  "x": "It includes only 3 fields: SD, AC and ED 1. The SD indicates, the frame is coming 2. The AC indicates that the frame is a token and includes priority and reservation fields. T = 0 for token in AC. 3. The ED indicates the end of the frame."
+ },
+ {
+  "t": "h2",
+  "x": "Abort frame"
+ },
+ {
+  "t": "p",
+  "x": "An abort frame contains no information at all just starting and ending delimiters. It can be generated by the sender to stop its own transmission. Each station has a priority code, as a frame passes by, a station waiting to transmit may reserve the next open token by entering its priority code in the Access control field (AC) of the token or data frame. A station with a higher priority may remove a lower priority reservation and replace it with its own. Among stations of equal priority, the process is first come, first served. Through this mechanism, the station holding the reservation gets the opportunity to transmit as soon as the token is free, whether or not it comes next physically on the ring."
+ },
+ {
+  "t": "h2",
+  "x": "Monitor station Several problems may appear to dis-"
+ },
+ {
+  "t": "p",
+  "x": "rupt the operation of a token ring network. If the token is destroyed by noise there will be no token on the ring and no station can send data. To solve such a problem, one station on the ring is designated as a monitor. The monitor sets a time, each time the token passes. If the token does not appear in the allotted period of time, it is assumed to be lost and the monitor generates a new token and introduces it to the ring. The monitor detects the orphan frames, by setting the monitor bit in the access control byte. As the frame passes, the monitor checks the status field. If the monitor bit is set, something is wrong since the frame has passed the monitor twice, so monitor discards it. The monitor then destroys the frame and puts a token on the ring. If monitor fails, the protocol ensures that another station is quickly selected as monitor. Every station has the capability of becoming the monitor. While the monitor is functioning properly, it alone is responsible for seeing that the ring operates correctly. When station notices that either of its neighbors appears to be dead it transmits BEACON frame giving the address of the dead station."
+ },
+ {
+  "t": "h1",
+  "x": "Physical Layer"
+ },
+ {
+  "t": "p",
+  "x": "Physical layer is concerned with transmitting raw bits over a communication channel. The design issues have to do with making sure that when one side sends a 1-bit, it is received by the other side as 1-bit and not as 0 bit. In physical layer we deal with the communication medium used for transmission."
+ },
+ {
+  "t": "h2",
+  "x": "Types of Medium"
+ },
+ {
+  "t": "p",
+  "x": "Medium can be classified into two categories: 1. Guided Media: Guided media means that signals are guided by the presence of physical media i.e., signals are under control and remains in the physical wire. For example, copper wire. 2. Unguided Media: Unguided media means that there is no physical path for the signal to propagate. Unguided media has essentially electromagnetic waves. There is no control on flow of signal. For example, radio waves."
+ },
+ {
+  "t": "h2",
+  "x": "Transmission Media"
+ },
+ {
+  "t": "p",
+  "x": "In Guided transmission media, generally two kinds of materials are used. 1. Copper"
+ },
+ {
+  "t": "li",
+  "x": "Coaxial cable"
+ },
+ {
+  "t": "li",
+  "x": "Twisted pair"
+ },
+ {
+  "t": "h2",
+  "x": "Coaxial cable"
+ },
+ {
+  "t": "p",
+  "x": "Coaxial cable consists of an inner conductor and an outer conductor which are separated by an insulator. The inner conductor is usually copper. The outer conductor is covered by a plastic jacket. It is named coaxial because the two conductors are coaxial. Typical diameter of coaxial cable lies between 0.4 inches to 1 inch."
+ },
+ {
+  "t": "h2",
+  "x": "Twisted pair"
+ },
+ {
+  "t": "p",
+  "x": "A twisted pair consists of two insulated copper wires, typically 1mm thick. The wires are twisted together in a helical form, the purpose of twisting is to reduce cross talk interference between several pairs. Twisted pair is much cheaper than coaxial cable but it is susceptible to noise and electromagnetic interference and attenuation is large."
+ },
+ {
+  "t": "h2",
+  "x": "Optical fiber"
+ },
+ {
+  "t": "p",
+  "x": "In optical Fiber light is used to send data. In general terms presence of light is taken as bit-1 and its absence as bit 0. Optical fiber consists of either glass or plastic core which is surrounded by cladding of the same material but of different refractive index. This cladding is surrounded by a plastic jacket which prevents optical fiber from electromagnetic interference and harshly environments. It uses the principle of total internal reflection to transfer data over optical fibers. Optical fiber is much better in bandwidth as compared to copper wire, since there is hardly any attenuation or electromagnetic interference in optical wires. Hence there is less requirement to improve quality of signal, in long distance transmission. Disadvantage of optical fiber is that end points are fairly expensive."
+ },
+ {
+  "t": "h2",
+  "x": "Communication Links"
+ },
+ {
+  "t": "p",
+  "x": "In a network nodes are connected through links. The communication through links can be classified as"
+ },
+ {
+  "t": "h2",
+  "x": "Half duplex Communication can take place in one direc-"
+ },
+ {
+  "t": "p",
+  "x": "tion at a time. Suppose node A and B are connected then half duplex communication means that at a time data can flow from A to B or from B to A but not simultaneously. Example: Two persons talking to each other such that when one speaks the other listens and vice versa, walkie-talkies, citizens band radios."
+ },
+ {
+  "t": "h2",
+  "x": "Full duplex Communication can take place simultaneously"
+ },
+ {
+  "t": "p",
+  "x": "in both directions. Example: telephone network. Links can be further classified as:"
+ },
+ {
+  "t": "h2",
+  "x": "Point-to-Point In this communication only two nodes are"
+ },
+ {
+  "t": "p",
+  "x": "connected to each other. When a node sends a packet then it can be received only by the node on the other side and none else. Multi-Point It is a kind of sharing communication in which signal can be received by all nodes. This is also called broadcast."
+ },
+ {
+  "t": "h2",
+  "x": "Digital Data to Digital Signals"
+ },
+ {
+  "t": "p",
+  "x": "A digital signal is sequence of discrete, discontinuous voltage pulses. Each pulse is a signal element. Encoding scheme is an important factor in knowing that how successfully the receiver interprets the incoming signal."
+ },
+ {
+  "t": "h2",
+  "x": "Encoding techniques"
+ },
+ {
+  "t": "p",
+  "x": "Following are several ways to map data bits to signal elements: Non-return-to-zero (NRZ): NRZ codes share the property that voltage level is constant during a bit interval. High level voltage = bit 1 and low level voltage = bit 0. A problem arises when there is a long sequence of 0’s and 1’s and the voltage level is maintained at the same value for a long time. This creates a problem on the receiving end because now, the clock synchronization is lost due to lack of any transitions and hence, it is difficult to determine the exact number of 0’s and 1’s in this sequence. The two variations are as follows: 1. NRZ–Level: In NRZ–L encoding, the polarity of the signal changes only when the incoming signal changes from a ‘1’ to a ‘0’ or from a ‘0’ to a ‘1’. NRZ – L method, looks just like the RZ method, except for the first input one data bit. This is because NRZ does not consider the first data bit to be a polarity change, where NRZ–L does. 2. NRZ–Inverted: Transition at the beginning of bit interval = bit 1 and no transition at the beginning of bit interval = bit 0 or vice versa. This technique is known as differential encoding."
+ },
+ {
+  "t": "h2",
+  "x": "Digital Data Communication Techniques"
+ },
+ {
+  "t": "p",
+  "x": "For two devices linked by a transmission medium to exchange data, a high degree of co-operation is required. Typically data is transmitted one bit at a time. The timing (rate, duration, spacing) of these bits be same for transmitter and receiver. There are two options for transmission of bits. Parallel All bits of a byte are transferred simultaneously on separate parallel wires. Synchronization between multiple bits is required which becomes difficult over large distance. Parallel communication gives large bandwidth but expensive, possible only for devices which are close to each other."
+ },
+ {
+  "t": "h2",
+  "x": "Serial Bits transferred serially one after other. Serial com-"
+ },
+ {
+  "t": "p",
+  "x": "munication gives less bandwidth but cheaper, suitable for transmission over long distances."
+ },
+ {
+  "t": "h2",
+  "x": "Manchester encoding"
+ },
+ {
+  "t": "p",
+  "x": "Manchester encoding is used in Ethernet (IEEE 802.3) it is a line code in which bit encoding has at least one transition and consumes the same time. It ensures frequent line voltage transitions, which are directly proportional to clock rate It is not dependent on data, so it will not carry any information."
+ },
+ {
+  "t": "h2",
+  "x": "Asynchronous"
+ },
+ {
+  "t": "p",
+  "x": "Small blocks of bits (generally bytes) are sent at a time without any time relation between consecutive bytes. When no transmission occurs a default state is maintained corresponding to bit 1, due to arbitrary delay between consecutive bytes, the time occurrences of the clock pulses at the receiving end need to be synchronized for each byte. This is achieved by providing two extra bits, start and stop. Start Bit It is prefixed to each byte and equals 0. Thus it ensures a transition from 1 to 0 at onset of transmission of byte. The leading edge of start bit is used as a reference for generating clock pulses at required sampling instants. Thus each onset of a byte results in resynchronization of receiver clock. Stop Bit To ensure that transition from 1 to 0 is always present at beginning of a byte it is necessary that default state be 1, but there may be two bytes one immediately following the other and if last bit of first byte is 0, transition from 1 to 0 will not occur. Therefore a stop bit is suffixed to each byte equaling 1. It’s duration is usually 1, 1.5, 2 bits. Asynchronous transmission is simple and cheap but requires an overhead of 3 bits i.e., for 7 bit code 2(start, stop bits) + 1 parity bit implying 30% overhead. However this percentage can be reduced by sending larger blocks of data but then timing errors between receiver and sender cannot be tolerated beyond [50/number. of bits in block]%. It will not only result in incorrect sampling but also misaligned bit count. i.e., a data bit can be mistaken for stop bit if receiver’s clock is faster."
+ },
+ {
+  "t": "h2",
+  "x": "Synchronous"
+ },
+ {
+  "t": "p",
+  "x": "Larger blocks of bits are successfully transmitted. Blocks of data are either treated as sequence of bits or bytes. To prevent timing, drift clocks at two ends need to be synchronized. This can be done in two ways. 1. Provide a separate clock line between receiver and transmitter. (or) 2. Clocking information is embedded in data signal i.e., Biphase coding for digital signals. Still another level of synchronization is required so that receiver determines beginning or end of block of data. Hence each block begins with a start code and end with a stop code. These are in general same, known as flag that is unique sequence of fixed number of bits. In addition some control characters encompass data within these flags. Data and control information is called a frame. Since any arbitrary bit pattern can be transmitted, there is no assurance that bit pattern for flag will not appear inside the frame, thus destroying frame stuffing. Channel Allocation A large class of networks is built on broadcast channels, a number of stations will share the same channel, if one station sends, all other stations have to hear it. Problem occurs when, 2 stations want to start data transmission at the same time, in this situation 2 fames collide. To avoid frame collision, allocate the channel to one of the stations. There are 3-strategies for channel allocation: 1. Let a station try to use the channel, and when the collision occurs, that is taken care of later. 2. Each station in turn is allowed to use the channel. This is applied in token-based systems. Only the station that has the token can use the channel. 3. Reserve the channel in prior, It is used in slotted systems. The problem is how to make a reservation."
+ },
+ {
+  "t": "h1",
+  "x": "Data Link Layer"
+ },
+ {
+  "t": "p",
+  "x": "Data link layer provides interface to the network layer, determines the number of bits of the physical layer to be grouped into frames, detects transmission error and regulates the flow of frames. Functions of data link layer: 1. Framing 2. Physical addressing 3. Flow control 4. Error control 5. Access control Various methods of Framing are 1. Time gaps 2. Character count 3. Starting and ending characters, with character stuffing 4. Starting and ending flags, with bit stuffing 5. Physical layer coding violations Time gaps Framing is done by inserting time gaps between frames, very similar to the way of spacing between words in ordinary text. It is risky to count on timing to mark the start and end of each frame. Character count It uses a field in the header to specify the number of characters in the frame. Thus at the destination by seeing the character count it knows how many characters follows and where the end of the frame exists. Frame1 Frame2 Frame 3 Frame4"
+ },
+ {
+  "t": "h2",
+  "x": "Problem If count of any frame changes, destination will"
+ },
+ {
+  "t": "p",
+  "x": "get out of synchronization and is unable to locate start of next frame."
+ },
+ {
+  "t": "h2",
+  "x": "Starting and ending characters, with character stuffing"
+ },
+ {
+  "t": "p",
+  "x": "Each frame starts with the ASCII character sequence DLESTX and ends with the sequence DLEETX. If destination looses track of the frame boundaries, all it has to do is to look for DLESTX or DLEETX character"
+ },
+ {
+  "t": "h2",
+  "x": "Starting and ending flags, with bit stuffing"
+ },
+ {
+  "t": "p",
+  "x": "Bit Stuffing: Suppose ou r flag bits are 01111110. So the transmitter will always insert an extra 0 bit after each occurrence of five 1s (except for flags). After detecting a starting flag the receiver monitors the bit stream. If pattern of five 1’s appear, the sixth bit is examined and if it is 0 it is deleted; else if it is 1 and next bit is 0 the combination is accepted as a flag. Similarly byte stuffing is used for byte oriented transmition. Here we use an escape sequence to prefix a byte similar to flag and two escape sequences if byte itself is an escape sequence. Has arbitrary number of bits and allows character codes with an arbitrary number of bits per character. Every frame begins and ends with a special bit pattern, 01111110, called a flag byte. As soon as the sender’s data link layer encounters five consecutive one’s in the data, it stuffs a 0 bit into the outgoing bit stream. Receiver de-shifts the 0 bit of the five consecutive incoming 1 bits, followed by a 0 bit. If the user data is 01111110, transmitted as 011111010 but stored at receiver as 01111110."
+ },
+ {
+  "t": "h2",
+  "x": "Physical layer coding violations Applied to the networks"
+ },
+ {
+  "t": "p",
+  "x": "in which the encoding on the physical medium contains some redundancy. 1 → high – low pair 0 → low – high pair Here high-high, low-low not used for data. Every data bit has a transition in the middle, thus easy for the receiver to locate the bit boundaries."
+ },
+ {
+  "t": "h1",
+  "x": "Types of Errors"
+ },
+ {
+  "t": "p",
+  "x": "Errors Burst Single-bit Single bit error The term single bit error means that only one bit in the data unit has changed, it can either be from 1 to 0 or from 0 to 1. 1 changed to 0 00010011 00000011"
+ },
+ {
+  "t": "h2",
+  "x": "Single bit error correction"
+ },
+ {
+  "t": "p",
+  "x": "A single bit error occurs when a bit changes in value from 0 to 1 (or) from 1 to 0 while storing (or) while performing read (or) write operation. If that error bit is identified, that can be corrected by complementing."
+ },
+ {
+  "t": "h2",
+  "x": "Hamming codes"
+ },
+ {
+  "t": "p",
+  "x": "In hamming codes, K parity bits are added to an n-bit data word, that forms a new word of (n + k) bits. The bit positions are numbered in sequence from 1 to n + k. These positions numbered with powers of 2 are reserved for the parity bits; the remaining bits are the data bits. Example: Consider the given 8-bit data word 11000100, we include four party bits with this word and arrange the bits as follows."
+ },
+ {
+  "t": "h2",
+  "x": "Bit position"
+ },
+ {
+  "t": "p",
+  "x": "P1 P 2 P4 P8 The parity bits are in positions, 1, 2, 4, 8. Each parity bit is calculated as P1 = XOR of bits (3, 5, 7, 9, 11) = 1 ⊕ 1 ⊕ 0 ⊕ 0 ⊕ 0 = 0 P2 = XOR of bits (3, 6, 7, 10, 11) = 0 P4 = XOR of bits (5, 6, 7, 12) = 1 P8 = XOR of bits (9, 10, 11, 12) = 1 ⇒ If there is odd number of 1s, XOR gives 0 ⇒ If there is even number of 1s, XOR gives 1 The values P1 = 0, P2 = 0, P4 = 1, P8 = 1 are substituted in 12-bit composed word"
+ },
+ {
+  "t": "h2",
+  "x": "Check for errors:"
+ },
+ {
+  "t": "p",
+  "x": "C1 = XOR of bits (1, 3, 5, 7, 9, 11) C2 = XOR of bits (2, 3, 6, 7, 10, 11) C4 = XOR of bits (4, 5, 6, 7, 12) C8 = XOR of bits (8, 9, 10, 11, 12) Since the bits were written with even parity, the result C = C8 C4 C2 C1 = 0000 ∴ Indicates that no error has occurred."
+ },
+ {
+  "t": "li",
+  "x": "The code can be used with words of any length."
+ },
+ {
+  "t": "p",
+  "x": "Burst Error The term burst means that two or more bits in the data unit have changed, either changed, from 1 to 0 or changed from 0 to 1. Sent: 010011010000-sent bits corrupted by burst error 010001111000 Received"
+ },
+ {
+  "t": "h2",
+  "x": "Parity bit"
+ },
+ {
+  "t": "p",
+  "x": "Parity bit is an error detecting code. This bit is added to data words depending on number of 1’s in the data word; It could be even parity and odd parity. n-bit data word is transformed to (n + 1) bit code word with the addition of a bit. Even parity makes even number of 1’s in a code word, similarly odd parity makes odd number of 1’s in a code word. Let us illustrate with example Data word – 1 0 1 1 Parity bit Code word – 1 0 1 1 1 parity bit (even parity) Code word: 1 0 1 1 0 (odd parity) At the receiver side, when the code is received, the receiver checks the same as it is done by the generator. But here it adds all the bits which results in syndrome. If the syndrome is 0 then the number of 1’s in code word is even, else number of 1’s is odd. Decision logic analyzer will decide, whether the code word is correct or not, based on syndrome value."
+ },
+ {
+  "t": "h2",
+  "x": "Parity bit generator"
+ },
+ {
+  "t": "p",
+  "x": "The parity bit generator for a 3-bit data word is given below. The message is in the form of X Y Z X Y Z Parity bit Parity bit generator When the message is passed through the above circuit, the parity will be generated accordingly."
+ },
+ {
+  "t": "h2",
+  "x": "Error correction code"
+ },
+ {
+  "t": "p",
+  "x": "When data is transmitted form the source to destination, there is a chance of error introduction into the data. Error detection will detect the errors in data, while error correction will rebuild the original data, Error correction code can be implemented in 2 ways 1. Forward error correction (FEC) 2. Automatic repeat request (ARQ) In FEC, when sender is sending data, sender adds redundant data (encoded information) to the original data. At the receiver side this redundant data is used to recover the original data, when original data is tampered [error data]. In ARQ, the receiver requests for the retransmission of the data packets, which are corrupted. Receiver will check the data using some error detection code."
+ },
+ {
+  "t": "h2",
+  "x": "Flow Control"
+ },
+ {
+  "t": "p",
+  "x": "It regulates the flow of frames so that slow receivers are not affected by the fast sender or vice versa. It tell the sender how much data it should transmit before it waits for an acknowledgement from the receiver. Flow control refers to a set of procedures used to restrict the amount of data that the sender can send before waiting for acknowledgement. Error control in the data link layer is often implemented simply. Any time an error is detected in an exchange, specified frames are retransmitted. This process is called automatic repeat request (ARQ). Protocols Noiseless channel (error-free) Noisy channel (error-creating) Stop and wait ARQ Go-back-N ARQ Selective repeat ARQ Simplest Stop and wait All the protocols we discuss as unidirectional in the sense that data frames travels from sender to receiver. Although special frames called acknowledgment (ACK) and negative acknowledgment (NAK) can flow in the opposite direction for flow and error control purposes, data flow is in only one direction. In real life network, the data link protocols are implemented as bidirectional, data flow in both directions. In these protocols flow and error control information such as ACKs and NAKs are included in the data frames in a technique called piggybacking. Stop and wait Sender sends one frame, stops until it receives confirmation from the receiver. Error correction in stop and wait ARQ is done by keeping a copy of the sent frame and retransmitting the frame when the timer expires. Only 2 sequence numbers 0 and 1 are used. Window size is 1. No ACK for lost or damaged frames. Throughput = One packet RTT Utilization ⟨eq⟩ BR L = packet length B = Bandwidth R = RTT If L < BR, Efficiency ⟨eq⟩ BR, Efficiency = 50 µ= + = 2a a , propagation time Transmission time Link utilization is low in stop and wait."
+ },
+ {
+  "t": "h2",
+  "x": "GBN protocol We can send several frames before receiving"
+ },
+ {
+  "t": "p",
+  "x": "acknowledgements; we keep a copy of these frames with the acknowledgment."
+ },
+ {
+  "t": "li",
+  "x": "Sequence numbers ranges from 2m – 1."
+ },
+ {
+  "t": "li",
+  "x": "m – number of bits for sequence numbers."
+ },
+ {
+  "t": "li",
+  "x": "The sender window slides one or more slots when a valid acknowledgment arrives."
+ },
+ {
+  "t": "li",
+  "x": "It uses cumulative acknowledgement or piggy backing wherever possible to acknowledge the frames."
+ },
+ {
+  "t": "li",
+  "x": "It discards duplicate and out of order packets."
+ },
+ {
+  "t": "li",
+  "x": "Receiving window size is 1."
+ },
+ {
+  "t": "li",
+  "x": "If the sender receives a NAK, it resends all frames in the sender window."
+ },
+ {
+  "t": "p",
+  "x": "If a single packet is lost, damaged or acknowledgement is lost, it will resend all the packets. Link efficiency ⟨eq⟩ pw Where, p is the packet loss probability w is the sender’s window size. Sender: 0 1 2 3 4 5 6 Frames successfully transmitted Frames waiting for acknowledgement to send Frames need to be sent Receiver: 0 1 2 3 4 5 Frame received successfully Next frame expected"
+ },
+ {
+  "t": "li",
+  "x": "If N is maximum sequence number, then sender window size = N, Receiver window size = 1."
+ },
+ {
+  "t": "li",
+  "x": "If N is the number of sequence number, sender window size = N – 1, Receiver window size = 1."
+ },
+ {
+  "t": "h2",
+  "x": "Selective repeat More efficient for noisy links but process-"
+ },
+ {
+  "t": "p",
+  "x": "ing at the receiver is more complex. Receiver window size is same as of sender window size. Sender window maximum size is 2m–1, receiver window maximum size is 2m–1. Sender and receiver window must be at most one half of 2m. Receives out of order packets because receiver’s window size is greater than 1. It uses cumulative or independent or piggyback ACK whenever possible. If sender receives a NAK, it resends just the frame specified by the NAK. If N is maximum sequence number, Sender window size ⟨eq⟩ Receiver window size = + N If N is the number of sequence numbers, sender window size ⟨eq⟩ Receiver window size ⟨eq⟩"
+ },
+ {
+  "t": "h1",
+  "x": "Medium Access Control Sublayer"
+ },
+ {
+  "t": "h2",
+  "x": "Multiplexing"
+ },
+ {
+  "t": "p",
+  "x": "When two communicating nodes are connected through a media, it generally happens that bandwidth of media is several times greater than that of the communicating nodes. Transferring of a single signal at a time is both slow and expensive. The whole capacity of the link is not utilized in this case. This link can be further exploited by sending several signals combined into one. This combining of signals into one is called multiplexing."
+ },
+ {
+  "t": "h2",
+  "x": "Frequency Division Multiplexing (FDM)"
+ },
+ {
+  "t": "p",
+  "x": "This is possible in the case where transmission media has a bandwidth higher than the required bandwidth of signals to be transmitted. A number of signals can be transmitted at the same time. Each source is allotted a frequency range in which it can transfer it’s signals, and a suitable frequency gap is given between two adjacent signals to avoid overlapping. This type of multiplexing is commonly seen in the cable TV networks."
+ },
+ {
+  "t": "h2",
+  "x": "Time Division Multiplexing (TDM)"
+ },
+ {
+  "t": "p",
+  "x": "This is possible when data transmission rate of the media is much higher than that of the data rate of the source. Multiple signals can be transmitted if each signal is allowed to be transmitted for a definite amount of time. These time slots are so small that all transmissions appear to be in parallel."
+ },
+ {
+  "t": "h2",
+  "x": "Synchronous TDM Time slots are pre. Assigned and are"
+ },
+ {
+  "t": "p",
+  "x": "fixed. Each source is given it’s time slot at every turn due to it. This turn may be once per cycle or several turns per cycle, if it has a high data transfer rate, or may be once in a number of cycles if it is slow. This slot is given even if the source is not ready with data. So this slot is transmitted empty. ⟨eq⟩ AAAA BB C DDD M X U frame 4 frame 3 frame 2 frame 1 A A A A B B C D D D"
+ },
+ {
+  "t": "h2",
+  "x": "Asynchronous TDM In this method, slots are not"
+ },
+ {
+  "t": "p",
+  "x": "fixed. They are allotted dynamically depending on speed of sources and whether they are ready for transmission. ⟨eq⟩ AAAA BB C DDD M X U frame 4 frame 3 frame 2 frame 1 A1 A1 C3 B2 B2 A1 A1 D4 D4 D4"
+ },
+ {
+  "t": "h2",
+  "x": "Aloha Protocols"
+ },
+ {
+  "t": "p",
+  "x": "The Aloha Protocol was designed to provide data transmission between computers on several islands using radio transmission."
+ },
+ {
+  "t": "h2",
+  "x": "Pure aloha"
+ },
+ {
+  "t": "p",
+  "x": "Pure Aloha is an unslotted, fully decentralized protocol. It is extremely simple and trivial to implement. The ground rule is ‘when you want to talk, just talk!’ So, a node which wants to transmit, will go ahead and sends the packet on its broadcast channel, with no consideration of who so ever to any body else is transmitting (or) (not). Station 1 Station 2 Station 3 Station 6 Station 5 Station 4 Time (shaded slots indicate collisions) One serious drawback here is that, you don’t know whether what you are sending, has been received properly or not. To resolve this in pure Aloha, when one node finishes speaking it expects an acknowledgement in a finite amount of time otherwise it simply retransmits the data. This scheme works well in small networks where the load is not high. But in large, load intensive networks where many nodes may want to transmit at the same time, this scheme fails miserably. This led to the development of slotted Aloha."
+ },
+ {
+  "t": "h2",
+  "x": "Slotted Aloha"
+ },
+ {
+  "t": "p",
+  "x": "This is quite similar to pure Aloha, differing only in the way transmissions take place. Instead of transmitting right at the demand time, the sender waits for some time. This delay is specified as follows–the timeline is divided into equal slots and then it is required that transmission should take place only at slot boundaries. To be more precise, the slotted Aloha makes the following assumptions."
+ },
+ {
+  "t": "li",
+  "x": "All frames consist of exactly L bits."
+ },
+ {
+  "t": "li",
+  "x": "Time is divided into slots of size L/K seconds. (i.e., a slot equals the time to transmit one frame)"
+ },
+ {
+  "t": "li",
+  "x": "Nodes start to transmit frames only at the beginning of slots."
+ },
+ {
+  "t": "li",
+  "x": "The nodes are synchronized so that each node knows when the slots begin."
+ },
+ {
+  "t": "li",
+  "x": "If two or more frames collide in a slot, then all the nodes detect the collision event before slot ends."
+ },
+ {
+  "t": "p",
+  "x": "Station 1 Station 2 Station 3 Station 4 Station 5 Station 6 In this, way the number of collisions that can possibly take place is reduced by a huge margin. And hence, the performance became much better compared to pure Aloha. Collisions may only take place with nodes that are ready to speak at the same time."
+ },
+ {
+  "t": "h2",
+  "x": "Virtual private network"
+ },
+ {
+  "t": "p",
+  "x": "Virtual Private Networking (VPN) Internet protocol security (IP sec) is one of the most complete, secure, standardsbased protocol developed for transporting data. A VPN is a shared network, where private data can be accessed only by the intended recipient. The term VPN is used to describe a secure connection over the Internet. VPN is also used to describe private networks such as Frame Relay and Asynchronous Transfer Mode (ATM). The purpose of data security is that the data flowing across the network is protected by encryption technologies. IP sec-based VPNs use encryption to provide data security, that increases the networks resistance to data tampering. IP sec-based VPNs can be created over any type of IP Network, including Internet, ATM, Frame Relay, among all only Internet is inexpensive."
+ },
+ {
+  "t": "h2",
+  "x": "Uses of VPN"
+ },
+ {
+  "t": "p",
+  "x": "Intranets Intranets connect an organization’s locations. These locations could be head quarters offices, branch offices, Employees home which is located in some Remote area. Time (shaded slots indicate collisions) This connectivity is used for e-mails, sharing files etc. The cost of connecting remote home users is very expensive compared to Internet access technologies because of this organizations have moved their networks to the Internet."
+ },
+ {
+  "t": "h2",
+  "x": "Remote access It enables telecommuters and mobile work-"
+ },
+ {
+  "t": "p",
+  "x": "ers to access e-mail and business applications. A dial-up connection to an organizations modem pool is one method to access remote workers. It is expensive, because of long distance telephone and service costs."
+ },
+ {
+  "t": "h2",
+  "x": "IP sec"
+ },
+ {
+  "t": "p",
+  "x": "IP sec is an Internet Engineering Task Force (IETF) standard suite of protocols that provide data authentication, integrity, and confidentiality between 2 communication points across IP-Network. It provides data security at the IP-packet level. IP sec protects against possible security exposures by protecting data while in transit."
+ },
+ {
+  "t": "h2",
+  "x": "Features"
+ },
+ {
+  "t": "p",
+  "x": "IP sec was designed to provide the following security features when transferring packets across networks. 1. Authentication: Verifies that the packet received is actually from the correct sender or not. 2. Integrity: Ensures that the contents of packet did not change while transmitting data. 3. Confidentiality: Conceals the message content through encryption."
+ },
+ {
+  "t": "h2",
+  "x": "ESP: (Encapsulating security payload), It provides confi-"
+ },
+ {
+  "t": "p",
+  "x": "dentiality, authentication and integrity."
+ },
+ {
+  "t": "h2",
+  "x": "IKE: (Internet key Exchange) provides key management"
+ },
+ {
+  "t": "p",
+  "x": "and security Association (SA) management. ESP:"
+ },
+ {
+  "t": "li",
+  "x": "Most importantly, it provides message content protection."
+ },
+ {
+  "t": "li",
+  "x": "IP sec provides an open frame work for implementing standard algorithms such as SHA and MD5."
+ },
+ {
+  "t": "li",
+  "x": "The algorithms IP sec uses produces a unique identifier for each packet, which is a data equivalent to a finger print."
+ },
+ {
+  "t": "li",
+  "x": "This Finger Print allows the device to determine whether a packet has been tampered with."
+ },
+ {
+  "t": "li",
+  "x": "Packets that are not authenticated are discarded and not delivered to the intended receiver"
+ },
+ {
+  "t": "li",
+  "x": "ESP also provides all encryption services in IP sec."
+ },
+ {
+  "t": "li",
+  "x": "Encryption/decryption allows only the sender and the authorized receiver to read the data."
+ },
+ {
+  "t": "li",
+  "x": "The authentication performed by ESP is called ESP authentication."
+ },
+ {
+  "t": "li",
+  "x": "ESP provides authentication and integrity for the payload and not for the IP-header IP HDR TCP Data Figure 7 Original packet IP HDR ESP HDR TCP Data ESP Trailer ESP Authentication Encrypted Authenticated"
+ },
+ {
+  "t": "p",
+  "x": "The ESP Header is inserted into the packet between the IP-header and any subsequent packet contents."
+ },
+ {
+  "t": "li",
+  "x": "ESP encrypts the data, the payload is changed."
+ },
+ {
+  "t": "li",
+  "x": "ESP does not encrypt the ESP header, nor does it encrypt the ESP authentication."
+ },
+ {
+  "t": "p",
+  "x": "AH: Provides optional anti-replay protection, which protects against unauthorized retransmission of packets. The authentication header is inserted into the packet between the IP-header and any sub sequent packet contents. AH does not protect the data’s confidentiality. For added protection in certain cases, AH and ESP can be used together. IP HDR TCP Data Original packet IP HDR AH TCP Data Authenticated Figure 8 Packet with IP sec Authentication Header."
+ },
+ {
+  "t": "h1",
+  "x": "2. Routing Algorithms"
+ },
+ {
+  "t": "p",
+  "x": "Routing algorithm basics Flooding Multipath routing Distance vector routing Link state routing Hierarchical routing Rip Ospf Congestion control techniques Trafﬁ c shaping"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "Routing Algorithms Basics"
+ },
+ {
+  "t": "p",
+  "x": "The main function of network layer is routing packets from the source machine to the destination machine. The routing algorithms are part of the network layer software, responsible for deciding which output line an incoming packet should be transmitted on. Routing algorithms can be grouped into two major classes: Non-adaptive and Adaptive. 1. Non-adaptive algorithms do not base their routing decisions on measurements or estimates of the current traffic and topology. Instead, the choice of the route to use is downloaded to the routers when the network is booted. This procedure is called static routing. 2. Adaptive algorithms, in contrast, change their routing decisions to reflect changes in the topology, and the traffic as well."
+ },
+ {
+  "t": "h2",
+  "x": "Store and Forward Packet Switching"
+ },
+ {
+  "t": "p",
+  "x": "In this Technique, the data packet will be stored at the node and it is forwarded to its next appropriate intermediate node. The next intermediate node will first store the packet in the buffer, based on the router decision, it selects an interface, and forwards to receiver. The technique is most suitable for the networks with unsteady connectivity. The length of the packet we take shows effect on the file transfer, if the data packet is small, in the store the forward, delay will be less at each node, but causes extra overhead with headers. So, the packet size selection should be done appropriately."
+ },
+ {
+  "t": "h1",
+  "x": "Flooding"
+ },
+ {
+  "t": "p",
+  "x": "Static algorithms, in which every incoming packet is sent out on every outgoing line except the one on which it is arrived. Header contains the hop count of each packet. Hop counter is decremented at each hop, with the packet being discarded when the counter reaches zero. Another way for damming the flood is to keep track of which packets have been flooded, to avoid sending them out a second time. A variation of flooding that is slightly more practical is selective flooding. In this algorithm the routers do not send every incoming packet out on every line, only on those lines that are going approximately in the right direction."
+ },
+ {
+  "t": "h2",
+  "x": "Multipath Routing"
+ },
+ {
+  "t": "p",
+  "x": "Multipath routing is routing the packets from the source, on multiple paths to the destination. It is nothing but spreading the traffic. • • • • • • • Destination Source"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 1 Multipath routing model"
+ },
+ {
+  "t": "p",
+  "x": "Single path routing causes QOS, throughput and delay problems, and multipath routing, improves network performance with sharing of available resources of network. The components of multipath routing are 1. Multipath calculation algorithm 2. Multipath forwarding algorithm 3. End-Host protocol The algorithms specified above are based on Dijkstras shortest path algorithm they generate paths according to path characteristics and ensure path quality and path independence. The end-host protocol uses the multipath (determined) effectively performance will be improved if end-users use the multiple paths effectively."
+ },
+ {
+  "t": "h1",
+  "x": "Distance Vector Routing"
+ },
+ {
+  "t": "p",
+  "x": "A dynamic routing algorithm, operates by having each router maintain a table (i.e., a vector) giving the best known distance to each destination and which line to use to get there. These tables are updated by exchanging information with the neighbors. The Metric used might be number of hops, time delay in milliseconds, and total number of packets queued along the path or something similar. • • • • • • • • • • • A E F G H L K J I B C D (a) New estimated Delay from A I H K J A A B A C I D H E I F I G H H H I I J - K K L k JA delay is JI delay is JH delay is (b) JK delay is New routing table for J Vectors received from J’s four neighbours."
+ },
+ {
+  "t": "h2",
+  "x": "Figure 2 (a) Subnet, (b) Delay vectors of J"
+ },
+ {
+  "t": "p",
+  "x": "Figure 2(a) ‘shows a subnet. The first 4 columns of figure 2(b) shows the delay vectors received from the neighbors of router J. A claims to have a 12 m sec delay to B, a 25 m sec delay to C, a 40 m sec delay to D, etc. Suppose that J has estimated its delay to its neighbour, A, J, H and K as 8, 10, 12 and 6 m sec, respectively. Now J computes its new route to router G. It knows that it can get to A in 8 m sec, and A claims to be able to get to G in 18 m sec, so J knows it can count on a delay of 26 m sec to G if it forwards packets bound for G to A, similarly, it computes the delay to G via I, H and K as 41 (31 + 10), 18 (6 + 12) and 37 (31 + 6) m sec, respectively. The best of these values is 18, so it makes an entry in its routing table that the delay to G is 18 m sec and that the route to use is via H."
+ },
+ {
+  "t": "h2",
+  "x": "Count to Infinity Problem"
+ },
+ {
+  "t": "p",
+  "x": "It reacts rapidly to good news, but leisurely to bad news. Actual network may be down but routers will exchange routes with one another. Following measures are taken to avoid count-to-infinity problem: 1. Hop limit: Limit number of hops normally 0 hops directly connected, hop 16 is (0 – 15), 16 hops unreachable. 2. Split horizon: Never send information back in direction where it came from. 3. Route poisoning and poison reverse, hold on timer trigger. 4. As soon as network goes down, make metric of root infinity to resolve the immediate instability created because of routing updates from neighbor. 5. When router sends update with infinite metric to neighbor, neighbor will make it down. 6. Now routers will initiate hold on time to learn alternate paths and send update in direction where it came (Poison reverse) from. 7. Routers will incorporate final roots in routing table."
+ },
+ {
+  "t": "h1",
+  "x": "Link State Routing"
+ },
+ {
+  "t": "p",
+  "x": "The idea behind link state routing is simple and can be stated as five parts. Each router must do the following: 1. Discover its neighbors and learn their network addresses. 2. Measure the delay or cost to each of its neighbors. 3. Construct a packet telling all it has just learned. 4. Send this packet to all other routers. 5. Compute the shortest path to every other router. Learning about the neighbors When a router is booted, its first task is to learn who its neighbors are. It accomplishes this goal by sending a special HELLO packet on each point to point line. The router on the other end is expected to send back a reply telling who it is. These names must be globally unique."
+ },
+ {
+  "t": "h2",
+  "x": "Measuring the cost The link state routing algorithm"
+ },
+ {
+  "t": "p",
+  "x": "requires each router to know, or at least have a reasonable estimate of, the delay to each of its neighbors. The most direct way to determine this delay is to send over the line a special ECHO packet that the other side is required to send back immediately. By measuring the round trip time and dividing it by two, the sending router can get a reasonable estimate of the delay. If two paths with same bandwidth exists and one path is heavily loaded then the path which is not heavily loaded is chosen. But this may oscillate in the choice of best path. So to avoid oscillation in the choice of best path, distribute the load over multiple lines with same known fraction going over each line."
+ },
+ {
+  "t": "h2",
+  "x": "Building link state packets Once the information needed"
+ },
+ {
+  "t": "p",
+  "x": "for the exchange has been collected, the next step is, for each router to build a packet containing all the data. The packet starts with identity of the sender, followed by a sequence number and age, and a list of neighbors. For each neighbor, delay to that neighbor is given. B C D F E A (a) A B C Seq Seq Seq Age Age Age B B B E D D E E D E F Seq Seq Seq Age Age Age C A B F F D C E (b) Figure 3 (a) Subnet5, (b) Link state packets for this subnet. Distributing the link state packets As the packets are distributed and installed, the routers getting the routing packet first will change their routes. Consequently, the different routers may be using different versions of the topology, which can lead to inconsistencies, loops, unreachable machines, and other problems. The fundamental idea is to use flooding to distribute the link state packets. To keep the flood in check, each packet contains a sequence number that is incremented for each new packet sent. Routers keep track of all the (source router, sequence) pairs they see. When a new link state packet comes in, it is checked against the list of packets already seen. If it is new, it is forwarded on all lines except the one it arrived on. If it is a duplicate, it is discarded. If a packet with a sequence number lower than the highest one seen so far ever arrives, it is rejected as being obsolete since the router has more recent data. If a router ever crashes it will lose track of its sequence number. If its starts again at 0, the next packet will be rejected as a duplicate. Also due to bit error, packets may be rejected as obsolete. Solution to these problems is to include the age of each packet after the sequence number and decrement it once per second. When the age hits zero, the information from that router is discarded."
+ },
+ {
+  "t": "h2",
+  "x": "Computing new routes Once a router has accumulated a"
+ },
+ {
+  "t": "p",
+  "x": "full set of link state packets, it can construct the entire subnet graph because every link is represented. Every link is, in fact, represented twice, once for each direction. The two values can be averaged or used separately. Now dijkstra’s algorithm can be run locally to construct the shortest path to all possible destinations."
+ },
+ {
+  "t": "h2",
+  "x": "Hierarchical Routing"
+ },
+ {
+  "t": "p",
+  "x": "Hierarchical Routing is mainly designed for large topologies. With increase in the topology there is proportionate increase in the routing tables, which consume more memory for maintaining tables and requires more bandwidth for the status reports. In this routing, network topology is divided into hierarchies, these will reduce size of routing table. The node at each hierarchy will know about the nodes present in that level. It forwards the packet to its border router (at its level) if destination is not at its level. Hierarchical routing increases efficiency in routing, less traffic, reduction of table size in an order of about (log n). RIP 1. It calculates best route based on hop count. 2. RIP cannot handle more than 15 hops, anything above 15 hops away is considered unsearchable by RIP. This fact is used by RIP to prevent routing loops. 3. RIP is a classful routing protocol. 4. Interval between route update advertisements: 30 sec. Time out/hold on times: 180 sec 5. RIP implements the split horizon, route isonning and hold down mechanisms to prevent looping. 6. It is a dynamic distance vector routing protocol."
+ },
+ {
+  "t": "h1",
+  "x": "OSPF"
+ },
+ {
+  "t": "p",
+  "x": "The open shortest path first is an adaptive routing protocol for IP networking. It uses a link state routing algorithm. OSPF keeps track of the state of all the various network connections between itself and a network it is trying to send data to. OSPF selects the best route by finding the lowest cost paths to a destination. All router interfaces are given a cost. Its domain is an autonomous system."
+ },
+ {
+  "t": "h2",
+  "x": "Backbone routers Backbone routers have one or more"
+ },
+ {
+  "t": "p",
+  "x": "interfaces in Area 0 (the backbone area)."
+ },
+ {
+  "t": "h2",
+  "x": "Area border router (ABR) Routers that belong to multi-"
+ },
+ {
+  "t": "p",
+  "x": "ple areas, and connect these areas to the backbone area are called ABR. It has interfaces in multiple areas. Autonomous system boundary router (ASBR) If the router connects the OSPF autonomous system to another autonomous system, it is called an autonomous system boundary router (ASBF). OSPF elects two or more routers to manage the link state advertisements. Designated router (DR) Every OSPF will have a DR, a backup DR. The DR is the route to which all other routers within the area, send their link state advertisements."
+ },
+ {
+  "t": "h2",
+  "x": "OSPF areas"
+ },
+ {
+  "t": "p",
+  "x": "OSPF areas are used to impose a hierarchical structure to the flow of data over the network. A network using OSPF will always have atleast one area and if there is more than one area, one of the two areas must be the backbone area. Areas are used to group routers into manageable groups that exchange routing information locally, but summarize the routing information, when advertising the routes externally, ABR’s are used to connect the areas."
+ },
+ {
+  "t": "h1",
+  "x": "Congestion Control Techniques"
+ },
+ {
+  "t": "p",
+  "x": "Objective of congestion control technique is to limit queue lengths at the nodes, so as to avoid throughput collapse. 1. Send a control packet from a congested node to some or all source nodes to stop or slow the rate of transmission from source and thus limit the total number. of packets in the network. 2. Allow packet switching nodes to add congestion information to packets as they pass by. The packets carrying such information can go in both the directions i.e., opposite of the congestion and in the same direction of the congestion. Packets in the opposite direction of congestion quickly reache the source node which can reduce the flow of packets into the network. Packets going in the same direction as the congestion, reaches the destination. The destination asks the source to adjust the load by returning the signal back to the source in the packets. 3. Provides link delay information to other nodes. This information can be used to influence the rate at which new packets are produced. As these delays are influenced by the routing decision, they may vary too rapidly to use effectively for congestion control."
+ },
+ {
+  "t": "h2",
+  "x": "Congestion Control"
+ },
+ {
+  "t": "p",
+  "x": "Congestion control maintains the number of packets within the network below the level at which performance falls dramatically. Every node has a queue of packets for each outgoing channel. If, rate at which packets arrive and queue up, exceeds the rate of packet transmission, then size of queue grows without bound and thus delay experienced by a packet goes to infinity. When the packets arrive they are stored in the input buffer, of the corresponding link. The node examines each incoming packet to make a routing decision and then moves the packet to the appropriate output buffer. Packet queued up for output in output buffer is transmitted as soon as possible. When saturation point is reached, one can do any of the following: 1. Discard incoming packet for which there is no available buffer space. 2. Node should exercise some sort of flow control over its neighbors so that the traffic flow remains manageable. 3. Traffic shaping is about regulating the average rate of data transmission."
+ },
+ {
+  "t": "h2",
+  "x": "Leaky Bucket Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "Leaky bucket (a) Host computer Packet Unregulared flow The bucket holds packet Regulated flow Interface containing a leaky bucket (b) Figure 4 (a) A leaky bucket with water, (b) A leaky bucket with network A leaky bucket is a bucket with a small hole. No matter at what rate water enters the bucket, the outflow is at constant rate, S, when there is any water in the bucket and zero when bucket is empty. Once the bucket is full, any additional water entering it, spills over the sides and it is lost. Each host is connected to the network by an interface containing a leaky bucket (i.e., a finite internal queue) congestion control algorithms. Maximum carrying capacity of subnet Perfect Desirable Congested Packets sent Packets delivered When too many packets are present in the subnet, performance degrades. This situation is called congestion."
+ },
+ {
+  "t": "h2",
+  "x": "Causes of congestion"
+ },
+ {
+  "t": "p",
+  "x": "1. If all of a sudden, stream of packets are arriving on three or four input lines and all need same output line, a queue will build up. 2. Slow processor. 3. Low bandwidth line."
+ },
+ {
+  "t": "h2",
+  "x": "Token bucket"
+ },
+ {
+  "t": "p",
+  "x": "Tokens are added at a constant rate. For a packet to be transmitted, it must capture and destroy one token. Host Computer One token is added to the bucket every ∆T The bucket holds tokens Networks Host Computer Networks (a) (b) Figure 5 (a) shows that the bucket holds 3 tokens with 4 packets waiting to be transmitted, (b) shows that 3 packets have gotten through but the other one is stuck waiting for tokens to be generated. Unlike leaky bucket, token bucket allows saving up to maximum size of bucket ‘n’. The bursts of upto ‘n’ packets can be sent at once, giving faster response to sudden bursts."
+ },
+ {
+  "t": "li",
+  "x": "Leaky bucket discards packets when the bucket is full, whereas token bucket throws away tokens when the bucket is full but never discards packets."
+ },
+ {
+  "t": "li",
+  "x": "Let Token bucket capacity be c(bits), token arrival rate r(bps), maximum output rate M(bps), and burst length S(s)."
+ },
+ {
+  "t": "li",
+  "x": "During the burst length of S(s), tokens generated are rS(bits), output burst contains a maximum of C + rS(bits)"
+ },
+ {
+  "t": "li",
+  "x": "Output in a maximum burst of length S(s) is MS."
+ },
+ {
+  "t": "li",
+  "x": "Token bucket still allows large bursts, even though the maximum burst length ‘s’ can be regulated by selection of r and M."
+ },
+ {
+  "t": "li",
+  "x": "To reduce the peak rate, put a leaky bucket of a larger rate after the token bucket (To avoid discarding packets)"
+ },
+ {
+  "t": "h2",
+  "x": "Traffic Shaping"
+ },
+ {
+  "t": "p",
+  "x": "1. One of the main causes of congestion is, that traffic is often burst. 2. If hosts could be made to transmit at uniform rate, congestion would be less. This arrangement can be built into the network interface or simulated by the host OS. The host is allowed to put one packet per tick on the network. 1. When the packets are all of the same size at every clock tick, one packet is transmitted. 2. When variable size packets are used. (i) \u0007At every tick, a counter is initialized to n. If the first packet on the queue has fewer bytes than the current value of the counter, it is transmitted and counter is decremented by that number of bytes. (ii) \u0007Additional packets may also be sent, as long as the counter is high enough. (iii) \u0007When the counter drops below the length of the next packet on the queue, transmission stops until the next tick, at that time the residual byte count is overwritten and lost."
+ },
+ {
+  "t": "h1",
+  "x": "Transport Layer"
+ },
+ {
+  "t": "p",
+  "x": "Real communication takes place between two applications programs i.e., processes. For this, process-to-process delivery is needed. A mechanism is required in order to deliver data from one of these processes running on the source host to the corresponding process running on the destination host. The transport layer is responsible for process-to-process delivery."
+ },
+ {
+  "t": "h2",
+  "x": "Port addresses"
+ },
+ {
+  "t": "li",
+  "x": "A transport layer address is a port number."
+ },
+ {
+  "t": "li",
+  "x": "The destination port number is needed for delivery and the source port number is needed for reply."
+ },
+ {
+  "t": "li",
+  "x": "The port numbers are 16-bit integers ranging from 0 to 65535."
+ },
+ {
+  "t": "p",
+  "x": "The IANA (Internet Assigned Number Authority) has divided the port numbers as:"
+ },
+ {
+  "t": "li",
+  "x": "Well-known ports (0 to 1023)"
+ },
+ {
+  "t": "li",
+  "x": "Registered ports (1024 to 49,151)"
+ },
+ {
+  "t": "li",
+  "x": "Dynamic or private or ephemeral ports (49,152 to 65,535)"
+ },
+ {
+  "t": "h2",
+  "x": "Socket address"
+ },
+ {
+  "t": "p",
+  "x": "Process to process delivery needs two identifiers, IP address and port address at each end to make a connection. The combination of an IP address and a port number is socket address. 192.53.52.1 IP address Socket address 192.53.52.1 Port number"
+ },
+ {
+  "t": "h2",
+  "x": "Protocols at transport layer"
+ },
+ {
+  "t": "h1",
+  "x": "User Datagram Protocol (Udp)"
+ },
+ {
+  "t": "li",
+  "x": "UDP is connectionless protocol."
+ },
+ {
+  "t": "p",
+  "x": " There is no mechanism for connection establishment or connection termination.  The packets may be delayed or lost or may arrive out of sequence, i.e., there is no acknowledgement.  Each user datagram sent by UDP is an independent program. Even if the user datagram’s are coming from the same source program and going to the same destination process, there is no relationship between the different datagrams. Thus, user datagrams can travel on a different path."
+ },
+ {
+  "t": "li",
+  "x": "Multicasting capability is embedded in UDP."
+ },
+ {
+  "t": "li",
+  "x": "It is a simple, unreliable transport protocol."
+ },
+ {
+  "t": "p",
+  "x": " There is no flow control, no window mechanism.  There is no error control as well except for the checksum. The sender does not know if a message has been lost or duplicated. When the receiver detects an error through the checksum, the datagram is discarded silently."
+ },
+ {
+  "t": "li",
+  "x": "It is used in real-time applications."
+ },
+ {
+  "t": "p",
+  "x": " The header length is fixed, of 8 bytes. Real time applications require a constant flow of data. Moreover, the unreliability (fast and less complex service) of UDP aids in real-time applications like voice over IP, online games etc."
+ },
+ {
+  "t": "li",
+  "x": "It encapsulates and decapsulates messages in an IP datagram."
+ },
+ {
+  "t": "h1",
+  "x": "3. TCP/UDP"
+ },
+ {
+  "t": "p",
+  "x": "Transport layer User Diagram Protocol (UDP) TCP/IP TCP/IP vs OSI reference model TCP state transition diagram TCP ﬂ ow control Application layer ICMP, SMTP, POP3, IMAP 4, HTTP, FTP DNS Network devices"
+ },
+ {
+  "t": "h2",
+  "x": "User Datagram"
+ },
+ {
+  "t": "p",
+  "x": "UDP packets have other name called user datagrams. They have a fixed size header of 8 bytes. The datagram is divided into 4 fields. Source port number (16-bits) Destination port number (16-bits) Total length (16-bits) Checksum (16-bits)"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 1 User datagram header format"
+ },
+ {
+  "t": "p",
+  "x": "1. Source Port Number It is a 16-bit number used by the process running on the source host. 2. Destination Port Number It is also a 16 bit number used by the process running on the destination host. 3. Total length It is a 16-bit field, it defines the total length of the user datagram header and data. It can define a total length of 0 to 65535 bytes. A UDP packet is encapsulated in an IP packet. UDP length = IP length – IP header’s length 4. Checksum: It is optional field, if not available the field is filled with 1’s. It is used to detect errors in user datagram (header plus data)."
+ },
+ {
+  "t": "h2",
+  "x": "Protocols That Take UDP Services"
+ },
+ {
+  "t": "p",
+  "x": "Following are a few protocols that take the services of UDP: 1. Domain Name Service (port – 53): UDP is used to send small data. If the data is less than 512 bytes, then DNS uses UDP else it goes for TCP. 2. Trivial File Transfer Protocol (port – 69): TFTP is used to transfer simple and small files, it uses UDP service. 3. Routing Information protocol: It uses UDP service on port number 520 to update routers. 4. Simple Network Management Protocol (SNMP): The SNMP agent receives requests on UDP port 161 for management process. 5. Bootstrap protocol (BOOTP): For client (port 68) and for server (port – 67)."
+ },
+ {
+  "t": "h2",
+  "x": "UDP Checksum Calculation"
+ },
+ {
+  "t": "li",
+  "x": "The checksum includes a pseudo header, the UDP header and the data coming from the application layer."
+ },
+ {
+  "t": "p",
+  "x": "32-bit source IP address 32-bit destination IP address All 0’s 8-bit protocol (17) 16-bit UDP total length"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 2 Pseudo header of UDP for checksum calculation"
+ },
+ {
+  "t": "li",
+  "x": "The value of protocol field is 17. If this value is changed during transmission, the checksum calculation at the receiver will detect it and UDP drops the packet."
+ },
+ {
+  "t": "li",
+  "x": "If the checksum is not calculated, the field is filled with 0’s. This means checksum calculation is optional."
+ },
+ {
+  "t": "li",
+  "x": "The calculated checksum can never be all 1’s as this implies that the sum is all 0’s. But this is impossible because for this the value of fields have to be 0’s."
+ },
+ {
+  "t": "h1",
+  "x": "TCP/IP"
+ },
+ {
+  "t": "p",
+  "x": "TCP/IP is a network model which is used for the internet architecture, its main objectives are"
+ },
+ {
+  "t": "li",
+  "x": "Connecting the multiple networks."
+ },
+ {
+  "t": "li",
+  "x": "Maintaining the intact connection between two machines, which are functioning."
+ },
+ {
+  "t": "p",
+  "x": "Application Transport Network Host to network Application Transport Network Host to network Data packet route Data packet route"
+ },
+ {
+  "t": "h2",
+  "x": "TCP/IP"
+ },
+ {
+  "t": "p",
+  "x": "(1) There are 7 layers (1) There are 5 layers (2) There is no definition for multicasting (2) Multicasting is clearly defined (3) Less flexibility (3) Lot of flexibility (4) Practically it is not suggestible as it is based on theoretical rules (4) It is based on practical rules"
+ },
+ {
+  "t": "li",
+  "x": "TCP stands for Transmission Control Protocol."
+ },
+ {
+  "t": "li",
+  "x": "It is connection-oriented protocol."
+ },
+ {
+  "t": "p",
+  "x": "  It creates a virtual connection between two TCPs to send data then data is transferred and at the end the connection is released.   There is acknowledgement mechanism for safe and sound arrival of data."
+ },
+ {
+  "t": "li",
+  "x": "It is a reliable transport protocol."
+ },
+ {
+  "t": "p",
+  "x": "  Uses flow and error control.   Slower and more complex service.   Duplicate segments are detected, lost segments are resent, the bytes are delivered to the end process in order."
+ },
+ {
+  "t": "li",
+  "x": "It is a stream-oriented protocol."
+ },
+ {
+  "t": "h2",
+  "x": "Figure 3 TCP/IP network protocol"
+ },
+ {
+  "t": "li",
+  "x": "Allows the sending process to deliver data as a stream of bytes and allows the receiving process to obtain data as a stream of bytes."
+ },
+ {
+  "t": "li",
+  "x": "TCP offers full-duplex service."
+ },
+ {
+  "t": "p",
+  "x": "  Data can flow in both directions at the same time.   Each TCP has a sending and receiving buffer.   It cannot be used in real time applications as the header length varies from 20-to-60 bytes, moreover it needs reliability."
+ },
+ {
+  "t": "h2",
+  "x": "TCP Header Format"
+ },
+ {
+  "t": "li",
+  "x": "A packet in TCP is called a segment. The segment consists of a 20-to-60 bytes header."
+ },
+ {
+  "t": "li",
+  "x": "If there are no options, the header is of 20 bytes."
+ },
+ {
+  "t": "li",
+  "x": "If there are options, the header goes upto 60 bytes."
+ },
+ {
+  "t": "li",
+  "x": "Source Port addresses A 16-bit field that defines the port number of the application program in the host that is sending the segment."
+ },
+ {
+  "t": "li",
+  "x": "Destination Port address A 16-bit field that defines the port number of the application program in the host is receiving the segment."
+ },
+ {
+  "t": "li",
+  "x": "Sequence number A 32-bit field whose value defines the number of the first data byte contained in that segment."
+ },
+ {
+  "t": "p",
+  "x": "During connection establishment, a random number is generated to create an initial sequence number (ISN) which is usually different in each direction."
+ },
+ {
+  "t": "li",
+  "x": "Acknowledgement Number A 32-bit field whose value defines the number of the next byte, a party expects to receive. If the receiver of the segment has successfully received byte number x from the other party, it defines x + 1 as the acknowledgement number. The acknowledgement number is cumulative."
+ },
+ {
+  "t": "li",
+  "x": "HLEN(Header Length) This field is of 4-bit. The header length can be between 20 and 60 bytes. The value of this field can be between 5(5 × 4 = 20) and 15(15 × 4 = 60)."
+ },
+ {
+  "t": "li",
+  "x": "Reserved This is a 6-bit field which is reserved for future use."
+ },
+ {
+  "t": "li",
+  "x": "Control This field contains 6 control flags. These are as follows."
+ },
+ {
+  "t": "p",
+  "x": "  URG: Urgent pointer. This flag is set when the value of urgent pointer field is valid.   ACK: Acknowledgement pointer. This flag is set when the value of acknowledgement field is valid. It is not set at the start of connection during 3-way handshake.   RST: Reset pointer. Used to reset the connection, reject an invalid segment or refuse an attempt to open a connection.   PSH: Push pointer. When a data is pushed the flag is set.   SYN: Synchronization pointer, used to synchronize sequence numbers during connection. If it is set to 1, then it is ISN. If set to 0, then it is the accumulated sequence number of the first data byte of the segment for the current session.   FIN: Finish Pointer. It is used to terminate a connection. It indicates that the sender is not interested in sending any more data."
+ },
+ {
+  "t": "li",
+  "x": "Window size The field size is of 16-bits and thus the maximum size of the window is 65,535 bytes. This field is determined by the receiver and thus referred to as the receiving window. The window size is variable."
+ },
+ {
+  "t": "li",
+  "x": "Checksum The inclusion of this 16-bits field is mandatory in TCP. The calculation of the checksum for TCP follows the same procedure as in UDP, only the value of protocol field in TCP is 6."
+ },
+ {
+  "t": "li",
+  "x": "Urgent pointer This 16-bit field, is valid only if the urgent flag is set. This field is used when the segment contains urgent data."
+ },
+ {
+  "t": "li",
+  "x": "Options and padding When the header length is greater than 5, option field is used to make the segment into the multiples of 32. Padding is used to ensure the ending of TCP header, it is composed to 32 zeros."
+ },
+ {
+  "t": "h2",
+  "x": "TCP Connection"
+ },
+ {
+  "t": "li",
+  "x": "TCP is connection-oriented and the connection is virtual not physical."
+ },
+ {
+  "t": "li",
+  "x": "TCP operates at a higher level. TCP uses the services of IP to deliver individual segments to the receiver, but it controls the connection itself. Lost or corrupted segments are retransmitted."
+ },
+ {
+  "t": "li",
+  "x": "In TCP, connection-oriented transmission requires three phases:"
+ },
+ {
+  "t": "p",
+  "x": "1. Connection establishment 2. Data transfer 3. Connection termination Source port address (16-bits) Destination port address (16-bits) Sequence number (32-bits) Acknowledgement number (32-bits) HLEN (4-bits) Reserved (6-bits) URG ACK PSH RST SYN FIN Window size (16-bits) Checksum (16-bits) Urgent Pointer (16-bits) Options and Padding"
+ },
+ {
+  "t": "h2",
+  "x": "Connection establishment"
+ },
+ {
+  "t": "li",
+  "x": "The connection establishment in TCP is called three-way handshaking."
+ },
+ {
+  "t": "li",
+  "x": "The process starts with the server. The server program tells its TCP that it is ready to accept a connection. This is a request for a passive open."
+ },
+ {
+  "t": "li",
+  "x": "The client program issues a request for an active open."
+ },
+ {
+  "t": "p",
+  "x": "A client that wishes to connect to an open server tells its TCP that it needs to be connected to a particular server. Hence the TCP can start the three-way handshaking process as shown in the figure. Client Server Active open Passive open Time Time Segment (ACK) Seq. No: 1001 ACK No: 2001 ACK No: 1001 Seq. No: 2000 Segment (SYN + ACK) ACK No:____ Seq. No: 1000 Segment (SYN) 1. The first segment which is a SYN segment is identified by the randomly generated number and is assigned to a 1 byte dummy data indicating the sequence number. 2. Again from the server side a randomly generated number is assigned for the dummy data indicating the first byte. 3. A SYN segment cannot carry data, but it consumes one sequence number. A (SYN + ACK) segment cannot carry data, but consumes one sequence number. An ACK segment, if carrying no data, consumes no sequence number. 4. Initial Sequence Number (ISN) 1000 is sent from the client to server. Server receives the segment 1000 and is expecting segment 1001 as the next one."
+ },
+ {
+  "t": "h2",
+  "x": "Data transfer"
+ },
+ {
+  "t": "li",
+  "x": "After the connection is established, bidirectional data transfer can take place. Both the client and server can send data and acknowledgements."
+ },
+ {
+  "t": "li",
+  "x": "The data segments sent by the client have the PSH (push) flag set so that the server TCP knows to deliver data to the server process as soon as they are received."
+ },
+ {
+  "t": "li",
+  "x": "Sometimes the sending application program wants a piece of data to be read out of order by the receiving application program that means an application program needs to send urgent bytes then in this case the URG bit is set and the segment is send. The sending TCP creates a segment and inserts the urgent data at the beginning of the segment."
+ },
+ {
+  "t": "h2",
+  "x": "Connection termination"
+ },
+ {
+  "t": "p",
+  "x": "There are two options for connection termination."
+ },
+ {
+  "t": "h2",
+  "x": "Three-way handshaking"
+ },
+ {
+  "t": "p",
+  "x": "Client Server Segment Segment (FIN + ACK) Segment (ACK) Time Time"
+ },
+ {
+  "t": "li",
+  "x": "The client process sends the first segment, a FIN segment in which the FIN flag is set. The FIN segment consumes one sequence number if it does not carry data."
+ },
+ {
+  "t": "li",
+  "x": "The server TCP sends the second segment, a FIN + ACK segment, to confirm the receipt of the FIN segment from the client and at the same time announce the closing of the connection in the other direction."
+ },
+ {
+  "t": "p",
+  "x": "\u0007The FIN + ACK segment consumes one sequence number if it does not carry data."
+ },
+ {
+  "t": "li",
+  "x": "The client sends the last ACK segment to the server. This segment contains acknowledgement number which is 1 plus, the sequence number received in the FIN segment from the server."
+ },
+ {
+  "t": "h2",
+  "x": "Four-way handshaking"
+ },
+ {
+  "t": "li",
+  "x": "Half-close: In TCP, one end can stop sending data while still receiving data. This is half close."
+ },
+ {
+  "t": "li",
+  "x": "The client half-closes the connection by sending a FIN segment."
+ },
+ {
+  "t": "li",
+  "x": "The server accepts the half-close by sending the ACK segment. The data transfer from the client to the server stops."
+ },
+ {
+  "t": "li",
+  "x": "When the server has sent all the processed data, it sends a FIN segment, which is acknowledged by an ACK from the client."
+ },
+ {
+  "t": "p",
+  "x": "Client Server Segment (FIN) Segment (FIN) Time Time ACK No: 1501 ACK No: 1501 ACK No: 2502 ACK No:____ Segment (ACK) Segment (ACK) Seq. No: 2500 Seq. No: 1500 Seq. No: 2501 Seq. No: 1501"
+ },
+ {
+  "t": "h2",
+  "x": "TCP State Transition Diagram"
+ },
+ {
+  "t": "p",
+  "x": "The functionality of TCP connection setup, communication phase and termination phase can be easily depicted by the state transition diagram where the TCP will be only at one state at a time with respect to server or client. A change in the state is only observed after receiving a request for change like ACK (acknowledgement). Last ACK Time out Time wait Listen Closed Established SYNC-sent SYNC-received Close - wait FIN-wait 2 FIN-wait 1"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 5 State transition diagram"
+ },
+ {
+  "t": "p",
+  "x": "Here, Solid line ‘–’ is for client states, Break line ‘---’ is for server states State ‘Closed’ is common for both client and server. Initially the client and the server are in the closed state where no TCP connection is set. When an application request for a TCP connection then the client changes its state from closed to SYNC-sent state."
+ },
+ {
+  "t": "h2",
+  "x": "Client states"
+ },
+ {
+  "t": "p",
+  "x": "1. SYNC-sent \u0007After the client sends a SYNC-sent and receives an ACK for the sent SYNC segment, it changes its state to ESTABLISHED STATE. 2. Established \u0007In this state the client and the server exchange user data. After the requested application is completed, it sends a FIN segment and changes its state to FINwait 1. 3. FIN-wait 1 \u0007FIN-wait 1 changes to FIN-wait 2 after receiving an ACK for sent FIN segment. 4. FIN-wait 2 \u0007The client will remain in this state until it receives a FIN segment from the server. When the last ACK is sent by the client, the client changes its state to Time-wait. 5. Time-wait \u0007A timer is set at this state for any delayed segment from the server which are removed or discarded at the client and after the timeout is reached, the client changes its state from present state to the closed state again."
+ },
+ {
+  "t": "h2",
+  "x": "Server states"
+ },
+ {
+  "t": "p",
+  "x": "1. Listen \u0007This is a passive state where the server always listens for the SYNC request segment on different TCP ports. 2. SYN-received \u0007After receiving the SYNC request from the client, the server acknowledges its state to the Established state. 3. Closed-wait \u0007The server changes its state from Established to close-wait after receiving the finish segment from the client. In this state the server sends an ACK and finish segments. Afterwards it changes the state to last-ACK. 4. Last-ACK \u0007In this state the server expects the last ACK segment from the client, as and when it receives the ACK segment it changes its state to again closed state."
+ },
+ {
+  "t": "h2",
+  "x": "Tcp Congestion Control"
+ },
+ {
+  "t": "li",
+  "x": "Deals with end-to-end delivery."
+ },
+ {
+  "t": "li",
+  "x": "Congestion handling in TCP is based on three phases:   Slow start   Congestion avoidance   Congestion detection"
+ },
+ {
+  "t": "h2",
+  "x": "Slow start (exponential increase)"
+ },
+ {
+  "t": "p",
+  "x": "1. By default the receiver window size is initially set to 1. 2. In the first instance the transmitter receives an ACK for the window size indicating the receiver window size as 2 segments. 3. After 2 segments are sent it is acknowledged with 4 segments. 4. After 4 segments are sent it it acknowledged with 8 segments. 5. This is exponential growth and this growth continue until the window size reaches the threshold value. 6. If there is delayed ACKs, the increase in the size of the window is less than power of 2."
+ },
+ {
+  "t": "h2",
+  "x": "Congestion avoidance (additive increase)"
+ },
+ {
+  "t": "p",
+  "x": "1. To avoid the congestion before it happens, the exponential growth of slow start algorithm must be slowed down. 2. When the threshold is reached, then the additive phase begins. Here each time the whole window of segments is acknowledged, the size of congestion window is increased by 1."
+ },
+ {
+  "t": "h2",
+  "x": "Congestion detection (multiplicative decrease)"
+ },
+ {
+  "t": "p",
+  "x": "1. If congestion occurs, the congestion window size must be decreased. The only way the sender can guess the congestion has occurred is by the need to retransmit a segment. 2. Retransmission can occur in two cases: (i) When a timer times out. (ii) When 3 ACKs are received. 3. In both the cases the size of threshold is dropped to one-half of the current window size and the window size is decreased to initial window size “1”. This is multiplicative decrease. Example: Let us take an example to explain the TCP congestion control. Consider an instance of TCP additive increase, multiplicative decrease algorithm where the window size at the start of slow-start phase is 2 MSS (Maximum Segment Size) and threshold value is 8 MSS. The timeout occurs at the fifth transmission. Then what is the congestion window size at the end of the tenth transmission? 4 5 6 7 8 9101112 13 14 15 16 17 18 19 20 (Time out) Threshold New threshold Transmission number (segments) Congestion window size Window size is 2 MSS initially. 8 MSS is threshold value, after this there is only increase of 1-1 window size till timeout value which is 10. The new threshold value becomes half of the value of current congestion window i.e., 5. Timeout remains the same i.e., 10. At 10th transmission the window size is 7. After time-out, at 13th transmission window size = 1 and at 14th transmission window size = 2."
+ },
+ {
+  "t": "h2",
+  "x": "TCP Flow Control"
+ },
+ {
+  "t": "li",
+  "x": "For flow control sliding window protocol is used."
+ },
+ {
+  "t": "li",
+  "x": "The window size is set by the receiver and is controlled by the receiver. The window size is not fixed (variable)."
+ },
+ {
+  "t": "li",
+  "x": "The sliding window protocol in TCP looks like the Go-Back-N protocol because it does not use NAKs; it looks like Selective Repeat because the receiver holds the out-of-order segments until the missing ones arrive."
+ },
+ {
+  "t": "li",
+  "x": "A sliding window is used to make transmission more efficient as well as to control the flow of data so that the destination does not become overwhelmed with data. TCP sliding windows are byte-oriented."
+ },
+ {
+  "t": "h2",
+  "x": "TCP Error Control"
+ },
+ {
+  "t": "li",
+  "x": "TCP provides reliability using error control."
+ },
+ {
+  "t": "li",
+  "x": "Error control includes mechanism for detecting corrupted segments, lost segments, out-of-order segments and duplicated segments."
+ },
+ {
+  "t": "li",
+  "x": "Error detection and correction in TCP is achieved through the use of three tools:   Checksum   Acknowledgment   Time-out"
+ },
+ {
+  "t": "h2",
+  "x": "Checksum"
+ },
+ {
+  "t": "p",
+  "x": "Each segment includes a checksum field which is used to check for a corrupted segment. A 16-bit checksum is mandatory in every segment."
+ },
+ {
+  "t": "h2",
+  "x": "Acknowledgement"
+ },
+ {
+  "t": "li",
+  "x": "There is no negative ACK in TCP."
+ },
+ {
+  "t": "li",
+  "x": "There is no ACK for the received ACK."
+ },
+ {
+  "t": "li",
+  "x": "Only the correctly received segments are acknowledged, if any segment if found to be corrupted through checksum such segments are not acknowledged."
+ },
+ {
+  "t": "h2",
+  "x": "Time-out"
+ },
+ {
+  "t": "p",
+  "x": "Different timers are deployed for error control. 1. Time-awaited timer: This timer is used to handle TCP termination process specially to handle duplicate finish segments. Its value is set to twice the life time of a segment. 2. Keep-Alive Timer: This timer is used to handle long idle TCP connections. By default its value is 2 hours, beyond which a probe (1 byte dummy data) is used for 10 consecutive times with a separation of 75 milliseconds. If there is no response beyond this, then the connection is terminated. 3. Persistence Timer: This timer is used to handle Zero(0) window size scenario. The sender sends 1 probe every 60 seconds until it receives a non-zero window size from where the communication resumes. 4. Retransmission Timer: This timer is used for handling any lost segments. Its value is twice the Round trip time, i.e., 2 × RTT. RTT is time needed for a segment to reach a destination and for an acknowledgement to be received."
+ },
+ {
+  "t": "h1",
+  "x": "Application Layer"
+ },
+ {
+  "t": "p",
+  "x": "An interface between the networks is called application. This section introduces two important concepts:"
+ },
+ {
+  "t": "li",
+  "x": "Application Layer: The application layer of the OSI model provides the first step of getting data onto the network."
+ },
+ {
+  "t": "li",
+  "x": "Application Software: Applications are the software programs used by people to communicate over the network. Examples of application software, includes HTTP, FTP, e-mail, and others, used to explain the differences between these two concepts."
+ },
+ {
+  "t": "p",
+  "x": "In the OSI model, information is passed from one layer to the next, starting at the application layer on the transmitting host and proceeding down the hierarchy to the physical layer, then passing over the communications channel to the destination host, where the information proceeds back up the hierarchy, ending at the application layer. The following six steps explain the procedure: 1. People create the communication. 2. The application layer prepares human communication for transmission over the data network. 3. Software and hardware converts communication to digital format. 4. Application layer services initiate the data transfer. 5. Each layer plays its role. The OSI layers encapsulate data down the stack. Encapsulated data travels across the media to the destination. OSI layers at the destination unencapsulate the data. 6. The application layer receives data from the network and prepares it for human use. The application layer, layer 7, is the top layer of both the OSI and TCP/IP models. Layer 7 provides the interface between the application you use to communicate and the underlying network over which your messages are transmitted. Application layer protocols are used to exchange data between programs, running on the source and destination hosts."
+ },
+ {
+  "t": "h2",
+  "x": "TCP/IP Application Layer Protocol"
+ },
+ {
+  "t": "p",
+  "x": "The most widely known TCP/IP application layer protocols are those that provide the exchange of user information. These protocols specify the format and control information necessary for many of the common internet communication functions. Among these, TCP/IP protocols are the following."
+ },
+ {
+  "t": "li",
+  "x": "Domain name system (DNS) is used to resolve internet names to IP addresses."
+ },
+ {
+  "t": "li",
+  "x": "Hypertext transfer protocol (HTTP) is used to transfer files that make up the web pages of the world wide web."
+ },
+ {
+  "t": "li",
+  "x": "Simple mail transfer protocol (SMTP) is used for the transfer of mail messages and attachments."
+ },
+ {
+  "t": "li",
+  "x": "Telnet, a terminal emulation protocol, is used to provide remote access to servers and networking devices."
+ },
+ {
+  "t": "li",
+  "x": "File transfer protocol (FTP) is used for interactive file transfers between systems."
+ },
+ {
+  "t": "h2",
+  "x": "Application Layer Services"
+ },
+ {
+  "t": "p",
+  "x": "Programs such as file transfer or network print spooling, might need the assistance of application layer services to use network resources. Although transparent to the user, these services have interface with the network and prepares the data for transfer. Different types of data whether it is text, graphics or video require different network services to ensure that it is properly prepared for processing by the functions occurring at the lower layers of OSI model. Application layer services establish an interface to the network and protocols provide the rules and formats that govern how data is treated, a single executable program can use all three components. For example, while discussing “Telnet”, you could be referring to the Telnet application, the Telnet service, or the Telnet protocol."
+ },
+ {
+  "t": "h2",
+  "x": "Application Layer Protocol Functions"
+ },
+ {
+  "t": "p",
+  "x": "Both the source and destination devices use application layer protocols during a communication session. For the communications to be successful, the application layer protocols implemented on the source and destination host must match."
+ },
+ {
+  "t": "h2",
+  "x": "Protocols perform the following tasks"
+ },
+ {
+  "t": "li",
+  "x": "Establish consistent rules for exchanging data between applications and services loaded on the participating devices."
+ },
+ {
+  "t": "li",
+  "x": "Specifies how data inside the messages is structured and the types of messages that are sent between source and destination. These messages can be requests for services, acknowledgements, data messages, status messages, or error messages."
+ },
+ {
+  "t": "li",
+  "x": "Defines message dialogues, ensuring that a message being sent is met by the expected response and that the correct services are invoked when data transfer occurs."
+ },
+ {
+  "t": "p",
+  "x": "Applications and services can also use multiple protocols in the course of a single conversation. One protocol might specify how to establish the network connection and another might describe the process for the data transfer when the message is passed to the next lower layer. A single application can employ many different supporting application layer services. Thus, what appears to the user as one request for a web page might, in fact, amount to dozens of individual requests. For each request, multiple processes can be executed. For example, the FTP requires a client to initiate a control process and a data stream process to a server. Additionally, servers typically have multiple clients requesting information at the same time, as shown in the figure below. For example, a Telnet server can have many clients requesting connections to it. These individual client requests must be handled simultaneously and separately for the network to succeed. The application layer processes and services rely on support from lower layer functions to successfully manage the multiple conversations. Telnet Client -1 Client -2 Client -3 Telnet client Application Server hardware Application Application Application Telnet client Telnet server application Telnet client ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 6 Multiple client’s service Requests"
+ },
+ {
+  "t": "h1",
+  "x": "Application Layer Protocols"
+ },
+ {
+  "t": "p",
+  "x": "The transport Layer uses an addressing scheme called a port number. Port numbers identify application layer services that are source and destination of data. Server programs generally use predefined port numbers that are commonly known by clients. Some of these services are"
+ },
+ {
+  "t": "li",
+  "x": "Domain Name System (DNS): TCP/UDP Port 53"
+ },
+ {
+  "t": "li",
+  "x": "HTTP: TCP Port 80"
+ },
+ {
+  "t": "li",
+  "x": "Simple Mail Transfer Protocol (SMTP): TCP Port 25"
+ },
+ {
+  "t": "li",
+  "x": "Post office Protocol (POP): UDP Port 110"
+ },
+ {
+  "t": "li",
+  "x": "Telnet: TCP Port 23"
+ },
+ {
+  "t": "li",
+  "x": "DHCP: UDP Port 67"
+ },
+ {
+  "t": "li",
+  "x": "FTP: TCP Ports 20 and 21"
+ },
+ {
+  "t": "h2",
+  "x": "Internet Control Message Protocol (ICMP)"
+ },
+ {
+  "t": "li",
+  "x": "Used by hosts and gateways to send notification of datagram problems back to the sender."
+ },
+ {
+  "t": "li",
+  "x": "Used for error reporting and query messages."
+ },
+ {
+  "t": "li",
+  "x": "Helpful in network debugging."
+ },
+ {
+  "t": "li",
+  "x": "Uses the services of TCP and UDP with the port number 7 as the ping command which is used for testing, this testing is done from a source which starts at the application layer and reaches network through transport layer."
+ },
+ {
+  "t": "li",
+  "x": "ICMP is encapsulated into an IP datagram and then transmitted into the network, if the protocol filed in the IP datagram is 1 then the IP datagram is said to be carrying ICMP message."
+ },
+ {
+  "t": "h2",
+  "x": "Error reporting"
+ },
+ {
+  "t": "li",
+  "x": "Destination Unreachable: The packet is discarded due to the host not present in the network or the host is not responding to the request."
+ },
+ {
+  "t": "li",
+  "x": "Source Quench: The packet is discarded due to the congestion in the network."
+ },
+ {
+  "t": "li",
+  "x": "Parameter Problem: The packet is discarded due to the processing problem observing a change in the header format of the I/P datagram."
+ },
+ {
+  "t": "li",
+  "x": "Time Exceeded: The packet is discarded because the TTL value is decremented to zero(0)."
+ },
+ {
+  "t": "li",
+  "x": "Redirection: Here the packet is not discarded but redirected to a network as the host doesn’t belong to this network."
+ },
+ {
+  "t": "h2",
+  "x": "Router solicitation and router advertisement request"
+ },
+ {
+  "t": "p",
+  "x": "and reply: Router solicitation is a request generated by the source requesting the router’s presence in the network. The response is a router advertisement generated by the router broadcasting its network id and its presence in the network. Address mask request and reply: If by any means the node is unable to identify the network bits in its I/P address then this request is used by the source to a router requesting for the network id, the reply is also unicast in this scenario. Time stamp echo request and reply: This is used to calculate the round trip time of a packet for network diagnose or debugging. Echo request and reply: This is used to see the presence of a host or a router in the network. For example PING."
+ },
+ {
+  "t": "h2",
+  "x": "SMTP"
+ },
+ {
+  "t": "li",
+  "x": "SMTP stands for simple mail transfer protocol."
+ },
+ {
+  "t": "li",
+  "x": "It uses the services of TCP on port number 25."
+ },
+ {
+  "t": "li",
+  "x": "It is a push protocol. Even when the destination is not interested to receive the message this push approach of the SMTP makes the receiver receive the message."
+ },
+ {
+  "t": "li",
+  "x": "Components of SMTP:"
+ },
+ {
+  "t": "p",
+  "x": "1. User Agent (UA) : (i) \u0007It provides Graphical User Interface access to the user. Example: Netscape navigation, Mozilla Firefox. \u0007It also provides command-driven access in early days. (ii) It handles the inbox transactions: (a) \u0007Composing messages: Helps the user compose the e-mail message to be sent out. (b) \u0007Reading messages: Helps to read incoming messages by checking the mail in the incoming mail box. (c) \u0007Replying to messages: Sends the message to the sender or recipients of the copy. (d) \u0007Forwarding messages: Sends the message to a third party. (e) \u0007Handling mailboxes: Two mailboxes, an inbox and an outbox are created by the user agent. The inbox keeps all the received e-mails until they are deleted by the user. The outbox keeps all the sent e-mails until the user deletes them. 2. \u0007Mail transfer agent (MTA): The actual mail is transferred using MTA. 3. Multipurpose Internet mail extension (MIME): By default SMTP uses ASCII format for transaction. But few languages like Japanese, German etc do not support ASCII format. Hence for carrying non-ASCII form of transactions MIME is used in congestion with SMTP. Thus, MIME is a set of software functions that transforms non-ASCII data (stream of bits) to ASCII data and vice-versa. 4. \u0007Mail access protocol (MAP): MAP is a pull approach where the emails of a client are retrieved from the mail server i.e., it is used to retrieve the clients emails from the mail server. Two protocol of MAP are (i) POP 3 (Post Office Protocol) (ii) IMAP4 (Internet MAP) POP3 1. It is a pull protocol. 2. It uses the services of TCP on port number 110. 3. POP3 has several drawbacks and hence it is currently not in use."
+ },
+ {
+  "t": "li",
+  "x": "A user cannot have different folders on the server."
+ },
+ {
+  "t": "li",
+  "x": "A user cannot partially check the contents of the mail before downloading."
+ },
+ {
+  "t": "li",
+  "x": "A user cannot search a mail with a keyword."
+ },
+ {
+  "t": "li",
+  "x": "The user is not allowed to organize the mail on the server."
+ },
+ {
+  "t": "p",
+  "x": "(4) Modes of POP3 (i) \u0007Copy mode: The mails are copied from the mail server onto the client. (ii) \u0007Delete mode: The mails are transferred from the mail server to the client and deleted at the mail server. By default POP3 uses delete mode."
+ },
+ {
+  "t": "h2",
+  "x": "IMAP 4"
+ },
+ {
+  "t": "p",
+  "x": "To overcome the drawbacks of POP3, IMAP4 is in current use. It provides the following functions: 1. A user can create, delete or rename mail boxes on the mail server. 2. A user can create a hierarchy of mailboxes in a folder. 3. A user can partially download e-mail. 4. A user can check the e-mail header before downloading and can search the contents of the e-mail for any specific character prior to downloading."
+ },
+ {
+  "t": "h2",
+  "x": "HTTP"
+ },
+ {
+  "t": "li",
+  "x": "HTTP stands for Hyper Text Transfer Protocol."
+ },
+ {
+  "t": "li",
+  "x": "It uses the services of TCP on well known port 80."
+ },
+ {
+  "t": "li",
+  "x": "It is a protocol mainly used to access data on the World Wide Web (www)."
+ },
+ {
+  "t": "li",
+  "x": "HTTP functions as a combination of FTP and SMTP."
+ },
+ {
+  "t": "li",
+  "x": "It uses only one TCP connection, there is no separate control connection, only data is transferred between the client and the server."
+ },
+ {
+  "t": "li",
+  "x": "HTTP messages are read and interpreted by the HTTP server and HTTP client (browser)."
+ },
+ {
+  "t": "li",
+  "x": "It works on two commands request and reply."
+ },
+ {
+  "t": "li",
+  "x": "It is a stateless protocol as it does not have any mapping from one transaction onto the other and treats a request and reply as a pair every time."
+ },
+ {
+  "t": "p",
+  "x": "Server Client Response Request HTTP1.1 has several request types called methods: 1. GET: Requests a document from the server. 2. HEAD: Requests information about a document but not the document itself. 3. POST: Sends some information from the client to the server. 4. PUT: Sends a document from the server to the client. 5. TRACE: Echoes the incoming request. 6. CONNECT: Reserved. 7. OPTION: Inquires about available options."
+ },
+ {
+  "t": "li",
+  "x": "HTTP supports proxy servers. A proxy server is a computer that keeps copies of responses to recent requests."
+ },
+ {
+  "t": "p",
+  "x": "This reduces the load on the original server, decreases traffic and improves latency."
+ },
+ {
+  "t": "li",
+  "x": "HTTP Connections: (i) \u0007Non-persistence: In this connection approach for every request and reply (response) as a pair, a separate TCP connection is established every time. It suffers from slow start process. This was present in http version 1.0. Two RTTS are required to fetch each object."
+ },
+ {
+  "t": "p",
+  "x": "(ii) \u0007Persistence: Here a single TCP connection is set on which multiple request and response can be made. This is observed from http version 2.0 onwards (apache http server). For http/1.1 is default. Hence we have reduced network congestion and faster content delivery."
+ },
+ {
+  "t": "h2",
+  "x": "File Transfer Protocol (FTP)"
+ },
+ {
+  "t": "li",
+  "x": "FTP uses the services of TCP."
+ },
+ {
+  "t": "li",
+  "x": "It needs two TCP connections:   Uses well-known port 21 for the control connection."
+ },
+ {
+  "t": "p",
+  "x": "  Uses well-known port 20 for the data connection."
+ },
+ {
+  "t": "li",
+  "x": "Mode of access: FTP(TCP) – requires username and password."
+ },
+ {
+  "t": "p",
+  "x": "TFTP(UDP) – requires no username and password."
+ },
+ {
+  "t": "li",
+  "x": "Types of files supported by FTP:"
+ },
+ {
+  "t": "p",
+  "x": "i. ASCII: By default FTP follows ASCII mode for file transfer. It is composed of 7-bit + 1 parity bit. ii. EBCDIC: If any node supports EBCDIC then this type of technique is used for file transfer. BCDIC supports 8 bits data format and is used in IBM. There is no error control i.e., there is no parity bit. iii. Image file: If the file to be sent is very large then continuous streams of 0s and 1s are sent to the transport layer. This is image file. Here FTP does not care of code, it is done by the lower layers."
+ },
+ {
+  "t": "li",
+  "x": "Transmission mode of FTP: FTP can transfer a file across the data connection by using one of the following three transmission modes:"
+ },
+ {
+  "t": "p",
+  "x": "i. Stream mode: This is the default mode. Data are delivered from FTP to TCP as a continuous stream of bytes. ii. Block mode: Data is delivered from FTP to TCP in blocks. Each block is preceded by a 3-byte header. The first byte is called the block descriptor, the next two bytes define the size of the block in bytes. iii. Compressed mode: If the file is big then the data is compressed. The compression method which is mostly used is run-length encoding. Consecutive appearances of a data unit are replaced by one occurrence and the number of repetitions. In a binary file, null characters are compressed. DNS"
+ },
+ {
+  "t": "li",
+  "x": "Stands for Domain Name System."
+ },
+ {
+  "t": "li",
+  "x": "The DNS is a client/server application that identifies each host on the Internet with a unique user-friendly name i.e., it is used to map an Uniform Resource Locator (URL) to an IP address."
+ },
+ {
+  "t": "li",
+  "x": "DNS can use the services of UDP or TCP using the wellknown port 53."
+ },
+ {
+  "t": "li",
+  "x": "If the size of the response message is more than 512 bytes, it uses the TCP connection."
+ },
+ {
+  "t": "li",
+  "x": "When the size of the response message is less than 512 bytes, UDP connection is used. Even though the size of message is not known then also UDP can be used. The UDP server will truncate the message if the message size is more than 512 bytes."
+ },
+ {
+  "t": "li",
+  "x": "DNS organizes the namespace in a hierarchical structure to decentralize the responsibilities involved in naming."
+ },
+ {
+  "t": "li",
+  "x": "DNS can be pictured as an inverted hierarchical tree structure with one root node at the top and a maximum of 128 levels. Each node in the tree has a domain name."
+ },
+ {
+  "t": "p",
+  "x": "For example, on the Internet, the domain names, such as http//www. cisco.com, are much easier for people to remember than 198.132.219.25. Also if, cisco decides to change the numeric address, it is transparent to the user, because the domain name will remain http//www.cisco.com. The new address will simply linked to the existing domain name and connectivity is maintained as shown in the figure. Name The DNS server matches the domain name with the numeric address Address www.cisco.com www.cisco.com 198.133.219.25 DNS server Network : : : Client The devices use numbers"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 7 DNS addresses"
+ },
+ {
+  "t": "p",
+  "x": "When networks were small, it was a simple task to maintain the mapping between domain names and the addresses they represent. However, as networks began to grow and the number of devices increased, this manual system became unworkable. DNS was created for domain name to address resolution for these networks. DNS uses a distributed set of servers to resolve the names associated with these numbered addresses. The DNS protocol defines an automated service that matches resource names with the required numeric network address. It includes the format for queries, responses, and data formats. DNS protocol communications use a single format called a message. This message format is used for all types of client queries and server responses, error messages, and the transfer of resource record information between servers. DNS is a client/server service, however, it differs from the other client/server services. Where as other services use a client that is an application (Web browser, e – mail, client, and so on) the DNS client runs as a service itself. The DNS client, sometimes called the DNS resolver, supports name resolution for the other network applications and other services that need it. When configuring a network device, you generally provide one or more DNS server addresses that the DNS client can use for name resolution. Usually the Internet Service Provider (ISP) gives you the address to use for the DNS servers. When a user’s application requests to connect to a remote device by name, the requesting DNS client queries one of these DNS servers to resolve the name to a numeric address."
+ },
+ {
+  "t": "li",
+  "x": "The domain name space consists of a tree of domain names. Each node or leaf in the tree has zero or more resource records, which holds information associated with the domain name. The tree sub-divides into zones beginning at the root zone. A DNS zone consists of a collection of connected nodes authoritatively served by an authoritative name server."
+ },
+ {
+  "t": "p",
+  "x": "Root DNS server .com gamil.com facebook.com .edu iitd.edu iitb.edu cse Software engineering Computer networks ece Sub domain Resources or host .org ieee.org .in Top level domain Authoritative servers"
+ },
+ {
+  "t": "h2",
+  "x": "Components of DNS"
+ },
+ {
+  "t": "p",
+  "x": "1. Root DNS Server : Root name servers keep track of all the authoritative name servers of each of the top level domain (TLD) name servers. 2. Top Level Domain: It provides the information regarding the presence of different zone files like (i) \u0007based on geographical location (country domain): us—for United Statesm, in—for India (ii) \u0007based on general attributes (generic domain): com—used by commercial organization Example, gmail.com .edu—used by educational institutes .org—used by non-profit organizations Example, ieee.org .gov—used by government institutions Example, nasa.gov .mil—used by military organizations Example, army.mil 3. Zones: The TLD and the domains under TLD are divided into smaller units with the help of delegation. The domain is divided into small units, so that it can be managed easily. These small units are zones. 4. Authoritative DNS servers checks whether authoritative name servers are located in the DNS hierarchy. Root DNS server Top level DNS server Resource/host Local DNS server or (ISP) mail.gmail.com Authoritative DNS server DNS.gmail.com"
+ },
+ {
+  "t": "h2",
+  "x": "Dns Resource Records (RR)"
+ },
+ {
+  "t": "li",
+  "x": "Every domain, whether it is a TLD, subdomain or single host have a set of resource records associated with it in the DNS distributed data base."
+ },
+ {
+  "t": "li",
+  "x": "Resource Records provide the mapping of host name to IP address. When a query is made to the DNS server, the host or server. who sends that query receives a response which is nothing but the resource record associated with it."
+ },
+ {
+  "t": "li",
+  "x": "A Resource Record (RR) is a 5 tuple that contains (Name, Time to live, class, Type, Value) (i) \u0007Name: It is the domain name to which this RR belongs to. More than one resource records may exists for the same domain."
+ },
+ {
+  "t": "p",
+  "x": "(ii) Time to live: The TTL is measured in seconds and it is a 32-bit integer. (iii) Class: This field contains the value ‘IN’ which tells whether this record is used by internet or not. (iv) Type: Defines type of RR address, name service, canonical name. (v) Value: This field can be a number, ASCII strings or any domain."
+ },
+ {
+  "t": "h1",
+  "x": "Networking Devices"
+ },
+ {
+  "t": "h2",
+  "x": "Repeater"
+ },
+ {
+  "t": "p",
+  "x": "In digital communication systems, a repeater is a device that receives a digital signal on an electromagnetic or optical transmission medium and regenerates the signal. Repeaters remove the unwanted noise in an incoming signal. Unlike an analog signal, the original digital signal, even if weak or distorted, can be clearly perceived and restored. With analog transmission, signals are re strengthened with amplifiers which unfortunately also amplify noise as well as information. Hub A hub is the central part of a wheel where the spokes come together. The term is familiar to frequent fliers who travel through airport “hubs” to make connecting flights from one point to another. In data communications, a hub is a place of convergence where data arrives from one or more directions and is forwarded out in one or more other directions. A hub usually includes a switch of some kind. (And a product that is called a “switch” could usually be considered a hub as well.)"
+ },
+ {
+  "t": "h2",
+  "x": "Switch"
+ },
+ {
+  "t": "p",
+  "x": "In a telecommunications network, a switch is a device that channels incoming data from any of multiple input ports to the specific output port that will take the data towards its intended destination. In the traditional circuit-switched telephone network, one or more switches are used to set up a dedicated though temporary connection or circuit for an exchange between two or more parties. In the open systems Interconnection (OSI) communications model, a switch performs the Layer 2 or Data-link layer function. That is, it simply looks at each packet or data unit and determines from a physical address (the “MAC address”) which device a data unit is intended for and switches it out towards that device. However, in wide area networks such as the Internet, the destination address requires a look-up in a routing table by a device known as a router. Some newer switches also perform routing functions (Layer 3 or the Network layer functions in OSI) and are sometimes called IP switches. On larger networks, the trip from one switch point to another in the network is called a hop. The time a switch takes to figure out where to forward a data unit is called its latency. The price paid for having the flexibility that switches provide in a network is this latency. In the simplest networks, a switch is not required for messages that are sent and received within the network. For example, a local area network may be organized in a token ring or bus arrangement in which each possible destination inspects each message and reads any message with its address."
+ },
+ {
+  "t": "h2",
+  "x": "Bridge"
+ },
+ {
+  "t": "p",
+  "x": "A bridge is a product that connects a local area network (LAN) to another local area network that uses the same protocol (for example, Ethernet or token ring). You can envision a bridge as being a device that decides whether a message from you to someone else is going to the local area network in your building or to someone on the local area network in the building across the street. A bridge examines each message on a LAN, passing those to be within the same LAN and forwarding those known to be on the other interconnected LAN (or LANs). In bridging networks, computer or node addresses have no specific relationship to location. For this reason, messages are sent out to every address on the network and accepted only by the intended destination node. Bridges learn which addresses are on which network and develops a learning table so that subsequent messages can be forwarded to the right network. Bridging networks are generally always interconnected local area networks since broadcasting every message to all possible destinations would flood a larger network with unnecessary traffic. For this reason, router networks such as the Internet uses a scheme that assigns addresses to nodes so that a message or packet can be forwarded only in one general direction rather than forwarded in all directions. A bridge works at the data-link (physical network) level of a network, copying a data frame from one network to the next network along the communications path. A bridge is sometimes combined with a router in a product called a brouter."
+ },
+ {
+  "t": "h2",
+  "x": "Routers"
+ },
+ {
+  "t": "p",
+  "x": "Routers operate on the Network layer, which is a higher level in the OSI conceptual model. Routers use a combination of software and hardware, but it is used to route data from its source to its destination. Routers actually have a sophisticated OS that allows them to configure various connection ports. You can setup a router to route data packets from different network protocol stacks, which include TCP/IP, IPX/ SPX and AppleTalk. Routers are also used to connect remote LANs together using different WAN technologies. But, when a router has become large, the large network is divided into logical segments called subnets. This division of the network is based on the addressing scheme related to a particular subnet is kept local. The router only forwards data that is meant for the subnets on the extended network. Routers also help to decide how to forward data packets to their destination based on the routing table. The protocols built into the router’s operating system is used to identify neighboring routers and their network addresses. This allows routers to build a routing table."
+ },
+ {
+  "t": "h2",
+  "x": "Brouter"
+ },
+ {
+  "t": "p",
+  "x": "A brouter is a network bridge and a router combined in a single product. A bridge is a device that connects one local area network (LAN) to another local area network that uses the same protocol (for example, Ethernet or token ring). If a data unit on one LAN is intended for a destination on an interconnected LAN, the bridge forwards the data unit to that LAN; otherwise, it passes it along the same LAN. A bridge usually offers only one path to a given interconnected LAN. A router connects a network to one or more other networks that are usually part of a wide area network and may offer a number of paths out to destinations on those networks. A router therefore needs to have more information than a bridge about the interconnected networks. It consults a routing table for this information. Since a given outgoing data unit from a computer may be intended for an address on the local network, on an interconnected LAN, or the wide area network, it makes sense to have a single unit that examines all data units and forwards them appropriately."
+ },
+ {
+  "t": "h2",
+  "x": "Gateway"
+ },
+ {
+  "t": "p",
+  "x": "A gateway is a network point that acts as an entrance to another network. On the Internet, a node or stopping point can be either a gateway node or a host (end-point) node. In the network for an enterprise, a computer server acting as a gateway node is often also acting as a proxy server and a firewall server. A gateway is often associated with a router, which knows where to direct a given packet of data that arrives at the gateway, and a switch, which furnishes the actual path in and out of the gateway for a given packet."
+ },
+ {
+  "t": "h1",
+  "x": "Network Security Basics"
+ },
+ {
+  "t": "p",
+  "x": "It is necessary to define some fundamental terms relating to network security and are the elements used to measure the security of a network. These terms are used to measure the security of a network. To be considered sufficiently advanced along the spectrum of security, a system must adequately address identification, integrity, accountability, non-repudiation, authentication, availability, confidentiality each of which is defined in the following sections:"
+ },
+ {
+  "t": "h2",
+  "x": "Identification"
+ },
+ {
+  "t": "p",
+  "x": "Identification is simply the process of identifying one’s self to another entity or determining the identity of the individual or entity, with whom you are communicating."
+ },
+ {
+  "t": "h2",
+  "x": "Authentication"
+ },
+ {
+  "t": "p",
+  "x": "Authentication serves as proof that you are who you say you are or what you claim to be. Authentication is critical if there is to be any trust between parties. Authentication is required when communicating over a network or logging into a network. When communicating over a network you should ask yourself two questions. 1. With whom am I communicating? 2. Why do I believe this person or entity is who he claims to be?"
+ },
+ {
+  "t": "h2",
+  "x": "Access Control (Authorization)"
+ },
+ {
+  "t": "p",
+  "x": "This refers to the ability to control the level of access that individuals or entities have to a network or system and how much information they can receive. Level of authorization basically determines what you’re allowed to do once you are authenticated and allowed access to a network, system or some other resource such as data or information. Access control is the determination of the level of authorization to a system, network or information."
+ },
+ {
+  "t": "h2",
+  "x": "Availability"
+ },
+ {
+  "t": "p",
+  "x": "This refers to whether the network, system, hardware and software are reliable and can recover quickly and completely in the event of an interruption in service. Ideally, these elements should not be susceptible to denial of service attacks."
+ },
+ {
+  "t": "h2",
+  "x": "Confidentiality"
+ },
+ {
+  "t": "p",
+  "x": "This is also be called privacy or secracy to the protection of information from unauthorized disclosure. Usually achieved either by restricting access to the information or by encrypting the information so that it is not meaningful to unauthorized individuals or entities."
+ },
+ {
+  "t": "h2",
+  "x": "Integrity"
+ },
+ {
+  "t": "p",
+  "x": "This can be thought of as accuracy, this refers to the ability to protect information, data, or transmissions from unauthorized, uncontrolled, or accidental alterations."
+ },
+ {
+  "t": "h2",
+  "x": "Accountability"
+ },
+ {
+  "t": "p",
+  "x": "This refers to the ability to track or audit what an individual or entity is doing on a network or system."
+ },
+ {
+  "t": "h2",
+  "x": "Non-repudiation"
+ },
+ {
+  "t": "p",
+  "x": "The ability to prevent individuals or entities from denying (repudiating) that information, data or files were sent or received or that information or files were accessed or altered, when infact they were. This capability is crucial in e-commerce, without if an individual or"
+ },
+ {
+  "t": "h1",
+  "x": "5. Network Security"
+ },
+ {
+  "t": "p",
+  "x": "Network security basics Terminologies Cryptographic techniques Encryptions Types of keys Traditional cipher algorithms Substitution cipher Traditional cipher Symmetric key encryption Asymmetric key encryption Difﬁ e-hellman Digital signatures and certiﬁ cates"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "p",
+  "x": "entity can deny that he, she or it is responsible for a transaction and that he, she or it is, therefore, not financially liable."
+ },
+ {
+  "t": "h2",
+  "x": "Threats"
+ },
+ {
+  "t": "p",
+  "x": "A threat is anything that can disrupt the operation, functioning, integrity, or availability of a network or system. This can take any form and can be malevolent, accidental, or simply an act of nature."
+ },
+ {
+  "t": "h2",
+  "x": "Vulnerabilities"
+ },
+ {
+  "t": "p",
+  "x": "A vulnerability is an inherent weakness in the design, configuration, implementation, or management of a network or system that renders it susceptible to a threat. Vulnerabilities are what make networks susceptible to information loss and downtime. Every network and system has some kind of vulnerability."
+ },
+ {
+  "t": "h2",
+  "x": "Attacks"
+ },
+ {
+  "t": "p",
+  "x": "An attack is a specific technique used to exploit a vulnerability. For example, a threat could be a denial of service. A vulnerability is in the design of the operating system, and an attack could be a ‘Ping of death’. There are two general categories of attacks: 1. Passive 2. Active"
+ },
+ {
+  "t": "h2",
+  "x": "Passive attacks These are very difficult to detect because"
+ },
+ {
+  "t": "p",
+  "x": "there is no overt activity that can be monitored or detected. Examples of passive attacks would be packet sniffing or traffic analysis. These types of attacks are designed to monitor and record traffic on the network. They are usually employed for gathering information that can be used later in active attacks. Active attacks These employ more overt actions on the network or system. As a result, they can be easier to detect, but at the same time they can be much more devastating to a network. Examples of this type of attack would be a denial-ofservice attack or active probing of systems and networks."
+ },
+ {
+  "t": "h2",
+  "x": "Viruses"
+ },
+ {
+  "t": "p",
+  "x": "A virus, a parasitic program that cannot function independently, is a program or code fragment that is self propagating. It is called a virus, because like its biological counterpart, it requires a ‘host’ to function. In the case of a computer virus the host is some other program to which the virus attaches itself. A virus is usually spread by executing an infected program or by sending an infected file to someone else, usually in the form of an e-mail attachment."
+ },
+ {
+  "t": "h2",
+  "x": "Worm"
+ },
+ {
+  "t": "p",
+  "x": "A worm is a self-contained and independent program that is usually designed to propagate or spawn itself on infected systems and to seek other systems via available networks. The difference between a virus and a Worm is that a virus is not an independent program."
+ },
+ {
+  "t": "h2",
+  "x": "Trojan horses"
+ },
+ {
+  "t": "p",
+  "x": "A trojan horse is a program or code fragment that hides inside a program and performs a disguised function. A trojan horse program hides within another program or disguises itself as a legitimate program. This can be accomplished by modifying the existing program or by simply replacing the existing program with a new one. The Trojan horse program functions much the same way as the legitimate program, but usually it also performs some other function, such a recording sensitive information or providing a trap door. An example would be a ‘password grabber’."
+ },
+ {
+  "t": "h2",
+  "x": "Logic bombs"
+ },
+ {
+  "t": "p",
+  "x": "A logic bomb is a program or subsection of a program designed with malevolent intent. It is referred to as a logic bomb, because the program is triggered when certain logical conditions are met. This type of attack is almost always perpetrated by an insider with privileged access to the network. The perpetrator could be a programmer or a vendor that supplies software."
+ },
+ {
+  "t": "h2",
+  "x": "Denial of service (DOS)"
+ },
+ {
+  "t": "p",
+  "x": "Denial of service attacks are designed to shut down or render inoperable a system or network. The goal of the denialof-service attack is not to gain access or information but to make a network or system unavailable for use by other users. It is called denial-of-service attack, because the end result is to deny legitimate users access to network services."
+ },
+ {
+  "t": "h2",
+  "x": "Protection against network threats"
+ },
+ {
+  "t": "p",
+  "x": "Network threats may cause a massive harm to the system, as the network users are increasing, there is a good chance to attack a system protection against threats should be done. To protect system form virus and worms, a security suite should be installed. Similarly, to protect a system from Trojan horse, internet security suite prevents from downloading Trojan horse. SPAM filters should be used to stop SPAM, this is available within the mail servers by default. A strong encryption should be used to protect against packet sniffers, so that packets become unreadable making packet sniffers useless."
+ },
+ {
+  "t": "h1",
+  "x": "Cryptographic Techniques"
+ },
+ {
+  "t": "p",
+  "x": "For the exchange of information and commerce to be secure on any network, a system or process must be put in place that satisfies requirements for confidentiality, access control, authentication, integrity, and non-repudiation. The key to the securing information on a network is cryptography. Cryptography can be used as a tool to provide privacy. Traditionally, cryptography conjures up thoughts of spies and secret codes. In reality, cryptography and encryption have found broad applications in society. Every time you use an ATM machine to get cash or a point-of-sale machine to make a purchase, you are using encryption."
+ },
+ {
+  "t": "h2",
+  "x": "Encryption"
+ },
+ {
+  "t": "p",
+  "x": "Encryption is the process of scrambling the contents of a file or message to make it unintelligible to anyone not in possession of the ‘key’ required to unscramble it. A cryptosystem or algorithm is the process or procedure to turn plain text into crypto text. A crypto algorithm is also known as a ‘cipher’. Theoretically, all algorithms can be broken by one method or another. However, an algorithm should not contain an inherent weakness that an attacker can easily exploit Example: Below is an example of a cipher, to scramble a message with this cipher, simply match each letter in a message to the first row and convert it into the number or letter in the second row. To unscramble a message, match each letter or number in a message to the corresponding number or letter in the second row and convert it into the letter in the first row. A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C D E F G H I J K L M N O P Q R S T To illustrate how this works see the following where the cipher is used to scramble the message: ‘Little green apples’ Cipher text: FCNNF5 AL55H 1JJF5M Clear text: LITTLE GREEN APPLES This cipher would not be effective at keeping a message secret for long. It does not comply with one of the qualities of a truly effective cipher. Ciphers usually fall into one to two categories: 1. Block Ciphers 2. Stream Cipher"
+ },
+ {
+  "t": "h2",
+  "x": "Stream ciphers"
+ },
+ {
+  "t": "p",
+  "x": "Steam cipher algorithms process plaintext to produce a stream of cipher text. The cipher inputs the plaintext in a stream and outputs a steam of cipher text."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Plaintext: LET US TALK ONE TO ONE Cipher text: F5N OM NLFE ITS NI ITS Stream cipher have several weaknesses. The most crucial short coming of stream ciphers is the fact that patterns in the plain text can be reflected in the cipher text. Knowing that certain words repeat makes breaking the code easier. In addition, certain words in the English language appear with predictable regularity. Letters of the alphabet also appear in predictable regularity. The most commonly used letters of the alphabet in the English language are E, T, A, O, N and I. The least commonly used letters are J, K, X, Q and Z. The most common combination of letters in the English language is ‘th’, As a result, if a code breaker is able to find a ‘t’ in a code, it doesn’t take long to find an ‘h’."
+ },
+ {
+  "t": "h2",
+  "x": "Block ciphers"
+ },
+ {
+  "t": "p",
+  "x": "Block ciphers differ from stream ciphers in that they encrypt and decrypt information in fixed size blocks rather than encrypting and decrypting each letter or word individually. A block cipher passes a block of data or plaintext through its algorithm to generate a block of cipher text. Another requirement of block cipher is that the cipher texts should contain no detectable pattern."
+ },
+ {
+  "t": "h2",
+  "x": "Types of keys"
+ },
+ {
+  "t": "p",
+  "x": "We deal with three types of keys in cryptography: 1. Secret key 2. Public key 3. Private Key"
+ },
+ {
+  "t": "li",
+  "x": "The secret key, is the shared key used in symmetric-key cryptography."
+ },
+ {
+  "t": "li",
+  "x": "Public and Private keys are used in asymmetric-key cryptography."
+ },
+ {
+  "t": "li",
+  "x": "In symmetric-key cryptography, the same key locks and unlocks the box."
+ },
+ {
+  "t": "li",
+  "x": "In asymmetric-key cryptography, one key locks the box, but another key is needed to unlock it."
+ },
+ {
+  "t": "h1",
+  "x": "Traditional Cipher Algorithms"
+ },
+ {
+  "t": "p",
+  "x": "Traditional ciphers are character oriented, these ciphers can be divided into two broad categories: 1. Substitution ciphers 2. Transposition ciphers. Traditional ciphers Poly alphabetic Mono alphabetic Transposition ciphers Substitution ciphers"
+ },
+ {
+  "t": "h2",
+  "x": "Substitution Cipher"
+ },
+ {
+  "t": "p",
+  "x": "A substitution cipher substitutes one symbol with another. If the symbols in the plain text are alphabetic characters, we replace one character with another. Substitution ciphers can be categorized as either mono-alphabetic or poly-alphabetic ciphers."
+ },
+ {
+  "t": "li",
+  "x": "In a mono-alphabetic cipher, a character or symbol in the plaintext is always changed to the same character or symbol in the cipher text regardless of its position in the text."
+ },
+ {
+  "t": "p",
+  "x": "For example if the algorithm says that character ‘A’ in the plain text is changed to character ‘E’, every character ‘A’ is changed to character ‘E’."
+ },
+ {
+  "t": "li",
+  "x": "The relationship between characters in the plain text and the cipher text is a one-to-one relationship."
+ },
+ {
+  "t": "li",
+  "x": "In a poly-alphabetic cipher, each occurrence of a character can have a different substitute. The relationship between a character in the plain text to a character in the cipher text is a one-to-many relationship."
+ },
+ {
+  "t": "li",
+  "x": "To achieve this goal, we need to divide the text into groups of characters and use a set of keys."
+ },
+ {
+  "t": "li",
+  "x": "In substitution cipher, if ‘a’ becomes D, ‘b’ becomes ‘E’ then the word ‘corrupt’ becomes ETUUXSW, plain text will be given in lower case, and cipher text in upper case."
+ },
+ {
+  "t": "li",
+  "x": "A slight generalization of the ceasar cipher allows the cipher text alphabet to be shifted by ‘K’ letters, instead of always ‘3’."
+ },
+ {
+  "t": "li",
+  "x": "The next improvement is to have each of the symbols in the plain text, say, the 26 letter for simplicity, map onto some other letter."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "li",
+  "x": "In this method, if a small cipher is given it can be broken easily. The basic attack takes advantage of the statistical properties of natural languages. For example, In English, ‘e’ is the most common letter followed by t, o, a, n, i etc."
+ },
+ {
+  "t": "li",
+  "x": "The most common 2 letter combinations, are th, in, er, re and an."
+ },
+ {
+  "t": "li",
+  "x": "The most common three-letter combinations are are, the, ing, and, and ion."
+ },
+ {
+  "t": "li",
+  "x": "By making guesses at common letters, digrams and trigrams and knowing about likely patterns of vowels and consonants, the cryptanalyst builds up a tentative plaintext, letter by letter."
+ },
+ {
+  "t": "h2",
+  "x": "Transposition Ciphers"
+ },
+ {
+  "t": "p",
+  "x": "Substitution ciphers preserve the order of the plaintext symbols but disguise them. Transposition ciphers, in contrast, reorder the letters but do not disguise them. Following figure depicts a common transposition cipher, the columnar transposition."
+ },
+ {
+  "t": "li",
+  "x": "The cipher is keyed by a word or phrase not containing any repeated letters."
+ },
+ {
+  "t": "p",
+  "x": "Example: ‘NETWORKS’ is the key. Plaintext: Transfer ten million dollars to my account. What is the cipher text using transposition cipher?"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: Key: NETWORKS"
+ },
+ {
+  "t": "p",
+  "x": "N E T W O R K S T r a n s f e r t e n m i l l i o n d o l l a r s t o m y a c c o u n t a b c d The purpose of key is to number the columns, column 1 being under the key letter closest to the start of the alphabet, and so on. The plain text is written horizontally in rows, padding is required to fill the matrix, if it is not complete’. The cipher text is read out by columns, starting with the column whose key letter is the lowest. Plain text: Transfer ten million dollars to my account Cipher Text: rentue laccttososilyafllabrircdandonnmomt."
+ },
+ {
+  "t": "h1",
+  "x": "Symmetric Key Encryption"
+ },
+ {
+  "t": "p",
+  "x": "Symmetric key, also referred to as private key or secret key, is based on a single key and algorithm being shared between the parties who are exchanging encrypted information. The same key both encrypts and decrypts messages. Encrypt Plain text Cipher text Plain text Decrypt"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 1 Symmetric key encryption"
+ },
+ {
+  "t": "p",
+  "x": "The strength of the scheme is largely dependent on the size of the key and on keeping it secret. Generally the larger the key, the more secure the scheme. In addition, symmetric key encryption is relatively fast. Private key cryptosystems are not well suited for spontaneous communication over open and unsecured networks. Symmetric key provides on process for authentication or non-repudiation."
+ },
+ {
+  "t": "h2",
+  "x": "Data Encryption Standard: (DES)"
+ },
+ {
+  "t": "p",
+  "x": "DES consists of an algorithm and a key. The key is a sequence of eight bytes, each containing eight bits for a 64 bit key. Since each byte contains one parity bit, the key is actually 56 bits in length. DES is widely used in automated teller machine (ATM) and point-of-sale (POS) networks, so if you use an ATM or debit card you are using DES."
+ },
+ {
+  "t": "h1",
+  "x": "Asymmetric Key Encryption"
+ },
+ {
+  "t": "p",
+  "x": "Asymmetric cryptography is also known as public key cryptography, public key cryptography uses two keys one is public key and the other is private key. The key names describe their function. One key is kept private, and the other key is made public. Knowing the public key doesn’t reveal the private key. A message encrypted by the private key can only be decrypted by the corresponding public key. Conversely, a message encrypted by the public key can only be decrypted by the private key. Encrypt Plain text Public key Private key Cipher text Plain text Decrypt"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 2 Asymmetric key encryption"
+ },
+ {
+  "t": "p",
+  "x": "With the aid of public key cryptography, it is possible to establish secure communications with any individual or entity when using a compatible software or hardware device. There are three public key algorithms in wide use today: 1. Diffie–Hellman 2. RSA 3. Digital Signature Algorithm (DSA)"
+ },
+ {
+  "t": "h2",
+  "x": "Diffie–Hellman"
+ },
+ {
+  "t": "p",
+  "x": "It was the first usable public key algorithm. Diffie–Hellman is based on the difficulty of computing discrete logarithms. It can be used to establish a shared secret key that can be used by two parties for symmetric encryption. Diffie–Hellman is often used for IPsec key management protocols. For spontaneous communications with Diffie–Hellman, two communicating entities would each generate a random number that is used as their private keys. They exchange public keys they each apply their private keys to the other’s. public key to compute identical values (shared secret key). They then use the shared secret key to encrypt and exchange information."
+ },
+ {
+  "t": "h2",
+  "x": "Diffie–Hellman key exchange"
+ },
+ {
+  "t": "p",
+  "x": "The protocol that allows strangers to establish a shared secret key is called the Diffie–Hellman key exchange and works as follows:"
+ },
+ {
+  "t": "li",
+  "x": "Ana and Brat have to agree on 2 large numbers, ‘n’ and ‘g’, where ‘n’ is a prime."
+ },
+ {
+  "t": "li",
+  "x": "(n – 1)/2 is also a prime and certain conditions apply to ‘g’."
+ },
+ {
+  "t": "li",
+  "x": "These numbers may be public, so either one of them can just pick ‘n’ and ‘g’ and tell the other openly."
+ },
+ {
+  "t": "li",
+  "x": "Now Ana picks a large number (suppose 512-bit) ‘x’, and keeps it secret. Similarly Brat picks a large secret number, ‘y’."
+ },
+ {
+  "t": "li",
+  "x": "Ana initiates the key exchange protocol by sending Brat a message containing (n, g, gx mod n)"
+ },
+ {
+  "t": "li",
+  "x": "Brat responds by sending Ana a message containing (gy mod n)"
+ },
+ {
+  "t": "li",
+  "x": "Now Ana raises the number Brat sent her to the xth power modulo ‘n’ to get [(gy mod n)x mod n]"
+ },
+ {
+  "t": "li",
+  "x": "Brat performs a similar operation to get [(gx mod n)y mod n], Both the calculations yield (gxy mod n)."
+ },
+ {
+  "t": "p",
+  "x": "n, g, gx mod n gy mod n ‘x’ ‘y’ Ana Brat Ana Computes [(gy mod n)x mod n] = g xy mod n Bob computes [(g x mod n)y mod n] = gxy mod n"
+ },
+ {
+  "t": "h2",
+  "x": "RSA (Rivest, Shamir, Adelman)"
+ },
+ {
+  "t": "p",
+  "x": "RSA multiplies large prime numbers together to generate keys. It’s strength lies in the fact that it is extremely difficult to factor the product of large prime numbers. This algorithm is the one, most often associated with public key encryption. The RSA algorithm also provides digital signature capabilities."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "li",
+  "x": "select e, such that LCD (f, e) = 1, ⟨eq⟩ say, e = 7"
+ },
+ {
+  "t": "li",
+  "x": "⟨eq⟩ 161, 321, 481, 641,"
+ },
+ {
+  "t": "li",
+  "x": "Check which of these is divisible by 7"
+ },
+ {
+  "t": "li",
+  "x": "161 is divisible by 7 giving d = 161/7 = 23"
+ },
+ {
+  "t": "li",
+  "x": "Key 1 = {7, 187}, key 2 = {23, 187}"
+ },
+ {
+  "t": "h2",
+  "x": "Digital Signatures"
+ },
+ {
+  "t": "p",
+  "x": "A digital signature allows a receiver to authenticate (to a limited extent) the identity of the sender and to verify the integrity of the message for the authentication process, you must already know the senders public key, either from prior knowledge or from some trusted third party. Digital signatures are used to ensure message integrity and authentication. In its simplest from, a digital signature is created by using the senders private key to hash the entire contents of the message being sent to create a message digest. The recipient uses the sender’s public key to verity the integrity of the message by recreating the message digest. By this process you ensure the integrity of the message and authenticate the sender. Encrypt Decrypt Message digest Plain text message Sender’s private key Sender’s public key Plain text message"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 4 Digital signature"
+ },
+ {
+  "t": "p",
+  "x": "To sign a message, senders usually append their digital signature to the end of a message and encrypt it using the recipient’s public key. Recipients decrypt the message using their own private key and verify the sender’s identity and the message integrity by decrypting the sender’s digital signature using the sender’s pubic key. The strength of digital signatures are that they are almost impossible to counterfeit and they are easily verified."
+ },
+ {
+  "t": "h2",
+  "x": "Digital certificate"
+ },
+ {
+  "t": "p",
+  "x": "Digital signatures can be used to verify that a message has been delivered unaltered and to verify the identify of the sender by public key. The problem with authenticating a digital signature, however, is that you must be able to verify that a public key does in fact belong to the individual or entity that claims to have sent it and that the individual or entity is in fact who or what it claims to be. A digital certificate issued by a certification authority (CA) utilizing a hierarchical public key infrastructure (PKI) can be used to authenticate a sender’s identify for spontaneous, first– time contacts. Digital certificates provide a means for secure first time spontaneous communication. A digital certificate provides a high level of confidence in the identify of the individual. A digital certificate is issued by a trusted/unknown third party (CA) to bind an individual or entity to a public key. The digital certificate is digitally signed by the CA with the CA’s private key. This provides independent confirmation that an individual or entity is in fact who it claims to be. The CA issued digital certificates that certify for the identities of those to whom the certificates were issued."
+ },
+ {
+  "t": "h2",
+  "x": "Firewalls"
+ },
+ {
+  "t": "p",
+  "x": "Firewall is a control link between internet and organization intranet. It protects network premises from internet based attacks by providing single choke point. All the network traffic is forced to travel through this fire wall. Firewall allows only authorized traffic to pass through. The different types of firewalls are: 1. Packet – filtering router 2. Application level gateways 3. Circuit level gateways 4. Bastion host"
+ },
+ {
+  "t": "h2",
+  "x": "Packet filtering router"
+ },
+ {
+  "t": "p",
+  "x": "It filters packets with incoming and outgoing interfaces, and permits or denies certain services. It uses the information of transport layer like IP sources, ICMP message etc. The drawbacks are IP address spoofing, tiny fragment attack and source routing attacks. Private network Internet"
+ },
+ {
+  "t": "h2",
+  "x": "Application level gateway"
+ },
+ {
+  "t": "p",
+  "x": "It provides proxies for each service, when user requests service, it validates the request as legal one and return results to the user. Application level gateway is more secure than the packet filter. The drawback of this gateway is processing overhead at each connection."
+ },
+ {
+  "t": "h2",
+  "x": "Circuit-level gateway"
+ },
+ {
+  "t": "p",
+  "x": "It is application level gateway functionality for certain applications. It does not allow end-end TCP connection, rather it maintains two connections, one with the inner host and the other with the outer host. Once the connections are established TCP segment is allowed without examining contents. It only checks the incoming data."
+ },
+ {
+  "t": "h2",
+  "x": "Bastion host"
+ },
+ {
+  "t": "p",
+  "x": "It provides a platform for the application gateway (or) circuit level gateway, it is a critical strong point in network security. An additional authentication is required for the user who want access to proxy services. Even proxy service authenticates itself before granting the access to user. Only essential services are installed in the Bastion host which are decided by admin."
+ }
+]

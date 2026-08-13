@@ -1,0 +1,2254 @@
+[
+ {
+  "t": "h1",
+  "x": "Fundamentals"
+ },
+ {
+  "t": "p",
+  "x": "Alphabet: An alphabet is a finite non-empty set of symbols. Example: Portion of a calculator: {0, 1, 2, 3 … 9, ÷, =, –, +, ×, (,)} Note: 1. At least one symbol is necessary. 2. ‘Σ’ denote Alphabet. String: A string over an alphabet ‘A’ is a finite ordered sequence of symbols from ‘A’. The length of string is number of symbols in string, with repetitions counted. Example: If Σ = {0 – 9, ÷, =, –, +, × (,)} then Strings valid: 12 + 34, 90 × 10, (1 + 2) × (1 ÷ 3) Strings Invalid: sin (45), log (10) etc. These strings are not valid because sin ( ), log ( ) are not defined over the alphabet set. Note: Repetitions are allowed. Length of |12 + 34| = 5(1, 2, +, 3, 4)"
+ },
+ {
+  "t": "li",
+  "x": "The Empty string denoted by ‘e’, is the (unique) string of length zero."
+ },
+ {
+  "t": "li",
+  "x": "If S and T are sets of strings, then ST = {xy|x ∈ S and y ∈ T} Given an alphabet A, Ao = {e} An+1 = A.An … A An n ∗ = ∞ = 0∪ Languages"
+ },
+ {
+  "t": "li",
+  "x": "A language ‘L’ over Σ is any finite or infinite set of strings over Σ."
+ },
+ {
+  "t": "li",
+  "x": "The elements in L are strings – finite sequences of symbols."
+ },
+ {
+  "t": "li",
+  "x": "A language which does not contain any elements is called ‘empty language’."
+ },
+ {
+  "t": "p",
+  "x": "Note: Empty language, { } ≠ {e}, empty string because { } = ∅ ≠ e i.e., Empty language resembles empty set i.e., ∅."
+ },
+ {
+  "t": "li",
+  "x": "A language L over an alphabet A is subset of A* i.e., L ⊂ A*."
+ },
+ {
+  "t": "p",
+  "x": "Example 1: Language (L) for strings that consists of only 0’s or only 1’s and have an odd length over alphabet {0, 1} is (A) {0, 1, 00, 11, 000, 111 …} (B) {00, 11, 01, 10 …} (C) {000, 101, 110, 111 …} (D) {0, 1, 000, 111, 11111, 00000 …}"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (D)"
+ },
+ {
+  "t": "p",
+  "x": "Only 0’s → should have only 0’s. It should not be combination of 0’s and 1’s. Only 1’s → should have only 1’s. It should not be combination of 0’s and 1’s. Odd length → only odd number of 0’s or odd number of 1’s i.e., length of string should be odd. Fundamentals Languages Operations Finite state machine NFA with -moves Conversion of NFA to DFA Minimization of DFA Equivalence between NFA and DFA Mealy and Moore machines Equivalence of Moore and Mealy machine Regular languages Constructing FA for given RE Pumping lemma for regular sets Closure properties of regular sets Regular grammar"
+ },
+ {
+  "t": "h2",
+  "x": "An Empty Languages An empty language is a language"
+ },
+ {
+  "t": "p",
+  "x": "which does not accept any strings includinge. The Finite automata for empty language can be represented as (i.e., One state, non-accepting and no transitions)."
+ },
+ {
+  "t": "h2",
+  "x": "A language which only accepts (e)"
+ },
+ {
+  "t": "p",
+  "x": "E: The language which only accepts ‘e’ can be represented as This machine accepts E – only. Σ*: The set of all strings over an alphabet Σ will be denoted by Σ*. Σ+: This will denote the set Σ* – {e}. Ex: If Σ = {0, 1} then Σ* = {e, 0, 1, 00, 01, 10, 11, 000, 001, …} Σ+ = {0, 1, 00, 01, 10, 11, 000, 001,}"
+ },
+ {
+  "t": "h2",
+  "x": "Operations on strings"
+ },
+ {
+  "t": "p",
+  "x": "1. Concatenation: Combines two strings by putting one after other. Example 2: Two strings are defined as x = java, y = script. The concatenation (x.y) of two strings results in _______. (A) scriptjava (B) javascript (C) jascriptva (D) scrijavapt"
+ },
+ {
+  "t": "h2",
+  "x": "Note: Concatenation of empty string with any other string"
+ },
+ {
+  "t": "p",
+  "x": "gives string itself. i.e., x.ε = ε.x = x 2. Substring: If ‘w’ is a string, then ‘v’ is a substring of ‘w’ if there exists string x and y such that w = xvy. ‘x’ is called ‘prefix’ and y is called suffix of w. Example 3: String, w = ‘gymnastics’ is defined with prefix, x = ‘gym’ and suffix, y = ‘cs’. The substring of the given string is _______ (A) nasti (B) mnas (C) gymnastics (D) ics"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (A)"
+ },
+ {
+  "t": "p",
+  "x": "Because, w = xvy ⇒ gymnastics = gymvcs ∴ v = nasti 3. Kleen star operation: Let ‘w’ be a string, w* is set of strings obtained by applying any number of concatenations of w with itself, including empty string. Example: a* = {ε, a, aa, aaa, …} 4. Reversal: If ‘w’ is a string, then wR is reversal of string spelled backwards. Rules:"
+ },
+ {
+  "t": "li",
+  "x": "x = (xR) R"
+ },
+ {
+  "t": "li",
+  "x": "(xz)R = zR.xR"
+ },
+ {
+  "t": "p",
+  "x": "Example 4: A string, x is defined as, x = butter. Then (xR)R is _______ (A) butter (B) rettub (C) butret (D) retbut"
+ },
+ {
+  "t": "h2",
+  "x": "Operations on languages"
+ },
+ {
+  "t": "p",
+  "x": "1. Union: Given some alphabet Σ, for any two languages, L1, L2 over Σ, the union L1 ∪ L2 of L1 and L2 is the language, L1 ∪ L2 = {w ∈ Σ*|w ∈ L1 or w ∈L2} 2. Intersection: Given some alphabet Σ, for any two languages L1, L2 over Σ, the intersection L1 ∩ L2 of L1 and L2 is language, L1 ∩ L1 = {w ∈ Σ*|w ∈ L1 and w ∈ L2} 3. Difference: Given some alphabet Σ, for any two languages L1, L2 over Σ, the difference L1 – L2 of L1 and L2 is language, L1 – L2 = {w ∈ Σ*|w ∈ L1 and w ∉ L2}"
+ },
+ {
+  "t": "h2",
+  "x": "Note: Difference is also called ‘Relative Complement.’"
+ },
+ {
+  "t": "p",
+  "x": "A special case of difference is obtained when L1 = Σ*, in which case. Complement L of language, L is defined as, ⟨eq⟩ ∉ ∗ Σ 4. Concatenation: Given an alphabet Σ, for any two languages L1, L2 over Σ, the concatenation L1 L2 of L1 and L2 is language L1L2 = {w ∈ Σ*|∃ u ∈ L1, ∃ v ∈L2, w = uv}"
+ },
+ {
+  "t": "h2",
+  "x": "Properties:"
+ },
+ {
+  "t": "p",
+  "x": "L∅ = ∅ = ∅L L {e} = L = {e} L (L1 ∪ {e})L2 = L1L2 ∪ L2 L1 (L2 ∪ {e}) = L1L2 ∪ L1 Ln L = LLn = Ln+1 Note: L1L2 ≠ L2L1 Example 5: Let L1 = {00, 11}, L2 = {01, 10}. Then L1oL2 = _______ (A) {00, 11, 01, 10} (B) {0001, 0010, 1101, 1110} (C) {0001, 0010, 11, 01, 10} (D) {00, 1101, 1110, 11, 10}"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "L1oL2 = {00, 11} o {01, 10} = {00.01, 00.10, 11.01, 11.10} = {0001, 0010, 1101, 1110} 5. Kleen * closure (L*): Given an alphabet Σ, for any language L over Σ, the * closure L* of L is language, L U L n n ∗ ≥ = 6. Kleen + closure (L+): The kleen +closure, L+ of L is the language, ⟨eq⟩ L* = L0 ∪ L1 ∪ L2 ∪ … Ln∪ … L+ = L1 ∪ L2 ∪ L3 … ∪ Ln∪ …"
+ },
+ {
+  "t": "h2",
+  "x": "Finite State Machine (FSM)"
+ },
+ {
+  "t": "li",
+  "x": "FSM is simplest computational model of limited memory computers."
+ },
+ {
+  "t": "li",
+  "x": "FSM is designed to solve decision problems i.e., to decide whether given input satisfies certain conditions."
+ },
+ {
+  "t": "li",
+  "x": "The next state and output of a FSM is a function of input and of current state."
+ },
+ {
+  "t": "p",
+  "x": "Inputs State transition conditions State Output conditions Outputs"
+ },
+ {
+  "t": "h2",
+  "x": "Finite Automata (FA):"
+ },
+ {
+  "t": "li",
+  "x": "FA is a state machine that comprehensively captures all possible states and transitions that a machine can take while responding to a stream (sequence) of input symbols."
+ },
+ {
+  "t": "li",
+  "x": "FA is recognizer of ‘regular languages’."
+ },
+ {
+  "t": "p",
+  "x": "State Machine Finite state machine (generates o/p) Finite automata (doesn’t generates o/p) Mealy Moore DFA NFA ∈-NFA"
+ },
+ {
+  "t": "h2",
+  "x": "Types of FA"
+ },
+ {
+  "t": "li",
+  "x": "DFA machine can exists in only one state at any given time."
+ },
+ {
+  "t": "li",
+  "x": "DFA is defined by 5-tuple: {Q, Σ, q0, F, d}, where"
+ },
+ {
+  "t": "p",
+  "x": "Q → Finite number of states (elements) Σ → Finite set of symbols (alphabets) qo→ Start/Initial state F → Set of final states. δ→ \u0007Transition function, which is a mapping between δ: Q × Σ → Q."
+ },
+ {
+  "t": "h2",
+  "x": "Steps:"
+ },
+ {
+  "t": "li",
+  "x": "Start at ‘initial state’, qo."
+ },
+ {
+  "t": "li",
+  "x": "For every input symbol in sequence w, do."
+ },
+ {
+  "t": "li",
+  "x": "Compute the next state from current state, given the current input symbol in w and transition function."
+ },
+ {
+  "t": "li",
+  "x": "If after all symbols in ‘w’ are consumed, the current state is one of the final states (f) then accept ‘w’;"
+ },
+ {
+  "t": "li",
+  "x": "Otherwise, reject w."
+ },
+ {
+  "t": "h2",
+  "x": "Transition diagram: State machines are represented by"
+ },
+ {
+  "t": "p",
+  "x": "directed graphs called transition (state) diagrams."
+ },
+ {
+  "t": "li",
+  "x": "The vertices denoted by single circle represent the state and arcs labeled with input symbol correspond to transition."
+ },
+ {
+  "t": "li",
+  "x": "The final states are represented with double circles."
+ },
+ {
+  "t": "h2",
+  "x": "Example 6: The following finite state machine accepts all"
+ },
+ {
+  "t": "p",
+  "x": "those binary strings in which the numbers of 0’s and 1’s are respectively. q7 q1 q2 q11 q0 q6 q5 q4 q3 q14 q13 q12 q8 q9 q10 (A) Divisible by 3 and 2 (B) Odd and even (C) Divisible by 5 and 3 (D) Divisible by 2 and 3"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (C)"
+ },
+ {
+  "t": "p",
+  "x": "Number of 0’s is divisible by 5. Number of 1’s is divisible by 3."
+ },
+ {
+  "t": "h2",
+  "x": "Current State"
+ },
+ {
+  "t": "p",
+  "x": "→ q0 q1 q5 q1 q2 q7 q2 q3 q9 q3 q4 q11 q4 q0 q13 q5 q7 q6 q6 q8 q0 q7 q9 q8 q8 q10 q1 q9 q11 q10 q10 q12 q2 q11 q13 q12 q12 q14 q3 q13 q0 q14 q14 q6 q4"
+ },
+ {
+  "t": "h2",
+  "x": "Note: Minimum number of states for k-divisibility is"
+ },
+ {
+  "t": "p",
+  "x": "k-states. In above example, q0 – q14 → 15 – states. ∴ 5 × 3 = 15 The given binary strings have number of 0’s divisible by 5 and number of 1’s divisible by 3. 2. Non-deterministic finite Automata (NFA):"
+ },
+ {
+  "t": "li",
+  "x": "The machine can exist in multiple states at the same time."
+ },
+ {
+  "t": "li",
+  "x": "Each transition function maps to a set of states."
+ },
+ {
+  "t": "li",
+  "x": "NFA is defined by 5-tuple: {Q, Σ, q0, F, d}, where"
+ },
+ {
+  "t": "p",
+  "x": "Q → Finite number of states (elements) Σ → Finite set of symbols. (Alphabets) qo → Start/Initial state F → Set of final states. d→ Transition function which is a mapping between δ= Q × Σ → 2Q"
+ },
+ {
+  "t": "h2",
+  "x": "How to use NFA:"
+ },
+ {
+  "t": "p",
+  "x": "Input: a word w in Σ* Question: Is w accepted by NFA? Steps:"
+ },
+ {
+  "t": "li",
+  "x": "Start at ‘start state’ q0."
+ },
+ {
+  "t": "li",
+  "x": "For every input symbol in the sequence, w does."
+ },
+ {
+  "t": "li",
+  "x": "Determine all possible next states from current state, given the current input symbol in w and transition function."
+ },
+ {
+  "t": "li",
+  "x": "If after all symbols in w are consumed, at least one of the current states is a final state then accept w."
+ },
+ {
+  "t": "li",
+  "x": "Otherwise, reject w."
+ },
+ {
+  "t": "p",
+  "x": "Example 7: What is the language, L generated by the below NFA, given strings defined over alphabet, Σ = {0, 1}. 0,1 q0 q1 q2 (A) Strings that end with ‘0’ (B) Strings that start with ‘0’ and end with ‘0’ (C) Strings that contain ‘01’ as substring (D) Strings that contain ‘01’ as substring and end with ‘0’"
+ },
+ {
+  "t": "h2",
+  "x": "Table 2 Difference between NFA and DFA"
+ },
+ {
+  "t": "p",
+  "x": "DFA NFA 1. \u0007All transitions are deterministic i.e., each transition leads to exactly one state. 1. \u0007Transitions could be nondeterministic i.e., a transition could lead to a subset of states. 2. \u0007For each state, the transition on all possible symbols should be defined. 2. \u0007For each state, not all symbols necessarily have to be defined. 3. \u0007Accepts input if last state is in ‘F’. 3. \u0007Accepts input if one of last states is in ‘F’. 4. \u0007Practical implementation is feasible. 4. \u0007Practical implementation has to be deterministic (so needs conversion to DFA)."
+ },
+ {
+  "t": "h2",
+  "x": "Relation between DFA and NFA"
+ },
+ {
+  "t": "li",
+  "x": "A language ‘L’ is accepted by a DFA if and only if it is accepted by a NFA."
+ },
+ {
+  "t": "li",
+  "x": "Every DFA is special case of a NFA."
+ },
+ {
+  "t": "p",
+  "x": "Example 8: Let Nf and Df denote the classes of languages accepted by non-deterministic finite automata and deterministic finite automata respectively. Which one of following is true? (A) Df ⊂ Nf (B) Df ⊃ Nf (C) Df = Nf (D) Df ∈ Nf"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (C)"
+ },
+ {
+  "t": "p",
+  "x": "According to ‘subset construction’, every language accepted by NFA is also accepted by some DFA. ∴ Df = Nf"
+ },
+ {
+  "t": "h1",
+  "x": "NFA with ∈-Moves"
+ },
+ {
+  "t": "li",
+  "x": "∈-transitions in finite automata allows a state to jump to another state without consuming any input symbol."
+ },
+ {
+  "t": "h2",
+  "x": "NFA without ∈-moves:"
+ },
+ {
+  "t": "li",
+  "x": "Two FA, N∈ and N are said to be equivalent, if L(N∈) = L(N) i.e., any language described by some N∈, there is an N that accepts the same language."
+ },
+ {
+  "t": "li",
+  "x": "For N∈ = (Q, Z, d, q0, F) and N = (Q, Σ′, d ′, q0, F′ ), Find"
+ },
+ {
+  "t": "li",
+  "x": "F ′ = {F ∪ {q0}}, if ∈-closure (q0) contains a member of F = F, otherwise."
+ },
+ {
+  "t": "h2",
+  "x": "Note: When transforming N∈ to N, only transitions are"
+ },
+ {
+  "t": "p",
+  "x": "required to be changed and states remains same. Example 9: Consider following NFA with ∈-moves. q0 q1 q2 q3 ⟨eq⟩ If given NFA is converted to NFA without ∈-moves, which of following denotes set of final states? (A) {q0, q1} (B) {q1, q2} (C) {q1, q2, q3} (D) {q1} Solution: Let N = (Q, Σ1, δ1, q0, F1) F1 = F ∪ {q0} ε-closure (q0) = {q0, q1} ∴ F1 = {q1} ∪ {q0, q1} = {q0, q1} Conversion N∈→N: To compute, δ1 ∈-closure (q0) = {q0, q1}, ∈-closure (q3) = {q3, q1} δ1(q0, a) = {q1, q2}, δ1(q0, b) = ∅, d1(q2, a) = ∅. δ1(q1, a) = {q1, q2}, δ1(q1, b) = ∅, d1(q2, b) = {q1, q3} δ1(q3, a) = {q1, q2}, δ1(q3, b) = ∅"
+ },
+ {
+  "t": "h2",
+  "x": "State"
+ },
+ {
+  "t": "p",
+  "x": "a b → q0 {q1, q2} ∅ q1 {q1, q2} ∅ q2 ∅ {q1, q3} q3 {q1, q2} ∅ q1 q0 q2 q3 a a a a a a b b"
+ },
+ {
+  "t": "h2",
+  "x": "Conversion of NFA to DFA"
+ },
+ {
+  "t": "p",
+  "x": "Let a NFA be defined as, N = (QN, Σ, δN, q0, FN) The equivalent DFA, D = (QD, Σ, δD, q0, FD) where:"
+ },
+ {
+  "t": "h2",
+  "x": "Step I: QD"
+ },
+ {
+  "t": "p",
+  "x": "QN = 2 ; i.e., QD is set of all subsets of QN i.e., it is power set of QN. Step II: FD is set of subsets S of QN such that S ∩ FN ≠ ∅. i.e., FD is all sets of N’s states that include atleast one accepting state of N. Step III: For each set, S ≤ QN and for each input symbol a in Σ ⟨eq⟩ δ δ D P S N S a P a = ∪ ∈ That is, to compute δD(S, a), look at all states P in S, see what states N goes to starting from P on input a, and take the union of all those states. Note: For any NFA, N with ‘n’ states, the corresponding DFA, D can have 2n states. Example 10: What is the number of final states in DFA constructed from the given NFA? a a b b b b b a, b a, b a, b a, b (A) 1 (B) 2 (C) 3 (D) 4"
+ },
+ {
+  "t": "h2",
+  "x": "State"
+ },
+ {
+  "t": "p",
+  "x": "a b →0 [1, 2, 3] [2, 3] [1, 2] [2, 3] ∅ [2, 3, 4] [3, 4] ∅ ∅ [1, 2] [1, 2] [2, 3, 4] [2, 3] [4] [2, 3, 4] [3, 4] [4] [3, 4] [1, 2, 3] [1, 2, 4] [2, 3, 4] [1, 2, 4] [1, 2] [2, 3, 4] [2, 3, 4] [4] [2, 3, 4] Hence final states in obtained DFA is ‘4’."
+ },
+ {
+  "t": "h2",
+  "x": "DFA is: Choice (D)"
+ },
+ {
+  "t": "p",
+  "x": "b a [1, 2, 4] [2, 3, 4] [1, 2] [2, 3] [3, 4] [1, 2, 3] b b b b b b b b b a a a a a a a a"
+ },
+ {
+  "t": "h2",
+  "x": "Minimization of DFA"
+ },
+ {
+  "t": "p",
+  "x": "Given a DFA, ⟨eq⟩ Σ δ we construct a reduced DFA, ′ = ′ ′ ′ ′ ′ ⟨eq⟩ Σ δ as follows 1. Remove all inaccessible states. All states that are unreachable from the initial state are removed. 2. Consider all pairs of states (p, q), If p ∈ F and q ∈ F or vice versa mark the pair (p, q) as distinguishable. 3. Repeat until no previously unmarked pairs are marked. For all pairs (p, q) and all a ∈ Σ, compute δ δ ⟨eq⟩ and = = If the pair (pa, qa) is marked as distinguishable mark (p, q) as distinguishable. 4. Find the sets of all indistinguishable states, say ⟨eq⟩ ℓ etc. For each set {qi, qj, … qk} of such indistinguishable states, create a state labelled ij … k for M. 5. For each transition rule of M of the from δ ⟨eq⟩ find the sets to which qr and qp belong. If qr ∈ {qi,qj, … qk} and qpe ⟨eq⟩ ℓ add a rule to δ: ′ … = … δ( , ) . ij k a m n ℓ Example 11: A DFA with alphabet Σ= {a, b} is given below: a a a a b b b b a, b Which of the following is valid minimal DFA which accepts same language as given DFA? (A) b b a b b a, b a a (B) b b a a (C) a b a, b b a (D) a a b b"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "Initially, {1, 5}, {2, 3, 4} Depending on next states and inputs, the partitions of states can be as: {{1, 5}, {2}, {3}, and {4}} Since, 1 to 5 have same transition, unite {1, 5} State 4 is dead state → It has transition only to itself. Since, {2}, {3} are singletons, they exist. ∴ States in minimized DFA are {1, 2, and 3} {1} → {1, 5} For transitions, since ⟨eq⟩ in given DFA, in minimized DFA, transitions are added from ⟨eq⟩ Also, since ⟨eq⟩ in given DFA, the minimized DFA, transitions are added from ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "and DFA"
+ },
+ {
+  "t": "p",
+  "x": "There is a DFAD for any NFAN i.e., L (D) = L (N)."
+ },
+ {
+  "t": "h2",
+  "x": "Construction:"
+ },
+ {
+  "t": "li",
+  "x": "In DFA or NFA, whenever an arrow is followed, there is a set of possible states. This set of states is a subset of Q."
+ },
+ {
+  "t": "li",
+  "x": "Track the information about subsets of states that can be reached from initial state after following arrows."
+ },
+ {
+  "t": "li",
+  "x": "Consider each subset of states of NFA as a state of DFA and every subset of states containing a final state as a final state of DFA."
+ },
+ {
+  "t": "h2",
+  "x": "Table 6 Transition Table of NFA"
+ },
+ {
+  "t": "p",
+  "x": "d c d → q1 q1 {q2, q4} q2 q3 q1 q3 q4 q3 q4 q3 ∅"
+ },
+ {
+  "t": "h2",
+  "x": "Equivalence of Finite Automatas:"
+ },
+ {
+  "t": "li",
+  "x": "Two automatas A and B are said to be equivalent if both accept exactly the same set of input strings."
+ },
+ {
+  "t": "li",
+  "x": "If two automatas M1 and M2 are equivalent then"
+ },
+ {
+  "t": "p",
+  "x": "(i) If there is a path from the start state of M1 to a final state of M1 labeled a1a2 … ak then there is a path from the start state of M2 to the final state of M2 labeled a1a2… ak. (ii) If there is a path from the start state of M2 to a final state M2 labeled b1b2 … bi then there is a path from the start state of M1 to the final state of M1 labeled b1b2 … bi ."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "q0 M1 q1 q2 M2: p0 p1 p3 p2 In M2, states p1 and p3 are equivalent (as both are reaching either final or non-final states with same input). After minimizing M2,we will get p0 p2 p1p3 \\ M1 and M2 are equivalent. Union: The union of two languages L and M is the set of strings that are in both L and M. Ex: L = {0, 1}, M = {111} L U M = {0, 1,111}."
+ },
+ {
+  "t": "h2",
+  "x": "Concatenation: The concatenation of Languages L and M"
+ },
+ {
+  "t": "p",
+  "x": "is the set of strings that can be formed by taking any string in L and concatenating it with any string in M. Example: L = {0, 1}, M = {e, 010} LM = {0, 1, 0010, 1010}."
+ },
+ {
+  "t": "h2",
+  "x": "Closure, Star or Kleen star of a language L:"
+ },
+ {
+  "t": "p",
+  "x": "Kleen star is denoted as L*. It represents the set of strings that can be formed by taking any number of strings from L with repetition and concatenating them. It is a Unary operator. L0 is the set; we can make selecting zero strings from L. L0 = {e} L1 is the language consisting of selecting one string from L. L2 is the language consisting of concatenations selecting two strings from L. … L* is the union of L0, L1 , …L∞. Ex: L = {0,10} L* = {0,00,000,10,010, …}"
+ },
+ {
+  "t": "h2",
+  "x": "Intersection:"
+ },
+ {
+  "t": "p",
+  "x": "Let two DFAs M1 and M2 accept the languages L1 and L2. M1 = (Q1, Σ, d1, q0 1, .F1) M2 = (Q2, Σ, d2, q0 2, F2) The intersection of M1 and M2 can be given as M = (Q1, Σ, d, q0 F) Q = Pairs of states, one from M1 and one from M2 i.e., Q = {(q1, q2) | q1 ∈ Q1 and q2 ∈ Q2} Q = Q1 × Q2. q0 = (q0 1, q0 2) d (qi 1 qj 2), x) = (d1(q1 1, x), d2(qj 2, x)) F = {(q1, q2) | q1, ∈ F1 and q2 ∈ F2}"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "M1: Strings with even number of 1’s. q0 q1 M2: Strings with odd number of 0’s. q0 q1 M1 ∩ M2: Strings with even number of 1’s and odd number of 0’s. q0 q0 q0 2q1 q0 q1 q1 2 q1"
+ },
+ {
+  "t": "h2",
+  "x": "Union of M1 and M2:"
+ },
+ {
+  "t": "p",
+  "x": "q 0 q0 q1 q0 q1 q1 q0 q1 Difference: The difference of L1 and L2 can be given as L1 -L2 with M = (Q, ∑, d, q0, F). Q = Q1 × Q2 q0 = (q0 1, q0 2) d ((qi 1, qj 2), x) = (d1 (qi 1, x), d2(qj 2, x)) F = {(q1, q2) | q1, ∈ F1 and q2 ∉ F2} q0 q0 q1 q1 q0 q0 q1 1q1"
+ },
+ {
+  "t": "h2",
+  "x": "Reversing a DFA:"
+ },
+ {
+  "t": "li",
+  "x": "M is a DFA which recognizes the language L."
+ },
+ {
+  "t": "li",
+  "x": "MR will accept the language LR."
+ },
+ {
+  "t": "h2",
+  "x": "To construct MR:"
+ },
+ {
+  "t": "li",
+  "x": "Reverse all transitions"
+ },
+ {
+  "t": "li",
+  "x": "Turn the start state to final state"
+ },
+ {
+  "t": "li",
+  "x": "Turn the final states to start state."
+ },
+ {
+  "t": "li",
+  "x": "Merge states and modify the FA,"
+ },
+ {
+  "t": "p",
+  "x": "such that the resultant contain a single start state."
+ },
+ {
+  "t": "h1",
+  "x": "Mealy and Moore Machines"
+ },
+ {
+  "t": "h2",
+  "x": "Moore Machine"
+ },
+ {
+  "t": "p",
+  "x": "A moore machine is a finite state machine, where outputs are determined by current state alone. A Moore machine associates an output symbol with each state and each time a state is entered, an output is obtained simultaneously. So, first output always occurs as soon as machine starts. Moore machine is defined by 6-tuples: (Q, Σ, δ, q0, ∆, λ), where Q → Finite set of states Σ → Finite set of input symbols ∆ → It is an output alphabet δ→ Transition function, Q × Σ → Q (state function) λ → Output function, Q → ∆ (machine function) q0 → Initial state of machine Note: The output symbol at a given time depends only on present state of moore machine."
+ },
+ {
+  "t": "h2",
+  "x": "Example 13: The language generated by the following"
+ },
+ {
+  "t": "p",
+  "x": "moore machine is: q0/0 q1/1 q2/0 (A) 2’s complement of binary number. (B) 1’s complement of binary number. (C) Has a substring 101. (D) Has a substring 110."
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "Binary number: 1011 1’s complement: ⟨eq⟩ 0, 0 → 1, 1 → 0, 1 → 0"
+ },
+ {
+  "t": "h2",
+  "x": "Mealy Machine"
+ },
+ {
+  "t": "li",
+  "x": "A mealy machine is a FSM, where outputs are determined by current state and input."
+ },
+ {
+  "t": "li",
+  "x": "It associates an output symbol with each transition and the output depends on current input."
+ },
+ {
+  "t": "li",
+  "x": "Mealy machine is defined on 6-tuples: (Q, Σ, δ, q0, ∆, λ), where"
+ },
+ {
+  "t": "p",
+  "x": "Q – Finite set of states. Σ – Finite set of input symbols. δ – (Q × Σ → Q) is transition function. q0 → q0 ∈ Q is initial state. ∆ → Finite set of output symbols. l→ Output function, l(Q → ∆) Note: In Moore machine, for input string of length n, the output sequence consists of (n + 1) symbols. In Mealy machine, for input string of length n, the output sequence also consists of ‘n’ symbols. Example 14: Let (Me)2 mean that given a Mealy machine, an input string is processed and then output string is immediately fed into the machine (as input) and reprocessed. Only this second resultant output is considered as the final output of (Me)2. If final output string is same as original input string then (Me)2 has an identity property. Consider following machines. (i) 0/1, 1/0 (ii) 0/0, 1/1 (iii) 0/0, 1/1 0/1, 1/0 Which of above machines have identity property? (A) (i) only (B) (i) and (ii) but not (iii) (C) (i) and (iii) but not (ii) (D) All have identity property"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (D)"
+ },
+ {
+  "t": "p",
+  "x": "(i) Consider i/p string ↓ ↓↓↓↓ ↓↓↓ o/p string o/p string (Input string reprocessed) (ii) ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ i/p string: o/p string: o/p string: (i/p string) 1 1 (iii) ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ i/p string: o/p string: o/p string: (i/p string) 0 0"
+ },
+ {
+  "t": "h2",
+  "x": "(a) Mealy machine equivalent to Moore machine:"
+ },
+ {
+  "t": "p",
+  "x": "If M1 = (Q, Σ, D, d, l, q0) is a Moore machine, then there is a Mealy machine M2 equivalent to M1. Proof: Let M2 = (Q, Σ, D, d, l1, q0) and define l1 (q, a) to be l(d (q, a)) for all states q and input symbol ‘a’. Then M1 and M2 enter the same sequence of states on the same input, and with each transition M2 emits the o/p that M1 associates with the state entered. Let us consider Mealy Machine"
+ },
+ {
+  "t": "h2",
+  "x": "Output"
+ },
+ {
+  "t": "p",
+  "x": "→ q1 q3 q2 q2 q1 q4 q3 q2 q1 q4 q4 q3 To convert the Mealy machine to Moore machine,"
+ },
+ {
+  "t": "li",
+  "x": "We look into the next state column for any state, say qi and determine the number of different outputs associated with qi in next column."
+ },
+ {
+  "t": "li",
+  "x": "Split qi into several different states, the number of such states being equal to the number of different outputs associated with qi."
+ },
+ {
+  "t": "h2",
+  "x": "Output"
+ },
+ {
+  "t": "p",
+  "x": "→ q1 q3 q20 q20 q1 q40 q21 q1 q40 q3 q21 q1 q40 q41 q3 q41 q41 q3"
+ },
+ {
+  "t": "li",
+  "x": "The pair of states and outputs in the next state column can be rearranged as: Present state Next State output a = 0 a = 1 → q1 q3 q20 q20 q1 q40 q21 q1 q40 q3 q21 q1 q40 q41 q3 q41 q41 q3"
+ },
+ {
+  "t": "h2",
+  "x": "Moore machine equivalent to Mealy machine"
+ },
+ {
+  "t": "p",
+  "x": "Let M1 = (Q, Σ, D, d, l, q0) be a Mealy machine. Then there is a machine M2 equivalent to M1 Proof: Let M2 = (QXD, Σ, D, d1, l1, [q0, b0]), where b0 is an arbitrary selected member of D. That is, the states of M2 are pairs [q, b] consisting of a state of M1 and output symbol, Define d1 ([q, b], a) = [d (q, a), l, (q, a)] and l1 ([q, b]) = b. The second component of a state [q, b] of M2 is the output made by M1 on some transition into state q. Only the first components of M2’s states determine the moves made by M2. Every induction on ‘n’ shows that if M1 enters states q0, q1 … qn on inputs a1, a2 … an and emits output b1, b2, … bn then M2 enters states [q0, b0], [q1, b1]… [qn, bn] and emits outputs b0, b1 … bn. Let us consider the Moore machine"
+ },
+ {
+  "t": "h2",
+  "x": "Output"
+ },
+ {
+  "t": "p",
+  "x": "⟨eq⟩ q0 q3 q1 q1 q1 q2 q2 q2 q3 q3 q3 q0"
+ },
+ {
+  "t": "li",
+  "x": "To convert Moore into Mealy machine, we must follow the reverse procedure of converting Mealy machine into Moore machine."
+ },
+ {
+  "t": "li",
+  "x": "For every input symbol we form, the pair consisting of the next state and the corresponding output and reconstruct the table for Mealy machine."
+ },
+ {
+  "t": "li",
+  "x": "For example, the state q3 and q1 in the next state column should be associated with outputs 0 and 1, respectively."
+ },
+ {
+  "t": "p",
+  "x": "The Transition table for Mealy machine is:"
+ },
+ {
+  "t": "h2",
+  "x": "state output"
+ },
+ {
+  "t": "h1",
+  "x": "Regular Languages"
+ },
+ {
+  "t": "p",
+  "x": "The set of regular languages over an alphabet Σ is defined recursively as below. Any language belonging to this set is a regular language over Σ."
+ },
+ {
+  "t": "h2",
+  "x": "Definition of set of regular languages"
+ },
+ {
+  "t": "li",
+  "x": "Basis clause: ∅, {ε}, {a} for any symbol a ∈ Σ, are regular languages."
+ },
+ {
+  "t": "li",
+  "x": "Inductive clause: If Lr and Ls are regular languages, then Lr∪ Ls, Lr . Ls, Lr * are regular languages."
+ },
+ {
+  "t": "li",
+  "x": "External clause: Nothing is a regular language, unless it is obtained from above two clauses."
+ },
+ {
+  "t": "h2",
+  "x": "Regular language: Any language represented by regular"
+ },
+ {
+  "t": "p",
+  "x": "expression(s) is called a regular language. Ex: The regular expression a* denotes a language which has {e, a, aa, aaa, …}"
+ },
+ {
+  "t": "h2",
+  "x": "Regular expression"
+ },
+ {
+  "t": "li",
+  "x": "Regular expressions are used to denote regular languages."
+ },
+ {
+  "t": "li",
+  "x": "The set of regular expressions over an alphabet Σ is defined recursively as below. Any element of that set is a regular expression."
+ },
+ {
+  "t": "li",
+  "x": "Basis clause: ∅, ∈, a are regular expression corresponding to languages ∅, {∈}, {a} respectively where a is an element of Σ."
+ },
+ {
+  "t": "li",
+  "x": "Inductive clause: If r and s are regular expression corresponding to languages Lr and Ls then (r + s), (rs) and (r*) are regular expressions corresponding to the languages Lr∪ Ls, Lr . Ls and Lr*respectively."
+ },
+ {
+  "t": "li",
+  "x": "External clause: Nothing is a regular expression, unless it is obtained from above two clauses."
+ },
+ {
+  "t": "h2",
+  "x": "Closure property of regular expressions The iteration or"
+ },
+ {
+  "t": "p",
+  "x": "closure of a regular expression R, written as R* is also a regular expression. Ex: ∑ = {a} then a* denotes the closure of ∑. a* = {e, a, aa, aaa, …}"
+ },
+ {
+  "t": "h2",
+  "x": "Conventions on regular expressions"
+ },
+ {
+  "t": "p",
+  "x": "1. The operation ‘*’ has highest precedence over concatenation, which has precedence over union (+). i.e., RE (a + (b(c*))) = a + bc* 2. The concatenation of K r’s, where r is a regular expression is written as rk. The language corresponding to rk is Lr k. Where Lr is language corresponding to regular expression r i.e., rr = r2 3. r+ is a regular expression to represent Lr + Note: A regular expression is not unique for a language i.e., regular language corresponds to more than one regular expression."
+ },
+ {
+  "t": "h2",
+  "x": "Example 15: Give regular expression for set of strings"
+ },
+ {
+  "t": "p",
+  "x": "which either have ‘a’ followed by some b’s or all b’s also containing ‘ε’. (A) b* + ab* (B) a* + ba* (C) (ε) + (ε+ a) b+ (D) b* + ab* +ε"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (C)"
+ },
+ {
+  "t": "p",
+  "x": "The regular expression is, r = ab+ + b+ + ε= b+ (a + ε) + ε."
+ },
+ {
+  "t": "h2",
+  "x": "Identity rules for regular expressions:"
+ },
+ {
+  "t": "p",
+  "x": "1. ∅ ⟨eq⟩ 2. ∅ . R = R∅ = ∅ 3. εR = Rε= R 4. ∅* = ε and ε* = ε 5. ⟨eq⟩ 6. RR* = R* R = R+ 7. ε+ RR* = R* and ε+ R* R = R* 8. (R*)* = R* 9. R* R* = R* 10. ε+ R* = R* 11. (R + ε)* = R* 12. R*(ε+ R)* = (ε+ R)* R* = R* 13. R* ⟨eq⟩ R* R 14. (P + Q)R = PQ + QR and R(P + Q) = RP + RQ 15. (P + Q)* = (P* Q*)* = (P* + Q*)* 16. (PQ)* P = P (QP)* 17. \u0007R is given as, ⟨eq⟩ RP has unique solution, R = QP*. This is Arden’s theorem. 18. (P + Q)* = (P* + Q) = (P + Q*) Example 16: If r1 and r2 are regular expressions denoting languages L1 and L2 respectively then which of following is false? (A) (r1)| (r2) is regular expression denoting L1 ∪ L2. (B) (r1) (r2) is regular expression denoting L1 . L2. (C) ∅ is not a regular expression. (D) {r1}* is regular expression denoting L1 *."
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (C)"
+ },
+ {
+  "t": "h1",
+  "x": "Constructing FA for Given RE"
+ },
+ {
+  "t": "li",
+  "x": "Relationship between FA and RE."
+ },
+ {
+  "t": "p",
+  "x": "Regular exp NFA with e-moves NFA without e DFA Minimal DFA"
+ },
+ {
+  "t": "h2",
+  "x": "Identities:"
+ },
+ {
+  "t": "p",
+  "x": "Basis: ; // Initial state = Final state q1 r = ε ; // Unreachable state qf q0 r = ∅⇒ qf q0 ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Induction:"
+ },
+ {
+  "t": "p",
+  "x": "Let M1 = (Q1, Σ1, δ1, q1, {f1}), M2 = (Q2, Σ2, δ2, q2, {f2}) with L (M1) = L (r1) and L (M2) = L (r2), then M = (Q1 ∪ Q2 ∪ {q0, f0}, Σ1 ∪ Σ2, δ, q0, {f0}) q0 M1 M2 ε ε q1 f1 ε ε q2 f2 f0"
+ },
+ {
+  "t": "li",
+  "x": "Concatenation:"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "q2 is final state which is obtained with input symbol only ‘b’. So, (C) or (D) is not true. In (A) → ba* is not defined in given FA. Instead bb* is defined."
+ },
+ {
+  "t": "h2",
+  "x": "Theorem Let ‘L’ be an arbitrary regular language. Then"
+ },
+ {
+  "t": "p",
+  "x": "there exists a positive integer, P with following property: Given an arbitrary member, w of L having length at least P (i.e., |w|≥P), w can be divided into 3-parts, w = xyz ∃"
+ },
+ {
+  "t": "li",
+  "x": "|y| ≥ 1 (the middle part is non-empty)"
+ },
+ {
+  "t": "li",
+  "x": "|xy| ≤ P (the first two parts have length atmost P)"
+ },
+ {
+  "t": "li",
+  "x": "For each, i ≥ 0, xyiz ∈ L (removing or repeating the middle part produces member of L)"
+ },
+ {
+  "t": "p",
+  "x": "Proof Let L be an arbitrary regular language. Then there is a FA, say M that decides L. Let P be the number of states of M. Let w be an arbitrary member of L, having length ‘n’ with n ≥ P. Let q0, q1, … qn be states that M on input w. That is, for each i, after reading the first i symbols of w, M is at qi. q0 is initial state of M. Also, since w ∈ L, qn is a final state of M. Let x = w1 … wc, y = wc+4 … wd, z = wd+1 … wn. Then:"
+ },
+ {
+  "t": "li",
+  "x": "M transitions from q0 to qc on x."
+ },
+ {
+  "t": "li",
+  "x": "M transitions from qc to qc on y."
+ },
+ {
+  "t": "li",
+  "x": "M transitions from qc to qn on z."
+ },
+ {
+  "t": "p",
+  "x": "Thus, for every i ≥ 0, M transitions from q0 to qn on xyiz and so, xyiz is a member of L."
+ },
+ {
+  "t": "h2",
+  "x": "Note:"
+ },
+ {
+  "t": "li",
+  "x": "Pumping lemma is used to verify that given language is not regular."
+ },
+ {
+  "t": "li",
+  "x": "Pumping lemma follows pigeon hole principle."
+ },
+ {
+  "t": "h2",
+  "x": "Example 18: The language, L is defined as:"
+ },
+ {
+  "t": "p",
+  "x": "L = {w1w2 : w1, w2 ∈ {a, b}*, |w1| = |w2|}. Is the language regular? (A) Regular (B) Not regular (C) Cannot be determined (D) None of these"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (A)"
+ },
+ {
+  "t": "li",
+  "x": "Split in x, y, z with desired properties."
+ },
+ {
+  "t": "p",
+  "x": "⟨eq⟩ abababbba . . . aaa∈L a|bbbbbaba ⟨eq⟩"
+ },
+ {
+  "t": "p",
+  "x": "⟨eq⟩ bba . . . aaa∈L abb|aba . . . ∴ For every i ≥ 0, xyiz ∈ L. Hence given language is regular."
+ },
+ {
+  "t": "h1",
+  "x": "Regular Sets"
+ },
+ {
+  "t": "p",
+  "x": "1. Union: If L and M are regular languages, LUM is regular language closed under union. 2. Concatenation and Kleen closure: If L and M are regular languages, L.M is regular language and L* is also regular. 3. Intersection: L ∩ M is regular, if L and M are regular languages. 4. Difference: L – M contains strings in ‘L’ but not M, where L and M are regular languages. 5. Complementation: The complement of language L is Σ*–L. Note: Since Σ* is surely regular, the complement of a regular language is always regular. Where Σ* is a universal language. 6. Homomorphism: If L is a regular language, h is homomorphism on its alphabet then h (L) = {h (w) |w is in L} is also a regular language."
+ },
+ {
+  "t": "h2",
+  "x": "Regular grammar"
+ },
+ {
+  "t": "li",
+  "x": "Grammar: Generative description of a language."
+ },
+ {
+  "t": "li",
+  "x": "Automaton: Analytical description."
+ },
+ {
+  "t": "li",
+  "x": "A grammar is a 4-tuple, G = (V, Σ, R, S) where V: alphabet (variable) (non-terminals)"
+ },
+ {
+  "t": "p",
+  "x": "Σ ⊆ V is set of terminal symbols. R ⊆ (V+ × V*) is a finite set of production rules. S ∈ V – Σ is start symbol."
+ },
+ {
+  "t": "h2",
+  "x": "Notation"
+ },
+ {
+  "t": "li",
+  "x": "Elements of V – Σ: A, B, …"
+ },
+ {
+  "t": "li",
+  "x": "Elements of Σ: a, b …"
+ },
+ {
+  "t": "li",
+  "x": "Rules ( , ) : α β α β α β or ∈ → →  R G"
+ },
+ {
+  "t": "li",
+  "x": "Start symbol is written as S."
+ },
+ {
+  "t": "li",
+  "x": "Empty word: ε"
+ },
+ {
+  "t": "h2",
+  "x": "Example 19: The regular expression that describe the"
+ },
+ {
+  "t": "p",
+  "x": "language generated by grammar, G = ({S, A, B}, {a, b}, S, {S → Aab, A → Aab|B, B → a} (A) (ab) * a (B) aab(ab)* (C) ab * aa (D) (a + ba)*"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "S → Aab → Aab ab → A ab abab → Bababab → aababab → aab(ab)*"
+ },
+ {
+  "t": "h2",
+  "x": "Union of two Regular languages:"
+ },
+ {
+  "t": "p",
+  "x": "If L1 and L2 are two languages then L1 ∪ L2 = {w/w ∈ L1 or w ∈ L2} The union of two regular languages is also a regular language. Let M1 = (Q1, ∑, d1, q1, f1) M2 = (Q2, ∑, d2, q2, f2) M = M1UM2 can be given as M = (Q, ∑, d, q0, f). Where Q = {(r1, r2) | r1 ∈ Q1 and r2 ∈ Q2} i.e., Q is the Cartesian product of sets Q1 and Q2. ∑ is the alphabet, is the same in M1 and M2. ∑ = ∑1 U ∑2. d is the transition function given as: d (r1, r2), a = (d1(r1, a) d2 (r2, a)). q0 is the pair (q1, q2). F is the set of pairs in which either member is an accept state of M1 or M2. F = {(r1, r2) | r1 ∈ F1 or r2 ∈ F2}"
+ },
+ {
+  "t": "h1",
+  "x": "Types of Grammars"
+ },
+ {
+  "t": "li",
+  "x": "Type 0: Unrestricted, recursively enumerable languages."
+ },
+ {
+  "t": "li",
+  "x": "Type 1: Context-sensitive grammar."
+ },
+ {
+  "t": "li",
+  "x": "Type 2: Context free grammar."
+ },
+ {
+  "t": "li",
+  "x": "Type 3: Regular grammar."
+ },
+ {
+  "t": "h2",
+  "x": "Type 0: Recursively enumerable grammar: (Turing"
+ },
+ {
+  "t": "p",
+  "x": "Machine) (TM): Every production rule is of form: α → β, where α and β are in (V ∪ T)*, i.e., there can be any strings of terminals and non-terminals (no-restriction)."
+ },
+ {
+  "t": "h2",
+  "x": "Type 1: Context-sensitive Grammar: (Linear bounded"
+ },
+ {
+  "t": "p",
+  "x": "automaton) (LBA): Every production rule is of form, α→ β are in (V ∪ T)* and α≠ ε and |β|≥|α| i.e., any strings of terminals and nonterminals and length of string that can appear on RHS of production must be greater than or equal to length of string that can appear on LHS of production."
+ },
+ {
+  "t": "h2",
+  "x": "Type 2: Context-free grammar: (Push down automaton)"
+ },
+ {
+  "t": "p",
+  "x": "(PDA): Every production rule is of form, A→α where α is in (V ∪ T)* i.e., LHS of rule is single non-terminal and RHS can be any string of terminals and non-terminals."
+ },
+ {
+  "t": "h2",
+  "x": "Type 3: Regular grammar: (Finite automaton) (FA):"
+ },
+ {
+  "t": "p",
+  "x": "Every production is of form, A→aB or A→a where A and B ∈ V and a ∈ T. That is, LHS of rule is non-terminal and RHS can be terminal (or) terminal followed by non-terminal."
+ },
+ {
+  "t": "h2",
+  "x": "Relationship between types of grammar:"
+ },
+ {
+  "t": "li",
+  "x": "Regular sets are properly contained in CFL (Context Free Languages)."
+ },
+ {
+  "t": "li",
+  "x": "The CFL’s not containing empty string ε, are properly contained in CSL. (Context sensitive language)."
+ },
+ {
+  "t": "li",
+  "x": "The CSL’s are properly contained in Recursively enumerable languages."
+ },
+ {
+  "t": "li",
+  "x": "RG ⊂ CFG ⊂ CSL ⊂ REG"
+ },
+ {
+  "t": "h2",
+  "x": "Left-linear Grammar:"
+ },
+ {
+  "t": "p",
+  "x": "All productions have form: A → Bx or A → x"
+ },
+ {
+  "t": "h2",
+  "x": "Right-linear Grammar:"
+ },
+ {
+  "t": "p",
+  "x": "All productions have the form: A → xB or A → x."
+ },
+ {
+  "t": "h2",
+  "x": "Note:"
+ },
+ {
+  "t": "li",
+  "x": "The regular grammars characterize the regular sets i.e., a language is regular if and only if it has a left-linear grammar or if and only if it has a right-linear grammar."
+ },
+ {
+  "t": "li",
+  "x": "If L has a regular grammar, then L is a regular set."
+ },
+ {
+  "t": "li",
+  "x": "If L is a regular set, then L is generated by some left-linear grammar and by some right-linear grammar."
+ },
+ {
+  "t": "p",
+  "x": "Arden’s theorem: Let P and Q be two regular expressions over ∑. If P does not contain ‘e’ then the following equation in R, namely ⟨eq⟩ RP has a unique solution given by R = QP*."
+ },
+ {
+  "t": "h2",
+  "x": "given transition diagram: The following steps are used to"
+ },
+ {
+  "t": "p",
+  "x": "find the RE recognized by transition system. The following assumptions are made regarding the transition system. (i) The transition graph does not have e-moves (ii) It has only one initial state, qo. (iii) The states in the transition diagram are qo, q1, q2, … qn. (iv) Qi, the regular expression represents the set of strings accepted by a system even though qi is the final state. (v) aij denotes the regular expression representing the set of labels of edges from qi to qj.When there is no such edge aij = f. We will get the following set of equations. Q1 = Q1 α11 + Q2 α12 + … Qnαn1 + e Q2 = Q1 α12 + Q2 α22 + … Qnαn2 : : : Qn = Q1 α1n + Q2 α2n + … Qnαnn. By Repeatedly applying substitutions and Arden’s theorem, we can express Qiin terms of αij’s. For getting the set of strings recognized by the transition system, we have to take the union of all Qi’s corresponding to final states."
+ },
+ {
+  "t": "h2",
+  "x": "Construction of Regular Grammar from FA"
+ },
+ {
+  "t": "p",
+  "x": "Step I: \u0007Associate suitable variables like A, B, C … with states of automata."
+ },
+ {
+  "t": "h2",
+  "x": "Step II: \u0007Obtain the productions of the grammar as:"
+ },
+ {
+  "t": "p",
+  "x": "If δ(A, a) = B then add production A → aB to list of productions of grammar, if B is a final state, then add either A → a or B → ε, to list of productions of grammar. Step III: \u0007The variable associated with initial state of automata is start symbol of grammar."
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (A)"
+ },
+ {
+  "t": "p",
+  "x": "A→0B, A→1C, B→1A, C→0A ∴ A is final state, A → ε ∴ A → 0B|1C|ε B →1A (or) C → 0A A → 0B|1C"
+ },
+ {
+  "t": "h2",
+  "x": "Construction of FA from given regular grammar"
+ },
+ {
+  "t": "p",
+  "x": "Given a regular grammar, G; a regular expression specifying L(G) can be obtained directly as follows:"
+ },
+ {
+  "t": "li",
+  "x": "Replace the ‘→’ symbol in productions of grammar by ‘=’ symbol, to get set of equations."
+ },
+ {
+  "t": "li",
+  "x": "Solve the set of equations obtained above to get the value of variable, S, where S is start symbol of grammar, result is regular expression specifying L(G)."
+ },
+ {
+  "t": "h2",
+  "x": "Example 21: The Regular grammar and FA for given"
+ },
+ {
+  "t": "p",
+  "x": "regular expression f*1*U (0f)* is ___ T→1T|ε 0, 1 S T (B) S→1S|ε S (C) S→0T|1S|ε T→0T|1U|ε U→0T|1S S T U (D) Cannot be determined"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "h1",
+  "x": "and Push Down Automata"
+ },
+ {
+  "t": "p",
+  "x": "Context free grammar Context free language Ambiguity in context free grammars Removing -productions Removing unit productions Normal forms Chomsky's normal form Greiback normal form Closure properties of CFL's Push down automata PDAs accepting by ﬁ nal state and empty stack are equivalent Converting CFG to PDA Deterministic PDA"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "Context Free Grammar"
+ },
+ {
+  "t": "li",
+  "x": "A context free grammar (CFG) is a finite set of variables (nonterminals) each of which represents a language. The language represented by variables is described recursively in terms of each other. The primitive symbols are called terminals."
+ },
+ {
+  "t": "li",
+  "x": "The rules relating variables are called productions. A typical production states that the language associated with a given variable contains strings that are formed by concatenating strings from languages of certain other variables."
+ },
+ {
+  "t": "li",
+  "x": "CFG is a collection of three things; An alphabet Z of letters called terminals."
+ },
+ {
+  "t": "p",
+  "x": "A set of symbols called non-terminals, one of which is a start symbol, S. A finite set of productions of the form: One terminal → finite set of terminals and/or non-terminals."
+ },
+ {
+  "t": "li",
+  "x": "A CFG is defined as: G = (V, T, P, S) Where V → Finite set of variables (non-terminals) T → Finite set of terminals (symbols) P → Finite set of productions, each, production is of the form, A → α, A ∈ V, α∈ (V ∪ T)* S → Start symbol"
+ },
+ {
+  "t": "h1",
+  "x": "Context Free Language (Cfl)"
+ },
+ {
+  "t": "p",
+  "x": "The language generated by CFG is a set of all strings of terminals that can be produced from start symbols, using the productions as substitutions. A language generated by a CFG is called context free language (CFL). Note: Every regular grammar is context free, so a regular language (RL) is also context free. Family of RL’s is proper subset of CFL’s. i.e., RL ⊂ CFL CFL RL"
+ },
+ {
+  "t": "h2",
+  "x": "Solved Examples"
+ },
+ {
+  "t": "p",
+  "x": "Example 1: What is the language that is generated by CFG, ⟨eq⟩ AB|A → +/–|B → CB/C|C → 0/1/2/ . . . 9. (A) Set of all rational numbers (B) Set of all integers (C) Set of all natural numbers (D) Set of all complex numbers"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "S → AB|A → +/–|B → CB/C|C → 0/1/2/ ⟨eq⟩ Consider-18 (integer)"
+ },
+ {
+  "t": "h2",
+  "x": "Note:"
+ },
+ {
+  "t": "li",
+  "x": "A context free language with property that all grammars that generate it are ambiguous is inherently ambiguous."
+ },
+ {
+  "t": "li",
+  "x": "Inherently ambiguous grammars cannot convert to unambiguous grammars."
+ },
+ {
+  "t": "h1",
+  "x": "Free Grammar"
+ },
+ {
+  "t": "li",
+  "x": "Grammar may consist of some extra symbols (non-terminals)."
+ },
+ {
+  "t": "p",
+  "x": "Having extra symbols unnecessarily increases the length of grammar."
+ },
+ {
+  "t": "li",
+  "x": "Simplification of grammar means reduction of grammar."
+ },
+ {
+  "t": "p",
+  "x": "The properties of reduced grammar are: 1. Each variable (non-terminal) and each terminal of G appears in the derivation of some word in L. 2. There should not be any production as X → Y where X and Y are non-terminals. 3. If e is not in language L, then there need not be production X → e. Reduced grammar Removal of useless symbols Removal of e - productions Removal of unit production"
+ },
+ {
+  "t": "h2",
+  "x": "Removal of Useless Symbols"
+ },
+ {
+  "t": "li",
+  "x": "Any symbol is useful when it appears on right hand side, in the production rule and generates some terminal string."
+ },
+ {
+  "t": "p",
+  "x": "If no such derivation exists, then it is supposed to be a useless symbol."
+ },
+ {
+  "t": "li",
+  "x": "A symbol P is useful, if there exists some derivation S PB PB W ∗ ∗ ⇒ ⇒ α α and Then P is said to be useful symbol."
+ },
+ {
+  "t": "h2",
+  "x": "Example 3: A grammar G′, is generated by removing"
+ },
+ {
+  "t": "p",
+  "x": "useless symbols from G defined below. The obtained G′ contains productions: S → aA|bB A → aA|a B → bB D → ab|Ea E → aC|d (A) S → aA A → aA|a (B) S → aS|bA|C ⟨eq⟩ aCd (C) S → aA|bB A → aA|a B → bB (D) Cannot remove useless symbols S → AB → –B → –CB → –1B → –18 Context free grammar Context free language Language Grammar L Accepts Machine"
+ },
+ {
+  "t": "h1",
+  "x": "Free Grammars"
+ },
+ {
+  "t": "p",
+  "x": "A CFG, G is called ambiguous if there is w ∈ L(G) such that w has (at least) two different parse trees with respect to G. Example 2: The language, L = {an bn cm dm/n ≥ 0, m ≥ 0} ∪ {anbmcmdn/n ≥ 0, m ≥ 0} is designed in CFG, G. The Grammar is (A) Ambiguous (B) Unambiguous (C) Cannot be determined (D) None of above"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (A)"
+ },
+ {
+  "t": "p",
+  "x": "A → PQ ⟨eq⟩ Q, R, S → Unit production A → PQ P → 0 ↓ ⇒ Q → 2|P1|1R|1 (substitute the production of R, S, W) ∴ A → PQ ⟨eq⟩ 2| P1| 1R ∴ 9 – Productions"
+ },
+ {
+  "t": "h1",
+  "x": "Normal Forms"
+ },
+ {
+  "t": "li",
+  "x": "It is necessary to have a grammar in some specific form so, grammar normalization is needed."
+ },
+ {
+  "t": "p",
+  "x": "Normal forms Chomsky normal form (CNF) Griebach normal form (GNF) That is, There should be fixed number of terminals and non-terminals, in CFG."
+ },
+ {
+  "t": "h2",
+  "x": "Chomsky’s Normal Form (CNF)"
+ },
+ {
+  "t": "li",
+  "x": "A context free grammar (CFG), G = (V, Σ, R, S) is said to be in CNF, if and only if every rule in R is of one of the following forms"
+ },
+ {
+  "t": "p",
+  "x": "1. A → a, for some A ∈ V and some a ∈ Σ 2. A → BC, for some A ∈ V and B, C ∈ V ∪ {S} 3. S → e"
+ },
+ {
+  "t": "li",
+  "x": "Every rule either replaces a variable by a single character or by a pair of variables except the start symbol and the only rule that can have the empty word as it’s right hand side must have start symbol as it’s left hand side."
+ },
+ {
+  "t": "p",
+  "x": "Note: Every parse tree for a grammar in CNF must be a binary tree and the parse tree for any non-empty word cannot have any leaves labeled with e in it."
+ },
+ {
+  "t": "h2",
+  "x": "Transforming of a grammar to CNF"
+ },
+ {
+  "t": "li",
+  "x": "In order to construct the grammar G in CNF that is equivalent to a given grammar G, first identify how exactly G can violate the rules for a CNF. Since CNF only restricts the rules in G, see only at R. The ‘bad’ cases of rules are:"
+ },
+ {
+  "t": "li",
+  "x": "A → uSv where A ∈ V and u, v ∈ (V ∪ Σ)*. The start symbol must not appear on the right-hand side of any rule."
+ },
+ {
+  "t": "h2",
+  "x": "Solution:"
+ },
+ {
+  "t": "p",
+  "x": "S → aA → aaA → aaaA → aaaa B → bB → bbB → bbbB → bbbbB ..... (string cannot be generated) ∴ B is useless D and E cannot be generated from ‘S’. So, eliminate. Hence G ′ contains ∴ S → aA A → aA|a"
+ },
+ {
+  "t": "h2",
+  "x": "Removing e-Productions"
+ },
+ {
+  "t": "p",
+  "x": "A production of the form A → e is called an e-production. If A is a non-terminal and A → (*) e, then A is called a ‘nullable non-terminal’. So eliminate such productions without changing meaning of grammar. Example 4: The grammar, G is given below. The CFG generated after eliminating e-production is: S → ABC A → BC|a B → bAC|∈ C → cAB|∈ (A) S → ABC|AB|BC|CA A → BC|B|C B → bAC|bA|bC C → cAB|cA|cB (B) S → ABc A → BC B → bAC C → cAB (C) S → ABC|BC|AC|AB|A|B|C A → BC|B|C|a B → bAC|bA|bC|b C → cAB|cA|cB|c (D) None of these"
+ },
+ {
+  "t": "h2",
+  "x": "Solution (C)"
+ },
+ {
+  "t": "p",
+  "x": "⟨eq⟩ ∴ Remove e-productions and obtained CFG is Choice (C)."
+ },
+ {
+  "t": "h2",
+  "x": "Removing Unit Productions"
+ },
+ {
+  "t": "li",
+  "x": "A production of form A → B, where A and B are both non-terminals, is called a ‘unit production’."
+ },
+ {
+  "t": "li",
+  "x": "Presence of unit production in a grammar increases the cost of derivation."
+ },
+ {
+  "t": "h2",
+  "x": "Example 5: The total number of productions obtained by"
+ },
+ {
+  "t": "p",
+  "x": "removing unit production from the Grammar, A → PQ ⟨eq⟩ W|1R W → 2|P1"
+ },
+ {
+  "t": "li",
+  "x": "To remove ‘start symbol rule’, add a new symbol, so make it the start symbol in new grammar G1, and add the single rule S0 → S to R to get the rules for G1. Since S0 does not appear in any rules, the new grammar has no start symbol rules."
+ },
+ {
+  "t": "li",
+  "x": "A → e where A ∈ V ∪ {S}|. The only symbol that can be replaced by the word is start symbol. This is called ‘e-rules’."
+ },
+ {
+  "t": "li",
+  "x": "To remove ‘e-rules’, identify all variables that can yield the empty string, either directly or indirectly."
+ },
+ {
+  "t": "p",
+  "x": "These variables are ‘nullable’. Remove all direct rules A → e from the grammar and fix up the grammar by removing all occurrences of nullable variables from the right hand sides of all rules. A → B where A, B ∈ V. The only rules involving variables on the right-hand side must have exactly two of them. This is called ‘unit rules’."
+ },
+ {
+  "t": "li",
+  "x": "To remove ‘Unit rules’, identify a set of unit pairs."
+ },
+ {
+  "t": "p",
+  "x": "These are pairs of symbols (A, B), where A B ⇒ ∗ . Then remove all unit rules by copying right-hand sides. If there is a rule A → B, (A, B) is a unit pair. Then, if there is a rule B → W, derive W from A by A → B, B → W. To remove the unit rule and still generate an equivalent grammar, add the right-hand side W to the rules for A directly, A → W. A → W where A ∈ V, W ∈ (V ∪ Σ)* and W contains at least one character and at least one variable. The only rules where character appear on right-hand side must have exactly one character as right-hand side. This is called ‘mixed rules’."
+ },
+ {
+  "t": "li",
+  "x": "To remove ‘mixed rules’, Let ⟨eq⟩ R3 is a mixed rules. Then write W as W = V0 C1V1 . . . Vn−1CnVn, where Ci ∈ Σ are occurrences of characters, and the Vi ∈ V* are strings of only variables. Then add a new symbol, Ci to V4 for every character Ci and add the rules Ci → ci to R4."
+ },
+ {
+  "t": "p",
+  "x": "Finally define W1: = V0 C1 V1 … Vn−1 Cn Vn ∈ V* and add rules A → W ′ to R4. If the rule A → W is part of the derivation for some word, replace that single rule by applying rule A → W ′ first and then replacing all Ci by ci using their respective rules. A w → Where A ∈ V and W ∈ (V ∪ Σ)* with |w| > 2. Rules must have one symbol (character) or two variables (two variables as right hand side). These are called long rules."
+ },
+ {
+  "t": "li",
+  "x": "To remove ‘long rules’, Let A → B1 … Bn be a long rule, i.e., n> 2. Bi is all variables. Break up every single long rule, into several ‘short’ rules, by introducing new ‘helper varia­ bles’ and splitting right hand side from left to right: add new symbols A1, …An−2 to set of variables and add following rules to R5: A → B1A1, A1 → B2 A2, … An−2 → Bn−1 Bn."
+ },
+ {
+  "t": "p",
+  "x": "Example 6: Consider grammar, ⟨eq⟩ ASB, A → aAS| a|e, B → SbS|A|bb. The CNF generated contains ____ nonterminals. (A) 5 (B) 6 (C) 9 (D) 11"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (C)"
+ },
+ {
+  "t": "p",
+  "x": "Add new start state: S0 ⟨eq⟩ ASB A → aAS|a|e B → SbS|A|bb Eliminate ε-rules A → e: S0 ⟨eq⟩ ASB|SB A → aAS|a|aS B → SbS|A|bb|e Eliminate B → e: S0 ⟨eq⟩ ASB|SB|S|AS A → aAS|a|aS B → SbS|A|bb Remove Unit rules: B → A: S0 ⟨eq⟩ ASB|SB|S|AS A → aAS|a|aS B → SbS|bb|aAS|a|aS S → S: S0 → S S0 → ASB|SB|AS A → aAS|a|aS B → SbS|bb|aAS|a|aS S0 → S: S0 → ASB|SB|AS S → ASB|SB|AS A → aAS|a|aS B → SbS|bb|aAS|a|aS Replace rules which have more than two symbols: S0 → ASB: S0 → AU1 and U1 → SB ∴ S0 → AU1|SB| AS S → AU1|SB| AS A → aAS|a|aS B → SbS|bb|aAS|a|aS U1→ SB A → aAS ⇒ A → aU2 and U2 → AS and B → SbS ⇒ B → SU3 and U3 → bS ∴ S0 → AU1|SB|AS S → AU1|SB| AS A → aU2|a|aS B → SU3|bb|aU2|a|aS U1 → SB U2 → AS U3 → bS Eliminate rules which have terminals and variables or two terminals. Let V1 → a, V2 → b ∴ S0 → AU1|AS|SB S → AU1|SB|AS A → V1U2|a|V1S Grammar, G now is: A1 → A2A3|A4A4 A4 → b|A1A4 A2 → b A3 → a 3. \u0007Identify all productions which do not conform to any of the types listed below: Ai → Aj xk ∃ j > i Zi → Aj xk ∃ j ≤ n Ai → a xk ∃ xk ∈ V* and a ∈ T 4. A4 → A1 A4 … identified 5. A4 → A1 A4|b To eliminate A1, use substitution rule, A1 → A2 A3|A4 A4 ∴ A4 → A2 A3 A4|A4 A4A4|b Substitute A2 → b ∴ A4 → b A3 A4|A4 A4 A4|b \u0007A4 → A4 A4 A4 is left recursive. So, remove left recursion i.e., A4 → b A3 A4|b|bA3A4Z|bZ Z → A4A4|A4 A4Z 6. Now, G = A1 → A2 A3|A4 A4 A4 → b A3 A4|b|b A3 A4 Z|b Z Z → A4 A4|A4 A4Z A2 → b A3 → a 7. A1, Z are not in GNF. So, For A1 → A2 A3|A4 A4: Substitute for A2 and A4 to convert it to GNF A1 → b A3| b A3 A4 A4|b A4|b A3 A4 Z A4|b Z A4 For Z → A4 A4|A4 A4 Z substitute for A4 to convert it to GNF Z → b A3 A4 A4|b A4|b A3 A4 Z A4|b Z A4|b A3 A4 A4 Z|b A4 Z|b A3 A4 Z A4 Z|b Z A4 Z ∴ Final GNF is: A1 → b A3|b A3 A4 A4|b A4| b A3 A4 Z A4|b Z A4 A4 → b A3 A4|b|b A3 A4 Z|b Z A2 → b A3 ⟨eq⟩ A3 A4 A4|b A4|b A3 A4 Z A4|b Z A4|b A3 A4 A4 Z| b A4 Z|b A3 A4 Z A4 Z|b Z A4 Z ∴ 19 productions."
+ },
+ {
+  "t": "h1",
+  "x": "Free Languages"
+ },
+ {
+  "t": "p",
+  "x": "Let ‘L’ be context free language. There exists some integer, m ∃ ∀w in L, with |w| ≥ m, w = uvxyz with |vxy| ≤ m and |vy| ≥ 1 ∃ u vi x yi z ∈ L ∀ i = 0, 1, 2, 3, … Note: Pumping lemma is used to show that a language is Not context free. Example 8: The language {anbm cn d (n+m): m, n ≥ 0} is (A) Regular (B) Context free but not regular (C) Neither context free nor regular (D) Cannot be determined B → SU3|V2V2|V1U2|a|V1S U1 → SB U2 → AS U3 → V2S V1 → a V2 → b ∴ Nine non-terminals."
+ },
+ {
+  "t": "h2",
+  "x": "Greiback Normal Form (GNF)"
+ },
+ {
+  "t": "li",
+  "x": "A CFG, G = (V, T, R, S) is said to be in GNF, if every production is of form A → aα where a ∈ T, α∈ V*, i.e., α is a string of zero or more variables."
+ },
+ {
+  "t": "li",
+  "x": "Left recursion in R can be eliminated by following schema: \u0007If A → Aα1 |Aα2| … |Aαr|b1|b2| … |bs, then replace the above rules by"
+ },
+ {
+  "t": "li",
+  "x": "If G = (V, T, R, S) is a CFG, then another CFG, G1 = (V1, T, R1, S) can be constructed in GNF ∃ L (G1) = L (G) − {e}."
+ },
+ {
+  "t": "p",
+  "x": "The step wise algorithm is as follows: 1. Eliminate null production, unit productions and useless symbols from the grammar G and then construct a G1 = (V1, T, R1, S) in CNF generating the language L (G1) = L (G) − {e}. 2. Rename the variables like A1, A2, … An starting with S = A1. 3. Modify the rules in R1, so that if Ai → Ajγ∈ R1 then j > i. 4. Starting with A1 and proceeding to An, can be obtained as: (a) Assume that productions have been modified so that for ⟨eq⟩ k, Ai → Aj γ∈ R1 only if j > i (b) If Ak → Ajγ is a production with j < k, generate a new set of productions substituting for Aj, the body of each Aj production. (c) Repeating (b) atmost k − 1 times, obtains rules of the form Ak → Apγ, p ≥ k. (d) Replace rules Ak → Akγ by removing leftrecursion. 5. Modify the Ai → Ajγ for ⟨eq⟩ 1, n − 2, … 1 in desired form at same time change z production rules. Example 7: A grammar G is defined with rules S → XA|BB, B → b|SB, X → b, A → a. The normalized GNF of G contains ____ productions. (A) 17 (B) 19 (C) 5 (D) 16"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "1. The Grammar, G is already in CNF. 2. Re-label with variables S with A1 X with A2 A with A3 B with A4 (A) Regular (B) Context free (C) Regular but not context fee (D) Cannot be determined"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "L1 = {an bn : n > 0} is context free L2 = {a100 b100} is regular ⟨eq⟩ ∗ ⟨eq⟩ is regular {anbn} context free ⟨eq⟩ ∗ ⟨eq⟩ is regular ⟨eq⟩ ∩ 2 → context free ⟨eq⟩ ∩ ⟨eq⟩ is context free:"
+ },
+ {
+  "t": "h2",
+  "x": "Regular Language"
+ },
+ {
+  "t": "p",
+  "x": "CFL Regular expression or regular grammar Context free grammar Recognize the language Parses the language These are DFSA's These are NDPDA's Minimize FSA's Find deterministic grammar. Closed under: Concatenation Union Kleen star Complement Intersection Closed under: Concatenation Union Kleen star"
+ },
+ {
+  "t": "h1",
+  "x": "Push Down Automata (PDA)"
+ },
+ {
+  "t": "p",
+  "x": "A push down automata is merely a finite automata with a stack added to it. PDA is used to generate context free language. The stack allows for unbounded memorization. Finite control d Tape head State Stack Top A a P Input tape: The tape is divided into finitely many cells. Each cell contains a symbol in an alphabet, Σ. Stack: The stack head always scans the top symbol of the stack. It performs two basic operations."
+ },
+ {
+  "t": "li",
+  "x": "Push: Add a new symbol at the top"
+ },
+ {
+  "t": "li",
+  "x": "Pop: Read and remove the top symbol"
+ },
+ {
+  "t": "p",
+  "x": "Tape head: The head scans at a cell on the tape and can read a symbol on the cell. In each move, the head can move to the right cell."
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (C)"
+ },
+ {
+  "t": "p",
+  "x": "L = {anbm cn d (n + m): m, n ≥ 0} Clearly, L is not regular because, number of a’s and number of b’s must be known to compute number of d’s. ‘L’ is not context free because, Let w = aMbM cMd2M. Clearly neither v nor y can cross regions and include more than one letter, since if that happened; letters obtained will be out of order when pumped. So, consider cases, where v and y fall within a single region. Consider 4-regions corresponding to a, b, c and d. (1, 1) → change number of a’s and they won’t match c’s any more. (1, 2) → If v is not empty, change a’s and they won’t match with c’s. If y is non-empty, number of b’s changed won’t have right number of d’s. (1, 3), (1, 4) → ruled out. ∵ |v x y| ≤ M (2, 2) → Change number of b’s and they won’t match right number of d’s. (2, 3) → If v is non-empty, change number of b’s without changing number of d’s. If y is not empty, change c’s and they’ll no longer match a’s. (2, 4) → ruled out ∵ |v x y| ≤ M (3, 3) → Change number of c’s and they won’t match a’s. (3, 4) → If v is not empty change c’s and they won’t match a’s. If y is not empty, change d’s without changing b’s. (4, 4) → change d’s without changing a’s or b’s. ∴ L is not context free."
+ },
+ {
+  "t": "h1",
+  "x": "Closure Properties of CFL’s"
+ },
+ {
+  "t": "p",
+  "x": "1. CFL’s are closed under union: For CFL’s L1, L2 with CFG’s G1, G2 and start variables S1, S2. The grammar of Union L1 ∪ L2 has new start symbol S and additional production S → S1| S2 2. CFL’s are closed under concatenation: For CFL’s L1, L2 with CFG’s G1, G2 and start variables S1, S2. The grammar of concatenation L1L2 has new start variables S and additional production: S → S1 S2 3. CFL’s are closed under star operation: For CFL L, with CFG G and start variable S. The grammar of the start operation L* has new start variable S1 and additional production: S1 → S S1|e 4. CFL’s are not closed under intersection: If L1, L2 are two context free languages, L1 ∩ L2 not necessarily be context free. 5. CFL’s are not closed under complement: If L is context free language, L not necessarily be context free. 6. Intersection of CFL’s and regular language: (regular closure): If L1 is a CFL and R2 is a regular language then L1 ∩ L2 is a CFL. Example 9: The language, L1 = {an bn : n ≥ 0} and L2 = {a100 b100}. The relation L1 ∩ L2 is _____"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "S → aTb|b T → Ta|e qf q1 q0 e, e|S e, Z 0|e e, S|aTb e, T|Ta e, S|b e, T|e a, a|e b, b|e Let S → q0, T → q1 Consider string “aab” S → aTb → aTab → aab δ(q0, aab, z0)├ δ(q0, eaab, z0) ├ δ (q1, aab, q0z0) ├ δ (q1, aab, aTb z0) ├ δ (q1, ab, Tbz0) ├ δ (q1, ab, aTbz0) ├ δ (q1, b, Tbz0) ├ δ (q1, b, ∈bz0) ├ δ (q1, b, bz0) ├ δ (q1, ∈, z0) ├ δ (qf, ∈) → acceptance"
+ },
+ {
+  "t": "h2",
+  "x": "equivalent:"
+ },
+ {
+  "t": "p",
+  "x": "PF → PDA accepting by final state, PF = (QF, Σ, Γ, δF, q0, z0, F) PN → PDA accepting by empty stack PN = (QN, Σ, Γ, δN, q0, z0)"
+ },
+ {
+  "t": "li",
+  "x": "For every PN, ∃ PF ∃ L (PF) = L(PN)"
+ },
+ {
+  "t": "h1",
+  "x": "Converting CFG to PDA"
+ },
+ {
+  "t": "p",
+  "x": "The PDA simulates the left most derivation on a given w, and upon consuming it fully it either arrives at acceptance (by empty stack) or non-acceptance. The steps to convert CFG to PDA are: 1. Push right hand side of the production on to stack, with left most symbol at the stack top. 2. If stack top is the left most variable, then replace it by all its productions (each possible substitution will represent a distinct path taken by non-deterministic PDA (NPDA). 3. If stack top has a terminal symbol and if it matches with the next symbol in the input string, then pop it. Follow from step-1 again to complete all productions. Example 11: The CFG, G of a language L is S → AB, A → aAb|e, B → cB/e. The PDA generated by G contains ____ states. (A) 5 (B) 4 (C) 3 (D) 1"
+ },
+ {
+  "t": "h2",
+  "x": "Finite control: The finite control has finitely many states"
+ },
+ {
+  "t": "p",
+  "x": "which form a set Q. For each move, the state is changed according to the evaluation of transition function. A PDA is defined as: P = (Q, Σ, Γ, δ, q0, z0, F) Where Q: set of States Σ: Input alphabet Γ: Stack symbol δ: Transition function q0: Start state z0: Initial stack top symbol F: Final/accepting states Transition functions δ: Q × Γ × Σ ⇒ Q × Γ Q: Old state Γ: Stack top Σ: Input symbol Q: New state, Γ: New stack top"
+ },
+ {
+  "t": "h2",
+  "x": "PDA’s instantaneous description (IDs): A PDA has a"
+ },
+ {
+  "t": "p",
+  "x": "configuration at any given instance: (q, w, y) q → current state w → remainder of input (i.e., unconsumed part) y → current stack contents as a string from top to bottom of the stack. If δ(q, a, x) = {P, A} is a transition, then following are also true:"
+ },
+ {
+  "t": "li",
+  "x": "(q, aw, xB)├ (p, w, AB)"
+ },
+ {
+  "t": "p",
+  "x": "Note: 1. →: Turnstile notation and represents one move. 2. ├*: represents sequence of moves."
+ },
+ {
+  "t": "h2",
+  "x": "Principles about IDs:"
+ },
+ {
+  "t": "p",
+  "x": "1. If for a PDA, (q, x, A) ├*(p, y, B), then for any string w ∈ Σ* and γ∈ Γ*, it is also true that: (q, xw, Aγ) ├*(p, yw, Bγ) 2. If for a PDA, (q, xw, A) ├*(p, yw, B), then it is also true that: (q, x, A) ├* (p, y, B) Acceptance by PDA: There are two types of PDAs that one can design:"
+ },
+ {
+  "t": "li",
+  "x": "Those that accept by final state or"
+ },
+ {
+  "t": "li",
+  "x": "Those that accept by empty stack"
+ },
+ {
+  "t": "p",
+  "x": "PDAs that accept by final state: For a PDA, P, the language accepted by P, denoted by L (P) by final state, is: {w| (q0, w, z0) ├*(q, ∈, A)} ∃ q ∈ F PDAs that accept by empty stack: For a PDA P, the language accepted by P, denoted by N (P) by empty stack, is: {w|(q0, w, z0) ├* (q, e, e)}, for any q ∈ Q. Example 10: Consider the grammar S → aTb| b, T → Ta |e. The PDA constructed contains ____ states. (A) 4 (B) 3 (C) 5 (D) 2"
+ },
+ {
+  "t": "h2",
+  "x": "Converting a PDA into a CFG"
+ },
+ {
+  "t": "p",
+  "x": "Given: G = (V, T, P, S) Initial stack symbol (S) same as start variable in grammar Output: PN = ({q}, T, V ∪ T, δ, q, S), where δ is"
+ },
+ {
+  "t": "li",
+  "x": "If q0 is start state in PDA and qn is final state of PDA then [q0, z, qn] becomes a start state of CFG. Here z represents stack symbol."
+ },
+ {
+  "t": "li",
+  "x": "The production rule for the ID of the form δ(qi, a, z0) = (qi+1, z1,z2) can be obtained as: δ(qi, z0, qi+k) → a(qi+1, z1, qm) (qm, z2, qi+k) Where qi+k, qm represents the intermediate staes, z0, z1,z2"
+ },
+ {
+  "t": "p",
+  "x": "are stack symbols and a is input symbol."
+ },
+ {
+  "t": "li",
+  "x": "The production rule for the ID of the form δ(qi, a, z0) = (qi+1, e) can be converted as (qi, z0, qi+1) → a"
+ },
+ {
+  "t": "p",
+  "x": "Example 12: The PDA, P for language L is generated as: e, e|e a, e|a b, e|b b, a|e e, b|e c, b|e e, e|e e, e|e e, e|e The CFG for P is: (A) S → S1S2 S1 → aS2b S2 → c|e (B) S → S1bc S1 → a|e (C) S → S1S2 S1 → aS1b|e S2 → bS2|bS2c|e (D) S → aS1c S1 → b|e"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (C)"
+ },
+ {
+  "t": "p",
+  "x": "The language, L generated by given PDA is L = {an bn bm cp: m ≥ p and n, p ≥ 0} It can be generated by following rules: S → S1S2 S1 → aS1b|e→ S1 generates anbn S2 → bS2|bS2c|e→ S2 generates bmcp"
+ },
+ {
+  "t": "h1",
+  "x": "(Deterministic CFL)"
+ },
+ {
+  "t": "p",
+  "x": "Deterministic context free languages (DPDA) Context-free Languages PDAs ⊆"
+ },
+ {
+  "t": "li",
+  "x": "Every DPDA is also a PDA."
+ },
+ {
+  "t": "li",
+  "x": "A context free language ‘L’ accepted by PDA may or may not be accepted by DPDA."
+ },
+ {
+  "t": "p",
+  "x": "A PDA, M = (Q, Σ, Γ, δ, q0, F) is deterministic if there is no configuration for which M has choice of more than one move. That is, it must satisfy the following conditions: 1. For any q ∈ Q, a ∈ Σe and s ∈ Γ e, the set δ(q, a, s) has almost one element. (Doesn’t allow two or more transitions from same state). 2. For any q ∈ Q, and s ∈ Γe, if δ(q, e, s) ≠ f, then δ(q, a, s) = f for every a ∈ Σ and δ(q, a, e) = f for all a ∈ Σ e. 3. For any q ∈ Q and a ∈ Σ, if (q, a, e) ≠ f, then δ(q, a, s) = f for all s ∈ Γ and δ(q, e, t) = f for all t ∈ Γe. 4. For any q ∈ Q, if δ(q, e, e) ≠ f, then δ(q, a, t) = f for all a ∈ Σe and t ∈ Γe (except when a = e, t = e). Rule-2 says that if there is a transition from state q that reads character, s from stack but doesn’t read other input, other transitions from q, that don’t read stack are not allowed and other transitions from q that read s from the stack and read the input are not allowed either. Rule-3 says that if there is a transition from state q that reads character a, but doesn’t read stack, other transitions from q that don’t read the input are not allowed and other transitions from q that read ‘a’ from input and read the stack are not allowed either. Rule-4 says that if there is a transition from q that doesn’t read either input or stack, all other transitions from q are not allowed. Example 13: A language, L is defined as: L = {wcwR: w ∈ (a, b)*}. What is Nature of language L? (A) CFL and DCFL (B) Only CFL (C) Only DCFL (D) None of these"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (A)"
+ },
+ {
+  "t": "p",
+  "x": "L = {x = wcwR for w ∈ (a, b)*} F s C, e/e a, a|e b, b|e a, e|a b, e|b Clearly, obtained PDA is also DPDA in sense; there is no choice in transitions. ∴ Hence L is CFL and DCFL. 9. The DPDA constructed to accept language, L with property L = L1 ∪ L2 where L1 = {10n1n| n > 0}, L2 = {110n12n| n > 0} contains ___ states. (A) 4 (B) 5 (C) 6 (D) 7 10. The PDA is designed as: q0 q1 q2 e, $/e 0, 1|1 $ 0 1, 0|0 $ 0 0, 1|e 1, 0|e 0, 0|0 $ 0 1, 1|1 $ 1 0, 1|e 1, 0|e 0, 0 → 00 1, 1 → 11 q3 What is the language generated by the above PDA? (A) \u0007Binary strings that have same number of 0’s and 1’s. (B) \u0007Binary strings that start with 00 and end with 11 and have same number of 0’s and 1’s. (C) \u0007Binary strings that start and end with the same symbol and have same number of 0’s and 1’s. (D) \u0007Binary strings that start with 11 and end with 00 and have same number of 0’s and 1’s. 11. The language, L ba ba b ba ⟨eq⟩ … ⟨eq⟩ and mi ≠ mj for some i, j). What is nature of ‘L’? (A) Regular (B) Context free but not regular (C) Regular but not context free (D) Neither context free nor regular 12. Two languages L1, L2 are defined as: L1 = {ai bj ck: i, j, k ≥ 0, i = j} \u0007L2 = {ai bj ck: i, j, k ≥ 0, j = k} which of following statements are true? (i) L1 ∩ L2 is context free (ii) L1 ∩ L2 = {anbn cn| n ≥ 0} (iii) L1, L2 are context free (iv) Only L1 is context free (A) All are true (B) (i), (ii) are true (C) (iii), (iv) are true (D) (ii), (iii) are true 13. The language generated by grammar: S → Te|Ue, T → cTd|cT|e, U → cUd|Ud|dd. is (A) L = {cn dm e: m ≥ n} (B) L = {cn dm e: m = n} (C) L = {cm dn em: ⟨eq⟩ 2} (D) None of these 14. Remove null productions, useless symbols from the following grammar result in: S → ABC A → aBC B → C|e C → cd|DCF D → dD|e"
+ },
+ {
+  "t": "h1",
+  "x": "Decidability"
+ },
+ {
+  "t": "p",
+  "x": "Turing machines Model of turing machine Types of turing machines Ofﬂ ine turing machine Universal turing machine Recursively enumerable languages Recursive language Undecidability Church’s hypothesis Halting problem Post’s correspondence problem 7 P problems NP problems NP – complete problem NP – hard problem Closure properties of formal languages"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "turing Machines"
+ },
+ {
+  "t": "p",
+  "x": "Accept L Turing machine Unrestricted grammar Recursively enumerable language A Turing machine is a kind of state machine, which is much more powerful in terms of languages it can recognize. At any time, the machine is in any one of the finite number of states. Instructions for a turing machine include the specification of conditions, under which the machine will make transitions from one state to other."
+ },
+ {
+  "t": "h2",
+  "x": "Model of Turing Machine"
+ },
+ {
+  "t": "p",
+  "x": "Tape (No boundaries Infinite length) At each step, *Reads a symbol *writes a symbol *moves left or right or doesn’t move Read - write Head (movement in both directions) Control unit"
+ },
+ {
+  "t": "li",
+  "x": "A TM (turing machine) consists of Tape, Head, control unit."
+ },
+ {
+  "t": "li",
+  "x": "Tape: A tape is divided into a sequence of numbered cells, Each cell contains a symbol and cells that have not been written before are assumed to be filled with a blank symbol (B). The set of symbols of tape is denoted by ."
+ },
+ {
+  "t": "p",
+  "x": "The tape is assumed to be arbitrarily extensible to the left as well as to the right."
+ },
+ {
+  "t": "li",
+  "x": "Head: In a single step, a tape head reads the contents of a cell on the tape (reads a symbol), replaces it with some other characters (writes a symbol) and repositions itself to the next cell to the right or to the left of the one it has just read or does not move (moves left or right or does not move)."
+ },
+ {
+  "t": "li",
+  "x": "Control unit: The reading from the tape or writing into the tape is determined by the control unit. It contains a finite set of states, Q. The states are: 1. Initial state, q0 2. Halt state, h: This is state in which TM stops all further operations. There can be one or more halt states in a TM."
+ },
+ {
+  "t": "p",
+  "x": "3. Other states. Note: A TM on entering the halt state stops making moves and whatever string is there on the tape, will be taken as the output, irrespective of whether the position of head is at the end or in the middle of the string on the tape."
+ },
+ {
+  "t": "h2",
+  "x": "Transition Diagram of TM"
+ },
+ {
+  "t": "p",
+  "x": "q q a → b, R a → b, L p p Reads a symbol writes a symbol Move Right (R) Move Left (L) No Move (N)"
+ },
+ {
+  "t": "h2",
+  "x": "Specification of TM"
+ },
+ {
+  "t": "p",
+  "x": "5-Tuple specification: TM = (state1, Read symbol, write symbol, L/R/N, state 2). 7 - Tuple specification of TM: A TM, M is represented as a 7-tuple: M = (Q, ∑, , δ, q0, B, h) where Q → Finite set of states ∑ → Finite set of non-blank symbols → Set of tape characters qo → qo ∈ Q, initial state B → Blank character h → h ⊆ Q, final state δ → Transition function, Q × → Q × x {L, R, N}"
+ },
+ {
+  "t": "h2",
+  "x": "String classes in TM"
+ },
+ {
+  "t": "p",
+  "x": "Every TM, over the alphabet ∑, divides set of input string w into three classes: 1. Accept (TM): It is the set of all strings w ∈ ∑* ∋ if the tape initially contains w and the TM is then run, then TM ends in a halt state. 2. LOOP (TM): It is the set of all strings, w ∈ ∑* ∋ if the tape initially contains w and the TM is then run, then the TM loops forever (infinite loop). 3. Reject (TM): It is the set of all strings w ∈ ∑* ∋, any of the following 3-cases arise. Case I: \u0007There may be a state and a symbol under the tape head, for which δ does not have a value. Case II: \u0007If the head is reading the left most cell (i) containing the symbol x, the state of TM is say q, then δ (q, x) suggests a move to the left of the current cell. However as there is no cell to the left, no move is possible. Case III: \u0007If TM enters an infinite loop or if a TM rejects a given string w, because of above two cases, TM crashes (terminates unsuccessfully)."
+ },
+ {
+  "t": "h1",
+  "x": "Languages Accepted by a TM"
+ },
+ {
+  "t": "li",
+  "x": "The language accepted by TM is the set of accepted strings w ∈ ∑*."
+ },
+ {
+  "t": "li",
+  "x": "Formally, let M = (Q, ∑, , δ, q0, B, h) be a TM. The language accepted by M denoted by L(M) is defined as, L(M) = {w/w∈z* and if w = a1… an then, (qo, ε, a1, a2, …an) (h, b, …, bi-1, bj bn) for some b1, b2 … bn ∈ N* ∋}"
+ },
+ {
+  "t": "li",
+  "x": "There are three types of turing machine related languages: 1. Turing Acceptable language: A language, L over some alphabet is said to be turing acceptable language if there exists a TM, M ∋L = L(M ) 2. Turing Decidable Language: A language L over ∑ i.e., L ⊆ ∑* is said to be turing decidable, if both languages, L and its complement ∑* -L are turing acceptable."
+ },
+ {
+  "t": "p",
+  "x": "3. Recursively Enumerable Language: A language L is recursively enumerable, if it is accepted by a TM. Example 1: Let M be a turing machine has M = (Q, , ∑, δ, S, B, F ) with Q = {qo, q1, q2, q3, q4}, ={a, b, X, Y, #}, ∑ = {a, b}, S = q0, B = #, δ given by: a b X Y # q0 (q1, X, R) - - (q3, Y, R) q1 (q1, a, R) (q2, Y, L) - (q1, Y, R) q2 (q2, a, L) - (q0, X, R) (q2, Y, L) q3 - - - (q3, Y, R) (q4, #, R) q4 ⟨eq⟩ Which of following is true about M ? (A) M halts on L having ‘baa’ as substring (B) M halts on L having ‘bab’ as substring (C) M halts on L = {an bn/n ≥ 1} (D) M halts on L not having ‘bbaa’ as substring."
+ },
+ {
+  "t": "h2",
+  "x": "Example: aaabbb"
+ },
+ {
+  "t": "p",
+  "x": "(q0, ∈, aaabbb) → (q1, XXXYY, b) (q1 X, aabbb) → (q2 XXXY, YY) (q1, Xa, abbb) → 1(q2, XXX, YYY ) (q1, Xaa, bbb) → (q2, XY, XYYY ) (q1, Xa, aYbb) → (q0, XXX, YYY ) (q2, X, aaYbb) → (q3, XXXY, YY ) (q2, ∈, XaaYbb) → (q3, XXXYY, Y ) (qo, X, aaYbb) → (q3, XXXYYY, ∈) (q1, XX, aYbb) → (q4, XXXYYY#, ∈)"
+ },
+ {
+  "t": "h1",
+  "x": "Types of Turing Machines"
+ },
+ {
+  "t": "h2",
+  "x": "Two-way infinite turing machine"
+ },
+ {
+  "t": "li",
+  "x": "A TM with a two-way infinite tape is denoted by M = (Q, ∑, , δ, qo B, F), as in original model."
+ },
+ {
+  "t": "li",
+  "x": "The tape is infinite to the left as well as to the right."
+ },
+ {
+  "t": "p",
+  "x": "If δ(q, x) = (p, Y, L) then q x a ├ m pBY. The tape, is infinte towards left. If δ (q, x) = (p, B, R) then q x a ├ m, pa the is infinite towards right."
+ },
+ {
+  "t": "h2",
+  "x": "Multiple turing machines"
+ },
+ {
+  "t": "li",
+  "x": "A multiple TM consists of a finite control with k tape heads and k-tapes, each tape is infinite in both directions, on a single move, depending on the state of the finite control and the symbol scanned by each of tape heads, the machine can,"
+ },
+ {
+  "t": "li",
+  "x": "change state"
+ },
+ {
+  "t": "li",
+  "x": "print new symbol on each of the cells scanned by its tape head"
+ },
+ {
+  "t": "li",
+  "x": "move each of its tape heads, independently, one cell to the left or right or keep it stationary."
+ },
+ {
+  "t": "li",
+  "x": "Initially, the input appears on the first tape and other tapes are blank."
+ },
+ {
+  "t": "h2",
+  "x": "Non-deterministic turing machines"
+ },
+ {
+  "t": "li",
+  "x": "A non-deterministic turing machine is a device with a finite control and a single one way infinite tape."
+ },
+ {
+  "t": "li",
+  "x": "For a given state and a tape symbol scanned by the tape head, the machine has a finite number of choices for next move."
+ },
+ {
+  "t": "h2",
+  "x": "Note: Non-deterministic TM is not permitted to make a"
+ },
+ {
+  "t": "p",
+  "x": "move in which the next state is selected from one choice, and the symbol printed and direction of head motion are selected from other choices."
+ },
+ {
+  "t": "li",
+  "x": "The non-deterministic TM accepts its input if any sequence of choices of moves leads to an accepting state."
+ },
+ {
+  "t": "h2",
+  "x": "Multi-dimensional TM’s"
+ },
+ {
+  "t": "li",
+  "x": "The tape consists of a k-dimensional array of cells infinite in all 2k directions, for some fixed k."
+ },
+ {
+  "t": "li",
+  "x": "Depending on the state and the symbol scanned, the device changes it’s state, prints a new symbol and moves its tape head in one of the 2k directions, either positively or negatively, along one of the k-axes."
+ },
+ {
+  "t": "h2",
+  "x": "Multihead TM"
+ },
+ {
+  "t": "li",
+  "x": "A K-head TM has some fixed ‘K’ number of heads. The heads are numbered from 1 through k, and a move of the TM depends on the state and on the symbol scanned by each head."
+ },
+ {
+  "t": "h2",
+  "x": "Offline turing machine"
+ },
+ {
+  "t": "li",
+  "x": "An offline TM is a multi tape TM, whose input tape is read only. The input is surrounded by end markers, ¢ on left and $ on right. The TM is not allowed to move the input tape head off the region between ¢ and $."
+ },
+ {
+  "t": "h2",
+  "x": "Multi stack machine"
+ },
+ {
+  "t": "li",
+  "x": "A deterministic two stack machine is a deterministic TM with a read only input and two storage tapes."
+ },
+ {
+  "t": "h2",
+  "x": "Note:"
+ },
+ {
+  "t": "li",
+  "x": "All these types of TM’s does not add any language accepting power and all these are equivalent to the basic model."
+ },
+ {
+  "t": "li",
+  "x": "Any language accepted by a 2-PDA can be accepted by some TM and any language accepted by a TM can be accepted by some 2-PDA. Accepting power of a TM = accepting power of a computer."
+ },
+ {
+  "t": "li",
+  "x": "Any language accepted by a PDA with n stacks (n ≥ 2), can also be accepted by some TM."
+ },
+ {
+  "t": "h2",
+  "x": "Example 2: Consider the following statement about L:"
+ },
+ {
+  "t": "p",
+  "x": "1. L is accepted by multi-tape turing machine M1. 2. L is also accepted by single tape turing machine M2. Which of following statement is correct? (A) Acceptance by M2 is slower by O (n2) (B) Acceptance of M2 is slower by O (n) (C) Acceptance of M2 is faster by O (n) (D) Acceptance of M2 is faster by O (n2)"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (A)"
+ },
+ {
+  "t": "p",
+  "x": "While simulating multi-tape TM on a single tape TM the head has to move at least 2k cells per move, where k is the number of tracks on single tape TM. Thus for k moves, ⟨eq⟩ Which means quadratic slow down? Thus, acceptance of multi-tape is faster by O(n2)."
+ },
+ {
+  "t": "h2",
+  "x": "Universal turing machine"
+ },
+ {
+  "t": "p",
+  "x": "A Universal turing machine is a turing machine that can simulate an arbitrary turing machine on arbitrary input."
+ },
+ {
+  "t": "li",
+  "x": "The machine consists of an input output relation to the machine computes."
+ },
+ {
+  "t": "li",
+  "x": "The input is given in binary form on the machine tape and the output consists of the contents of the tape when the machine halts."
+ },
+ {
+  "t": "li",
+  "x": "The contents of the tape will change based on the Finite State Machine (FSM) inside the TM."
+ },
+ {
+  "t": "li",
+  "x": "The problem with TM is that a different machine will be constructed for every new computation to be performed."
+ },
+ {
+  "t": "li",
+  "x": "A UTM can simulate any other machine."
+ },
+ {
+  "t": "h2",
+  "x": "Combining turing machines"
+ },
+ {
+  "t": "p",
+  "x": "If TM1 and TM2 are turing machines, then we can combine these machines and create a Turing machine which will first behave like TM1 and TM2. To combine two turing machines follow below steps: 1. Change all states in TM2, so that they do not conflict with the state names in TM1. 2. Change all halts in TM1’s transition table to the new name of the start state of TM2. 3. Append TM2’s transition table to the foot of TM1’s transition table."
+ },
+ {
+  "t": "li",
+  "x": "If TM1 and TM2 are combined in this way, we will write it as TM1 → TM2."
+ },
+ {
+  "t": "p",
+  "x": "So this new machine starts off in the initial state of TM1, operates as per TM1 until TM1 would halt then it launches TM2 and operates a TM2, until TM2 would halt."
+ },
+ {
+  "t": "h1",
+  "x": "Recursively Enumerable languages"
+ },
+ {
+  "t": "li",
+  "x": "A language L over the alphabet ∑ is called ‘recursively enumerable’ if there is a TM, M that accept every word in L and either rejects or loops for every word in language L′, the complement of L."
+ },
+ {
+  "t": "p",
+  "x": "Accept (M) = L Reject (M) + Loop (M) = L′."
+ },
+ {
+  "t": "li",
+  "x": "When TM, M is still running on some input of recursively enumerable languages, it is not decided that M will eventually accept, if let it run for long time or M will run forever (in loop)."
+ },
+ {
+  "t": "h2",
+  "x": "Recursive language"
+ },
+ {
+  "t": "li",
+  "x": "A language is said to be recursive, if there exists a TM which will halt and accept when presented with any input string w ∈∑*, only if the string is in the language otherwise will halt and reject the string."
+ },
+ {
+  "t": "li",
+  "x": "Thus, for turing decidable language L, there is a TM which halts for a large number of inputs w belonging to L."
+ },
+ {
+  "t": "li",
+  "x": "A TM that always halts is known as a decider or a total turing machine and is said to decide the recursive language. The recursive language is also called as recursive set of decidable."
+ },
+ {
+  "t": "li",
+  "x": "A language accepted by a TM is said to be recursively enumerable language. The subclass of recursively enumerable sets are said to be recursive sets or recursive language."
+ },
+ {
+  "t": "h2",
+  "x": "Note:"
+ },
+ {
+  "t": "li",
+  "x": "All recursive languages are also recursively enumerable."
+ },
+ {
+  "t": "li",
+  "x": "There may be languages which are recursively enumerable but not recursive."
+ },
+ {
+  "t": "li",
+  "x": "Set of all possible words over the alphabet of the recursive language is a recursive set."
+ },
+ {
+  "t": "li",
+  "x": "Set of all possible words, over the alphabet of the recursive enumerable language, is a recursively enumerable set."
+ },
+ {
+  "t": "p",
+  "x": "Recursively enumerable Not recursively enumerable RE but not recursive Recursive Figure 1 Relationship between the recursive, RE and non-RE languages."
+ },
+ {
+  "t": "h1",
+  "x": "Recursively Enumerable Languages"
+ },
+ {
+  "t": "li",
+  "x": "If a language L is recursive, then there is a TM T that accepts it and always halts."
+ },
+ {
+  "t": "li",
+  "x": "If L and LI are both recursively enumerable, then L and LI are recursive."
+ },
+ {
+  "t": "li",
+  "x": "Union of two recursive languages is recursive."
+ },
+ {
+  "t": "li",
+  "x": "Recursively enumerable languages are closed under union."
+ },
+ {
+  "t": "li",
+  "x": "If L, L1 and L2 are recursive languages, then so are L1 ∪ L2, L ∩ L2, L1L2, L*, L1 ∩ L2 and L1 -L2."
+ },
+ {
+  "t": "li",
+  "x": "If L, L1 and L2 are recursively enumerable languages, then so are L1 ∪ L2, L*, L1 ∩ L2, L1L2."
+ },
+ {
+  "t": "li",
+  "x": "If ∑ is an alphabet, L ⊆ ∑*, is a recursively enumerable language and ∑* – L is recursively enumerable, then L is recursive."
+ },
+ {
+  "t": "p",
+  "x": "Example 3: If ∑ = {0,1}, the canonical order is {∈,0,1,00,01,10,11,000,…} where w is the ith word and Mj is TM whose code is the integer j, written in binary. The language generated is L(Mj). The diagonalized language, Ld is a. (A) Recursively enumerable language but not recursive (B) Recursive language (C) Non-recursively enumerable language (D) Both (a) and (c)"
+ },
+ {
+  "t": "h2",
+  "x": "Non-Recursively Enumerable Language: A language"
+ },
+ {
+  "t": "p",
+  "x": "which is not accepted by any turing machine is non-recursively enumerable. Example: Power set of an infinite set."
+ },
+ {
+  "t": "li",
+  "x": "These languages cannot be defined by any effective procedure."
+ },
+ {
+  "t": "p",
+  "x": "For any non-empty ∑, there exist languages that are not Recursively Enumerable. Infinite table for all i and j is: j → 0 1 1 0 1 1 0 i 3 0 1 1 0 1 Diagonal To guarantee that no TM accepts Ld: wi is in Ld if and only if the (i, i) entry is 0, that is, if Mi does not accept wi. Suppose that some TM Mj accepted Ld. Then it contradicts if wj is in Ld, ( j, j) entry is 0, implying that wj is not in L (Mi) and contradicting Ld = L (Mi). If wi is not in Ld, then the ( j, j) entry is 1, implying that wi is in L(Mj), which again contradicts Ld = L(Mj), as wj is either in or not in Ld, assumption, Ld = L(Mj) is false. Thus no TM in the list accepts Ld, Hence Ld is nonrecursively enumerable language."
+ },
+ {
+  "t": "h2",
+  "x": "Decidable: A problem with two answers (Yes/No) is decid-"
+ },
+ {
+  "t": "p",
+  "x": "able if the corresponding language is recursive."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "1. ADFA = {(M, w) M accepts the input string w}."
+ },
+ {
+  "t": "li",
+  "x": "A Language L is turing decidable, if there exists a TM M such that on input x, M accepts if x ∈ L and M rejects otherwise. L is called undecidable if it is not decidable."
+ },
+ {
+  "t": "li",
+  "x": "Decidable Languages correspond to algorithmically solvable Decision problems."
+ },
+ {
+  "t": "li",
+  "x": "Undecidable language corresponds to algorithmically unsolvable decision problems."
+ },
+ {
+  "t": "h2",
+  "x": "Closure properties of decidable languages"
+ },
+ {
+  "t": "li",
+  "x": "Decidable Languages are closed under complement, union, intersection, concatenation and star (closure) operations."
+ },
+ {
+  "t": "p",
+  "x": "Note 1: A language is decidable if both the language and its complement are recognizable. Note 2: Turing Decidable languages are Recursive languages."
+ },
+ {
+  "t": "h1",
+  "x": "Undecidability"
+ },
+ {
+  "t": "p",
+  "x": "There are problems that can be computed. There are also problems that cannot be computed. These problems which cannot be computed are called ‘computationally undecidable problems’."
+ },
+ {
+  "t": "h2",
+  "x": "Church’s Hypothesis"
+ },
+ {
+  "t": "p",
+  "x": "There is an assumption that the intuitive notion of computable functions can be identified with partial recursive functions. However, this hypothesis cannot be proved. The computability of recursive function is based on following assumptions: 1. Each elementary function is computable. 2. Let ‘f ’ be a computable function and ‘g’ be another function which can be obtained by applying an elementary operation to f, then g becomes a comput­ able function. 3. Any function becomes computable, if it is obtained by rule (1) and (2)."
+ },
+ {
+  "t": "h2",
+  "x": "Undecidability of the universal languages"
+ },
+ {
+  "t": "li",
+  "x": "The universal language, Lu is a recursively enumerable language but not recursive."
+ },
+ {
+  "t": "p",
+  "x": "Hypothetical TM M for Lu Yes No Accept Reject"
+ },
+ {
+  "t": "h2",
+  "x": "Halting Problem"
+ },
+ {
+  "t": "p",
+  "x": "The given configuration of TM is required to state halting problem. The output of TM can be: 1. Halt: The machine starting at this configuration will halt after a finite number of states. 2. No Halt: The machine starting at this configuration never reaches a halt state, no matter how long it runs."
+ },
+ {
+  "t": "li",
+  "x": "The halting problem is unsolvable because, let, there exists a TM, M, which decides whether or not any computation by a TM, T will ever halt when a description dT of T and tape t of T is given. That means the input to machine M, will be (machine, tape) pair. Then for every input (t, dT ) to MI if T halt for input t, MI also halts which is called accept halt."
+ },
+ {
+  "t": "p",
+  "x": "Similarly if T does not halt for input t then the M1 will halt which is called reject halt. Accept halt Input (t, dT) When T halt for t When T does not halt for t Reject halt M1"
+ },
+ {
+  "t": "li",
+  "x": "Consider another Turing Machine, M2 which takes an input dT . It first copies dT on its tape and then this duplicated tape information is given as input to M1. But M1 is a modified machine."
+ },
+ {
+  "t": "p",
+  "x": "Input Modified Copy T Loops T halt for input t = dT T does not halt for t = dT Halt dT dT, dT M1 → Replace T by M2 i.e., M2 = T (Input) M2 halt for input dM2 dT M2 Loops Halt That’s means, a machine M1, which can tell whether any other TM will halt on particular input does not exist. Hence halting problem is unsolvable."
+ },
+ {
+  "t": "h2",
+  "x": "Post’s Correspondence Problem (PCP)"
+ },
+ {
+  "t": "p",
+  "x": "The Undecidability of strings is determined with the help of Post’s Correspondence Problem (PCP). ‘The PCP consists of two lists of strings that are of equal length over the input ∑. The two lists are A = w1, w2, w3, … wn and B = x1, x2, … xn then there exists a non-empty set of integers i1, i2, … in such that w1, w2, … wn = x1, x2, … xn’. To solve PCP, try all the combinations of i1, i2, … in to find the wi = xi then, PCP has a solution. Example 4: What is the solution for the following system of post correspondence problem. A = {100, 0, 1} B = {1, 100, 00} (A) 1113322 (B) 1311322 (C) 2233111 (D) No solution"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (B)"
+ },
+ {
+  "t": "p",
+  "x": "The string is: A1A3A1A1A3A2A2 ⟨eq⟩ 1001100100100, B1B3B1B1B3B2B2 ⟨eq⟩ 1001100100100."
+ },
+ {
+  "t": "h1",
+  "x": "Problems"
+ },
+ {
+  "t": "li",
+  "x": "P stands for deterministic polynomial time. A deterministic machine at each time executes an instruction. Depending on instruction, it then goes to next state which is unique."
+ },
+ {
+  "t": "p",
+  "x": "Hence, time complexity of deterministic TM is the maximum number of moves made by M in processing an input string of length n, taken over all inputs of length n."
+ },
+ {
+  "t": "li",
+  "x": "A language, L is said to be in class P, if ∃ a (deterministic) TM, M is of time complexity P (n) for some polynomial P and M accepts L."
+ },
+ {
+  "t": "li",
+  "x": "Class P consists of those problems that are solvable in polynomial time by a deterministic TM."
+ },
+ {
+  "t": "h1",
+  "x": "NP Problems"
+ },
+ {
+  "t": "li",
+  "x": "NP stands for non-deterministic polynomial time."
+ },
+ {
+  "t": "li",
+  "x": "A language, L is in class NP, if there is a non-deterministic TM, M is of time complexity P(n) for some polynomial P and M accepts L."
+ },
+ {
+  "t": "li",
+  "x": "Class NP consists of problems for which solutions are verified quickly. P consist of problems which can be solved quickly."
+ },
+ {
+  "t": "li",
+  "x": "NP languages are closed under union, Intersection, concatenation, Kleen star."
+ },
+ {
+  "t": "li",
+  "x": "NP problems are classified into two types: 1. NP-complete 2. NP-hard problems."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Vertex (Graph) coloring problem, Travelling"
+ },
+ {
+  "t": "p",
+  "x": "salesman problem, the vertex cover problem, the Hamiltonian circuit problem."
+ },
+ {
+  "t": "h1",
+  "x": "NP-Complete Problem"
+ },
+ {
+  "t": "li",
+  "x": "A class of problems are known as NP-complete problems whose status is unknown. No polynomial time has yet been discovered for NP-complete problems nor has any one been able to prove that no polynomial time exists for any of them. These are hardest of NP-problems. The P and NP-complete problems are disjoint."
+ },
+ {
+  "t": "h2",
+  "x": "Example: (Cook’s Theorem) SAT is NP-complete, Bin"
+ },
+ {
+  "t": "li",
+  "x": "A language L is said to be NP-complete if L ∈ NP and if every LI ∈ NP is polynomial-time reducible to L."
+ },
+ {
+  "t": "p",
+  "x": "A language L1 is said to be polynomial time reducible to some language L2 if there exists a DTM by which any w1 in the alphabet of L1 can be transformed in polynomial time to a w2 in the alphabet of L2 in such a way that w1 ∈ L1 if w2 ∈ L2. It follows that if some L1 is NP-complete and polynomial time reducible to L2, then L2 is also NP-complete."
+ },
+ {
+  "t": "h1",
+  "x": "NP-Hard Problem"
+ },
+ {
+  "t": "li",
+  "x": "A problem that is NP-hard has a property that all problems that are in NP can be reduced in polynomial time to it."
+ },
+ {
+  "t": "li",
+  "x": "A language, L in NP-hard complete if and only if,"
+ },
+ {
+  "t": "p",
+  "x": "Condition 1: For every language, LI in NP, there is a polynomial time reduction of LI to L. Condition 2: L is not necessarily in NP."
+ },
+ {
+  "t": "h2",
+  "x": "NP-Complete"
+ },
+ {
+  "t": "p",
+  "x": "(1) \u0007A decision problem Pi is NP-hard if every problem in NP is polynomial time reducible to Pi. (1) \u0007A Decision problem Pi is NP-complete if it is NP-hard and is also in class NP itself. (2) \u0007In terms of symbols ‘Pi’ is NP-hard if for every Pj → NP (2) \u0007In terms of symbols, ‘Pi’ is NP-complete, if Pi is NP-hard and Pj → NP (3) \u0007Pi is ‘as hard as’ all the problem in NP (3) \u0007Pi is one of the hardest problems in NP (4) \u0007If any problem in NP is proved intractable, then Pi must also be intractable (4) \u0007If any one ever shows that as NP-complete problem is also intractable, then every NP-complete problem is also intractable."
+ },
+ {
+  "t": "h2",
+  "x": "Example 5: Which of following is FALSE?"
+ },
+ {
+  "t": "p",
+  "x": "(A) \u0007{< x, ⟨eq⟩ and y are integers, gcd (x, y) = 1} is a NP class problem. (B) CLIQUE is a NP class problem. (C) Eulerian PATH is a P class problem (D) Dijkstra’s algorithm is a problem in P."
+ },
+ {
+  "t": "h2",
+  "x": "Solution: (A)"
+ },
+ {
+  "t": "p",
+  "x": "Choice (A) is a P class problem. Consider the following table:"
+ }
+]

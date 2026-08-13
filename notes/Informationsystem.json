@@ -1,0 +1,1222 @@
+[
+ {
+  "t": "h1",
+  "x": "1. Process Life Cycle"
+ },
+ {
+  "t": "p",
+  "x": "Introduction Process vs program Software component and elements Information gathering Requirement analysis Feasibility study Data ﬂ ow diagram Process speciﬁ cation Input/output design Software process life cycle Software process model"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "Introduction"
+ },
+ {
+  "t": "p",
+  "x": "A system can be defined as an orderly grouping of interdependent components linked together according to a plan to achieve a specific objective."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Telephone system, transportation system, accounting"
+ },
+ {
+  "t": "h1",
+  "x": "Process Versus Program"
+ },
+ {
+  "t": "p",
+  "x": "A software process gives all steps used to create a software application, from the customer’s requirements to the finished product."
+ },
+ {
+  "t": "li",
+  "x": "The software process determines the organization and flexibility of the project."
+ },
+ {
+  "t": "li",
+  "x": "There are several different software processes and each describes their own solution to develop a valid software."
+ },
+ {
+  "t": "li",
+  "x": "Software programs are written programs or rules with associated documentation pertaining to the operation of a computer system."
+ },
+ {
+  "t": "h1",
+  "x": "Software Components And Elements"
+ },
+ {
+  "t": "h2",
+  "x": "Software Component"
+ },
+ {
+  "t": "p",
+  "x": "It is a software element that can be independently deployed and composed without modification according to a composition standard."
+ },
+ {
+  "t": "li",
+  "x": "A component model implementation is the dedicated set of executable software elements required to support the execution of components."
+ },
+ {
+  "t": "li",
+  "x": "A component has clearly defined interfaces."
+ },
+ {
+  "t": "li",
+  "x": "An interface standard is the mandatory requirement enforced to enable software elements to directly interact with other software elements."
+ },
+ {
+  "t": "li",
+  "x": "An interface standard declares, when an interface comprises."
+ },
+ {
+  "t": "p",
+  "x": "Standard An object or measure serving as a basis to which others should conform, by which the quality of others is judged."
+ },
+ {
+  "t": "h2",
+  "x": "Software Element"
+ },
+ {
+  "t": "p",
+  "x": "A sequence of abstract program statements that describe computations, which has to be performed by a machine."
+ },
+ {
+  "t": "h2",
+  "x": "Interface"
+ },
+ {
+  "t": "p",
+  "x": "It describes the behavior of a component that is obtained by considering only the interactions of that interface and by hiding all other interactions."
+ },
+ {
+  "t": "li",
+  "x": "An abstraction of the behavior consists of subset of the interactions of one component together with a set of constraints."
+ },
+ {
+  "t": "h2",
+  "x": "Interaction"
+ },
+ {
+  "t": "p",
+  "x": "It is defined as action between 2 or more software elements. Composition It is a combination of 2 or more software components, the newly formed component, behaviour will be at a diff erent level of abstraction. The characteristics of new component is determined the components combined and the way in which they are combined."
+ },
+ {
+  "t": "h1",
+  "x": "Information Gathering"
+ },
+ {
+  "t": "p",
+  "x": "Complete and accurate information is essential in building computer-based systems. Information about the organization, the staff who uses the system and the workflow should be gathered. Information about the organization’s policies, goals, objectives and structure explains the kind of environment the computer-based system should produce. Information about the people who run the present system, their job functions and information requirements, the relationships of their jobs to the existing system and the interpersonal network that holds the user groups together are required for determining the importance of the existing system for the organization and also for planning the proposed system. Workflow focuses on what happens to the data through various points in a system and can be shown by a data flow diagram or a system flow chart. Information can be gathered by studying documents, forms and files of existing system. Onsite observation of the system is also an effective method for gathering information. It is the process of recognizing and noting people, objects and occurrences to obtain information. Interview is one of the most often and oldest method for gathering information. Interview has the advantage of identifying relations or verifying information and also capture information face to face with the concerned person. Questionnaire is another method for gathering information and is an inexpensive mean for gathering data which can be tabulated and analyzed quickly. Visiting companies that have developed similar systems, reading journals and other computer related books, which specify how others have solved similar problems is also another means of information gathering."
+ },
+ {
+  "t": "h1",
+  "x": "Requirement Analysis"
+ },
+ {
+  "t": "p",
+  "x": "Requirement analysis results in specification of software’s operational characteristics, indicates software’s interface with other system elements and establishes constraints that the software must meet. During requirement analysis, the primary focus should be on what not how. It should define what user interaction occurs in a particular circumstance, what objects does the system manipulate, what functions must the system perform, what behaviours does the system exhibit, what interfaces are defined and what constraints applied. The requirement analysis model must achieve three primary objectives: 1. To describe what the customer requires. 2. To establish a basis for the creation of a software design 3. To define a set of requirements that can be validated once the software is built."
+ },
+ {
+  "t": "h2",
+  "x": "Requirement Negotiation"
+ },
+ {
+  "t": "p",
+  "x": "Requirement negotiation is required to have a win-win result. The customer should get product which satisfies most of his/her needs, and software team should develop a product within a budget, working in real-time environment and within deadlines. Boehm has defined negotiation activities at the beginning of each software process iteration."
+ },
+ {
+  "t": "li",
+  "x": "Identify the key stake holder’s system or subsystem."
+ },
+ {
+  "t": "li",
+  "x": "Determine the ‘win conditions’ of the stake holder."
+ },
+ {
+  "t": "li",
+  "x": "Negotiate the ‘win conditions’ of stake holder and establish them into win-win condition."
+ },
+ {
+  "t": "h2",
+  "x": "Requirement Elicitation"
+ },
+ {
+  "t": "p",
+  "x": "Requirement elicitation is gathering the requirements from stakeholders, customers, etc. The question and answer format is suitable for the first encounter with users and the remaining phases are replaced with requirement elicitation. As we can’t get all the requirements by having questions and answers session, requirement elicitation practices should be implemented, which includes interviews, workshops, user scenarios, etc. The approaches that are followed for eliciting the requirements are: 1. Collaborative requirement gathering 2. Quality function deployment 3. User scenarios 4. Elicitation work products"
+ },
+ {
+  "t": "h2",
+  "x": "Functional Requirements"
+ },
+ {
+  "t": "p",
+  "x": "Functional requirements are primary actions that must take place in software in accepting and processing the input and in processing and generating the output. Functional requirements capture the intended behaviour of the system, which could be expressed as service task (or) functions of the system. These are core functionalities of the system. It also includes exact sequence of operations, input validation, mapping of outputs to inputs and error handling and recovery. These requirements are implemented in system design."
+ },
+ {
+  "t": "h2",
+  "x": "Non-functional Requirements"
+ },
+ {
+  "t": "p",
+  "x": "Non-functional requirements are expected requirements of a user. These define operational constraints based on the user characteristics. Non-functional requirements are product, business and external-based. These requirements define how a software system has to be. It also defines the quality of product, type of reliability and usability of the system. Implementation requirements depend on organization, and delivery requirements are defined in the non-functional requirements. Non-functional requirements are implemented in system-architecture."
+ },
+ {
+  "t": "h2",
+  "x": "Measuring Requirements"
+ },
+ {
+  "t": "p",
+  "x": "The requirements are the major component of project. The metrics for the requirement activities are: 1. Product size 2. Requirement quality 3. Requirement status 4. Requirement change (request for changes) 5. Effort Product size refers to the count of functional and non-functional requirements. It tracks, whether these requirements are implemented as a function of time."
+ },
+ {
+  "t": "h2",
+  "x": "Requirement quality refers to the inspection of specifi-"
+ },
+ {
+  "t": "p",
+  "x": "cation of requirements, counting the defects, missing of requirements incompleteness, ambiguities, etc."
+ },
+ {
+  "t": "h2",
+  "x": "Requirements status is monitoring of requirements over"
+ },
+ {
+  "t": "p",
+  "x": "time, gives out project status. The status could be proposed, approved, implemented, verified deferred, deleted, rejected."
+ },
+ {
+  "t": "h2",
+  "x": "Requirement management handles the addition, modify"
+ },
+ {
+  "t": "p",
+  "x": "and deletion of requirement, track the change of requirement which affects multiple requirements of different level."
+ },
+ {
+  "t": "h2",
+  "x": "Effort is the time taken to record requirements activi-"
+ },
+ {
+  "t": "p",
+  "x": "ties which includes development and management of requirements."
+ },
+ {
+  "t": "h2",
+  "x": "Types of Requirements"
+ },
+ {
+  "t": "p",
+  "x": "These are the services that a software system has to provide and constraints under which it must operate."
+ },
+ {
+  "t": "h2",
+  "x": "User requirements"
+ },
+ {
+  "t": "li",
+  "x": "Written for customers."
+ },
+ {
+  "t": "li",
+  "x": "These statements will be given in natural language and diagrams of the services that the system provides and operational constraints."
+ },
+ {
+  "t": "h2",
+  "x": "System requirements"
+ },
+ {
+  "t": "li",
+  "x": "Written as a contract between contractor and client."
+ },
+ {
+  "t": "li",
+  "x": "A structured document with detailed descriptions of the system services."
+ },
+ {
+  "t": "h2",
+  "x": "Software specification"
+ },
+ {
+  "t": "li",
+  "x": "Written for developers."
+ },
+ {
+  "t": "li",
+  "x": "A detailed description of software that can act as basis for a design (or) implementation."
+ },
+ {
+  "t": "h2",
+  "x": "Functional requirements"
+ },
+ {
+  "t": "p",
+  "x": "The system should provide statements of services, how the system should react to particular inputs and how the system should behave in particular situations."
+ },
+ {
+  "t": "h2",
+  "x": "Non-functional requirements"
+ },
+ {
+  "t": "p",
+  "x": "Functions offered by the system such as timing constraints, constraints on the development process, standards, etc. 1. Product requirements: It specifies, that the delivered product must behave in a particular way. Example: Execution speed, reliability 2. Organizational requirements: These are consequences of organizational policies and procedures. Example: Process standards, implementation requirements 3. External requirements: These arise from factors which are external to the system and its development process. Example: Interoperability requirements Non-functional requirements Organizational requirements External requirements Product requirements Delivery requirements Ethical requirements Portability requirements Implementation requirements Inter operability requirements Reliability requirements Standards requirements Safety requirements Efficiency requirements Privacy requirements Space requirements Performance requirements Usability requirements"
+ },
+ {
+  "t": "h2",
+  "x": "Domain requirements"
+ },
+ {
+  "t": "p",
+  "x": "These come from the application domain of the system that reflects the characteristics of the domain."
+ },
+ {
+  "t": "li",
+  "x": "These could be functional or non-functional."
+ },
+ {
+  "t": "h1",
+  "x": "Feasibility Analysis"
+ },
+ {
+  "t": "p",
+  "x": "Feasibility study is a test of a system proposal according to its workability, impact on the organization, ability to meet user needs, and effective use of resources. The objective of a feasibility study is not to solve the problem but to acquire a sense of its scope. Costs and benefits are estimated with greater accuracy at this stage. Feasibility analysis helps to identify the best solution to the end user. The key considerations involved in feasibility analysis are: 1. Economic feasibility 2. Technical feasibility 3. Behavioral feasibility Economic analysis is the most frequently used method for evaluating the eff ectiveness of a candidate system. Also known as cost/benefit analysis, economic analysis determines the benefits and savings that are expected from the candidate system and compares them with the costs. If benefits outweigh costs, then decision is made to design and implement the system, else alterations are made if it has a chance of being approved. Technical feasibility is concerned with hardware and software requirements to implement the system. Technical analysis centres around the existing computer system (hardware, software, etc.) identifies, to what extent it can support the proposed addition. Additional hardware and software (OS, databases) requirements are identified and checks whether financial considerations/constraints can accommodate these technical enhancements. Behavioural analysis makes an estimate of how strong a user staff is likely to react towards the development of a computerized system. Computer installations usually changes employee job status, and also there may be transfer, training period, etc. Thus the introduction of a new system requires special eff ort to educate, sell and train the staff on new ways of conducting business."
+ },
+ {
+  "t": "h1",
+  "x": "Data Flow Diagrams (Dfd)"
+ },
+ {
+  "t": "p",
+  "x": "DFD also called bubble chart, clarifies system requirements and identifies major transformations that will become programs in system design. It functionally decomposes the requirements specification down to the lowest level of detail. The four DFD symbols are: 1. (or) Source/Destination of data 2. (or) Data flow 3. (or) (or) Process 4. (or) (or) Data store The first symbol defines a source or destination of system data. The second symbol specifies data flow direction. It can be considered as a pipeline through which the information flows. The third symbol represents a process that transforms incoming data flows into outgoing data flows, and the fourth symbol is used to represent storage of data. In short, DFD takes an input-process-output view of a system. That is, data objects flow into the software is transformed by processing elements and resultant data objects flow out of the software. Data objects are represented by labelled arrows and transformations are represented by circles (also called bubbles). The DFD is presented in a hierarchical fashion. That is, the first data flow model sometimes called level 0 DFD or context diagram represents the system as a whole. Subsequent data flow diagrams refine the context diagram, providing increase in detail with each subsequent level."
+ },
+ {
+  "t": "h1",
+  "x": "Process Specification (Pspec)"
+ },
+ {
+  "t": "p",
+  "x": "The process specification (PSPEC) is used to describe all flow model processes that appear at the final level of refinement. The content of the process specification can include narrative text, a program design language (PDL) description of the process algorithm, mathematical equations, tables or UML activity diagrams. By providing a PSPEC to accompany each transformation (bubble) in the flow model, a ‘mini-spec’ can be created that serves as a guide for design of the software component that will implement the transformation."
+ },
+ {
+  "t": "h1",
+  "x": "Input/Output Design"
+ },
+ {
+  "t": "h2",
+  "x": "Input Design"
+ },
+ {
+  "t": "p",
+  "x": "The most common cause of errors in data processing is inaccurate input data. Errors occurred during data entry can be controlled by input design. Input design is the process of converting user-originated inputs to a computer-based format. Input data is collected and organized into groups of similar data. The goal of designing input data is to make data entry easy, logical and free from errors. Source data is captured initially on original paper or a source document. A source document should be logical and easy to understand. Each area in the form should be clearly identified and should specify to the user what to write and where to write. Source documents may enter into the system from punch cards, diskettes, optical character recognition (OCR) reader, Magnetic ink character recognition (MICR) reader, barcode reader, etc. Touch screen or voice input can be used for online data entry, for example, ATM. There are three major approaches for entering data into the computer—menus, formatted forms and prompts. A menu is a selection list that simplifies computer data access or entry. The user can choose what to enter from a list of options. Though a menu limits a user choice of responses, it reduces the chances of errors in data entry. A formatted form is a preprinted form or a template that requests the user to enter data in appropriate locations (fillin the blank type form). The form is displayed on the screen and the user can fill information by positioning the cursor in appropriate text boxes. In prompt, the system displays one inquiry at a time, asking the user for a response, for example, asking for user-id and password."
+ },
+ {
+  "t": "h2",
+  "x": "Output Design"
+ },
+ {
+  "t": "p",
+  "x": "Computer output is the most important and direct source of information to the user. Efficient and intelligible output design will improve system’s relationships with the user and helps in decision making. The devices available for providing computer-based output are printer, CRT screen display, audio response (speaker), plotters, etc. The task of output preparation is very critical, regaining skill and ability to align user requirements with the capabilities of the system in operation."
+ },
+ {
+  "t": "h1",
+  "x": "Software Process Life Cycle"
+ },
+ {
+  "t": "p",
+  "x": "A software process can be defined as a frame work of the activities, actions and tasks that are required to build quality software. All these activities, actions and tasks reside within a frame work or model that defines their relationship with the process and with one another. A generic process frame work for software engineering encompasses five activities:"
+ },
+ {
+  "t": "h2",
+  "x": "Communication Proper communication and collaboration"
+ },
+ {
+  "t": "p",
+  "x": "with the customer is made in this activity to understand the objectives for the project and also to gather requirements that help to define software features and functions."
+ },
+ {
+  "t": "h2",
+  "x": "Planning This activity develops a software project plan"
+ },
+ {
+  "t": "p",
+  "x": "which defines the software engineering work by specifying the technical tasks to be conducted, the risks that may occur, the resources that will require, the work products to produce and the work schedule."
+ },
+ {
+  "t": "h2",
+  "x": "Modelling A software engineer creates models to better"
+ },
+ {
+  "t": "p",
+  "x": "understand software requirements and the design that will achieve those requirements."
+ },
+ {
+  "t": "h2",
+  "x": "Construction This activity combines code generation and"
+ },
+ {
+  "t": "p",
+  "x": "testing required to uncover errors in the code."
+ },
+ {
+  "t": "h2",
+  "x": "Deployment In this activity, the software (as a complete"
+ },
+ {
+  "t": "p",
+  "x": "product or as a partial increment) is delivered to the customer. The customer evaluates the delivered product and provides feedback based on evaluation. Another important aspect of the software process called process flow describes how the frame work activities and the actions and tasks that occur within each framework activity are organized with respect to sequence and time."
+ },
+ {
+  "t": "h2",
+  "x": "Process Quality and Improvement"
+ },
+ {
+  "t": "p",
+  "x": "Quality refers to characteristic or attribute of something. Process quality factors are portability, usability, reusability, correctness and maintainability. The process quality is the implementation of the following steps firstly initiates the process and design the solutions, implement these solutions with the impact demonstration."
+ },
+ {
+  "t": "h2",
+  "x": "Linear process flow executes each of the five framework"
+ },
+ {
+  "t": "p",
+  "x": "activities in sequence, beginning with communication and ends with deployment. Communication Planning Modelling Construction Deployment Iterative process flow repeats one or more of the activities before proceeding to the next activity. Communication Planning Modelling Deployment Construction"
+ },
+ {
+  "t": "h2",
+  "x": "Evolutionary process flow executes the activities in a cir-"
+ },
+ {
+  "t": "p",
+  "x": "cular manner. Each circuit through the five activities leads to a more complete version of the software. Planning Communication Increment released Deployment Construction Modelling"
+ },
+ {
+  "t": "h2",
+  "x": "Parallel process flow executes one or more activities in"
+ },
+ {
+  "t": "p",
+  "x": "parallel with other activities. Communication Planning Modelling Construction Deployment Time"
+ },
+ {
+  "t": "h2",
+  "x": "The Unified Process"
+ },
+ {
+  "t": "p",
+  "x": "The unified process (UP) is an attempt to draw on the best features and characteristics of conventional software process models. It recognizes the importance of customer communication and streamlined methods for describing the customer’s view of a system. It helps the architect focus on the right goals, such as understandability, reliance to future changes, and reuse. It suggests a process flow that is iterative and incremental, providing the evolutionary feel that is essential in modern software development. Planning Communication Deployment Software Release Inception Elaboration Production Construction Construction Transition Modelling"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 1 Phases of the unified process"
+ },
+ {
+  "t": "p",
+  "x": "The unified process is an incremental model in which five phases are defined: 1. Inception phase: Encompasses both customer communication and planning activities and emphasizes the development and refinement of use cases as a primary model. 2. Elaboration Phase: Encompasses the customer communication and modelling activities focusing on the creation of analysis and design models with an emphasis on class definitions and architectural representations. 3. Construction phase: Refines and translates the design model into implemented software components. 4. Transition phase: Transfers the software from the developer to the end user for beta testing and acceptance. 5. Production phase: Ongoing monitoring and support are conducted. Defect reports and requests for changes are also submitted and revaluated."
+ },
+ {
+  "t": "h1",
+  "x": "Software Process Models"
+ },
+ {
+  "t": "h2",
+  "x": "The Waterfall Model"
+ },
+ {
+  "t": "p",
+  "x": "The waterfall model also called classic life cycle, follows a systematic sequential approach to software development."
+ },
+ {
+  "t": "h2",
+  "x": "Communication"
+ },
+ {
+  "t": "p",
+  "x": "Project initiation requirementsgathering"
+ },
+ {
+  "t": "h2",
+  "x": "Deployment"
+ },
+ {
+  "t": "p",
+  "x": "Delivery support feed back It begins with customer specification of requirements and progresses through planning, modelling, construction and deployment, culminating in on-going support of the completed software. The waterfall model is the oldest paradigm for software engineering. The problems encountered when this model is applied are: 1. Real projects rarely follow the sequential flow that the model proposes. 2. This model requires the requirements explicitly which the customer cannot state all the requirements as it is difficult. 3. A working version of the program will not be available until late in the project time span. If a major blunder is undetected until the working program is reviewed, it can be disastrous."
+ },
+ {
+  "t": "h2",
+  "x": "Incremental Process Model"
+ },
+ {
+  "t": "p",
+  "x": "1. Communication 2. Planning 3. Modelling (analysis, design) 4. Construction (code, test) 5. Deployment (delivery, feedback) ⟨eq⟩ Increment-n Increment-2 Delivery of 2nd increment Increment-1 Delivery of 1st increment Calender time → Software functionality/features→ Incremental development is particularly useful when staffing is unavailable for a complete implementation by the business deadline that has been established for the project."
+ },
+ {
+  "t": "h2",
+  "x": "Spiral Model"
+ },
+ {
+  "t": "p",
+  "x": "Spiral model is an evolutionary software process model. Using spiral model, software is developed in a series of evolutionary releases. During early iterations, the release might be a model or prototype. Later iterations produce more complete versions of the system. Start Estimation scheduling risk analysis"
+ },
+ {
+  "t": "h2",
+  "x": "Modelling"
+ },
+ {
+  "t": "p",
+  "x": "Analysis design The spiral development model is a risk-driven process model generator that is used to guide multi stakeholder concurrent engineering of software intensive systems. The spiral model is a realistic approach to the development of large scale systems and software. It uses prototyping as a risk reduction mechanism but, more importantly, enables the developer to apply the prototyping approach at any stage in the evolution of the product. At demands a direct consideration of technical risks at all stages of the project."
+ },
+ {
+  "t": "h2",
+  "x": "Conceptual Modelling"
+ },
+ {
+  "t": "p",
+  "x": "Conceptual modelling refers to abstraction of a model which fits for the purpose. The purpose of this modelling is to make model valid credible, feasible and useful. The main objective of conceptual modelling is improvising the understanding of an individual with respect to the system, an approach which will convey the system details among the stakeholders. For the extraction of system specifications when a software is developed, some of the failures could occur in future due to lack of requirements [unclear requirements (or) changing requirements] This could be traced with the help of conceptual modelling."
+ },
+ {
+  "t": "h2",
+  "x": "Prototyping Model"
+ },
+ {
+  "t": "p",
+  "x": "Prototyping model is used when the user is not sure about the addition of requirements in the product. It is also implemented when the developer is not sure about the algorithm efficiency, operation system adaptability, etc. Prototyping paradigm provides the approaches. The prototyping model is implemented as follows: 1. Communication 4. Deployment delivery and feedback 2. Quick plan and design 3. Prototype construction Prototyping model starts with communication in which software objectives is defined requirement, identification are done. In quick design, all the software aspects are represented quick design leads to prototype construction. This prototype model is deployed, in which requirements are evaluated and refined by customer. The iteration is done until customer gets satisfied with the needs at the same time developer will come to know what are the needs to be done."
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantages"
+ },
+ {
+  "t": "p",
+  "x": "1. Developer may compromise at implementation, as prototyping works quickly. Un-ideal implementation issues may become an integral part of the system. 2. Customer just sees the working version of the software, he could not able to consider the quality of software and long-term maintenance. Though there are some problems with prototyping, but it is effective paradigm for the software engineering when a software is developed using prototyping, both developer and customer should agree on the prototype. It is more advantageous when the customer and user are not sure what they want it maintains a template of the older software."
+ },
+ {
+  "t": "h2",
+  "x": "in software development"
+ },
+ {
+  "t": "p",
+  "x": "The software attributes that were present in process, project and product levels are called measurement. The metric refers to the attributes that are included in the project. A software engineer gets the measurements and develops the metrics. Measurement is done in two ways: 1. Direct measure 2. Indirect measure Direct measure includes the lines of code, (least, moderate, worst) execution speed and size of the memory. Indirect measure is done with the help of functional points. It measures quality, maintainability, efficiency and reliability. Metric is used to control the cost, schedule, project quality. It means metric provides information for the control of process development."
+ },
+ {
+  "t": "h2",
+  "x": "Effort distribution with phases"
+ },
+ {
+  "t": "p",
+  "x": "Software development is done in phases. It includes analysis, design, coding and testing. Design and testing plays major role in development, while coding is having least preference. 40% of the efforts were done on development and 60% of efforts are on the maintenance. Distribution of the efforts on the development is shown below: Coding Testing Analysis Design 16% 16% 8% Analysis design 4% Maintenance includes removal of bug and corrective maintenance, adaptive maintenance and enhancement. Distribution of efforts in maintenance is shown below: 12% 16% 32% Bugremoval Adaptive Enhancements"
+ },
+ {
+  "t": "h1",
+  "x": "and Maintenance"
+ },
+ {
+  "t": "p",
+  "x": "Project management Software design Modeling component level design SRS Software testing White-box testing Black box testing Implementation maintenance Software quality assurance Software Re-engineering COCOMO MODEL"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "Project Management"
+ },
+ {
+  "t": "p",
+  "x": "Project management is a technique used to ensure successful completion of a project by the project managers. The functions included in project management are:"
+ },
+ {
+  "t": "li",
+  "x": "Estimating resource requirements"
+ },
+ {
+  "t": "li",
+  "x": "Scheduling tasks and events"
+ },
+ {
+  "t": "li",
+  "x": "Providing training and site preparation"
+ },
+ {
+  "t": "li",
+  "x": "Selecting qualified staff and supervising their work"
+ },
+ {
+  "t": "li",
+  "x": "Monitoring the projects program"
+ },
+ {
+  "t": "li",
+  "x": "Documenting"
+ },
+ {
+  "t": "li",
+  "x": "Periodic evaluation"
+ },
+ {
+  "t": "li",
+  "x": "Contingency planning Project management involves planning, organization and con-"
+ },
+ {
+  "t": "p",
+  "x": "trol projects. It uses tools and software packages for planning and managing projects. Project planning involves plotting project activities against time frame."
+ },
+ {
+  "t": "h1",
+  "x": "Project Planning Tools"
+ },
+ {
+  "t": "li",
+  "x": "Tools used during software planning"
+ },
+ {
+  "t": "li",
+  "x": "Helps the top level managers to take critical decisions during planning stage"
+ },
+ {
+  "t": "h2",
+  "x": "Gantt Charts"
+ },
+ {
+  "t": "p",
+  "x": "This activity scheduling method introduced in 1914 by Henry L. Gantt, uses horizontal bars to show the duration of actions or tasks. The left end marks the beginning of the task and the right end its finish. Earlier tasks appear in the upper left and later ones in the lower right. In real-life applications, an allowance for contingencies is provided. This is called slack time. Each project allows between 5 to 25 percent slack time for completion."
+ },
+ {
+  "t": "h2",
+  "x": "Technique (Pert)"
+ },
+ {
+  "t": "p",
+  "x": "Gantt charts do not show precedence relationships among the tasks and milestones of a project. A PERT chart is a project management tool used to schedule, organize and coordinate tasks within a project. A PERT chart presents a graphic illustration of a project as a network diagram consisting of numbered nodes (either circles or rectangles) representing events, or milestones in the project linked by labelled vectors (directional lines) representing tasks in the project. The direction of the arrows on the lines indicates the sequence of tasks. or A B t Span time Event (Milestone or Deliverable) Scenario-based elements Use cases–text use case diagrams Activity diagrams Class-based elements Class diagram CRC models Analysis packages Flow-oriented elements Data flow diagrams control flow diagrams Behavioral elements State diagrams Sequence diagrams Analysis model Component level design Interface design Architectural design Data/class design Figure 1 Design model. In the diagram, shown below the tasks between nodes 1, 2, 4, 8 and 10 must be completed in sequence and are called dependent or serial tasks. The tasks between nodes 1 and 2 and nodes 1 and 3 are not dependent on the completion of one to start the other and can be undertaken simultaneously. These tasks are called parallel or concurrent tasks. Tasks that must be completed in sequence but don’t require resources or completion time are represented by dotted lines with arrows and are called dummy activates (Example: dashed arrow linking 6 and 9). Numbers on the opposite sides of the vectors indicate the time allotted for the task. The PERT chart is preferred over Gantt chart since it clearly illustrates task dependencies. But on complex projects, PERT chart may be much more difficult to interpret. Create schedule Buy hardware Programming Test code Conversion Test system Training User test Dummy activity Write user manual Installation Thus in short, Dependency diagrams can be defined as a formal notation to help in the construction and analysis of complex schedules. Dependency diagrams are drawn as a connected graph of nodes and arrows. Dependency diagrams consists of three elements:"
+ },
+ {
+  "t": "li",
+  "x": "Event–A significant occurrence in the life of a project."
+ },
+ {
+  "t": "li",
+  "x": "Activity–Amount of work required to move from one event to the next."
+ },
+ {
+  "t": "li",
+  "x": "Span time–Actual calendar time required to complete an activity."
+ },
+ {
+  "t": "h1",
+  "x": "Software Design"
+ },
+ {
+  "t": "p",
+  "x": "Software design is the process in which requirements are translated into a blue print for constructing the software. Once software requirements have been analyzed and modelled, software design is the last software engineering action within the modelling activity and sets the stage for construction (code generation and testing). Architectural design defines the relationship between major structural elements of the software, the architectural styles and design patterns, that can be used to achieve the requirements defined for the system, and the constraints that affect the way in which architecture can be implemented. The interface design describes how the software communicates with systems that interoperate with it, and with humans who use it. The component-level design transforms structural elements of the software architecture into a procedural description of software components. The major goals of the design process are:"
+ },
+ {
+  "t": "li",
+  "x": "The design must implement all of the explicit requirements contained in the requirements model, and it must accommodate all the implicit requirements, desired by stakeholders."
+ },
+ {
+  "t": "li",
+  "x": "The design must be a readable, understandable guide for those who test and subsequently support the software."
+ },
+ {
+  "t": "li",
+  "x": "The design should provide a complete picture of the software, addressing the data, functional and behavioral domains from an implementation perspective."
+ },
+ {
+  "t": "p",
+  "x": "Software design sits at the technical kernel of software engineering and is applied regardless of the software process model that is used. In the beginning, once the software requirements have been analyzed and modeled, software design is the last software engineering action within the modeling activity and sets the stage for construction (code generation and testing)."
+ },
+ {
+  "t": "li",
+  "x": "The data/class design transforms analysis–class models into design class realizations and the requisite data structures required to implement the software."
+ },
+ {
+  "t": "li",
+  "x": "The architectural design defines the relationship between major structural elements of the software, the architectural styles and design patterns that can be used to achieve the requirements defined for the system."
+ },
+ {
+  "t": "li",
+  "x": "The interface design describes how the software communicates with systems that interoperate with it, and with humans who use it. An interface implies a flow of information (data/control) and a specific type of behavior."
+ },
+ {
+  "t": "li",
+  "x": "The component-level design transforms structural elements of the software architecture into a procedural description of software components."
+ },
+ {
+  "t": "h2",
+  "x": "Abstraction Many levels of abstraction can be posed while"
+ },
+ {
+  "t": "p",
+  "x": "considering a modular solution to any problem. At highest level of abstraction, a solution is stated in broad terms and at lower levels, a more detailed description of the solution is provided. At the lowest level of abstraction, the solution is stated in a manner that can be directly implemented. Architecture Architecture is the structure or organization of program components (modules), the manner in which these components interact, and the structure of data that are used by components. Patterns The intent of each design pattern is to provide a description that enables a designer to determine: 1. whether the pattern is applicable to current work. 2. whether the pattern can be reused. 3. whether the pattern can serve as a guide for developing a similar, but functionally or structurally different pattern."
+ },
+ {
+  "t": "h2",
+  "x": "Separation of concerns Separation of concerns is a design"
+ },
+ {
+  "t": "p",
+  "x": "concept that suggests that any complex problem can be more easily handled if it is subdivided into pieces that can be solved and/or optimized independently. A concern is a feature or behaviour that is specified as part of the requirement model for the software."
+ },
+ {
+  "t": "h2",
+  "x": "Modularity common manifestation of separation of con-"
+ },
+ {
+  "t": "p",
+  "x": "cerns. Software is divided into separately named and addressable components (modules) that are integrated to satisfy problem requirements."
+ },
+ {
+  "t": "h2",
+  "x": "Information hiding Modules should be specified and"
+ },
+ {
+  "t": "p",
+  "x": "designed so that information (algorithm and data) contained within a module is inaccessible to other modules that have no need for such information. Functional independence Software should be designed in such a way that each module addresses a specific subset of requirements and has a simple interface when viewed from other parts of the program structure. Functional independence is achieved by developing modules, which can perform a single function."
+ },
+ {
+  "t": "h2",
+  "x": "Refinement Refinement is a process of elaboration, begins"
+ },
+ {
+  "t": "p",
+  "x": "with a statement or function defined at a high level of abstraction and then elaborates the original statement, providing more and more details as each successive refinement (elaboration) occurs."
+ },
+ {
+  "t": "h2",
+  "x": "Refactoring Refactoring is the process of changing a soft-"
+ },
+ {
+  "t": "p",
+  "x": "ware system in such a way that it does not alter the external behaviour of the code (design), yet improves its internal structure. When software is refactored, the existing design is examined for redundancy, unused design elements, inefficient or unnecessary algorithms, poorly constructed or inappropriate data structures or any other design failures that can be corrected to yield a better design."
+ },
+ {
+  "t": "h2",
+  "x": "Modeling Component Level Design"
+ },
+ {
+  "t": "p",
+  "x": "Component level design occurs after the first iteration of architectural design has been completed. At this stage the overall data and program structure of the software has been established."
+ },
+ {
+  "t": "h2",
+  "x": "Cohesion Cohesion implies that a component or class"
+ },
+ {
+  "t": "p",
+  "x": "encapsulates only attributes and operations that are closely related to one another and to the class or component itself. Cohesion is a measure of internal relative strength of a module. It should be more. Different types of cohesion are: 1. Coincidental cohesion: If elements of a module are unrelated, then it is coincidental cohesive. 2. Logical cohesion: If elements of a module are related, then it is logical cohesion. 3. Temporal cohesion: If the elements of a module are elated and the elements are confined to initialization or time, it is temporal cohesion. 4. Procedural cohesion: If the elements are confined to one name and if they perform a set of operations, then the module is said to be procedural cohesive. 5. Communicational cohesion: If the elements in a module interact through data declared in it, then the module is said to be communicational cohesion. 6. Sequential cohesion: If the elements are related and if they perform a set of operations in which the output of one operation is the input for another operation. 7. Functional cohesion: If the elements are related and if they are confined to one name and if they perform one and only one task, the module is functional cohesive. 8. Informational cohesion: If the elements of a module are confined to abstraction, it is informational cohesion. Cohesion spectrum Low High Coincidental cohesion Temporal cohesion Procedural cohesion Communicational cohesion Sequential cohesion Functional cohesion Informational cohesion Note: Cohesion metric should be high."
+ },
+ {
+  "t": "h2",
+  "x": "Coupling Coupling is a qualitative measure of the degree"
+ },
+ {
+  "t": "p",
+  "x": "to which classes are connected to one another. As classes and components become more interdependent, coupling increases. In component-level design coupling is to be kept as low as possible. It includes: 1. Procedural or routine call coupling: A form of coupling in which modules interact nominally more or less they are almost independent. 2. Low coupling: Form of coupling in which modules interact minimally. In extreme case there is no coupling between them. 3. Inclusion coupling: A coupling in which source code of one module is included into another module. 4. Import coupling: A coupling in which one module is declared in another module for its functionality. 5. External coupling: A coupling in which modules interact with modules written by some third party, which may include specific hardware or software. 6. Data coupling: Occurs when operations pass long strings of data arguments. 7. Stamp coupling: Occurs when a class is declared as a type for an argument of an operation of another class. 8. Control coupling: Coupling in which one module controls the order of execution of other module by using flags. 9. Common coupling: If the components make use of a global variable, it can lead to uncontrolled error propagation and unforeseen side effects when changes are made. 10. Content coupling: Type of coupling in when one module refers to other module, in extreme case, it changes internal structure of other modules for its functionality. Cohesion spectrum Low High Inclusive coupling External coupling Import coupling Data coupling Stamp coupling Control coupling Common coupling Content coupling Note: Coupling metric should be low."
+ },
+ {
+  "t": "h1",
+  "x": "Coding"
+ },
+ {
+  "t": "p",
+  "x": "Coding may be 1. The direct creation of programming language source code (e.g., Java, C). 2. The automatic generation of source code using an intermediate design like representation of the component to be built or 3. The automatic generation of executable code using a ‘fourth generation programming language’ (e.g., VC++). The principles that guide the coding task are closely aligned with programming style, programming languages and programming methods. The fundamental principles are:"
+ },
+ {
+  "t": "li",
+  "x": "Understand the problem you are trying to solve."
+ },
+ {
+  "t": "li",
+  "x": "Understand basic design principles and concepts."
+ },
+ {
+  "t": "li",
+  "x": "Pick a programming language that meets the needs of the software to be built and the environment in which it will operate."
+ },
+ {
+  "t": "li",
+  "x": "Select a programming environment that provides tools that will make the work easier."
+ },
+ {
+  "t": "p",
+  "x": "Create a set of unit tests that will be applied once the component code is completed."
+ },
+ {
+  "t": "h2",
+  "x": "Characteristics of Good Srs"
+ },
+ {
+  "t": "p",
+  "x": "The characteristics of good SRS are 1. Correctness: The requirements specified in the software should meet, then the SRS is correct. 2. Unambiguous: The SRS is said to be unambiguous if every specified requirement can be interpreted in only one way. 3. Completed: The SRS is said to be complete, if and only if it has all significant requirements, definition of software responses to input data and labels and references to tables, figures and diagrams. 4. Consistent: The SRS is said to be consistent if the individual requirements are not defined in a conflict way and the SRS should be a high level document. 5. Stability: The SRS is said to be stable (or) ranked for the importance if each requirement has a preference. All the requirements may not have same importance; identify the requirements which are essential and requirements having least preference. 6. Verifiable: If each requirement is verifiable then the SRS is said to be verifiable. 7. Modifiable: The SRS is said to be modifiable, if the changes to the requirements can be made easily, consistent. 8. Traceable: Requirements should be clear so that each requirement can be referenced for enhancement, (or) future developments, which makes the SRS traceable. Validation of SRS Validation of SRS is done to check whether the SRS is reflection of actual requirements and also to check the SRS documents is of good quality."
+ },
+ {
+  "t": "h2",
+  "x": "Testing"
+ },
+ {
+  "t": "p",
+  "x": "Testing is the process of executing a program with the intent of finding an error. A good test case is one that has a high probability of finding an as-yet-undiscovered error. A successful test is one that uncovers an as-yet-undiscovered error. Software product Evaluations Reliability model Debugging Correction Reliability Output test results Input Errors Error data rate"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 2 Formal technical review committee (FTR)"
+ },
+ {
+  "t": "p",
+  "x": "FTR Process model Measurements SQA and SCM Standards and procedures Validation Information engineering Requirements Design Code Unit testing Integration testing Validation testing System testing"
+ },
+ {
+  "t": "h2",
+  "x": "There are four software testing strategies:"
+ },
+ {
+  "t": "p",
+  "x": "1. Unit testing 2. Integration testing 3. Validation testing 4. System testing"
+ },
+ {
+  "t": "h2",
+  "x": "Unit testing"
+ },
+ {
+  "t": "p",
+  "x": "Unit testing concentrates on each unit (e.g., class, component, etc). Unit test focuses on the internal processing logic and data structures within the boundaries of a component. Important control paths are tested to uncover errors within the boundary of the module, using component-level design description as a guide."
+ },
+ {
+  "t": "h2",
+  "x": "Integration testing"
+ },
+ {
+  "t": "p",
+  "x": "Integration testing focuses on design and construction of the software architecture. Integration testing is a systematic technique for constructing the software architecture while at the same time conducting tests to uncover errors associated with interfacing. The objective is to take unit-tested components and build a program structure that has been dictated by design."
+ },
+ {
+  "t": "li",
+  "x": "Top-down integration Modules are integrated by moving downward through the control hierarchy, beginning with the main control module (main program). Modules subordinate to the main control module are incorporated into the structure in either a depth-first or breadth-first manner."
+ },
+ {
+  "t": "li",
+  "x": "Bottom-up Integration begins construction and testing with the components at the lowest levels in the program structure."
+ },
+ {
+  "t": "li",
+  "x": "Regression testing in the context of an integration test strategy, regression testing is the re-execution of some subset of tests that have already been conducted to ensure that changes have not propagated unintended side effects."
+ },
+ {
+  "t": "li",
+  "x": "Smoke testing is an integration testing approach that is designed as a pacing mechanism for time-critical projects, allowing the software team to assess the project on a frequent basis."
+ },
+ {
+  "t": "h2",
+  "x": "Validation testing"
+ },
+ {
+  "t": "p",
+  "x": "Validation succeeds when software functions in a manner that can be reasonably expected by the customer. In validation testing, the requirements established as part of requirements modeling are validated against the software that has been constructed. Software validation is achieved through a series of tests that demonstrate conformity with requirements. Alpha and beta testing can be used to uncover errors that occur only at the end user. The alpha test is conducted at the developer’s site by a representative group of end users. The software is used in a natural setting by end users in the presence of the developer and the developer records usage problems. The beta test is conducted at one or more end user sites in the absence of developer. Therefore, beta test is a ‘live’ application of the software in an environment that cannot be controlled by the developer. The customer records all problems and reports to developer."
+ },
+ {
+  "t": "h2",
+  "x": "System testing"
+ },
+ {
+  "t": "p",
+  "x": "In system testing, the software and other system elements are tested as a whole. System testing is a series of different tests whose primary purpose is to fully exercise the computer-based system. The types of system tests used for software-based systems are:"
+ },
+ {
+  "t": "li",
+  "x": "Recovery testing is a system test that forces the software to fail in a variety of ways and verifies that recovery is properly performed."
+ },
+ {
+  "t": "li",
+  "x": "Security testing attempts to verify that protection mechanisms built into a system will protect it from improper penetration."
+ },
+ {
+  "t": "li",
+  "x": "Stress testing executes a system in a manner that demands resources in abnormal quantity, frequency or volume. A variation of stress testing called sensitivity testing attempts to uncover data combinations within valid input classes that may cause instability or improper processing."
+ },
+ {
+  "t": "li",
+  "x": "Performance testing is designed to test the run-time performance of software within the context of an integrated system."
+ },
+ {
+  "t": "li",
+  "x": "Deployment testing also called configuration testing exercises the software in each environment in which it is to operate. It also examines all installation procedures and specialized installation software that will be used by customers, and all documentation that will be used to introduce the software to end users."
+ },
+ {
+  "t": "h1",
+  "x": "Software Testing"
+ },
+ {
+  "t": "p",
+  "x": "The goal of testing is to find errors and a good test is one that has a high probability of finding an error. The two ways of testing a software: 1. White-box testing (Internal testing) 2. Black-box testing (External testing)"
+ },
+ {
+  "t": "h2",
+  "x": "White-box Testing"
+ },
+ {
+  "t": "p",
+  "x": "In white-box testing (also called glass-box testing) of software, tests are conducted to ensure that all internal operations are performed according to specifications and all internal components have been adequately exercised. White-box testing methods should guarantee that: 1. All independent paths, within a module are exercised at least once. 2. Exercise all logical decisions on their true or false sides. 3. Execute all loops at their boundaries and within their operational bounds and 4. Exercise internal data structures to ensure their validity."
+ },
+ {
+  "t": "h2",
+  "x": "Basis path testing"
+ },
+ {
+  "t": "p",
+  "x": "Basis path testing is a white-box testing technique. This method enables the test case designer to derive a logical complexity measure of a procedural design and uses this measure as a guide for defining a basis set of execution paths. Test cases derived are guaranteed to execute every statement in the program at least one time during testing. Flow graphs can be used for better understanding the control flow and thus helps basis path testing to execute every statement in the program at least once. The flow graph symbols are: Sequence If While Until Case Each circle represents one or more non-branching PDL (Program Design Language) or source code statements."
+ },
+ {
+  "t": "h2",
+  "x": "Flowchart"
+ },
+ {
+  "t": "p",
+  "x": "Corresponding flow graph is 5, 6 3, 4 1, 2 R4 Regions Nodes Predicate nodes Edges R3 R2 R1 Each node that contains a condition is called a predicate node. Independent paths (any path through the program that introduces at least one new set of processing statements or a new condition) in the above example are: Path 1: 1-2-12 Path 2: 1-2-3-4-5-6-11-2-12 Path 3: 1-2-3-4-7-8-10-11-2-12 Path 4: 1-2-3-4-7-9-10-11-2-12 Thus if tests can be designed to force execution of these paths (a basis set), every statement in the program will have been guaranteed to be executed at least one time, and every condition will have been executed on its true and false sides. Cyclomatic complexity is a software metric that provides a quantitative measure of the logical complexity of a program. When used in the context of basis path testing method, the value computed for cyclomatic complexity defines the number of independent paths in the basis set of a program and provides an upper bound for the number of tests that must be conducted to ensure that all statements have been executed at least once. Complexity is calculated in one of the three ways: 1. The number of regions of the flow graph corresponds to the cyclomatic complexity. (i.e., four Regions R1, R2, R3, R4 in the above case) 2. Cyclomatic complexity V(G) for a flow graph G is defined as V(G) = E – N + 2, when E is the number of flow graph edges and N is the number of flow graph nodes (i.e., in the above case, there are 11 edges and 9 nodes. Thus V(G) = 11 – ⟨eq⟩ 4) 3. Cyclomatic complexity V(G) for a flow graph G is also defined as V(G) = P + 1, where P is the number of predicate nodes contained in the flow Graph G. In the above flow graph, there are 3 predicate nodes. \\ V(G) ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Control structure testing"
+ },
+ {
+  "t": "p",
+  "x": "Some of the variations on control structure testing to improve the quality of white-box testing are:"
+ },
+ {
+  "t": "h2",
+  "x": "Condition testing"
+ },
+ {
+  "t": "p",
+  "x": "Condition testing is a test-case design method that exercises the logical conditions contained in a program module. This method focuses on testing each condition in the program to ensure that it does not contain errors."
+ },
+ {
+  "t": "h2",
+  "x": "Condition testing"
+ },
+ {
+  "t": "p",
+  "x": "A simple condition is a Boolean variable or a relational expression, possibly preceded with one NOT (¬) operator. A compound condition is composed of two or more simple conditions, Boolean operators and parentheses. The possible types of elements in a condition include a Boolean operator, a Boolean variable, a pair of parentheses (surrounding a simple or compound Boolean condition), a relational operator, or an arithmetic expression."
+ },
+ {
+  "t": "h2",
+  "x": "Dataflow testing"
+ },
+ {
+  "t": "p",
+  "x": "This method selects test paths of a program according to the locations of definitions and use of variables in the program."
+ },
+ {
+  "t": "h2",
+  "x": "Loop testing"
+ },
+ {
+  "t": "p",
+  "x": "Loop testing is a white-box testing technique that focuses exclusively on the validity of loop constructs. Four classes of loop can be defined as:"
+ },
+ {
+  "t": "h2",
+  "x": "Simple loops"
+ },
+ {
+  "t": "p",
+  "x": "The following set of tests can be applied to simple loops, where n is the maximum number of allowable passes through the loop. 1. Skip the loop entirely. 2. Only one pass through the loop. 3. Two passes through the loop 4. m passes through the loop where m < n 5. n - 1, n, n + 1 passes through the loop. Figure 4 Simple loop."
+ },
+ {
+  "t": "h2",
+  "x": "Nested loops"
+ },
+ {
+  "t": "p",
+  "x": "Here the number of possible tests grows geometrically as the level of nesting increases. This results in an impractical number of tests. Figure 5 Nested loops."
+ },
+ {
+  "t": "h2",
+  "x": "Concatenated loops"
+ },
+ {
+  "t": "p",
+  "x": "Concatenated loops can be tested using approach of simple loops, if each of the loops is independent of the other. If two loops are concatenated and the loop counter for loop 1 is used as the initial value for loop 2, than the loops are not independent. Figure 6 Concatenated loops."
+ },
+ {
+  "t": "h2",
+  "x": "Unstructured loops"
+ },
+ {
+  "t": "p",
+  "x": "Whenever possible, this class of loops should be redesigned to reflect the use of the structured programming constructs. Figure 7 Unstructured loop."
+ },
+ {
+  "t": "h2",
+  "x": "Black-box Testing"
+ },
+ {
+  "t": "p",
+  "x": "Black-box testing, also called behavioral testing, focuses on the functional requirements of the software. Black-box testing attempts to find errors in the following categories: 1. Incorrect or missing functions 2. Interface errors 3. Errors in data structures or external database access 4. Behaviour or performance errors and 5. Initialization and termination errors By applying black-box techniques, we derive a set of test cases that satisfy the following criteria: 1. Test cases that reduce, by a count that is greater than one, the number of additional test cases that must be designed to achieve reasonable testing. 2. Test cases that tell something about the presence or absence of classes of errors, rather than an error associated only with the specific test at hand. In graph-based black-box testing methods, software testing begins by creating a graph of important objects and their relationships and then devising a series of tests that will cover the graph so that each object and relationship is exercised and errors are uncovered."
+ },
+ {
+  "t": "h2",
+  "x": "Graph-based testing methods"
+ },
+ {
+  "t": "p",
+  "x": "To accomplish these steps, the software engineer begins by creating a graph – a collection of nodes that represent objects; links that represent the relationships between objects; node weights that describe the properties of a node and link weights that describe some characteristic of a link. The symbolic representation of a graph is as shown in the figure. Undirected link Parallel link Directed link (link weight) Node weight (value) Object # 1 Object # 2 Object # 3"
+ },
+ {
+  "t": "li",
+  "x": "Nodes are represented as circles connected by links that take a number of different forms."
+ },
+ {
+  "t": "li",
+  "x": "A directed link indicates that a relationship moves in only one direction."
+ },
+ {
+  "t": "li",
+  "x": "A bidirectional link (symmetric link) implies that the relationship applies in both directions."
+ },
+ {
+  "t": "li",
+  "x": "Parallel links are used when a number of different relationships are established between graph nodes."
+ },
+ {
+  "t": "h2",
+  "x": "Equivalence partitioning"
+ },
+ {
+  "t": "p",
+  "x": "is a black-box testing method that divides the input domain of a program into classes of data from which test cases can be derived. Equivalence partitioning strives to define a test case that uncovers classes of errors, thereby reducing the total number of test cases that must be developed. Test case design for equivalence partitioning is based on an evaluation of equivalence classes for an input condition. An equivalence class represents a set of valid or invalid states for input conditions."
+ },
+ {
+  "t": "h2",
+  "x": "Boundary value analysis (BVA)"
+ },
+ {
+  "t": "p",
+  "x": "It is developed as a testing technique used to test bounding values since a greater number of error occurring at the boundaries of the input domain than at the centre. Boundary value analysis is a test case design technique that complements equivalence partitioning. Rather than selecting any element of an equivalence class, BVA leads to the selection of test cases at the ‘edges’ of the class. BVA derives test cases from the input conditions as well as from the output domain."
+ },
+ {
+  "t": "h2",
+  "x": "Orthogonal array testing"
+ },
+ {
+  "t": "p",
+  "x": "The orthogonal array testing method is useful in finding region faults; an error category associated with faulty logic within a software component. Orthogonal array testing can be applied to problems in which the input domain is relatively small. When orthogonal array testing occurs, an Lg orthogonal array of test cases is created. This array has a ‘balancing property’, i.e., test cases are dispersed uniformly throughout the test doming."
+ },
+ {
+  "t": "h2",
+  "x": "Model-based testing (MBT)"
+ },
+ {
+  "t": "p",
+  "x": "It is a black-box testing technique that uses information contained in the requirements model as the basis for the generation of test cases. White-box testing is usually performed at the early stages of testing process, while black-box testing tends to be applied during later stages of testing."
+ },
+ {
+  "t": "h1",
+  "x": "Implementation and Maintenance"
+ },
+ {
+  "t": "h2",
+  "x": "System Implementation"
+ },
+ {
+  "t": "p",
+  "x": "Implementation is the process of converting a new or a revised system design into an operational one. Major aspects of implementation are conversion, post-implementation review and software maintenance. There are three types of implementations: 1. Implementation of a computer system to replace a manual system. 2. Implementation of a new computer system to replace an existing one. 3. Implementation of a modified application to replace an existing one using the same computer."
+ },
+ {
+  "t": "h2",
+  "x": "Conversion"
+ },
+ {
+  "t": "p",
+  "x": "Conversion means changing from one system to another. The objective of conversion is to put the tested system into operation, while holding into costs, risks and personal irritation to a minimum. It involves: 1. Creating computer-compatible files 2. Training the operating staff 3. Installing terminals and hardware A very important aspect of conversion is not disrupting the functioning of the organization. File conversion involves capturing data and creating a computer file from existing files."
+ },
+ {
+  "t": "h2",
+  "x": "Post implementation review"
+ },
+ {
+  "t": "p",
+  "x": "Every system requires periodic evaluation after implementation. A post-implementation review measures the system’s performance against predefined requirements. Unlike system testing, which determines where the system fails so that the necessary adjustments can be made, a post-implementation review determines how well the system continues to meet performance specifications. Postimplementation review is done after design and conversion are completed."
+ },
+ {
+  "t": "h2",
+  "x": "Software Project Estimation"
+ },
+ {
+  "t": "p",
+  "x": "Software is the most expensive element of virtually all computer-based systems. For complex, custom systems, a large cost estimation error can make the difference between profit and loss. Software project estimation is a form of problem solving, and in most cases, the problem to be solved (i.e., developing a cast and effort estimate for a software project) is too complex to be considered in one piece. For this reason, we decompose the problem recharacterizing it as a set of smaller problems."
+ },
+ {
+  "t": "h2",
+  "x": "Problem-based estimation"
+ },
+ {
+  "t": "p",
+  "x": "Lines of code (LOC) and function point (FP) are used in two ways during software project estimation. 1. As an estimation variable to ‘size’ each element of the software. 2. As baseline metrics collected from past projects and used in conjunction with estimated variables to develop cost and effort projections. The project planner begins by estimating a range of values of each information domain value. Using the historical data, the planner estimates an optimistic, most likely, and pessimistic size value for each function or count for each information domain value. The expected value for the estimation variables is computed as S = optimistic Most likely pessimistic + ∗ +"
+ },
+ {
+  "t": "h2",
+  "x": "Empirical estimation models"
+ },
+ {
+  "t": "p",
+  "x": "An estimation model for computer software uses empirically derived formulas to predict effort as a function of LOC or FP. The model should be tested by applying data collected from completed projects, plugging the data into the model and then comparing actual to predicted results. Some of the LOC-oriented estimation models are E = 5.2 × (KLOC)0.91 Walston-Felix model E = 5.5 + 0.73 × (KLOC)1.16 Bailey-Basili model E = 3.2 × (KLOC)1.05 Boehm simple model E = 5.288 × (KLOC)1.047 Doty model for KLOC > 9"
+ },
+ {
+  "t": "h2",
+  "x": "The software equation The software equation is a multi-"
+ },
+ {
+  "t": "p",
+  "x": "variable model that assumes a specific distribution of effort over the life of a software development project. E = [LOC × B0.333/P]3 × (1/t 4) where E = effort in person – months or person – years t = project duration in months or years B = Special spills factor P = Productivity parameter that reflects overall process maturity and management practices, the extent to which good software engineering practices are used, the level of programming languages used, the state of software environment, the skills and experience of the software team, and the complexity of the application. Note: B increases slowly as ‘the need for integration, testing, quality assurance, and documentation and management skills grows’. For small programs KLOC = 5 to 15, B = 0.16. For programs greater than 70 KLOC, B = 0.39 Putnam and Myers suggest a set of equations derived from the software equation. Minimum development time is defined as tmin = 8.14 (LOC/P)0.43 in months for tmin > 6 months E= 180 B t3 in person – months for E≥ 20 person – months"
+ },
+ {
+  "t": "h2",
+  "x": "Software Maintenance"
+ },
+ {
+  "t": "p",
+  "x": "Maintenance means restoring something to its original condition. Maintenance is actually the implementation of the postimplementation review plan. Maintenance is classified into corrective, adaptive or perfective maintenance. Corrective maintenance repairs processing or performance failures or make changes because of previously uncorrected problems or false assumptions. Adaptive maintenance means changing the program function. Perfective maintenance enhances the performance or modify the programs to respond to the user’s additional or changing needs. About 50–80% of the total system development cost accounts for maintenance. Analysts and programmers spend far more time maintaining programs than they do writing them. A manufacturer wants to minimize the variation among the products that are produced by maintaining the quality. User satisfaction = compliant product + good quality + delivery within budget and schedule."
+ },
+ {
+  "t": "h2",
+  "x": "Software Quality Assurance (SQA)"
+ },
+ {
+  "t": "p",
+  "x": "Software Quality is defined as conformance to explicitly stated functional and performance requirements, explicitly documented development standards, and implicit characteristics that are points regarding quality is expected of all professionally developed software. In addition to the above definition some important 1. Software requirements are the foundation from which quality is measured. Lack of conformance to requirements is lack of quality. 2. If software conforms to its explicit requirements but fails to meet implicit requirements, software quality is suspect. Activities performed by SQA group: 1. Prepares an SQA plan for a project. 2. Participates in the development of the project’s software process description 3. Reviews software engineering activities to verify compliance with the defined software process. 4. Ensures that deviations in software work and work products are documented and handled according to a documented procedure. 5. Records any non-compliance and reports to senior management."
+ },
+ {
+  "t": "h2",
+  "x": "Software Reliability"
+ },
+ {
+  "t": "p",
+  "x": "Software reliability is defined as the probability of failurefree operation of a computer program in a specified environment for a specified time. Measures of reliability and availability:"
+ },
+ {
+  "t": "li",
+  "x": "A simple measure of reliability is mean-time-betweenfailure (MTBF)."
+ },
+ {
+  "t": "p",
+  "x": "MTBF = MTTF + MTTR where MTTF = mean-time-to-failure MTTR = mean-time-to-repair Although debugging (and related corrections) may be required as a consequence of failure, in many cases the software will work properly after a restart with no other change."
+ },
+ {
+  "t": "li",
+  "x": "In addition to a reliability measure, we must develop a measure of availability. Software availability is the probability that a program is operating according to requirements at a given point in time and is defined as Availability = [MTTF/(MTTF + MTTR)] × 100%"
+ },
+ {
+  "t": "h2",
+  "x": "Software Safety"
+ },
+ {
+  "t": "li",
+  "x": "Software safety is a software quality assurance activity that focuses on the identification and assessment of potential hazards that may affect software negatively and cause an entire system to fail."
+ },
+ {
+  "t": "li",
+  "x": "Software safety examines the ways in which failures result in conditions that can lead to a mishap. That is the failures are evaluated in the context of an entire computerbased system and its environment."
+ },
+ {
+  "t": "h2",
+  "x": "Software Reengineering"
+ },
+ {
+  "t": "p",
+  "x": "Cost of redevelopment is very high compared to development. The maintenance of existing software can account for over 60% of all effort expended by a development organization, and the percentage continues to rise as more software is produced. A reengineering process model is shown below: Inventory analysis Reverse engineering Document restructuring Code restructuring Data restructuring Forward engineering"
+ },
+ {
+  "t": "li",
+  "x": "Reengineering takes time, costs significant amount of money and absorbs resources that might be otherwise occupied on immediate concerns."
+ },
+ {
+  "t": "li",
+  "x": "Reengineering of information systems is an activity that will absorb information technology resources for many years."
+ },
+ {
+  "t": "li",
+  "x": "Inventory analysis : The inventory can be nothing more than a spreadsheet model containing information that provides a detailed description of every active application. It should be revisited on a regular cycle."
+ },
+ {
+  "t": "li",
+  "x": "Document restructuring : It creates a framework of documentation that is necessary for the long-term support of an application."
+ },
+ {
+  "t": "li",
+  "x": "Code restructuring : The source code is analyzed using a restructuring tool. The restricted code is reviewed and tested to ensure that no anomalies have been introduced."
+ },
+ {
+  "t": "li",
+  "x": "Data restructuring : It is a full-scale reengineering activity. Current data architecture is dissected and necessary data models are defined."
+ },
+ {
+  "t": "li",
+  "x": "Forward engineering : Also called renovation or reclamation, covers design information from existing software and uses this information to alter or reconstitute the existing system in an effort to improve its overall quality."
+ },
+ {
+  "t": "li",
+  "x": "Reverse engineering : It is the process of analyzing a program in an effort to extract data, architectural, and procedural design information."
+ },
+ {
+  "t": "p",
+  "x": "The abstraction level of a reverse engineering process and the tools used to affect it refers to the sophistication of the design information that can be extracted from source code. Dirty source code Restructure code Clean source code Extract abstraction Initial specification Refine and simplify Processing Interface Database Final specification Figure 8 The reverse engineering process."
+ },
+ {
+  "t": "h2",
+  "x": "COCOMO Model"
+ },
+ {
+  "t": "p",
+  "x": "One of the famous model structures used to estimate the software effort is the constructive cost model, which is often called as COCOMO model. COCOMO was developed by Boehm. The model helps in defining the mathematical relationship between the software development time, the effort in man-months and the maintenance effort. Basic COCOMO is defined as computers software development effort (and cost) as a function of program size. Program size is expressed in estimated thousand lines of code (KLOC) COCOMO is applied to three classes of software projects: 1. Organic projects 2. Semi-detached projects 3. Embedded projects"
+ },
+ {
+  "t": "h2",
+  "x": "Organic projects"
+ },
+ {
+  "t": "p",
+  "x": "Organic projects are projects that are having small teams with good working experience with less than rigid requirements."
+ },
+ {
+  "t": "h2",
+  "x": "Semi-detached projects"
+ },
+ {
+  "t": "p",
+  "x": "Semi-detached projects are projects with medium teams having mixed working experience with a mix of rigid and less than rigid requirements"
+ },
+ {
+  "t": "h2",
+  "x": "Embedded projects"
+ },
+ {
+  "t": "p",
+  "x": "Project that are developed within a set of tight constraints (hardware, software, operational…) The general formula of the basic COCOMO model is E = a(s)b where E → Represents effort in person-months S → Size of the software development in KLOC ‘a’ and ‘→’ 5 Values dependent on the development mode"
+ },
+ {
+  "t": "h2",
+  "x": "Value of b"
+ },
+ {
+  "t": "p",
+  "x": "Organic 2.4 1.05 Semi-detached 3.0 1.12 Embedded 3.6 1.20 Development time D = C(E)d People required ⟨eq⟩ count"
+ },
+ {
+  "t": "h2",
+  "x": "Value of d"
+ },
+ {
+  "t": "p",
+  "x": "Organic 2.5 0.38 Semi-detached 2.5 0.35 Embedded 2.5 0.32 For intermediate COCOMO model, the value of coefficient Q and the exponent b are given in the table below:"
+ },
+ {
+  "t": "h2",
+  "x": "Value of b"
+ },
+ {
+  "t": "p",
+  "x": "Organic 3.2 1.05 Semi-detached 3.0 1.12 Embedded 2.8 1.20"
+ }
+]

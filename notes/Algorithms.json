@@ -1,0 +1,2334 @@
+[
+ {
+  "t": "h1",
+  "x": "Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "An algorithm is a finite set of instructions that, if followed, accomplishes a particular task. All algorithms must satisfy the following."
+ },
+ {
+  "t": "li",
+  "x": "Input: Zero or more quantities are externally supplied."
+ },
+ {
+  "t": "li",
+  "x": "Output: Atleast one quantity is produced."
+ },
+ {
+  "t": "li",
+  "x": "Definiteness: Each instruction should be clear and unambiguous."
+ },
+ {
+  "t": "li",
+  "x": "Finiteness: The algorithm should terminate after finite number of steps."
+ },
+ {
+  "t": "li",
+  "x": "Effectiveness: Every instruction must be very basic."
+ },
+ {
+  "t": "p",
+  "x": "Once an algorithm is devised, it is necessary to show that it computes the correct answer for all possible inputs. This process is called algorithm validation. Analysis of algorithms refers to the task of determining how much computing time and storage an algorithm requires."
+ },
+ {
+  "t": "h2",
+  "x": "Analyzing Algorithms"
+ },
+ {
+  "t": "p",
+  "x": "The process of comparing 2 algorithms rate of growth with respect to time, space, number of registers, network, bandwidth etc is called analysis of algorithms. This can be done in two ways 1. Priori Analysis: This analysis is done before the execution; the main principle behind this is frequency count of fundamental instruction. This analysis is independent of CPU, OS and system architecture and it provides uniform estimated values. 2. Posterior analysis: This analysis is done after the execution. It is dependent on system architecture, CPU, OS etc. it provides non-uniform exact values."
+ },
+ {
+  "t": "h2",
+  "x": "Recursive Algorithms"
+ },
+ {
+  "t": "p",
+  "x": "A recursive function is a function that is defined in terms of itself. An algorithm is said to be recursive if the same algorithm is invoked in the body."
+ },
+ {
+  "t": "h2",
+  "x": "Towers of Hanoi"
+ },
+ {
+  "t": "p",
+  "x": "There was a diamond tower (labeled A) with 64-golden disks. The disks were of decreasing size and were stacked on the tower in decreasing order of size bottom to top. Besides this tower there were 2 other diamond towers (labeled B and C) we have to move the disks from tower A to tower B using tower C for intermediate storage. As the disks are very heavy, they can be moved only one at a time. No disk can be on top of a smaller disk . Tower A Tower B Tower C"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 1 Towers of Hanoi"
+ },
+ {
+  "t": "p",
+  "x": "Algorithm Recursive algorithms Towers of Hanoi Time complexity Space complexity SET representation TREE representation Preorder traversal Post-order traversal In order traversal Data structure Worst-case and average-case analysis Asymptotic notations Notations and functions Floor and ceil Recurrence Recursion-tree method Master method"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "p",
+  "x": "Assume that the number of disks is ‘n’. To get the largest disk to the bottom of tower B, we move the remaining (n – 1) disks to tower C and then move the largest to tower B. Now move the disks from tower C to tower B."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "A B C A B C A B C A B C A B C A B C A B C A B C To move ‘3’ disks from tower A to tower ‘C’ requires 7 disk movements \\ For ‘n’ disks, the number of disk movements required is 2n – 1 = 23 – 1 = 7"
+ },
+ {
+  "t": "h2",
+  "x": "Space complexity"
+ },
+ {
+  "t": "p",
+  "x": "The space complexity of an algorithm is the amount of memory it needs to run to completion. The measure of the quantity of input data is called the size of the problem. For example, the size of a matrix multiplication problem might be the largest dimension of the matrices to be multiplied. The size of a graph problem might be the number of edges. The limiting behavior of the complexity as size increases is called the asymptotic time complexity."
+ },
+ {
+  "t": "li",
+  "x": "It is the asymptotic complexity of an algorithm which ultimately determines the size of problems that can be solved by the algorithm."
+ },
+ {
+  "t": "li",
+  "x": "If an algorithm processes inputs of size ‘n’ in time cn2 for some constant c, then we say that the time complexity of that algorithm is O(n2), more precisely a function g(n) is said to be O( f (n)) if there exists a constant c such that g(n) ≤ c( f (n)) for all but some finite set of non-negative values for n."
+ },
+ {
+  "t": "li",
+  "x": "As computers become faster and we can handle larger problems, it is the complexity of an algorithm that determines the increase in problem size that can be achieved with an increase in computer speed."
+ },
+ {
+  "t": "li",
+  "x": "Suppose we have 5 algorithms Algorithm 1 – Algorithm 5 with the following time complexities."
+ },
+ {
+  "t": "h2",
+  "x": "Time Complexity"
+ },
+ {
+  "t": "p",
+  "x": "Algorithm – 1 Algorithm – 2 Algorithm – 3 Algorithm – 4 Algorithm – 5 n n log n n2 n3 2n The time complexity is, the number of time units required to process an input of size ‘n’. Assume that input size ‘n’ is 1000 and one unit of time equals to 1 millisecond. The following figure gives the sizes of problems that can be solved in one second, one minute, and one hour by each of these five algorithms."
+ },
+ {
+  "t": "h2",
+  "x": "1 hour"
+ },
+ {
+  "t": "p",
+  "x": "Algorithm – 1 n 6 × 104 3.6 × 106 Algorithm – 2 n log n 2.0 × 105 Algorithm – 3 n2 Algorithm – 4 n3 Algorithm – 5 2n From the above table, we can say that different algorithms will give different results depending on the input size. Algorithm – 5 would be best for problems of size ⟨eq⟩ 9, Algorithm – 3 would be best for ⟨eq⟩ 58, Algorithm – 2 would be best for ⟨eq⟩ 1025, and Algorithm – 1 is best for problems of size greater than 1024."
+ },
+ {
+  "t": "h1",
+  "x": "Set Representation"
+ },
+ {
+  "t": "p",
+  "x": "A common use of a list is to represent a set, with this representation the amount of memory required to represent a set is proportional to the number of elements in the set. The amount of time required to perform a set operation depends on the nature of the operation."
+ },
+ {
+  "t": "li",
+  "x": "Suppose A and B are 2 sets. An operation such as A ∩ B requires time atleast proportional to the sum of the sizes of the 2 sets, since the list representing A and the list representing B must be scanned atleast once."
+ },
+ {
+  "t": "li",
+  "x": "The operation A ∪ B requires time atleast proportional to the sum of the set sizes, we need to check for the same element appearing in both sets and delete one instance of each such element."
+ },
+ {
+  "t": "li",
+  "x": "If A and B are disjoint, we can find A ∪ B in time independent of the size of A and B by simply concatenating the two lists representing A and B."
+ },
+ {
+  "t": "h1",
+  "x": "Graph Representation"
+ },
+ {
+  "t": "p",
+  "x": "A graph G = (V, E) consists of a finite, non-empty set of vertices V and a set of edges E. If the edges are ordered pairs (V, W) of vertices, then the graph is said to be directed; V is called the tail and W the head of the edge (V, W). There are several common representations for a graph G = (V, E). One such representation is adjacency matrix, a V X V matrix M of 0’s and 1’s, where the ijth element, m[i, j] = 1, if and only if there is an edge from vertex i to vertex j."
+ },
+ {
+  "t": "li",
+  "x": "The adjacency matrix representation is convenient for graph algorithms which frequently require knowledge of whether certain edges are present."
+ },
+ {
+  "t": "li",
+  "x": "The time needed to determine whether an edge is present"
+ },
+ {
+  "t": "li",
+  "x": "Main drawback of using adjacency matrix is that it requires |V|2 storage even if the graph has only O(|V|) edges."
+ },
+ {
+  "t": "li",
+  "x": "Another representation for a graph is by means of lists."
+ },
+ {
+  "t": "p",
+  "x": "The adjacency list for a vertex v is a list of all vertices W adjacent to V. A graph can be represented by |V| adjacency lists, one for each vertex."
+ },
+ {
+  "t": "h2",
+  "x": "Figure 4 Adjacency lists"
+ },
+ {
+  "t": "p",
+  "x": "There are edges from vertex – 1 to vertex – 2 and 4, so the adjacency list for 1 has items 2 and 4 linked together in the format given above."
+ },
+ {
+  "t": "li",
+  "x": "The adjacency list representation of a graph requires storage proportional to |V| + |E|, this representation is used"
+ },
+ {
+  "t": "h1",
+  "x": "Tree Representation"
+ },
+ {
+  "t": "p",
+  "x": "A directed graph with no cycles is called a directed acyclic graph. A directed graph consisting of a collection of trees is called a forest. Suppose the vertex ‘v’ is root of a sub tree, then the depth of a vertex ‘v’ in a tree is the length of the path from the root to ‘v’."
+ },
+ {
+  "t": "li",
+  "x": "The height of a vertex ‘v’ in a tree is the length of a longest path from ‘v’ to a leaf."
+ },
+ {
+  "t": "li",
+  "x": "The height of a tree is the height of the root"
+ },
+ {
+  "t": "li",
+  "x": "The level of a vertex ‘v’ in a tree is the height of the tree minus the depth of ‘v’."
+ },
+ {
+  "t": "h2",
+  "x": "Figure 5 A binary tree and its representation"
+ },
+ {
+  "t": "li",
+  "x": "Vertex 3 is of depth ‘2’, height ‘0’ and the level is 2 (Height of tree - depth of ‘3’ = 4 – 2 = 2)."
+ },
+ {
+  "t": "li",
+  "x": "A binary tree is represented by 2 arrays: left child and right child."
+ },
+ {
+  "t": "li",
+  "x": "A binary tree is said to be complete if for some integer k, every vertex of depth less than k has both a left child and a right child and every vertex of depth k is a leaf. A complete binary tree of height k has exactly (2k+1 – 1) vertices."
+ },
+ {
+  "t": "li",
+  "x": "A complete binary tree of height k is often represented by a single array. Position 1 in the array contains the root."
+ },
+ {
+  "t": "p",
+  "x": "The left child of the vertex in position ‘i’ is located at position ‘2i’ and the right child at position ‘2i + 1’."
+ },
+ {
+  "t": "h2",
+  "x": "Tree Traversals"
+ },
+ {
+  "t": "p",
+  "x": "Many algorithms which make use of trees often traverse the tree in some order. Three commonly used traversals are preorder, postorder and inorder."
+ },
+ {
+  "t": "h2",
+  "x": "Pre-order Traversal"
+ },
+ {
+  "t": "p",
+  "x": "A pre-order traversal of T is defined recursively as follows: 1. Visit the root. 2. Visit in pre-order the sub trees with roots v1, v2 … vk in that order. (a) (b)"
+ },
+ {
+  "t": "h2",
+  "x": "Post-order traversal"
+ },
+ {
+  "t": "p",
+  "x": "A post-order traversal of T is defined recursively as follows: 1. Visit in post-order the sub trees with roots v1, v2, v3, … vk in that order. 2. Visit the root r."
+ },
+ {
+  "t": "h2",
+  "x": "In-order Traversal"
+ },
+ {
+  "t": "p",
+  "x": "An in-order traversal is defined recursively as follows: 1. Visit in in-order the left sub tree of the root ‘r’. 2. Visit ‘r’. 3. Visit in inorder the right sub tree of r."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the given tree"
+ },
+ {
+  "t": "p",
+  "x": "C D E B A What are the pre-order, post-order and in-order traversals of the above tree?"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: Pre-order – CBADE"
+ },
+ {
+  "t": "h1",
+  "x": "Data Structure"
+ },
+ {
+  "t": "p",
+  "x": "A data structure is a way to store and organize data in-order to facilitate access and modifications. No single data structure works well for all purposes, it is important to know the strengths and limitations of several data structures."
+ },
+ {
+  "t": "h2",
+  "x": "Efficiency"
+ },
+ {
+  "t": "p",
+  "x": "Algorithms devised to solve the same problem often differ dramatically in their efficiency. Let us compare efficiencies of Insertion sort and merge sort; insertion sort, takes time equal to C1n2 to sort ‘n’ elements, where C1 is a constant that does not depend on ‘n’. It takes time proportional to n2, merge sort takes time equal to C2nlog n, C2 is another constant that also does not depend on ‘n’. Insertion sort has a smaller constant factor than merge sort (C1 < C2) constant factors are far less significant in the running time. (c) Merge sort has a factor of ‘log n’ in its running time, insertion sort has a factor of ‘n’, which is much larger. Insertion sort is faster than merge sort for small input sizes, once the input size ‘n’ becomes large enough, merge sort will perform better. No matter how much smaller C1 is than C2. There will always be a crossover point beyond which merge sort is faster."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider 2 computers, computer A (faster"
+ },
+ {
+  "t": "p",
+  "x": "computer), B (slower computer). Computer A runs insertion sort and computer B runs merge sort. Each computer is given 2 million numbers to sort. Suppose that computer A executes one billion instruction per second and computer B executes only 10 million instructions per second, computer A is 100 times faster than computer B (C1 = 4, C2 = 50). How much time is taken by both the computers?"
+ },
+ {
+  "t": "h2",
+  "x": "Solution: Insertion sort takes C1 * n2 time"
+ },
+ {
+  "t": "p",
+  "x": "Merge sort takes C2 * n * log n time C1 = 4, C2 = 50 Computer A takes 2 10 instructions 10 instructions/second seconds × × ≅ ( )2 Computer B takes = × × × × 2 10 2 10 log( )insturctions instructions/second = 209 seconds By using an algorithm whose running time grows more slowly, even with an average compiler, computer B runs 20 times faster than computer A. The advantage of merge sort is even more pronounced when we sort ten million numbers. As the problem size increases, so does the relative advantage of merge sort."
+ },
+ {
+  "t": "h2",
+  "x": "Worst-case and average-case analysis"
+ },
+ {
+  "t": "p",
+  "x": "In the analysis of insertion sort, the best case occurs when the array is already sorted and the worst case, in which the input array is reversely sorted. We concentrate on finding the worst-caserunning time, that is the longest running time for any input of size ‘n’."
+ },
+ {
+  "t": "li",
+  "x": "The worst-case running time of an algorithm is an upper bound on the running time for any input. It gives us a guarantee that the algorithm will never take any longer."
+ },
+ {
+  "t": "li",
+  "x": "The ‘average-case’ is as bad as the worst-case. Suppose that we randomly choose ‘n’ numbers and apply insertion sort. To insert an element A[j], we need to determine where to insert in sub-array A [1 … J – 1]. On average half the elements in A[1 … J – 1] are less than A[j] and half the elements are greater. So tj = j/2. The average-case running time turns out to be a quadratic function of the input size."
+ },
+ {
+  "t": "h1",
+  "x": "Asymptotic Notations"
+ },
+ {
+  "t": "p",
+  "x": "Asymptotic notations are mostly used in computer science to describe the asymptotic running time of an algorithm. As an example, an algorithm that takes an array of size n as input and runs for time proportional to n2 is said to take O(n2) time. 5 Asymptotic Notations:"
+ },
+ {
+  "t": "li",
+  "x": "O (Big-oh)"
+ },
+ {
+  "t": "li",
+  "x": "q (Theta)"
+ },
+ {
+  "t": "li",
+  "x": "W (Omega)"
+ },
+ {
+  "t": "li",
+  "x": "o (Small-oh)"
+ },
+ {
+  "t": "h2",
+  "x": "for Algorithm Analysis?"
+ },
+ {
+  "t": "p",
+  "x": "Asymptotic notation is used to determine rough estimates of relative running time of algorithms. A worst-case analysis of any algorithm will always yeild such an estimate, because it gives an upper bound on the running time T(n) of the algorithm, that is T(n) g(n)."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "a ← 0 1 unit 1 time for i ← 1 to n do{ 1 unit n times for j ← 1 to i do{ 1 unit n(n + 1)/2 times a ← a + 1 1 unit n(n +1)/2 times Where the times for the inner loop have been computed as follows: For each i from 1 to n, the loop is executed i times, so the total number of times is ⟨eq⟩ Hence in this case T(n) ⟨eq⟩ 2n (n +1)/2 = n2 + 2n + 1 If we write g(n) = n2 + 2n + 1, then T(n) ∈ q(g(n)), That is T(n) ∈q(n2 + 2n + 1), we actually write T(n) ∈q(n2), as recommended by the following rule:"
+ },
+ {
+  "t": "li",
+  "x": "Although the definitions of asymptotic notation allow one to write, for example, T(n) ∈ O(3n2 + 2)."
+ },
+ {
+  "t": "p",
+  "x": "We simplify the function in between the parentheses as much as possible (in terms of rate of growth), and write instead T(n) ∈ O(n2) For example: T(n) ∈ q(4n3 – n2 + 3) T(n) ∈ q(n3) For instanceO ⟨eq⟩ write O(n2) after computing the sum."
+ },
+ {
+  "t": "li",
+  "x": "In the spirit of the simplicity rule above, when we are to compare, for instance two candidate algorithms A and B having running times (TA(n) = n2 – 3n + 4 and TB(n) = 5n3 + 3, rather than writing TA(n) ∈ O(TB(n)), we write TA(n) ∈ q(n2), and TB(n) ∈ q(n3), and then we conclude that A"
+ },
+ {
+  "t": "p",
+  "x": "is better than B, using the fact that n2(quadratic) is better than n3(cubic) time, since n2 ∈ O(n3)."
+ },
+ {
+  "t": "h2",
+  "x": "Order of Growth"
+ },
+ {
+  "t": "p",
+  "x": "In the rate of growth or order of growth, we consider only the leading term of a formula. Suppose the worst case running time of an algorithm is an2 + bn + c for some constants a, b and c. The leading term is an2. We ignore the leading term’s constant coefficient, since constant factors are less significant than the rate of growth in determining computational efficiency for large inputs. Thus we can write, the worst-case running time is q(n2). We usually consider one algorithm to be more efficient than another if its worst-case running time has a lower order of growth. Due to constant factors and lower order terms, this evaluation may be in error for small inputs. But for large inputs, q(n2) algorithm will run more quickly in the worst-case than q(n3) algorithm."
+ },
+ {
+  "t": "h2",
+  "x": "q-Notation"
+ },
+ {
+  "t": "p",
+  "x": "A function f (n) belongs to the set q(g(n)) if there exists a positive constant C1 and C2 such that it can be “sand witched” between C1g(n) and C2g(n) for sufficiently large n. We write f (n) ∈ q (g(n)) to indicate that f (n) is a member of q (g(n)) or we can write f (n) = q (g(n)) to express the same notation. C2g(n) C1g(n) n0 n f(n) The above figure gives an intuitive picture of functions f (n) and g(n), where we have that f (n) = q (g(n)), for all the values of ‘n’ to the right of no, the value of f (n) lies at or above C1g(n) and at or below C2g(n). g(n) is asymptotically tight bound for f (n). The definition of q(g(n)) requires that every member f (n) ∈ q(g(n)) be asymptotically non-negative, that is f (n) must be non-negative whenever ‘n’ is sufficiently large. The q-notation is used for asymptotically bounding a function from both above and below. We would use q(theta) notation to represent a set of functions that bounds a particular function from above and below. Definition: We say that a function f (n) is theta of g(n) written as f (n) = q(g(n)) if such exists positive constants C1, C2 and n0 such that 0 ≤ C1g(n) ≤ f (n) ≤ C2 g(n), ∀ n ≥ n0. Example: Let f (n) = 5.5n2 – 7n, verify whether f (n) is q(n2). Lets have constants c1 = 9 and n0 = 2, such that 0 ≤ f (n) ≤ C1 n2, ∀n ≥ n0. From example, 4 we have constants C2 = 3, and n0 = 2.8, such that 0 ≤ C2 n2 ≤ f (n), ∀n ≥ n0. To show f (n) is q(n2), we have got hold of two constants C1 and C2. We fix the n0 for q as maximum {2, 2.8} = 2.8."
+ },
+ {
+  "t": "li",
+  "x": "The lower order terms of an asymptotically positive function can be ignored in determining asymptotically tight bounds because they are insignificant for large n."
+ },
+ {
+  "t": "li",
+  "x": "A small fraction of the highest order term is enough to dominate the lower order term. Thus setting C1 to a value that is slightly smaller than the coefficient of the highest order term and setting C2 to a value that is slightly larger permits the inequalities in the definition of q-notation to be satisfied. If we take a quadratic function f (n) = an2 + bn + c, where a, b and c are constants and a > 0. Throwing away the lower order terms and ignoring the constant yields f (n) = q (n2)."
+ },
+ {
+  "t": "li",
+  "x": "We can express any constant function as q(n0), or q(1) we shall often use the notation q(1) to mean either a constant or a constant function with respect to some variable."
+ },
+ {
+  "t": "h2",
+  "x": "O-Notation"
+ },
+ {
+  "t": "p",
+  "x": "We use O-notation to give an upper bound on a function, within a constant factor. n0 n Cg(n) f(n) The above figure shows the intuition behind O-notation. For all values ‘n’ to the right of n0, the value of the function f (n) is on or below g(n). We write f (n) = O(g(n)) to indicate that a function f (n) is a member of the set O(g(n)). f (n) = q(g(n)) implies f (n) = O(g(n)). Since q notation is stronger notation than O-notation set theoretically, we have q(g(n)) ⊆ O(g(n)). Thus any quadratic function an2 + bn + c, where a > 0, is in q(n2) also shows that any quadratic function is in O(n2) when we write f (n) = O(g(n)), we are claiming that some constant multiple of g(n) is an asymptotic upper bound on f (n), with no claim about how tight an upper bound it is. The O-notation is used for asymptotically upper bounding a function. We would use O (big-oh) notation to represent a set of functions that upper bounds a particular function. Definition We say that a function f (n) is big oh of g(n) written as f (n) = O(g(n)) if there exists positive constants C and n0 such that 0 ≤ f (n) ≤ Cg(n), ∀ n ≥ no"
+ },
+ {
+  "t": "h2",
+  "x": "Solved Examples"
+ },
+ {
+  "t": "p",
+  "x": "Example 1: let f (n) = n2 Then f (n) = O(n2) f (n) = O(n2log n) f (n) = O(n2.5) f (n) = O(n3) f (n) = O(n4) … so on. Example 2: Let f (n) = 5.5n2 – 7n, verity whether f (n) is O(n2)"
+ },
+ {
+  "t": "h2",
+  "x": "Example 3:"
+ },
+ {
+  "t": "li",
+  "x": "Using O-notation, we can describe the running time of an algorithm by inspecting the algorithm’s overall structure. For example, the doubly nested loop structure of the insertion sort algorithm yields an O(n2) upper bound on the worst-case running time. The cost of each iteration of the inner loop is bounded from above by O(1) (constant), the inner loop is executed almost once for each of the n2 pairs."
+ },
+ {
+  "t": "li",
+  "x": "O(n2) bound on worst-case running time of insertion sort also applies to its running time on every input."
+ },
+ {
+  "t": "li",
+  "x": "The q(n2) bound on the worst-case running time of insertion sort, however, does not imply a q(n2) bound on the running time of insertion sort on every input, when the input is already sorted, insertion sort runs in q(n) time."
+ },
+ {
+  "t": "h2",
+  "x": "W (omega)-notation"
+ },
+ {
+  "t": "p",
+  "x": "n0 n Cg(n) f(n) The W-notation is used for asymptotically lower bounding a function. We would use Ω(big-omega) notation to represent a set of functions that lower bounds a particular function. Definition We say that a function f (n) is big-omega of g(n) written as f (n) = Ω(g(n)) if there exists positive constants C and n0 such that 0 ≤ Cg(n) ≤ f (n) , ∀ n ≥ n0 The intuition behind Ω-notation is shown in the above figure. For all values ‘n’ to the right of n0, the value of f (n) is on or above Cg(n). For any 2 functions f (n) and g(n) we have f (n) = q(g(n)) if f (n) = O(g(n)) and f (n) = Ω(g(n)). From the above statement we can say that, an2 + bn + c = q(n2) for any constants a, b and c, where a > 0, immediately implies that \\ an2 + bn + c = Ω(n2) \\ an2 + bn + c = O(n2) Example 4: Let f (n) = 5.5n2 - 7n. Verity whether f (n) is W(n2) Solution: Let C be a constant such that 5.5n2 – 7n ≥ Cn2 or ⟨eq⟩ 5. .Fix C = 3, to get n ≥ 2.8. So, our n0 = 2.8 and C = 3 This shows that there exists positive constants C = 3 and n0 = 2.8, such that 0 ≤ Cn2 ≤ f (n), ∀n ≥ n0. n0 0 ≤ f(n) ≤ Cg(n), ∀ n ≥ n0 f(n) Cg(n) (a) f (n) = O(g(n)) n0 0 ≤ Cg(n) ≤ f(n), ∀ n ≥ n0 f(n) Cg(n) (b) f (n) = W(g(n)) n0 0 ≤ C2g(n) ≤ f(n) ≤ C1g(n), ∀ n ≥ n0 C1g(n) C2g(n) f(n) (c) f (n) = q(g(n))"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 7 A diagrammatic representation of the asymptotic notations"
+ },
+ {
+  "t": "li",
+  "x": "W-notation describes a lower bound; it is used to bound the best-case running time of an algorithm. The best-case running time of insertion sort is W(n). The running time of insertion sort falls between W(n) and O(n2), since it falls anywhere between a linear function of ‘n’ and a quadratic function of ‘n’."
+ },
+ {
+  "t": "li",
+  "x": "When we say that the running time of an algorithm is W(g(n)), we mean that no matter what particular input of size ‘n’ is chosen for each value of n, the running time on that input is at least a constant times g(n), for sufficiently large ‘n’."
+ },
+ {
+  "t": "h2",
+  "x": "O-notation"
+ },
+ {
+  "t": "p",
+  "x": "The asymptotic upper bound provided by O-notation may or may not be asymptotically tight. The bound 2n3 = O(n3) is asymptotically tight, but the bound 2n = O(n2) is not. We use O-notation to denote an upper bound that is not asymptotically tight."
+ },
+ {
+  "t": "h2",
+  "x": "ω -notation"
+ },
+ {
+  "t": "p",
+  "x": "By analogy, w-notation is to W-notation as o-notation is to O-notation. We use w-notation to denote a lower bound that is not asymptotically tight. It is defined as f (n) ∈ w(g(n)) if and only if g(n) ∈ o(f (n))"
+ },
+ {
+  "t": "h2",
+  "x": "Transpose symmetry"
+ },
+ {
+  "t": "h1",
+  "x": "Notations and Functions"
+ },
+ {
+  "t": "h2",
+  "x": "Floor and Ceil"
+ },
+ {
+  "t": "p",
+  "x": "For any real number ‘x’, we denote the greatest integer less than or equal to x by x called as floor of x and the least integer greater than or equal to x by x called as ceiling of x. ⟨eq⟩ for any integer n, ⟨eq⟩ For any real number n ≥ 0 and integer a, b > 0 n a b n ab = n a b n ab ="
+ },
+ {
+  "t": "h2",
+  "x": "Polynomials"
+ },
+ {
+  "t": "p",
+  "x": "Given a non-negative integer k, a polynomial in n of degree ‘k’ is a function p(n) of the form ⟨eq⟩ Where the constants a0, a1, … ak are the coefficients of the polynomial and ak ≠ 0. For an asymptotically positive polynomial p(n) of degree k, we have p(n) = q(nk)"
+ },
+ {
+  "t": "h2",
+  "x": "Exponentials"
+ },
+ {
+  "t": "p",
+  "x": "For all real a > 0, m and n, we have the following identities: a0 = 1 a1 ⟨eq⟩ (am)n = amn (am)n = (an)m aman = am+n ⟨eq⟩ ! ! !"
+ },
+ {
+  "t": "li",
+  "x": "For all real x, we have inequality ex ⟨eq⟩"
+ },
+ {
+  "t": "li",
+  "x": "If x = 0, we have ⟨eq⟩ ex ⟨eq⟩ x2"
+ },
+ {
+  "t": "h2",
+  "x": "Logarithms"
+ },
+ {
+  "t": "p",
+  "x": "lg n = log2n (binary logarithm) ln n = logen (natural logarithm) lgk n = (log n)k (exponentiation) lg lg n = lg (lg n) (composition) For all real a > 0, b > 0, c > 0 and n, logc (ab) = logca + logcb log log b n b a n a = log log log b c c a a b = logb (1/a) = –logba log log b a a b = a c b c b a log log ="
+ },
+ {
+  "t": "h2",
+  "x": "Factorials"
+ },
+ {
+  "t": "p",
+  "x": "n! is defined for integers n ≥ 0 as n n n n n ! ( )!* ⟨eq⟩ if A weak upper bound on the factorial function is n! ≤ nn since each of the n terms in the factorial product is almost n. n! = o(nn) n! = w(2n) lg (n!) = q(n log n)"
+ },
+ {
+  "t": "h2",
+  "x": "Iterated Logarithm"
+ },
+ {
+  "t": "p",
+  "x": "The notation lg*n is used to denote the iterated logarithm. Let ‘lg(i) n’ be as defined above, with f (n) = lg n. The logarithm of a non-positive number is undefined, ‘lg(i) n’ is defined only if lg(i–1) n > 0; The iterated logarithm function is defined as lg*n = min {i ≥ 0 : lg(i) n ≤ 1}. This function is a very slowly growing function. lg*2 = 1 lg*4 = 2 lg*16 = 3 lg*65536 = 4 lg*(265536) = 5"
+ },
+ {
+  "t": "h1",
+  "x": "Recurrences"
+ },
+ {
+  "t": "p",
+  "x": "When an algorithm contains a recursive call to itself, its running time can often be described by a recurrence. A recurrence is an equation that describes a function in terms of its value on smaller inputs. For example, the worst-case running time T(n) of the merge-sort can be described as T(n) = q (1) if n = 1 2T (n/2) + q (n) if n > 1 The time complexity of merge-sort algorithm in the worstcase is T(n) = q(n log n) There are 3 methods to solve recurrence relations: 1. Substitution method 2. Recursion-tree method 3. Master method"
+ },
+ {
+  "t": "h2",
+  "x": "Substitution Method"
+ },
+ {
+  "t": "p",
+  "x": "In this method one has to guess the form of the solution. It can be applied only in cases when it is easy to guess the form of the answer. Consider the recurrence relation T(n) = 2T(n/2) + n We guess that the solution is T(n) = O(n log n) we have to prove that T(n) ≤ c n log n (\\ c > 0) Assume that this bound holds for n/2 T(n/2) ≤ c(n/2). log (n/2) + n T(n) ≤ 2(c(n/2 log (n/2)) + n ≤ cn log n – cn log2 + n ≤ cn log n – cn + n ≤ cn log (\\ c ≥ 1)"
+ },
+ {
+  "t": "h2",
+  "x": "Recursion-tree Method"
+ },
+ {
+  "t": "p",
+  "x": "In a recursion-tree, each node represents the cost of single sub problem somewhere in the set of recursive function invocations. We sum the costs within each level of the tree to obtain a set of per-level costs, and then we sum all the per-level costs to determine the total cost of all levels of the recursion. Recursion trees are useful when the recurrence describes the running time of a divide-and-conquer algorithm."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Consider the given recurrence relation T(n) = 3T (n/4) + q(n2) We create a recursion tree for the recurrence T(n) = 3T(n/4) + Cn2 Cn2 T(n/4) T(n/4) T(n/4) The Cn2 term at the root represents the cost at the top level of recursion, and the three sub trees of the root represent the costs incurred by the sub problems of size n/4. Cn2 C(n/4)2 C(n/4)2 C(n/4)2 T(n/16) T(n/16) T(n/16) T(n/16) T(n/16) T(n/16)T(n/16) T(n/16) T(n/16) Figure 8 Recursion tree for T(n) = 3T (n/4) + cn2 Cn 2 C (n/4)2 C (n/16)2 C (n/16)2 C(n/16)2 C (n/16)2 C (n/16)2 C(n/16)2 C (n/16)2 C (n/16)2 C (n/16)2 C (n/4)2 C (n/4)2 T(1) T(1) T(1) T(1) T(1) T(1) T(1) T(1) T(1) T(1) T(1) T(1) T(1) T(1) T(1) T(1)"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 9 Expanded Recursion tree with height log4"
+ },
+ {
+  "t": "p",
+  "x": "n (\\ levels log4 n + 1) The sub-problem size for a node at depth ‘i’ is n/4i, at this depth, the size of the sub-problem would be n = 1, when n/4i = 1 or i = log4 n, the tree has log4 n+1 levels."
+ },
+ {
+  "t": "li",
+  "x": "We have to determine the cost at each level of the tree."
+ },
+ {
+  "t": "p",
+  "x": "Each level has 3 times more nodes than the level above, so the number of nodes at depth ‘i’ is 3i."
+ },
+ {
+  "t": "li",
+  "x": "Sub problem sizes reduce by a factor of ‘4’ for each level we go down from the root, each node at depth i, for i = 0, 1, 2 … log4 n–1, has a cost of c(n/4i)2."
+ },
+ {
+  "t": "p",
+  "x": "Total cost over all nodes at depth i, for i = 0, 1, … log4 n–1 ⟨eq⟩ cn * The last level, at depth log4 n has 3i nodes = 3log n = nlog 3 each contributing cost T(1), for a total cost of nlog 3 T(1), which is q (nlog 3) cost of the entire tree is equal to sum of costs over all levels. T n cn cn cn ⟨eq⟩ log log ( ) n cn n θ ⟨eq⟩ cn n log log ( ) θ ⟨eq⟩ cn n θ( ) log ⟨eq⟩ log cn n θ ⟨eq⟩ log cn n O n θ"
+ },
+ {
+  "t": "h2",
+  "x": "Master Method"
+ },
+ {
+  "t": "p",
+  "x": "Let a ≥ 1 and b > 1 be cons-tants, let f (n) be a function and let T(n) be defined on the non-negative integers by the recurrence T(n) = aT(n/b) + f (n) T(n) can be bounded asymptotically as follows 1. If f (n) = O(nlog b a–∈) for some constant ∈ > 0, then T(n) = q(nlog b a) 2. If f (n) = q(nlog b a) then T(n) = q(nlog b a. log n) 3. If f (n) = W(nlog b a+∈) for some constant ∈ > 0, and if af (n/b) ≤ cf (n) for some constant c < 1 and all sufficiently large n, then T(n) = q (f (n)). Note: In the first case, not only must f (n) be smaller than n logb a, it must be polynomially smaller. That is, f (n) must be asymptotically smaller than nlog b a by a factor of n∈, for some constant ∈ > 0. In the third case, not only must f (n) be larger than nlog b a, it must be polynomially larger and in addition satisfy the regularity condition af (n/b) ≤ Cf (n)."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the given recurrence relation T(n)"
+ },
+ {
+  "t": "p",
+  "x": "= 9T(n/3) + n. To apply master theorem, the recurrence relation must be in the following form: T(n) = aT(n/b) + f (n) a = 9, b = 3, f (n) = n nlog b a = nlog 9 = n2 Since f (n) = O(nlog 9–∈), where ∈ = 1 We can apply case 1 of the master theorem and the solution is T(n) = q(n2)."
+ },
+ {
+  "t": "h1",
+  "x": "Sorting Algorithms"
+ },
+ {
+  "t": "h2",
+  "x": "Purpose of sorting"
+ },
+ {
+  "t": "p",
+  "x": "Sorting is a technique which reduces problem complexity and search complexity."
+ },
+ {
+  "t": "li",
+  "x": "Insertion sort takes q (n2) time in the worst case. It is a fast inplace sorting algorithm for small input sizes."
+ },
+ {
+  "t": "li",
+  "x": "Merge sort has a better asymptotic running time q (n log n), but it does not operate in inplace."
+ },
+ {
+  "t": "li",
+  "x": "Heap sort, sorts ‘n’ numbers inplace in q (n log n) time, it uses a data structure called heap, with which we can also implement a priority queue."
+ },
+ {
+  "t": "li",
+  "x": "Quick sort also sorts ‘n’ numbers in place, but its worst – case running time is q (n2). Its average case is q (n log n). The constant factor in quick sort’s running time is small, This algorithm performs better for large input arrays."
+ },
+ {
+  "t": "li",
+  "x": "Insertion sort, merge sort, heap sort, and quick sort are all comparison based sorts; they determine the sorted order of an inputarray by comparing elements."
+ },
+ {
+  "t": "li",
+  "x": "We can beat the lower bound of W (n log n) if we can gather information about the sorted order of the input by means other than comparing elements."
+ },
+ {
+  "t": "li",
+  "x": "The counting sort algorithm, assumes that the input numbers are in the set {1, 2, …. k}. By using array indexing as a tool for determining relative order, counting sort can sort n numbers in q (k + n) time. Thus counting sort runs in time that is linear in size of the input array."
+ },
+ {
+  "t": "li",
+  "x": "Radix sort can be used to extend the range of counting sort. If there are ‘n’ integers to sort, each integer has ‘d’ digits, and each digit is in the set {1, 2,… k}, then radix sort can sort the numbers in q (d (n + k)) time. Where ‘d’ is constant. Radix sort runs in linear time."
+ },
+ {
+  "t": "li",
+  "x": "Bucket sort, requires knowledge of the probabilistic distribution of numbers in the input array."
+ },
+ {
+  "t": "h1",
+  "x": "Merge Sort"
+ },
+ {
+  "t": "p",
+  "x": "Suppose that our division of the problem yields ‘a’ sub problems, each of which is b th size of the original problem. For merge sort, both a and b are 2, but sometimes a ≠ b. If we take D(n) time to divide the problem into sub problems and C(n) time to combine the solutions of the sub problems into the solution to the original problem. The recurrence relation for merge sort is T n n aT ⟨eq⟩ θ1 if c, / otherwise Running time is broken down as follows: Divide: This step computes the middle of the sub array, which takes constant time q (1). Conquer: We solve 2 sub problems of size (n/2) each recursively which takes 2T(n/2) time. Combine: Merge sort procedure on an n-element sub array takes time q (n). Sorting algorithms Merge sort Bubble sort Insertion sort Selection sort Selection sort algorithm Binary search trees Heap sort Sorting–performing delete max operations Max-heap property Min-heap property Priority queues"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "li",
+  "x": "Worst case running time T(n) of merge sort T n n aT n n if n ( ) ( ) ( ) ( ) = ≤ + >    0 1 if / θ log n cn cn cn cn cn cn cn cn cn cn c c c c c c c c cn Total: cn log n + cn Figure 1 Recurrence tree"
+ },
+ {
+  "t": "p",
+  "x": "The top level has total cost ‘cn’, the next level has total cost c(n/2) + c(n/2) = cn and the next level has total cost c(n/4) + c(n/4) + c(n/4) + c(n/4) = cn and so on. The ith level has total cost 2i c (n/2i) = cn. At the bottom level, there are ‘n’ nodes, each contributing a cost of c, for a total cost of ‘cn’. The total number of levels of the ‘recursion tree’ is log n + 1. There are log n + 1 levels, each costing cn, for a total cost of cn (log n + 1) = cn log n + cn ignoring the low–order term and the constant c, gives the desired result of q (n log n)."
+ },
+ {
+  "t": "h1",
+  "x": "Bubble Sort"
+ },
+ {
+  "t": "p",
+  "x": "Bubble sort is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted, comparing each pair of adjacent items, and swapping them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted. The algorithm gets its name from the way smaller elements ‘bubble’ to the top of the list. Example: Take the array of numbers ‘5 1 4 2 8’and sort the array from lowest number to greatest number using bubble sort algorithm. In each step, elements underlined are being compared."
+ },
+ {
+  "t": "h2",
+  "x": "First pass:"
+ },
+ {
+  "t": "p",
+  "x": "(5 1 4 2 8) → (1 5 4 2 8), here algorithm compares the first 2 elements and swaps them (1 5 4 2 8) → (1 4 5 2 8), swap (5 > 4) (1 4 5 2 8) → (1 4 2 5 8), swap (5 > 2) (1 4 2 5 8) → (1 4 2 5 8), since these elements are already in order, algorithm does not swap them."
+ },
+ {
+  "t": "h2",
+  "x": "Second pass:"
+ },
+ {
+  "t": "p",
+  "x": "(1 4 2 5 8) → (1 4 2 5 8) (1 4 2 5 8) → (1 2 4 5 8), swap since (4 > 2) (1 2 4 5 8) → (1 2 4 5 8) (1 2 4 5 8) → (1 2 4 5 8) The array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted."
+ },
+ {
+  "t": "h2",
+  "x": "Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "void bubblesort (int a [ ], int n) { int i, j, temp; for (i=0; i < n-1; i++) { for (j=0; j < n – 1 – i; j++) if (a [j] > a [j + 1]) { temp = a [j + 1]; a [j + 1] = a [j]; a [j] = temp; } } }"
+ },
+ {
+  "t": "h1",
+  "x": "Insertion Sort"
+ },
+ {
+  "t": "p",
+  "x": "Insertion sort is a comparison sort in which the sorted array is built one entry at a time. It is much less efficient on large lists than more advanced algorithms such a quick sort, heap sort, (or) merge sort. Insertion sort provides several advantages."
+ },
+ {
+  "t": "li",
+  "x": "Efficient for small data sets."
+ },
+ {
+  "t": "li",
+  "x": "Adaptive, i.e., efficient for data set that are already substantially sorted. The complexity is O(n + d), where d is the number of inversions."
+ },
+ {
+  "t": "li",
+  "x": "More efficient in practice than most other simple quadratic, i.e., O(n2) algorithms such as selection sort (or) bubble sort, the best case is O(n)."
+ },
+ {
+  "t": "li",
+  "x": "Stable, i.e., does not change the relative order of elements with equal keys."
+ },
+ {
+  "t": "li",
+  "x": "In-place i.e., only requires a constant amount O(1) of additional memory space."
+ },
+ {
+  "t": "li",
+  "x": "Online, i.e., can sort a list as it receives it."
+ },
+ {
+  "t": "h2",
+  "x": "Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "Insertion sort (A) For (j ← 2) to length [A] Do key ← A [j] i ←j – 1; While i > 0 and A [i] > key { Do A [i + 1] ← A [i] i ← ⟨eq⟩ [i + 1] ← key Every repetition of insertion sort removes an element from the input data, inserting it into the correct position in the already sorted list, until no input element remains. Sorting is typically done in–place. The resulting array after K iterations has the property where the first k + 1 entries are sorted. In each iteration the first remaining entry of the input is removed, inserted into the result at the correct position, with each element greater than X copied to the right as it is compared against. X."
+ },
+ {
+  "t": "h2",
+  "x": "Performance"
+ },
+ {
+  "t": "li",
+  "x": "The best case input is an array that is already sorted. In this case insertion sort has a linear running time (i.e., q (n))."
+ },
+ {
+  "t": "li",
+  "x": "The worst case input is an array sorted in reverse order."
+ },
+ {
+  "t": "p",
+  "x": "In this case every iteration of the inner loop will scan and shift the entire sorted subsection of the array before inserting the next element. For this case insertion sort has a quadratic running time (O(n2))."
+ },
+ {
+  "t": "li",
+  "x": "The average case is also quadratic, which makes insertion sort impractical for sorting large arrays, however, insertion sort is one of the fastest algorithms for sorting very small arrays even faster than quick sort."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Following figure shows the operation of"
+ },
+ {
+  "t": "p",
+  "x": "insertion sort on the array A = (5, 2, 4, 6, 1, 3). Each part shows what happens for a particular iteration with the value of j indicated. j indexes the ‘Current card’ being inserted. j j j j j Read the figure row by row. Elements to the left of A[ j] that are greater than A[ j] move one position to the right and A[ j] moves into the evacuated position."
+ },
+ {
+  "t": "h1",
+  "x": "Selection Sort"
+ },
+ {
+  "t": "p",
+  "x": "Selection sort is a sorting algorithm, specifically an in-place comparison sort. It has O(n2) complexity, making it inefficient on large lists. The algorithm works as follows: 1. Find the minimum value in the list. 2. Swap it with the value in the first position. 3. Repeat the steps above for the remainder of the list (starting at the second position and advancing each time)."
+ },
+ {
+  "t": "h2",
+  "x": "Analysis"
+ },
+ {
+  "t": "p",
+  "x": "Selection sort is not difficult to analyze compared to other sorting algorithms, since none of the loops depend on the data in the array selecting the lowest element requires scanning all n elements (this takes n – 1 comparisons) and then swapping it into the first position. Finding the next lowest element requires scanning the remaining n – 1 elements and so on, for (n – 1) + (n – 2) + … ⟨eq⟩ n(n – 1)/2 ∈ q(n2) comparisons. Each of these scans requires one swap for n – 1 elements (the final element is already in place)."
+ },
+ {
+  "t": "h2",
+  "x": "Selection sort Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "First, the minimum value in the list is found. Then, the first element (with an index of 0) is swapped with this value. Lastly, the steps mentioned are repeated for rest of the array (starting at the 2nd position). Example 1: Here’s a step by step example to illustrate the selection sort algorithm using numbers."
+ },
+ {
+  "t": "h2",
+  "x": "Original array: 6 3 5 4 9 2 7"
+ },
+ {
+  "t": "p",
+  "x": "1st pass → 2 3 5 4 9 6 7 (2 and 6 were swapped) 2nd pass → 2 3 5 4 9 6 7 (no swap) 3rd pass → 2 3 4 5 9 6 7 (4 and 5 were swapped) 4th pass → 2 3 4 5 6 9 7 (6 and 9 were swapped) 5th pass → 2 3 4 5 6 7 9 (7 and 9 were swapped) 6th pass → 2 3 4 5 6 7 9 (no swap) Note: There are 7 keys in the list and thus 6 passes were required. However, only 4 swaps took place. Example 2: Original array: LU, KU, HU, LO, SU, PU 1st pass → HU, KU, LU, LO, SU, PU 2nd pass → HU, KU, LU, LO, SU, PU 3rd pass → HU, KU, LO, LU, SU, PU 4th pass → HU, KU, LO, LU, SU, PU 5th pass → HU, KU, LO, LU, PU, SU Note: There were 6 elements in the list and thus 5 passes were required. However, only 3 swaps took place."
+ },
+ {
+  "t": "h1",
+  "x": "Binary Search Trees"
+ },
+ {
+  "t": "p",
+  "x": "Search trees are data structures that support many dynamic, set operations, including SEARCH, MINIMUM, MAXIMUM, PREDECESSOR, SUCCESSOR, INSERT and DELETE. A search tree can be used as a dictionary and as a priority Queue. Operations on a binary search tree take time proportional to the height of the tree. For a complete binary tree with ‘n’ nodes, basic operations run in q(log n) worst-case time. If the tree is a linear chain of ‘n’ nodes, the basic operations take q(n) worst-case time. A binary search tree is organized, in a binary tree such a tree can be represented by a linked data structure in which each node is an object. In addition to key field, each node contains fields left, right and P that point to the nodes corresponding to its left child, its right child, and its parent, respectively. If the child (or) parent is missing, the appropriate field contains the value NIL. The root node is the only node in the tree whose parent field is NIL."
+ },
+ {
+  "t": "h2",
+  "x": "Binary search tree property"
+ },
+ {
+  "t": "p",
+  "x": "The keys in a binary search tree are always stored in such a way as to satisfy the binary search tree property. Let ‘a’ be a node in a binary search tree. If ‘b’ is a node in the left sub tree of ‘a’, key [b] ≤ key [a] If ‘b’ is a node in the right sub tree of ‘a’ then key [a] ≤ key [b]. 9 14 Figure 2 Binary search tree. The binary search tree property allows us to print out all keys in a binary search tree in sorted order by a simple recursive algorithm called an inorder tree."
+ },
+ {
+  "t": "h2",
+  "x": "Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "INORDER-TREE-WALK (root [T ]) INORDER-TREE-WALK (a) 1. If a ≠ NIL 2. Then INORDER-TREE-WALK (left [a]) 3. Print key [a] 4. INORDER-TREE-WALK (right [a]) It takes q(n) time to walk an n-node binary search tree, since after the initial call, the procedure is called recursively twice for each node in the tree. Let T(n) denote the time taken by IN-ORDER-TREEWALK, when it is called on the root of an n-node subtree. INORDER-TREE-WALK takes a small, constant amount of time on an empty sub-tree (for the test x ≠ NIL). So T(1) = C for some positive constant C. For n > 0, suppose that INORDER-TREE-WALK is called on a node ‘a’ whose left subtree has k nodes and whose right subtree has n – k – 1 nodes. The time to perform in order traversal is T(n) = T(k) + T(n – k – 1) + d. For some positive constant ‘d’ that reflects the time to execute in-order (a), exclusive of the time spent in recursive calls T(n) = (c + d) n + c. For n = 0, we have (c + d) ⟨eq⟩ T(0), For n > 0, T(n) = T(k) + T(n – k – 1) + d = ((c + d)(k + c) + ((c + d) (n – k – 1) + c) + d = (c + d) n + c – (c + d) ⟨eq⟩ (c + d)n + c"
+ },
+ {
+  "t": "h1",
+  "x": "Heap Sort"
+ },
+ {
+  "t": "p",
+  "x": "Heap sort begins by building a heap out of the data set, and then removing the largest item and placing it at the end of the partially sorted array. After removing the largest item, it reconstructs heap, removes the largest remaining item, and places, it in the next open position from the end of the partially sorted array. This is repeated until there are no items left in the heap and the sorted array is full. Elementary implementations require two arrays one to hold the heap and the other to hold the sorted elements."
+ },
+ {
+  "t": "li",
+  "x": "Heap sort inserts the input list elements into a binary heap data structure. The largest value (in a max-heap) or the smallest value (in a min-heap) is extracted until none remain, the value having been extracted in sorted order."
+ },
+ {
+  "t": "p",
+  "x": "Example: Given an array of 6 elements: 15, 19, 10, 7, 17, 16, sort them in ascending order using heap sort."
+ },
+ {
+  "t": "h2",
+  "x": "Steps:"
+ },
+ {
+  "t": "p",
+  "x": "1. Consider the values of the elements as priorities and build the heap tree. 2. Start delete Max operations, storing each deleted element at the end of the heap array. If we want the elements to be sorted in ascending order, we need to build the heap tree in descending order-the greatest element will have the highest priority. 1. Note that we use only array, treating its parts differently, 2. When building the heap-tree, part of the array will be considered as the heap, and the rest part-the original array. 3. When sorting, part of the array will be the heap and the rest part-the sorted array. Here is the array: 15, 19, 10, 7, 17, 6."
+ },
+ {
+  "t": "h2",
+  "x": "Building the Heap Tree"
+ },
+ {
+  "t": "p",
+  "x": "The array represented as a tree, which is complete but not ordered. Start with the right most node at height 1 – the node at position 3 = size/2. It has one greater child and has to be percolated down. After processing array [3] the situation is: Next comes array [2]. Its children are smaller, so no percolation is needed. The last node to be processed is array[1]. Its left child is the greater of the children. The item at array [1] has to be percolated down to the left, swapped with array [2]. As a result: The children of array [2] are greater and item 15 has to be moved down further, swapped with array [5]. Now the tree is ordered, and the binary heap is built."
+ },
+ {
+  "t": "h2",
+  "x": "Delete the top element"
+ },
+ {
+  "t": "p",
+  "x": "Store 19 in a temporary place, a hole is created at the top. Swap 19 with the last element of the heap. As 10 will be adjusted in the heap, its cell will no longer be a part of the heap. Instead it becomes a cell from the sorted array Percolate down the hole Percolate once more (10 is less than 15, so it cannot be inserted in the previous hole) Now 10 can be inserted in the hole Repeat the step B till the array is sorted."
+ },
+ {
+  "t": "h2",
+  "x": "Heap sort analysis"
+ },
+ {
+  "t": "p",
+  "x": "Heap sort uses a data structure called (binary) heap binary, heap is viewed as a complete binary tree. An Array A that represents a heap is an object with 2 attributes: length [A], which is the number of elements in the array and heap size [A], the number of elements in the heap stored within array A. No element past A [heap size [A]], where heap size [A] ≤ length [A], is an element of the heap. There are 2 kinds of binary heaps: 1. Max-heaps 2. Min-heaps In both kinds the values in the nodes satisfy a heap-property. Max-heap property A[PARENT (i)] ≥A[i] The value of a node is almost the value of its parent. Thus the largest element in a max-heap is stored at the root, and the sub tree rooted at a node contains values no larger than that contained at the node itself. Min-heap property For every mode ‘i’ other than the root [PARENT (i)] ≤ A[i]. The smallest element in a min-heap is at the root. Max-heaps are used in heap sort algorithm. Min-heaps are commonly used in priority queues. Basic operations on heaps run in time almost proportional to the height of the tree and thus take O(log n) time"
+ },
+ {
+  "t": "li",
+  "x": "MAX-HEAPIFY procedure, runs in O(log n) time."
+ },
+ {
+  "t": "li",
+  "x": "BUILD-MAX-HEAP procedure, runs in linear time."
+ },
+ {
+  "t": "li",
+  "x": "HEAP SORT procedure, runs in O(n log n) time, sorts an array in place."
+ },
+ {
+  "t": "li",
+  "x": "MAX-HEAP-INSERT HEAPEXTRACT-MAX HEAP-INCREASE-KEY HEAP-MAXIMUM All these procedures, run in O(log n) time, allow the heap data structure to be used as a priority queue."
+ },
+ {
+  "t": "li",
+  "x": "Each call to MAX-HEAPIFY costs O(log n) time, and there are O(n) such calls. Thus, the running time is O(n log n)"
+ },
+ {
+  "t": "li",
+  "x": "The HEAPSORT procedure takes time O(n log n), since the call to BUILD-MAX-HEAP takes time O(n) and each of the (n1) calls to MAX-HEAPIFY takes time O(log n)."
+ },
+ {
+  "t": "h2",
+  "x": "Priority Queues"
+ },
+ {
+  "t": "p",
+  "x": "The most popular application of a heap is its use as an efficient priority queue. A priority queue is a data structure for maintaining a set S of elements, each with an associated value called a key. A max-priority queue supports the following operations: INSERT: INSERT (s, x) inserts the element x into the set S. This operation can be written as S ← S U {x}. MAXIMUM: MAXIMUM (S) returns the element of S with the largest key EXTRACT-MAX: EXTRACT-MAX(S) removes and returns the element of S with the largest key. INCREASE-KEY: INCREASE-KEY(s, x, k) increases the value of element x’s key to the new value k, which is assumed to be atleast as large as x’s current key value. One application of max–priority queue is to schedule jobs on a shared computer."
+ },
+ {
+  "t": "h1",
+  "x": "Divide-And-Conquer"
+ },
+ {
+  "t": "p",
+  "x": "Divide-and-conquer is a top down technique for designing algorithms that consists of dividing the problem into smaller sub problems hoping that the solutions of the sub problems are easier to find and then composing the partial solutions into the solution of the original problem. Divide-and-conquer paradigm consists of following major phases:"
+ },
+ {
+  "t": "li",
+  "x": "Breaking the problem into several sub-problems that are similar to the original problem but smaller in size."
+ },
+ {
+  "t": "li",
+  "x": "Solve the sub-problem recursively (successively and independently)"
+ },
+ {
+  "t": "li",
+  "x": "Finally, combine these solutions to sub-problems to create a solution to the original problem."
+ },
+ {
+  "t": "h2",
+  "x": "Divide-and-Conquer Examples"
+ },
+ {
+  "t": "li",
+  "x": "Sorting: Merge sort and quick sort"
+ },
+ {
+  "t": "li",
+  "x": "Binary tree traversals"
+ },
+ {
+  "t": "li",
+  "x": "Binary Search"
+ },
+ {
+  "t": "li",
+  "x": "Multiplication of large integers"
+ },
+ {
+  "t": "li",
+  "x": "Matrix multiplication: Strassen’s algorithm"
+ },
+ {
+  "t": "li",
+  "x": "Closest-pair and Convex-hull algorithm"
+ },
+ {
+  "t": "h1",
+  "x": "Merge Sort"
+ },
+ {
+  "t": "p",
+  "x": "Merge sort is a sorting algorithm for rearranging lists (or any other data structure that can only be accessed sequentially, e.g., file streams) into a specified order. Merge sort works as follows: 1. Divide the unsorted list into two sub lists of about half the size. 2. Sort each of the two sub lists. A problem of size n Sub-problem 1 of size n/2 Sub-problem 2 of size n/2 A solution to subproblem 1 A solution to subproblem 2 A solution to the original problem Figure 1 Divide-and-conquer technique. 3. Merge the two sorted sub lists back into one sorted list 4. The key of merge sort is merging two sorted lists into one, such that if we have 2 lists X(x1 ≤ x2 ≤ x3 … ≤ xm) and Y (y1 ≤ y2 ≤ y3 … ≤ yn) the resulting list is z (z1 ≤ z2 ≤ … ≤ zm+n) Example 1: L1 = {3, 8, 9}, L2 = {1, 5, 7} Merge (L1, L2) = {1, 3, 5, 7, 8, 9} Divide-and-conquer Divide-and-conquer examples Divide-and-conquer technique Merge sort Quick sort Performance of quick sort Recurrence relation Searching Linear search Binary search"
+ },
+ {
+  "t": "h2",
+  "x": "Implementing Merge Sort"
+ },
+ {
+  "t": "p",
+  "x": "Merging is done with a temporary array of the same size as the input array. Pro: Faster than in-place since the temp array holds the resulting array until both left and right sides are merged into the temp array then the temp array is appended over the input array."
+ },
+ {
+  "t": "h2",
+  "x": "Con: The memory required is doubled. The double mem-"
+ },
+ {
+  "t": "p",
+  "x": "ory merge sort runs O(N log N) for all cases, because of its Divide-and-conquer approach. T(N) = 2T(N/2) + N = O(N log N)"
+ },
+ {
+  "t": "h1",
+  "x": "Quick Sort"
+ },
+ {
+  "t": "p",
+  "x": "Quick sort is an example of Divide-and-conquer strategy. In Quick sort we divide the array of items to be sorted into two partitions and then call the quick sort procedure recursively to sort the two partitions, i.e., we divide the problem into two smaller ones and conquer by solving the smaller ones. The conquer part of the quick sort routine looks like this <Pivot >Pivot Low Pivot High Make bold <Pivot 1 >Pivot 1 >Pivot Low Pivot 1 Pivot High Divide: Partition the array A [p -r] into 2 sub arrays A [p -q – 1] and A [q + 1 -r] such that each element of A [p -q – 1] is less than or equal to A[q], which is, in turn, less than or equal to each element of A [q + 1 -r] Conquer: Sort the 2 sub arrays A [p − q – 1] and A [q + 1 − r] by recursive calls to quick sort. Combine: Since the sub arrays are sorted inplace, no work is needed to combine them. Sort left partition in the same way. For this strategy to be effective, the partition phase must ensure that the pivot, is greater than all the items in one part (the lower part) and less than all those in the other (upper) part. To do this, we choose a pivot element and arrange that all the items in the lower part are less than the pivot and all those in the upper part are greater than it. In the general case, the choice of pivot element is first element. (Here number of elements/2 is pivot) Quick sort (A, 1, 12) 38 81 22 48 13 69 93 14 45 58 79 72 14 58 22 48 13 38 45 69 93 81 79 72 Quick sort (A, 1, 7) 38 58 22 48 13 14 45 38 45 22 14 13 48 58 Quick sort (A, 9, 12) 93 81 79 72 72 79 81 93 quick sort (A, 1, 5) 38 45 22 14 13 13 14 22 45 38 quick sort (A, 9, 10) 72 79 72 79 quick sort (A, 1, 2) 13 14 13 14 quick sort (A, 4, 5) 45 38 38 45 Figure 2 Tree of recursive calls to quick sort."
+ },
+ {
+  "t": "li",
+  "x": "Quick sort is a sorting algorithm with worst case running time O(n2) on an input array of n numbers. Inspite of this slow worst case running time, quick sort is often the best practical choice for sorting because it is efficient on the average: its expected running time is O(n log n) and the constants hidden in the O-notation are quite small"
+ },
+ {
+  "t": "li",
+  "x": "Quick sort algorithm is fastest when the median of the array is chosen as the pivot element. This is because the resulting partitions are of very similar size. Each partition splits itself in two and thus the base case is reached very quickly."
+ },
+ {
+  "t": "h2",
+  "x": "Performance of Quick Sort"
+ },
+ {
+  "t": "li",
+  "x": "Running time of quick sort depends on whether the partitioning is balanced or unbalanced, it depends on which elements are used for partitioning. If the partitioning is balanced, the algorithm runs asymptotically as fast as merge sort. If the partitioning is unbalanced, it runs as slowly as insertion sort."
+ },
+ {
+  "t": "li",
+  "x": "The worst case of quick sort occurs when the partitioning routine produces one sub-problem with n – 1 elements and one with ‘1’ element. If this unbalanced partitioning arises in each recursive call, the partitioning costs q (n) time."
+ },
+ {
+  "t": "h2",
+  "x": "Recurrence Relation"
+ },
+ {
+  "t": "p",
+  "x": "T(n) = T(n – 1) + T(1) + q (n) (\\ T(0) = q (1)) = T(n – 1) + q (n) If we sum the costs incurred at each level of the recursion we get an arithmetic series, which evaluates to q (n2)."
+ },
+ {
+  "t": "li",
+  "x": "Best case partitioning–PARTITION produces 2 sub problems, each of size no more than n/2, since one is of size n/2   and one of size n/   – The recurrence for the running time is then T(n) ≤ 2T(n/2) + q(n)"
+ },
+ {
+  "t": "p",
+  "x": "The above Recurrence relation has the solution T(n) = O(n log n) by case 2 of the master theorem."
+ },
+ {
+  "t": "li",
+  "x": "The average–case time of quick sort is much closer to the best than to the worst case For example, that the partitioning algorithm always pro-"
+ },
+ {
+  "t": "p",
+  "x": "duces a 8-to-2 proportional split, which at first seems unbalanced. The Recurrence relation will be T(n) ≤ T(8n/10) + T(2n/10) + cn The recursion tree for this recurrence has cost ‘cn’ at every level, until a boundary condition is reached at depth log10n = q (log n). The recursion terminates at depth log10/8n=q(log n). The total cost of quick sort is O(n log n)"
+ },
+ {
+  "t": "h1",
+  "x": "Searching"
+ },
+ {
+  "t": "li",
+  "x": "Linear search"
+ },
+ {
+  "t": "li",
+  "x": "Binary search"
+ },
+ {
+  "t": "h2",
+  "x": "Linear Search"
+ },
+ {
+  "t": "p",
+  "x": "Linear search (or) sequential search is a method for finding a particular value in list that consists of checking every one of its elements, one at a time and in sequence, until the desired one is found. Linear search is a special case of brute force search. Its worst case cost is proportional to the number of elements in the list."
+ },
+ {
+  "t": "h2",
+  "x": "Implementation"
+ },
+ {
+  "t": "p",
+  "x": "boolean linear search (int [ ] arr, int target) { int i = 0; while (i < arr. length) { if (arr [i] = = target){ return true; } + + i; } return false; }"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Consider the array –4 Search for 3 –4 3? Move to next element –4 3? Move to next element –4 3? Move to next element –4 3? Element found; stop the search."
+ },
+ {
+  "t": "h2",
+  "x": "Binary Search"
+ },
+ {
+  "t": "p",
+  "x": "A binary search algorithm is a technique for finding a particular value in a linear array, by ruling out half of the data at each step; a binary search finds the median, makes comparison, to determine whether the desired value comes before or after it, and then searches the remaining half in the same manner. A binary search is an example of Divide-and-conquer algorithm."
+ },
+ {
+  "t": "h2",
+  "x": "Implementation"
+ },
+ {
+  "t": "p",
+  "x": "function binary search (a, value, left, right) { if right < left return not found mid: = floor ((right –left)/2) + left if a [mid] = value return mid if value < a[mid] return binary search (a, value, left, mid –1) else return binary search (a, value, mid + 1, right) }"
+ },
+ {
+  "t": "h2",
+  "x": "Example: Value being searched 123"
+ },
+ {
+  "t": "p",
+  "x": "234 567 677 986 First, mid, last (6) 234 567 677 986 First (1) mid(5) Last(10) 234 567 677 986 First (6) mid(8) Last(10) 234 567 677 986 First (6) Mid (6) Last(7)"
+ },
+ {
+  "t": "h1",
+  "x": "Greedy Approach"
+ },
+ {
+  "t": "p",
+  "x": "In a greedy method, we attempt to construct an optimal solution in stages."
+ },
+ {
+  "t": "li",
+  "x": "At each stage we make a decision that appears to be the best (under some criterion) at the time."
+ },
+ {
+  "t": "li",
+  "x": "A decision made at one stage is not changed in a later stage, so each decision should assure feasibility."
+ },
+ {
+  "t": "li",
+  "x": "Some problems that use greedy approach are: 1. Knapsack problem 2. Minimum spanning tree 3. Prims algorithm 4. Kruskals algorithm"
+ },
+ {
+  "t": "h1",
+  "x": "Knapsack Problem"
+ },
+ {
+  "t": "p",
+  "x": "The knapsack problem is a problem in combinatorial optimization: given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible. We have n kinds of items, 1 through n. Each kind of item i has a value Viand a weight Wi,usually assume that all values and weights are non-negative. The maximum weight that we can carry in the bag is W. Greedy approach Knapsack problem Fractional knapsack problem Spanning trees Prim's algorithm Kruskal's algorithm Tree and graph traversals Back tracking Graph traversal Breadth ﬁ rst traversal Depth ﬁ rst search Huffman codes Task-scheduling problem Sorting and order statistics Simultaneous minimum and maximum Graph algorithms"
+ },
+ {
+  "t": "h2",
+  "x": "Example 1: (Making change)"
+ },
+ {
+  "t": "p",
+  "x": "Problem: Accept n dollars, to return a collection of coins with a total value of n dollars. Configuration: A collection of coins with a total value of n. Objective function: Minimize number of coins returned. Greedy solution: Always return the largest coin you can."
+ },
+ {
+  "t": "li",
+  "x": "Coins are valued $.30, $.020, $0.05, $0.01 use a greedy choice property and make $.40 by using 3 coins."
+ },
+ {
+  "t": "h2",
+  "x": "Fractional Knapsack Problem"
+ },
+ {
+  "t": "p",
+  "x": "Given: A set S of n items, with each item i having"
+ },
+ {
+  "t": "li",
+  "x": "bi -a positive benefit"
+ },
+ {
+  "t": "li",
+  "x": "wi -a positive weight"
+ },
+ {
+  "t": "p",
+  "x": "Goal: Choose items with maximum total benefit but with weight atmost W. If we are allowed to take fractional amounts, then this is the fractional knapsack problem."
+ },
+ {
+  "t": "li",
+  "x": "In this case, let xi denote the amount we take of item i."
+ },
+ {
+  "t": "li",
+  "x": "Objective: Maximize b x w i i i i S ( ) / ∈∑"
+ },
+ {
+  "t": "li",
+  "x": "Constraint: x W i i S ≤ ∈∑"
+ },
+ {
+  "t": "h2",
+  "x": "Example 2:"
+ },
+ {
+  "t": "p",
+  "x": "Items Weight 4 ml 8 ml 2 ml 6 ml 1 ml Benefit $12 $32 $40 $30 $50 Value ($ per ml) “Knapsack” 10 ml Solution: 1 ml of 5, 2 ml of 3, 6 ml of 4, 1 ml of 2"
+ },
+ {
+  "t": "li",
+  "x": "Greedy choice: Keep taking item with highest value (benefit to weight ratio)."
+ },
+ {
+  "t": "li",
+  "x": "Correctness: suppose there is a better solution, there is an item i with higher value than a chosen item j. (i.e., vj < vi). If we replace some j with i, we get a better solution."
+ },
+ {
+  "t": "p",
+  "x": "Thus there is no better solution than the greedy one. N = 3, m = 20 (P1, P2, P3) = (25, 24, 15) (W1, W2, W3) = (18, 15, 10)"
+ },
+ {
+  "t": "h2",
+  "x": "S Pi Xi"
+ },
+ {
+  "t": "p",
+  "x": "1. 1/2 1/3 1/4 ⟨eq⟩ 2.5 = 16.5 12.5 + 8 + 3.75 = 24.25 2. 1 2/15 ⟨eq⟩ 3.2 + 0 = 28.2 3. 0 2/3 ⟨eq⟩ 4. 0 1 1/2 ⟨eq⟩ 7.5 = 31.5 (1), (2), (3), (4) are feasible ones but (4) is the optimum solution."
+ },
+ {
+  "t": "h1",
+  "x": "Spanning Trees"
+ },
+ {
+  "t": "p",
+  "x": "A spanning tree of a graph is just a sub graph that contains all the vertices and is a tree. A graph may have many spanning trees."
+ },
+ {
+  "t": "li",
+  "x": "A sub graph that spans (reaches out to) all vertices of a graph is called a spanning sub graph."
+ },
+ {
+  "t": "li",
+  "x": "A sub graph that is a tree and that spans all vertices of the original graph is called a spanning tree."
+ },
+ {
+  "t": "li",
+  "x": "Among all the spanning trees of a weighted and connected graph, the one (possibly more) with the least total weight is called a Minimum Spanning Tree (MST)."
+ },
+ {
+  "t": "h1",
+  "x": "Prim’s Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "Prim’s algorithm is a greedy algorithm that finds a minimum spanning tree for a connected weighted undirected graph. This means it finds a subset of the edges that forms a tree that includes every vertex, where the total weight of all the edges in the tree is minimized. The algorithm continuously increases the size, of a tree, one edge at a time starting with a tree consisting of a single vertex, until it spans all vertices."
+ },
+ {
+  "t": "li",
+  "x": "Using a simple binary heap data structure and an adjacency list representation, prim’s algorithm can be shown to run in time O(E log V) where E is the number of edges and V is the number of vertices."
+ },
+ {
+  "t": "h2",
+  "x": "Start:"
+ },
+ {
+  "t": "p",
+  "x": "Iteration 1: U = {1, 3} Iteration 2: U = {1, 3, 6} Iteration 3: U = {1, 3, 6, 4} Iteration 4: U = {1, 3, 6, 4, 2} Iteration 5: U = {1, 3, 6, 4, 2, 5} Figure 1 An example graph for illustrating prim’s algorithm."
+ },
+ {
+  "t": "h1",
+  "x": "Kruskal’s Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "Like prim’s algorithm, Kruskal’s algorithm also constructs the minimum spanning tree of a graph by adding edges to the spanning tree one-by-one. At all points, during its execution the set of edges selected by prim’s algorithm forms exactly one tree. On the other hand the set of edges selected by Kruskal’s algorithm forms a forest of trees. Kruskals algorithm is conceptually simple. The edges are selected and added to the spanning tree in increasing order of their weights. An edge is added to the tree only if it does not create a cycle."
+ },
+ {
+  "t": "h2",
+  "x": "Start:"
+ },
+ {
+  "t": "p",
+  "x": "Initial configuration Setp 1: choose (1, 3) Setep 2: choose (4, 6) Setep 3: choose (2, 5) Setep 4: choose (3, 6) Setep 6: choose (4, 3)"
+ },
+ {
+  "t": "h1",
+  "x": "Tree and Graph Traversals"
+ },
+ {
+  "t": "h2",
+  "x": "Back Tracking"
+ },
+ {
+  "t": "p",
+  "x": "Backtracking is a general algorithm technique that considers searching every possible combination in order to solve an optimization problem. Backtracking is also known as depth first search (or) branch and bound. Backtracking is an important tool for solving constraint satisfaction problems, such as crosswords, verbal arithmetic, sudoku and many other puzzles. It is often the more convenient technique for parsing, for the knapsack problem and other combinational optimization problems."
+ },
+ {
+  "t": "li",
+  "x": "The advantage of backtracking algorithm is that they are complete, that is they are guaranteed to find every solution to every possible puzzle."
+ },
+ {
+  "t": "h2",
+  "x": "Graph Traversal"
+ },
+ {
+  "t": "p",
+  "x": "To traverse a graph is to process every node in the graph exactly once, because there are many paths leading from one node to another, the hardest part about traversing a graph is making sure that you do not process some node twice. There are general solutions to this difficulty. 1. When you first encounter a node, mark it as REACHED. When you visit a node, check if it is marked REACHED, if it is, just ignore it. This is the method our algorithms will use. 2. When you process a node, delete it from the graph. Deleting the node causes the deletion of all the arcs that lead to the node, so it will be impossible to reach it more than once."
+ },
+ {
+  "t": "h2",
+  "x": "General traversal strategy"
+ },
+ {
+  "t": "p",
+  "x": "1. Mark all nodes in the graph as NOT REACHED, 2. Pick a starting node, mark it as REACHED, and place it on the READY list. 3. Pick a node on the READY list. Process it remove it from READY. Find all its neighbors, those that are NOT REACHED should marked as REACHED and added to READY. 4. Repeat 3 until READY is empty."
+ },
+ {
+  "t": "h2",
+  "x": "Step I:"
+ },
+ {
+  "t": "p",
+  "x": "⟨eq⟩ NOT REACHED Step II: READY = {A} . A = REACHED Step III: Process A. READY = {B, C}. ⟨eq⟩ REACHED Step IV: Process C. READY = {B, D}. D = REACHED Step V: Process B. READY = {D} Step VI: Process D. READY = { } The two most common traversal patterns are"
+ },
+ {
+  "t": "li",
+  "x": "Breadth first traversal"
+ },
+ {
+  "t": "li",
+  "x": "Depth first traversal"
+ },
+ {
+  "t": "h2",
+  "x": "Breadth First Traversal"
+ },
+ {
+  "t": "p",
+  "x": "In breadth first traversal, READY is a QUEUE, not an arbitrary list. Nodes are processed in the order they are reached (FIFO), this has the effect of processing nodes according to their distance from the initial node. First, the initial node is processed. Then all its neighbors are processed. Then all of the neighbors etc."
+ },
+ {
+  "t": "li",
+  "x": "Since a graph has no root, we must specify the vertex at which to start the traversal."
+ },
+ {
+  "t": "li",
+  "x": "Breadth first tree traversal first visits all the nodes at depth zero (i.e., the root) then all the nodes at depth 1, and so on."
+ },
+ {
+  "t": "h2",
+  "x": "Procedure"
+ },
+ {
+  "t": "p",
+  "x": "First, the starting vertex is enqueued. Then, the following steps are repeated until the queue is empty. 1. Remove the vertex at the head of the queue and call it vertex. 2. Visit vertex 3. Follow each edge emanating from vertex to find the adjacent vertex and call it ‘to’. If ‘to’ has not already been put into the queue, enqueued it. Notice, that a vertex can be put into the queue at most once. Therefore, the algorithm must some how keep track of the vertices that have been enqueued."
+ },
+ {
+  "t": "h2",
+  "x": "Procedure for BFS for undirected graph G(V, E)"
+ },
+ {
+  "t": "p",
+  "x": "To perform BFS over a graph, the data structures required are queue (Q) and the visited set (Visited), ‘V ’ is the starting vertex."
+ },
+ {
+  "t": "h2",
+  "x": "Procedure for BFS(V)"
+ },
+ {
+  "t": "p",
+  "x": "Steps 1. Visit the vertex ‘V’ 2. Enqueue the vertex V 3. while (Q is not Empty) (i) V = dequeue (); (ii) for all vertices J adjacent to V (a) if not visited (J)"
+ },
+ {
+  "t": "li",
+  "x": "Enqueue (J)"
+ },
+ {
+  "t": "li",
+  "x": "Visit the vertex ‘J’"
+ },
+ {
+  "t": "li",
+  "x": "end while"
+ },
+ {
+  "t": "h2",
+  "x": "Depth First Search"
+ },
+ {
+  "t": "p",
+  "x": "A depth first traversal of a tree always starts at the root of the tree. Since a graph has no root, when we do a depth first traversal, we must specify the vertex at which to begin. A depth first traversal of a tree visits a node and then recursively visits the sub trees of that node similarly, depth first traversal of a graph visits a vertex and then recursively visits all the vertices adjacent to that node. A graph may contain cycles, but the traversal must visit every vertex at most once. The solution to the problem is to keep track of the nodes that have been visited."
+ },
+ {
+  "t": "h2",
+  "x": "Procedure for DFS for undirected graph G(V, E)"
+ },
+ {
+  "t": "p",
+  "x": "To perform DFS over a graph, the data structures required are stack (S) and the list (visited), ‘V ’ is the start vertex."
+ },
+ {
+  "t": "h2",
+  "x": "Procedure for DFS(V)"
+ },
+ {
+  "t": "p",
+  "x": "Steps 1. push the start vertex ‘V ’ into the stack S 2. while (S is not empty) (i) pop a vertex V (ii) if ‘V ’ is not visited (a) visit the vertex (b) Store ‘V ’ in visited (c) push all the adjacent vertices of ‘V ’ in to visited (iii) End if 3. End while 4. Stop."
+ },
+ {
+  "t": "h2",
+  "x": "Figure 3 Depth first search"
+ },
+ {
+  "t": "li",
+  "x": "Let us compare two traversal orders on the following graph: A B C D H G F E"
+ },
+ {
+  "t": "p",
+  "x": "Initial steps: READY = [A]. process A. READY = [B, E ]. process B. It is at this point that two traversal strategies differ. Breadth first adds B’s neighbors to the back of READY, depth first adds them to the front."
+ },
+ {
+  "t": "h2",
+  "x": "Breadth first"
+ },
+ {
+  "t": "li",
+  "x": "READY = [E, C, G]"
+ },
+ {
+  "t": "li",
+  "x": "Process E. READY = [C, G, F]"
+ },
+ {
+  "t": "li",
+  "x": "Process C. READY = [G, F, D]"
+ },
+ {
+  "t": "li",
+  "x": "Process G .READY = [F, D, H]"
+ },
+ {
+  "t": "li",
+  "x": "Process F. READY = [D, H]"
+ },
+ {
+  "t": "li",
+  "x": "Process D. READY = [H]"
+ },
+ {
+  "t": "h2",
+  "x": "Depth First"
+ },
+ {
+  "t": "li",
+  "x": "READY = [C, G, E]"
+ },
+ {
+  "t": "li",
+  "x": "Process C. READY = [D, G, E]"
+ },
+ {
+  "t": "li",
+  "x": "Process D. READY = [G, E]"
+ },
+ {
+  "t": "li",
+  "x": "Process G. READY = [H, F, E]"
+ },
+ {
+  "t": "li",
+  "x": "Process H. READY = [F, E]"
+ },
+ {
+  "t": "li",
+  "x": "Process F. READY = [E]"
+ },
+ {
+  "t": "h1",
+  "x": "Connected Components"
+ },
+ {
+  "t": "p",
+  "x": "A graph is said to be connected if every pair of vertices in the graph are connected. A connected component is a maximal connected sub graph of ‘G’. Each vertex belongs to exactly one connected component as does each edge."
+ },
+ {
+  "t": "li",
+  "x": "A graph that is not connected is naturally and obviously decomposed into several connected components (Figure 4). Depth first search does this handily. Each restart of the algorithm marks a new connected component."
+ },
+ {
+  "t": "li",
+  "x": "The directed graph in (Figure 5) is “Connected” Part of it can be “Pulled apart” (so to speak, without “breaking” any edges)."
+ },
+ {
+  "t": "li",
+  "x": "Meaningful way to define connectivity in directed graph is: ‘Two nodes U and V of a directed graph G = (V, E) con-"
+ },
+ {
+  "t": "p",
+  "x": "nected if there is a path from U to V ’, and one from V to U. This relation between nodes is reflective, symmetric and transitive. As such, it partitions V into disjoint sets, called the strongly connected components of the graph. In the directed graph of figure 2 there are four strongly connected components. Figure 4 Undirected graph. Figure 5 A directed graph and its strongly connected components If we shrink each of these strongly connected components down to a single node and draw an edge between two of them if there is an edge from some node in the first to some node in the second, the resulting directed graph has to be a directed acyclic graph (DAG) – it has no cycles (figure 6). The reason is simple. A cycle containing several strongly connected components would merge them all to a single strongly connected component. 2-4-5 3-6 7-8-9-10-11-12 Every directed graph is a DAG of its strongly connected components."
+ },
+ {
+  "t": "h1",
+  "x": "Huffman Codes"
+ },
+ {
+  "t": "p",
+  "x": "For compressing data, a very effective and widely used technique is Huffman coding. We consider the data to be a sequence of characters. Huffmans’s greedy algorithm uses a table of the frequencies of occurrence of the characters to build up an optimal way of representing each character as a binary string. Example: Suppose we have a 1,00,000 – character data file, that we wish to store compactly. The characters in the file occur with the frequencies given below: Character a b c d e f Frequency Solution: Two methods are used for compression of data are:"
+ },
+ {
+  "t": "h2",
+  "x": "Fixed Length Coding"
+ },
+ {
+  "t": "li",
+  "x": "Arrange all the characters in sequence (no particular order is followed)"
+ },
+ {
+  "t": "h2",
+  "x": "Step III:"
+ },
+ {
+  "t": "p",
+  "x": "⟨eq⟩ We interpret the binary code word for a character as the path from the root to that character where ‘0’ means ‘go to the left child’, and 1 means ‘go to the right child’. The above tree is not binary search tree, since the leaves need not appear in sorted order."
+ },
+ {
+  "t": "h2",
+  "x": "Constructing Huffman Code"
+ },
+ {
+  "t": "p",
+  "x": "This algorithm builds the tree T corresponding to the optimal code in a bottom-up manner. It begins with set of |C| leaves and performs a sequence of |C|-1 ‘merging’ operations to create the final tree."
+ },
+ {
+  "t": "li",
+  "x": "A min-priority queue Q, keyed on f, is used to identify the 2 least – frequent objects to merge together. The result of the merger of 2 objects is a new object whose frequency is the sum of the frequencies of the 2 objects that were merged."
+ },
+ {
+  "t": "li",
+  "x": "In the given example, there are 6 alphabets the initial queue size is n = 6, and 5 merge steps are required to build the tree. The final tree represents the optimal prefix code. The code word for a letter is the sequence of edge labels on the path from the root to the letter."
+ },
+ {
+  "t": "h2",
+  "x": "Step I: \u0007Arrange the characters in non-decreasing order"
+ },
+ {
+  "t": "p",
+  "x": "according to their frequencies ⟨eq⟩ Let x and y be 2 characters in C having the lowest frequencies. Then there exists an optimal prefix code for C in which the code words for x and y have the same length and differ only in the last bit ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Analysis: The analysis of the running time of Huffman’s"
+ },
+ {
+  "t": "p",
+  "x": "algorithm assumes that Q is implemented as a binary minheap for a set C of ‘n’ characters, the initialization of Q can be performed in O(n) time using the BUILD – MIN HEAP procedure. Each heap operation requires O(log n) time, and this will be performed exactly (n - 1) times, it contributes to O(n logn ) running time. Thus the total running time of HUFFMAN on a set of ‘n’ characters is O(n log n)."
+ },
+ {
+  "t": "h1",
+  "x": "Task-scheduling problem"
+ },
+ {
+  "t": "p",
+  "x": "This is the problem of optimally scheduling unit – time tasks on a single processor, where each task has a deadline, along with a penalty that must be paid if the deadline is missed. The problem looks complicated, but it can be solved in simple manner using a greedy algorithm."
+ },
+ {
+  "t": "li",
+  "x": "A unit – time task is a job, such as a program to be run on a computer, that requires exactly one unit of time to complete."
+ },
+ {
+  "t": "li",
+  "x": "Given a finite set S of unit – time tasks, a schedule for S is a permutation of S specifying the order in which these tasks are to be performed."
+ },
+ {
+  "t": "li",
+  "x": "The first task in the schedule begins at time ‘0’ and finishes at time 1, the second task begins at time 1 and finishes at time 2, and so on"
+ },
+ {
+  "t": "li",
+  "x": "The problem of scheduling unit – time tasks with deadlines and penalties for a single processor has the following inputs: 1. A set S = {a1, a2, … an} of n unit – time tasks: 2. A set of n integer deadlines d1, d2, … dn such that each di satisfies 1 ≤ di ≤ n and task ai is supposed to finish by time di."
+ },
+ {
+  "t": "p",
+  "x": "3. A set of n non-negative weights or penalties w1, w2, … wn, such that we incur a penalty of wi if task ai is not finished by time di and we incur no penalty if a task finishes by its deadline. Example: Consider the following 7 tasks, T1, T2, T3, T4, T5 T6, T7. Every task is associated with profit and deadline. Tasks T1 T2 T3 T4 T5 T6 T7 Deadline Profit T4 T2 T3 T1 T7 T1 has highest profit, so it will be executed first and the deadline of T1, is ‘4’ so T1 has to be executed within 4 slots of time, same procedure is applied to other tasks also. The tasks which are not executed by CPU are T5 and T6. Profit: sum up the profits made by executing the tasks. Profit ⟨eq⟩ Analysis: We can use a greedy algorithm to find a maximum weight independent set of tasks. We can then create an optimal schedule having the tasks in A as its early tasks. This method is an efficient algorithm for scheduling unit – time tasks with deadlines and penalties for a single processor. The running time is O(n2) using GREEDY METHOD, since each of the O(n) independent checks made by that algorithm takes time O(n)."
+ },
+ {
+  "t": "h1",
+  "x": "Sorting and Order Statistics"
+ },
+ {
+  "t": "h2",
+  "x": "Minimum and Maximum"
+ },
+ {
+  "t": "p",
+  "x": "This algorithm determines, how many comparisons are necessary to find minimum or maximum of a set of ‘n’ elements. Usually we can obtain maximum or minimum, by performing (n -1) comparisons; examine each element of the set in turn and keep track of the smallest element seen so far. Consider the following procedure. Assume that the set of elements reside in an array A where length [A] = n MINIMUM (A) Min ← A[1] For i ←2 to length [A] Do if min > A [i] Then min ← A [i] Return min."
+ },
+ {
+  "t": "h2",
+  "x": "Simultaneous minimum and maximum"
+ },
+ {
+  "t": "p",
+  "x": "In some applications, we must find both the minimum and the maximum of a set of ‘n’ elements. We can find the minimum and maximum independently using (n - 1) comparisons for each, for a total of (2n – 2) comparisons."
+ },
+ {
+  "t": "li",
+  "x": "In fact, atmost 3 n/   comparisons are sufficient to find both the minimum and the maximum."
+ },
+ {
+  "t": "li",
+  "x": "The strategy is to maintain the minimum and maximum elements seen so far."
+ },
+ {
+  "t": "li",
+  "x": "Rather than processing each element of the input by comparing it against the current minimum and maximum at a cost of 2 comparisons per element, we process elements in pairs."
+ },
+ {
+  "t": "li",
+  "x": "Compare pairs of elements from the input with each other, and then we compare smaller to the current minimum and the larger to the current maximum, at a cost of 3 comparisons for every 2 elements."
+ },
+ {
+  "t": "li",
+  "x": "Setting up initial values for the current minimum and maximum depends on whether ‘n’ is odd or even. If ‘n’ is odd, we set both the minimum and maximum to the value of the first element, and then we process the rest of the elements in pairs."
+ },
+ {
+  "t": "li",
+  "x": "If ‘n’ is even, we perform 1 comparison on the first 2 elements to determine the initial values of the minimum and maximum and then process the rest of the elements in pairs."
+ },
+ {
+  "t": "p",
+  "x": "Analysis: If ‘n’ is odd the total number of comparisons would be 3 n/ . If ‘n’ is even, we need 1 initial comparison followed by ⟨eq⟩ comparisons, for a total of ⟨eq⟩ \\ The total number of comparisons is atmost 3 n/"
+ },
+ {
+  "t": "h1",
+  "x": "Graph Algorithms"
+ },
+ {
+  "t": "h2",
+  "x": "Single Source Shortest Path"
+ },
+ {
+  "t": "p",
+  "x": "In a shortest-path problem, we are given a weighted directed graph G = (V, E) with weight function W : E →R mapping edges to real-valued weights. The weight of path P = < VO, V1 … VK> is the sum of the weights of its constituent edges. Shortest-path weight from U to V is defined by δ( , ) to otherwise {min{ ( ): }if there is a path from ⟨eq⟩ Edge weights can be interpreted as metrics other than distances. They are often used to represent time, cost, penalties, loss, or any other quantity."
+ },
+ {
+  "t": "li",
+  "x": "The breadth first search algorithm is a shortest-path algorithm that works on un weighted graphs, that is, graphs in which each edge can be considered to have unit weight."
+ },
+ {
+  "t": "h2",
+  "x": "Negative-weight edges"
+ },
+ {
+  "t": "p",
+  "x": "Some of the instances of the single-source-shortest-paths problem, there may be edges whose weights are negative."
+ },
+ {
+  "t": "li",
+  "x": "If the graph G = (V, E) contains no negative weight cycles reachable from source S, then for all v ∈ V, the shortest – path weight d(S, V ) remains well defined, even if it has a negative value."
+ },
+ {
+  "t": "li",
+  "x": "If there is a negative-weight cycle reachable from S, shortest-path weights are not well defined."
+ },
+ {
+  "t": "li",
+  "x": "No path from ‘S’ to a vertex on the cycle can be a shortest path - a lesser weight path can always be found that follows the proposed ‘shortest’ path and then traverses the negative-weight cycle."
+ },
+ {
+  "t": "li",
+  "x": "If there is a negative-weight cycle on some path form ‘S’ to ‘V’, we define d(S,V) = -∞."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the following graph, calculate the"
+ },
+ {
+  "t": "p",
+  "x": "shortest distance to all vertices from sources ‘S’. a S c d g e f b −5 −5 −2 h i j −7"
+ },
+ {
+  "t": "h2",
+  "x": "Solution:"
+ },
+ {
+  "t": "li",
+  "x": "Shortest path from S to a is d(S, a) = W(S, a) = 4 (because there is only one path from ‘S’ to ‘a’)"
+ },
+ {
+  "t": "li",
+  "x": "Similarly, there is only one path from ‘s’ to ‘b’"
+ },
+ {
+  "t": "li",
+  "x": "Shortest-path from ‘s’ to ‘c’"
+ },
+ {
+  "t": "p",
+  "x": "There are infinitely many paths from ‘S’ to ‘c’ 1. <S, c> 2. <S, c, d, c> 3. <S, c, d, c, d, c > and so on d<S, c> = 6 d (S, d, d, c) ⟨eq⟩ (S, c, d, c, d, c) ⟨eq⟩ – ⟨eq⟩ (S, c, d, c, d, c, d, c) ⟨eq⟩ The cycle <c, d, c> has weight = 7 + (-2) ⟨eq⟩ The shortest path from ‘S’ to ‘c’ is <s, c> with weight d (S, c) = 6 similarly, the shortest-path from ‘S’ to ‘d’ is <s, c, d>, with weight d (S, d) = w (S, c) + W(c, d) = 13 May there are infinitely paths from ‘S’ to ‘e’ 1. <s, e> 2. <s, e f, e> 3. <s, e, f, e, f , e> and so on Since the cycle <e, f, e> has weight 4 + (-5) = -1 < 0. However, there is no shortest path from ‘S’ to ‘e’ by traversing the negative-weight cycle <e, f, e> arbitrarily many times, we can find paths from ‘s’ to ‘e’ with arbitrarily large negative weights, So d(S, e) = -∞ Similarly, d(S, ⟨eq⟩"
+ },
+ {
+  "t": "li",
+  "x": "The shortest path from ‘S’ to ‘g’: \u0007‘g’ can be reachable from ‘f ; we can also find paths with arbitrarily large negative weights from ‘s’ to ‘g’ and d(s, g) = -∞"
+ },
+ {
+  "t": "li",
+  "x": "Vertices ‘h’, ‘i’ and ‘j’ also form a negative - weight cycle. They are not reachable from ‘S’ so, d(S, h ) = d(S, i) = d(S, j) = ∞"
+ },
+ {
+  "t": "h2",
+  "x": "Dijkstra’s Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "Dijkstra’s algotithm solves the single-source shortest-path problem on a weighted, directed graph G = (V, E), for the case in which all edge weights are non-negative."
+ },
+ {
+  "t": "li",
+  "x": "The running time of Dijkstra’s algorithm is lower than that of the Bellman–Ford algorithm."
+ },
+ {
+  "t": "li",
+  "x": "Dijkstra’s algorithm maintains a set ‘s’ of vertices whose final shortest-path weights from the source ‘S’ have already been determined."
+ },
+ {
+  "t": "li",
+  "x": "The algorithm repeatedly selects the vertex u ∈ (V -S) with the minimum shortest-path estimate, adds ‘u’ to ‘S’"
+ },
+ {
+  "t": "p",
+  "x": "DIJKSTRA (G, W, S) INITIALIZE - SINGLE - SOURCE (G, S) S ← ∅ S ← V[G] While Q ≠ 0 do u ← EXTRACT - MIN(Q) S ← S U{u} For each vertex v ∈ Adj[u] do RELAX (u, v, w) The algorithm maintains the invariant that Q = V -S at the start of each iteration of the while loop. Initially the min - priority queue Q contains all the vertices in V. ( \\ S = ∅). Each time through the while loop, a vertex ‘u’ is extracted from Q = V -S and added to set S."
+ },
+ {
+  "t": "li",
+  "x": "Each vertex is extracted from Q and added to S exactly once, so the contents of while loop will be executed exactly |v| times."
+ },
+ {
+  "t": "li",
+  "x": "Dijkstra’s algorithm always chooses the ‘closest’ or ‘lightest’ vertex in (V -S) to add to set S, we say that it uses a greedy strategy."
+ },
+ {
+  "t": "h2",
+  "x": "Solution:"
+ },
+ {
+  "t": "p",
+  "x": "S V - S S a b c d S c a b d S c d a b S c d a b S c d a b ∅ Distance from S to all vertices of (V -S) d[a] = 9 d[b] = ∞ d [c] = 6 d[d] = ∞ 9, ∞, 6, ∞ values are given to MIN-PRIORITY Queue ‘Q’, ‘6’ is returned. S c Distance from [Sc] to all vertices of (V -S) d[b] = (S -c -b) ⟨eq⟩ d[a] = min{(S -a) = 9, (s -c -a) = 10} = 9 d[d] = min{∞, (S -c -d) ⟨eq⟩ Distance from [s c d] to [ab] d[a] = min{9, (S -c -d -S -a) = 25} = 9 d[b] = min{16, (S -c -d -b) =14} = 14 a S c d b d[a] = min{14, (s -a -b) ⟨eq⟩ 11} = 11 a S c b"
+ },
+ {
+  "t": "h2",
+  "x": "Analysis: It maintains the min-priority queue ‘Q’ by calling"
+ },
+ {
+  "t": "p",
+  "x": "three priority-queue operations: INSERT, EXTRACT-MIN, and DECREASE-KEY. We maintain the min-priority queue by taking the vertices being numbered 1 to |v|. We store d[v] in the vth entry of an array. Each INSERT and DECREASEKEY operation takes O(1) time, and each EXTRACTMIN operation takes O(v) time (\\ we have to search through the entire array) for a total time of O(v2 + E) = O(v2)."
+ },
+ {
+  "t": "li",
+  "x": "If we implement the min - priority queue with a binary min-heap. Each EXTRACT-MIN operation takes time O(log V ), there are |V | such operations."
+ },
+ {
+  "t": "li",
+  "x": "The time to build the binary min-heap is O(v). Each DECREASE-KEY operation takes time O(log V), and there are still atmost |E | such operations. The total running time is O((V + E ) log V ), which is O(E log V ) if all vertices are reachable form the source."
+ },
+ {
+  "t": "li",
+  "x": "We can achieve a running time of O(V log V + E) by implementing the min-priority queue with a Fibonacci heap."
+ },
+ {
+  "t": "h2",
+  "x": "Bellman–Ford Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "Bellman–Ford algorithm solves the single-source shortest-path problems in the case in which edge weights may be negative."
+ },
+ {
+  "t": "li",
+  "x": "When negative edge lengths are permitted, we require that the graph have no cycles of negative length. This is necessary to ensure that shortest-paths consist of a finite number of edges."
+ },
+ {
+  "t": "li",
+  "x": "When there are no cycles of negative length, there is a shortest-path between any two vertices of an n-vertex graph that has atmost (n - 1) edges on it."
+ },
+ {
+  "t": "li",
+  "x": "A path that has more than (n - 1) edges must repeat atleast one vertex and hence must contain a cycle"
+ },
+ {
+  "t": "li",
+  "x": "Let distx[u] be the length of a shortest-path from the source vertex ‘v’ to vertex ‘u’ under the constraint that the shortest-path contains atmost ‘x’ edges. Then dist′[u] = cost [v, u] 1 ≤ u ≤ n when there are no cycles of negative length we can limit our search for shortest-paths to paths with at most (n - 1) edges. Hence, distn-1[u] is the length of an unrestricted shortest-path from ‘v’ to ‘u’."
+ },
+ {
+  "t": "p",
+  "x": "The Recurrence Relation for dist is: Distk[u] = min{distk-1[u], min{distk-1[i] + cost[i, u]}} This recurrence can be used to compute distk from dist k-1, for k = 2, 3, … , n - 1."
+ },
+ {
+  "t": "h2",
+  "x": "Example: Consider the given directed graph"
+ },
+ {
+  "t": "p",
+  "x": "−1 −1 −1 −1 Find the shortest path from vertex ‘1’ to all other vertices using Bellman–Ford algorithm? Solution: Source vertex is ‘1’ the distance from ‘1’ to ‘1’ in all ‘6’ iterations will be zero. Since the graph has ‘7’ vertices, the shortest-path can have atmost ‘6’ edges. The following figure illustrates the implementation of Bellman–Ford algorithm: ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Analysis"
+ },
+ {
+  "t": "li",
+  "x": "Each iteration takes O(n2) time if adjacency matrices are used and O(e) time if adjacency lists are used. Here ‘e’ is the number of edges in the graph."
+ },
+ {
+  "t": "li",
+  "x": "The time complexity is O(n3) when adjacency matrices are used and O(N * E) when adjacency lists are used."
+ },
+ {
+  "t": "h1",
+  "x": "5. Dynamic Programming"
+ },
+ {
+  "t": "p",
+  "x": "Dynamic programming Multi-stage graph All pairs shortest path problem Hashing methods Mid-square method Folding method Resolving collisions Matrix chain multiplication Longest common subsequence Optimal substructure of LCS NP-hard and NP-complete P-problem NP-problem P, NP, and Co-NP Cooks theorem Non-deterministic search"
+ },
+ {
+  "t": "h2",
+  "x": "LEARNING OBJECTIVES"
+ },
+ {
+  "t": "h1",
+  "x": "Dynamic Programming"
+ },
+ {
+  "t": "p",
+  "x": "Dynamic programming is a method for solving complex problems by breaking them down into simpler sub problems. It is applicable to problems exhibiting the properties of overlapping sub problems which are only slightly smaller, when applicable; the method takes far less time than naive method."
+ },
+ {
+  "t": "li",
+  "x": "The key idea behind dynamic programming is to solve a given problem, we need to solve different parts of the problem (sub problems) then combine the solutions of the sub problems to reach an overall solution. Often, many of these sub problems are the same."
+ },
+ {
+  "t": "li",
+  "x": "The dynamic programming approach seeks to solve each sub problem only once, thus reducing the number of computations."
+ },
+ {
+  "t": "p",
+  "x": "This is especially useful when the number of repeating sub problems is exponentially large."
+ },
+ {
+  "t": "li",
+  "x": "There are two key attributes that a problem must have in order for dynamic programming to be applicable ‘optimal sub structure’ and ‘overlapping sub-problems’. However, when the overlapping problems are much smaller than the original problem, the strategy is called ‘divide-and-conquer’ rather than ‘dynamic programming’. This is why merge sort-quick sort are not classified as dynamic programming problems."
+ },
+ {
+  "t": "li",
+  "x": "Multi stage graph"
+ },
+ {
+  "t": "li",
+  "x": "All pairs shortest path"
+ },
+ {
+  "t": "h2",
+  "x": "Principle of Optimality"
+ },
+ {
+  "t": "p",
+  "x": "It states that whatever the initial state is, remaining decisions must be optimal with regard to the state following from the first decision. To solve a problem using dynamic programming strategy, it must observe the principle of optimality."
+ },
+ {
+  "t": "h1",
+  "x": "Multi-Stage Graph"
+ },
+ {
+  "t": "li",
+  "x": "G = (V, E) with V partitioned into ⟨eq⟩ disjoint subsets such that if (a, b) is in E, then a is in Vi, and b is in Vi + 1 for some sub sets in the partition;"
+ },
+ {
+  "t": "li",
+  "x": "|V1| = |VK| = 1 the vertex S in V1 is called the source; the vertex t is called the sink."
+ },
+ {
+  "t": "li",
+  "x": "G is usually assumed to be a weighted graph."
+ },
+ {
+  "t": "li",
+  "x": "The cost of a path from node V to node W is sum of the costs of edges in the path."
+ },
+ {
+  "t": "li",
+  "x": "The ‘multi-stage graph problem’ is to find the minimum cost path from S to t."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Stage I Stage II Stage III Stage IV Stage V Stage VI"
+ },
+ {
+  "t": "h2",
+  "x": "Solution Using Backward Cost"
+ },
+ {
+  "t": "p",
+  "x": "Format: COST (Stage, node) = minimum cost of travelling to the node in stage from the source node (node 1)"
+ },
+ {
+  "t": "h2",
+  "x": "Step III:"
+ },
+ {
+  "t": "p",
+  "x": "Cost (III, 5) = min {cost (II, 2) + cost (2, 5), cost (II, 3) + cost (3, 5), cost (II, 4) + cost (4, 5) = min {10 + 10, 20 + 40, ⟨eq⟩ Via path 1 – 2 – 5 Cost (III, 6) = min {cost (II, 2) + cost (2, 6), cost (II, 3) + cost (3, 6), cost (II, 4) + cost (4, 6)} = min {10 + 20, ⟨eq⟩ 40} = 30 → via the path 1 – 2 – 6 Cost (III, 7) = min {cost(II, 2) + cost (2, 7), Cost (II, 3) + cost (3, 7), Cost (II, 4) + cost (4, 7)} = min {10 + 30, 20 + 50, 30 + 30} = 40 → Via the path 1 – 2 – 7"
+ },
+ {
+  "t": "h2",
+  "x": "Step IV:"
+ },
+ {
+  "t": "p",
+  "x": "Cost (IV, 8) = min {cost (III, 5) + cost (5, 8), Cost (III, 6) + cost (6, 8), Cost (III, 7) + cost (7, 8)} = min {20 + 10, ⟨eq⟩ Via path 1 – 2 – 5 – 8 Cost (IV, 9) = min {cost (III, 5) + cost (5, 9), Cost (III, 6) + cost (6, 9), Cost (III, 7) + cost (7, 9)} = min {20 + 20, 30 + 20, ⟨eq⟩ Via the path 1 – 2 – 5 – 9 Cost (IV, 10) = min {cost (III, 5) + cost (5, 10), Cost (III, 6) + cost (6, 10), Cost (III, 7) + cost (7, 10} = min {20 + 30, 30 + 30, 40 + 30} = 50 → Via the path 1 – 2 – 5 – 10 Cost (IV, 11) = min {cost (III, 5) + cost (5, 11) Cost (III, 6) + cost (6, 11), Cost (III, 7) + cost (7, 11)} = min {20 + 40, ⟨eq⟩ 20} = 60 → Via the path 1 – 2 – 5 – 11 or Via the path 1 – 2 – 7 – 11"
+ },
+ {
+  "t": "h2",
+  "x": "Step V:"
+ },
+ {
+  "t": "p",
+  "x": "Cost (V, 12) = min {cost (IV, 8) + cost (8, 12) Cost (IV, 9) + cost (9, 12), Cost (IV, 10) + cost (10, 12), Cost (IV, 11) + cost (11, 12)} = min {30 + 10, ⟨eq⟩ Via the path ⟨eq⟩ – 8 – 12 Cost (V, 13) = min {cost (IV, 8) + cost (8, 13) Cost (IV, 9) + cost (9, 13), Cost (IV, 10) + cost (10, 13), Cost (IV, 11) + cost (11, 13)} = min {30 + 20, 40 + 20, 50 + 10, 60 + 10} = 50 → Via the path 1 – 2 – 5 – 8 – 13 Cost (V, 14) = min {cost (IV, 8) + cost (8, 14) Cost (IV, 9) + cost (9, 14), Cost (IV, 10) + cost (10, 14), Cost (IV, 11) + cost (11, 14)} = min {30 + 30, 40 + 10, 50 + 20, 60 + 30} 50 → Via the path 1 – 2 – 5 – 9 – 14"
+ },
+ {
+  "t": "h2",
+  "x": "Step VI:"
+ },
+ {
+  "t": "h1",
+  "x": "(Floyd–Warshall Algorithm)"
+ },
+ {
+  "t": "p",
+  "x": "A weighted graph is a collection of points (vertices) connected by lines (edges), where each edge has a weight (some real number) associated with it. Example: A graph in the real world is a road map. Each location is a vertex and each road connecting locations is an edge. We can think of the distance travelled on a road from one location to another as the weight of that edge."
+ },
+ {
+  "t": "li",
+  "x": "\u0007The Floyd–Warshall algorithm determines the shortest path between all pairs of vertices in a graph."
+ },
+ {
+  "t": "li",
+  "x": "\u0007The vertices in a graph be numbered from 1 to n. Consider the subset {1, 2, … K} of these n vertices."
+ },
+ {
+  "t": "li",
+  "x": "\u0007Finding the shortest path from vertex i to vertex j that uses vertex in the set {1, 2, … K} only. There are two situations."
+ },
+ {
+  "t": "p",
+  "x": "1. K is an intermediate vertex on the shortest path. 2. K is not an intermediate vertex on the shortest path. In the first situation, we can break down our shortest path into two paths: i to K and then K to j. Note that all the vertices from i to K are from the set {1, 2, … K – 1} and that all the intermediate vertices from K to j are from the set {1, 2, … K –1}. Also in the second situation, we simply have that all intermediate vertices are from the set {1, 2, ... K – 1}. Now define the function D for a weighted graph with the vertices {1, 2, … n} as follows. D (i, j, K) = the shortest distance from vertex i to vertex j using the intermediate vertices. In the set {1, 2, … K} Using the above idea, we can recursively define the function D. D(i, j, K) = W(i, j) if K = 0 min (D(i, j, K – 1), D(i, K, K –1) + D(K, j, K – 1)) if K > 0"
+ },
+ {
+  "t": "li",
+  "x": "The first line says that if we do not allow intermediate vertices, then the shortest path between two vertices is the weight of the edge that connects them. If no such weightexists, we usually define this shortest path to be of length infinity."
+ },
+ {
+  "t": "li",
+  "x": "The second line pertains to allowing intermediate vertices. It says that the minimum path from i to j through vertices {1, 2, … K} is either the minimum path from i to j through vertices {1, 2, … K – 1} OR the sum of the minimum path from vertex i to K through {1, 2, … K – 1} plus the minimum path from vertex K to j through {1, 2, … K – 1}. Since this is the case, we compute both and choose the smaller of these."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "V5 V1 V2 V3 V4 The weight matrix will be ⟨eq⟩ Let D(K) [i, j] = weight of a shortest path from vi to vj using only vertices from {v1, v2, … vk} as intermediate vertices in the path."
+ },
+ {
+  "t": "li",
+  "x": "D(n) = D which is the goal matrix."
+ },
+ {
+  "t": "p",
+  "x": "How to compute D(K) from D(K–1)? Case I: \u0007A shortest path from vi to vj restricted to using only vertices from {v1, v2, … vK} as intermediate vertices does not use VK. Then D(K) [i, j] = D(K-1) [i, j] Case II: \u0007A shortest path from vi to vjrestricted to using only vertices from {v1, v2 … vK} as intermediate vertices does use VK. Then D(K) [i, j] = D(K-1) [i, K] + D(K-1) [K, j] Since D(K) [i, j] = D(K-1) [i, j] \u0007or D(K) [i, j] = D(K-1) [i, K] + D(K –1) [K, j] \u0007We conclude: D(K) [i, j] = min{D(K-1) [i, j], D(K –1) [i, K] + D(K–1) [K, j]}"
+ },
+ {
+  "t": "h2",
+  "x": "Example 2:"
+ },
+ {
+  "t": "p",
+  "x": "The final distance matrix and P 2(6) 2(6) 4(6) 2(6) 2(6) 4(6) 5(6) D6 = 2(6) 2(6) 5(4) 4(6) 4(6) 3(3) 5(4) 5(4) 4(1) 3(3) 4(1) The values in parenthesis are the non-zero P values. Table 1 Divide and conquer vs dynamic programming. 1. \u0007This design strategy divides the problem into sub problems, conquer the each sub problem recursively, finally combine all the sub problem solutions, for the original problem. 1. \u0007This design strategy chooses an optimal solution for the problem, by recursively defining the value of optimal solution, these values are computed in bottom up fashion or top down fashion. 2. \u0007each sub problem is solved recursively, and consumes more time at each sub problem 2. \u0007Each sub problem is solved only once and is stored in table 3. \u0007Sub problems are independent of each other e.g., Binary search 3. \u0007The sub problems are dependent e.g., Traveling sales person problem"
+ },
+ {
+  "t": "h2",
+  "x": "vs Greedy Method"
+ },
+ {
+  "t": "p",
+  "x": "The main difference between greedy method (GM) and dynamic programming (DP) methodology is, DP considers all possible solutions for the given problem and picks the optimal one. Where as greedy, considers only one set of solutions to the problem. The other difference between GM and DP is that, GM considers the choice, which is best at that step, which is done at each level of the sub problem. That is, it won’t reconsider its choice. The choices reflect only present, won’t consider the future choices, where as DP tries out all the best alternatives and finds the optimal solution. It implements principle of optimality. At each stage of the problem, it decides based on the previous decision made in the previous stage."
+ },
+ {
+  "t": "h1",
+  "x": "Hashing Methods"
+ },
+ {
+  "t": "h2",
+  "x": "Uniform Hash Function"
+ },
+ {
+  "t": "p",
+  "x": "If the keys, K, are integers randomly distributed in [0, r] then hash function H(K) is given as H K mk ⟨eq⟩ H(K) is a uniform hash function Uniform hashing function should ensure Σ Σ Σ ⟨eq⟩ P(K) = probability that a key K, occurs that is the number of keys that map to each slot is equal."
+ },
+ {
+  "t": "h2",
+  "x": "Division method"
+ },
+ {
+  "t": "p",
+  "x": "Hashing an integer x is to divide x by M and then to use the remainder modulo M. This is called the division method of hashing. In this case the hash function is h(x) = x mod M Generally this approach is quite good for just about any value of M. However, in certain situations some extra care is needed in the selection of a suitable value for M. For example, it is often convenient to make M an even number. But this means that h(x) is even if x is even, and h(x) is odd of x is odd. If all possible keys are equiprobable, then this is not a problem. However, if say even keys are more likely than odd keys, the function h(x) = x mod M will not spread the hashed values of those keys evenly."
+ },
+ {
+  "t": "li",
+  "x": "Let M be a power of two, i.e., M = 2k for some integer k > 1."
+ },
+ {
+  "t": "p",
+  "x": "In this case, the hash function h(x) = x mod 2k simply extracts the bottom k-bits of the binary representation of x. While this hash function is quite easy to compute, it is not a desirable function because it does not depend on all the bits in the binary representation of x."
+ },
+ {
+  "t": "li",
+  "x": "For these reasons M is often chosen to be a prime number."
+ },
+ {
+  "t": "p",
+  "x": "Suppose there is bias in the way the keys are created that makes it more likely for a key to be a multiple of some small constant, say two or three. Then making M a prime increases the likelihood that those keys are spread out evenly. Also if M is a prime number, the division of x by that prime number depends on all the bits of x, not just the bottom k-bits, for some small constant k. Example: Hash table size = 10 Key value = 112 Hash function = h(k) = k mod M = 112 mod 10 = 2"
+ },
+ {
+  "t": "h2",
+  "x": "Disadvantage: A potential disadvantage of the division"
+ },
+ {
+  "t": "p",
+  "x": "method is due to the property that consecutive keys map to consecutive hash values. h(i) = i h(i + 1) ⟨eq⟩ (mod M) h(i + 2) ⟨eq⟩ (mod M) . . . While this ensures that consecutive keys do not collide, it does not mean that consecutive array locations will be occupied. We will see that in certain implementations this can lead to degradation in performance."
+ },
+ {
+  "t": "h2",
+  "x": "Multiplication method"
+ },
+ {
+  "t": "p",
+  "x": "A variation on the middle-square method that alleviates its deficiencies is called, multiplication hashing method. Instead of multiplying the key x by itself, we multiply the key by a carefully chosen constant ‘a’ and then extract the middle k bits from the result. In this case, the hashing function is h x M W ax ⟨eq⟩ mod )) = if we want to avoid the problems that the middle-square method encounters with keys having a large number of leading (or) trailing zero’s then we should choose an ‘a’ that has neither leading nor trailing zero’s. Furthermore, if we, choose an ‘a’ that is relatively prime to W, then there exists another number ‘a’ such that aa′= 1 (mod W). Such a number has the nice property that if we take a key x, and multiply it by ‘a’ to get ax, we can recover the original key by multiplying the product again by a′, since a × a′ = aa′x = 1x. The multiplication method for creating a hash function operates in two steps: Step 1: Multiply the key K by a constant A in the range ⟨eq⟩ and extract the fractional part of KA. Step 2: Multiply this value by M and take the floor of the result. In short the hash function is h k M KA ( ) ( mod ) = ⋅ Where (KA mod 1) denotes the fractional part of KA, that is KA KA"
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Let m = 10000, ⟨eq⟩ and = 0.618033 Then ⟨eq⟩ mod ⟨eq⟩ mod ⟨eq⟩"
+ },
+ {
+  "t": "h2",
+  "x": "Practical issues"
+ },
+ {
+  "t": "li",
+  "x": "Easy to implement"
+ },
+ {
+  "t": "p",
+  "x": "–On most machines multiplication is faster than division. –We can substitute one multiplication by shift operation. –We don’t need to do floating-point operations."
+ },
+ {
+  "t": "li",
+  "x": "If successive keys have a large interval, A= 0.6125423371 can be recommended."
+ },
+ {
+  "t": "h2",
+  "x": "Mid-square method"
+ },
+ {
+  "t": "p",
+  "x": "A good hash function to use with integer key values is the mid-square method. The mid-square method squares the key value, and then takes out the middle ‘r’ bits of the result, giving a value in the range 0 to 2r – 1. This works well because most (or) all bits of the key value contribute to the result."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Consider records whose keys are 4-digit numbers in base 10. The goal is to hash these key values to a table of size 100(i.e., a range of 0 to 99). This range is equivalent to two digits in base 10. That is r = 2. If the input is the number 4567, squaring yields an 8-digit number, 20857489. The middle two digits of this result are 57. All digits of the original key value (equivalently, all bits when the number is viewed in binary) contribute to the middle two digits of the squared value. Thus, the result is not dominated by the distribution of the bottom or the top digit of the original key value. Of course, if the key values all tend to be small numbers, then their squares will only affect the low order digits of the hash value. Example: To map the key 3121 into a hash table of size 1000, we square it (3121)2 = 9740641 and extract 406 as the hash value."
+ },
+ {
+  "t": "h2",
+  "x": "Folding method"
+ },
+ {
+  "t": "p",
+  "x": "The folding method breaks up a key into precise segments that are added to form a hash value, and still another technique is to apply a multiplicative hash function to each segment individually before folding. Algorithm H(x) = (a + b + c) mod m. Where a, b, and c represent the preconditioned key broken down into three parts, m is the table size, and mod stands for modulo. In other words: The sum of three parts of the pre conditioned key is divided by the table size. The remainder is the hash key."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Fold the key 123456789 into a hash table of ten spaces (0 through 9) We are given x= 123456789 and the table size (i.e., m= 10) Since we can break x into three parts any way, we will break it up evenly. Thus a = 123, b = 456 and c = 789 H(x) = (a + b + c) mod M H(123456789) = (123 + 456 + 789) mod 10 = 1368 mod 10 = 8 123456789 are inserted into the table at address 8. The folding method is distribution independent."
+ },
+ {
+  "t": "h2",
+  "x": "Resolving collisions In collision resolution strategy"
+ },
+ {
+  "t": "p",
+  "x": "algorithms and data structures are used to handle two hash keys that hash to the same hash keys. There are a number of collision resolution techniques, but the most popular are open addressing and chaining."
+ },
+ {
+  "t": "li",
+  "x": "Chaining: An array of linked list, Separate chaining"
+ },
+ {
+  "t": "li",
+  "x": "Open Addressing: Array based implementation:"
+ },
+ {
+  "t": "p",
+  "x": "– Linear probing (Linear Search) – Quadratic probing (non-linear search) – Double hashing (use two hash functions)"
+ },
+ {
+  "t": "h2",
+  "x": "Separate chaining Every linked list has each element"
+ },
+ {
+  "t": "p",
+  "x": "that collides to the similar slot. Insertion need to locate the accurate slot and appending to any end of the list in that slot wherever, deletion needs searching the list and removal. [0] [1] [2] [3] [4] [5] [6] [7] Hash key = key % table size 4 = 36% 8 2 = 18% 8 0 = 72% 8 3 = 43% 8 6 = 6% 8 2 = 10% 8 5 = 5% 8 7 = 15% 8"
+ },
+ {
+  "t": "h2",
+  "x": "Open addressing Open addressing hash tables are used to"
+ },
+ {
+  "t": "p",
+  "x": "stock up the records straight inside the array. This approach is also known as closed hashing. This procedure is based on probing. Well known probe sequence include:"
+ },
+ {
+  "t": "li",
+  "x": "Linear probing: In which the interval between probes is fixed often at 1."
+ },
+ {
+  "t": "li",
+  "x": "Quadratic probing: In which the interval between probes increases proportional to the hash value (the interval thus increasing linearly and the indices are described by a quadratic function)."
+ },
+ {
+  "t": "li",
+  "x": "Double hashing: In which the interval between probes is computed by another hash function."
+ },
+ {
+  "t": "h2",
+  "x": "(i) Linear probing: Linear probing method is used for"
+ },
+ {
+  "t": "p",
+  "x": "resolving hash collisions of values of hash functions by sequentially searching the hash table for a free location. The item will be stored in the next available slot in the table in linear probing. Also an assumption is made that the table is not already full. This is implemented via a linear search for an empty slot, from the point of collision. If the physical end of table is reached during the linear search, the search will again get start around to the beginning of the table and continue from there. The table is considered as full, if an empty slot is not found before reaching the point of collision. [0] [1] [2] [3] [4] [5] [6] [7] [0] [1] [2] [3] [4] [5] [6] [7] Add the keys 10, 5 and 15 to the previous example. Hash key = key % table size 2 = 10% 8 5 = 5% 8 7 = 15% 8"
+ },
+ {
+  "t": "h2",
+  "x": "Limitation: A problem with linear probe method is"
+ },
+ {
+  "t": "p",
+  "x": "primary clustering. In primary clustering blocks of data may possibly be able to form collision. Several attempts may be required by any key that hashes into the cluster to resolve the collision."
+ },
+ {
+  "t": "h2",
+  "x": "(ii) Quadratic probing: To resolve the primary clustering"
+ },
+ {
+  "t": "p",
+  "x": "problem, quadratic probing can be used. With quadratic probing, rather than always moving one spot, move i2 spots from the point of collision where i is the number of attempts needed to resolve the collision. [0] [1] [2] [3] [4] [5] [6] [7] [8] [9] 89% 10 = 9 18% 10 = 8 49% ⟨eq⟩ attempt needed ⟨eq⟩ spot 58% ⟨eq⟩ attempts needed ⟨eq⟩ spot 69% ⟨eq⟩ attempts needed ⟨eq⟩ spot"
+ },
+ {
+  "t": "h2",
+  "x": "Limitation: Maximum half of the table can be used"
+ },
+ {
+  "t": "p",
+  "x": "as substitute locations to resolve collisions. Once the table gets more than half full, its really hard to locate an unfilled spot. This new difficulty is recognized as secondary clustering because elements that hash to the same hash key will always probe the identical substitute cells."
+ },
+ {
+  "t": "h2",
+  "x": "(iii) Double hashing: Double hashing uses the idea of"
+ },
+ {
+  "t": "p",
+  "x": "applying a second hash function to the key when a collision occurs, the result of the second hash function will be the number of positions from the point of collision to insert. There are some requirements for the second function: 1. It must never evaluate to zero 2. Must make sure that all cells can be probed. A popular second hash function is: Hash(key) = R-(Key mod R) where R is a prime number smaller than the size of the table. [0] [1] [2] [3] [4] [5] [6] [7] [8] [9] Table size = 10 elements Hash1(key) = key %10 Hash 2(key) = 7 − (key %7) Insert keys: 89, 18, 49, 58 and 69 Hash key (89) = 89% 10 = 9 Hash key (18) = 18% 10 = 8 Hash key (49) = 49% 10 = 9 (collision) = (7 − (49% 7) = (7 − (0)) = 7 positions from [9]"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 3 Double hashing"
+ },
+ {
+  "t": "p",
+  "x": "[0] [1] [2] [3] [4] [5] [6] [7] [8] [9] Insert keys = 58, 69 Hash key (58) = 58% 10 = 8 a collision! = (7 − (58% 7) = (7 ⟨eq⟩ positions from [8] Hash key (69) = 69% 10 = 9 a collision! = (7 − (69 % 7)) = (7 − 6) = 1 position from [9]"
+ },
+ {
+  "t": "h2",
+  "x": "Figure 4 Double hashing"
+ },
+ {
+  "t": "h1",
+  "x": "Matrix-chain Multiplication"
+ },
+ {
+  "t": "p",
+  "x": "We are given a sequence of n matrices m1, m2 … mn to be multiplied. If the chain matrices is < m1, m2, m3, m4>, the product m1, m2, m3, m4 can be fully parenthesized in 5 distinct ways: 1. (m1 (m2 (m3 m4))) 2. (m1 ((m2 m3) m4)) 3. ((m1 m2) (m3 m4)) 4. ((m1 (m2 m3)) m4) 5. (((m1 m2) m3) m4) The way we parenthesize a chain of matrices can have a dramatic impact on the cost of evaluating the product. We can multiply 2 matrices A and B only if they are compatible i.e., the number of columns of A must equal the number of rows of B. If A is a (p × q) matrix and B is a (q × r) matrix, the resulting matrix C is a (p × r) matrix. The time to compute C is the number of scalar multiplications, which is (pqr). Example: Consider the problem of a chain <m1, m2, m3> of three matrices. Suppose that the dimensions of the matrices are (6 × 8), (8 × 14), (14 × 20) respectively. Which parenthesization will give least number of multiplications?"
+ },
+ {
+  "t": "h2",
+  "x": "Soluation:"
+ },
+ {
+  "t": "p",
+  "x": "(i) ((m1 m2) m3) [m1]6 × 8 × [m2]8 × 14 = [m1 m2]6 × 14 Number of multiplications performed = 6 × 8 × 14 = 672 [m1 m2]6 × 14 × [m3]14 × 20 = ((m1 m2) m3)6 × 20 Number of multiplications performed = 6 × 14 × 20 = 1680 Total number of multiplications ⟨eq⟩ (ii) (m1 (m2 m3)) [m2]8 × 14 × [m3]14 × 20 = [m2 m3]8 × 20 Number of multiplications performed = 8 × 14 × 20 = 2240 [m1]6 × 8 × [m2 m3]8 × 20 = (m1 (m2 m3))6 × 20 Number of multiplications performed = 6 × 8 × 20 = 960 Total number of multiplications ⟨eq⟩ ∴ ((m1 m2) m3) gives least number of multiplications. We need to define the cost of an optimal solution recursively in terms of the optimal solutions to sub problems. For Matrix-chain multiplication problem, we pick as our sub problem the problems of determining the minimum cost of a parenthesization of Ai Ai+1 … Aj for 1 ≤i ≤j ≤n let m[i, j] be the minimum number of scalar multiplications needed to compute the matrix Ai … j; for the full problem, the cost of a cheapest way to compute A1 … N would be m[1, n]. We can define m[i, j] recursively as follows: m [i, j] = m [i, k] + m [k + 1, j] + Pi-1 Pk Pj If i = j, the problem is trivial. The chain consists of just one matrix Ai … i = Ai, so that no scalar multiplications are necessary to compute the product. Minimum cost of parenthesizing the product Ai Ai+1 … Aj becomes m i j if i j m i k m k j p p p if ⟨eq⟩ min{ ⟨eq⟩ The m[i, j] values give the costs of optimal solutions to sub problems. At this point, to write a recursive algorithm based on recurrence to compute the minimum cost m[1, n] for multiplying A1 A2 … An. However, this algorithm takes exponential time, which is not better than the brute force method of checking each way of parenthesizing the product. The important observation we can make at this point is that we have relatively few sub problems, one problem for each choice of i and j satisfying 1 ≤i ≤j ≤n (or) ⟨eq⟩ θ( ) in all. The property of overlapping sub problems is the second hallmark of the applicability of dynamic programming. The first hall mark being optimal substructure."
+ },
+ {
+  "t": "h2",
+  "x": "Algorithm"
+ },
+ {
+  "t": "p",
+  "x": "1. n ← length [p] – 1 2. for i ← 1 to n 3. do m[i, i] ← 0 4. for i ← 2 to n 5. do for i ← 1 to n – i + 1 6. do j ←i + i – 1 7. m[i, j] ←∞ 8. for k ←i to j – 1 9. do q ←m [i, k] + m [k + 1, j] + Pi – 1 Pk Pj 10. if q < m [i, j] 11. then m [i, j] ←q 12. S[i, j] ←k 13. return m and S It first computes m[i, j] ← 0 for i = 1, 2 … n (the minimum costs for chains of length 1). To compute m[i, i + 1] for i = 1, 2, … n – 1(the minimum costs for chains of length l = 2 and so on). At each step, the m[i, j] cost computed depends only on table entries m[i, k] and m[k + 1, j] already computed. An entry m[i, j] is computed using the products Pi–1 Pk Pj for k = i, i + 1, … j – 1. A simple inspection of the nested loop structure of the above algorithm yields a running time of O(n3) for the algorithm."
+ },
+ {
+  "t": "h1",
+  "x": "Longest Common Subsequence"
+ },
+ {
+  "t": "p",
+  "x": "A sub sequence of a given sequence is just the given sequence with 0 or more elements left out. Formally, given a sequence x = <x1, x2 … xm>, another sequence z = <z1, z2 … zk > is a subsequence of x if there exists a strictly increasing sequence <i1, i2 … ik> of indices of x such that for all j = 1, 2 … k, we have xij = zj Example: z = < B, C, D, B > is a subsequence of x = <A, B, C, B, D, A, B> with corresponding index sequence <2, 3, 5, 7> Example: Given 2 sequences x and y, we say that a sequence z is a common sub sequence of x and y if z is a sub sequence of both x and y. If x = <A, B, C, B, D, A, B> y = <B, D, C, A, B, A> The sequence <B, C, A> is a common subsequence of both x and y. The sequence <B, C, A> is not a longest common subsequence (LCS) of x and y since it has length ‘3’ and the sequence <B, C, B, A>, which is also common to both x and y, has length 4. The sequence <B, C, B, A> is an LCS of x and y, as is the sequence <B, D, A, B>, since there is no common subsequence of length 5 or greater."
+ },
+ {
+  "t": "li",
+  "x": "In the longest-common-sub sequence problem, we are given 2 sequences x = <x1, x2, x3 … xm> and y = <y1, y2 … yn> and wish to find a maximum length common subsequence of x and y."
+ },
+ {
+  "t": "li",
+  "x": "LCS problem can be solved efficiently using dynamic programming."
+ },
+ {
+  "t": "li",
+  "x": "A brute force approach to solve the LCS problem is to enumerate all subsequences of x and check each subsequence to see if it is also a subsequence of y, keeping track of the longest subsequence found. Each subsequence of x corresponds to a subset of the indices {1, 2 …m} of x. There are 2m subsequences of x, so this approach requires exponential time, making it impractical for long sequences."
+ },
+ {
+  "t": "li",
+  "x": "The classes of sub problems correspond to pairs of ‘pre fixes’ of 2 input sequences: Given a sequence x = <x1, x2 … xm>, we define the ith"
+ },
+ {
+  "t": "p",
+  "x": "prefix of x, for i = 0, 1, … m, as xi = <x1 x2 … xi> Example: If x = <A, B, C, B, D, A, D>, then x4 = <A, B, C, B> and x0 is the empty sequence. LCS problem has an optimal sub-structure property."
+ },
+ {
+  "t": "h2",
+  "x": "Optimal Substructure of LCS"
+ },
+ {
+  "t": "p",
+  "x": "Let x = <x1, x2 … xm> and y = <y1, y2 … yn> be sequences and let z = <z1, z2 … zk> be any LCS of x and y then 1. If xm = yn, then zk = xm = yn and zk–1 is an LCS of xm –1 and yn – 1. 2. If xm ≠yn, then zk ≠xm implies that z is an LCS of xm–1 and y. 3. If xm ≠yn, then zk ≠yn implies that z is an LCS of x and yn – 1."
+ },
+ {
+  "t": "h1",
+  "x": "NP-hard and NP-complete"
+ },
+ {
+  "t": "p",
+  "x": "A mathematical problem for which, even in theory, no shortcut or smart algorithm is possible that would lead to a simple or rapid solution. Instead the only way to find an optimal solution is a computationally intensive, exhaustive analysis in which all possible outcomes are tested. Examples of NP-hard problems include the travelling salesman problem."
+ },
+ {
+  "t": "h2",
+  "x": "P-problem"
+ },
+ {
+  "t": "p",
+  "x": "A problem is assigned to the P (polynomial time) class if there exists at least one algorithm to solve that problem, such that number of steps of the algorithm is bounded by a polynomial in n, where n is the length of the input."
+ },
+ {
+  "t": "h2",
+  "x": "NP-problem"
+ },
+ {
+  "t": "p",
+  "x": "A problem is assigned to the NP (non-deterministic polynomial time) class if it is solvable in polynomial time by a non-deterministic turing machine. A P-problem (whose solution time is bounded by a polynomial) is always also NP. If a problem is known to be NP, and a solution to the problem is somehow known, then demonstrating the correctness of the solution can always be reduced to a single P (polynomial time) verification. If P and NP are not equivalent then the solution of NP-problems requires (in the worst case) an exhaustive search. A problem is said to be NP-hard, if an algorithm for solving it can be translated into one for solving any other NP-problem. It is much easier to show that a problem is NP than to show that it is NP-hard. A problem which is both NP and NP-hard is called an NP-complete problem."
+ },
+ {
+  "t": "h2",
+  "x": "P versus NP-problems"
+ },
+ {
+  "t": "p",
+  "x": "The P versus NP problem is the determination of whether all NP-problems are actually P-problems, if P and NP are not equivalent then the solution of NP-problem requires an exhaustive search, while if they are, then asymptotically faster algorithms may exist."
+ },
+ {
+  "t": "h2",
+  "x": "NP-complete problem"
+ },
+ {
+  "t": "p",
+  "x": "A problem which is both NP (verifiable in non-deterministic polynomial time) and NP-hard (any NP-problem can be translated into this problem). Examples of NP-hard problems include the Hamiltonian cycle and travelling sales man problems."
+ },
+ {
+  "t": "h2",
+  "x": "Example:"
+ },
+ {
+  "t": "p",
+  "x": "Circuit satisfiability is a good example of problem that we don’t know how to solve in polynomial time. In this problem, the input is a Boolean circuit. A collection of and, or and not gates connected by wires. The input to the circuit is a set of m Boolean (true/false) values x1 … xm. The output is a single Boolean value. The circuit satisfiability problem asks, given a circuit, whether there is an input that makes the circuit output TRUE, or conversely, whether the circuit always outputs FLASE. Nobody knows how to solve this problem faster than just trying all 2m possible inputs to the circuit but this requires exponential time."
+ },
+ {
+  "t": "h2",
+  "x": "P, NP, and Co-NP"
+ },
+ {
+  "t": "li",
+  "x": "P is a set of yes/no problems that can be solved in polynomial time. Intuitively P is the set of problems that can be solved quickly."
+ },
+ {
+  "t": "li",
+  "x": "NP is the set of yes/no problems with the following property: If the answer is yes, then there is a proof of this fact that can be checked in polynomial time. Intuitively NP is the set of problems where we can verify a YES answer quickly if we have the solution in front of us."
+ },
+ {
+  "t": "p",
+  "x": "Example: The circuit satisfiability problem is in NP. If the answer is yes, then any set of m input values that produces TRUE output is a proof of this fact, we can check the proof by evaluating the circuit in polynomial time."
+ },
+ {
+  "t": "li",
+  "x": "Co-NP is the exact opposite of NP. If the answer to a problem in co-NP is no, then there is a proof of this fact that can be checked in polynomial time."
+ },
+ {
+  "t": "li",
+  "x": "π is NP-hard ⇒ if π can be solved in polynomial time, then P = NP."
+ },
+ {
+  "t": "p",
+  "x": "This is like saying that if we could solve one particular NP-hard problem quickly, then we could solve any problem whose solution is easy to understand, using the solution to that one special problem as a subroutine. NP-hard problems are atleast as hard as any problem in NP."
+ },
+ {
+  "t": "li",
+  "x": "Saying that a problem is NP-hard is like saying ‘If I own a dog, then it can speak fluent English’. You probably don’t know whether or not I own a dog, but you’re probably pretty sure that I don’t own a talking dog. Nobody has a mathematical proof that dogs can’t speak English."
+ },
+ {
+  "t": "p",
+  "x": "The fact that no one has ever heard a dog speak English is evidence as per the hundreds of examinations of dogs that lacked the proper mouth shape and brain power, but mere evidence is not a proof nevertheless, no sane person would believe me if I said I owned a dog that spoke fluent English. So the statement ‘If I own a dog then it can speak fluent English’ has a natural corollary: No one in their right mind should believe that I own a dog ! Likewise if a problem is NP-hard no one in their right mind should believe it can be solved in polynomial time. Co−NP NP NP−complete NP−hard P"
+ },
+ {
+  "t": "h2",
+  "x": "Cooks Theorem"
+ },
+ {
+  "t": "p",
+  "x": "Cook’s theorem states that CNFSAT is NP-Complete It means, if the problem is in NP, then the deterministic Turing machine can reduce the problem in polynomial time. The inference that can be taken from these theorems is, if deterministic polynomial time algorithm exists for solving satisfiability, then to all problems present in NP can be solved in polynomial time."
+ },
+ {
+  "t": "h2",
+  "x": "Non-deterministic Search"
+ },
+ {
+  "t": "p",
+  "x": "Non-deterministic algorithms are faster, compared to deterministic ones. The computations are fast as it always chooses right step The following functions are used to specify these algorithms 1. Choice (A), which chooses a random element from set A 2. Failure (A), specifies failure 3. Success ( ), Specifies success The non-deterministic search is done as follows. Let us consider an array S[1 … n], n ≥ 1 we need to get the indice of ‘i’ such that S[i] = t (or) i = 0. The algorithm is given below. Steps: 1. i = Choice (1, n); 2. if S[i] = t, then (i) Print (i); (ii) Success ( ); 3. Print (0) failure 4. Stop. If the search is successful it returns the indice of array ‘S’, otherwise it returns ‘0’, the time complexity is Ω(n)."
+ }
+]
