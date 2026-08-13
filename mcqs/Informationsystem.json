@@ -1,6 +1,6 @@
 [
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 1,
     "question": "Which of the following statements is true?",
@@ -17,7 +17,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 2,
     "question": "Which of the following statement(s) is true regarding the spiral model of software development?",
@@ -34,7 +34,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 3,
     "question": "Which of the following is a step in feasibility analysis?",
@@ -51,7 +51,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 4,
     "question": "Which of the following statement(s) is true?",
@@ -68,7 +68,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 5,
     "question": "Data flow diagram, regular expression and transition table can be combined to provide",
@@ -85,7 +85,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 6,
     "question": "Which of the following statements are true about soft- ware configuration management tool?",
@@ -102,7 +102,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 7,
     "question": "The cost incurred on a project was `250,000 and bene- fits were `30,000 per month. The payback period using simple pay back method is",
@@ -119,7 +119,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 8,
     "question": "Which of the following phase has the maximum effort distribution?",
@@ -135,7 +135,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 9,
     "question": "Which of the following statement is true regarding cost benefit analysis?",
@@ -152,7 +152,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 10,
     "question": "A project is considered economically feasible if the fol- lowing factor holds good.",
@@ -398,7 +398,7 @@
       "A": "System design phase",
       "B": "System development phase",
       "C": "System analysis phase",
-      "D": "System investigation phase 8.88 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology"
+      "D": "System investigation phase"
     },
     "answer": "C",
     "explanation": null,
@@ -407,7 +407,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 10,
     "question": "In data flow diagram, an originator or receiver of data is usually designed by",
@@ -424,7 +424,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 11,
     "question": "A feasibility document should contain all the following except",
@@ -441,7 +441,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 12,
     "question": "SRS document is _______ between customers and developers.",
@@ -458,7 +458,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 13,
     "question": "According to Brooks, adding more people to an already late software project makes it",
@@ -475,7 +475,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 14,
     "question": "The following is a quality metric:",
@@ -492,7 +492,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 15,
     "question": "Feasibility study should focus on",
@@ -509,7 +509,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Previous Years’ Questions",
     "number": 1,
     "question": "What is the appropriate pairing of items in the two columns listing various activities encountered in a software life cycle?\b [2010] P Requirements capture 1 Module development and integration Q Design 2 Domain analysis R Implementation 3 Structural and behavioural modelling S Maintenance 4 Performance tuning",
@@ -526,7 +526,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "1 - Process Life Cycle",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Previous Years’ Questions",
     "number": 2,
     "question": "Which one of the following is NOT desired in a good SRS document?\b [2011]",
@@ -543,7 +543,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 1",
     "number": 1,
     "question": "What is the unadjusted function point for the given pay- roll program?",
@@ -560,7 +560,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 1",
     "number": 2,
     "question": "From the above problem, find adjusted function point where F4 = 4, F5 = 3, F12 = 2, F14 = 5?",
@@ -577,7 +577,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 1",
     "number": 3,
     "question": "Calculate the effort required if the software is of organic type.",
@@ -594,7 +594,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 1",
     "number": 4,
     "question": "Calculate the cost required if the software is of semi- detached type.",
@@ -611,7 +611,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 1",
     "number": 5,
     "question": "A 40 KDSI embedded program for teleprocessing is to be developed. Estimate the time required for the project using basic COCOMO model.",
@@ -628,7 +628,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 1",
     "number": 6,
     "question": "Consider the following code: begin If (x ≤ 0) then x = 0 – x; a = x; end Lata wants to test the program with test data. What are the sufficient values to execute both branches of the decision box?",
@@ -645,7 +645,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 1",
     "number": 7,
     "question": "What is the maintainability of a software with average number of days of repairing code is 10, adapting code is 20 and for enhancing code is 10?",
@@ -662,7 +662,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 1",
     "number": 8,
     "question": "Consider a Java program and the SLOC is given as 1000. Class A { int x(int a); int y(int b); int z(int c); } What is the modularity?",
@@ -679,7 +679,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 1",
     "number": 9,
     "question": "Raj has written a program to add two numbers. Assuming a 32-bit representation for an integer, to exhaustively test his program, the number of test cases required are",
@@ -874,7 +874,7 @@
       "A": "3",
       "B": "4",
       "C": "5",
-      "D": "6 8.102 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology"
+      "D": "6"
     },
     "answer": "B",
     "explanation": null,
@@ -883,7 +883,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 2",
     "number": 6,
     "question": "Constructive cost model is used to estimate",
@@ -900,7 +900,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 2",
     "number": 7,
     "question": "The theoretic concept that will be useful in software testing is",
@@ -917,7 +917,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 2",
     "number": 8,
     "question": "Testing method that is normally used as the acceptance test for a software system is",
@@ -934,7 +934,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 2",
     "number": 9,
     "question": "Acceptance testing is",
@@ -951,7 +951,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 2",
     "number": 10,
     "question": "Which of the following statements is true?",
@@ -968,7 +968,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 2",
     "number": 11,
     "question": "The size estimated for software of a certain project is 40,000 lines of code. The average salary paid per engi- neer is `15,000 per month. Calculate the cost required if the software is of organic type.",
@@ -985,7 +985,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 2",
     "number": 12,
     "question": "The size estimated for a software project is 35 Kloc. The average salary paid per engineer is `25,000 per month. Calculate the cost required if the software is of semi-detached type.",
@@ -1002,7 +1002,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 2",
     "number": 13,
     "question": "Which of the following statements is false?",
@@ -1019,7 +1019,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 2",
     "number": 14,
     "question": "Which of the following is true regarding software testing?",
@@ -1036,7 +1036,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 2",
     "number": 15,
     "question": "Find the critical path of the above project.",
@@ -1053,7 +1053,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Practice Problems 2",
     "number": 16,
     "question": "Find the slack time of the project.",
@@ -1155,7 +1155,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Previous Years’ Questions",
     "number": 6,
     "question": "If array A is made to hold the string “abcde”, which of the above four test cases will be successful in expos- ing the flaw in this procedure?\b [2013]",
@@ -1172,7 +1172,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Previous Years’ Questions",
     "number": 7,
     "question": "The tester now tests the program on all input strings of length five consisting of characters ‘a’, ‘b’, ‘c’, ‘d’ and ‘e’ with duplicates allowed. If the tester carries out this testing with the four test cases given above, how many test cases will be able to capture the flaw? \b [2013]",
@@ -1189,7 +1189,7 @@
     "source": "Computer Science/Notes & Material/Informationsystem.pdf"
   },
   {
-    "chapter": "2 - Project Management and Maintenance",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and   Web Technology",
     "section": "Previous Years’ Questions",
     "number": 8,
     "question": "In the context of modular software design, which one of the following combinations is desirable?\b [2014]",

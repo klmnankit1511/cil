@@ -106,8 +106,11 @@ def parse(pdf: Path) -> list[dict]:
 
             # the label sits at either end of the running head:
             # "Chapter 1 • Asymptotic Analysis | 3.91" and "3.96 | Unit 3 • Algorithms"
+            # some unit titles run long ("Unit 8 • Networks, Information Systems,
+            # Software Engineering and Web Technology"), so the position of the
+            # label — not the line length — is what keeps this from eating prose
             m = HEADER.search(line)
-            if m and m.start() <= 14 and len(line) < 90:
+            if m and m.start() <= 14 and len(line) < 160:
                 chapter = f"{m.group(1)} - {m.group(2)}"
                 continue
             m = CHAPTER_NUM.match(line)

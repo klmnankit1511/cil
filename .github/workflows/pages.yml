@@ -1,0 +1,59 @@
+# Publishes the practice site to GitHub Pages.
+#
+# Deliberately manual (workflow_dispatch only) — running it makes the question
+# bank public, and the questions are extracted from copyrighted exam-prep books.
+# Keep the repository private, or only publish material you have the right to
+# redistribute. Enable Pages first: Settings -> Pages -> Source: GitHub Actions.
+
+name: Deploy site
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate site/data.js from the committed question bank
+        run: python build_site_data.py
+
+      - name: Fail if the payload is missing or tiny
+        run: |
+          test -s site/data.js
+          python -c "import pathlib; s=pathlib.Path('site/data.js').stat().st_size; assert s > 100_000, f'data.js is only {s} bytes'"
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

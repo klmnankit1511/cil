@@ -1,0 +1,22 @@
+# Lint rules for CI. Deliberately a focused set: real errors and import hygiene,
+# not stylistic preferences that would churn the scrapers.
+line-length = 100
+target-version = "py313"
+exclude = [".venv", "site", "downloads", "mcqs"]
+
+[lint]
+select = [
+  "E",   # pycodestyle errors
+  "F",   # pyflakes — undefined names, unused imports
+  "W",   # pycodestyle warnings
+  "I",   # import sorting
+  "UP",  # pyupgrade
+  "B",   # bugbear
+]
+ignore = [
+  "E501",  # long lines: the URL/regex constants read worse when wrapped
+  "B008",
+]
+
+[lint.per-file-ignores]
+"tests/*" = ["E402"]  # sys.path is set before importing the module under test

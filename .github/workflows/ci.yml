@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Byte-compile every script
+        run: python -m compileall -q scrape.py extract_mcqs.py build_site_data.py browser_download.py
+
+      - name: Extraction regression tests
+        run: python tests/test_extract.py
+
+      - name: Rebuild site data from the committed question bank
+        run: python build_site_data.py
+
+      - name: Check the generated payload is sane
+        run: |
+          python - <<'PY'
+          import json, pathlib, re
+          src = pathlib.Path("site/data.js").read_text()
+          payload = json.loads(re.sub(r"^.*?window\.MCQ_DATA = ", "", src, flags=re.S).rstrip(";\n"))
+          subjects = payload["subjects"]
+          total = sum(len(s["questions"]) for s in subjects)
+          print(f"{total} questions across {len(subjects)} subjects")
+          assert subjects, "no subjects in payload"
+          assert total > 5000, f"question count collapsed to {total}"
+
+          flat = [q for s in subjects for q in s["questions"]]
+          assert all(len(q["o"]) >= 2 for q in flat), "a question lost its options"
+
+          keyed = [q for q in flat if q["a"] >= 0]
+          assert len(keyed) / total > 0.8, "answer-key match rate dropped below 80%"
+
+          # the two extraction bugs that previously corrupted real questions
+          leaks = [q for q in flat
+                   if "YCT" in q["q"] or any("YCT" in o for o in q["o"])
+                   or any(re.search(r"\|\s*(Unit|Chapter)\s+\d", o) for o in q["o"])]
+          assert not leaks, f"{len(leaks)} questions contain running-head text"
+          print("payload checks passed")
+          PY
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install ruff
+      - name: Ruff
+        run: ruff check --output-format=github .

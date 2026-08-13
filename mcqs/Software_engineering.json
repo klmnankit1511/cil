@@ -144,7 +144,7 @@
       "A": "<firstElement> TIME Hyderabad <secondElement> Head Office </secondElement> </firstElement>",
       "B": "<firstElement> TIME Hyderabad </firstElement> Head Office </secondElement> <secondElement>",
       "C": "<firstElement> TIME Hyderabad <secondElement> Head Office </firstElement> </second Element",
-      "D": "</firstElement> TIME Hyderabad </secondElement> Head Office <secondElement> <firstElement> 8.122 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology"
+      "D": "</firstElement> TIME Hyderabad </secondElement> Head Office <secondElement> <firstElement>"
     },
     "answer": "A",
     "explanation": null,
@@ -153,7 +153,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 10,
     "question": "Which of the following XML fragments are well formed?",
@@ -170,7 +170,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 11,
     "question": "In the following anchor tag <A HREF = “http:// attribute?",
@@ -187,7 +187,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 12,
     "question": "A link to the document is like this: – <A HREF = \u0007http://www.time4education/document.html> document </A> \u0007Then the link to proposal section will look like (from within same document)",
@@ -204,7 +204,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 13,
     "question": "DTD includes the specifications about the markup that can be used within the document, the specifications consists of all EXCEPT",
@@ -221,7 +221,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 14,
     "question": "Every website has a server process listening to TCP port 80 for incoming connections from clients (nor- mally browsers). After a connection has been estab- lished the client sends one request and server sends one reply. Then the connection is released. The protocol that defines the legal requests and replies is called",
@@ -238,7 +238,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 1",
     "number": 15,
     "question": "Given below are several usages of the anchor tag in HTML: I. < A HREF = “http://www.ebay.com/ Html/Basic/Pageno.html”> Hello </A> II. <A HREF = “/Basic /Pageno.html”> Hello </A> III. <A HREF = “Pageno.html”>Hello</A> IV. <A HREF = “Pageno.html # Hello“>Hello</A> Which of the above are valid?",
@@ -255,7 +255,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 1,
     "question": "Which of the following is not case sensitive?",
@@ -272,7 +272,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 2,
     "question": "Which of the following statement is false?",
@@ -289,7 +289,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 3,
     "question": "Which of the following requires a closing tag?",
@@ -306,7 +306,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 4,
     "question": "Which of the following does not require a closing tag?",
@@ -323,7 +323,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 5,
     "question": "The smallest heading tag in HTML is",
@@ -340,7 +340,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 6,
     "question": "The largest size among the heading tags is",
@@ -357,7 +357,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 7,
     "question": "The ____ tag is effective for formatting program code or similar information, usually in a fixed font with ample space between words and lines.",
@@ -374,7 +374,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 8,
     "question": "____ sets the text characteristics for the document.",
@@ -391,7 +391,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 9,
     "question": "The tag used for creating a row in a HTML table is",
@@ -408,7 +408,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 10,
     "question": "The SRC attribute is used to point to a ____ of the image.",
@@ -425,7 +425,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Practice Problems 2",
     "number": 11,
     "question": "How the position of files will be displayed in browser for the following code? <frameset col’s = “50%, 50%”> <frameset rows = ”50%, 50%”> <frame src = “file1.html”> <frame src = “file3.html”> </frame set> <frame set rows = “50%, 50%”> <frame src = “file2.html”> <frame src = “file4.html”> </frameset? </frameset>",
@@ -598,7 +598,7 @@
     "chapter": "1 - Markup Languages",
     "section": "Previous Years’ Questions",
     "number": 7,
-    "question": "Which one of the following assertions concerning code inspection and code walkthrough is true? \b [2015] 8.124 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology",
+    "question": "Which one of the following assertions concerning code inspection and code walkthrough is true? \b [2015]",
     "options": {
       "A": "\u0007Code inspection is carried out once the code has been unit tested.",
       "B": "\u0007Code inspection and code walkthrough are syno- nyms",
@@ -612,7 +612,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Previous Years’ Questions",
     "number": 9,
     "question": "In a web server, ten WebPages are stored with the URLs of the form http://www.yourname.com/var. html; where, var is a different number from 1 to 10 for each Webpage. Suppose, the client stores the Webpage with var = 1 (say W1) in local machine, edits and then tests. Rest of the WebPages remains on the web server. W1 contains several relative URLs of the form ‘var. html” referring to the other WebPages. Which one of the following statements needs to be added in W1, so that all the relative URLs in W1 refer to the appropri- ate WebPages on the web server?\b [2015]",
@@ -629,7 +629,7 @@
     "source": "Computer Science/Notes & Material/Software engineering.pdf"
   },
   {
-    "chapter": "1 - Markup Languages",
+    "chapter": "8 - Networks, Information Systems, Software Engineering and Web Technology",
     "section": "Previous Years’ Questions",
     "number": 11,
     "question": "Consider three software items: Program-X, Control Flow Diagram of Program-Y and Control Flow Diagram of Program-Z as shown below\b [2015] Control Flow Diagram of Program-X Control Flow Diagram of Program-Y Program-X: Sumcal (int maxint, int value) { int result=0, i=0; if (value <0) { Value = -value; } While ( (i<value) AND (result <= maxint { i=i+1; result = result + 1; } if (result <= maxint) { printf (result); } else { printf (″large ″) } printf (″end of program″); } Control Flow Diagram f Program-Y: Control Flow Diagram of Program-Z: The value of McCabe’s Cyclomatic complexity of pro- gram-X, Program-Y, and Program-Z respectively are",

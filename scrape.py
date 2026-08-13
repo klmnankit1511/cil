@@ -10,7 +10,6 @@ import json
 import re
 import time
 from pathlib import Path
-from urllib.parse import urlparse
 
 import requests
 from Crypto.Cipher import AES
@@ -134,8 +133,8 @@ class Appx:
                 continue
             try:
                 body = r.json()
-            except ValueError:
-                raise SystemExit(f"Non-JSON reply from {path}: {r.text[:300]}")
+            except ValueError as e:
+                raise SystemExit(f"Non-JSON reply from {path}: {r.text[:300]}") from e
             if self.dump_raw:
                 RAW_DIR.mkdir(exist_ok=True)
                 stamp = safe(path + "_" + "_".join(f"{k}{v}" for k, v in params.items()))
