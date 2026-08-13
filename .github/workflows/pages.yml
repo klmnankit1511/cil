@@ -1,13 +1,13 @@
 # Publishes the practice site to GitHub Pages.
 #
-# Deliberately manual (workflow_dispatch only) — running it makes the question
-# bank public, and the questions are extracted from copyrighted exam-prep books.
-# Keep the repository private, or only publish material you have the right to
-# redistribute. Enable Pages first: Settings -> Pages -> Source: GitHub Actions.
+# The generated data file is intentionally not committed, so every deployment
+# rebuilds it from the committed question bank before publishing site/.
 
 name: Deploy site
 
 on:
+  push:
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
