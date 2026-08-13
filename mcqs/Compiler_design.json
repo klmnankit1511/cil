@@ -1,0 +1,3020 @@
+[
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "",
+    "number": 6,
+    "question": "F → id Action Goto State id + × ( ) $ E T F 0 S5 S4 1 2 3 1 S6 acc 2 r2 S7 r2 r2 3 r4 r4 r4 r4 4 S5 S4 8 2 3 5 r6 r6 r6 r6 6 S5 S4 9 3 7 S5 S4 10 8 S6 S1 9 r1 S7 r1 r1 10 r3 r3 r3 r3 11 r5 r5 r5 r5 Moves of LR parser on input string id*id+id is shown below: Stack Input Action 0 id * id + id$ Shift 5 0id 5 * id + id$ reduce 6 means reduce with 6th production F → id and goto [0, F ] = 3 0F 3 * id + id$ reduce 4 i.e T → F goto [0, T ] = 2 0T 2 * id + id$ Shift 7 0T2 * 7 id + id$ Shift 5 0T2 * 7 id 5 + id$ reduce 6 i.e F → id goto [7, F ] = 10 0T2 * 7 F 10 + id$ reduce 3 i.e T → T *F 0T 2 + id$ goto [0, T ] = 2 0E 1 + id$ reduce 2 i.e E → T & goto [0, E ] = 1 0E1 + 6 id$ Shift 6 0E1 + 6 id 5 $ Shift 5 0E1 + 6F 3 $ reduce 6 & goto [6, F ] = 3 0E1 + 6T 9 $ reduce 4 & goto [6, T ] = 9 0E1 $ reduce 1 & goto [0, E ] = 1 0E1 $ accept Constructing SLR parsing table LR (0) item: LR (0) item of a grammar G is a production of G with a dot at some position of the right side of production. Example: A → BCD Possible LR (0) items are A → .BCD A → B.CD A → BC.D A → BCD. A → B.CD means we have seen an input string derivable from B and hope to see a string derivable from CD. The LR (0) items are constructed as a DFA from gram- mar to recognize viable prefixes. The items can be viewed as the states of NFA. The LR (0) item (or) canonical LR (0) collection, pro- vides the basis for constructing SLR parser. To construct LR (0) items, define",
+    "options": {
+      "A": "An augmented grammar",
+      "B": "closure and goto Augmented grammar (G′) If G is a grammar with start symbol S, G′ the augmented grammar for G, with new start symbol S ′ and production S′ → S. Purpose of G′ is to indicate when to stop parsing and announce acceptance of the input. Closure operation Closure (I) includes"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 11,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "",
+    "number": 2,
+    "question": "Create the parsing action table as follows:",
+    "options": {
+      "A": "\u0007If a is a terminal and [A → a.ab] is in Ii, goto (Ii, a) = Ij then action (i, a) to shift j. Here ‘a’ must be a terminal.",
+      "B": "\u0007If [A → a.] is in Ii, then set action [i, a] to ‘reduce A → a’ for all a in FOLLOW (A);",
+      "C": "If [S′ → S.] is in Ii then set action [i, $] to ‘accept’."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 12,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Consider the grammar S → a S → ab The given grammar is:",
+    "options": {
+      "A": "LR (1) only",
+      "B": "LL (1) only",
+      "C": "Both LR (1) and LL (1)",
+      "D": "LR (1) but not LL (1)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 17,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Which of the following is an unambiguous grammar, that is not LR (1)?",
+    "options": {
+      "A": "S → Uab | Vac U → d V → d",
+      "B": "S → Uab/Vab/Vac U → d V → d",
+      "C": "S → AB A → a B → b",
+      "D": "S → Ab A → a/c Common data for questions 3 and 4: Consider the grammar: S → T; S/∈ T → UR U → x/y/[S] R → .T/∈"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 17,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Which of the following are correct FIRST and FOLLOW sets for the above grammar? (i) FIRST(S) = FIRST (T) = FIRST (U) = {x, y, [, e} (ii) FIRST (R) = {,e} (iii) FOLLOW (S) = {], $} (iv) FOLLOW (T) = Follow (R) = {;} (v) FOLLOW (U) = {. ;}",
+    "options": {
+      "A": "(i) and (ii) only",
+      "B": "(ii), (iii), (iv) and (v) only",
+      "C": "(ii), (iii) and (iv) only",
+      "D": "All the five"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 17,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "If an LL (1) parsing table is constructed for the above grammar, the parsing table entry for [S → [ ] is",
+    "options": {
+      "A": "S → T; S",
+      "B": "S → ∈",
+      "C": "T → UR",
+      "D": "U → [S] Common data for questions 5 to 7: Consider the aug- mented grammar S → X X → (X)/a"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 17,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "If a DFA is constructed for the LR (1) items of the above grammar, then the number states present in it are:",
+    "options": {
+      "A": "8",
+      "B": "9",
+      "C": "7",
+      "D": "10"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 17,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Given grammar is",
+    "options": {
+      "A": "Only LR (1)",
+      "B": "Only LL (1)",
+      "C": "Both LR (1) and LL (1)",
+      "D": "Neither LR (1) nor LL (1)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "What is the number of shift-reduce steps for input (a)?",
+    "options": {
+      "A": "15",
+      "B": "14",
+      "C": "13",
+      "D": "16"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "\u0007Cannot be merged since goto on c will lead to two different sets.",
+    "options": {
+      "A": "1 only",
+      "B": "2 only",
+      "C": "1 and 4 only",
+      "D": "1, 2, 3 and 4"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 17,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Which of the following grammar rules violate the requirements of an operator grammar? (i) A → BcC (ii) A → dBC (iii) A → C/∈ (iv) A → cBdC",
+    "options": {
+      "A": "(i) only",
+      "B": "(i) and",
+      "C": "(ii) and (iii) only",
+      "D": "(i) and (iv) only"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "The FIRST and FOLLOW sets for the grammar: S → SS + /SS*/a",
+    "options": {
+      "A": "First (S) = {a} Follow (S) = {+, *, $}",
+      "B": "First (S) = {+} Follow (S) = {+, *, $}",
+      "C": "First (S) = {a} Follow (S) = {+, *}",
+      "D": "First (S) = {+, *} Follow (S) = {+, *, $}"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "A shift reduces parser carries out the actions specified within braces immediately after reducing with the cor- responding rule of the grammar: S → xxW [print ‘1’] S → y [print ‘2’] W → Sz [print ‘3’] What is the translation of ‘x x x x y z z’?",
+    "options": {
+      "A": "1231",
+      "B": "1233",
+      "C": "2131",
+      "D": "2321"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "After constructing the predictive parsing table for the following grammar: Z → d Z → XYZ Y → c/∈ X → Y X → a The entry/entries for [Z, d] is/are",
+    "options": {
+      "A": "Z → d",
+      "B": "Z → XYZ",
+      "C": "Both (A) and (B)",
+      "D": "X → Y"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "The following grammar is S → AaAb/BbBa A → e B → e",
+    "options": {
+      "A": "LL (1)",
+      "B": "Not LL (1)",
+      "C": "Recursive",
+      "D": "Ambiguous"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Compute the FIRST (P) for the below grammar: P → AQRbe/mn/DE A → ab/e Q → q1q2/e R → r1r2/e D → d E → e",
+    "options": {
+      "A": "{m, a}",
+      "B": "{m, a, q1, r1, b, d}",
+      "C": "{d, e}",
+      "D": "{m, n, a, b, d, e, q1, r1}"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "After constructing the LR(1) parsing table for the aug- mented grammar S′ → S S → BB B → aB/c What will be the action [I3, a]?",
+    "options": {
+      "A": "Accept",
+      "B": "S7",
+      "C": "r2",
+      "D": "S5"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Consider the grammar S → aSb S → aS S → e \u0007This grammar is ambiguous by generating which of the following string.",
+    "options": {
+      "A": "aa",
+      "B": "∈",
+      "C": "aaa",
+      "D": "aab"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "To convert the grammar E → E + T into LL grammar",
+    "options": {
+      "A": "use left factor",
+      "B": "CNF form",
+      "C": "eliminate left recursion",
+      "D": "Both (B) and (C)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Given the following expressions of a grammar E → E × F/F + E/F F → F? F/id Which of the following is true?",
+    "options": {
+      "A": "× has higher precedence than +",
+      "B": "? has higher precedence than ×",
+      "C": "+ and? have same precedence",
+      "D": "+ has higher precedence than *"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "The action of parsing the source program into the proper syntactic classes is known as",
+    "options": {
+      "A": "Lexical analysis",
+      "B": "Syntax analysis",
+      "C": "Interpretation analysis",
+      "D": "Parsing"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Which of the following is not a bottom up parser?",
+    "options": {
+      "A": "LALR",
+      "B": "Predictive parser",
+      "C": "CLR",
+      "D": "SLR"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "A system program that combines separately compiled modules of a program into a form suitable for execu- tion is",
+    "options": {
+      "A": "Assembler.",
+      "B": "Linking loader.",
+      "C": "Cross compiler.",
+      "D": "None of these."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "Resolution of externally defined symbols is performed by a",
+    "options": {
+      "A": "Linker",
+      "B": "Loader.",
+      "C": "Compiler.",
+      "D": "Interpreter."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 18,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "LR parsers are attractive because",
+    "options": {
+      "A": "\u0007They can be constructed to recognize CFG cor- responding to almost all programming constructs.",
+      "B": "There is no need of backtracking.",
+      "C": "Both (A) and (B).",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 19,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "YACC builds up",
+    "options": {
+      "A": "SLR parsing table",
+      "B": "Canonical LR parsing table",
+      "C": "LALR parsing table",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 19,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Language which have many types, but the type of every name and expression must be calculated at compile time are",
+    "options": {
+      "A": "Strongly typed languages",
+      "B": "Weakly typed languages",
+      "C": "Loosely typed languages",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "Consider the grammar shown below: S → iEtSS′/a/b S′ → eS/e In the predictive parse table M, of this grammar, the entries M [S′, e] and M [S′, $] respectively are",
+    "options": {
+      "A": "{S′ → eS} and {S′ → ∈}",
+      "B": "{S′ → eS} and { }",
+      "C": "{S′ → ∈} and {S′ → ∈}",
+      "D": "{S′ → eS, S′ → e}} and {S′ → ∈}"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 19,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Consider the grammar S → CC, C → cC/d. The grammar is",
+    "options": {
+      "A": "LL (1)",
+      "B": "SLR (1) but not LL (1)",
+      "C": "LALR (1) but not SLR (1)",
+      "D": "LR (1) but not LALR (1)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "Consider the grammar E → E + n/E – n/n \u0007For a sentence n + n – n, the handles in the right senten- tial form of the reduction are",
+    "options": {
+      "A": "n, E + n and E + n – n",
+      "B": "n, E + n and E + E – n",
+      "C": "n, n + n and n + n – n",
+      "D": "n, E + n and E – n"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 19,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "A top down parser uses ___ derivation.",
+    "options": {
+      "A": "Left most derivation",
+      "B": "Left most derivation in reverse",
+      "C": "Right most derivation",
+      "D": "Right most derivation in reverse"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "Which of the following statement is false?",
+    "options": {
+      "A": "\u0007An unambiguous grammar has single leftmost derivation.",
+      "B": "An LL (1) parser is topdown.",
+      "C": "LALR is more powerful than SLR.",
+      "D": "\u0007An ambiguous grammar can never be LR (K) for any k."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 19,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 2",
+    "number": 16,
+    "question": "Merging states with a common core may produce ___ conflicts in an LALR parser.",
+    "options": {
+      "A": "Reduce – reduce",
+      "B": "Shift – reduce",
+      "C": "Both (A) and (B)",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 2",
+    "number": 17,
+    "question": "LL (K) grammar",
+    "options": {
+      "A": "Has to be CFG",
+      "B": "Has to be unambiguous",
+      "C": "Cannot have left recursion",
+      "D": "All of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 19,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 2",
+    "number": 18,
+    "question": "The I0 state of the LR (0) items for the grammar S → AS/b A → SA/a.",
+    "options": {
+      "A": "S′ → .S S → .As S → .b A → .SA A → .a",
+      "B": "S → .AS S → .b A → .SA A → .a",
+      "C": "S → .AS S → .b",
+      "D": "S → A A → .SA A → .a"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Practice Problems 2",
+    "number": 19,
+    "question": "In the predictive parsing table for the grammar: S → FR R → ×S/e F → id What will be the entry for [S, id]?",
+    "options": {
+      "A": "S → FR",
+      "B": "F → id",
+      "C": "Both (A) and (B)",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Consider the grammar: S → (S) | a \u0007Let the number of states in SLR (1), LR (1) and LALR (1) parsers for the grammar be n1, n2 and n3 respectively. The following relationship holds good: \b [2005]",
+    "options": {
+      "A": "n1 < n2 < n3",
+      "B": "n1 = n3 < n2",
+      "C": "n1 = n2 = n3",
+      "D": "n1 ≥ n3 ≥ n2"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 20,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Consider the following grammar: S → S * E S → E E → F + E E → F F → id \u0007Consider the following LR (0) items corresponding to the grammar above. (i) S → S * .E (ii) E → F. + E (iii) E → F + .E Given the items above, which two of them will appear in the same set in the canonical sets-of items for the grammar?\b [2006]",
+    "options": {
+      "A": "(i) and (ii)",
+      "B": "(ii) and (iii)",
+      "C": "(i) and (iii)",
+      "D": "None of the above"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 20,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Consider the following statements about the context- free grammar G = {S → SS, S → ab, S → ba, S → ∈} (i) G is ambiguous (ii) \u0007G produces all strings with equal number of a’s and b’s (iii) G can be accepted by a deterministic PDA. \u0007Which combination below expresses all the true state- ments about G? \b [2006]",
+    "options": {
+      "A": "(i) only",
+      "B": "(i) and (iii) only",
+      "C": "(ii) and (iii) only",
+      "D": "(i), (ii) and (iii)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 20,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Consider the following grammar: S → FR R → *S|e F → id \u0007In the predictive parser table, M, of the grammar the entries M[S, id] and M[R, $] respectively.\b [2006]",
+    "options": {
+      "A": "{S → FR} and {R → e}",
+      "B": "{S → FR} and { }",
+      "C": "{S → FR} and {R → *S}",
+      "D": "{F → id} and {R → e}"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 20,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Which one of the following grammars generates the language L = {aibj|i ≠ j}?\b [2006]",
+    "options": {
+      "A": "S → AC|CB",
+      "B": "S → aS|Sb|a|b C → aCb|a|b A → aA|∈ B → Bb|∈",
+      "C": "S → AC|CB",
+      "D": "S → AC|CB C → aC|b|∈ C → aCb|∈ A → aA|∈ A → aA|a B → Bb|∈ B → Bb|b"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 20,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "In the correct grammar above, what is the length of the derivation (number of steps starting from S) to generate the string albm with l ≠ m?\b [2006]",
+    "options": {
+      "A": "max (l, m) + 2",
+      "B": "l + m + 2",
+      "C": "l + m + 3",
+      "D": "max (l, m) + 3"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 20,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "Which of the following problems is undecidable? \b [2007]",
+    "options": {
+      "A": "Membership problem for CFGs.",
+      "B": "Ambiguity problem for CFGs.",
+      "C": "Finiteness problem for FSAs.",
+      "D": "Equivalence problem for FSAs."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 20,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Which one of the following is a top-down parser? \b [2007]",
+    "options": {
+      "A": "Recursive descent parser.",
+      "B": "Operator precedence parser.",
+      "C": "An LR (k) parser.",
+      "D": "An LALR (k) parser."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 20,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Consider the grammar with non-terminals N = {S, C, and S1}, terminals T = {a, b, i, t, e} with S as the start symbol, and the following set of rules:\b [2007] S → iCtSS1|a S1 → eS|e C → b The grammar is NOT LL (1) because:",
+    "options": {
+      "A": "It is left recursive",
+      "B": "It is right recursive",
+      "C": "It is ambiguous",
+      "D": "It is not context-free."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 20,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Consider the following two statements: P: Every regular grammar is LL (1) Q: Every regular set has a LR (1) grammar Which of the following is TRUE?\b [2007]",
+    "options": {
+      "A": "Both P and Q are true",
+      "B": "P is true and Q is false",
+      "C": "P is false and Q is true",
+      "D": "Both P and Q are false Common data for questions 11 and 12: Consider the CFG with {S, A, B} as the non-terminal alphabet, {a, b} as the terminal alphabet, S as the start symbol and the fol- lowing set of production rules: S → aB S → bA B → b A → a B → bS A → aS B → aBB S → bAA"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 20,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "Which of the following strings is generated by the grammar?\b [2007]",
+    "options": {
+      "A": "aaaabb",
+      "B": "aabbbb",
+      "C": "aabbab",
+      "D": "abbbba"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 21,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "For the correct answer strings to Q.78, how many der- ivation trees are there? \b [2007]",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 21,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "Which of the following describes a handle (as applica- ble to LR-parsing) appropriately?\b [2008]",
+    "options": {
+      "A": "\u0007It is the position in a sentential form where the next shift or reduce operation will occur.",
+      "B": "\u0007It is non-terminal whose production will be used for reduction in the next step.",
+      "C": "\u0007It is a production that may be used for reduction in a future step along with a position in the sen- tential form where the next shift or reduce opera- tion will occur.",
+      "D": "\u0007It is the production p that will be used for reduc- tion in the next step along with a position in the sentential form where the right hand side of the production may be found."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 21,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "Which of the following statements are true? (i) \u0007Every left-recursive grammar can be converted to a right-recursive grammar and vice-versa (ii) \u0007All e-productions can be removed from any con- text-free grammar by suitable transformations (iii) \u0007The language generated by a context-free gram- mar all of whose productions are of the form X → w or X → wY (where, w is a string of terminals and Y is a non-terminal), is always regular (iv) \u0007The derivation trees of strings generated by a con- text-free grammar in Chomsky Normal Form are always binary trees\b [2008]",
+    "options": {
+      "A": "(i), (ii), (iii) and (iv)",
+      "B": "(ii), (iii) and (iv) only",
+      "C": "(i), (iii) and (iv) only",
+      "D": "(i), (ii) and (iv) only"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 21,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 15,
+    "question": "An LALR (1) parser for a grammar G can have shift- reduce (S–R) conflicts if and only if\b [2008]",
+    "options": {
+      "A": "The SLR (1) parser for G has S–R conflicts",
+      "B": "The LR (1) parser for G has S–R conflicts",
+      "C": "The LR (0) parser for G has S–R conflicts",
+      "D": "\u0007The LALR (1) parser for G has reduce-reduce conflicts"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 21,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 16,
+    "question": "S → aSa| bSb | a | b; \u0007The language generated by the above grammar over the alphabet {a, b} is the set of\b [2009]",
+    "options": {
+      "A": "All palindromes.",
+      "B": "All odd length palindromes.",
+      "C": "Strings that begin and end with the same symbol.",
+      "D": "All even length palindromes."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 21,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "Which data structure in a compiler is used for managing information about variables and their attributes?\b [2010]",
+    "options": {
+      "A": "Abstract syntax tree",
+      "B": "Symbol table",
+      "C": "Semantic stack",
+      "D": "Parse table"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 21,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 18,
+    "question": "The grammar S → aSa|bS|c is\b [2010]",
+    "options": {
+      "A": "LL (1) but not LR (1)",
+      "B": "LR (1) but not LR (1)",
+      "C": "Both LL (1) and LR (1)",
+      "D": "Neither LL (1) nor LR (1)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 21,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 19,
+    "question": "The lexical analysis for a modern computer language such as Java needs the power of which one of the fol- lowing machine models in a necessary and sufficient sense?\b [2011]",
+    "options": {
+      "A": "Finite state automata",
+      "B": "Deterministic pushdown automata",
+      "C": "Non-deterministic pushdown automata",
+      "D": "Turing machine Common data for questions 20 and 21: For the grammar below, a partial LL (1) parsing table is also presented along with the grammar. Entries that need to be filled are indicated as E1, E2, and E3. Is the empty string, $ indicates end of input, and, I separates alternate right hand side of productions S → a A b B|b A a B| e A → S B → S a b $ S E1 E2 S → e A A → S A → S Error B B → S B → S E3"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 21,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 20,
+    "question": "The FIRST and FOLLOW sets for the non-terminals A and B are\b [2012]",
+    "options": {
+      "A": "FIRST (A) = {a, b, e} = FIRST (B) FOLLOW (A) = {a, b} FOLLOW (B) = {a, b, $}",
+      "B": "FIRST (A) = {a, b, $} FIRST (B) = {a, b, e} FOLLOW (A) = {a, b} FOLLOW (B) = {$}",
+      "C": "FIRST (A) = {a, b, e} = FIRST (B) FOLLOW (A) = {a, b} FOLLOW (B) = ∅",
+      "D": "FIRST (A) = {a, b} = FIRST (B) FOLLOW (A) = {a, b} FOLLOW (B) = {a, b}"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 21,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 21,
+    "question": "The appropriate entries for E1, E2, and E3 are \b [2012]",
+    "options": {
+      "A": "E1: S → a A b B, A → S E2: S → b A a B, B → S E3: B → S",
+      "B": "E1: S → a A b B, S → e E2: S → b A a B, S → e E3: S → ∈",
+      "C": "E1: S → a A b B, S → e E2: S → b A a B, S → e E3: B → S",
+      "D": "E1: A → S, S → e E2: B → S, S → e E3: B → S"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 21,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 22,
+    "question": "What is the maximum number of reduce moves that can be taken by a bottom-up parser for a grammar with no epsilon-and unit-production (i.e., of type A → ∈ and A → a) to parse a string with n tokens?\b [2013]",
+    "options": {
+      "A": "n/2",
+      "B": "n – 1",
+      "C": "2n – 1",
+      "D": "2n"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 22,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 23,
+    "question": "Which of the following is/are undecidable? (i) G is a CFG. Is L (G) = φ? (ii) G is a CFG, Is L (G) = Σ*? (iii) M is a Turing machine. Is L (M) regular? (iv) A is a DFA and N is an NFA. Is L (A) = L (N)? \b [2013]",
+    "options": {
+      "A": "(iii) only",
+      "B": "(iii) and (iv) only",
+      "C": "(i), (ii) and (iii) only",
+      "D": "(ii) and (iii) only"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 22,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 24,
+    "question": "Consider the following two sets of LR (1) items of an LR (1) grammar.\b [2013] X → c.X, c/d X → c.X, $ X → .cX, c/d X → .cX, $ X → .d, c/d X → .d, $ \u0007Which of the following statements related to merging of the two sets in the corresponding LALR parser is/ are FALSE? (i) \u0007Cannot be merged since look - ahead are different. (ii) Can be merged but will result in S-R conflict. (iii) Can be merged but will result in R-R conflict. (iv) \u0007Cannot be merged since goto on c will lead to two different sets.",
+    "options": {
+      "A": "(i) only",
+      "B": "(ii) only",
+      "C": "(i) and (iv) only",
+      "D": "(i), (ii), (iii) and (iv)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 22,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 25,
+    "question": "A canonical set of items is given below S → L. > R Q → R. On input symbol < the sset has\b [2014]",
+    "options": {
+      "A": "A shift–reduce conflict and a reduce–reduce conflict.",
+      "B": "\u0007A shift–reduce conflict but not a reduce–reduce conflict.",
+      "C": "\u0007A reduce–reduce conflict but not a shift reduce conflict.",
+      "D": "\u0007Neither a shift–reduce nor a reduce–reduce conflict."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 22,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 26,
+    "question": "Consider the grammar defined by the following produc- tion rules, with two operators * and + S → T * P T → U|T * U P → Q + P|Q Q → Id U → Id Which one of the following is TRUE?\b [2014]",
+    "options": {
+      "A": "+ is left associative, while * is right associative",
+      "B": "+ is right associative, while * is left associative",
+      "C": "Both + and * are right associative.",
+      "D": "Both + and * are left associative"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 22,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 27,
+    "question": "Which one of the following problems is undecidable? \b [2014]",
+    "options": {
+      "A": "\u0007Deciding if a given context -free grammar is am- biguous.",
+      "B": "\u0007Deciding if a given string is generated by a given context-free grammar.",
+      "C": "\u0007Deciding if the language generated by a given context-free grammar is empty.",
+      "D": "\u0007Deciding if the language generated by a given context free grammar is finite."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 22,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 28,
+    "question": "Which one of the following is TRUE at any valid state in shift-reduce parsing?\b [2015]",
+    "options": {
+      "A": "\u0007Viable prefixes appear only at the bottom of the stack and not inside.",
+      "B": "\u0007Viable prefixes appear only at the top of the stack and not inside.",
+      "C": "\u0007The stack contains only a set of viable prefixes.",
+      "D": "The stack never contains viable prefixes."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 22,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 29,
+    "question": "Among simple LR (SLR), canonical LR, and look- ahead LR (LALR), which of the following pairs iden- tify the method that is very easy to implement and the method that is the most powerful, in that order? \b [2015]",
+    "options": {
+      "A": "SLR, LALR",
+      "B": "Canonical LR, LALR",
+      "C": "SLR, canonical LR",
+      "D": "LALR, canonical LR"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 22,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 30,
+    "question": "Consider the following grammar G S → F | H F → p | c H → d | c Where S, F and H are non-terminal symbols, p, d and c are terminal symbols. Which of the following statement(s) is/are correct?\b [2015] S1. \u0007LL(1) can parse all strings that are generated using grammar G S2. \u0007LR(1) can parse all strings that are generated using grammar G",
+    "options": {
+      "A": "Only S1",
+      "B": "Only S2",
+      "C": "Both S1 and S2",
+      "D": "Neither S1 nor S2"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 22,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 31,
+    "question": "Match the following:\b [2016] (P) Lexical analysis (i) Leftmost derivation (Q) Top down parsing (ii) Type checking (R) Semantic analysis (iii) Regular expressions (S) Runtime environments (iv) Activation records",
+    "options": {
+      "A": "P ↔ i, Q ↔ ii, R ↔ iv, S ↔ iii",
+      "B": "P ↔ iii, Q ↔ i, R ↔ ii, S ↔ iv",
+      "C": "P ↔ ii, Q ↔ iii, R ↔ i, S ↔ iv",
+      "D": "P ↔ iv, Q ↔ i, R ↔ ii, S ↔ iii"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 23,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 32,
+    "question": "A student wrote two context - free grammars G1 and G2 for generating a single C-like array declaration. The dimension of the array is at least one. For example, int a [10] [3]; The grammars use D as the start symbol, and use six terminal symbols int; id [ ] num.\b [2016] Grammar G1 Grammar G2 D → int L; D → intL; L → id [E L → id E E → num ] E → E [num] E → num ] [E E → [num] Which of the grammars correctly generate the decla- ration mentioned above?",
+    "options": {
+      "A": "Both G1 and G2",
+      "B": "Only G1",
+      "C": "Only G2",
+      "D": "Neither G1 nor G2"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 23,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 33,
+    "question": "Consider the following grammar: → → → ε → | | P xQRS Q yz z R w S y What is FOLLOW (Q)?\b [2017]",
+    "options": {
+      "A": "{R}",
+      "B": "{w}",
+      "C": "{w, y}",
+      "D": "{w, $}"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 23,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 34,
+    "question": "Which of the following statements about parser is/are CORRECT?\b [2017] I. Canonical LR is more powerful than SLR. II. SLR is more powerful than LALR. III. SLR is more powerful than Canonical LR.",
+    "options": {
+      "A": "I only",
+      "B": "II only",
+      "C": "III only",
+      "D": "I and III only"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 23,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 35,
+    "question": "Consider the following expression grammar G : E − > E − T | T T − > T + F | F F − > (E) | id Which of the following grammars is not left recur- sive, but is equivalent to G?\b [2017]",
+    "options": {
+      "A": "E − >E − T | T",
+      "B": "E − > TE T − > T + F | F E′ − > −TE | ∈ F − > (E) | id T − > T + F | F F − > (E) | id",
+      "C": "E − > TX",
+      "D": "E − > TX | (TX) X − > −TX | ∈ X − > −TX | +TX | ∈ T − > FY T − > id Y − > + FY | ∈ F − > (E) | id"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 23,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 36,
+    "question": "Which one of the following statements is FALSE? \b [2018]",
+    "options": {
+      "A": "Context-free grammar can be used to specify both lexical and syntax rules.",
+      "B": "Type checking is done before parsing.",
+      "C": "High-level language programs can be translated to different Intermediate Representations.",
+      "D": "Arguments to a function can be passed using the program stack."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 23,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 37,
+    "question": "A lexical analyzer uses the following patterns to rec- ognize three tokens T1, T2, and T3 over the alphabet {a, b, c}. T1: a?(b|c)*a T2: b?(a|c)*b T3: c?(b|a)*c Note that ‘x?’ means 0 or 1 occurrence of the symbol x. Note also that the analyzer outputs the token that matches the longest possible prefix. If the string bbaacabc is processed by the analyzer, which one of the following is the sequence of tokens it outputs?\b [2018]",
+    "options": {
+      "A": "T1T2T3",
+      "B": "T1T1T3",
+      "C": "T2T1T3",
+      "D": "T3T3"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 23,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "1 - Lexical Analysis and Parsing",
+    "section": "Previous Years’ Questions",
+    "number": 38,
+    "question": "Consider the following parse tree for the expression a#b$c$d#e#f, involving two binary operators $ and #. # a # # $ $ d e f b c Which one of the following is correct for the given parse tree?\b [2018]",
+    "options": {
+      "A": "$ has higher precedence and is left associative; # is right associative",
+      "B": "# has higher precedence and is left associative; $ is right associative",
+      "C": "$ has higher precedence and is left associative; # is left associative",
+      "D": "# has higher precedence and is right associative; $ is left associative"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 23,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "The annotated tree for input ((a) + (b)), for the rules given below is Production Semantic Rule E → E + T $ $ = mknode (‘+’, $1, $3) E → E-T $ $ = mknode (‘-’, $1, $3) E → T $ $ = $1; T → (E) $ $ = $2; T → id $ $ = mkleaf (id, $1) T → num $ $ = mkleaf (num, $1)",
+    "options": {
+      "A": "E E T T T T T + id = a id = b ( E ) ( E ) ( E )",
+      "B": "E E T T T id = a id = b ( E ) ( E ) +",
+      "C": "E T T id = a id = b + E",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 30,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Let synthesized attribute val give the value of the binary number generated by S in the following grammar. S → L L S → L L → LB L → B B → 0 B → 1 Input 101.101, S.val = 5.625 use synthesized attributes to determine S.val Which of the following are true?",
+    "options": {
+      "A": "S → L1.L2 {S.val = L1.val + L2.val/ (2**L2.bits) |L {S.val = L.val; S.bits = L.bits}",
+      "B": "L → L1 B {L.val = L1.val*2 + B.val; L.bits = L1.bits + 1} |B {L.val = B.val; L.bits = 1}",
+      "C": "B → 0 {B.val = 0} |1 {B.val = 1}",
+      "D": "All of these"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 30,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Which of the following productions with transla- tion rules converts binary number representation into decimal.",
+    "options": {
+      "A": "Production Semantic Rule B → 0 B.trans = 0 B → 1 B.trans = 1 B → B0 B1.trans = B2.trans*2 B → B1 B1.trans = B2.trans * 2 + 1",
+      "B": "Production Semantic Rule B → 0 B.trans = 0 B → B0 B1.trans = B2.trans*4",
+      "C": "Production Semantic Rule B → 1 B.trans = 1 B → B1 B1.trans = B2.trans*2",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 30,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "The grammar given below is Production Semantic Rule A → LM L.i := l(A. i) M.i := m(L.s) A.s := f(M.s) A → QR R.i := r(A.i) Q.i := q(R.s) A.s := f(Q.s)",
+    "options": {
+      "A": "A L-attributed grammar",
+      "B": "Non-L-attributed grammar",
+      "C": "Data insuffi cient",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 30,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "Consider the following syntax directed translation: S → aS {m := m + 3; print (m);} |bS {m: = m*2; print (m) ;} |∈ {m: = 0 ;} A shift reduce parser evaluate semantic action of a pro- duction whenever the production is reduced. If the string is = a a b a b b then which of the following is printed?",
+    "options": {
+      "A": "0 0 3 6 9 12",
+      "B": "0 0 0 3 6 9 12",
+      "C": "0 0 0 3 6 9 12 15",
+      "D": "0 0 3 9 6 12"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 30,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Which attribute can be evaluated by shift reduce parser that execute semantic actions only at reduce moves but never at shift moves?",
+    "options": {
+      "A": "Synthesized attribute",
+      "B": "Inherited attribute",
+      "C": "Both (a) and (b)",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 30,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "2 - Syntax Directed Translation",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Consider the following annotated parse tree: A B B⋅num = num A⋅num = y⋅num + z⋅num C⋅num = num C + num num Which of the following is true for the given annotated tree?",
+    "options": {
+      "A": "\u0007There is a specific order for evaluation of attribute on the parse tree.",
+      "B": "\u0007Any evaluation order that computes an attribute ‘A’ after all other attributes which ‘A’ depends on, is acceptable.",
+      "C": "Both (A) and (B)",
+      "D": "None of these. Common data for questions 8 and 9: Consider the fol- lowing grammar and syntax directed translation. E → E + T E1.val = E2.val + T.val E → T E.val = T.val T → T*P T1.val = T2.val * P.val * P.num T → P T.val = P.val * P.num P → (E) P.val = E.val P → 0 P.num = 1 P.val = 2 P → 1 P.num = 2 P.val = 1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 31,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "2 - Syntax Directed Translation",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "What is E.val for string 1*0?",
+    "options": {
+      "A": "8",
+      "B": "6",
+      "C": "4",
+      "D": "12"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "2 - Syntax Directed Translation",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "What is the E.val for string 0 * 0 + 1?",
+    "options": {
+      "A": "8",
+      "B": "6",
+      "C": "4",
+      "D": "12"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 31,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "2 - Syntax Directed Translation",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Consider the following syntax directed definition: Production Semantic Rule S → b S.x = 0 S.y = 0 S → S1 I S.x = S1.x + I.dx S.y = S1.y + I.dy I → east I.dx = 1 I.dy = 0 I → north I.dx = 0 I.dy = 1 I → west I.dx = -1 I.dy = 0 I → south I.dx = 0 I.dy = -1 If Input = begin east south west north, after evaluating this sequence what will be the value of S.x and S.y?",
+    "options": {
+      "A": "(1, 0)",
+      "B": "(2, 0)",
+      "C": "(-1, -1)",
+      "D": "(0, 0)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 31,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "2 - Syntax Directed Translation",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "What will be the values s.x, s.y if input is ‘begin west south west’?",
+    "options": {
+      "A": "(–2, –1)",
+      "B": "(2, 1)",
+      "C": "(2, 2)",
+      "D": "(3, 1)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 31,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "2 - Syntax Directed Translation",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Consider the following grammar: S → E S.val = E.val E.num = 1 E → E*T E1.val = 2 * E2.val + 2 * T.val E2.num = E1.num + 1 T.num = E1.num + 1 E → T E.val = T.val T.num = E.num + 1 T → T + P T1.val = T2.val + P.val T2.num = T1.num + 1 P.num = T1.num + 1 T → P T.val = P.val P.num = T.num + 1 P → (E) P.val = E.val P → i E P P I P . . . | . num num val num = =       Which attributes are inherited and which are synthe- sized in the above grammar?",
+    "options": {
+      "A": "\u0007Num attribute is inherited attribute. Val attribute is synthesized attribute.",
+      "B": "\u0007Num is synthesized attribute. Val is inherited at- tribute.",
+      "C": "Num and val are inherited attributes.",
+      "D": "Num and value are synthesized attributes."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 31,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "2 - Syntax Directed Translation",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "Consider the grammar with the following translation rules and E as the start symbol. E → E1@T {E.value = E1.value*T.value} |T {E.value = T.value} T → T1 and F {T.value = T1.value + F.value} |F {T.value = F.value} F → num {F.value = num.value} Compute E.value for the root of the parse tree for the expression: 2 @ 3 and 5 @ 6 and 4",
+    "options": {
+      "A": "200",
+      "B": "180",
+      "C": "160",
+      "D": "40"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Consider the following Tree: Production Meaning E → E1 + T E.t = E1.t*T.t E → E1 – T E.t = E1.t + T.t E → T E.t = T.t t → 0 T.t = ‘0’ t → 5 T.t = ‘5’ t → 2 T.t = ‘2’ t → 4 T.t = ‘4’ E E E - + T 2 4 5 T T After evaluation of the tree the value at the root will be:",
+    "options": {
+      "A": "28",
+      "B": "32",
+      "C": "14",
+      "D": "7"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 32,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "The value of an inherited attribute is computed from the values of attributes at the _______",
+    "options": {
+      "A": "Sibling nodes",
+      "B": "Parent of the node",
+      "C": "Children node",
+      "D": "Both (A) and (B)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 32,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Consider an action translating expression: expr → expr + term {print (‘+’)} expr → expr - term {print (‘-’)} expr → → term term → 1 {print (‘1’)} term → 2 {print (‘2’)} term → 3 {print (‘3’)} Which of the following is true regarding the above translation expression?",
+    "options": {
+      "A": "\u0007Action translating expression represents infix notation.",
+      "B": "\u0007Action translating expression represents prefix notation.",
+      "C": "\u0007Action translating expression represents postfix notation.",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "In the given problem, what will be the result after eval- uating 9 – 5 + 2?",
+    "options": {
+      "A": "+ - 9 5 2",
+      "B": "9 – 5 + 2",
+      "C": "9 5 – 2+",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "In a syntax directed translation, if the value of an attrib- ute node is a function of the values of attributes of chil- dren, then it is called:",
+    "options": {
+      "A": "Synthesized attribute",
+      "B": "Inherited attribute",
+      "C": "Canonical attributes",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 32,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Inherited attribute is a natural choice in:",
+    "options": {
+      "A": "Keeping track of variable declaration",
+      "B": "\u0007Checking for the correct use of L-values and R- values.",
+      "C": "Both (A) and (B)",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "Syntax directed translation scheme is desirable because",
+    "options": {
+      "A": "It is based on the syntax",
+      "B": "\u0007Its description is independent of any implementa- tion.",
+      "C": "It is easy to modify",
+      "D": "All of these"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 32,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "A context free grammar in which program fragments, called semantic actions are embedded within right side of the production is called,",
+    "options": {
+      "A": "Syntax directed translation",
+      "B": "Translation schema",
+      "C": "Annotated parse tree",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 32,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "A syntax directed definition specifies translation of construct in terms of:",
+    "options": {
+      "A": "Memory associated with its syntactic component",
+      "B": "\u0007Execution time associated with its syntactic com- ponent",
+      "C": "Attributes associated with its syntactic component",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "If an error is detected within a statement, the type assigned to the Statement is:",
+    "options": {
+      "A": "Error type",
+      "B": "Type expression",
+      "C": "Type error",
+      "D": "Type constructor"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "(A) \u0007The above grammar and the semantic rules are fed to a yacc tool (which is an LALR (1) parser gener- ator) for parsing and evaluating arithmetic expres- sions. Which one of the following is true about the action of yacc for the given grammar?",
+    "options": {
+      "A": "\u0007Equal precedence and left associativity; expres- sion is evaluated to 7",
+      "B": "\u0007Equal precedence and right associativity; expres- sion is evaluated to 9",
+      "C": "\u0007Precedence of ‘×’ is higher than that of ‘+’, and both operators are left associative; expression is evaluated to 7",
+      "D": "\u0007Precedence of ‘+’ is higher than that of ‘×’, and both operators are left associative; expression is evaluated to 9"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 32,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "2 - Syntax Directed Translation",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "In the context of abstract-syntax-tree (AST) and control-flow-graph (CFG), which one of the follow- ing is TRUE?\b [2015]",
+    "options": {
+      "A": "\u0007In both AST and CFG, let node N2 be the suc- cessor of node N1. In the input program, the code corresponding to N2 is present after the code cor- responding to N1.",
+      "B": "\u0007For any input program, neither AST nor CFG will contain a cycle.",
+      "C": "\u0007The maximum number of successors of a node in an AST and a CFG depends on the input pro- gram.",
+      "D": "\u0007Each node in AST and CFG corresponds to at most one statement in the input program."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 33,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "2 - Syntax Directed Translation",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Consider the following Syntax Directed Translation Scheme (SDTS), with non-terminals {S, A} and ter- minals {a, b}.\b [2016] S → aA { print 1 } S → a { print 2 } A → Sb { print 3 } Using the above SDTS, the output printed by a bot- tom-up parser, for the input aab is:",
+    "options": {
+      "A": "1 3 2",
+      "B": "2 2 3",
+      "C": "2 3 1",
+      "D": "syntax error"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 33,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "2 - Syntax Directed Translation",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Which one of the following grammars is free from left recursion?\b [2016]",
+    "options": {
+      "A": "S → AB A → Aa|b B → c",
+      "B": "S → Ab|Bb|c A → Bd|ε B → e",
+      "C": "S → Aa|B A → Bb|Sc|ε B → d",
+      "D": "S → Aa|Bb|c A → Bd|ε B → Ae|ε"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 33,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Use of machine idioms Elimination of Redundant Loads and stores Example 1: (1) MOV Ro, a (2) MOV a, Ro We can delete instruction (2), because the value of a is already in R0. Example 2: Load x, R0 Store R0, x If no modifications to R0/x then store instruction can be deleted Example 3: (1) Load x, R0 (2) Store R0, x Example 4: (1) store R0, x (2) Load x, R0 Second instruction can be deleted from both examples 3 and 4. Example 5: Store R0, x Load x, R0 Here load instruction can be deleted. Eliminating Unreachable code An unlabeled instruction immediately following and uncon- ditional jump may be removed. •• May be produced due to debugging code intro- duced during development. •• May be due to updates in programs without consid- ering the whole program segment. Example: Let print = 0 if print = 1 goto L1 goto L2 L1: print in if print ! = 1 goto L2 print instructions L2: goto L2 print instructions L2: if 0! = 1 goto L 2 print instructions L 2: In all of the above cases print instructions are unreachable. \\ Print instructions can be eliminated. Example: goto L2 … L2: Flow of control optimizations The unnecessary jumps can be eliminated. Jumps like: Jumps to jumps, Jumps to conditional jumps, Conditional jumps to jumps.",
+    "options": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "Example 1: we can replace the jump sequence goto L1 … L1: got L2 By the sequence Got L2 L1: got L2, … If there are no jumps to L1 then it may be possible to eliminate the statement L1: goto L2. Example 2: Sometimes skips “goto L3” Only one jump to L goto L1 ... L1: if a < b goto L2 L3: ... if a < b goto L2 goto L3: ... L3: Reduction in strength •• x2 is cheaper to implement as x * x than as a call to expo- nentiation routine. •• Replacement of multiplication by left shift. Example: x * 23 ⇒ x < < 3 •• Replace division by right shift. Example: x > > 2 (is x/22) Use of machine Idioms •• Auto increment and auto decrement addressing modes can be used whenever possible. Example: replace add #1, R by INC R"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 48,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Consider the following expression tree on a machine with bad store architecture in which memory can be accessed only through load and store instructions. The variables p, q, r, s and t are initially stored in memory. The binary operators used in this expression tree can be evaluated by the machine only when the operands are in registers. The instructions produce result only in a register if no intermediate results can be stored in memory, what is the minimum number of registers needed to evaluate this expression? − − + + p q r t s",
+    "options": {
+      "A": "2",
+      "B": "9",
+      "C": "5",
+      "D": "3"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 49,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Consider the program fragment: sum = 0; For (i = 1; i < = 20; i++) sum = sum + a[i] +b[i]; How many instructions are there in the three-address code for this?",
+    "options": {
+      "A": "15",
+      "B": "16",
+      "C": "17",
+      "D": "18"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Suppose the instruction set of the processor has only two registers. The code optimization allowed is code motion. What is the minimum number of spills to memory in the complied code? c = a + b; d = c*a; e = c + a; x = c*c; If (x > a) { y = a*a; Else { d = d*d; e = e*e; }",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "What is the minimum number of registers needed to compile the above problem’s code segment without any spill to memory?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Convert the following expression into postfix notation: a = (-a + 2*b)/a",
+    "options": {
+      "A": "aa – 2b *+a/=",
+      "B": "a – 2ba */+ =",
+      "C": "a2b * a/+",
+      "D": "a2b – * a/+"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "In the quadruple representation of the following pro- gram, how many temporaries are used? int a = 2, b = 8, c = 4, d; For ( j = 0; j< = 10; j++) a = a * ( j* (b/c)); d = a * ( j* (b/c));",
+    "options": {
+      "A": "4",
+      "B": "7",
+      "C": "8",
+      "D": "10"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Let A = 2, B = 3, C = 4 and D = 5, what is the final value of the prefix expression: + * AB – CD",
+    "options": {
+      "A": "5",
+      "B": "10",
+      "C": "–10",
+      "D": "–5"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Which of the following is a valid expression?",
+    "options": {
+      "A": "BC * D – +",
+      "B": "* ABC –",
+      "C": "BBB ***- +",
+      "D": "-*/bc"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "What is the final value of the postfix expression B C D A D – + – + where A = 2, B = 3, C = 4, D = 5?",
+    "options": {
+      "A": "5",
+      "B": "4",
+      "C": "6",
+      "D": "7"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "Consider the expression x = (a + b)* –C/D. In the quadruple representation of this expression in which instruction ‘/’ operation is used?",
+    "options": {
+      "A": "3rd",
+      "B": "4th",
+      "C": "5th",
+      "D": "8th"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "In the triple representation of x = (a + b)*– c/d, in which instruction (a + b) * – c/d result will be assigned to x?",
+    "options": {
+      "A": "3rd",
+      "B": "4th",
+      "C": "5th",
+      "D": "8th"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "Consider the three address code for the following program: While (A < C and B > D) do If (A = = 1) then C = C + 1; Else While (A < = D) do A = A + 3; How many temporaries are used?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "0"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Code generation can be done by",
+    "options": {
+      "A": "DAG",
+      "B": "Labeled tree",
+      "C": "Both (A) and (B)",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "Live variables analysis is used as a technique for",
+    "options": {
+      "A": "Code generation",
+      "B": "Code optimization",
+      "C": "Type checking",
+      "D": "Run time management"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Match the correct code optimization technique to the corresponding code: (i) i = i * 1 j = 2 * i ⇒ j = 2 * i (p) \u0007Reduction in strength (ii) A = B + C D = 10 + B + C ⇒ A = B + C D = 10 + A (q) Machine Idioms (iii) For i = 1 to 10 A [i] = B + C ⇒ for i = 1 to 10 t = B + C A [i] = t; (r) \u0007Common sub expression elimination. (iv) x = 2 * y ⇒ y << 2; (s) Code motion",
+    "options": {
+      "A": "i – r, iii – s, iv – p, ii – q",
+      "B": "i – q, ii – r, iii – s, iv –p",
+      "C": "i – s, iii – p, iii – q, iv – r",
+      "D": "i – q, ii – p, iii – r, iv – s"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 50,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "What will be the optimized code for the following expression represented in DAG? a = q * - r + q * - r",
+    "options": {
+      "A": "t1 = -r",
+      "B": "t1 = -r t2 = q * t1 t2 = q * t1 t3 = a * t1 t3 = t2 + t2 t4 = t2 + t3 a = t3 a = t4",
+      "C": "t1 = -r",
+      "D": "All of these t2 = q t3 = t1 * t2 t4 = t3 + t3 a = t4"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "In static allocation, names are bound to storage at _______ time.",
+    "options": {
+      "A": "Compile",
+      "B": "Runtime",
+      "C": "Debugging",
+      "D": "Both (A) and (B)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "The actual parameters are evaluate d and their r-values are passed to the called procedure is known as",
+    "options": {
+      "A": "call-by-reference",
+      "B": "call-by-name",
+      "C": "call-by-value",
+      "D": "copy-restore"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "If the expression – (a + b) *(c + d) + (a + b + c) is trans- lated into quadruple representation, then how many temporaries are required?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "8"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "If the above expression is translated into triples repre- sentation, then how many instructions are there?",
+    "options": {
+      "A": "6",
+      "B": "10",
+      "C": "5",
+      "D": "8"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "In the indirect triple representation for the expression A = (E/F) * (C – D). The first pointer address refers to",
+    "options": {
+      "A": "C – D",
+      "B": "E/F",
+      "C": "Both (A) and (B)",
+      "D": "(E/F) * (C – D)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "For the given assembly language, what is the cost for it? MOV b, a ADD c, a",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "6",
+      "D": "2"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Consider the expression ((4 + 2 * 3 + 7) + 8 * 5). The polish postfix notation for this expression is",
+    "options": {
+      "A": "423* + 7 + 85*+",
+      "B": "423* + 7 + 8 + 5*",
+      "C": "42 + 37 + *85* +",
+      "D": "42 + 37 + 85** + Common data for questions 10 to 15: Consider the fol- lowing basic block, in which all variables are integers, and ** denotes exponentiation. a: = b + c z: = a * * 2 x: = 0 * b y: = b + c w: = y * y u: = x + 3 v: = u + w Assume that the only variables that are live at the exit of this block are v and z. In order, apply the following optimization to this basic block."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "After applying algebraic simplification, how many instructions will be modified?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "4",
+      "D": "5"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "After applying common sub expression elimination to the above code. Which of the following are true?",
+    "options": {
+      "A": "a: = b + c",
+      "B": "y: = a",
+      "C": "z = a + a",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Among the following instructions, which will be modi- fied after applying copy propagation?",
+    "options": {
+      "A": "a: = b + c",
+      "B": "z: = a * a",
+      "C": "y: = a",
+      "D": "w: = y * y"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "Which of the following is obtained after constant folding?",
+    "options": {
+      "A": "u: = 3",
+      "B": "v: = u + w",
+      "C": "x: = 0",
+      "D": "Both (A) and (C)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "In order to apply dead code elimination, what are the statements to be eliminated?",
+    "options": {
+      "A": "x = 0",
+      "B": "y = b + c",
+      "C": "Both (A) and (B)",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "How many instructions will be there after optimizing the above result further?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "3 - Intermediate Code Generation",
+    "section": "Practice Problems 2",
+    "number": 16,
+    "question": "Consider the following program: L0: e: = 0 b: = 1 d: = 2 L1: a: = b + 2 c: = d + 5 e: = e + c f: a*a If f < c goto L3 L2: e: = e + f goto L4 L3: e: = e + 2 L4: d: = d + 4 b: = b – 4 If b! = d goto 4 L5: How many blocks are there in the flow graph for the above code?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "8",
+      "D": "7"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 51,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 17,
+    "question": "A basic block can be analyzed by",
+    "options": {
+      "A": "Flow graph",
+      "B": "A graph with cycles",
+      "C": "DAG",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 52,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 18,
+    "question": "In call by value the actual parameters are evaluated. What type of values is passed to the called procedure?",
+    "options": {
+      "A": "l-values",
+      "B": "r-values",
+      "C": "Text of actual parameters",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 52,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 19,
+    "question": "Which of the following is FALSE regarding a Block?",
+    "options": {
+      "A": "The first statement is a leader.",
+      "B": "\u0007Any statement that is a target of conditional / un- conditional goto is a leader.",
+      "C": "Immediately next statement of goto is a leader.",
+      "D": "The last statement is a leader."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 52,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Consider the intermediate code given below. (1) i = 1 (2) j = 1 (3) t1 = 5 * i (4) t2 = t1 + j (5) t3 = 4 * t2 (6) t4 = t3 (7) a[t4] = –1 (8) j = j + 1 (9) if j < = 5 goto (3) (10) i = i + 1 (11) if i < 5 goto (2) The number of nodes and edges in the control-flow- graph constructed for the above code, respectively, are\b [2015]",
+    "options": {
+      "A": "5 and 7",
+      "B": "6 and 7",
+      "C": "5 and 5",
+      "D": "7 and 8"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 52,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "What will be the output of the following pseudo- code when parameters are passed by reference and dynamic scoping is assumed?\b [2016] a = 3; void n(x) { x = x* a; print (x);} void m(y) {a = 1; a = y – a; n(a) ; print (a)} void main( ) {m(a);}",
+    "options": {
+      "A": "6,2",
+      "B": "6,6",
+      "C": "4,2",
+      "D": "4,4"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 52,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Consider the following intermediate program in three address code p = a − b q = p * c p = u * v q = p + q Which one of the following corresponds to a static single assignment form of the above code?\b [2017]",
+    "options": {
+      "A": "p1 = a − b",
+      "B": "p3 = a − b q1 = p1 * c q4 = p3 * c p1 = u * v p4 = u * v q1 = p1 + q1 q5 = p4 + q4",
+      "C": "p1 = a − b",
+      "D": "p1 = a − b q1 = p2 * c q1 = p * c p3 = u * v p2 = u * v q2 = p4 + q3 q2 = p + q"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 52,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "In between two adjacent statements within a basic block. Example 1: a. = 10 b. = 20 c. = a * b B1 Here, In B1 there are 4 points Example 2: • P1 – B1 proc-begin func • P2 – B1 v3 = v1 + v2 • P3 – B1 if c > 100 goto L0 • P4 – B1 B1 There is 4 point in the basic block B1, given by P1 – B1, P2 – B1, P3 – B1 and P4 – B1. Path: A path is a sequence of points in which the control can flow. A path from P1 to Pn is a sequence of points P1, P2 ,…, Pn such that for each i between 1 and n-1, either",
+    "options": {
+      "A": "Pi is the point immediately preceding a statement and Pi+1 is the point immediately following that statement in the same block. (OR)",
+      "B": "Pi is the end of some block and Pi+1 is the beginning of a successor block. Example: B1 B3 B2 B4 B0 • P3 – b1 Goto .L1 • P4 – b1 • P0 – b0 Proc-begin func • P1 – b0 v3 : = v1 + v2 • P2 – b0 If c >100 goto L0 • P3 – b0 • P9 – b4 Label L1 • P10 – b4 Proc-end func • P11 – b4 • P4 – b2 Label L0 • P5 – b2 v4 : = v1 + v2 • P6 – b2 v1 : = 0 • P7 – b2 • P7 – b3 Label L1 • P8 – b3 V5 : = v1 + v2 • P9 – b3 Path is between the points P0 – b0 and P6 – b2: The sequence of points P0 – b0, P1 – b0, P2 – b0, P3 – b0 , P4 – b2, P5 – b2 and P6 – b2. Path between P3 – b1 and P6 – b2: There is no sequence of points. Path between P0 – b0 and P7 – b3: There are two paths. (1) Path 1 consists of the sequence of points, P0 – b0, P1 – b0, P2 – b0, P3 – b0, P3 – b0, P4 – b1 and P7 – b3 . (2) Path 2 consists of the sequence of points P0 – b0, P1 – b0, P2 – b0, P3 – b0, P4 – b2, P5 – b2, P6 – b2, P7 – b2 and P7 – b3 Definition and Usage of Variables Definitions It is either an assignment to the variable or reading of a value for the variable. Use Use of identifier x means any occurrence of x as an operand. Example: Consider the statement x = y + z; In this statement some value is assigned to x. It defines x and used y and z values. Global Data-Flow-Analysis Data Flow Analysis (DFA) is a technique for gathering information about the possible set of values calculated at various points in a program. •• An example of a data-flow analysis is reaching definitions. •• A single way to perform data-flow analysis of program is to setup data flow equations for each node of the control flow graph. Use definition (U-d) chaining The use of a value is any point where that variable or con- stant is used in the right hand side of an assignment or is evaluating an expression. The definition of a value occurs implicitly at the begin- ning of the whole program for a variable. A point is defined either prior to or immediately after a statement. Reaching definitions A definition of a variable A reaches a point P if there is a path in the flow graph from that definition to P, such that no other definitions of A appear on the path. Example: B1 B3 B4 B2 B5 if A = B goto B5 A : = 3 P : A : = 2 if A = B goto B3 The definition A: = 3 can reach point p in B5. To determine the definitions that can reach a given pro- gram first assign distinct numbers to each definition, since it is associated with a unique quadruple. •• For each simple variable A, make a list of all definitions of A anywhere in the program. •• Compute two sets for each basic block B. Gen [B] is the set of generated definitions within block B and that reach the end of the block."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 61,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "For all blocks B, OUT [B] = (IN [B] – KILL [B]) U GEN [B] A definition d, reaches the end of B if",
+    "options": {
+      "A": "d ∈ IN [B] and is not killed by B. (or)",
+      "B": "d is generated in B and is not subsequently redefined here."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 62,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Replacing the expression 2 * 3.14 by 6.28 is",
+    "options": {
+      "A": "Constant folding",
+      "B": "Induction variable",
+      "C": "Strength reduction",
+      "D": "Code reduction"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 63,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "The expression (a*b)*c op … where ‘op’ is one of ‘+’, ‘*’ and ‘↑’ (exponentiation) can be evaluated on CPU with a single register without storing the value of (a*b) if",
+    "options": {
+      "A": "‘op’ is ‘+’ or ‘*’",
+      "B": "‘op’ is ‘↑’ or ‘+’",
+      "C": "‘op’ is ‘↑’ or ‘*’",
+      "D": "not possible to evaluate without storing"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 63,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Machine independent code optimization can be applied to",
+    "options": {
+      "A": "Source code",
+      "B": "Intermediate representation",
+      "C": "Runtime output",
+      "D": "Object code"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 63,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "In block B if S occurs in B and there is no subsequent assignment to y within B, then the copy statement S : x = y is",
+    "options": {
+      "A": "Generated",
+      "B": "Killed",
+      "C": "Blocked",
+      "D": "Dead"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 63,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "If E was previously computed and the value of variable in E have not changed since previous computation, then an occurrence of an expression E is",
+    "options": {
+      "A": "Copy propagation",
+      "B": "Common sub expression",
+      "C": "Dead code",
+      "D": "Constant folding"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 63,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "In block B, if x or y is assigned there and s is not in B, then s : x = y is",
+    "options": {
+      "A": "Generated",
+      "B": "Killed",
+      "C": "Blocked",
+      "D": "Dead"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 63,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Given the following code A = x + y; B = x + y; Then the corresponding optimized code as ––––– ––––– C = x + y; ––––– A = C; ––––– B = C; When will be optimized code pose a problem?",
+    "options": {
+      "A": "When C is undefined.",
+      "B": "When memory is consideration.",
+      "C": "C may not remain same after some statements.",
+      "D": "Both (A) and (C)."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 63,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Can the loop invariant X = A – B from the following code be moved out? For i = 1 to 10 { A = B * C; X = A – B; }",
+    "options": {
+      "A": "No",
+      "B": "Yes",
+      "C": "X = A – B is not invariant",
+      "D": "Data insufficient"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 63,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "If every path from the initial node goes through a par- ticular node, then that node is said to be a",
+    "options": {
+      "A": "Header",
+      "B": "Dominator",
+      "C": "Parent",
+      "D": "Descendant Common data for questions 10 and 11: Consider the fol- lowing statements of a block: a: = b + c b: = a – d c: = b + c d: = a – d"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 63,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "The above basic block contains, the value of b in 3rd statement is",
+    "options": {
+      "A": "Same as b in 1st statement",
+      "B": "Different from b in 1st statement",
+      "C": "0",
+      "D": "1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "The above basic block contains",
+    "options": {
+      "A": "Two common sub expression",
+      "B": "Only one common sub expression",
+      "C": "Dead code",
+      "D": "Temporary variable"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Find the induction variable from the following code: A = –0.2; B = A + 5.0;",
+    "options": {
+      "A": "A",
+      "B": "B",
+      "C": "Both A and B are induction variables",
+      "D": "No induction variables"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "The analysis that cannot be implemented by forward operating data flow equations mechanism is",
+    "options": {
+      "A": "Interprocedural",
+      "B": "Procedural",
+      "C": "Live variable analysis",
+      "D": "Data"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Which of the following consist of a definition, of a vari- able and all the uses, U, reachable from that definition without any other intervening definitions?",
+    "options": {
+      "A": "Ud-chaining",
+      "B": "Du-chaining",
+      "C": "Spanning",
+      "D": "Searching"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "Consider the graph 1 2 3 The graph is",
+    "options": {
+      "A": "Reducible graph",
+      "B": "Non-reducible graph",
+      "C": "Data insufficient",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "In labeling algorithm, let n is a binary node and its chil- dren have L1 and L2, if L1 = L2 then LABEL (n):",
+    "options": {
+      "A": "L1 – 1",
+      "B": "L2 + 1",
+      "C": "L1 + L1",
+      "D": "L1 + 1"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "The input for the code generator is a:",
+    "options": {
+      "A": "Tree at lexical level",
+      "B": "Tree at semantic level",
+      "C": "Sequence of assembly language instructions",
+      "D": "Sequence of machine idioms"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "In labeling algorithm, let n is a binary node and its chil- dren have i1 and i2, LABEL (n) if i1 ≠ i2 is",
+    "options": {
+      "A": "Max (i1, i2)",
+      "B": "i2 + 1",
+      "C": "i2 – 1",
+      "D": "i2 – i1"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "The following tries to keep frequently used value in a fixed register throughout a loop is:",
+    "options": {
+      "A": "Usage counts",
+      "B": "Global register allocation",
+      "C": "Conditional statement",
+      "D": "Pointer assignment"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Substitute y for x for copy statement s : x = y if the fol- lowing condition is met",
+    "options": {
+      "A": "\u0007Statements s may be the only definition of x reach- ing u",
+      "B": "x is dead",
+      "C": "y is dead",
+      "D": "x and y are aliases"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Consider the following code for (i=0; i<m; i++) { for (j=0; j<m; j ++) If (i%2) { a = a + (14*j+5*i); b = b + (9 + 4*j); } } Which of the following is false?",
+    "options": {
+      "A": "There is a scope of common reduction in this code",
+      "B": "There is a scope of strength reduction in this code.",
+      "C": "\u0007There is scope of dead code elimination in this code",
+      "D": "Both (A) and (C)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "S1: In dominance tree, the initial node is the root. S2: Each node d dominates only its ancestors in the tree. S3: if d≠n and d dom n then d dom m. Which of the statements is/are true?",
+    "options": {
+      "A": "S1, S2 are true",
+      "B": "S1, S2 and S3 are true",
+      "C": "Only S3 is true",
+      "D": "Only S1 is true"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 64,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "The specific task storage manager performs:",
+    "options": {
+      "A": "Allocation/Deallocation of storage to programs",
+      "B": "\u0007Protection of storage area allocated to a program from illegal access by other programs in the system",
+      "C": "The status of each program",
+      "D": "Both (A) and (B)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 65,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Concept which can be used to identify loops is:",
+    "options": {
+      "A": "Dominators",
+      "B": "Reducible graphs",
+      "C": "Depth first ordering",
+      "D": "All of these"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 65,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "A point cannot be found:",
+    "options": {
+      "A": "Between two adjacent statements",
+      "B": "Before the first statement",
+      "C": "After the last statement",
+      "D": "Between any two statements"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 65,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "In the statement, x = y*10 + z; which is/are defined?",
+    "options": {
+      "A": "x",
+      "B": "y",
+      "C": "z",
+      "D": "Both (B) and (C)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 65,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Consider the following program: void main ( ) { int x, y; x = 3; y = 7; -------- -------- if (x<y) { int x; { int y; y = 9; ------ x = 2*y; } ------- ------- x = x + y; printf (“%d”, x); } ------ printf (“%d”, x); } The output is",
+    "options": {
+      "A": "3 – 25",
+      "B": "25 – 3",
+      "C": "3 – 3",
+      "D": "25 – 25"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 65,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "The evaluation strategy which delays the evaluation of an expression until its value is needed and which avoids repeated evaluations is:",
+    "options": {
+      "A": "Early evaluation",
+      "B": "Late evaluation",
+      "C": "Lazy evaluation",
+      "D": "Critical evaluation"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 65,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "If two or more expressions denote same memory address, then the expressions are:",
+    "options": {
+      "A": "Aliases",
+      "B": "Definitions",
+      "C": "Superiors",
+      "D": "Inferiors"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 65,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "Operations that can be removed completely are called:",
+    "options": {
+      "A": "Strength reduction",
+      "B": "Null sequences",
+      "C": "Constant folding",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 65,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "In a compiler, keywords of a language are recognized during:\b [2011]",
+    "options": {
+      "A": "parsing of the program",
+      "B": "the code generation",
+      "C": "the lexical analysis of the program",
+      "D": "dataflow analysis"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 65,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "What is the minimum number of registers needed in the instruction set architecture of the processor to compile this code segment without any spill to mem- ory? Do not apply any optimization other than opti- mizing register allocation.\b [2013]",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Suppose the instruction set architecture of the proces- sor has only two registers. The only allowed compiler optimization is code motion, which moves statements from one place to another while preserving correct- ness. What is the minimum number of spills to mem- ory in the compiled code?\b [2013]",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Which one of the following is NOT performed during compilation? \b [2014]",
+    "options": {
+      "A": "Dynamic memory allocation",
+      "B": "Type checking",
+      "C": "Symbol table management",
+      "D": "Inline expansion"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 66,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Which of the following statements are CORRECT?\b \b [2014] (i) \u0007Static allocation of all data areas by a compiler makes it impossible to implement recursion. (ii) \u0007Automatic garbage collection is essential to im- plement recursion. (iii) \u0007Dynamic allocation of activation records is es- sential to implement recursion. (iv) \u0007Both heap and stack are essential to implement recursion.",
+    "options": {
+      "A": "(i) and (ii) only",
+      "B": "(ii) and (iii) only",
+      "C": "(iii) and (iv) only",
+      "D": "(i) and (iii) only"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 66,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "6 - Compiler Design",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "\u0007The path has no intervening assignment to x including at Si and Sj. 3 4 2 u = s * v s = p + q p = q + r q = v + r q = s * u v = r + u 1 The variables which are live both at the statement in basic block 2 and at the statement in basic block 3 of the above control flow graph are",
+    "options": {
+      "A": "p, s, u",
+      "B": "r, s, u",
+      "C": "r, u",
+      "D": "q, v"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Production tree",
+    "options": {
+      "A": "P–2, Q–3, R–1, S–4",
+      "B": "P–2, Q–1, R–4, S–3",
+      "C": "P–2, Q–4, R–1, S–3",
+      "D": "P–2, Q–3, R–4, S–1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  },
+  {
+    "chapter": "4 - Code Optimization",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "Match the following according to input (from the left column) to the compiler phase (in the right column) that processes it:\b [2017] (P) Syntax tree (i) Code generator (Q) Character stream (ii) Syntax analyzer (R) Intermediate representation (iii) Semantic analyzer (S) Token stream (iv) Lexical analyzer",
+    "options": {
+      "A": "P → (ii), Q → (iii), R → (iv), S → (i)",
+      "B": "P → (i), Q → (iv), R → (ii), S → (iii)",
+      "C": "P → (iii), Q → (iv), R → (i), S → (ii)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 67,
+    "subject": "Compiler design",
+    "source": "Computer Science/Notes & Material/Compiler design.pdf"
+  }
+]

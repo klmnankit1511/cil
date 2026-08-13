@@ -1,0 +1,11 @@
+.venv
+.browser-profile
+raw
+__pycache__
+
+# holds a live login token — never commit
+.auth.json
+
+# large generated artefacts
+downloads/
+site/data.js

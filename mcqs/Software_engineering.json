@@ -1,0 +1,648 @@
+[
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Which of the following statement is false?",
+    "options": {
+      "A": "HTML is a markup language for hypertext.",
+      "B": "VML is used for freehand drawing in web page.",
+      "C": "\u0007WML is wireless markup language used for micro procure of mobiles and palmtops.",
+      "D": "None of these"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 11,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "The web browser request goes to the server in",
+    "options": {
+      "A": "Hex form",
+      "B": "ASCII form",
+      "C": "Binary form",
+      "D": "Text form"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 11,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "The tag that contains information about the document including its title, scripts used, style definitions and docu- mentation description is",
+    "options": {
+      "A": "<HTML>, <\\HTML>",
+      "B": "<HEAD>, <\\HEAD>",
+      "C": "<BODY>, <\\BODY>",
+      "D": "<TITLE>, <\\TITLE>"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 11,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Tag that is considered to be illegal in XML is",
+    "options": {
+      "A": "<.document>",
+      "B": "<document>",
+      "C": "<\\document>",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "____ specifies that a click in this area will not link anywhere.",
+    "options": {
+      "A": "NOHREF",
+      "B": "HREF = 0",
+      "C": "NULLHREF",
+      "D": "HREF"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "A ______ specifies the layout for frames, including the locations and characteristics of the frame.",
+    "options": {
+      "A": "frameset",
+      "B": "border layout",
+      "C": "table",
+      "D": "frame border"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "What is the correct syntax of the declaration, which defines the XML version?",
+    "options": {
+      "A": "<xml version = “1.0”/>",
+      "B": "<?xml version = “1.0”?>",
+      "C": "<?xml version = “1.0”/>",
+      "D": "None of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 11,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Which of the following are predefined attributes?",
+    "options": {
+      "A": "xml : lang",
+      "B": "xml : space",
+      "C": "both (A) and (B)",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 11,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Which of the following XML documents are well formed?",
+    "options": {
+      "A": "<firstElement> TIME Hyderabad <secondElement> Head Office </secondElement> </firstElement>",
+      "B": "<firstElement> TIME Hyderabad </firstElement> Head Office </secondElement> <secondElement>",
+      "C": "<firstElement> TIME Hyderabad <secondElement> Head Office </firstElement> </second Element",
+      "D": "</firstElement> TIME Hyderabad </secondElement> Head Office <secondElement> <firstElement> 8.122 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Which of the following XML fragments are well formed?",
+    "options": {
+      "A": "<myExam mycity = “Hyderabad”/>",
+      "B": "<myExam mycity = ‘Hyderabad’/>",
+      "C": "<myExam mycity = “Hyderabad/”>",
+      "D": "<myExam mycity = ‘Hyderabad/>"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "In the following anchor tag <A HREF = “http:// attribute?",
+    "options": {
+      "A": "A",
+      "B": "HREF",
+      "C": "time",
+      "D": "http"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "A link to the document is like this: – <A HREF = \u0007http://www.time4education/document.html> document </A> \u0007Then the link to proposal section will look like (from within same document)",
+    "options": {
+      "A": "<A HREF = “#proposal”>",
+      "B": "<A HREF = “documents.html #proposal”>",
+      "C": "<A HREF = “→ proposal”>",
+      "D": "<A HREF = “~ proposal”>"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "DTD includes the specifications about the markup that can be used within the document, the specifications consists of all EXCEPT",
+    "options": {
+      "A": "the browser name",
+      "B": "the size of element name",
+      "C": "entity declarations",
+      "D": "element declarations"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Every website has a server process listening to TCP port 80 for incoming connections from clients (nor- mally browsers). After a connection has been estab- lished the client sends one request and server sends one reply. Then the connection is released. The protocol that defines the legal requests and replies is called",
+    "options": {
+      "A": "TFTP",
+      "B": "FTP",
+      "C": "gopher",
+      "D": "HTTP"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "Given below are several usages of the anchor tag in HTML: I. < A HREF = “http://www.ebay.com/ Html/Basic/Pageno.html”> Hello </A> II. <A HREF = “/Basic /Pageno.html”> Hello </A> III. <A HREF = “Pageno.html”>Hello</A> IV. <A HREF = “Pageno.html # Hello“>Hello</A> Which of the above are valid?",
+    "options": {
+      "A": "I and II only",
+      "B": "I, II, III and IV",
+      "C": "I and III only",
+      "D": "I, II and III only"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Which of the following is not case sensitive?",
+    "options": {
+      "A": "VML",
+      "B": "XHTML",
+      "C": "XML",
+      "D": "HTML"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Which of the following statement is false?",
+    "options": {
+      "A": "W3C stands for World Wide Web consortium.",
+      "B": "W3C implements the <layer> tag.",
+      "C": "W3C sets the HTML standards.",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Which of the following requires a closing tag?",
+    "options": {
+      "A": "<H1>",
+      "B": "<ABBR>",
+      "C": "<B>",
+      "D": "All of these"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Which of the following does not require a closing tag?",
+    "options": {
+      "A": "<B>",
+      "B": "<FONT>",
+      "C": "<BR>",
+      "D": "<ABR>"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "The smallest heading tag in HTML is",
+    "options": {
+      "A": "<H0>",
+      "B": "<H1>",
+      "C": "<H6>",
+      "D": "<H8>"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "The largest size among the heading tags is",
+    "options": {
+      "A": "H6",
+      "B": "H5",
+      "C": "H7",
+      "D": "H1"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "The ____ tag is effective for formatting program code or similar information, usually in a fixed font with ample space between words and lines.",
+    "options": {
+      "A": "<Pre>",
+      "B": "<Address>",
+      "C": "<Blockquote>",
+      "D": "<Strong>"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "____ sets the text characteristics for the document.",
+    "options": {
+      "A": "<font>",
+      "B": "<size>",
+      "C": "<color>",
+      "D": "<basefont>"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "The tag used for creating a row in a HTML table is",
+    "options": {
+      "A": "<TR>",
+      "B": "<TD>",
+      "C": "<Table row>",
+      "D": "<TH>"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "The SRC attribute is used to point to a ____ of the image.",
+    "options": {
+      "A": "folder",
+      "B": "file",
+      "C": "URL",
+      "D": "pixel"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "How the position of files will be displayed in browser for the following code? <frameset col’s = “50%, 50%”> <frameset rows = ”50%, 50%”> <frame src = “file1.html”> <frame src = “file3.html”> </frame set> <frame set rows = “50%, 50%”> <frame src = “file2.html”> <frame src = “file4.html”> </frameset? </frameset>",
+    "options": {
+      "A": "50 50 File 1 File 2 30 File 3 File 4 70",
+      "B": "50 50 File 1 File 3 30 File 2 File 4 70",
+      "C": "70 30 File 1 File 4 50 File 2 File 3 50",
+      "D": "30 70 File 1 File 4 50 File 3 File 2 50"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "‘We may have standalone attributes in XML’. This statement is",
+    "options": {
+      "A": "True",
+      "B": "False",
+      "C": "True if it is well-formed",
+      "D": "True if it defined in DTD"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 13,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "Standalone is one of the possible attributes in the XML declaration. We can set this to ___ if the document does not refer to any external entity.",
+    "options": {
+      "A": "Yes",
+      "B": "No",
+      "C": "Not required to set it",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 13,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "Which of the following is not the difference between HTML and Java script?",
+    "options": {
+      "A": "\u0007HTML is used to create web pages, java script is used to customize the web pages.",
+      "B": "\u0007HTML provides security where as java script doesn’t provide security.",
+      "C": "\u0007HTML is more preferable by the clients or users where as java script is not more preferable by the users.",
+      "D": "HTML is less efficient than java script."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 13,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "<HMTL> and </HMTL> tags indicates the beginning and ending of the document which are compulsory because these indicate that the software is _____.",
+    "options": {
+      "A": "processing HTML",
+      "B": "processing XML",
+      "C": "processing URL",
+      "D": "deprocessing HTML"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 13,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Match the following:\b [2015] (P) Condition coverage (i) Black-box testing (Q) Equivalence class partitioning (ii) System testing (R) Volume testing (iii) White-box testing (S) Alpha testing (iv) Performance testing",
+    "options": {
+      "A": "P–ii, Q–iii, R–i, S–iv",
+      "B": "P–iii, Q–iv, R–ii, S–i",
+      "C": "P–iii, Q–i, R–iv, S–ii",
+      "D": "P–iii, Q–i, R–ii, S–iv"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 13,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Which of the following statements is/are FALSE? \b [2015] I. \u0007XML overcomes the limitations in HTML to sup- port a structured way of organizing content. II. \u0007XML specification is not case sensitive while HTML specification is case sensitive. III. \u0007XML supports user defined tags while HTML uses pre-defined tags. IV. \u0007XML tags need not be closed while HTML tags must be closed.",
+    "options": {
+      "A": "II only",
+      "B": "I only",
+      "C": "II and IV only",
+      "D": "III and IV only"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 13,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "A software requirements specification (SRS) docu- ment should avoid discussing which one of the fol- lowing?\b [2015]",
+    "options": {
+      "A": "User interface issues",
+      "B": "Non-functional requirements",
+      "C": "Design specification",
+      "D": "Interfaces with third party software"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 13,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Consider the basic COCOMO model where E is the effort applied in person-months, D is the development time in chronological months, KLOC is the estimated number of delivered lines of code (in thousands) and ab , bb , cb , db have their usual meanings. The basic COCOMO equations are of the form\b [2015]",
+    "options": {
+      "A": "E = ab(KLOC) exp(bb), D = cb(E) exp(db)",
+      "B": "D = ab(KLOC) exp(bb), E = cb(D) exp(db)",
+      "C": "E = ab exp(bb), D = cb(KLOC) exp(db)",
+      "D": "E = ab exp(db), D = cb(KLOC) exp(bb)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 13,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Which one of the following statements is NOT cor- rect about HTTP cookies?\b [2015]",
+    "options": {
+      "A": "\u0007A cookie is a piece of code that has the potential to compromise the security of an Internet user.",
+      "B": "\u0007A cookie gains entry to the user’s work area through an HTTP header.",
+      "C": "A cookie has an expiry date and time.",
+      "D": "\u0007Cookies can be used to track the browsing pat- tern of a user at a particular site."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 13,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "Which one of the following assertions concerning code inspection and code walkthrough is true? \b [2015] 8.124 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology",
+    "options": {
+      "A": "\u0007Code inspection is carried out once the code has been unit tested.",
+      "B": "\u0007Code inspection and code walkthrough are syno- nyms",
+      "C": "\u0007Adherence to coding standards is checked during code inspection",
+      "D": "\u0007Code walkthrough is usually carried out by inde- pendent test team"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 13,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "In a web server, ten WebPages are stored with the URLs of the form http://www.yourname.com/var. html; where, var is a different number from 1 to 10 for each Webpage. Suppose, the client stores the Webpage with var = 1 (say W1) in local machine, edits and then tests. Rest of the WebPages remains on the web server. W1 contains several relative URLs of the form ‘var. html” referring to the other WebPages. Which one of the following statements needs to be added in W1, so that all the relative URLs in W1 refer to the appropri- ate WebPages on the web server?\b [2015]",
+    "options": {
+      "A": "\u0007<a href: http://www.yourname.com/”, href: “var. html”>",
+      "B": "<base href: http://www.yourname.com/”>",
+      "C": "<a href: http://www.yourname.com/”>",
+      "D": "\u0007<base href: http://www.yourname.com/”, range: “var.html”>"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 14,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  },
+  {
+    "chapter": "1 - Markup Languages",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "Consider three software items: Program-X, Control Flow Diagram of Program-Y and Control Flow Diagram of Program-Z as shown below\b [2015] Control Flow Diagram of Program-X Control Flow Diagram of Program-Y Program-X: Sumcal (int maxint, int value) { int result=0, i=0; if (value <0) { Value = -value; } While ( (i<value) AND (result <= maxint { i=i+1; result = result + 1; } if (result <= maxint) { printf (result); } else { printf (″large ″) } printf (″end of program″); } Control Flow Diagram f Program-Y: Control Flow Diagram of Program-Z: The value of McCabe’s Cyclomatic complexity of pro- gram-X, Program-Y, and Program-Z respectively are",
+    "options": {
+      "A": "4, 4, 7",
+      "B": "3, 4, 7",
+      "C": "4, 4, 8",
+      "D": "4, 3, 8"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 14,
+    "subject": "Software engineering",
+    "source": "Computer Science/Notes & Material/Software engineering.pdf"
+  }
+]

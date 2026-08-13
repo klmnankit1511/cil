@@ -1,0 +1,3041 @@
+[
+  {
+    "chapter": "1 - Finite Automata",
+    "section": "",
+    "number": 2,
+    "question": "‘Σ’ denote Alphabet. String: A string over an alphabet ‘A’ is a fi nite ordered sequence of symbols from ‘A’. The length of string is number of symbols in string, with repetitions counted. Example: If Σ = {0 – 9, ÷, =, –, +, × (,)} then Strings valid: 12 + 34, 90 × 10, (1 + 2) × (1 ÷ 3) Strings Invalid: sin (45), log (10) etc. These strings are not valid because sin ( ), log ( ) are not defi ned over the alphabet set. Note: Repetitions are allowed. Length of |12 + 34| = 5(1, 2, +, 3, 4) • The Empty string denoted by ‘e’, is the (unique) string of length zero. Note: Empty string, e ≠ empty set, ∅. • If S and T are sets of strings, then ST = {xy|x ∈ S and y ∈ T} Given an alphabet A, Ao = {e} An+1 = A.An … A An n ∗ = ∞ = 0∪ Languages • A language ‘L’ over Σ is any fi nite or infi nite set of strings over Σ. • The elements in L are strings – fi nite sequences of symbols. • A language which does not contain any elements is called ‘empty language’. Note: Empty language, { } ≠ {e}, empty string because { } = ∅ ≠ e i.e., Empty language resembles empty set i.e., ∅. • A language L over an alphabet A is subset of A* i.e., L ⊂ A*. Example 1: Language (L) for strings that consists of only 0’s or only 1’s and have an odd length over alphabet {0, 1} is",
+    "options": {
+      "A": "{0, 1, 00, 11, 000, 111 …}",
+      "B": "{00, 11, 01, 10 …}",
+      "C": "{000, 101, 110, 111 …}",
+      "D": "{0, 1, 000, 111, 11111, 00000 …}"
+    },
+    "answer": null,
+    "explanation": "(D) Only 0’s → should have only 0’s. It should not be combination of 0’s and 1’s. Only 1’s → should have only 1’s. It should not be combination of 0’s and 1’s. Odd length → only odd number of 0’s or odd number of 1’s i.e., length of string should be odd.  Fundamentals  Languages  Operations  Finite state machine  NFA with -moves  Conversion of NFA to DFA  Minimization of DFA  Equivalence between NFA and DFA  Mealy and Moore machines  Equivalence of Moore and Mealy machine  Regular languages  Constructing FA for given RE  Pumping lemma for regular sets  Closure properties of regular sets  Regular grammar LEARNING OBJECTIVES An Empty Languages An empty language is a language which does not accept any strings includinge. The Finite automata for empty language can be represented as (i.e., One state, non-accepting and no transitions). A language which only accepts (e) E: The language which only accepts ‘e’ can be represented as This machine accepts E – only. Σ*: The set of all strings over an alphabet Σ will be denoted by Σ*. Σ+: This will denote the set Σ* – {e}. Ex: If Σ = {0, 1} then Σ* = {e, 0, 1, 00, 01, 10, 11, 000, 001, …} Σ+ = {0, 1, 00, 01, 10, 11, 000, 001,} Operations Operations on strings",
+    "page": 1,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "",
+    "number": 1,
+    "question": "Concatenation: Combines two strings by putting one after other. Example 2: Two strings are defined as x = java, y = script. The concatenation (x.y) of two strings results in _______.",
+    "options": {
+      "A": "scriptjava",
+      "B": "javascript",
+      "C": "jascriptva",
+      "D": "scrijavapt"
+    },
+    "answer": null,
+    "explanation": "(B) x.y = java.script = javascript Note: Concatenation of empty string with any other string gives string itself. i.e., x.ε = ε.x = x",
+    "page": 2,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "",
+    "number": 2,
+    "question": "Substring: If ‘w’ is a string, then ‘v’ is a substring of ‘w’ if there exists string x and y such that w = xvy. ‘x’ is called ‘prefix’ and y is called suffix of w. Example 3: String, w = ‘gymnastics’ is defined with prefix, x = ‘gym’ and suffix, y = ‘cs’. The substring of the given string is _______",
+    "options": {
+      "A": "nasti",
+      "B": "mnas",
+      "C": "gymnastics",
+      "D": "ics"
+    },
+    "answer": null,
+    "explanation": "(A) Because, w = xvy ⇒ gymnastics = gymvcs ∴ v = nasti",
+    "page": 2,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "",
+    "number": 4,
+    "question": "Reversal: If ‘w’ is a string, then wR is reversal of string spelled backwards. Rules: •• x = (xR) R •• (xz)R = zR . xR Example 4: A string, x is defined as, x = butter. Then (xR)R is _______",
+    "options": {
+      "A": "butter",
+      "B": "rettub",
+      "C": "butret",
+      "D": "retbut"
+    },
+    "answer": null,
+    "explanation": "(A) x → butter xR → rettub (xR)R → butter. Operations on languages",
+    "page": 2,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "",
+    "number": 4,
+    "question": "Concatenation: Given an alphabet Σ, for any two languages L1, L2 over Σ, the concatenation L1 L2 of L1 and L2 is language L1L2 = {w ∈ Σ*|∃ u ∈ L1, ∃ v ∈L2, w = uv} Properties: L∅ = ∅ = ∅L L {e} = L = {e} L (L1 ∪ {e})L2 = L1L2 ∪ L2 L1 (L2 ∪ {e}) = L1L2 ∪ L1 Ln L = LLn = Ln+1 Note: L1L2 ≠ L2L1 Example 5: Let L1 = {00, 11}, L2 = {01, 10}. Then L1oL2 = _______",
+    "options": {
+      "A": "{00, 11, 01, 10}",
+      "B": "{0001, 0010, 1101, 1110}",
+      "C": "{0001, 0010, 11, 01, 10}",
+      "D": "{00, 1101, 1110, 11, 10}"
+    },
+    "answer": null,
+    "explanation": "(B) L1oL2 = {00, 11} o {01, 10} = {00.01, 00.10, 11.01, 11.10} = {0001, 0010, 1101, 1110}",
+    "page": 2,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "",
+    "number": 1,
+    "question": "Deterministic Finite Automata (DFA): •• DFA machine can exists in only one state at any given time. •• DFA is defined by 5-tuple: {Q, Σ, q0, F, d}, where Q → Finite number of states (elements) Σ → Finite set of symbols (alphabets) qo → Start/Initial state F → Set of final states. δ → \u0007Transition function, which is a mapping between δ: Q × Σ → Q. How to use DFA: Input: A word w in Σ* Question: Is w acceptable by DFA? Steps: •• Start at ‘initial state’, qo. •• For every input symbol in sequence w, do. •• Compute the next state from current state, given the cur- rent input symbol in w and transition function. •• If after all symbols in ‘w’ are consumed, the current state is one of the final states (f) then accept ‘w’; •• Otherwise, reject w. Transition diagram: State machines are represented by directed graphs called transition (state) diagrams. •• The vertices denoted by single circle represent the state and arcs labeled with input symbol correspond to transition. •• The final states are represented with double circles. Transition Table: Transition function can be represented by tables. Example 6: The following finite state machine accepts all those binary strings in which the numbers of 0’s and 1’s are respectively. 0 0 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 q7 q1 q2 q11 q0 q6 q5 q4 q3 q14 q13 q12 q8 q9 q10 0",
+    "options": {
+      "A": "Divisible by 3 and 2",
+      "B": "Odd and even",
+      "C": "Divisible by 5 and 3",
+      "D": "Divisible by 2 and 3"
+    },
+    "answer": null,
+    "explanation": "(C) Number of 0’s is divisible by 5. Number of 1’s is divisible by 3. Table Transition Table Current State 0 1 → q0 q1 q5 q1 q2 q7 q2 q3 q9 q3 q4 q11 q4 q0 q13 q5 q7 q6 q6 q8 q0 q7 q9 q8 q8 q10 q1 q9 q11 q10 q10 q12 q2 q11 q13 q12 q12 q14 q3 q13 q0 q14 q14 q6 q4 Note: Minimum number of states for k-divisibility is k-states. In above example, q0 – q14 → 15 – states. ∴ 5 × 3 = 15 The given binary strings have number of 0’s divisible by 5 and number of 1’s divisible by 3.",
+    "page": 3,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "",
+    "number": 2,
+    "question": "Non-deterministic finite Automata (NFA): •• The machine can exist in multiple states at the same time. •• Each transition function maps to a set of states. •• NFA is defined by 5-tuple: {Q, Σ, q0, F, d}, where Q → Finite number of states (elements) Σ → Finite set of symbols. (Alphabets) qo → Start/Initial state F → Set of final states. d → Transition function which is a mapping between δ = Q × Σ → 2Q How to use NFA: Input: a word w in Σ* Question: Is w accepted by NFA? Steps: •• Start at ‘start state’ q0. •• For every input symbol in the sequence, w does. •• Determine all possible next states from current state, given the current input symbol in w and transition function. •• If after all symbols in w are consumed, at least one of the current states is a final state then accept w. •• Otherwise, reject w. Example 7: What is the language, L generated by the below NFA, given strings defined over alphabet, Σ = {0, 1}. 0,1 0 0 q0 1 q1 q2",
+    "options": {
+      "A": "Strings that end with ‘0’",
+      "B": "Strings that start with ‘0’ and end with ‘0’",
+      "C": "Strings that contain ‘01’ as substring",
+      "D": "Strings that contain ‘01’ as substring and end with ‘0’"
+    },
+    "answer": null,
+    "explanation": "(D) State 0 1 → q0 {q0, q1} {q0} q1 ∅ q2 q2 {q2} ∅ String: 0100100 q q q 0 0 0 1 → { , } q q q q q 0 0 0 1 0 0 0 1 →  →  → { , } q q q q q q 0 0 0 1 0 0 0 0 0 1 →  →  →  → { , } q q q q q 01 0 0 0 0 1 0  →  →  → { , } (Non-deterministic) q q q q q q 0 0 0 1 0 0 0 0 0 1 →  →  →  → { , } q q q q 1 1 2 0 2 0 2 →  →  →  Table 2 Difference between NFA and DFA DFA NFA",
+    "page": 4,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "",
+    "number": 4,
+    "question": "\u0007Practical implementation has to be deterministic (so needs conversion to DFA). Relation between DFA and NFA •• A language ‘L’ is accepted by a DFA if and only if it is accepted by a NFA. •• Every DFA is special case of a NFA. Example 8: Let Nf and Df denote the classes of languages accepted by non-deterministic finite automata and deterministic finite automata respectively. Which one of following is true?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": null,
+    "explanation": "(C) According to ‘subset construction’, every language accepted by NFA is also accepted by some DFA. ∴ Df = Nf NFA with ∈-Moves •• ∈-transitions in finite automata allows a state to jump to another state without consuming any input symbol. Conversion and Equivalence: ∈-NFA → NFA → DFA NFA without ∈-moves: •• Two FA, N∈ and N are said to be equivalent, if L(N∈) = L(N) i.e., any language described by some N∈, there is an N that accepts the same language. •• For N∈ = (Q, Z, d, q0, F) and N = (Q, Σ′, d ′, q0, F′ ), Find •• d ′(q, a) = ∈-closure (δ(∈-closure(q), a)) •• F ′ = {F ∪ {q0}}, if ∈-closure (q0) contains a member of F = F, otherwise. Note: When transforming N∈ to N, only transitions are required to be changed and states remains same. Example 9: Consider following NFA with ∈-moves. q0 q1 q2 q3 a a b ∈ ∈ If given NFA is converted to NFA without ∈-moves, which of following denotes set of final states? Let N = (Q, Σ1, δ1, q0, F1) F1 = F ∪ {q0} ε-closure (q0) = {q0, q1} ∴ F1 = {q1} ∪ {q0, q1} = {q0, q1} Conversion N∈→N: To compute, δ1 ∈-closure (q0) = {q0, q1}, ∈-closure (q3) = {q3, q1} δ1(q0, a) = {q1, q2}, δ1(q0, b) = ∅, d1(q2, a) = ∅. δ1(q1, a) = {q1, q2}, δ1(q1, b) = ∅, d1(q2, b) = {q1, q3} δ1(q3, a) = {q1, q2}, δ1(q3, b) = ∅ Table 3 Transition Table Input State a b → q0 {q1, q2} ∅ q1 {q1, q2} ∅ q2 ∅ {q1, q3} q3 {q1, q2} ∅ q1 q0 q2 q3 a a a a a a b b Figure 1 Transition diagram Conversion of NFA to DFA Let a NFA be defined as, N = (QN, Σ, δN, q0, FN) The equivalent DFA, D = (QD, Σ, δD, q0, FD) where: Step I: QD QN = 2 ; i.e., QD is set of all subsets of QN i.e., it is power set of QN. Step II: FD is set of subsets S of QN such that S ∩ FN ≠ ∅. i.e., FD is all sets of N’s states that include atleast one accepting state of N. Step III: For each set, S ≤ QN and for each input symbol a in Σ : ( , ) ( , ) δ δ D P S N S a P a = ∪∈ That is, to compute δD(S, a), look at all states P in S, see what states N goes to starting from P on input a, and take the union of all those states. Note: For any NFA, N with ‘n’ states, the corresponding DFA, D can have 2n states. Example 10: What is the number of final states in DFA constructed from the given NFA? a a b b b b b a, b 1 2 0 4 3 a, b a, b a, b Table 4 Transition Table of NFA Input State a b → 0 {1, 2, 3} {2, 3} 1 {1, 2} {2, 3} 2 ∅ {2, 3, 4} 3 {4} {3, 4} 4 ∅ ∅ Table 5 Transition Table of DFA Input State a b →0 [1, 2, 3] [2, 3] 1 [1, 2] [2, 3] 2 ∅ [2, 3, 4] 3 4 [3, 4] 4 ∅ ∅ [1, 2] [1, 2] [2, 3, 4] [2, 3] [4] [2, 3, 4] [3, 4] [4] [3, 4] [1, 2, 3] [1, 2, 4] [2, 3, 4] [1, 2, 4] [1, 2] [2, 3, 4] [2, 3, 4] [4] [2, 3, 4] Hence final states in obtained DFA is ‘4’. DFA is: Choice (D) 1 3 b 0 a 2 [1, 2, 4] [2, 3, 4] [1, 2] [2, 3] [3, 4] 4 [1, 2, 3] b b b b b b b b b a a a a a a a a Minimization of DFA Given a DFA, M Q q F = ( , , , , ), Σ δ 0 we construct a reduced DFA, ′ = ′ ′ ′ ′ ′ ( ) M Q q F , , , , Σ δ 0 as follows",
+    "page": 4,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "",
+    "number": 5,
+    "question": "For each transition rule of M of the from δ ( , ) , q q q r p = find the sets to which qr and qp belong. If qr ∈ {qi,qj, … qk} and qpe { , , }, q q q m n ℓ add a rule to δ : ′ … = … δ ( , ) . ij k a m n ℓ Example 11: A DFA with alphabet Σ = {a, b} is given below: 5 3 1 2 4 a a a a b b b b a, b Which of the following is valid minimal DFA which accepts same language as given DFA?",
+    "options": {
+      "A": "Mealy machine equivalent to Moore machine: If M1 = (Q, Σ, D, d, l, q0) is a Moore machine, then there is a Mealy machine M2 equivalent to M1. Proof: Let M2 = (Q, Σ, D, d, l1, q0) and define l1 (q, a) to be l(d (q, a)) for all states q and input symbol ‘a’. Then M1 and M2 enter the same sequence of states on the same input, and with each transition M2 emits the o/p that M1 associates with the state entered. Let us consider Mealy Machine Present State Next State Input State a = 0 Output Input State a = 1 Output → q1 q3 0 q2 0 q2 q1 1 q4 0 q3 q2 1 q1 1 q4 q4 1 q3 0 To convert the Mealy machine to Moore machine, •• We look into the next state column for any state, say qi and determine the number of different outputs associated with qi in next column. •• Split qi into several different states, the number of such states being equal to the number of different outputs asso- ciated with qi. Present State Next State Input State a = 0 Output Input State a = 1 Output → q1 q3 0 q20 0 q20 q1 1 q40 0 q21 q1 1 q40 0 q3 q21 1 q1 1 q40 q41 1 q3 0 q41 q41 1 q3 0 •• The pair of states and outputs in the next state column can be rearranged as: Present state Next State output a = 0 a = 1 → q1 q3 q20 1 q20 q1 q40 0 q21 q1 q40 1 q3 q21 q1 0 q40 q41 q3 0 q41 q41 q3 1 Moore machine equivalent to Mealy machine Let M1 = (Q, Σ, D, d, l, q0) be a Mealy machine. Then there is a machine M2 equivalent to M1 Proof: Let M2 = (QXD, Σ, D, d1, l1, [q0, b0]), where b0 is an arbitrary selected member of D. That is, the states of M2 are pairs [q, b] consisting of a state of M1 and output symbol, Define d1 ([q, b], a) = [d (q, a), l, (q, a)] and l1 ([q, b]) = b. The second component of a state [q, b] of M2 is the out- put made by M1 on some transition into state q. Only the first components of M2’s states determine the moves made by M2. Every induction on ‘n’ shows that if M1 enters states q0, q1 … qn on inputs a1, a2 … an and emits output b1, b2, … bn then M2 enters states [q0, b0], [q1, b1] … [qn, bn] and emits outputs b0, b1 … bn. Let us consider the Moore machine Present State Next State Output a = 0 a = 1 → q0 q3 q1 0 q1 q1 q2 1 q2 q2 q3 0 q3 q3 q0 0 •• To convert Moore into Mealy machine, we must follow the reverse procedure of converting Mealy machine into Moore machine. •• For every input symbol we form, the pair consisting of the next state and the corresponding output and reconstruct the table for Mealy machine. •• For example, the state q3 and q1 in the next state column should be associated with outputs 0 and 1, respectively. The Transition table for Mealy machine is: Present state Next State a = 0 state output a = 1 state output → q0 q3 0 q1 1 q1 q1 1 q2 0 q2 q2 0 q3 0 q3 q3 0 q0 0 Regular Languages The set of regular languages over an alphabet Σ is defined recursively as below. Any language belonging to this set is a regular language over Σ. Definition of set of regular languages •• Basis clause: ∅, {ε}, {a} for any symbol a ∈ Σ, are regu- lar languages. •• Inductive clause: If Lr and Ls are regular languages, then Lr ∪ Ls, Lr . Ls, Lr * are regular languages. •• External clause: Nothing is a regular language, unless it is obtained from above two clauses. Regular language: Any language represented by regular expression(s) is called a regular language. Ex: The regular expression a* denotes a language which has {e, a, aa, aaa, …} Regular expression •• Regular expressions are used to denote regular languages. •• The set of regular expressions over an alphabet Σ is defined recursively as below. Any element of that set is a regular expression. •• Basis clause: ∅, ∈, a are regular expression correspond- ing to languages ∅, {∈}, {a} respectively where a is an element of Σ. •• Inductive clause: If r and s are regular expression corre- sponding to languages Lr and Ls then (r + s), (rs) and (r*) are regular expressions corresponding to the languages Lr ∪ Ls, Lr . Ls and Lr*respectively. •• External clause: Nothing is a regular expression, unless it is obtained from above two clauses. Closure property of regular expressions The iteration or closure of a regular expression R, written as R* is also a regular expression. Ex: ∑ = {a} then a* denotes the closure of ∑. a* = {e, a, aa, aaa, …} Conventions on regular expressions",
+      "B": "(i) and (ii) but not (iii)",
+      "C": "(i) and (iii) but not (ii)",
+      "D": "All have identity property"
+    },
+    "answer": null,
+    "explanation": "(B) Initially, {1, 5}, {2, 3, 4} Depending on next states and inputs, the partitions of states can be as: {{1, 5}, {2}, {3}, and {4}} Since, 1 to 5 have same transition, unite {1, 5} State 4 is dead state → It has transition only to itself. Since, {2}, {3} are singletons, they exist. ∴ States in minimized DFA are {1, 2, and 3} {1} → {1, 5} For transitions, since 1 3 1 a b →  →  , 2 in given DFA, in minimized DFA, transitions are added from 1 3 1 2 a b →  →  , . Also, since 2 1 b a →  →  1 3 , in given DFA, the minimized DFA, transitions are added from 2 1 3 1 b a →  →  , . Equivalence Between NFA and DFA There is a DFAD for any NFAN i.e., L (D) = L (N). Construction: •• In DFA or NFA, whenever an arrow is followed, there is a set of possible states. This set of states is a subset of Q. •• Track the information about subsets of states that can be reached from initial state after following arrows. •• Consider each subset of states of NFA as a state of DFA and every subset of states containing a final state as a final state of DFA. Example 12: Which of following is equivalent DFA for the NFA given below: q1 d d d d c c c c q4 q2 q3 (A) Table 6 Transition Table of NFA d c d → q1 q1 {q2, q4} q2 q3 q1 q3 q4 q3 q4 q3 ∅ Table 7 Transition Table of DFA d c d → q1 q1 q2 q2 q3 q1 q3 q2 q1 Table 8 Common Table d c d (q1, q1) (q1, q1) (q2, q4, q2) (q2, q2) (q3, q3) (q1, q1) (q3, q3) (q4, q2) (q3, q3) (q4) q3 ∅ Equivalence of Finite Automatas: •• Two automatas A and B are said to be equivalent if both accept exactly the same set of input strings. •• If two automatas M1 and M2 are equivalent then (i) If there is a path from the start state of M1 to a final state of M1 labeled a1a2 … ak then there is a path from the start state of M2 to the final state of M2 labeled a1a2… ak. (ii) If there is a path from the start state of M2 to a final state M2 labeled b1b2 … bi then there is a path from the start state of M1 to the final state of M1 labeled b1b2 … bi . Example: q0 M1 1 0 0 0 1 1 q1 q2 M2: p0 0 1 1 1 1 0 0 0 p1 p3 p2 In M2, states p1 and p3 are equivalent (as both are reaching either final or non-final states with same input). After mini- mizing M2, we will get p0 p2 p1p3 0 1 1 0 0 1 \\ M1 and M2 are equivalent. Union: The union of two languages L and M is the set of strings that are in both L and M. Ex: L = {0, 1}, M = {111} L U M = {0, 1,111}. Concatenation: The concatenation of Languages L and M is the set of strings that can be formed by taking any string in L and concatenating it with any string in M. Example: L = {0, 1}, M = {e, 010} LM = {0, 1, 0010, 1010}. Closure, Star or Kleen star of a language L: Kleen star is denoted as L*. It represents the set of strings that can be formed by taking any number of strings from L with repetition and concatenating them. It is a Unary operator. L0 is the set; we can make selecting zero strings from L. L0 = {e} L1 is the language consisting of selecting one string from L. L2 is the language consisting of concatenations selecting two strings from L. … L* is the union of L0, L1 , …L∞. Ex: L = {0,10} L* = {0,00,000,10,010, …} Intersection: Let two DFAs M1 and M2 accept the languages L1 and L2. M1 = (Q1, Σ, d1, q0 1, .F1) M2 = (Q2, Σ, d2, q0 2, F2) The intersection of M1 and M2 can be given as M = (Q1, Σ, d, q0 F) Q = Pairs of states, one from M1 and one from M2 i.e., Q = {(q1, q2) | q1 ∈ Q1 and q2 ∈ Q2} Q = Q1 × Q2. q0 = (q0 1, q0 2) d (qi 1 qj 2), x) = (d1(q1 1, x), d2(qj 2, x)) F = {(q1, q2) | q1, ∈ F1 and q2 ∈ F2} Example: M1: Strings with even number of 1’s. q0 1 q1 1 0 0 1 1 M2: Strings with odd number of 0’s. q0 2 q1 2 1 1 0 0 M1 ∩ M2: Strings with even number of 1’s and odd number of 0’s. q0 2 q0 1 q0 2q1 2 q0 2 q1 2 q1 2 q1 2 0 0 0 1 1 1 1 0 Union of M1 and M2: q 0 2 q0 1 q1 2 q0 2 q1 1 q1 2 0 0 0 1 1 1 1 0 q0 1 q1 1 Difference: The difference of L1 and L2 can be given as L1 - L2 with M = (Q, ∑, d, q0, F). Q = Q1 × Q2 q0 = (q0 1, q0 2) d ((qi 1, qj 2), x) = (d1 (qi 1, x), d2(qj 2, x)) F = {(q1, q2) | q1, ∈ F1 and q2 ∉ F2} q0 2 q0 1 q1 2 q1 1 0 0 0 1 1 1 1 0 q0 1 q0 2 q1 1q1 2 Reversing a DFA: •• M is a DFA which recognizes the language L. •• MR will accept the language LR. To construct MR: •• Reverse all transitions •• Turn the start state to final state •• Turn the final states to start state. •• Merge states and modify the FA, such that the resultant contain a single start state. Mealy and Moore Machines Moore Machine A moore machine is a finite state machine, where outputs are determined by current state alone. A Moore machine associates an output symbol with each state and each time a state is entered, an output is obtained simultaneously. So, first output always occurs as soon as machine starts. Moore machine is defined by 6-tuples: (Q, Σ, δ, q0, ∆, λ), where Q → Finite set of states Σ → Finite set of input symbols ∆ → It is an output alphabet δ → Transition function, Q × Σ → Q (state function) λ → Output function, Q → ∆ (machine function) q0 → Initial state of machine Note: The output symbol at a given time depends only on present state of moore machine. Example 13: The language generated by the following moore machine is: 0 1 1 1 0 q0/0 0 q1/1 q2/0 (B) Binary number: 1011 1’s complement: 0100 q q q q q 0 1 0 2 0 1 1 1 0 2 1 0 2 / / / / , →  →  →  →  1 → 0, 0 → 1, 1 → 0, 1 → 0 Mealy Machine •• A mealy machine is a FSM, where outputs are determined by current state and input. •• It associates an output symbol with each transition and the output depends on current input. •• Mealy machine is defined on 6-tuples: (Q, Σ, δ, q0, ∆, λ), where Q – Finite set of states. Σ – Finite set of input symbols. δ – (Q × Σ → Q) is transition function. q0 → q0 ∈ Q is initial state. ∆ → Finite set of output symbols. l → Output function, l(Q → ∆) Note: In Moore machine, for input string of length n, the output sequence consists of (n + 1) symbols. In Mealy machine, for input string of length n, the output sequence also consists of ‘n’ symbols. Example 14: Let (Me)2 mean that given a Mealy machine, an input string is processed and then output string is immediately fed into the machine (as input) and reprocessed. Only this second resultant output is considered as the final output of (Me)2. If final output string is same as original input string then (Me)2 has an identity property. Consider following machines. (i) 0/1, 1/0 (ii) 0/0, 1/1 (iii) 0/0, 1/1 0/1, 1/0 Which of above machines have identity property? (D) (i) Consider i/p string ↓ ↓↓↓↓ ↓↓↓ 0 0 1 1 1 1 1 1 0 0 0 0 o/p string o/p string (Input string reprocessed) (ii) ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ i/p string: o/p string: o/p string: (i/p string) 0 0 1 0 0 1 1 0 0 1 1 1 (iii) ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ i/p string: o/p string: o/p string: (i/p string) 1 1 0 1 0 1 1 1 1 0 0 0 Equivalence of Moore and Mealy machine",
+    "page": 6,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "",
+    "number": 3,
+    "question": "r+ is a regular expression to represent Lr + Note: A regular expression is not unique for a language i.e., regular language corresponds to more than one regular expression. Example 15: Give regular expression for set of strings which either have ‘a’ followed by some b’s or all b’s also containing ‘ε’.",
+    "options": {
+      "A": "b* + ab*",
+      "B": "a* + ba*",
+      "C": "(ε) + (ε + a) b+",
+      "D": "b* + ab* + ε"
+    },
+    "answer": null,
+    "explanation": "(C) The regular expression is, r = ab+ + b+ + ε = b+ (a + ε) + ε. Identity rules for regular expressions:",
+    "page": 11,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "",
+    "number": 18,
+    "question": "(P + Q)* = (P* + Q) = (P + Q*) Example 16: If r1 and r2 are regular expressions denoting languages L1 and L2 respectively then which of following is false?",
+    "options": {
+      "A": "Regular",
+      "B": "Not regular",
+      "C": "Cannot be determined",
+      "D": "None of these"
+    },
+    "answer": null,
+    "explanation": "(C) Constructing FA for Given RE •• Relationship between FA and RE. Regular exp NFA with e-moves NFA without e DFA Minimal DFA Identities: Basis: ; // Initial state = Final state q1 r = ε ; // Unreachable state qf q0 r = ∅⇒ qf q0 r = a ⇒ a Induction: •• Union: L(r) = L (r1) + L (r2) i.e., L (M) = L (M1) ∪ L (M2) Let M1 = (Q1, Σ1, δ1, q1, {f1}), M2 = (Q2, Σ2, δ2, q2, {f2}) with L (M1) = L (r1) and L (M2) = L (r2), then M = (Q1 ∪ Q2 ∪ {q0, f0}, Σ1 ∪ Σ2, δ, q0, {f0}) q0 M1 M2 ε ε q1 f1 ε ε q2 f2 f0 •• Concatenation: L(r) = L (r1) . L (r2) i.e., L (M) = L (M1) . L (M2) q1 f1 M1 M2 ε q2 f2 •• Closure: L(r) = L(r)* i.e., L (M) = L (M1)* Let M1 = (Q1, Σ1, δ1, q1, {f1}) then L (M) = (Q1 ∪ {q0, f0}, Σ1, δ, q0, {f0}) q0 q1 f1 M1 ε ε ε ε f0 Example 17: The regular expression generated by the given FA. q0 a a b a b b b q1 q2 q3 (B) q2 is final state which is obtained with input symbol only ‘b’. So, (C) or (D) is not true. In (A) → ba* is not defined in given FA. Instead bb* is defined. Pumping Lemma for Regular Sets Theorem Let ‘L’ be an arbitrary regular language. Then there exists a positive integer, P with following property: Given an arbitrary member, w of L having length at least P (i.e., |w|≥P), w can be divided into 3-parts, w = xyz ∃ •• |y| ≥ 1 (the middle part is non-empty) •• |xy| ≤ P (the first two parts have length atmost P) •• For each, i ≥ 0, xyiz ∈ L (removing or repeating the middle part produces member of L) Proof Let L be an arbitrary regular language. Then there is a FA, say M that decides L. Let P be the number of states of M. Let w be an arbitrary member of L, having length ‘n’ with n ≥ P. Let q0, q1, … qn be states that M on input w. That is, for each i, after reading the first i symbols of w, M is at qi. q0 is initial state of M. Also, since w ∈ L, qn is a final state of M. Let x = w1 … wc, y = wc+4 … wd, z = wd+1 … wn. Then: •• |y| ≥ 1 •• |xy| ≤ P •• M transitions from q0 to qc on x. •• M transitions from qc to qc on y. •• M transitions from qc to qn on z. Thus, for every i ≥ 0, M transitions from q0 to qn on xyiz and so, xyiz is a member of L. Note: •• Pumping lemma is used to verify that given language is not regular. •• Pumping lemma follows pigeon hole principle. Example 18: The language, L is defined as: L = {w1w2 : w1, w2 ∈ {a, b}*, |w1| = |w2|}. Is the language regular? (A) Fix pumping length, K = 2 For every proper strings in L, (2n ≥ 2) n n abbba . . . aaa abb/bbaba . . . •• Split in x, y, z with desired properties. n n z y abbba . . . aaa abb|bbaba . . . •• Let x = ε, y = first two symbols, z = rest. n + 1 n + 1 Z → xy 2 z ∈L y y ababbba . . . aaa ab|bbbbaba . . . •• xy3z: n + 2 n + 2 z y y abababbba . . . aaa∈L a|bbbbbaba . . . y •• xyoz → n − 1 n − 1 z bba . . . aaa∈L abb|aba . . . ∴ For every i ≥ 0, xyi z ∈ L. Hence given language is regular. Closure Properties of Regular Sets",
+    "page": 11,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "",
+    "number": 6,
+    "question": "Homomorphism: If L is a regular language, h is homomorphism on its alphabet then h (L) = {h (w) |w is in L} is also a regular language. Regular grammar •• Grammar: Generative description of a language. •• Automaton: Analytical description. •• A grammar is a 4-tuple, G = (V, Σ, R, S) where V: alpha- bet (variable) (non-terminals) Σ ⊆ V is set of terminal symbols. R ⊆ (V+ × V*) is a finite set of production rules. S ∈ V – Σ is start symbol. Notation •• Elements of V – Σ: A, B, … •• Elements of Σ: a, b … •• Rules ( , ) : α β α β α β or ∈ → →  R G •• Start symbol is written as S. •• Empty word: ε Example 19: The regular expression that describe the language generated by grammar, G = ({S, A, B}, {a, b}, S, {S → Aab, A → Aab|B, B → a}",
+    "options": {
+      "A": "S→0S|1S|0 T→1T|ε 0, 1 0 1 S T",
+      "B": "S→1S|ε 1 S",
+      "C": "S→0T|1S|ε T→0T|1U|ε U→0T|1S S 1 0 0 0 1 1 T U",
+      "D": "Cannot be determined"
+    },
+    "answer": null,
+    "explanation": "(B) S → Aab → Aab ab → A ab abab → Bababab → aababab → aab(ab)* Union of two Regular languages: If L1 and L2 are two languages then L1 ∪ L2 = {w/w ∈ L1 or w ∈ L2} The union of two regular languages is also a regular language. Let M1 = (Q1, ∑, d1, q1, f1) M2 = (Q2, ∑, d2, q2, f2) M = M1UM2 can be given as M = (Q, ∑, d, q0, f). Where Q = {(r1, r2) | r1 ∈ Q1 and r2 ∈ Q2} i.e., Q is the Cartesian product of sets Q1 and Q2. ∑ is the alphabet, is the same in M1 and M2. ∑ = ∑1 U ∑2. d is the transition function given as: d (r1, r2), a = (d1(r1, a) d2 (r2, a)). q0 is the pair (q1, q2). F is the set of pairs in which either member is an accept state of M1 or M2. F = {(r1, r2) | r1 ∈ F1 or r2 ∈ F2} Types of Grammars •• Type 0: Unrestricted, recursively enumerable languages. •• Type 1: Context-sensitive grammar. •• Type 2: Context free grammar. •• Type 3: Regular grammar. Type 0: Recursively enumerable grammar: (Turing Machine) (TM): Every production rule is of form: α → β, where α and β are in (V ∪ T)*, i.e., there can be any strings of terminals and non-terminals (no-restriction). Type 1: Context-sensitive Grammar: (Linear bounded automaton) (LBA): Every production rule is of form, α→ β are in (V ∪ T)* and α ≠ ε and |β|≥|α| i.e., any strings of terminals and non- terminals and length of string that can appear on RHS of production must be greater than or equal to length of string that can appear on LHS of production. Type 2: Context-free grammar: (Push down automaton) (PDA): Every production rule is of form, A→α where α is in (V ∪ T)* i.e., LHS of rule is single non-terminal and RHS can be any string of terminals and non-terminals. Type 3: Regular grammar: (Finite automaton) (FA): Every production is of form, A→aB or A→a where A and B ∈ V and a ∈ T. That is, LHS of rule is non-termi- nal and RHS can be terminal (or) terminal followed by non-terminal. Relationship between types of grammar: Type – 0 Type – 1 Type – 2 Type – 3 •• Regular sets are properly contained in CFL (Context Free Languages). •• The CFL’s not containing empty string ε, are properly contained in CSL. (Context sensitive language). •• The CSL’s are properly contained in Recursively enumer- able languages. •• RG ⊂ CFG ⊂ CSL ⊂ REG Left-linear Grammar: All productions have form: A → Bx or A → x Right-linear Grammar: All productions have the form: A → xB or A → x. Note: •• The regular grammars characterize the regular sets i.e., a language is regular if and only if it has a left-linear gram- mar or if and only if it has a right-linear grammar. •• If L has a regular grammar, then L is a regular set. •• If L is a regular set, then L is generated by some left-linear grammar and by some right-linear grammar. Arden’s theorem: Let P and Q be two regular expressions over ∑. If P does not contain ‘e’ then the following equation in R, namely R = Q + RP has a unique solution given by R = QP*. Arden’s Theorem to obtain regular expression from given transition diagram: The following steps are used to find the RE recognized by transition system. The following assumptions are made regarding the tran- sition system. (i) The transition graph does not have e-moves (ii) It has only one initial state, qo. (iii) The states in the transition diagram are qo, q1, q2, … qn. (iv) Qi, the regular expression represents the set of strings accepted by a system even though qi is the final state. (v) aij denotes the regular expression representing the set of labels of edges from qi to qj. When there is no such edge aij = f. We will get the following set of equations. Q1 = Q1 α11 + Q2 α12 + … Qn αn1 + e Q2 = Q1 α12 + Q2 α22 + … Qn αn2 : : : Qn = Q1 α1n + Q2 α2n + … Qn αnn. By Repeatedly applying substitutions and Arden’s theorem, we can express Qi in terms of αij’s. For getting the set of strings recognized by the transition system, we have to take the union of all Qi’s corresponding to final states. Construction of Regular Grammar from FA Step I: \u0007Associate suitable variables like A, B, C … with states of automata. Step II: \u0007Obtain the productions of the grammar as: If δ(A, a) = B then add production A → aB to list of productions of grammar, if B is a final state, then add either A → a or B → ε, to list of productions of grammar. Step III: \u0007The variable associated with initial state of autom- ata is start symbol of grammar. Example 20: Regular grammar generating language accepted by below automata is A 0 1 1 0 B C (A) A→0B, A→1C, B→1A, C→0A ∴ A is final state, A → ε ∴ A → 0B|1C|ε B →1A (or) C → 0A A → 0B|1C B → 1A|1 C → 0A|0 Construction of FA from given regular grammar Given a regular grammar, G; a regular expression specify- ing L(G) can be obtained directly as follows: •• Replace the ‘→’ symbol in productions of grammar by ‘=’ symbol, to get set of equations. •• Solve the set of equations obtained above to get the value of variable, S, where S is start symbol of grammar, result is regular expression specifying L(G). Example 21: The Regular grammar and FA for given regular expression f*1*U (0f)* is ___ (B) ∅* 1* ∪ (0∅)* = ∅* . 1* ∪ ∅* = ε . 1* ∪ ε = 1*. 1 S",
+    "page": 12,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Find a regular expression for L = {uvu: u, v ∈ {a, b}*, |u| = 2}",
+    "options": {
+      "A": "(ab)*a(ab)*",
+      "B": "(aa)*ab(aa)*",
+      "C": "aa(a + b)*bb + bb(a + b)*aa",
+      "D": "\u0007aa(a + b)*aa + ab(a + b)* ab + ba (a + b)* ba + bb (a + b)*bb"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Consider the regular expression, R = 10 + (0 + 11)0* 1. The minimum number of states in any DFA accepting this regular expression is:",
+    "options": {
+      "A": "5",
+      "B": "4",
+      "C": "3",
+      "D": "6"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "The following DFA accepts the set of all strings over {a, b} that a a a b b b b a q0 q1 q3 q2",
+    "options": {
+      "A": "Contains number of b’s divisible by 3.",
+      "B": "Contain number of a’s and b’s divisible by 3",
+      "C": "Contain number of b’s congruent to 3 modulo 4.",
+      "D": "Contain any number of a’s and b’s"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Consider the grammar, S → SS/a. To get string of n terminals, the number of productions to be used is",
+    "options": {
+      "A": "n2",
+      "B": "n",
+      "C": "2n+1",
+      "D": "2n–1"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "The language L is defined as, L = {ai bj c2j| i ≥ 0, j ≥ 0}. Is this language L regular?",
+    "options": {
+      "A": "Yes",
+      "B": "No",
+      "C": "Cant be determined",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "The language, L is defined by set of strings over {a, b}* in which number of a’s is a perfect cube. What is the nature of language, L?",
+    "options": {
+      "A": "Regular",
+      "B": "Non-regular",
+      "C": "Cant be determined",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "The language, L is defined over Σ = {0 – 7}. The string include 7, 16, 43, 61, 223, … The language generated is:",
+    "options": {
+      "A": "Alternate odd and even numbers",
+      "B": "Octal representation of a number",
+      "C": "Divisible by 7.",
+      "D": "Octal representation of a number divisible by 7."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "The language L, is defined as set of strings that start and end with equal number of a’s and contain any number of b’s. The grammar L(G) for language L is defined with productions as:",
+    "options": {
+      "A": "S→aBa B→ε|bB",
+      "B": "S→aB B→a|bB",
+      "C": "S→aT|bS T→aT|bT|a|b",
+      "D": "S→B|aSa B→ε|bB"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "If the regular set A is represented by A = ((01)*1*)*. And the regular set B is represented by B = (01 + 1)*, which of the following is true?",
+    "options": {
+      "A": "A B ⊂",
+      "B": "B A ⊂",
+      "C": "A = B",
+      "D": "A and B are incomparable"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "The language, L that is generated over Σ = {0, 1} for regular expression L(r) = (0 + 10)* 1 (1 + 10)*",
+    "options": {
+      "A": "\u0007Any string whose number of 1’s length is greater than or equal to 3.",
+      "B": "Any string that has no substring 110.",
+      "C": "Any string that has no substring 00 after first 11.",
+      "D": "\u0007Any string that has only one occurrence of sub- string 010."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "The R.E L(r) = (a+b*) U ε. Is the grammar with produc- tions generated over non-terminals {S, A} ambiguous?",
+    "options": {
+      "A": "Yes",
+      "B": "No",
+      "C": "Can’t be determined",
+      "D": "None"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "The number of states in the obtained Moore machine while converting the given mealy to Moore are: q0 a/0 a/0 a/0 a/0 b/0 b/1 b/1 a/1 b/0 b/0 q1 q2 q3 q4",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "4",
+      "D": "7"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "The language L is defined as L = {0i1j/i ≠ j} over {0, 1, 2}, A = {0i 1j/i≥0, j≥0} and B = {0i 1j/i = j}. For language, L to be non-regular. What should be relation between A, B, L?",
+    "options": {
+      "A": "B = (A ∪ L) c",
+      "B": "B = A ∪ L",
+      "C": "B A L = ∩",
+      "D": "B = Ac"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Which of following grammars are unambiguous?",
+    "options": {
+      "A": "S→(S) S|[S] S|ε",
+      "B": "S→S(S)S|ε",
+      "C": "S→aS|Sa|a",
+      "D": "S→a|Sa|bSS|Ssb|SbS"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 15,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "What will be number of final states obtained in DFA for language L = {w/w contains at least two 0’s and atmost one 1} over Σ = {0, 1}.",
+    "options": {
+      "A": "2",
+      "B": "1",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Which of the following Regular expression is equal to given regular expression: (b + aa* b) + (b + aa*b) (a + ba* b)* (a + ba* b)",
+    "options": {
+      "A": "Ab (b + baa*)",
+      "B": "a*b (a + ba* b)",
+      "C": "a* b (a + ba* b)*",
+      "D": "ab (b + aa*b)*"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 16,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "The following DFA accepts set of all strings over {a, b} that contain q0 a a a a b b b b b b q1 q2 q3 q4 a a q5",
+    "options": {
+      "A": "Number of a’s even and number of b’s odd.",
+      "B": "Consecutive a’s and b’s",
+      "C": "Contain bbb as substring",
+      "D": "\u0007Number of a’s even and number of b’s divisible by three."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 16,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "The regular language L(r) for the given FSM is: q1 1 1 0 0 0 1 1 1 0 0 0, 1 q2 q0 q3 q4 q5",
+    "options": {
+      "A": "\u0007It can start with zero followed by any number of 1’s but no two consecutive 0’s.",
+      "B": "\u0007It can start with 1, followed by any number of 0’s but no two consecutive 1’s.",
+      "C": "\u0007It is a combination of 0’s and 1’s but no two con- secutive 0’s or 1’s.",
+      "D": "Both (A) and (B)."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 16,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "The language, L is defined as a set of non-palindromes over {a, b}. Is L regular?",
+    "options": {
+      "A": "Yes",
+      "B": "No",
+      "C": "Cannot be determined (D) None of above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 16,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "The DFA, for language, L over Σ = {a, b} is given below. What will be number of states in minimized DFA. 2 3 4 5 6 1 a a a a a a b b b b b",
+    "options": {
+      "A": "4",
+      "B": "6",
+      "C": "2",
+      "D": "3"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 16,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "The minimal DFA given below is defined for language, L = {w ∈ {a, b}*} over Σ = {a, b}. The ‘L’ is: a a a 1 a, b b b b 2 3 3",
+    "options": {
+      "A": "\u0007Strings that contain equal number of a’s and b’s that have adjacent characters same.",
+      "B": "Contains adjacent characters same",
+      "C": "No two adjacent characters are same",
+      "D": "\u0007Starts and ends with same character that have ad- jacent character same."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 16,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "The regular grammar L(G) contains productions, P for language, L = {w ∈{a, b}*/ there is at least one a} are:",
+    "options": {
+      "A": "S→aS|bS|a|aT T→aT|bT|a|b",
+      "B": "S→aS|bS|ε",
+      "C": "S→aBb|bB B→a|b",
+      "D": "S→bB B→b|ε"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "The regular expression for a language is defined as ((a* b)* (bc*)*). The total number of final states obtained in both NFA and DFA are respectively:",
+    "options": {
+      "A": "4, 2",
+      "B": "1, 3",
+      "C": "1, 5",
+      "D": "2,3"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 16,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "The language, L is defined as {w/w has n occurrences of 0’s where n mod 5 is 3} over Σ = {0, 1}. The number of final states obtained in the DFA for L is:",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "1",
+      "D": "2"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 16,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Which of the following is an equivalent DFA for the following NFA? A 0, 1 0, 1 1 B C",
+    "options": {
+      "A": "A 1 1 1 1 0 0 0 0 B C D",
+      "B": "0 0 0,1 1 1 A B C",
+      "C": "A 0 0 0 1 1 B C",
+      "D": "0 0 0 0 1 1 1 1 A B C D"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 17,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "A regular grammar over alphabet Σ = {a, b, c, d} whose language, is set of strings that contain exactly two b’s is:",
+    "options": {
+      "A": "S→aS|bS|cS|dA A→aA|bA|cA|dA|ε",
+      "B": "S→aS|cS|dS|bB B→aB|cB|dB|bC, C → aC|cC|dC|ε",
+      "C": "S→aS|bS|cS|dA A→aA|bB|cC B→b C→c",
+      "D": "None of above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 17,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "The following NFA contains ε-moves with 5, transi- tions. If this NFA with ε-moves is converted to NFA without ε-moves, what will be total number of transi- tions in obtained NFA? 2 0 1 ε ε q0 q1 q2",
+    "options": {
+      "A": "5",
+      "B": "4",
+      "C": "6",
+      "D": "3"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "The regular expression, r = (a + b)*. One more regular expression which represents same regular expression ‘r’ is:",
+    "options": {
+      "A": "a* + b*",
+      "B": "a* . b*",
+      "C": "a*(ba*)*",
+      "D": "(a + b)* (a + b)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "The Regular grammar, L(G) is defined for L with productions as S→Aab, A→Aab|aB, B→a. What is Language generated by L(G)?",
+    "options": {
+      "A": "Containing alternative a’s and b’s",
+      "B": "\u0007Containing alternative a’s and b’s, begins with an ‘a’ and ends with a ‘b’.",
+      "C": "‘aa’ followed by at least one set of alternating ab’s.",
+      "D": "Consecutive aa’s followed by ‘b’."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "The number of final states in DFA after converting the NFA given below is: 1 a, b b a 2",
+    "options": {
+      "A": "4",
+      "B": "2",
+      "C": "3",
+      "D": "1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 17,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "∈ + 0(10*1 + 10)*10*",
+    "options": {
+      "A": "P-2, Q-1, R-3, S- 4",
+      "B": "P-1, Q-3, R-2, S- 4",
+      "C": "P-1, Q-2, R-3, S- 4",
+      "D": "P-3, Q-2, R-1, S- 4"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 17,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Which of the following are regular sets? I. {anb2m | n ≥ 0, m ≥ 0} II. {anbm | n = 2m} III. {anbm | n ≠ m} IV. {xcy | x, y ∈ {a, b}*}\b [2008]",
+    "options": {
+      "A": "I and IV only",
+      "B": "I and III only",
+      "C": "I only",
+      "D": "IV only"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 17,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Which one of the following languages over the alpha- bet {0, 1} is described by the regular expression: (0 + 1)*0(0 + 1)*0(0 + 1)*?\b [2009]",
+    "options": {
+      "A": "The set of all strings containing the substring 00.",
+      "B": "The set of all strings containing atmost two 0’s.",
+      "C": "The set of all strings containing at least two 0’s.",
+      "D": "\u0007The set of all strings that begin and end with ei- ther 0 or 1."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Which one of the following is FALSE?\b [2009]",
+    "options": {
+      "A": "\u0007There is a unique minimal DFA for every regular language.",
+      "B": "\u0007Every NFA can be converted to an equivalent PDA.",
+      "C": "\u0007Complement of every context-free language is recursive.",
+      "D": "\u0007Every non-deterministic PDA can be converted to an equivalent deterministic PDA."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 18,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Match all items in Group 1 with correct options from those given in Group 2.\b [2009] Group 1 Group 2 P. Regular expression 1. Syntax analysis Q. Pushdown automata 2. Code generation R. Dataflow analysis 3. Lexical analysis S. Register allocation 4. Code optimization",
+    "options": {
+      "A": "Begin either with 0 or 1",
+      "B": "End with 0",
+      "C": "End with 00",
+      "D": "Contain the substring 00."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 18,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "Let L = {w ∈ (0 + 1)* | w has even number of 1’s}, i.e., L is the set of all bit strings with even number of 1’s. Which one of the regular expressions below represents L?\b [2010]",
+    "options": {
+      "A": "(0*10*1)*",
+      "B": "0*(10*10*)*",
+      "C": "0*(10*1*)*0*",
+      "D": "0*1(10*1)*10*"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 18,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Consider the languages L1 = {0i1j | i ≠ j}. L2 = {0i1j | i = j}, L3 = {0i1j | i = 2j + 1}. L4 = {0i1j | i ≠ 2j}. Which one of the following statements is true?\b [2010]",
+    "options": {
+      "A": "Only L2 is context free",
+      "B": "Only L2 and L3 are context free",
+      "C": "Only L1 and L2 are context free",
+      "D": "All are context free"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 18,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "Let w be any string of length n in {0, 1}*. Let L be the set of all substrings of w. What is the minimum num- ber of states in a non-deterministic finite automaton that accepts L?\b [2010]",
+    "options": {
+      "A": "n-1",
+      "B": "n",
+      "C": "n+1",
+      "D": "2n-1"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 18,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "Let P be a regular language and Q be a context-free language such that Q ⊆ P (For example let P be the language represented by the regular expression p*q* and Q be {pnqn} n ∈ N}, Then which of the following is ALWAYS regular?\b [2011]",
+    "options": {
+      "A": "P ∩ Q",
+      "B": "P - Q",
+      "C": "S* - P",
+      "D": "S* - Q"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 18,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "A deterministic finite automaton (DFA) D with alpha- bet S = {a, b} is given below. a a a, b a, b a, b p b b s q r t Which of the following finite state machines is a valid minimal DFA which accepts the same language as D? \b [2011]",
+    "options": {
+      "A": "b a a b a, b a, b p q s r",
+      "B": "a a, b a, b a, b p b r s q",
+      "C": "p b a, b a, b a, b q r",
+      "D": "p b b a a a, b s q"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 18,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "Given the language L = {ab, aa, baa}, which of the following strings are in L*?\b [2012] (1) abaabaaabaa (2) aaaabaaaa (3) baaaaabaaaab (4) baaaaabaa",
+    "options": {
+      "A": "1, 2 and 3",
+      "B": "2, 3 and 4",
+      "C": "1, 2 and 4",
+      "D": "1, 3 and 4"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 18,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "What is the complement of the language accepted by the NFA shown below? a ε ε Assume S = {a} and e is the empty string.\b [2012]",
+    "options": {
+      "A": "∅",
+      "B": "{e}",
+      "C": "a*",
+      "D": "{a, e}"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 19,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "Consider the set of strings on {0, 1} in which, every substring of 3 symbols has atmost two zeros. For example, 001110 and 011001 are in the language, but 100010 are not. All strings of length less than 3 are also in the language. A partially completed DFA that accepts this language is shown below. ε q 0 0 0 0 0 1 1 1 1 1 1 01 0, 1 00 10 11 The missing arcs in the DFA are \b [2012]",
+    "options": {
+      "A": "00 01 10 11 q 00 1 0 01 1 10 0 11 0",
+      "B": "00 01 10 11 q 00 0 1 01 1 10 0 11 0",
+      "C": "00 01 10 11 q 00 1 0 01 1 10 0 11 0",
+      "D": "00 01 10 11 q 00 1 0 01 1 10 0 11 0"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 19,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 15,
+    "question": "Consider the languages L1 = Φ and L2 = {a}. Which one of the following represents L1 L2 *UL1 *?\b [2013]",
+    "options": {
+      "A": "{∈}",
+      "B": "Φ",
+      "C": "a*",
+      "D": "{∈, a}"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 16,
+    "question": "Consider the DFA A given below 1 1 0 0 0, 1 Which of the following are FALSE? 1. Complement of L (A) is context-free. 2. L(A) = L ((11*0 + 0) (0 + 1)*0*1*) 3. \u0007For the language accepted by A, A is the minimal DFA. 4. \u0007A accepts all strings over {0, 1} of length at least 2. \b [2013]",
+    "options": {
+      "A": "1 and 3 only",
+      "B": "2 and 4 only",
+      "C": "2 and 3 only",
+      "D": "3 and 4 only"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 19,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "Consider the finite automaton in the following figure. \b [2014] q0 q1 q2 q3 0, 1 0, 1 1 1 0, 1 What is the set of reachable states for the input string 0011?",
+    "options": {
+      "A": "{q0, q1, q2}",
+      "B": "{q0, q1}",
+      "C": "{q0, q1, q2, q3}",
+      "D": "{q3}"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 18,
+    "question": "If L1 = {an|n ≥ 0} and L2 = {bn|n ≥ 0}, consider the statements\b [2014] (I) L1 . L2 is a regular language (II) L1 . L2 = {an bn|n ≥ 0} Which one of the following is CORRECT?",
+    "options": {
+      "A": "Only (I)",
+      "B": "Only (II)",
+      "C": "Both (I) and (II)",
+      "D": "Neither (I) nor (II)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 19,
+    "question": "Let L1 = {w ∈ {0, 1}*| w has at least as many occurrences of (110)’s as (011)’s}. Let L2 = {w ∈{0, 1}*|w has at least as many occurrences of (000)’s as (111)’s}. Which one of the following is TRUE?\b [2014]",
+    "options": {
+      "A": "L1 is regular but not L2",
+      "B": "L2 is regular but not L1",
+      "C": "Both L1 and L2 are regular",
+      "D": "Neither L1 nor L2 are regular"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 21,
+    "question": "Let S be finite non-empty alphabet and let 2Σ* be the power set of SΣ*. Which one of the following is TRUE?\b [2014]",
+    "options": {
+      "A": "Both 2∑ ∗ * and Σ are countable",
+      "B": "2Σ* is countable and S* is uncountable",
+      "C": "2Σ* is uncountable and S* is countable",
+      "D": "Both 2∑ ∗ * and Σ are uncountable"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 20,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "e + 0 (10* 1 + 10)* 10*",
+    "options": {
+      "A": "P − 2, Q − 1, R − 3, S − 4",
+      "B": "P − 1, Q − 3, R − 2, S − 4",
+      "C": "P − 1, Q − 2, R − 3, S − 4",
+      "D": "P − 3, Q − 2, R − 1, S − 4"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 20,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 24,
+    "question": "Which of the following languages is/are regular? \b [2015] L1: \u0007{wxwR |w1 x ∈ {a, b}* and |w|, |x| > 0}, wR is the reverse of string w L2: {anbm|m ≠ n and m, n ≥ 0} L3: {a pbqcr| p, q, r ≥ 0}",
+    "options": {
+      "A": "L1 and L3 only",
+      "B": "L2 only",
+      "C": "L2 and L3 only",
+      "D": "L3 only"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 20,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 25,
+    "question": "Consider the alphabet Σ = {0, 1}, the null/empty string λ and the sets of strings X0, X1 and X2 gener- ated by the corresponding non-terminals of a regular grammar. X0, X1 and X2 are related as follows X0 = 1 X1 X1 = 0 X1 + 1 X2 X2 = 0 X1 + {λ} Which one of the following choices precisely repre- sents the strings in X0?\b [2015]",
+    "options": {
+      "A": "10(0* + (10)*)1",
+      "B": "10(0* + (10)*)*1",
+      "C": "1(0 + 10)*1",
+      "D": "10(0 + 10)*1 + 110(0 + 10)*1"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 20,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 26,
+    "question": "Let L be the language represented by the regular expression Σ* 0011 Σ* where Σ = {0, 1}. What is the minimum number of states in a DFA that recognizes L (complement of L)?\b [2015]",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "8"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 20,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 27,
+    "question": "Which of the following languages is generated by the given grammar?\b [2016] S →aS | bS | ε]",
+    "options": {
+      "A": "{an bm | n, m ≥ 0}",
+      "B": "\u0007{w ∈ {a, b} * | w has equal number of a’s and b’s}",
+      "C": "{an | n ≥ 0 } U {bn |n ≥ 0 } U {anbn | n ≥ 0}",
+      "D": "{a, b}*"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 20,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 28,
+    "question": "Which of the following decision problems are unde- cidable?\b [2016] I. Given NFAs N1 and N2, is L (N1) ∩ L (N2)= Φ? II. \u0007Given a CFG G = (N, ∑, P,S) and a string x ∈ ∑*, does x ∈ L(G)? III. Given CFGs G1 and G2, is L(G1) = L(G2)? IV Given a TM M, is L(M) = Φ?",
+    "options": {
+      "A": "I and IV only",
+      "B": "II and III only",
+      "C": "III and IV only",
+      "D": "II and IV only"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 20,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 29,
+    "question": "Which one of the following regular expressions repre- sents the language: the set of all binary strings having two consecutive 0’s and two consecutive 1s?\b [2016]",
+    "options": {
+      "A": "(0+1)* 0011 (0+1)* + (0+1)* 1100 (0+1)*",
+      "B": "(0+1)* (00(0+1)*11 + 11 (0+1)*00) (0+1)*",
+      "C": "(0+1)* 00 (0+1)* + (0+1)* 11 (0+1)*",
+      "D": "00 (0+1)* 11 + 11 (0+1)* 00"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 20,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 31,
+    "question": "Language L1 is defined by the grammar: S1→aS1b∈ Language L2 is defined by the grammar: S2→abS2∈ Consider the following statements: P:L1 is regular Q:L2 is regular Which one of the following is TRUE?\b [2016]",
+    "options": {
+      "A": "Both P and Q are true",
+      "B": "P is true and Q is false",
+      "C": "P is false and Q is true",
+      "D": "Both P and Q are false"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 20,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 32,
+    "question": "Consider the following two statements: I. \u0007If all states of an NFA are accepting states then the language accepted by the NFA is S*. II. \u0007There exists a regular language A such that for all languages B, A ∩ B is regular. Which one of the following is CORRECT?\b [2016]",
+    "options": {
+      "A": "Only I is true",
+      "B": "Only II is true",
+      "C": "Both I and II are true",
+      "D": "Both I and II are false"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 21,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 35,
+    "question": "Let δ denote the transition function and ˆd denote the extended transition function of the ∈-NFA whose transition table is given below: δ ∈ a b →q0 {q2} (q1} {q0} q1 {q2} {q2} {q3} q2 {q0} Ø Ø q3 Ø Ø (q2} Then ˆd (q2, aba) is\b [2017]",
+    "options": {
+      "A": "Ø",
+      "B": "{q0, q1, q3}",
+      "C": "{q0, q1, q2}",
+      "D": "{q0, q2, q3}"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 21,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 36,
+    "question": "Let N be an NFA with n states. Let k be the num- ber of states of a minimal DFA which is equivalent to N. Which one of the following is necessarily true? \b [2018]",
+    "options": {
+      "A": "k ≥ 2n",
+      "B": "k ≥ n",
+      "C": "k ≤ n2",
+      "D": "k ≤ 2n"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 21,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "1 - Finite Automata  and Regular Languages",
+    "section": "Previous Years’ Questions",
+    "number": 37,
+    "question": "2 and Push Down Automata  Context free grammar  Context free language  Ambiguity in context free grammars  Removing -productions  Removing unit productions  Normal forms  Chomsky's normal form  Greiback normal form  Closure properties of CFL's  Push down automata  PDAs accepting by ﬁ nal state and empty stack are equivalent  Converting CFG to PDA  Deterministic PDA LEARNING OBJECTIVES Context free GraMMar • A context free grammar (CFG) is a fi nite set of variables (non- terminals) each of which represents a language. The language represented by variables is described recursively in terms of each other. The primitive symbols are called terminals. • The rules relating variables are called productions. A typical production states that the language associated with a given vari- able contains strings that are formed by concatenating strings from languages of certain other variables. • CFG is a collection of three things; An alphabet Z of letters called terminals. A set of symbols called non-terminals, one of which is a start symbol, S. A fi nite set of productions of the form: One terminal → fi nite set of terminals and/or non-terminals. • A CFG is defi ned as: G = (V, T, P, S) Where V → Finite set of variables (non-terminals) T → Finite set of terminals (symbols) P → Finite set of productions, each, production is of the form, A → α, A ∈ V, α ∈ (V ∪ T)* S → Start symbol Context free lanGuaGe (Cfl) The language generated by CFG is a set of all strings of terminals that can be produced from start symbols, using the productions as substitutions. A language generated by a CFG is called context free language (CFL). Note: Every regular grammar is context free, so a regular lan- guage (RL) is also context free. Family of RL’s is proper subset of CFL’s. i.e., RL ⊂ CFL CFL RL Solved Examples Example 1: What is the language that is generated by CFG, G = S → AB|A → +/–|B → CB/C|C → 0/1/2/ . . . 9.",
+    "options": {
+      "A": "Set of all rational numbers",
+      "B": "Set of all integers",
+      "C": "Set of all natural numbers",
+      "D": "Set of all complex numbers"
+    },
+    "answer": null,
+    "explanation": "(B) S → AB|A → +/–|B → CB/C|C → 0/1/2/ . . . 9 Consider-18 (integer) Note: •• A context free language with property that all grammars that generate it are ambiguous is inherently ambiguous. •• Inherently ambiguous grammars cannot convert to unam- biguous grammars. Minimization of Context Free Grammar •• Grammar may consist of some extra symbols (non-terminals). Having extra symbols unnecessarily increases the length of grammar. •• Simplification of grammar means reduction of grammar. The properties of reduced grammar are:",
+    "page": 21,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "If e is not in language L, then there need not be produc- tion X → e. Reduced grammar Removal of useless symbols Removal of e - productions Removal of unit production Removal of Useless Symbols •• Any symbol is useful when it appears on right hand side, in the production rule and generates some terminal string. If no such derivation exists, then it is supposed to be a useless symbol. •• A symbol P is useful, if there exists some derivation S PB PB W ∗ ∗ ⇒ ⇒ α α and Then P is said to be useful symbol. Example 3: A grammar G′, is generated by removing useless symbols from G defined below. The obtained G′ contains productions: S → aA|bB A → aA|a B → bB D → ab|Ea E → aC|d",
+    "options": {
+      "A": "9",
+      "B": "2",
+      "C": "3",
+      "D": "5"
+    },
+    "answer": "D",
+    "explanation": "(A) CFG G for given language L is: S → AB|C A → aAb|e B → cBd|e C → aCd|D D → bDc|e It’s an inherently ambiguous grammar. Consider string, aabbccdd S C C a d S A A a b B A a b B c d B c d C a d C b c D D b c D ⇒ e e e (A) A → PQ Q → R → S → W → 2 ⇒ Q, R, S → Unit production A → PQ P → 0 Q → R|1 ↓ ⇒ Q → 2|P1|1R|1 (substitute the production of R, S, W) ∴ A → PQ P → 0 Q → 2| P1| 1R| 1 R → 2| P1| 1R ∴ 9 – Productions Normal Forms •• It is necessary to have a grammar in some specific form so, grammar normalization is needed. Normal forms Chomsky normal form (CNF) Griebach normal form (GNF) That is, There should be fixed number of terminals and non-terminals, in CFG. Chomsky’s Normal Form (CNF) •• A context free grammar (CFG), G = (V, Σ, R, S) is said to be in CNF, if and only if every rule in R is of one of the following forms",
+    "page": 23,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "S → e •• Every rule either replaces a variable by a single character or by a pair of variables except the start symbol and the only rule that can have the empty word as it’s right hand side must have start symbol as it’s left hand side. Note: Every parse tree for a grammar in CNF must be a binary tree and the parse tree for any non-empty word can- not have any leaves labeled with e in it. Transforming of a grammar to CNF •• In order to construct the grammar G in CNF that is equiv- alent to a given grammar G, first identify how exactly G can violate the rules for a CNF. Since CNF only restricts the rules in G, see only at R. The ‘bad’ cases of rules are: •• A → uSv where A ∈ V and u, v ∈ (V ∪ Σ)*. The start sym- bol must not appear on the right-hand side of any rule. This is called ‘start symbol rule’.",
+    "options": {
+      "A": "Regular",
+      "B": "Context free but not regular",
+      "C": "Neither context free nor regular",
+      "D": "Cannot be determined B → SU3|V2V2|V1U2|a|V1S U1 → SB U2 → AS U3 → V2S V1 → a V2 → b ∴ Nine non-terminals. Greiback Normal Form (GNF) •• A CFG, G = (V, T, R, S) is said to be in GNF, if every production is of form A → aα where a ∈ T, α ∈ V*, i.e., α is a string of zero or more variables. •• Left recursion in R can be eliminated by following schema: \u0007If A → Aα1 |Aα2| … |Aαr|b1|b2| … |bs, then replace the above rules by (i) A → bi|biZ, 1 ≤ i ≤ s (ii) Z → αi| αiZ, 1 ≤ i ≤ r •• If G = (V, T, R, S) is a CFG, then another CFG, G1 = (V1, T, R1, S) can be constructed in GNF ∃ L (G1) = L (G) − {e}. The step wise algorithm is as follows:"
+    },
+    "answer": "D",
+    "explanation": "S → aA → aaA → aaaA → aaaa  B → bB → bbB → bbbB → bbbbB ..... (string cannot be generated) ∴ B is useless D and E cannot be generated from ‘S’. So, eliminate. Hence G ′ contains ∴ S → aA A → aA|a Removing e-Productions A production of the form A → e is called an e-production. If A is a non-terminal and A → (*) e, then A is called a ‘nul- lable non-terminal’. So eliminate such productions without changing meaning of grammar. Example 4: The grammar, G is given below. The CFG generated after eliminating e-production is: S → ABC A → BC|a B → bAC|∈ C → cAB|∈ (C) Add new start state: S0 → S S → ASB A → aAS|a|e B → SbS|A|bb Eliminate ε-rules A → e: S0 → S S → ASB|SB A → aAS|a|aS B → SbS|A|bb|e Eliminate B → e: S0 → S S → ASB|SB|S|AS A → aAS|a|aS B → SbS|A|bb Remove Unit rules: B → A: S0 → S S → ASB|SB|S|AS A → aAS|a|aS B → SbS|bb|aAS|a|aS S → S: S0 → S S0 → ASB|SB|AS A → aAS|a|aS B → SbS|bb|aAS|a|aS S0 → S: S0 → ASB|SB|AS S → ASB|SB|AS A → aAS|a|aS B → SbS|bb|aAS|a|aS Replace rules which have more than two symbols: S0 → ASB: S0 → AU1 and U1 → SB ∴ S0 → AU1|SB| AS S → AU1|SB| AS A → aAS|a|aS B → SbS|bb|aAS|a|aS U1 → SB A → aAS ⇒ A → aU2 and U2 → AS and B → SbS ⇒ B → SU3 and U3 → bS ∴ S0 → AU1|SB|AS S → AU1|SB| AS A → aU2|a|aS B → SU3|bb|aU2|a|aS U1 → SB U2 → AS U3 → bS Eliminate rules which have terminals and variables or two terminals. Let V1 → a, V2 → b ∴ S0 → AU1|AS|SB S → AU1|SB|AS A → V1U2|a|V1S Grammar, G now is: A1 → A2A3|A4A4 A4 → b|A1A4 A2 → b A3 → a 3. \u0007Identify all productions which do not conform to any of the types listed below: Ai → Aj xk ∃ j > i Zi → Aj xk ∃ j ≤ n Ai → a xk ∃ xk ∈ V* and a ∈ T 4. A4 → A1 A4 … identified 5. A4 → A1 A4|b To eliminate A1, use substitution rule, A1 → A2 A3|A4 A4 ∴ A4 → A2 A3 A4|A4 A4A4|b Substitute A2 → b ∴ A4 → b A3 A4|A4 A4 A4|b \u0007A4 → A4 A4 A4 is left recursive. So, remove left recur- sion i.e., A4 → b A3 A4|b|bA3A4Z|bZ Z → A4A4|A4 A4Z 6. Now, G = A1 → A2 A3|A4 A4 A4 → b A3 A4|b|b A3 A4 Z|b Z Z → A4 A4|A4 A4Z A2 → b A3 → a 7. A1, Z are not in GNF. So, For A1 → A2 A3|A4 A4: Substitute for A2 and A4 to convert it to GNF A1 → b A3| b A3 A4 A4|b A4|b A3 A4 Z A4|b Z A4 For Z → A4 A4|A4 A4 Z substitute for A4 to convert it to GNF Z → b A3 A4 A4|b A4|b A3 A4 Z A4|b Z A4|b A3 A4 A4 Z|b A4 Z|b A3 A4 Z A4 Z|b Z A4 Z ∴ Final GNF is: A1 → b A3|b A3 A4 A4|b A4| b A3 A4 Z A4|b Z A4 A4 → b A3 A4|b|b A3 A4 Z|b Z A2 → b A3 → a Z → b A3 A4 A4|b A4|b A3 A4 Z A4|b Z A4|b A3 A4 A4 Z| b A4 Z|b A3 A4 Z A4 Z|b Z A4 Z ∴ 19 productions. Pumping Lemma for Context Free Languages Let ‘L’ be context free language. There exists some integer, m ∃ ∀w in L, with |w| ≥ m, w = uvxyz with |vxy| ≤ m and |vy| ≥ 1 ∃ u vi x yi z ∈ L ∀ i = 0, 1, 2, 3, … Note: Pumping lemma is used to show that a language is Not context free. Example 8: The language {an bm cn d (n+m): m, n ≥ 0} is",
+    "page": 24,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Starting with A1 and proceeding to An, can be obtained as:",
+    "options": {
+      "A": "Assume that productions have been modified so that for 1 ≤ i ≤ k, Ai → Aj γ ∈ R1 only if j > i",
+      "B": "If Ak → Ajγ is a production with j < k, generate a new set of productions substituting for Aj, the body of each Aj production.",
+      "C": "Repeating (b) atmost k − 1 times, obtains rules of the form Ak → Apγ, p ≥ k.",
+      "D": "Replace rules Ak → Akγ by removing left- recursion."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 26,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Modify the Ai → Ajγ for i = n − 1, n − 2, … 1 in desired form at same time change z production rules. Example 7: A grammar G is defined with rules S → XA|BB, B → b|SB, X → b, A → a. The normalized GNF of G contains ____ productions.",
+    "options": {
+      "A": "Regular",
+      "B": "Context free",
+      "C": "Regular but not context fee",
+      "D": "Cannot be determined"
+    },
+    "answer": "C",
+    "explanation": "(B) 1. The Grammar, G is already in CNF. 2. Re-label with variables S with A1 X with A2 A with A3 B with A4 (B) L1 = {an bn : n > 0} is context free L2 = {a100 b100} is regular L a b a b 2 100 100 = + − ∗ {( ) } { } is regular {an bn} context free L a b a b 2 100 100 = + − ∗ {( ) } { } is regular { } a b L n n ∩ 2 → context free { } { : , } a b L a b n n L n n n n ∩ = ≠ ≥ = 2 100 0 is context free: Table 1 Comparing Regular and Context free Languages: Regular Language CFL Regular expression or regular grammar Context free grammar Recognize the language Parses the language These are DFSA's These are NDPDA's Minimize FSA's Find deterministic grammar. Closed under: Concatenation Union Kleen star Complement Intersection Closed under: Concatenation Union Kleen star Push Down Automata (PDA) A push down automata is merely a finite automata with a stack added to it. PDA is used to generate context free language. The stack allows for unbounded memorization. Finite control d Tape head State Stack Top A a P Input tape: The tape is divided into finitely many cells. Each cell contains a symbol in an alphabet, Σ. Stack: The stack head always scans the top symbol of the stack. It performs two basic operations. •• Push: Add a new symbol at the top •• Pop: Read and remove the top symbol Tape head: The head scans at a cell on the tape and can read a symbol on the cell. In each move, the head can move to the right cell. (C) L = {an bm cn d (n + m): m, n ≥ 0} Clearly, L is not regular because, number of a’s and number of b’s must be known to compute number of d’s. ‘L’ is not context free because, Let w = aM bM cM d2M. Clearly neither v nor y can cross regions and include more than one letter, since if that happened; letters obtained will be out of order when pumped. So, consider cases, where v and y fall within a single region. Consider 4-regions corresponding to a, b, c and d. (1, 1) → change number of a’s and they won’t match c’s any more. (1, 2) → If v is not empty, change a’s and they won’t match with c’s. If y is non-empty, number of b’s changed won’t have right number of d’s. (1, 3), (1, 4) → ruled out. ∵ |v x y| ≤ M (2, 2) → Change number of b’s and they won’t match right number of d’s. (2, 3) → If v is non-empty, change number of b’s without changing number of d’s. If y is not empty, change c’s and they’ll no longer match a’s. (2, 4) → ruled out ∵ |v x y| ≤ M (3, 3) → Change number of c’s and they won’t match a’s. (3, 4) → If v is not empty change c’s and they won’t match a’s. If y is not empty, change d’s without changing b’s. (4, 4) → change d’s without changing a’s or b’s. ∴ L is not context free. Closure Properties of CFL’s",
+    "page": 26,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "If stack top has a terminal symbol and if it matches with the next symbol in the input string, then pop it. Follow from step-1 again to complete all productions. Example 11: The CFG, G of a language L is S → AB, A → aAb|e, B → cB/e. The PDA generated by G contains ____ states.",
+    "options": {
+      "A": "5",
+      "B": "4",
+      "C": "3",
+      "D": "1 Finite control: The finite control has finitely many states which form a set Q. For each move, the state is changed according to the evaluation of transition function. A PDA is defined as: P = (Q, Σ, Γ, δ, q0, z0, F) Where Q: set of States Σ: Input alphabet Γ: Stack symbol δ: Transition function q0: Start state z0: Initial stack top symbol F: Final/accepting states Transition functions δ: Q × Γ × Σ ⇒ Q × Γ Q: Old state Γ: Stack top Σ: Input symbol Q: New state, Γ: New stack top PDA’s instantaneous description (IDs): A PDA has a configuration at any given instance: (q, w, y) q → current state w → remainder of input (i.e., unconsumed part) y → current stack contents as a string from top to bottom of the stack. If δ(q, a, x) = {P, A} is a transition, then following are also true: •• (q, a, x) ├ (P, e, A) •• (q, aw, xB)├ (p, w, AB) Note: 1. →: Turnstile notation and represents one move."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 28,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "If for a PDA, (q, xw, A) ├* (p, yw, B), then it is also true that: (q, x, A) ├* (p, y, B) Acceptance by PDA: There are two types of PDAs that one can design: •• Those that accept by final state or •• Those that accept by empty stack PDAs that accept by final state: For a PDA, P, the lan- guage accepted by P, denoted by L (P) by final state, is: {w| (q0, w, z0) ├* (q, ∈, A)} ∃ q ∈ F PDAs that accept by empty stack: For a PDA P, the lan- guage accepted by P, denoted by N (P) by empty stack, is: {w|(q0, w, z0) ├* (q, e, e)}, for any q ∈ Q. Example 10: Consider the grammar S → aTb| b, T → Ta |e. The PDA constructed contains ____ states.",
+    "options": {
+      "A": "S → S1S2 S1 → aS2b S2 → c|e",
+      "B": "S → S1bc S1 → a|e",
+      "C": "S → S1S2 S1 → aS1b|e S2 → bS2|bS2c|e",
+      "D": "S → aS1c S1 → b|e"
+    },
+    "answer": "C",
+    "explanation": "(C) S → AB A → aAb|e B → cB|e ⇒ δ(q0, w, S) = (q1, AB) δ(q1, w, A) = (q1, aAb) δ(q1, e, A) = δ(q1, e) δ(q1, w, B) = (q1, cB) δ(q1, e, B) = δ(q2, e) → accept ∴ {q0, q1, q2} 3-states. Converting a PDA into a CFG Given: G = (V, T, P, S) Initial stack symbol (S) same as start variable in grammar Output: PN = ({q}, T, V ∪ T, δ, q, S), where δ is •• If q0 is start state in PDA and qn is final state of PDA then [q0, z, qn] becomes a start state of CFG. Here z represents stack symbol. •• The production rule for the ID of the form δ(qi, a, z0) = (qi+1, z1, z2) can be obtained as: δ(qi, z0, qi+k) → a(qi+1, z1, qm) (qm, z2, qi+k) Where qi+k, qm represents the intermediate staes, z0, z1, z2 are stack symbols and a is input symbol. •• The production rule for the ID of the form δ(qi, a, z0) = (qi+1, e) can be converted as (qi, z0, qi+1) → a Example 12: The PDA, P for language L is generated as: e, e|e a, e|a b, e|b b, a|e e, b|e c, b|e e, e|e e, e|e e, e|e The CFG for P is: (C) The language, L generated by given PDA is L = {an bn bm cp: m ≥ p and n, p ≥ 0} It can be generated by following rules: S → S1S2 S1 → aS1b|e → S1 generates an bn S2 → bS2|bS2c|e → S2 generates bm cp Deterministic PDA (Deterministic CFL) Deterministic context free languages (DPDA) Context-free Languages PDAs ⊆ •• Every DPDA is also a PDA. •• A context free language ‘L’ accepted by PDA may or may not be accepted by DPDA. A PDA, M = (Q, Σ, Γ, δ, q0, F) is deterministic if there is no configuration for which M has choice of more than one move. That is, it must satisfy the following conditions:",
+    "page": 28,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "For any q ∈ Q, if δ(q, e, e) ≠ f, then δ(q, a, t) = f for all a ∈ Σe and t ∈ Γe (except when a = e, t = e). Rule-2 says that if there is a transition from state q that reads character, s from stack but doesn’t read other input, other transitions from q, that don’t read stack are not allowed and other transitions from q that read s from the stack and read the input are not allowed either. Rule-3 says that if there is a transition from state q that reads character a, but doesn’t read stack, other transitions from q that don’t read the input are not allowed and other transitions from q that read ‘a’ from input and read the stack are not allowed either. Rule-4 says that if there is a transition from q that doesn’t read either input or stack, all other transitions from q are not allowed. Example 13: A language, L is defined as: L = {wcwR: w ∈ (a, b)*}. What is Nature of language L?",
+    "options": {
+      "A": "CFL and DCFL",
+      "B": "Only CFL",
+      "C": "Only DCFL",
+      "D": "None of these"
+    },
+    "answer": "D",
+    "explanation": "(A) L = {x = wcwR for w ∈ (a, b)*} F s C, e/e a, a|e b, b|e a, e|a b, e|b Clearly, obtained PDA is also DPDA in sense; there is no choice in transitions. ∴ Hence L is CFL and DCFL.",
+    "page": 29,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "The DPDA constructed to accept language, L with prop- erty L = L1 ∪ L2 where L1 = {10n1n| n > 0}, L2 = {110n12n| n > 0} contains ___ states.",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "7"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 30,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "The PDA is designed as: q0 q1 q2 0, e|0 1, e|1 e, $/e 0, 1|1 $ 0 1, 0|0 $ 0 0, 1|e 1, 0|e 0, 0|0 $ 0 1, 1|1 $ 1 0, 1|e 1, 0|e 0, 0 → 00 1, 1 → 11 0, 0 | 00 1, 1|11 q3 What is the language generated by the above PDA?",
+    "options": {
+      "A": "\u0007Binary strings that have same number of 0’s and 1’s.",
+      "B": "\u0007Binary strings that start with 00 and end with 11 and have same number of 0’s and 1’s.",
+      "C": "\u0007Binary strings that start and end with the same symbol and have same number of 0’s and 1’s.",
+      "D": "\u0007Binary strings that start with 11 and end with 00 and have same number of 0’s and 1’s."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 30,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "The language, L ba ba b ba n m m m m m n n = ≥ … ( : , , 1 2 2 1 ≥ 0 and mi ≠ mj for some i, j). What is nature of ‘L’?",
+    "options": {
+      "A": "Regular",
+      "B": "Context free but not regular",
+      "C": "Regular but not context free",
+      "D": "Neither context free nor regular"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 30,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "Two languages L1, L2 are defined as: L1 = {ai bj ck: i, j, k ≥ 0, i = j} \u0007L2 = {ai bj ck: i, j, k ≥ 0, j = k} which of following state- ments are true? (i) L1 ∩ L2 is context free (ii) L1 ∩ L2 = {an bn cn| n ≥ 0} (iii) L1, L2 are context free (iv) Only L1 is context free",
+    "options": {
+      "A": "All are true",
+      "B": "(i), (ii) are true",
+      "C": "(iii), (iv) are true",
+      "D": "(ii), (iii) are true"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 30,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "The language generated by grammar: S → Te|Ue, T → cTd|cT|e, U → cUd|Ud|dd. is",
+    "options": {
+      "A": "L = {cn dm e: m ≥ n}",
+      "B": "L = {cn dm e: m = n}",
+      "C": "L = {cm dn em: m ≥ n + 2}",
+      "D": "None of these"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 30,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Consider the following languages L1, L2 and L3: L1 = {an bm cn+m| n, m ≥ 0} L2 = {an bn+1 cn+2| n ≥ 0} L3 = {an bn cm| n, m ≥ 0} Which of following statement is true?",
+    "options": {
+      "A": "L1, L2, L3 are context free languages",
+      "B": "L1, L2 are context free but not L3",
+      "C": "L1, L3 are context free but not L2",
+      "D": "L1, L2, L3 are not context free languages."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 30,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "The language, L = {bi # bi+1 : bi is i in binary, i ≥ 1} is:",
+    "options": {
+      "A": "Regular",
+      "B": "Context free",
+      "C": "Regular and context free",
+      "D": "Neither context free nor Regular"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 30,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "The language L i i = ≥ { : } 0 1 2 is:",
+    "options": {
+      "A": "Context free",
+      "B": "DCFL",
+      "C": "Both CFL and DCFL",
+      "D": "Not context free language"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 30,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "The context free grammar, G is defined with produc- tion rules S → EcC′|aAE|AU, A → aA|e, B → bB|e, C′ → cC′|e, E → aEc|F, F → bFc|e, U → aUc|V, V → bVc| bB What is the language generated by L?",
+    "options": {
+      "A": "L = {an bm ck : k ≠ n + m}",
+      "B": "L = {an bm ck : k = n + m}",
+      "C": "L = {an bm ck : k > n + m}",
+      "D": "L = {an bm ck : k < n + m}"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 30,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Consider the grammar, G ≡ S → abScB|e, B → bB|b. What language does it generate?",
+    "options": {
+      "A": "L(G) = {(ab)n (cb) m|n = m}",
+      "B": "L(G) = {anbn (cb) m|n ≠ m}",
+      "C": "L(G) = {(ab)n (cbm) n|n ≥ 0, m > 0}",
+      "D": "L(G) = {{ab)n (cbm) n|n ≥ 0, m ≥ 0}"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 30,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "The language, L = {0i 1j 2k| i ≠ j or j ≠ k}. The CFG, G generated by L contains ___ rules.",
+    "options": {
+      "A": "S → ABC|AC A → aBC|aC B → C C → cd|DCF|CF D → dD|d F → eC",
+      "B": "S → aBCc A → aBC B → cD|dDEF|dEF C → cD|dDEF|dEF F → eB D → dD|d E → eFE|e",
+      "C": "S → aBCBC|aBC B → cD|dDEF|dEF F → eB C → dD|d D → e F → CD|dDEF",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 30,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "Let the language L1, L2 are defined as: \u0007L1: {ai b2i cj| i, j ≥ 0}, L2 = {ai b2i ai| i ≥ 0}. Which of following is true?",
+    "options": {
+      "A": "L1, L2 are context free",
+      "B": "Only L1 is context free",
+      "C": "Only L2 is context free",
+      "D": "Neither L1 nor L2 is context free"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 31,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Consider the alphabet Σ = {a, b, c, (,), ∪, *, f}. Then con- text free grammar that generates all strings in Σ* that are regular expressions over {a, b} is:",
+    "options": {
+      "A": "S → S*|a|b|SS",
+      "B": "S → f|a|b|S",
+      "C": "S → f|a ∪ b|S*",
+      "D": "S → f|S*|a|b|(S)|S ∪ S|SS"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 31,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "The PDA for language, L is designed below. The CFG generated contains ____ productions. 1 2 e, e → $ 3 e, $ → e a, e → a b, a → e",
+    "options": {
+      "A": "5",
+      "B": "4",
+      "C": "3",
+      "D": "6"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "The language, L generated by the following grammar, S → SS| AAA|e, A → aA| Aa| b is",
+    "options": {
+      "A": "(a* b*)*",
+      "B": "(a* b* b* a*)*",
+      "C": "a* b* a*",
+      "D": "(a* b a* b a* b a*)*"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 31,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "The grammar, G is defined with rules S → S1|S2, S1 → S1b|Ab|e, A → aAb| ab, S2 → S2a| Ba|e, B → bBa| ba. The CNF is applied on G. The obtained grammar, G’ contains ___ rules.",
+    "options": {
+      "A": "24",
+      "B": "23",
+      "C": "21",
+      "D": "20"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 31,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "The language, L b n n = ≥ { : } 2 1 is:",
+    "options": {
+      "A": "CFL but not DCFL",
+      "B": "DCFL but not CFL",
+      "C": "Only DCFL",
+      "D": "Not CFL"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 31,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Consider the grammar, G = S → aSc|B, B → bBc|e The language, L generated by G is",
+    "options": {
+      "A": "L = {an bm ck: k = n + m}",
+      "B": "L = {an bm ck: k ≠ n + m}",
+      "C": "L = {an bm ck: k > n + m}",
+      "D": "L = {an bm ck: k < n + m}"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 31,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "The grammar, G is defined with productions: S → 0A|1B, A → 0AA|1S|1, B → 1BB|0S|0 The grammar, G2 is defined with productions: S → AB|aaB, A → a|Aa, B → b Which grammar is/are ambiguous?",
+    "options": {
+      "A": "Only G1",
+      "B": "Only G2",
+      "C": "Both G1 and G2",
+      "D": "Both G1 and G2 are unambiguous"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "The language, L1 = {0n 1n| n > 0} and L2 = {0n 12n| n > 0}. The CFG generated for L1 ∪ L2 is:",
+    "options": {
+      "A": "S → 0 A 1|0 A 1 1 A → 0|1|e",
+      "B": "S → 0 A 1 1 A → 0|1|e",
+      "C": "S → 0 A 1|0 B 1 1 A → 0 A 1|e B → 0 B 1 1|e",
+      "D": "S → 0 A 1 1|0 1 1 A → 0|1|e"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "The NPDA constructed to accept language, L with property, L = L1 ∪ L2, where L1 = {1n 0n| n > 0}, L2 = {0n 12n| n ≥ 0} contains ____ final states.",
+    "options": {
+      "A": "3",
+      "B": "1",
+      "C": "2",
+      "D": "4"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "The DPDA for language, L is designed below. What is the language generated? b, a|e a, e|a b, a /e b, $|$ b, $|$ b, $|$",
+    "options": {
+      "A": "L = {an bm: m = n}",
+      "B": "L = {an bm: m = n + 2}",
+      "C": "L = {an bm: m ≥ n + 2}",
+      "D": "L = {an bm: m ≤ n + 2}"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "The CFG, G is defined with rules: \u0007S → AB|CD, A → A00|e, B → B11|1, C → C00|0, D → D11|e. The language generated by G is",
+    "options": {
+      "A": "L = {0n 1n|n ≥ 0}",
+      "B": "L = {0 0n 1 1n|n > 0}",
+      "C": "L = {0n 1m|n + m is odd}",
+      "D": "L = {0n 1m|n + m is even}"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "The languages, L1, L2, L3 are defined as: \u0007L1 = {an bm cn+m|n, m ≥ 0}, L2 = {an bn cm|n, m ≥ 0}, L3 = {an bn c2n|n ≥ 0}, Which of the following statements are true? (i) L1, L2 are context free (ii) L1, L3 are context free (iii) L3 = L1 ∩ L2 (iv) L1, L3 are context free but not L2",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(i), (iii)",
+      "C": "(ii), (iii)",
+      "D": "(iii), (iv)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 32,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "The language, L1 and L2 are defined as L1 = {an bn: n ≥ 0 and n is not a multiple of 5} and L2 = {0n # 02n # 03n| n ≥ 0}. Which of following is true?",
+    "options": {
+      "A": "L1 and L2 are context free",
+      "B": "Only L1 is context free",
+      "C": "Only L2 is context free",
+      "D": "Neither L1 nor L2 is context free"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 32,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "The language, L1 and L2 are defined as L m n n m 1 0 1 = { ) | , n > 0}, L2 = {0n 1n 0n 1n|n ≥ 0} which of following is true?",
+    "options": {
+      "A": "L1 and L2 are context free",
+      "B": "Only L1 is context free",
+      "C": "Only L2 is context free",
+      "D": "Neither L1 nor L2 is context free"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 32,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "The language L1, L2 are defined as L1 = {0i 1i 0j 1i|i, j > 0}, L2 = {1k 0i 1i 0j 1j 0k|i, j, k > 0}. Which of following is true?",
+    "options": {
+      "A": "L1 and L2 are context free",
+      "B": "Only L1 is context free",
+      "C": "Only L2 is context free",
+      "D": "Neither L1 nor L2 is context free"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Match the following:\b [2008] E. Checking that identifi- ers are declared before their use P. L = {anbmcndm|n≥1, m≥1} F. Number of formal parameters in the declaration of a function agrees with the number of actual parameters in use of that function Q. X → XbX|XcX|dXf|g G. Arithmetic expressions with matched pairs of parentheses R. L = {wcw|w∈(a|b)*} H. Palindromes S. X → bXb|cXc|e",
+    "options": {
+      "A": "E − P, F − R, G − Q, H − S",
+      "B": "E − R, F − P, G − S, H − Q",
+      "C": "E − R, F − P, G − Q, H − S",
+      "D": "E − P, F − R, G − S, H − Q"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Consider the languages L1, L2 and L3 as given below. L1 = {0p 1q|p, q ∈ N}, L2 = { 0p 1q|p, q ∈ N and p = q} and \u0007L3 = {0p 1q 0r|p, q, r ∈ N and p = q = r}. Which of the following statements is NOT TRUE?\b [2011]",
+    "options": {
+      "A": "\u0007Push Down Automata (PDA) can be used to rec- ognize L1 and L2.",
+      "B": "L1 is a regular language.",
+      "C": "All the three languages are context free",
+      "D": "\u0007Turing machines can be used to recognize all the languages."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Which of the following problems are decidable?\b [2012] (1) Does a given program ever produce an output? (2) \u0007If L is a context free language, then, is L also context free? (3) If L is a regular language, then, is L also regular? (4) \u0007If L is recursive language, then, is L also recur- sive?",
+    "options": {
+      "A": "1, 2, 3, 4",
+      "B": "1, 2",
+      "C": "2, 3, 4",
+      "D": "3, 4"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 32,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Consider the following languages. L1 = {0p 1q 0r|p, q, r ≥ 0} L2 = {0p 1q 0r|p, q, r ≥ 0, p ≠ r} Which one of the following statements is FALSE? \b [2013]",
+    "options": {
+      "A": "L2 is context-free",
+      "B": "L1 ∩ L2 is context-free",
+      "C": "Complement of L2 is recursive",
+      "D": "Complement of L1 is context-free but not regular"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 32,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Which one of the following is TRUE?\b [2014]",
+    "options": {
+      "A": "The language L = {an bn|n ≥ 0} is regular",
+      "B": "The language L = {an|n is prime} is regular",
+      "C": "\u0007The language L = {w|w has 3k + 1b’s for some k ∈N with Σ = {a, b}} is regular",
+      "D": "\u0007The language L = {ww|w∈Σ* with Σ = {0, 1}} is regular."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Consider the following languages over the alphabet Σ = {0, 1, c}. L1 = {0n 1n|n ≥ 0} L2 = {wcwr|w ∈ {0, 1}*} L3 = {wwr|w ∈ {0, 1}*} \u0007Here wr is reverse of the string w. Which of these languages are deterministic context-free languages? \b [2014]",
+    "options": {
+      "A": "None of the languages",
+      "B": "Only L1",
+      "C": "Only L1 and L2",
+      "D": "All the three languages"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Previous Years’ Questions",
+    "number": 0,
+    "question": "Z 0Z q0 q1 q2 ε, ⊥ ε Which one of the following sequences must follow the string 1011 00 so that the overall string is accepted by the automation?\b [2015]",
+    "options": {
+      "A": "10110",
+      "B": "10010",
+      "C": "01010",
+      "D": "01001"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 33,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Which of the following languages are context-free? \b [2015] L1 = {ambnanbm | m, n ≥ 1} L2 = {ambnambn | m, n ≥ 1} L3 = {ambn | m = 2n + 1}",
+    "options": {
+      "A": "L1 and L2 only",
+      "B": "L1 and L3 only",
+      "C": "L2 and L3 only",
+      "D": "L3 only"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 33,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "Consider the following context-free grammars: G1:S → aS|B, B → b|bB G2: S → aA|bB, A → aA|B| ε, B |bBε Which one of the following pairs of languages is gen- erated by G1 and G2, respectively?\b [2016]",
+    "options": {
+      "A": "\u0007{am bn | m > 0 or n > 0} and {am bn | m > 0 and n > 0}",
+      "B": "\u0007{am bn | m > 0and n > 0} and {am bn | m > 0 or n ≥ 0}",
+      "C": "\u0007{am bn | m ≥ 0 or n > 0} and {am bn | m > 0 and n > 0}",
+      "D": "\u0007{am bn | m ≥ 0 and n > 0} and {am bn | m > 0 or n > 0}"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 33,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "Consider the transition diagram of a PDA given below with input alphabet ∑ = {a, b} and stack alphabet = {X,Z}. Z is the initial stack symbol. Let L denote the language accepted by the PDA. Which one of the following is TRUE?\b [2016]",
+    "options": {
+      "A": "\u0007L = {an bn| n ≥ 0} and is not accepted by any finite automata.",
+      "B": "\u0007L = {an | n ≥ 0) ∪ {anbn | n ≥ 0} and is not ac- cepted by any deterministic PDA.",
+      "C": "\u0007L is not accepted by any Turing machine that halts on every input.",
+      "D": "\u0007L = {an|n ≥ 0} ∪ {an bn|n ≥ 0} and is deterministic context-free."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 33,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "Consider the following languages: L1 = {anbmcn+m : m, n ≥1} L2 = {anbnc2n : n ≥ 1} Which one of the following is TRUE?\b [2016]",
+    "options": {
+      "A": "Both L1 and L2 are context - free.",
+      "B": "L1 is context - free while L2 is not context - free",
+      "C": "\u0007L2 is context - free while L1 is not context - free.",
+      "D": "Neither L1 nor L2 is context - free."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 33,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "Consider the following context-free grammar over the alphabet Σ = {a, b, c} with S as the start symbol: S → abScT | abcT T → bT | b Which one of the following represents the language generated by the above grammar?\b [2017]",
+    "options": {
+      "A": "{(ab)n(cb)n | n ≥ 1}",
+      "B": "( ) 1 2 1 2 { | , , , , 1} n n m m m n ab cb cb cb n m m m … … ≥",
+      "C": "{(ab)n(cbm)n | m, n ≥ 1}",
+      "D": "{(ab)n(cbn)m | m, n ≥ 1}"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 33,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "If G is a grammar with productions S → SaS | aSb | bSa | SS |∈ Where S is the start variable, then which one of the following strings is not generated by G?\b [2017]",
+    "options": {
+      "A": "abab",
+      "B": "aaab",
+      "C": "abbaa",
+      "D": "babba"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 33,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "Consider the context-free rammers over the alphabet {a, b, c} given below. S and T are non-terminals. G1 : S → aSb|T, T → cT|∈ G2 : S → bSa|T, T → cT|∈ The language L(G1) ∩ L(G2) is\b [2017]",
+    "options": {
+      "A": "Finite",
+      "B": "Not finite but regular",
+      "C": "Context-Free but not regular",
+      "D": "Recursive but not context-free."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 33,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "2 - Context Free Languages and Push Down Automata",
+    "section": "Previous Years’ Questions",
+    "number": 15,
+    "question": "Consider the following languages over the alphabet Σ = {a, b, c}. Let L1 = {anbncm| m, n ≥ 0} and L2 = {ambncn| m, n ≥ 0}. Which of the following are context-free languages? \b [2017] I. L1 ∪ L2 II. L1 ∩ L2",
+    "options": {
+      "A": "I only",
+      "B": "II only",
+      "C": "I and II",
+      "D": "Neither I nor II"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 33,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 16,
+    "question": "Let L1 L2 be any two context-free languages and R be any regular language. Then which of the following is/ are CORRECT?\b [2017] I. L1 ∪ L2 is context-free. II. L1 is context-free. III. L1 − R is context-free. IV. L1 ∩ L2 is context-free.",
+    "options": {
+      "A": "I, II and IV only",
+      "B": "I and III only",
+      "C": "II and IV only",
+      "D": "I only"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 34,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "Identify the language generated by the following grammar, where S is the start variable.\b [2017] S → XY X → aX|a Y → aYb|∈",
+    "options": {
+      "A": "{ambn| m ≥ n, n > 0}",
+      "B": "{ambn| m ≥ n, n ≥ 0}",
+      "C": "{ambn| m >n, n ≥ 0}",
+      "D": "{ambn| m > n, n > 0}"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 34,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 18,
+    "question": "Consider the following languages. Lt = {ap | p is a prime number} L2 = {anbmc2m| n ≥ 0, m ≥ 0} L3 = {anbnc2n|n ≥ 0} L4 = {anbn | n ≥ 1} Winch of the following are CORRECT?\b [2017] I. L1 is context-free but not regular. II. L2is not context-free. III. L3is not context-free but recursive. IV. L4 is deterministic context-free.",
+    "options": {
+      "A": "I, II and IV only",
+      "B": "II and III only",
+      "C": "I and IV only",
+      "D": "III and IV only"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 34,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 19,
+    "question": "Consider the following languages: I. {ambncpdq | m + p = n + q, where m, n, p, q ≥ 0} II. {ambncpdq | m = n and p = q, where m, n, p, q ≥ 0} III. {ambncpdq | m = n = p and p ≠ q, where m, n, p, q ≥ 0} IV. {ambncpdq | mn = p + q, where m, n, p, q ≥ 0} Which of the languages above are context-free? \b [2018]",
+    "options": {
+      "A": "I and IV only",
+      "B": "I and II only",
+      "C": "II and III only",
+      "D": "II and IV only"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 34,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Recursively Enumerable Language: A language L is recursively enumerable, if it is accepted by a TM. Example 1: Let M be a turing machine has M = (Q, , ∑, δ, S, B, F ) with Q = {qo, q1, q2, q3, q4}, ={a, b, X, Y, #}, ∑ = {a, b}, S = q0, B = #, δ given by: a b X Y # q0 (q1, X, R) - - (q3, Y, R) q1 (q1, a, R) (q2, Y, L) - (q1, Y, R) q2 (q2, a, L) - (q0, X, R) (q2, Y, L) q3 - - - (q3, Y, R) (q4, #, R) q4 - - - - - Which of following is true about M ?",
+    "options": {
+      "A": "M halts on L having ‘baa’ as substring",
+      "B": "M halts on L having ‘bab’ as substring",
+      "C": "M halts on L = {an bn/n ≥ 1}",
+      "D": "M halts on L not having ‘bbaa’ as substring."
+    },
+    "answer": "D",
+    "explanation": "(C) M accepts an bn. Example: aaabbb (q0, ∈, aaabbb) → (q1, XXXYY, b) (q1 X, aabbb) → (q2 XXXY, YY) (q1, Xa, abbb) → 1(q2, XXX, YYY ) (q1, Xaa, bbb) → (q2, XY, XYYY ) (q1, Xa, aYbb) → (q0, XXX, YYY ) (q2, X, aaYbb) → (q3, XXXY, YY ) (q2, ∈, XaaYbb) → (q3, XXXYY, Y ) (qo, X, aaYbb) → (q3, XXXYYY, ∈) (q1, XX, aYbb) → (q4, XXXYYY#, ∈) Types of Turing Machines Two-way infinite turing machine Finite control B an ai a2 a1 •• A TM with a two-way infinite tape is denoted by M = (Q, ∑, , δ, qo B, F), as in original model. •• The tape is infinite to the left as well as to the right. If δ(q, x) = (p, Y, L) then q x a ├ m pBY. The tape, is infinte towards left. If δ (q, x) = (p, B, R) then q x a ├ m , pa the is infinite towards right. Multiple turing machines Finite control •• A multiple TM consists of a finite control with k tape heads and k-tapes, each tape is infinite in both directions, on a single move, depending on the state of the finite control and the symbol scanned by each of tape heads, the machine can, •• change state •• print new symbol on each of the cells scanned by its tape head •• move each of its tape heads, independently, one cell to the left or right or keep it stationary. •• Initially, the input appears on the first tape and other tapes are blank. Non-deterministic turing machines •• A non-deterministic turing machine is a device with a finite control and a single one way infinite tape. •• For a given state and a tape symbol scanned by the tape head, the machine has a finite number of choices for next move. Note: Non-deterministic TM is not permitted to make a move in which the next state is selected from one choice, and the symbol printed and direction of head motion are selected from other choices. •• The non-deterministic TM accepts its input if any sequence of choices of moves leads to an accepting state. Multi-dimensional TM’s Finite control •• The tape consists of a k-dimensional array of cells infinite in all 2k directions, for some fixed k. •• Depending on the state and the symbol scanned, the device changes it’s state, prints a new symbol and moves its tape head in one of the 2k directions, either positively or negatively, along one of the k-axes. Multihead TM B k 3 2 1 Finite control •• A K-head TM has some fixed ‘K’ number of heads. The heads are numbered from 1 through k, and a move of the TM depends on the state and on the symbol scanned by each head. Offline turing machine Finite control $ C •• An offline TM is a multi tape TM, whose input tape is read only. The input is surrounded by end markers, ¢ on left and $ on right. The TM is not allowed to move the input tape head off the region between ¢ and $. Multi stack machine •• A deterministic two stack machine is a deterministic TM with a read only input and two storage tapes. Note: •• All these types of TM’s does not add any language accepting power and all these are equivalent to the basic model. •• Any language accepted by a 2-PDA can be accepted by some TM and any language accepted by a TM can be accepted by some 2-PDA. Accepting power of a TM = accepting power of a computer. •• Any language accepted by a PDA with n stacks (n ≥ 2), can also be accepted by some TM. Example 2: Consider the following statement about L:",
+    "page": 36,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "L is also accepted by single tape turing machine M2. Which of following statement is correct?",
+    "options": {
+      "A": "Acceptance by M2 is slower by O (n2)",
+      "B": "Acceptance of M2 is slower by O (n)",
+      "C": "Acceptance of M2 is faster by O (n)",
+      "D": "Acceptance of M2 is faster by O (n2)"
+    },
+    "answer": "D",
+    "explanation": "(A) While simulating multi-tape TM on a single tape TM the head has to move at least 2k cells per move, where k is the number of tracks on single tape TM. Thus for k moves, 2 2 1 2 i k i k = ∑ = . Which means quadratic slow down? Thus, acceptance of multi-tape is faster by O(n2). Universal turing machine A Universal turing machine is a turing machine that can simulate an arbitrary turing machine on arbitrary input. •• The machine consists of an input output relation to the machine computes. •• The input is given in binary form on the machine tape and the output consists of the contents of the tape when the machine halts. •• The contents of the tape will change based on the Finite State Machine (FSM) inside the TM. •• The problem with TM is that a different machine will be constructed for every new computation to be performed. •• A UTM can simulate any other machine. Combining turing machines If TM1 and TM2 are turing machines, then we can combine these machines and create a Turing machine which will first behave like TM1 and TM2. To combine two turing machines follow below steps:",
+    "page": 38,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Append TM2’s transition table to the foot of TM1’s transition table. •• If TM1 and TM2 are combined in this way, we will write it as TM1 → TM2. So this new machine starts off in the initial state of TM1, operates as per TM1 until TM1 would halt then it launches TM2 and operates a TM2, until TM2 would halt. Recursively Enumerable languages •• A language L over the alphabet ∑ is called ‘recursively enumerable’ if there is a TM, M that accept every word in L and either rejects or loops for every word in language L′, the complement of L. Accept (M) = L Reject (M) + Loop (M) = L′. •• When TM, M is still running on some input of recursively enumerable languages, it is not decided that M will even- tually accept, if let it run for long time or M will run for- ever (in loop). Recursive language •• A language is said to be recursive, if there exists a TM which will halt and accept when presented with any input string w ∈∑*, only if the string is in the language other- wise will halt and reject the string. •• Thus, for turing decidable language L, there is a TM which halts for a large number of inputs w belonging to L. •• A TM that always halts is known as a decider or a total turing machine and is said to decide the recursive language. The recursive language is also called as recur- sive set of decidable. •• A language accepted by a TM is said to be recursively enumerable language. The subclass of recursively enu- merable sets are said to be recursive sets or recursive language. Note: •• All recursive languages are also recursively enumerable. •• There may be languages which are recursively enumer- able but not recursive. •• Set of all possible words over the alphabet of the recur- sive language is a recursive set. •• Set of all possible words, over the alphabet of the recur- sive enumerable language, is a recursively enumerable set. Recursively enumerable Not recursively enumerable RE but not recursive Recursive Figure 1 Relationship between the recursive, RE and non-RE languages. Properties of Recursive and Recursively Enumerable Languages •• If a language L is recursive, then there is a TM T that accepts it and always halts. •• If L and LI are both recursively enumerable, then L and LI are recursive. •• Union of two recursive languages is recursive. •• Recursively enumerable languages are closed under union. •• If L, L1 and L2 are recursive languages, then so are L1 ∪ L2, L ∩ L2, L1L2, L*, L1 ∩ L2 and L1 - L2. •• If L, L1 and L2 are recursively enumerable languages, then so are L1 ∪ L2, L*, L1 ∩ L2, L1L2. •• If ∑ is an alphabet, L ⊆ ∑*, is a recursively enumerable language and ∑* – L is recursively enumerable, then L is recursive. Example 3: If ∑ = {0,1}, the canonical order is {∈,0,1,00,01,10,11,000,…} where w is the ith word and Mj is TM whose code is the integer j, written in binary. The language generated is L(Mj). The diagonalized language, Ld is a.",
+    "options": {
+      "A": "Recursively enumerable language but not recursive",
+      "B": "Recursive language",
+      "C": "Non-recursively enumerable language",
+      "D": "Both (a) and (c)"
+    },
+    "answer": "D",
+    "explanation": "(C) Non-recursively enumerable language. Non-recursively enumerable language Non-Recursively Enumerable Language: A language which is not accepted by any turing machine is non-recursively enumerable. Example: Power set of an infinite set. •• These languages cannot be defined by any effective procedure. For any non-empty ∑, there exist languages that are not Recursively Enumerable. Infinite table for all i and j is: j → 1 2 3 4 1 0 1 1 0 2 1 1 0 0 i 3 0 0 1 0 4 0 1 0 1 Diagonal To guarantee that no TM accepts Ld: wi is in Ld if and only if the (i, i) entry is 0, that is, if Mi does not accept wi. Suppose that some TM Mj accepted Ld. Then it contra- dicts if wj is in Ld, ( j, j) entry is 0, implying that wj is not in L (Mi) and contradicting Ld = L (Mi). If wi is not in Ld, then the ( j, j) entry is 1, implying that wi is in L(Mj), which again contradicts Ld = L(Mj), as wj is either in or not in Ld, assumption, Ld = L(Mj) is false. Thus no TM in the list accepts Ld, Hence Ld is non- recursively enumerable language. Decidable: A problem with two answers (Yes/No) is decid- able if the corresponding language is recursive. Example:",
+    "page": 38,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "No Halt: The machine starting at this configuration never reaches a halt state, no matter how long it runs. •• The halting problem is unsolvable because, let, there exists a TM, M, which decides whether or not any com- putation by a TM, T will ever halt when a description dT of T and tape t of T is given. That means the input to machine M, will be (machine, tape) pair. Then for every input (t, dT ) to MI if T halt for input t, MI also halts which is called accept halt. Similarly if T does not halt for input t then the M1 will halt which is called reject halt. Accept halt Input (t, dT) When T halt for t When T does not halt for t Reject halt M1 •• Consider another Turing Machine, M2 which takes an input dT . It first copies dT on its tape and then this dupli- cated tape information is given as input to M1. But M1 is a modified machine. Input Modified Copy T Loops T halt for input t = dT T does not halt for t = dT Halt dT dT, dT M1 → Replace T by M2 i.e., M2 = T (Input) M2 halt for input dM2 dT M2 Loops Halt That’s means, a machine M1, which can tell whether any other TM will halt on particular input does not exist. Hence halting problem is unsolvable. Post’s Correspondence Problem (PCP) The Undecidability of strings is determined with the help of Post’s Correspondence Problem (PCP). ‘The PCP consists of two lists of strings that are of equal length over the input ∑. The two lists are A = w1, w2, w3, … wn and B = x1, x2, … xn then there exists a non-empty set of integers i1, i2, … in such that w1, w2, … wn = x1, x2, … xn’. To solve PCP, try all the combinations of i1, i2, … in to find the wi = xi then, PCP has a solution. Example 4: What is the solution for the following system of post correspondence problem. A = {100, 0, 1} B = {1, 100, 00}",
+    "options": {
+      "A": "1113322",
+      "B": "1311322",
+      "C": "2233111",
+      "D": "No solution"
+    },
+    "answer": "D",
+    "explanation": "(B) The string is: A1A3A1A1A3A2A2 = 100 + 1 + 100 + 100 + 1 + 0 + 0 = 1001100100100, B1B3B1B1B3B2B2 = 1 + 00 + 1 + 1 + 00 + 100 + 100 = 1001100100100. Problems •• P stands for deterministic polynomial time. A deterministic machine at each time executes an instruction. Depending on instruction, it then goes to next state which is unique. Hence, time complexity of deterministic TM is the maxi- mum number of moves made by M in processing an input string of length n, taken over all inputs of length n. •• A language, L is said to be in class P, if ∃ a (determinis- tic) TM, M is of time complexity P (n) for some polyno- mial P and M accepts L. •• Class P consists of those problems that are solvable in polynomial time by a deterministic TM. NP Problems •• NP stands for non-deterministic polynomial time. •• A language, L is in class NP, if there is a non-deterministic TM, M is of time complexity P(n) for some polynomial P and M accepts L. •• Class NP consists of problems for which solutions are verified quickly. P consist of problems which can be solved quickly. P NP •• NP languages are closed under union, Intersection, con- catenation, Kleen star. •• NP problems are classified into two types:",
+    "page": 40,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "NP-hard problems. Example: Vertex (Graph) coloring problem, Travelling salesman problem, the vertex cover problem, the Hamiltonian circuit problem. NP-Complete Problem •• A class of problems are known as NP-complete problems whose status is unknown. No polynomial time has yet been discovered for NP-complete problems nor has any one been able to prove that no polynomial time exists for any of them. These are hardest of NP-problems. The P and NP-complete problems are disjoint. Example: (Cook’s Theorem) SAT is NP-complete, Bin packing problem, Knapsack Problem. •• A language L is said to be NP-complete if L ∈ NP and if every LI ∈ NP is polynomial-time reducible to L. A language L1 is said to be polynomial time reducible to some language L2 if there exists a DTM by which any w1 in the alphabet of L1 can be transformed in polynomial time to a w2 in the alphabet of L2 in such a way that w1 ∈ L1 if w2 ∈ L2. It follows that if some L1 is NP-complete and polyno- mial time reducible to L2, then L2 is also NP-complete. NP-Hard Problem P NP NP - complete NP - hard •• A problem that is NP-hard has a property that all problems that are in NP can be reduced in polynomial time to it. •• A language, L in NP-hard complete if and only if, Condition 1: For every language, LI in NP, there is a poly- nomial time reduction of LI to L. Condition 2: L is not necessarily in NP. Table 1 NP-Hard versus NP-complete problems: NP-Hard NP-Complete (1) \u0007A decision problem Pi is NP-hard if every problem in NP is polynomial time reducible to Pi. (1) \u0007A Decision problem Pi is NP-complete if it is NP-hard and is also in class NP itself. (2) \u0007In terms of symbols ‘Pi’ is NP-hard if for every Pj → NP (2) \u0007In terms of symbols, ‘Pi’ is NP-complete, if Pi is NP-hard and Pj → NP (3) \u0007Pi is ‘as hard as’ all the problem in NP (3) \u0007Pi is one of the hardest prob- lems in NP (4) \u0007If any problem in NP is proved intractable, then Pi must also be intractable (4) \u0007If any one ever shows that as NP-complete problem is also intractable, then every NP-complete problem is also intractable. Example 5: Which of following is FALSE?",
+    "options": {
+      "A": "\u0007{< x, y > | x and y are integers, gcd (x, y) = 1} is a NP class problem.",
+      "B": "CLIQUE is a NP class problem.",
+      "C": "Eulerian PATH is a P class problem",
+      "D": "Dijkstra’s algorithm is a problem in P."
+    },
+    "answer": "D",
+    "explanation": "(A) Choice (A) is a P class problem. Consider the following table: D – Decidable, U – Undecidable,? – Open question,T – Trivially Decidable Question Regular Sets DCFL’s CFL’s CSL’s Recursive Sets Recursively Enumerable Sets (1) Membership problem? D D D D D D (2) Emptiness problem? D D D U U U (3) Completeness problem is L = ∑*? D D D U U U (4) Equality problem? D ? U U U U (5) Subset problem is L1 ⊆ L2? D U U U U U (6) Is L Regular? T D U U U U (7) \u0007Is the intersection of two languages, a lan- guage, of the same type? T U U T T T (8) \u0007Is the complement of a language, also a lan- guage of the same type? T T U ? T U (9) Is L is finite or infinite? D D D U U U Table 2 Closure properties of formal languages Regular sets DCFL’S CFL’S CSL’S Recursive sets Recursively enumerable sets (1) Union Y N Y Y Y Y (2) Concatenation Y N Y Y Y Y (3) Kleen star Y N Y Y Y Y (4) Intersection Y N N Y Y Y (5) Complementation Y Y N Y Y N (6) Homomorphism Y N Y N N Y (7) Inverse Homomorphism Y Y Y Y Y Y (8) Reversal Y N Y Y Y Y (9) Substitution Y N Y Y N Y (10) Intersection with regular ets Y Y Y Y Y Y",
+    "page": 41,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "The TM M over ∑ = {1} is given below q0 q1 q2 q3 1/1, R 1/1, R 1/1, L 1/b, L b/b, L b/b, L b/1, R b/b, R q4 What does M generate?",
+    "options": {
+      "A": "\u0007The output is total recursive multiplication function.",
+      "B": "The output is addition of two integers.",
+      "C": "The output is subtraction of two integers.",
+      "D": "\u0007The output should be w1w2 if input = (w1w2) a pair of words."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 42,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Consider language, A = {<M>: M is a DFA which doesn’t accept any string containing odd number 1’s} Which of following is true about A?",
+    "options": {
+      "A": "A is Trivially decidable (B) A is undecidable",
+      "C": "A is decidable",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 42,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Consider EQCFG= {<G1G2>: G1, G2 are CFGs and L (G1) = L (G2)}. Which of following is true about EQCFG?",
+    "options": {
+      "A": "Recognizable",
+      "B": "Co-Recognizable",
+      "C": "Un-recognizable",
+      "D": "None of the above."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 42,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "A language is given as INFINITEDFA= {<A>: A is a DFA and L (A) is an infinite language}. Which of fol- lowing is true?",
+    "options": {
+      "A": "Un-decidable",
+      "B": "Decidable",
+      "C": "Trivially decidable",
+      "D": "None of above."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 42,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "A TM designed over an alphabet {0, 1, #}, where 0 indicates blank, which takes a non-null string of 1’s and #‘s and transfer’s the right-most symbol to the left-most end contains-states. (Ex: 000#1#1#1000 … becomes 0001#1#1#000)",
+    "options": {
+      "A": "4",
+      "B": "3",
+      "C": "6",
+      "D": "5."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 42,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Which of following statements are true? (i) \u0007Let K, L be decidable languages. The concatenation of languages, K, L is also decidable language. (ii) \u0007Let L be Turing recognizable language. Then the complement, L1 is also Turing recognizable language.",
+    "options": {
+      "A": "(i) and (ii)",
+      "B": "Only (ii)",
+      "C": "Both are false",
+      "D": "Only (i)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 42,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Let Ti: denote i th TM. Given, X determines whether X∈ S, Where the set S is defined inductively as follows: If u ∈ S, then u2 + 1, 3u + 2 and u! are all members of S. Which of following is true about the given decision problem?",
+    "options": {
+      "A": "Decidable",
+      "B": "Un-decidable",
+      "C": "Trivially decidable",
+      "D": "No solution."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 42,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Fermat’s last theorem asserts that there are no integer solution (x, y, z, n) to equation xn + yn = zn satisfying x, y > 0 and n > 2. Which of the following is true regarding the halting problem?",
+    "options": {
+      "A": "Decidable",
+      "C": "Trivially decidable",
+      "D": "May or may not have solution."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 42,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "The TM, T is designed as q0 q1 q2 q3 y/y, R y/y, R x/x, L B B y/y, L 1/y, L 0/0, L x/x, R 0/x, R 0/x, R 0/0, R q4 q5 q6 y/y, R Which of following is true?",
+    "options": {
+      "A": "T halts on 0n1n, n ≥ 0",
+      "B": "T halts on (01) (0n 1n), n ≥ 0",
+      "C": "T halts on 0 1 0 2 2 n n n , ≥",
+      "D": "T halts on 02n1n , n ≥ 0"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 43,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Design TM, which reads an input and starts inverting 0’s to 1’s till the first 1. The first 1 also inverted. After it has inverted first 1, it read the next symbols and keeps them as they are till the next 1. After encountering 1, it starts repeating the cycle by inverting the symbol till next 1. It halts when it encounters a blank symbol?",
+    "options": {
+      "A": "q0 q1 q2 B/B, R 0/1, R 1/0, R",
+      "B": "B/B, R B/B, R 0/0, R 0/0, R 1/1, R 1/1, R q0 q1 q2",
+      "C": "q0 q1 q2 B/B, R 0/1, R 1/1, R 0/0, R 1/0, R",
+      "D": "q0 q1 q2 B/B, R B/B, R 0/0, R 0/1, R 1/1, R 1/0, R"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 43,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "Consider three problems, P1, P2 and P3. It is known that P1 has polynomial time solution, P2 is NP-complete and P3 is in NP. Which one of the following is true?",
+    "options": {
+      "A": "\u0007P3 has polynomial time solution if P1 is polyno- mial time reducible to P3.",
+      "B": "\u0007P3 is NP-complete if P3 is polynomial time reduc- ible to P2.",
+      "C": "P3 is NP complete if P2 is reducible to P3",
+      "D": "\u0007P3 has polynomial time complexity and P3 is re- ducible to P2."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 43,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Let FHAM be the problem of finding a Hamiltonian cycle in a graph G and DHAM be the problem of deter- mining if a Hamiltonian cycle exists in a graph. Which one of the following is true?",
+    "options": {
+      "A": "Both FHAM and DHAM are NP-hard.",
+      "B": "FHAM is NP-hard, but DHAM is not.",
+      "C": "DHAM is NP-hard but FHAM is not.",
+      "D": "Neither DHAM nor FHAM is NP-hard."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 43,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "The solution for the system of post correspondence problem, A = {ba, abb, bab}, B = {bab, bb, abb} is",
+    "options": {
+      "A": "1312212",
+      "B": "15234434",
+      "C": "1311322",
+      "D": "No solution."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 43,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "A language, prefix_free REX = {R/R is a regular expression where L(R) is prefix_free}. Which of fol- lowing is true about prefix _free REX?",
+    "options": {
+      "A": "Decidable",
+      "B": "Un-decidable",
+      "C": "Trivially decidable.",
+      "D": "Can’t be determined."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 43,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "The TM, M is designed as: 1 2 3 4 5 7 8 6 0 a → a, L c → c, L b → b, L x → x, L c → x, R c → x, R c → x, R * → *, R * → *, R x → x, R a → x, R a → a, R b → x, R b → x, R B → B, R b → b, R x → x, R Which of following is true about M?",
+    "options": {
+      "A": "M is designed for a b c n n n n, ≥0",
+      "B": "M is designed for a b c n n n n 2 3 4 0 , ≥",
+      "C": "M is designed for an bn+1 cn+2, n ≥ 0",
+      "D": "M is designed for an bn cn, n > 0"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 43,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Consider the language, Aε–CFG = {<G>: G is a CFG that generatesε}. Which of the following is true?",
+    "options": {
+      "A": "Undecidable",
+      "B": "Decidable",
+      "C": "Trivially decidable.",
+      "D": "None of the above."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 44,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "The TM is designed with input and output as binary form. (# represents blank). The turing machine TM (M) is 0 1 # q0 (q1, 0, R) (q, 1, R) φ q1 (q1, 0, R) (q, 1, R) (q2, #, L) q2 (q3, #, L) (q3, #, L) φ q3 (q3, 0, L) (q3, 1, L) (q4, #, L) q4 φ φ φ Which of following is true?",
+    "options": {
+      "A": "M accepts 2n",
+      "B": "M accepts n2",
+      "C": "M replaces left most symbol with #",
+      "D": "M replaces right most symbol with #"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 44,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "The TM is designed with 3-characters 0, 1, # to com- pute function f (n) = 2n. Input and output are to be in binary form and string represented by ‘n’ is enclosed between two #’s on left and right of it. b is blank symbol. TM contains _____ states.",
+    "options": {
+      "A": "4",
+      "B": "3",
+      "C": "2",
+      "D": "1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 44,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "The language {1n | n is a prime number} is",
+    "options": {
+      "A": "Undecidable",
+      "B": "Decidable",
+      "C": "Trivially decidable",
+      "D": "None of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 44,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Which of following statement(s) are true? (i) \u0007Let L be Turing decidable language. Then the com- plement L is also Turing decidable language. (ii) \u0007Let K and L be two Turing recognizable languages. The intersection, K ∩ L is also Turing recognizable language.",
+    "options": {
+      "A": "Both (i) and (ii)",
+      "B": "Only (i)",
+      "C": "Only (ii)",
+      "D": "Neither (i) nor (ii) are true."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 44,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "For the following two-way infinite TM, the equivalent one-way TM contains _____ states. q0 q1 qf b/1, R 1/1, L 1/1, R b/1, L",
+    "options": {
+      "A": "7",
+      "B": "6",
+      "C": "5",
+      "D": "4"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 44,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "L contains at least two strings. Which of following is true?",
+    "options": {
+      "A": "L has recursively enumerable sets and recursive.",
+      "B": "L is recursive.",
+      "C": "\u0007L has recursively enumerable sets but not recursive.",
+      "D": "\u0007L does not contain recursively enumerable sets and also is not recursive."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 44,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Consider the following TM: Input State 0 1 B → q0 (q0, 1, R) (q0, 0, R) (q1, B, R) q1 – – – What does TM generates?",
+    "options": {
+      "A": "It display’s the negative of given binary number.",
+      "B": "It computes one’s complement of a binary number.",
+      "C": "It computes two’s complement of a binary number",
+      "D": "It generates double the 0’s as 1’s."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 44,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Consider the following TM, M: q0 q1 a/a, L B/B, L B/B, R B/B, R a/B, R b/B, L b/b, R b/b, R a/a, R q2 q3 q4 Which of following is true?",
+    "options": {
+      "A": "M halts on an+1 bn, n ≥ 0.",
+      "B": "M halts on a b n n n 2 3 0 , . ≥",
+      "C": "M halts on (ab) (an), n ≥ 0.",
+      "D": "M halts on an bn, n ≥ 0."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 44,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "A TM, M is designed generates language L a b n n m n m = ≥ ≠ { : }. and 1 The number of states used are ________",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "4"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 44,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "Consider three decision problems p1, p2 and p3. It is known that p1 is decidable, p2 is undecidable. Which one of following is true?",
+    "options": {
+      "A": "p3 is decidable if p1 is reducible to p3",
+      "B": "p3 is undecidable if p3 is reducible to p2",
+      "C": "p3 is undecidable if p2 is reducible to p3",
+      "D": "p3 is decidable if p3 is reducible to p2’s complement."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Which one of following is not decidable?",
+    "options": {
+      "A": "\u0007Given a TM, M, a string S, and an integer K, M ac- cepts S with in K-steps.",
+      "B": "Equivalence of two given Turing machines.",
+      "C": "Language accepted by a given DFSA is non-empty.",
+      "D": "Language accepted by a CFG is non-empty."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "What is the solution for the correspondence system with two lists x = {b, bab3, ba} and y = {b3, ba, a}",
+    "options": {
+      "A": "1312213",
+      "B": "2113",
+      "C": "3112",
+      "D": "No solution."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "Given a Turing machine M, a state ‘q‘and a string ‘w’. To determine whether M ever reaches state q when started with input w from its initial state is?",
+    "options": {
+      "A": "Decidable",
+      "B": "Un-decidable",
+      "C": "Trivially decidable.",
+      "D": "Can not be determined."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "Given a Turing machine, M to determine whether M ever moves its head to the left when started with input W is:",
+    "options": {
+      "A": "Decidable",
+      "B": "Un-decidable",
+      "C": "Trivially decidable.",
+      "D": "Can not be determined."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "For s ∈ (0 + 1)*, let d(s) denote the decimal value of s (e.g., d (101) = 5).\b [2006] Let L = {s ∈ (0 + 1)*|d(s) mod 5 = 2 and d(s) mod 7 ≠ 4} Which one of the following statements is true?",
+    "options": {
+      "A": "L is recursively enumerable, but not recursive",
+      "B": "L is recursive, but not context-free",
+      "C": "L is context-free, but not regular",
+      "D": "L is regular"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Which of the following is true for the language {ap | p is a prime}?\b [2008]",
+    "options": {
+      "A": "It is not accepted by a Turing Machine",
+      "B": "It is regular but not context-free",
+      "C": "It is context-free but not regular",
+      "D": "\u0007It is neither regular nor context-free, but accept- ed by a Turing machine"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "If L and L are recursively enumerable then L is\b [2008]",
+    "options": {
+      "A": "regular",
+      "B": "context-free",
+      "C": "context-sensitive",
+      "D": "recursive"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Let L = L1 ∩ L2, where L1 and L2 are languages as defined below: L a b ca b m n m m n n 1 0 = ≥ { | , } L a b c i j k i j k 2 0 = ≥ { | , , } Then L is\b [2009]",
+    "options": {
+      "A": "Not recursive",
+      "B": "Regular",
+      "C": "Context free but not regular",
+      "D": "Recursively enumerable but not context free."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Let L1 be a recursive language. Let L2 and L3 be languages that are recursively enumerable but not recursive. Which of the following statements is not necessarily true?\b [2010]",
+    "options": {
+      "A": "L2 – L1 is recursively enumerable",
+      "B": "L1 – L3 is recursively enumerable",
+      "C": "L2 ∩ L1 is recursively enumerable",
+      "D": "L2 ∪ L1 is recursively enumerable"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "\u0007Turing recognizable languages are closed under union and intersection.",
+    "options": {
+      "A": "1 and 4 only",
+      "B": "1 and 3 only",
+      "C": "2 only",
+      "D": "3 only"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "Let L be a language and L be its complement. Which one of the following is NOT a viable possibility? \b [2014]",
+    "options": {
+      "A": "Neither L nor L is recursively enumerable (r. e)",
+      "B": "\u0007One of L and L is r.e. but not recursive, the other is not r. e.",
+      "C": "Both L L and are r.e. but not recursive",
+      "D": "Both L L and are recursive"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Let A ≤m B denotes that language A is mapping reduc- ible (also known as many-to-one reducible) to lan- guage B. Which one of the following is FALSE? \b [2014]",
+    "options": {
+      "A": "If A ≤m B and B is recursive then A is recursive.",
+      "B": "\u0007If A ≤m B and A is undecidable then B is undecid- able.",
+      "C": "\u0007If A ≤m B and B is recursively enumerable then A is recursively enumerable."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 45,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "Let <M> be the encoding of a Turing machine as a string over ∑ = {0, 1}. Let L = {<M>|M is a Turing machine that accepts a string of length 2014}. Then, L is",
+    "options": {
+      "A": "Decidable and recursively enumerable",
+      "B": "Undesirable but recursively enumerable",
+      "C": "Undesirable and not recursively enumerable",
+      "D": "Decidable but not recursively enumerable"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 46,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "For any two languages L1 and L2 such that L1 is con- text-free and L2 is recursively enumerable but not recursive, which of the following is/are necessarily true?\b [2015] I. L1 (complement of L1) is recursive II. L2 (complement of L2) is recursive III. L1 is context-free IV. L1 ∪ L2 is recursively enumerable",
+    "options": {
+      "A": "I only",
+      "B": "III only",
+      "C": "III and IV only",
+      "D": "I and IV only"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 46,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "Consider the following statements. I. \u0007The complement of every Turning decidable lan- guage is Turing decidable. II. \u0007There exists some language which is in NP but is not Turing decidable. III. If L is a language in NP, L is Turing decidable. Which of the above statements is/are true?\b [2015]",
+    "options": {
+      "A": "Only II",
+      "B": "Only III",
+      "C": "Only I and II",
+      "D": "Only I and III"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 46,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "Let X be a recursive language and Y be a recursively enumerable but not recursive language. Let W and Z be two languages such that y reduces to W, and Z reduces to x (reduction means the standard many- one reduction). Which one of the following state- ments is TRUE?\b [2016]",
+    "options": {
+      "A": "\u0007W can be recursively enumerable and Z is recur- sive.",
+      "B": "\u0007W can be recursive and Z is recursively enumer- able.",
+      "C": "\u0007W is not recursively enumerable and Z is recur- sive.",
+      "D": "\u0007W is not recursively enumerable and Z is not re- cursive."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 46,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "Consider the following types of languages: L1: Regular, L2: Context - free, L3: Recursive, L4: Recursively enumerable. Which of the following is / are TRUE?\b [2016] I. L3 ∪ L4 is recursively enumerable II. L 2 ∪ L3 is recursive III. L*1 ∩ L2 is context - free IV. L1 ∪ L 2 is context - free",
+    "options": {
+      "A": "I only",
+      "B": "I and III only",
+      "C": "I and IV only",
+      "D": "I, II and III only"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 46,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "Consider the following languages.\b [2016] L1= \u0007{<M> | M takes at least 2016 steps on some input}, L2= \u0007{<M> | M takes at least 2016 steps on all inputs} and L1= {<M> | M accepts e} where for each Turing machine M, <M> denotes a specific encoding of M. Which one of the following is TRUE?",
+    "options": {
+      "A": "L1 is recursive and L2, L3 are not recursive",
+      "B": "L2 is recursive and L1, L3 are not recursive",
+      "C": "L1, L2 are recursive L3 is not recursive",
+      "D": "L1, L2, L3 are recursive"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 46,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 15,
+    "question": "Let A and B be finite alphabets and let # be a symbol outside both A and B. Let f be a total function from A* to B*. We say f is computable if there exists a turning machine M which given an input x in A*, always halts with f(x) on its tape. Let Lf denote the language {x # f(x)| x ∈ A*}. Which of the following statements is true:\b [2017]",
+    "options": {
+      "A": "f is computable if and only if Lf is recursive.",
+      "B": "\u0007f is computable if and only if Lf is recursively enumerable.",
+      "C": "\u0007If f is computable then Lf is recursive, but not conversely.",
+      "D": "\u0007If f is computable then Lf is recursively enumer- able, but not conversely."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 16,
+    "question": "Let L(R) be the language represented by regular expression R. Let L(G) be the language generated by a context free grammar G. Let L(M) be the language accepted by a Turing machine M. Which of the fol- lowing decision problems are undecidable?\b [2017] I. \u0007Given a regular expression R and a string w, is w ∈ L(R)? II. \u0007Given a context-free grammar G, is L(G) = Ø ? III. \u0007Given a context-free grammar G, is L(G) = ∑* for some alphabet ∑ ? IV. \u0007Given a Turing machine M and a string w, is w ∈ L(M)?",
+    "options": {
+      "A": "I and IV only",
+      "B": "II and III only",
+      "C": "II, III and IV only",
+      "D": "III and IV only"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 46,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "5 - Theory of Computation",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "The set of all recursively enumerable languages is: \b [2018]",
+    "options": {
+      "A": "Closed under complementation.",
+      "B": "Closed under intersection.",
+      "C": "A subset of the set of all recursive languages.",
+      "D": "An uncountable set."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 46,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  },
+  {
+    "chapter": "3 - Recursively Enumerable Sets and Turing Machines, Decidability",
+    "section": "Previous Years’ Questions",
+    "number": 18,
+    "question": "Consider the following problems. L(G) denotes the language generated by a grammar G. L(M) denotes the language accepted by a machine M. (I) For an unrestricted grammar G and a string w, whether w ∈ L(G) (II) Given a Turing machine M, whether L(M) is reg- ular (III) Given two grammars G1 and G2, whether L(G1) = L(G2) (IV) Given and NFA N, whether there is a determin- istic PDA P such that N and P accept the same language. Which one of the following statements is correct? \b [2018]",
+    "options": {
+      "A": "Only I and II are undecidable",
+      "B": "Only III is undecidable",
+      "C": "Only II and IV are undecidable",
+      "D": "Only I, II and III are undecidable"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 47,
+    "subject": "TOC",
+    "source": "Computer Science/Notes & Material/TOC.pdf"
+  }
+]

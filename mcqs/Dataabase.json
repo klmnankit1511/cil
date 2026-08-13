@@ -1,0 +1,4636 @@
+[
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Consider the following two tables T1 and T2. Show the output for the following operations: Table T1 P Q R 11 a 6 16 b 9 26 a 7 Table T2 A B C 11 b 7 26 c 4 11 b 6 What is the number of tuples present in the result of given algebraic expressions? (i) T1 ⋈T1.P = T2.AT2",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": ".4"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 13,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Suppose R1(A, B) and R2(C, D) are two relation schemas. Let R1 and R2 be the corresponding relation instances. B is a foreign key that refers to C in R2. If data in R1 and R2 satisfy referential integrity constraints, which of the following is true?",
+    "options": {
+      "A": "π π φ B c R R ( ) ( ) 1 2 − =",
+      "B": "π π φ C B R R ( ) ( ) 2 1 − =",
+      "C": "π π φ B C R R ( ) ( ) 1 2 − ≠",
+      "D": "Both A and B"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 13,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Consider the following relations: A, B and C A Id Name Age 12 Arun 60 15 Shreya 24 99 Rohit 11 B Id Name Age 15 Shreya 24 25 Hari 40 98 Rohit 20 99 Rohit 11 C Id Phone Area 10 2200 02 99 2100 01 How many tuples does the result of the following rela- tional algebra expression contain? Assume that the scheme of (A∪B) is the same as that of A. (A∪B)⋈A.Id>40 v c.Id<15C",
+    "options": {
+      "A": "6",
+      "B": "7",
+      "C": "8",
+      "D": "9"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 13,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Consider the relations A, B and C given in Question 3. How many tuples does the result of the following SQL query contain? SELECT A.Id FROM A WHERE A.Age> ALL (SELECT B.Age FROM B WHERE B.Name = ‘Arun’)?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 13,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "Consider a database table T containing two columns X and Y each of type integer. After the creation of the table, one record (X = 1, Y = 1) is inserted in the table. Let MX and MY denote the respective maximum value of X and Y among all records in the table at any point in time. Using MX and MY, new records are inserted in the table 128 times with X and Y values being MX + 1, 2 * MY + 1, respectively. It may be noted that each time after the insertion, values of MX and MY change. What will be the output of the following SQL query after the steps mentioned above are carried out? Select y from t where x = 7;?",
+    "options": {
+      "A": "15",
+      "B": "31",
+      "C": "63",
+      "D": "127"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 13,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Database table by name loan records is given below: Borrower Bank Manager Loan Amount Ramesh Sunderajan 10000 Suresh Ramgopal 5000 Mahesh Sunderajan 7000 What is the output of the following SQL Query SELECT count (*) FROM((SELECT Borrower, Bank-manager FROM Loan-Records)AS S NATURAL JOIN (SELECT Bank-manager, Loan-Amount FROM Loan-Records) AS T);",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 13,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Consider the following ER diagram: m P N R1 R2 m1 m2 m3 P1 P2 N1 N 2 What is the minimum number of tables needed to rep- resent M, N, P, R1, R2?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 14,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Let E1 and E2 be two entities in an ER diagram with simple single-valued attributes. R1 and R2 are two rela- tionships between E1 and E2, where R1 is one-to-many and R2 is many-to-many. R1 and R2 do not have any attributes of their own. What is the minimum number of tables required to represent this situation in the rela- tional model?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 14,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "The following table has two attributes A and C where A is the primary key and C is the foreign key referencing A with ON DELETE CASCADE. A C 2 4 3 4 4 3 5 2 7 2 9 5 6 4 What is the set of all tuples that must be additionally deleted to preserve referential integrity when the tuple (2, 4) is deleted?",
+    "options": {
+      "A": "(5, 2),(7, 2)",
+      "B": "(5, 2), (7, 2),(9, 5)",
+      "C": "(5, 2),(9, 5)",
+      "D": "(2, 4), (7, 2)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 14,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Consider the following SQL query SELECT DISTINCT a1, a2, a3 … an FROM R1, R2 … Rm WHERE P For any arbitrary predicate P, this query is equivalent to which relational algebra expression?",
+    "options": {
+      "A": "Πa a a p m n R R R 1 2 1 2 , , ( ) … × ×…× σ",
+      "B": "σ σ a a a p m n R R R 1 2 1 2 , , ( ) … × ×…×",
+      "C": "σ a a a p m n R R R 1 2 1 2 , , ( ) … ∏ × ×…×",
+      "D": "ΠR R Rm p n a a a 1 2 1 2 , , ( ( ) … × ×…× σ"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 14,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "Consider the following relation schema pertaining to a student’s database: Student (Rollno, name, address) Enroll (Rollno, courseno, coursename) Where the primary keys are shown underlined. The number of tuples in the student and Enroll tables are 120 and 6, respectively. What are the maximum and minimum number of tuples that can be present in (student * Enroll) Where ‘*’ denotes natural join?",
+    "options": {
+      "A": "6, 6",
+      "B": "6, 120",
+      "C": "120, 6",
+      "D": "120, 120"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 14,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "A relational schema for a train reservation database is given below Table 4 Passenger Pid P Name Age 0 ‘Sachin’ 65 1 ‘Rahul’ 66 ‘Sourav’ 67 3 ‘Anil’ 69 Table 5 Reservation Pid Class Tid 0 AC 8200 1 AC 8201 2 SC 8201 5 AC 8203 1 SC 8204 3 AC 8202 What pid’s are returned by the following SQL query for the above instance of the tables? SELECT pid FROM Reservation WHERE class = ‘AC’ AND EXISTS (SELECT * FROM passenger WHERE age > 65 AND Passenger.pid = Reservation.pid)",
+    "options": {
+      "A": "0, 1",
+      "B": "1, 3",
+      "C": "1, 5",
+      "D": "0, 3"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 14,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "Given {customer} is a candidate key, [customer name, customer street} is another candidate key then",
+    "options": {
+      "A": "\u0007{customer id, customer name} is also a candidate key.",
+      "B": "\u0007{customer id, customer street} is also a candidate key.",
+      "C": "\u0007{customer id, customer name, customer street} is also a candidate key.",
+      "D": "None Common data for questions 14 and 15: Consider the fol- lowing diagram, X Y Z R1 X1 X2 X3 Z1 Z1 Y1 Y2 R1"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 15,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "The minimum number of tables needed to represent X, Y, Z, R1, R2 is",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 15,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "Which of the following is a correct attribute set for one of the tables for the correct answer to the above questions?",
+    "options": {
+      "A": "{X1, X2, X3, Y1}",
+      "B": "{X1, Y1, Z1, Z2}",
+      "C": "{X1, Y1, Z1}",
+      "D": "{M1, Y1}"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 15,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 16,
+    "question": "UPDATE account SET DA = basic * .2, GROSS = basic * 1.3, Where basic > 2000;",
+    "options": {
+      "A": "\u0007The above query displays DA and gross for all those employees whose basic is ≥ 2000",
+      "B": "\u0007The above query displays DA and gross for all em- ployees whose basic is less than 2000",
+      "C": "\u0007The above query displays DA as well as gross for all those employees whose basic is >2000",
+      "D": "Above all"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 15,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 17,
+    "question": "Which of the following query transformations is correct? R1 and R2 are relations C1, C2 are selection conditions and A1 and A2 are attributes of R1",
+    "options": {
+      "A": "σC1(σC1(R1))→σC2(σC2(R1))",
+      "B": "σC1(σA1(R1))→σA1(σC1(R1))",
+      "C": "pA2(pA(R1))→pA(pA2(R1))",
+      "D": "All the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 15,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 18,
+    "question": "Consider the following query select distinct a1, a2, …an from r1, r2 . . . rm where P for an arbitrary predicate P, this query is equivalent to which of the following rela- tional algebra expressions:",
+    "options": {
+      "A": "π σ a a p m n r r r 1 1 2 ... ( ... ) × × ×",
+      "B": "π σ a a p m n r r r r 1 1 2 3 ... ( . ) × × ×… ×",
+      "C": "σ π a a p m n r r r 1 1 2 ... ( ... ) × × ×",
+      "D": "σ π a a p m n r r r 1 1 2 ... ( ) × ×…×"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 15,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 19,
+    "question": "The relational algebra expression equivalent to the fol- lowing tuple calculus expression {a} a ∈ r ^ (a[A] = 10 ^ a[B] = 20) is",
+    "options": {
+      "A": "s(A = 10 r B = 20)r",
+      "B": "s(A = 10 ) (r) ∪ s(B = 20) (r)",
+      "C": "s(A = 10 ) (r) ∩ s(B = 20) (r)",
+      "D": "s(A = 10 ) (r) – s(B = 20) (r)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 15,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 1",
+    "number": 20,
+    "question": "Which of the following is/are wrong?",
+    "options": {
+      "A": "\u0007An SQL query automatically eliminates dupli- cates.",
+      "B": "\u0007An SQL query will not work if there are no in- dexes on the relations.",
+      "C": "\u0007SQL permits attribute names to be repeated in the same relation",
+      "D": "All the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 15,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "If ABCDE are the attributes of a table and ABCD is a super key and ABC is also super key then",
+    "options": {
+      "A": "A B C must be candidate key",
+      "B": "A B C cannot be super key",
+      "C": "A B C cannot be candidate key",
+      "D": "A B C may be candidate key"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 15,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "The example of derived attribute is",
+    "options": {
+      "A": "Name if age is given as other attribute",
+      "B": "Age if date_of_birth is given as other attribute",
+      "C": "Both (A) and (B)",
+      "D": "None"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 15,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "The weak entity set is represented by",
+    "options": {
+      "A": "box",
+      "B": "ellipse",
+      "C": "diamond",
+      "D": "double outlined box"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 15,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "In entity relationship diagram double lines indicate",
+    "options": {
+      "A": "Cardinality",
+      "B": "Relationship",
+      "C": "Partial participation",
+      "D": "Total participation"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "An edge between an entity set and a binary relationship set can have an associated minimum and maximum cardinality, shown in the form 1… h where 1 is the minimum and h is the maximum cardinality A mini- mum value 1 indicates:",
+    "options": {
+      "A": "total participation",
+      "B": "partial participation",
+      "C": "double participation",
+      "D": "no participation"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Let R be a relation schema. If we say that a subset k of R is a super key for R, we are restricting R, we are restricting consideration to relations r(R)in which no two district tuples have the same value on all attributes in K. That is if t1 and t2 are in r and t1 ≠ t2",
+    "options": {
+      "A": "t1[k] = 2t2[K]",
+      "B": "t2[K] = 2t1[k]",
+      "C": "t1[k] = t2[k]",
+      "D": "t1[k] ≠ t2[k]"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "Which one is correct?",
+    "options": {
+      "A": "Primary key ⊂ Super key ⊂ Candidate key",
+      "B": "Candidate key ⊂ Super key ⊂ Primary key",
+      "C": "Primary key ⊂ Candidate key ⊂ Super key",
+      "D": "Super key ⊂ Primary key ⊂ Candidate key"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "If we have relations r1(R1) and r2(R2), then r1 (r2 is a relation whose schema is the",
+    "options": {
+      "A": "concatenation",
+      "B": "union",
+      "C": "intersection",
+      "D": "None"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Match the following: I Empid 1 Multivalued II Name 2 Derived III Age 3 Composite IV Contact No. 4 Simple",
+    "options": {
+      "A": "I – 4, II – 3, III – 2, Iv – 1",
+      "B": "I – 3, II – 2, III – 4, Iv – 1",
+      "C": "I – 2, II – 1, III – 4, Iv – 3",
+      "D": "I – 1, II – 3, III – 2, IV – 4"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Match the following: I Double-lined ellipse 1 Multivalued attribute II Double line 2 Total participation III Double-lined box 3 Weak entity set IV Dashed ellipse 4 Derived attribute",
+    "options": {
+      "A": "I – 1, II – 2, III – 3, IV – 4",
+      "B": "I – 2, II – 3, III – 4, IV – 1",
+      "C": "I – 3, II – 4, III – 2, IV – 2",
+      "D": "I – 4, II – 3, III – 2, IV –1"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "The natural join is a",
+    "options": {
+      "A": "\u0007binary operation that allows us to combine certain selections and a Cartesian product into one operation",
+      "B": "unary operations that allows only Cartesian product",
+      "C": "\u0007query which involves a Cartesian product and a projection",
+      "D": "None"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "The number of entities participating in the relationship is known as",
+    "options": {
+      "A": "non-participation",
+      "C": "total participation",
+      "D": "zero participation",
+      "B": "partial participation"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "What is not true about weak entity?",
+    "options": {
+      "A": "They do not have key attributes.",
+      "B": "They are the examples of existence dependency.",
+      "C": "Every existence dependency results in a weak entity",
+      "D": "Weak entity will have always discriminator attributes"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "Which one is the fundamental operation in the rela- tional algebra?",
+    "options": {
+      "A": "Natural join",
+      "B": "Division",
+      "C": "Set intersection",
+      "D": "Cartesian product"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 16,
+    "question": "For the given tables A B X Y Y a1 b1 b1 a2 b1 b2 a1 b2 a2 b2 A ÷ B will return",
+    "options": {
+      "A": "a1, a2",
+      "B": "a1",
+      "C": "a2",
+      "D": "None"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 17,
+    "question": "The number of tuples selected in the above answer is",
+    "options": {
+      "A": "2",
+      "B": "1",
+      "C": "0",
+      "D": "4 Common data for questions 18 and 19: Consider the fol- lowing schema of a relational database. Emp (empno, name, add) Project (Pno, Prame) Work on (empno, Pno) Part (partno, Pname, qty, size) Use (empno, pno, partno, no)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 18,
+    "question": "((name(emp) ( (name(emp ⋈ workon) displays (i) \u0007The names of the employees who are not working in any project (ii) \u0007The names of the employees who were working in every project.",
+    "options": {
+      "A": "Only (i)",
+      "B": "Only (ii)",
+      "C": "Both (A) and (B)",
+      "D": "None"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 2",
+    "number": 19,
+    "question": "List the partno and names of the parts used in both the projects DBMS & MIS:",
+    "options": {
+      "A": "\u0007spartno, pname, (part ⋈ (ppartno (spname = “DBMS”(project) ⋈ use).∩ ppartno (spname = “MIS”(project) ⋈ use))",
+      "B": "\u0007(partno, pname(part ⋈ ((partno ((pname = “DBMS”(project ⋈ use) ((partno(spname = “MIS”(project) ⋈ use)))",
+      "C": "\u0007ppartno, pname(part ⋈ (spartno (spname = “DBMS”(project ⋈ use) ( (partno ((pname = “MIS”(project) ⋈ use)))",
+      "D": "None"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Practice Problems 2",
+    "number": 20,
+    "question": "The following query shows. SELECT job-status, sum (basic – salary) AVG (basic – salary) from employees group by job – status. (i) It shows job status, sum, AVG of all data (ii) \u0007It shows job status, Sum, AVG, with group by clause in use.",
+    "options": {
+      "A": "only (i)",
+      "B": "only (ii)",
+      "C": "both (A) and (B)",
+      "D": "None"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 17,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Let E1 and E2 be two entities in an E/R diagram, with simple single-valued attributes. R1 and R2 are two relationships between E1 and E2, where R1 is one-to- many and R2 is many-to-many. R1 and R2 do not have any attributes of their own. What is the minimum number of tables required to represent this situation in the relational model?\b [2005]",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 17,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "The following table has two attributes A and C where A is the primary key and C is the foreign key referenc- ing A with on-delete cascade. A C 2 4 3 4 4 3 5 2 7 2 9 5 6 4 The set of all tuples that must be additionally deleted to preserve referential integrity when the tuple (2, 4) is deleted is:\b [2005]",
+    "options": {
+      "A": "(3, 4) and (6, 4)",
+      "B": "(5, 2) and (7, 2)",
+      "C": "(5, 2), (7, 2) and (9, 5)",
+      "D": "(3, 4), (4, 3) and (6, 4)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Which of the following tuple relational calculus expression(s) is/are equivalent to ∀t ∈ r (P(t))? I. ¬ ∃t ∈ r (P(t)) II. ∃t ∉ r (P(t)) III. ¬ ∃t ∈ r (¬P(t)) IV. ∃t ∈ r (¬P(t))\b [2008]",
+    "options": {
+      "A": "I only",
+      "B": "II only",
+      "C": "III only",
+      "D": "III and IV only Common data for questions 4 and 5: Consider the fol- lowing ER diagram: M M1 R1 R2 M2 M3 M P1 P2 N N1 N2"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 17,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "The minimum number of tables needed to represent M, N, P, R1, R2 is?\b [2008]",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 17,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Which of the following is a correct attribute set for one of the tables for the correct answer to the above question?\b [2008]",
+    "options": {
+      "A": "{M1, M2, M3, P1}",
+      "B": "{M1, P1, N1, N2}",
+      "C": "{M1, P1, N1}",
+      "D": "{M1, P1}"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 17,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Consider a relational table with a single record for each registered student with the following attributes. 1. \u0007Registration_Num: Unique registration number of each registered student 2. \u0007UID: Unique identity number, unique at the national level for each citizen 3. \u0007BankAccount_Num: Unique account number at the bank. A student can have multiple accounts or joint accounts. This attribute stores the primary account number 4. Name: Name of the student 5. Hostel_Room: Room number of the hostel Which of the following options is incorrect?\b [2011]",
+    "options": {
+      "A": "BankAccount_Num is a candidate key",
+      "B": "Registration_Num can be a primary key",
+      "C": "\u0007UID is a candidate key if all students are from the same country",
+      "D": "\u0007If S is a super key such that S ∩ UID is NULL then S ∪ UID is also super key."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 17,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "1 - ER Model and Relational Model",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "Given the basic ER and relational models, which of the following is incorrect?\b [2012]",
+    "options": {
+      "A": "An attribute of an entity can have more than one value",
+      "B": "\u0007An attribute of an entity can be composite",
+      "C": "\u0007In a row of a relational table, an attribute can have more than one value",
+      "D": "\u0007In a row of a relational table, an attribute can have exactly one value or a NULL value"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "An ER model of a database consists of entity types A and B. These are connected by a relationship R which does not have its own attribute, Under which one of the following conditions, can the relational table for R be merged with that of A?\b [2017]",
+    "options": {
+      "A": "\u0007Relationship R is one-to-many and the participa- tion of A in R is total.",
+      "B": "\u0007Relationship R is one-to-many and the participa- tion of A in R is partial.",
+      "C": "\u0007Relationship R is many-to-one and the participa- tion of A in R is total.",
+      "D": "\u0007Relationship R is many-to-one and the participa- tion of A in R is partial."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 18,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "In an Entity-Relationship (ER) model, suppose R is a many-to-one relationship from entity set E1 to entity set E2. Assume that E1 and E2 participate totally in R and that the cardinality of E1 is greater than the cardinality of E2. Which one of the following is true about R?\b [2018]",
+    "options": {
+      "A": "Every entity in E1 is associated with exactly one entity in E2.",
+      "B": "Some entity in E1 is associated with more than one entity in E2.",
+      "C": "Every entity in E2 is associated with exactly one entity in E1.",
+      "D": "Every entity in E2 is associated with at most one entity in E1.  Relational algebra  Select operator  Project operator  Set operators  Union compatible relations  Union operation  Aggregate operators  Correlated nested queries  Relational calculus  Tuple relational calculus  Tuple relational calculus  DML  Super key  SQL commands LEARNING OBJECTIVES RelaTional algeBRa"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 18,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Consider the given table called Persons P-Id Lastname Firstname Address City 1 Hansen ola Timoteivn -10 Sandnes 2 Svendson Tove Brazil-50 Sandnes 3 Petterson Kari Storgt-20 Stavanger 4 Joseph ole Brazil-20 Sandnes Write a query to select the persons with first name ‘Tove’ and last name ‘Svendson’?",
+    "options": {
+      "A": "SELECT * FROM Persons WHERE first-name=’tove’ AND last-name=’svendson’",
+      "B": "SELECT * FROM Persons WHERE first-name=’tove’ OR last-name=’svendson’",
+      "C": "SELECT first-name FROM Persons WHERE first-name=’tove’ AND last-name=’svendson’",
+      "D": "SELECT last-name FROM Persons WHERE first-name=’tove’ AND last-name=’svendson’"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 31,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Write a query to select only the persons with last name ‘Svendson’ and the first name equal to ‘Tove’ or ‘ola’?",
+    "options": {
+      "A": "SELECT * FROM Persons WHERE last-name=’svendson’ AND first-name=’tove’",
+      "B": "SELECT * FROM Persons WHERE last-name=’svendson’ AND (first-name=’tove’ OR first-name=’ola’)",
+      "C": "SELECT * FROM Persons WHERE last-name=’svendson’ AND (first-name=’tove’ AND first-name=’ola’)",
+      "D": "SELECT * FROM Persons WHERE last-name=’svendson’ OR (first-name=’tove’ AND first-name=’ola’)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 31,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Write an SQL statement to add a new row, but only in specified columns, for the persons table add data into columns ‘P-Id’, ‘Last name’ and the ‘First name’ with values (5, Teja, Jakob)?",
+    "options": {
+      "A": "INSERT INTO Persons VALUES(5,‘teja’,‘jakob’)",
+      "B": "INSERT INTO Persons VALUES(5,teja,jakob)",
+      "C": "\u0007INSERT INTO Persons (P-Id, last-name, first- name) VALUES(5,’teja’,’jakob’)",
+      "D": "\u0007INSERT INTO Persons(P-Id, last-name, first- name) VALUES(5,teja,jakob)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Write an SQL statement: (i) \u0007To select the persons living in a city that starts with ‘S’ from the ‘Persons’ table?",
+    "options": {
+      "A": "SELECT * FROM Persons WHERE last-name LIKE ‘b-s-p’",
+      "B": "SELECT * FROM Persons WHERE last-name LIKE ‘b%s%p’",
+      "C": "SELECT * FROM Persons WHERE last-name LIKE ‘b%s%p%’",
+      "D": "SELECT * FROM Persons WHERE last-name LIKE ‘[bsp]%’"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 31,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "Consider the given table called ‘Persons’ P-Id Last-name First-name Address City 1 Hansen ola Timoteivn-10 Sandnes 2 Svendson Tove Brazil-50 Sandnes 3 Petterson Kari Storgt-20 Stavanger and the ‘Orders’ table O-Id Order No P-Id 11 77895 3 12 44678 3 13 22456 1 14 24562 1 15 34764 5 perform NATURAL JOIN operation on both the tables and what is are the O_Id’s displayed in the result?",
+    "options": {
+      "A": "11, 12, 13",
+      "B": "11, 13, 14",
+      "C": "11, 12, 13, 14",
+      "D": "12, 13, 14"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Write an SQL to perform FULL JOIN operation on both ‘Person’ and ‘Orders’ tables and What is the num- ber of tuples in the Result?",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "7"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Consider the given table ‘Result’. Student Name Marks A 55 B 90 C 40 D 80 E 85 F 95 G 82 (i) \u0007Find out the students who have scored more than 80 marks, and display them in descending order according to their marks?",
+    "options": {
+      "A": "SELECT student-name FROM Result ORDERBY marks DESC > 3",
+      "B": "SELECT student-name FROM Result ORDERBY marks DESC = 3",
+      "C": "SELECT student-name FROM Result ORDERBY marks DESC limit 3",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 32,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "From the table ‘Results’, Identify the suitable SQL expression? (i) Find out the student Who stood 2nd?",
+    "options": {
+      "A": "SELECT COUNT(*) FROM Result WHERE marks > = 80",
+      "B": "SELECT COUNT FROM Result WHERE marks > = 80",
+      "C": "SELECT SUM(*) FROM Result WHERE marks > = 80",
+      "D": "SELECT SUM FROM Result WHERE marks > = 80"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 32,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Consider the given tables: Customer Customer name Customer street Customer city Sonam Sonam Anusha Nandy Mirpurroad Aga KhaRoad XYZRoad MirpurRoad Dhaka Bogra Kanchi Dhaka Account Account number Customer name Balance A-101 A-102 A-103 A-104 Anusha Anusha Sonam Nandy 1000 1500 2000 2500 From the customer table, find out the names of all the customers who live in either Dhaka or Bogra?",
+    "options": {
+      "A": "SELECT customer-name FROM customer WHERE customer-city=’dhaka’ OR customer-city=’bogra’",
+      "B": "SELECT customer-name FROM customer WHERE customer-city=dhaka OR customer-city=’bogra’",
+      "C": "SELECT customer-name FROM customer WHERE customer-city=’dhaka’ AND customer-city=’bogra’",
+      "D": "SELECT customer-name FROM customer WHERE customer-city=’dhaka’ EXIST customer-city=’bogra’"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 33,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Consider the given tables Loan Loan Number Branch Name Amount L-101 Dhaka 1000 L-103 Khulna 2000 Borrower: Customer name Loan number Sonam L-101 Nandy L-103 Anusha L-103 (i) \u0007What are the number of tuples present in the result of cross product of the above two tables?",
+    "options": {
+      "A": "SELECT loan-number FROM loan WHERE branch-name=’dhaka’",
+      "B": "SELECT loan-number FROM branch-name=’dhaka’",
+      "C": "SELECT loan-number FROM Loan × Borrower",
+      "D": "Both (A) and (C)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 33,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "(i) \u0007Find all customers who have only accounts but no loans.",
+    "options": {
+      "A": "SELECT customer name \u0007FROM depositor FULL OUTER JOIN Borrower ON \u0007Depositor.customer-name=Borrower.customer- name \u0007WHERE loan-number IS NULL OR Account- number=NULL",
+      "B": "SELECT customer-name \u0007FROM depositor FULL OUTER JOIN Borrower ON \u0007Depositor.customer-name = Borrower.customer- name \u0007WHERE loan-number IS NULL OR Account- number IS NULL",
+      "C": "SELECT customer-name \u0007FROM depositor FULL OUTER JOIN Borrower ON \u0007Depositor.customer-name = Borrower.customer- name \u0007WHERE loan-number = NULL OR Account-num- ber = NULL",
+      "D": "SELECT customer-name \u0007FROM depositor FULL OUTER JOIN Borrower ON \u0007Depositor.customer-name = Borrower.customer- name \u0007WHERE loan-number=NULL OR Account-num- ber IS NULL"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 33,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Consider the following ‘employee’ table Employee name Branch name Branch city Salary A DU Dhaka 1000 B DU Dhaka 2000 C BUET Dhaka 3000 D KUET Khulna 4000 E KU Khulna 5000 F RU Rajshahi 6000 (i) \u0007Find the distinct number of branches appearing in the employee relation.",
+    "options": {
+      "A": "\u0007SELECT branch-city, branch-name, SUM (salary), AVG(salary), COUNT (Employee-name) FROM Employee GROUP BY branch-city, branch-name",
+      "B": "\u0007SELECT branch-city, branch-name, SUM (salary), AVG (salary), COUNT (Employee-name) FROM Employee GROUP BY branch-city",
+      "C": "\u0007SELECT branch-city, branch-name, \u0007SUM (salary), AVG (salary), COUNT (Em- ployee-name) FROM Employee GROUP BY branch-name",
+      "D": "\u0007SELECT branch-name, SUM (salary), AVG (salary), COUNT (Employee-name) FROM Employee GROUP BY branch-city, branch-name Common data for questions 13 to 15: Consider the SHIP­ MENTS relation and write the SQL statements for the below SUPPLIERS Supplier number Supplier name Status City SN1 Suma 30 Hyderabad SN2 Hari 20 Chennai SN3 Anu 10 Hyderabad SN4 Mahesh 20 Bombay SN5 Kamal 30 Delhi PARTS Part number Part name Color Weight City PN1 X Red 13.0 Chennai PN2 Y Green 13.5 Bombay PN3 X Yellow 13.2 Hyderabad PN4 Y Green 14.1 Calcutta PN5 Z Red 14.3 Hyderabad PN6 Z Blue 14.2 Bombay PROJECT Project number Project name City PJ1 Display Chennai PJ2 OCR Bombay PJ3 RAID Chennai PJ4 SORTER Hyderabad PJ5 EDS Chennai PJ6 Tape Bombay PJ7 Console Hyderabad SHIPMENTS Supplier number Part number Project number Quantity SN1 PN1 PJ1 300 SN1 PN1 PJ4 400 SN2 PN3 PJ1 350 SN2 PN3 PJ2 450 SN2 PN3 PJ3 640 SN2 PN3 PJ4 320 SN2 PN3 PJ5 330 SN2 PN3 PJ6 520 SN2 PN3 PJ7 480 SN2 PN5 PJ2 460 SN3 PN3 PJ1 440 SN3 PN4 PJ2 410 SN4 PN6 PJ3 310 SN4 PN6 PJ7 320 SN5 PN2 PJ2 340 SN5 PN2 PJ4 350 SN5 PN5 PJ5 360 SN5 PN5 PJ7 370 SN5 PN6 PJ2 380 SN5 PN1 PJ4 420 SN5 PN3 PJ4 440 SN5 PN4 PJ4 450 SN5 PN5 PJ4 400 SN5 PN6 PJ4 410"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 34,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "(i) \u0007For each part supplied, get the part number and the total shipment quantity?",
+    "options": {
+      "A": "SELECT DISTINCT suppliers.supplier-name FROM Supplier \u0007WHERE suppliers.supplier-number IN (SE- LECT Shipments.supplier-number FROM Shipments WHERE Shipments.part-number=’PN3’)",
+      "B": "SELECT DISTINCT suppliers.supplier-name FROM Supplier \u0007WHERE suppliers.supplier-number NOT IN(SELECT Shipments.supplier-number FROM Shipments WHERE Shipments.part-number=’PN3’)",
+      "C": "SELECT DISTINCT suppliers.supplier-name FROM Supplier \u0007WHERE suppliers.supplier-number EXCEPT (SELECT Shipments.supplier-number FROM Shipments WHERE Shipments.part-number=’PN3’)",
+      "D": "SELECT DISTINCT suppliers, supplier-name FROM Supplier WHERE suppliers.supplier-number UNION SELECT Shipments.supplier-number FROM Shipments WHERE Shipments.part-number=’PN3’"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 35,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "(i) \u0007Get supplier names for suppliers who supply at least one blue part.",
+    "options": {
+      "A": "\u0007SELECT DISTINCT suppliers.supplier-name FROM Suppliers WHERE EXIST(SELECT * FROM Shipments \u0007WHERE Shipments.supplier-number = sup- pliers.supplier-number AND Shipments.part-number=’PN2’)",
+      "B": "SELECT DISTINCT suppliers.supplier-name FROM Suppliers WHERE NOT EXIST(SELECT * FROM Shipments \u0007WHERE Shipments.supplier-number = sup- pliers.supplier-number AND Shipments.part-number=’PN2’)",
+      "C": "SELECT DISTINCT suppliers.supplier-name FROM Suppliers WHERE EXIST(SELECT * FROM Shipments \u0007WHERE Shipments.supplier-number = sup- pliers.supplier-number OR Shipments.part-number=’PN2’)",
+      "D": "SELECT DISTINCT suppliers.supplier-name FROM Suppliers WHERE EXIST(SELECT * FROM Shipments \u0007WHERE Shipments.supplier-number = sup- pliers.supplier-number UNION Shipments.part-number=’PN2’)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 35,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "(i) \u0007Get supplier names for suppliers who do not sup- ply part PN2.",
+    "options": {
+      "A": "SELECT parts.part-number FROM parts WHERE Parts.weight>18 UNION SELECT Shipments.part-number FROM shipments WHERE Shipments.supplier-number=’SN2’",
+      "B": "SELECT parts.part-number FROM parts WHERE Parts.weight>18 UNION SELECT Shipments.supplier-name FROM shipments WHERE Shipments.supplier-number=’SN2’",
+      "C": "SELECT parts.part-number FROM parts WHERE Parts.weight>18 UNION \u0007SELECT Shipments.part-number,Shipments. supplier-name FROM shipments WHERE Shipments.supplier-number=’SN2’",
+      "D": "SELECT parts.part-Number, parts.color FROM parts WHERE Parts.weight>18 UNION SELECT Shipments.part-number FROM shipments WHERE Shipments.supplier-number=’SN2’ Common data for questions 16 and 17: Consider the fol- lowing relation: Teach Name Address course Zohar 40B,east city MD Nisha 16/2, hyd BDS Zohar 40B, East city MS Ravi New York MBA"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 36,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 16,
+    "question": "The teacher with name Zohar teaching the course MS?",
+    "options": {
+      "A": "sName = ‘Zohar’ teach = MS.",
+      "B": "pName = ‘Zohar’ teach = MS.",
+      "C": "sname = ‘Zohar’ and course = ‘MS’ (teach).",
+      "D": "pName = ‘Zohar’ and course = ‘MS’ (teach)."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 37,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 17,
+    "question": "Select the names of courses taught by Zohar?",
+    "options": {
+      "A": "pcourse(sName = ‘Zohar’ (Teach))",
+      "B": "scourse(pName = ‘Zohar’ (Teach))",
+      "C": "pcourse(sName = ‘MD’ (Teach))",
+      "D": "None"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 37,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 18,
+    "question": "Consider the join of a relation A with a relation B. If A has m tuples and B has n tuples. Then the maximum and minimum sizes of the join respectively are.",
+    "options": {
+      "A": "mn and m + n (B) m + n and (m –n)",
+      "C": "mn and m (D) mn and 0"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 37,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 1",
+    "number": 19,
+    "question": "Match the following: I Set intersection 1 R | × | S II Natural join 2 r – (r – s) III Division 3 ← IV Assignment 4 pR – S(r) – pR –S ( ( ) ) , ( ) π π R S R S r s s r − − × −",
+    "options": {
+      "A": "I – 2, II – 1, III – 4, IV – 3",
+      "B": "I – 3, II – 4, III – 2, IV – 1",
+      "C": "I – 1, II – 2, III – 3, IV – 4",
+      "D": "I – 2, II – 3, III – 4, IV – 1"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 37,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 20,
+    "question": "Which one is correct for division operations for rela- tion r and s",
+    "options": {
+      "A": "r ÷ s",
+      "B": "π π π π R S R S R S R S r r s s r − − − − − × − ( ) (( ( ) ) ), ( )",
+      "C": "Temp 1 ← pR – S (r) Temp 2 ← pR – S(temp1 × s) –pR – S, s(r) result = temp 1 – temp 2",
+      "D": "All the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 38,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "The correct order of SQL expression is",
+    "options": {
+      "A": "Select, group by, where, having",
+      "B": "Select, where, group by, having",
+      "C": "Select, group by, having, where",
+      "D": "Select, having, where, group by"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 38,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Which one is not a query language?",
+    "options": {
+      "A": "SQL",
+      "B": "QBE",
+      "C": "Data log",
+      "D": "MySQL"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 38,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Like ‘a b \\ % c d’ escape ‘\\’ matches all the strings",
+    "options": {
+      "A": "Ending with a b c d",
+      "B": "Beginning with a b c d",
+      "C": "Beginning with a b c d",
+      "D": "Beginning with a b % c d"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 38,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "‘_ _ _%’ matches any string of",
+    "options": {
+      "A": "At least three characters",
+      "B": "At most three characters",
+      "C": "Exactly three characters",
+      "D": "exactly three characters ending with %"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 38,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Which of the following are set operations? (i) Union (ii) Intersection (iii) Set Difference (iv) Cartesian Product",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(i), (iii), (iv)",
+      "C": "(i), (iii), (ii), (iv)",
+      "D": "(i), (ii), (iv)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 38,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "What is the purpose of project operation?",
+    "options": {
+      "A": "It selects certain columns",
+      "B": "It selects certain rows",
+      "C": "It selects certain strings",
+      "D": "It selects certain integers Common data for questions 7 and 8: Person Id Name Age Hobby 11 Anu 21 Stamp Collection 22 Kamal 32 Painting 33 Ravi 24 Dancing 44 Ram 22 Singing"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 38,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "Select the persons whose hobby is either painting (or) singing.",
+    "options": {
+      "A": "sHobby = ‘painting’ OR Hobby = ‘singing’ (person)",
+      "B": "sHobby = ‘painting’,’ singing’ (person)",
+      "C": "sHobby = ‘painting’ OR ‘singing’ (person)",
+      "D": "All are correct"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 38,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Select the persons whose age is above 21 and below 32:",
+    "options": {
+      "A": "sage > 21 AND age < 32 (person)",
+      "B": "s21 < age < 32 (person)",
+      "C": "sage > 21 OR age < 32 (person)",
+      "D": "sage < 21 AND age > 32 (person) Common data for questions 9 and 10: Consider the fol- lowing relation: Teach Name course Rating Age Zohar MD 7 35 Nisha BDS 8 27 Zohar MS 7 34 Ravi MBA 9 33"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 38,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Select the teachers whose rating is above 7 and whose age is less than 32?",
+    "options": {
+      "A": "sRating > 7 AND Age < 32 (Teach)",
+      "B": "sRating ≥ 7 AND Age < 32 (Teach)",
+      "C": "sRating > 7 AND < 32 (Teach)",
+      "D": "Both (A) and (B)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 38,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Select the courses with rating above 7?",
+    "options": {
+      "A": "pcourse (srating > 7 (Teach))",
+      "B": "scourse (p rating > 7(Teach))",
+      "C": "pname, course (srating > 7 (Teach))",
+      "D": "None Common data for questions 11 and 12: Consider the follow- ing schema of a relational database employee (empno, ename, eadd) project (pno, pname) Work–on (empno, pno) Part(partno, partname, qty-on-hand, size) Use (empno, pno, partno, number)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 38,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "Display the names of the employees who are working on a project named ‘VB’.",
+    "options": {
+      "A": "sname(employee ⋈ (spname = ‘VB’ project) ⋈ worked on)",
+      "B": "sname (employee ⋈ (ppname = ‘VB’ (project) ⋈ work on)",
+      "C": "pname (employee ⋈ (spname = ‘VB’ (project) ⋈ work on)",
+      "D": "pname (employee ⋈ (ppname = ‘VB’ (project) ⋈ work on)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 38,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Display the names of the people who are not working for any project.",
+    "options": {
+      "A": "pname (employee ⋈(pname (employee + work on)",
+      "B": "pname (employee – pname (employee ∩ work on)",
+      "C": "pname (employee – pname (employee ⋈ work on)",
+      "D": "sname (employee – sname (employee ⋈ work on)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 39,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "Consider the following tables: A B C D C D b c e f e f a b i j g h b c g h b c a d d i g h d j j k d i e f R ÷ S A B b c d i Which of the following statements is true?",
+    "options": {
+      "A": "R ÷ S = pA, B(R) – pA, B(pA, B(R) × S + R)",
+      "B": "R ÷ S = pA, B(R) – pA, B(pA, BR × S – R)",
+      "C": "R ÷ S = pA, B(R) – pA, B((pA, B(R) × S) – R)",
+      "D": "R ÷ S = pA, B(R) – pA, B(pA, B(R) × R – S) Common data for questions 14 and 15: Consider the fol- lowing schema of a relational data base student (sno, name, address) project (pno, Pname) work-on (sno, pno) Part (part no, part name, qtyon hand size) Use (sno, pno, part no, number)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 39,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "List the names of the students who are participating in every project and have used every part.",
+    "options": {
+      "A": "\u0007sname(student ⋈(((Workon) ÷ spro(project)) ∩ (ssno, part no(use) ÷ spart no (part)))",
+      "B": "\u0007pname(student ⋈(((Workon) ÷ ppro(project)) ∩ (psno, partno(use) ÷ spart no (part)))",
+      "C": "\u0007pname(student ⋈(((Workon) ÷ ppartno (project)) ∩ (psno, partno(use) ÷ spart no (part)))",
+      "D": "\u0007pname(student ∞ (((Workon) ÷ ppro(project)) ∪ (pssno, partno (use) ÷ ppart no (part)))"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 39,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "The following query gives pname (employee ⋈(work on ÷ ppro (sPname = ‘MS’ AND ‘MD’(project)))",
+    "options": {
+      "A": "\u0007Names of the students who are working in either projects ‘MS’ or ‘MD’",
+      "B": "\u0007Names of the students who are working in both the projects ‘MS’ or ‘MD’",
+      "C": "\u0007Names of the students who are not working in any of the projects ‘MS’ or ‘MD’",
+      "D": "None of the above"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 39,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 2",
+    "number": 16,
+    "question": "‘All rows corresponding to students whose sno’s are between 10 and 20 (i) \u0007Select * form student where SNo are between 5 AND 10 (ii) Select * from student where SNO IN(5, 10)",
+    "options": {
+      "A": "Only (i)",
+      "B": "Only (ii)",
+      "C": "Both (A) and (B)",
+      "D": "None"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 39,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 2",
+    "number": 17,
+    "question": "UPDATE account SET DA = basic * .2, GROSS = basic * 1.3, Where basic > 2000;",
+    "options": {
+      "A": "\u0007The above query displays DA and gross for all those employees whose basic is ≥ 2000",
+      "B": "\u0007The above query displays DA and Gross for all employees whose basic is less than 2000",
+      "C": "\u0007The above query displays updated values of DA as well as gross for all those employees whose basic is > 2000",
+      "D": "All the above"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 39,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 2",
+    "number": 18,
+    "question": "Given two union compatible relations R1(A, B) and R2(C, D), what is the result of the operation R1 A = CAB = DR2?",
+    "options": {
+      "A": "R1 ∪ R2",
+      "B": "R1 × R2",
+      "C": "R1 – R2",
+      "D": "R1 ∩ R2"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 39,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 2",
+    "number": 19,
+    "question": "Which of the following queries finds the clients of banker Agassi and the city they live in?",
+    "options": {
+      "A": "\u0007pclient.cname.Ccity(sclient.cname = customer c name (sBanker. name = Aggassi (client × customer)",
+      "B": "pClient.c city (sBanker name = ‘Aggasi’(client × customer)",
+      "C": "\u0007pclient.c name.Cucity(sclient.c name = ‘Aggasi’ (sclient.name = Cutomer (client × customer)",
+      "D": "\u0007p .c name.Cucity(sBankers name = name (sBanker. = agassi (cli- ent × customer)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 39,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Practice Problems 2",
+    "number": 20,
+    "question": "Consider the following schema pertaining to students data Student (rno, name, add) Enroll (rno, Cno, Cname) Where the primary keys are shown Underlined. The no. of tuples in the student and Enroll tables are 120 and 8 respectively. What are the maximum and minimum no. of tuples that can be pre- sent in (student * Enroll) where ‘*’ denotes natural join.",
+    "options": {
+      "A": "8, 8",
+      "B": "120, 8",
+      "C": "960, 8",
+      "D": "960, 120"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 39,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "\u0007Assigning rank with a pure relational query takes less time than scanning in decreasing balance or- der assigning ranks using ODBC. Which two of the above statements are correct?\b[2006]",
+    "options": {
+      "A": "2 and 5",
+      "B": "1 and 3",
+      "C": "1 and 4",
+      "D": "3 and 5"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 40,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Consider the relation enrolled (student, course) in which (student, course) is the primary key, and the relation paid (student, amount) where student is the primary key. Assume no null values and no foreign keys or integrity constraints. Given the following four queries: \u0007Query1: select student from enrolled where student in (select student from paid) \u0007Query2: select student from paid where student in (se- lect student from enrolled) \u0007Query3: select E.student from enrolled E, paid P where E.student = P.student \u0007Query4: select student from paid where exists (select * from enrolled where enrolled.student = paid.stu- dent) Which one of the following statement is correct?\b[2006]",
+    "options": {
+      "A": "\u0007All queries return identical row sets for any data- base",
+      "B": "\u0007Query2 and Query4 return identical row sets for all databases but there exist databases for which Query1 and Query2 return different row sets",
+      "C": "\u0007There exist databases for which Query3 returns strictly fewer rows than Query2",
+      "D": "\u0007There exist databases for which Query4 will en- counter an integrity violation at runtime"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 40,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Consider the relation enrolled (student, course), in which (student, course) is the primary key, and the relation paid (student, amount) where student is the primary key. Assume no null values and no foreign keys or integrity constraints. Assume that amounts 6000, 7000, 8000, 9000 and 10000 were each paid by 20% of the students. Consider these query plans (plan 1 on left, plan 2 on right) to ‘list all courses taken by students who have paid more than x’ Enrolled Enrolled Paid Paid Probe index on student Probe index on student Sequential scan, select amout > x Sequential scan Indexed nested loop join Indexed nested loop join Project on course Project on course Select on amount > x A disk seek takes 4 ms, disk data transfer bandwidth is 300 MB/s and checking a tuple to see if amount is greater than x takes 10 ms. Which of the following statements is correct?\b [2006]",
+    "options": {
+      "A": "\u0007Plan 1 and Plan 2 will not output identical row sets for all databases",
+      "B": "\u0007A course may be listed more than once in the output of Plan 1 for some databases",
+      "C": "\u0007For x = 5000, Plan 1 executes faster than Plan 2 for all databases",
+      "D": "\u0007For x = 9000, Plan 1 executes slower than Plan 2 for all databases"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 40,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Information about a collection of students is given by the relation studinfo (studId, name, sex). The rela- tion enroll (studId, courseId) gives which student has enrolled for (or taken) what course(s). Assume that every course is taken by at least one male and at least one female student. What does the following rela- tional algebra expression represent? Πcourseld((Πstudid(ssex = ‘female’(studInfo)) × Πcourseld (enroll)) - enroll)\b [2007]",
+    "options": {
+      "A": "\u0007Courses in which all the female students are en- rolled",
+      "B": "\u0007Courses in which a proper subset of female stu- dents are enrolled.",
+      "C": "\u0007Courses in which only male students are en- rolled.",
+      "D": "None of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 40,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Consider the relation employee (name, sex, super- visorName) with name as the key. supervisorName gives the name of the supervisor of the employee under consideration. What does the following Tuple Relational Calculus query produce? e e ⋅ ∧ name employee | ( ) ( )[ ( ) ]} ∀ ¬ ∨ ⋅ ≠ ⋅ ∨ ⋅ = x x x e x employee supervisor Name name sex male \" \" \b [2007]",
+    "options": {
+      "A": "Names of employees with a male supervisor.",
+      "B": "\u0007Names of employees with no immediate male subordinates.",
+      "C": "\u0007Names of employees with no immediate female subordinates.",
+      "D": "Names of employees with a female supervisor."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 41,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Consider the table employee (empId, name, depart- ment, salary) and the two queries Q1, Q2 below. Assuming that department 5 has more than one employee, and we want to find the employees who get higher salary than anyone in the department 5, which one of the statements is TRUE for any arbi- trary employee table? Q1: SELECT e.empId FROM employee e WHERE not exists \u0007(Select * From employee s where s.department = ‘5’ and s.salary >=e.salary) Q2: SELECT e.empId FROM employee e WHERE e.salary > Any \u0007(Select distinct salary From employee s Where s.department = ‘5’)\b [2007]",
+    "options": {
+      "A": "Q1 is the correct query",
+      "B": "Q2 is the correct query",
+      "C": "Both Q1 and Q2 produce the same answer.",
+      "D": "Neither Q1 nor Q2 is the correct query"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 41,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "Let R and S be two relations with the following schema R (P, Q, R1, R2, R3) S (P, Q, S1, S2) \u0007Where {P, Q} is the key for both schemas. Which of the following queries are equivalent? I. ΠP (R ⋈ S) II. ΠP (R) ⋈ ΠP (S) III. ΠP (ΠP, Q (R) ∩ ΠP, Q (S)) IV. ΠP (ΠP, Q (R) – (ΠP, Q (R) – (ΠP, Q (S)))\b [2008]",
+    "options": {
+      "A": "Only I and II",
+      "B": "Only I and III",
+      "C": "Only I, II and III",
+      "D": "Only I, III and IV"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 41,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Let R and S be relational schemes such that R = {a,b,c} and S = {c}. Now consider the following que- ries on the database: I. π π π π R S R S R S R S S r r s r − − − − − × − ( ) ( ( ) ( )) , II. { | ( ) ( ( [ ] [ ]))} t t r u s v r u v s t v R S R S ∈ ∧∀∈ ∃∈ = ∧ = − − π III. { | ( ) ( ( [ ] [ ]))} t t r v r u s u v s t v R S R S ∈ ∧∀∈ ∃∈ = ∧ = − − π IV. SELECT R.a, R.b FROM R, S WHERE R.c = S.c Which of the above queries are equivalent?\b [2009]",
+    "options": {
+      "A": "I and II",
+      "B": "I and III",
+      "C": "II and IV",
+      "D": "III and IV Common data for questions 9 and 10: Consider the fol- lowing relational schema: Suppliers (sid: integer, sname: string, city: string, street: string) Parts(pid: integer, pname: string, color: string) Catalog (sid: integer, pid: integer, cost: real)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 41,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "Consider the following relational query on the above database: SELECT S.sname FROM Suppliers S WHERE S.sid NOT IN (SELECT C.sid FROM Catalog C WHERE C.pid NOT IN (SELECT P.pid FROM Parts P WHERE P.color <> ‘blue’)) Assume that relations corresponding to the above schema are not empty. Which one of the following is the correct interpretation of the above query?\b [2009]",
+    "options": {
+      "A": "\u0007Find the names of all suppliers who have sup- plied a non-blue part.",
+      "B": "\u0007Find the names of all suppliers who have not sup- plied a non-blue part.",
+      "C": "\u0007Find the names of all suppliers who have sup- plied only blue parts.",
+      "D": "\u0007Find the names of all suppliers who have not sup- plied only blue parts."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 41,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "A relational schema for a train reservation database is given below Passenger (pid, pname, age) Reservation (pid, cass, tid) Table :Passenger Table :Reservation Pid pname Age Pid class tid 0 ‘Sachin’ 65 0 ‘AC’ 8200 1 ‘Rahul’ 66 1 ‘AC’ 8201 2 ‘Sourav’ 67 2 ‘SC’ 8201 3 ‘Anil’ 69 5 ‘AC’ 8203 1 ‘SC’ 8204 3 ‘AC’ 8202 What pids are returned by the following SQL query for the above instance of the tables? SELECT pid FROM Reservation WHERE class = ‘AC’ AND EXISTS (SELECT * FROM Passenger WHERE age > 65 AND Passenger.pid = Reservation.pid)\b [2010]",
+    "options": {
+      "A": "1, 0",
+      "B": "1, 2",
+      "C": "1, 3",
+      "D": "1, 5"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 41,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "Consider a relational table r with sufficient number of records, having attributes A1, A2, … An and let 1 ≤ p ≤ n. Two queries Q1 and Q2 are given below. Q1: π σ A A A n p c r 1… = ( ( )) where c is a constant. Q2: π σ A A c A c n p r 1 1 2 … ≤ ≤ ( ( )) where c1 and c2 are constants. \u0007The database can be configured to do ordered indexing on AP or hashing on Ap. Which of the following state- ments is TRUE?\b [2011]",
+    "options": {
+      "A": "\u0007Ordered indexing will always outperform hash- ing for both queries",
+      "B": "\u0007Hashing will always outperform ordered index- ing for both queries.",
+      "C": "\u0007Hashing will outperform ordered indexing on Q1, but not on Q2.",
+      "D": "\u0007Hashing will outperform ordered indexing on Q2, but not on Q1."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 42,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "Database table by name Loan_Records is given below. Borrower Bank manager Loan amount Ramesh Sunderajan 10000.00 Suresh Ramgopal 5000.00 Mahesh Sunderajan 7000.00 What is the output of the following SQL query? SELECT count ( * ) \u0007FROM (Select Borrower, Bank_Manager FROM Loan Records) AS S NATURAL JOIN \u0007(SELECT Bank_Manager, Loan_Amount FROM Loan_Records) AS T;\b [2011]",
+    "options": {
+      "A": "3",
+      "B": "9",
+      "C": "5",
+      "D": "6"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 42,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "Consider a database table T containing two columns X and Y each of type integer. After the creation of the table, one record (X = 1, Y = 1) is inserted in the table. Let MX and MY denote the respective maximum values of X and Y among all records in the table at any point in time. Using MX and MY, new records are inserted in the table 128 times with X and Y values being MX + 1, 2 * MY + 1 respectively. It may be noted that each time after the insertion, values of MX and MY change. What will be the output of the following SQL query after the steps mentioned above are carried out? SELECT Y FROM T WHERE X = 7;\b [2011]",
+    "options": {
+      "A": "127",
+      "B": "255",
+      "C": "129",
+      "D": "257"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 42,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "Which of the following statements are true about an SQL query? P: \u0007An SQL query can contain a HAVING clause even if it does not have a GROUP BY clause Q: \u0007An SQL query can contain a HAVING clause only if it has a GROUP BY clause R: \u0007All attributes used in the GROUP BY clause must appear in the SELECT clause S: \u0007Not all attributes used in the GROUP BY clause need to appear in the SELECT clause \b [2012]",
+    "options": {
+      "A": "P and R",
+      "B": "P and S",
+      "C": "Q and R",
+      "D": "Q and S"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 42,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 15,
+    "question": "Suppose R1(A, B) and R2(C, D) are two relation schemas. Let r1 and r2 be the corresponding relation instances. B is a foreign key that refers to C in R2. If data in r1 and r2 satisfy referential integrity con- straints, which of the following is always true?\b[2012]",
+    "options": {
+      "A": "Id Name Age 12 Arun 60 15 Shreya 24 99 Rohit 11",
+      "B": "Id Name Age 15 Shreya 24 25 Hari 40 98 Rohit 20 99 Rohit 11",
+      "C": "Id Phone Area 10 2200 02 99 2100 01",
+      "D": "ΠB (r1) – ΠC (r2) ≠ ∅ Common data for questions 16 and 17: Consider the fol- lowing relations A, B and C:"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 42,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 16,
+    "question": "How many tuples does the result of the following SQL query contain? SELECT A.Id FROM A WHERE A. Age > ALL (SELECT B. Age FROM B WHERE B. Name = ‘Arun’)\b [2012]",
+    "options": {
+      "A": "4",
+      "B": "3",
+      "C": "0",
+      "D": "1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 43,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "How many tuples does the result of the following relational algebra expression contain? Assume that the schema of A ∪ B is the same as that of A. (A⋃B) ⋈A.Id > 40 V C.Id <15C\b [2012]",
+    "options": {
+      "A": "7",
+      "B": "4",
+      "C": "5",
+      "D": "9"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 43,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 18,
+    "question": "Consider the following relational schema. Students (rollno: integer, sname: string) Courses (courseno: integer, cname: string) Registration(rollno:integer,co urseno: integer, percent: real) \u0007 Which of the following queries are equivalent to this query in English? \u0007 ‘Find the distinct names of all students who score more than 90% in the course numbered 107’ (I) \u0007SELECT DISTINCT S.sname FROM Students as S, Registration as R WHERE R.rollno=S.rollno AND R.courseno=107 AND R.percent>90 (II) psname(σcourseno=107^percent>90 Registration⑅Students) (III) \u0007{T |∃ S ∈ Students, ∃R∈ Registration (S.rollno=R. rollno ∧ R.courseno=107 ∧ R.percent>90∧T. sname=S.sname)} (IV) \u0007{<SN> |∃SR∃RP (<SR, SN> ∈ Students ∧ <SR, 107, RP> ∈ Registration ∧ RP>90)}\b [2013]",
+    "options": {
+      "A": "I, II, III and IV",
+      "B": "I, II and III only",
+      "C": "I, II and IV only",
+      "D": "II, III and IV only"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 43,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 19,
+    "question": "Given the following statements: S1: \u0007A foreign key declaration can always be replaced by an equivalent check assertion in SQL. S2: \u0007Given the table R (a, b, c) where a and b together form the primary key, the following is a valid ta- ble definition. CREATE TABLE S ( a INTEGER d INTEGER, e INTEGER, PRIMARY KEY (d), FOREIGN KEY (a) references R) Which one of the following statements is CORRECT? \b [2014]",
+    "options": {
+      "A": "S1 is TRUE and S2 is FALSE",
+      "B": "Both S1 and S2 are TRUE",
+      "C": "S1 is FALSE and S2 is TRUE",
+      "D": "Both S1 and S2 are FALSE"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 43,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 20,
+    "question": "Given the following schema: \u0007Employees (emp–id, first-name, last– name, hire– date, dept–id, salary) \u0007Departments (dept–id, dept–name, manager–id, location–id) \u0007you want to display the last names and hire dates of all latest hires in their respective departments in the location ID 1700. You issue the following query: SQL > SELECT last–name, hire–date FROM employees WHERE (dept–id, hire–date) IN (SELECT dept–id, MAX (hire–date) \u0007FROM employees JOIN departments USING (dept–id) WHERE location–id = 1700 GROUP BY dept–id); What is the outcome?\b [2014]",
+    "options": {
+      "A": "It executes but does not give the correct result.",
+      "B": "It executes and gives the correct result.",
+      "C": "\u0007It generates an error because of pair wise compari- son.",
+      "D": "\u0007It generates an error because the GROUP BY clause cannot be used with table joins in a sub- query."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 43,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 22,
+    "question": "Consider a join (relation algebra) between relations (r(R)) and (s(S)) using the nested loop method. There are three buffers each of size equal to disk block size, out of which one buffer is reserved for intermediate results. Assuming size r(R) < size s(S), the join will have fewer number of disk block accesses if\b [2014]",
+    "options": {
+      "A": "Relation r(R) is in the outer loop",
+      "B": "Relation s(S) is in the outer loop",
+      "C": "\u0007Join selection factor between r(R) and s(S) is more than 0.5",
+      "D": "\u0007Join selection factor between r(R) and s(S) is less than 0.5"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 43,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 23,
+    "question": "SQL allows duplicate tuples in relations, and corre- spondingly defines the multiplicity of tuples in the result of joins. Which one of the following queries always gives the same answer as the nested query shown below: Select * from R where a in (select S. a from S)\b[2014]",
+    "options": {
+      "A": "Select R.* from R, S where R. a = S. a",
+      "B": "Select distinct R * from R, S where R . a = S . a",
+      "C": "\u0007Select R.* from R, (select distinct a from S) as S1 where R.a = S1.a",
+      "D": "\u0007Select R.* from R, S where R.a = S.a and is unique R"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 43,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 24,
+    "question": "What is the optimized version of the relation algebra expression π π σ σ A A F F r 1 2 1 2 ( ( ( ))), ( ) where A1, A2 are sets of attributes in r with A1 ⊂ A2 and F1, F2 are Boolean expressions based on the attributes in r?\b [2014]",
+    "options": {
+      "A": "π σ A F F r 1 1 2 ( ) ( )( ) ∧",
+      "B": "π σ A F F r 1 1 2 ( ) ( )( ) ∨",
+      "C": "π σ A F F r 2 1 2 ( ) ( )( ) ∧",
+      "D": "π σ A F F r 2 1 2 ( ) ( )( ) ∨"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 44,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 25,
+    "question": "Consider the relational schema given below, where eld of the relation dependent is a foreign key refer- ring to empId of the relation employee. Assume that every employee has at least one associated dependent in the dependent relation. Consider the following relational algebra query: employee (empId, empName, empAge) dependent (depId, eId, depName, depAge) \u0007pempId(employee)- pempId (employee ⋈ (empId = eID) ∧ (empAge ≤ depAge) dependent) \u0007The above query evaluates to the set of empIds of em- ployees whose age is greater than that of \b [2014]",
+    "options": {
+      "A": "some dependent.",
+      "B": "all dependents.",
+      "C": "some of his/her dependents.",
+      "D": "all of his/her dependents."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 44,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 26,
+    "question": "Consider the following relational schema: employee (empId, empName, empDept) customer(custId, custName, salesRepid, rating) \u0007salesRepId is a foreign key referring to empId of the employee relation. Assume that each employee makes a sale to at least one customer. What does the follow- ing query return? SELECT empName FROM employee E WHERE NOT EXISTS (SELECT custId FROM customer C WHERE C.salesRepId = E.empId AND C.Rating < > ‘GOOD’);\b [2014]",
+    "options": {
+      "A": "\u0007Names of all the employees with at least one of their customers having a ‘GOOD’ rating.",
+      "B": "\u0007Names of all the employees with at most one of their customers having a ‘GOOD’ rating.",
+      "C": "\u0007Names of all the employees with none of their cus- tomers having a ‘GOOD’ rating.",
+      "D": "\u0007Names of all the employees with all their customers having a ‘GOOD’ rating."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 44,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 27,
+    "question": "SELECT operation in SQL is equivalent to\b [2015]",
+    "options": {
+      "A": "The selection operation in relational algebra",
+      "B": "\u0007The selection operation in relational algebra, except that SELECT in SQL retains duplicates.",
+      "C": "The projection operation in relational algebra.",
+      "D": "\u0007The projection operation in relational algebra, except that SELECT in SQL retains duplicates."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 44,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 29,
+    "question": "Consider two relations R1(A, B) with the tuples (1, 5), (3, 7) and R2(A, C) = (1, 7), (4, 9). Assume that R(A, B, C) is the full natural outer join of R1 and R2. Consider the following tuples of the form (A, B, C): a = (1, 5, null), b = (1, null, 7), c = (3, null, 9), d = (4, 7, null), e = (1, 5, 7), f = (3, 7, null), g = (4, null, 9). Which one of the following statements is correct?\b [2015]",
+    "options": {
+      "A": "R contains a, b, e, f, g but not c, d.",
+      "B": "R contains all of a, b, c, d, e, f, g.",
+      "C": "R contains e, f, g but not a, b.",
+      "D": "R contains e but not f, g."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 44,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 30,
+    "question": "Consider the following relation Cinema (theater, address, capacity) Which of the following options will be needed at the end of the SQL query SELECT P1.address FROM Cinema P1 such that it always finds the addresses of theaters with maximum capacity?\b [2015]",
+    "options": {
+      "A": "\u0007WHERE P1.capacity > = All (select P2. Capacity from Cinema P2)",
+      "B": "\u0007WHERE P1.capacity >= Any (select P2. Capacity from Cinema P2)",
+      "C": "\u0007WHERE P1.capacity > All (select max(P2. capacity) from Cinema P2)",
+      "D": "\u0007WHERE P1.capacity > Any (select max(P2. capacity) from Cinema P2)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 44,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 31,
+    "question": "Which of the following is NOT a superkey in a rela- tional schema with attributes V, W, X, Y, Z and primary key VY?\b [2016]",
+    "options": {
+      "A": "V XYZ",
+      "B": "V WXZ",
+      "C": "V WXY",
+      "D": "V WXYZ"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 45,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Structured Query Language",
+    "section": "Previous Years’ Questions",
+    "number": 33,
+    "question": "Consider a database that has the relation sche- mas EMP(EmpId, EmpName, DeptId), and DEPT(DeptName, DeptId), Note that the DeptId can be permitted to be NULL in the relation EMP. Consider the following queries on the database expressed in tuple relational calculus. (I) \u0007{t | ∃u ∈ EMP(t[EmpName] = u[EmpName] ∧ ∀ v ∈ DEPT(t[DeptId] ≠ v[DeptId]))} (II) \u0007{t | ∃u ∈ EMP(t[EmpName] = u[EmpName] ∧ ∃ v ∈ DEPT(t[DeptId] ≠ v[DeptId]))} (III) \u0007{t | ∃u ∈ EMP(t[EmpName] = u[EmpName] ∧ ∃ v ∈ DEPT(t[DeptId] = v[DeptId]))} Which of the above queries are safe?\b [2017]",
+    "options": {
+      "A": "(I) and (II) only",
+      "B": "(I) and (III) only",
+      "C": "(II) and (III) only",
+      "D": "(I), (II) and (III)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 45,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 36,
+    "question": "Consider the following two tables and four queries in SQL. Book (isbn, bname), Stock (isbn, copies) Query 1: SELECT B.isbn, S.copies FROM Book B INNER JOIN Stock S ON B.isbn = S.isbn; Query 2: SELECT B.isbn, S.copies FROM Book B LEFT OUTER JOIN Stock S ON B.isbn = S.isbn; Query 3: SELECT B.isbn, S.copies FROM Book B RIGHT OUTER JOIN Stock S ON B.isbn = S.isbn; Query 4: SELECT B.isbn, S.copies FROM Book B FULL OUTER JOIN Stock S ON B.isbn = S.isbn; Which one of the queries above is certain to have an output that is a superset of the outputs of the other three queries?\b [2018]",
+    "options": {
+      "A": "Query 1",
+      "B": "Query 2",
+      "C": "Query 3",
+      "D": "Query 4"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 46,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 37,
+    "question": "Consider the relations r(A, B) and s(B, C), where s ⋅ B is a primary key and r ⋅ B is a foreign key referencing s ⋅ B. Consider the query Q: r  (σB<5 (S)) Let LOJ denote the natural left outer-join operation. Assume that r and s contain no null values. Which one of the following queries is NOT equiva- lent to Q?\b [2018]",
+    "options": {
+      "A": "σB<5(r  s)",
+      "B": "σB<5(r LOJ s)",
+      "C": "r LOJ (σB<5(s))",
+      "D": "σB<5(r) LOJ s NormaliZatioN Database design theory includes design standards called normal forms. The process of making data and tables match these stand- ards is called normalizing data or data normalization. By normal- izing data, we eliminate redundant information and organize table to make it easier to manage the data and make future changes to the table and database structure. This process removes the inser- tion, deletion, and modifi cation anomalies. In normalizing your data, we usually divide large tables into smaller, easier to maintain tables. We can then use the technique of adding foreign keys to enable connections between the tables. Data normalization is part of the database design process and is neither specifi c nor unique to any particular RDBMS. These are in order, such as fi rst, second, third, Boyce-Codd, fourth, and fi fth normal forms. Each normal form represents an increasingly stringent set of rules; that is, each normal form assumes that the requirements of the preceding forms have been met. Many rela- tional database designers feel that, if their tables are in third nor- mal form, most common design problems have been addressed. However, the higher-level normal forms can be of use and are included here. Database normalization is the process of removing redundant data from tables to improve storage effi ciency, data integrity and scalability."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 46,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Consider the given functional dependencies A → B BC → DE AEF → G Which of the following is true?",
+    "options": {
+      "A": "Functional dependency ACF→ DG implied by the set",
+      "B": "\u0007Functional dependency ACF → DG cannot be im- plied by the set",
+      "C": "\u0007Functional dependency AB → G implied by the set",
+      "D": "Both (B) and (C)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 56,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Consider the given relation DNAME DNO MGRNO LOCATION RESEARCH 5 333 {BANGLORE,DELHI, HYDERABAD} ADMINISTRATION 4 987 {CHENNAI} EXECUTIVES 1 885 {HYDERABAD} Department The given relation is",
+    "options": {
+      "A": "is not in 1NF",
+      "B": "in 1NF",
+      "C": "in 2NF",
+      "D": "in 3NF"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 56,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Consider the given Relational scheme Student-project RNo. Proj-No Hours Stu-Name Proj-Name Proj-Location FD1 FD2 FD3 Which functional dependencies are violating 2NF property?",
+    "options": {
+      "A": "FD1",
+      "B": "FD2",
+      "C": "FD3",
+      "D": "Both A and B"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 56,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Consider the given relation FD1 FD2 EMPLOYEE-DEPARTMENT EName ENo DOB Address DNo. DName DManager Which functional dependencies are violating 3NF ?",
+    "options": {
+      "A": "FD1",
+      "B": "FD2",
+      "C": "Both",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 56,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "Consider the given relation R(A, B, C, D)and functional dependencies: FD = (AB → C C → B C → D) Determine the key, prime attributes and non-prime attributes.",
+    "options": {
+      "A": "{A}, {AB}, {CDE}",
+      "B": "{AB, AC}, {ABC}, {D}",
+      "C": "{AB, BC}, {ABC}, {D}",
+      "D": "{AB, AC}, {AB}, {D}"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 56,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Consider the given relation and functional dependencies R(ABCDE) FD = (ABD → C BC → D CD → E) Determine the key, prime attributes, non-prime attrib- utes and the normal form of the relation? When the first two tables are joined by Product and the result joined to the third table by Buyer and Company, the result is the original set of data.",
+    "options": {
+      "A": "{AB, AD}, {ABCD}, {E}",
+      "B": "{ABC, ABD}, {ABCD}, {E}",
+      "C": "{AB, AD}, {ABC}, {DE}",
+      "D": "{ABC, ABD}, {AB}, {CDE}"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 56,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Consider the given relation and functional dependencies R(ABC) FD = (AB → C C → A) The relation is in which normal form?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "BCNF"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 57,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Consider the given relation and its functional dependencies: R(ABCDE) FD = (AB → C C → E B → D E → A) The relation is further decomposed into two relations: R1(BCD), R2(ACE)",
+    "options": {
+      "A": "Decomposition is lossy and dependency preserving",
+      "B": "\u0007Decomposition is lossless and dependency pre- serving",
+      "C": "\u0007Decomposition is lossy and not dependency pre- serving",
+      "D": "\u0007Decomposition is lossless and not dependency preserving"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 57,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Consider the following relational instance: X Y Z 1 4 2 1 5 3 1 6 3 3 2 2 Which of the following functional dependencies are satisfied by the instance?",
+    "options": {
+      "A": "xy → z and z → y",
+      "B": "yz → x and y → z",
+      "C": "yz → x and x → z",
+      "D": "xz → y and y → x"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 57,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Consider the following functional dependencies: DOB → Age Age → Eligibility Name → RNo RNo → Name CourseNo → CourseName CourseNo → Instructor (RNo, CNo) → Grade The relation (RNo, Name, DOB, Age) is in which nor- mal form?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "BCNF"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 57,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "Consider the given functional dependencies: AB → CD AF → D DE → F C → G F → E G → A Which of the following is false?",
+    "options": {
+      "A": "{CF}+ = {ACDEFG}",
+      "B": "{BG}+ = {ABCDG}",
+      "C": "{AF}+ = {ACDEFG}",
+      "D": "{AB}+ = {ABCDG}"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 57,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "What should be the key to make the given relation to be in BCNF? The dependencies for the following, ‘Grades’ relation are GRADES (student-Id, course#, semester#, Grade) student-Id, course#, semester# → Grade",
+    "options": {
+      "A": "student-Id",
+      "B": "course#",
+      "C": "semester#",
+      "D": "student-Id, course#, semester #"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 57,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "What normal from is the following relation in? STORE_ITEM (SKU, promotionID, vendor, style, price) SKU, promotionID → vendor, style, price SKU → vendor, style",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "4NF"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 57,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "What normal form is the following relation in? Only H, I can act as the key STUFF (H, I, J, K, L, M, N, O) H, I → J,K,L J → M K → N L → O?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "BCNF"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 57,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "What normal form the following relation is in? STUFF2(D, O, N, T, C, R, Y ) D, O → N, T, C, R, Y C, R → D D → N?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "BCNF"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 57,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 16,
+    "question": "The given table is in the BCNF form, convert it to the 4th normal form. Employee Skill Language Jones Jones Jones Jones Smith Electrical Electrical Mechanical Mechanical Plumbing French German French German Spanish",
+    "options": {
+      "A": "Employee Skill",
+      "B": "Employee Language",
+      "C": "Skill Language",
+      "D": "Both A and B"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 58,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 17,
+    "question": "For a database relation x(a, b, c, d ), where all the domains of a, b, c, d, include only atomic values, only the following FDs and those that can be inferred from them hold. a → b, c → d the relation is",
+    "options": {
+      "A": "In 1st NF but not in 2nd NF",
+      "B": "In 2nd NF but not in 3rd NF",
+      "C": "In 2nd NF",
+      "D": "In 3rd NF"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 58,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 18,
+    "question": "Which of the following FDs are satisfied by the instance from the below relation: A B C 2 8 4 2 10 6 2 12 6 6 4 4",
+    "options": {
+      "A": "AB → C and C → B",
+      "B": "BC → A and B → C",
+      "C": "BC → A and A → C",
+      "D": "AC → B and B → A"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 58,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 19,
+    "question": "Consider the following database: Course # → Title Course # time → location Emp – ID → T –Name salary is in",
+    "options": {
+      "A": "3NF",
+      "B": "2NF",
+      "C": "1NF",
+      "D": "BCNF"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 58,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 20,
+    "question": "Consider the following schema A = (w, x, y, z) and the dependencies are W → X, X → Y, Y → Z, and Z → W Let A = (A1 and A2) be a decomposition such that A1 ∩ A2 = f The decomposition is",
+    "options": {
+      "A": "In 1NF and in 2NF",
+      "B": "In 2NF and not in 3NF",
+      "C": "In 2NF and in 3NF",
+      "D": "Not in 2NF and in 3NF"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 58,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Integrity constraints ensures that changes made to the database by authorized users do not result in",
+    "options": {
+      "A": "Loss of FDs",
+      "B": "Loss of keys",
+      "C": "Loss of tables",
+      "D": "Loss of data consistency"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 58,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Relation R A B C D = ( , , , ) with AB as primary key. Choose one FD such that R should be in 1NF but not in 2NF",
+    "options": {
+      "A": "AB → C",
+      "B": "AB → D",
+      "C": "A → D",
+      "D": "AB → CD"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 58,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "A normalized relation (1NF) can be retrieved from unnormalized relation by removing",
+    "options": {
+      "A": "repeating groups",
+      "B": "duplicate tuples",
+      "C": "transitive dependency (D) primary key"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 58,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "A relation will be in 2NF, if we",
+    "options": {
+      "A": "remove repeating groups",
+      "B": "remove partial dependency",
+      "C": "remove transitive dependency",
+      "D": "have overlapping candidate key"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 58,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Relation R =(A, B, C, D) with AB as primary key, choose the FD so that R should be in 2NF but not in 3NF.",
+    "options": {
+      "A": "D → C",
+      "B": "AB → C",
+      "C": "AB → D",
+      "D": "A → B"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 58,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "If a relation is in 2NF, then it can be in 3NF by removing",
+    "options": {
+      "A": "repeating groups",
+      "B": "partial dependencies",
+      "C": "transitive dependencies",
+      "D": "overlapping dependencies"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 58,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "BCNF can be achieved from 3NF by removing",
+    "options": {
+      "A": "repeating groups",
+      "B": "partial dependencies",
+      "C": "transitive dependencies",
+      "D": "overlapping dependencies"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 58,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Which one of the following is not possible?",
+    "options": {
+      "A": "Relation is in BCNF but not in 4NF",
+      "B": "Relation is in 3NF but not in BCNF",
+      "C": "Relation is in 2NF but not in 3NF",
+      "D": "Relation is in 3NF but not in 2NF Common data for questions 9 and 10: Let R be a relation schema R (A, B, C, D); F = {AB → CD; C → A} F is the set of functional dependencies"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "How many prime attributes are there?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "The highest normal form of the above relation is",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "4NF Linked answer questions"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "For a given relation schema R = {A, B, C, D, E} A → BC CD → E B → D E → A Which of the following is not a candidate key?",
+    "options": {
+      "A": "A",
+      "B": "B",
+      "C": "E",
+      "D": "BC"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "For the above answer, what is the closure?",
+    "options": {
+      "A": "BD",
+      "B": "ABC",
+      "C": "ABCDE",
+      "D": "BC"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "Consider the following functional dependencies: A → B C → D B → E F → A The relation (A, B, C, D) is",
+    "options": {
+      "A": "in second normal form, but not in third normal form",
+      "B": "in third normal form, but not in B C N F",
+      "C": "in B C N F",
+      "D": "None of the above Common data for questions 14 and 15: R = (A, B, C, D, E, F ) FDs = A → B C → DF AC → E D → F"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "Determine the key from the given FDs:",
+    "options": {
+      "A": "AB",
+      "B": "AC",
+      "C": "ACB",
+      "D": "ACD"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "Decompose the FDs into 2NF",
+    "options": {
+      "A": "R1(AB) R2(CDF) R3(ACE)",
+      "B": "R1(AB) R2(CDEF)",
+      "C": "R1(ABC) R2(CDF)",
+      "D": "R1(AB) R2(CD) R3(EF )"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 16,
+    "question": "For a database relation x(a, b, c, d), where all the domains of a, b, c, d, include only atomic values, only the following FDs and those that can be inferred from them hold. a → b, c → d The relation is decomposed into R1(ab), R2(cd). Which of the following is true, The decomposition",
+    "options": {
+      "A": "is dependency preserving",
+      "B": "is not dependency preserving",
+      "C": "is loss less",
+      "D": "Both A and C"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 17,
+    "question": "Which of the following FDs are satisfied by the instance from the below relation? A B C 4 12 8 4 14 10 4 16 10 10 8 8",
+    "options": {
+      "A": "AB → C and C → B",
+      "B": "BC → A and B → C",
+      "C": "BC → A and A → C",
+      "D": "AC → B and B → A"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 18,
+    "question": "Indicate which of the following statements are false: ‘A relational database, which is in 3NF still have undesirable data redundancy because there may exist.",
+    "options": {
+      "A": "Below all",
+      "B": "\u0007Non trivial FDs involving prime attributes on the right side.",
+      "C": "\u0007Non-trivial FDs involving prime attributes on the left side",
+      "D": "Non-trivial FDs involving only prime attributes"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 19,
+    "question": "Consider the following database: SOFTWARE (software-vendor, product, Release-date, systemReq, warranty) FD: (software-vendor, product, Releasedate) → system Req, price, Warranty. Which of the following are non–prime attributes?",
+    "options": {
+      "A": "SystemReq",
+      "B": "Price",
+      "C": "Warranty",
+      "D": "All the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Practice Problems 2",
+    "number": 20,
+    "question": "Consider a relation schema R (A, B, C, D, E, X, Y) with the following FDs F = {0 → A, XD → C, DA → B, A → X, XE → B, E → A, B → D, DA → B, EB → C, AB → C, Y → B, C → B} is in",
+    "options": {
+      "A": "2NF",
+      "B": "3NF",
+      "C": "4NF",
+      "D": "BCNF"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 59,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Which one of the following statements is false? \b [2007]",
+    "options": {
+      "A": "Any relation with two attributes is in BCNF",
+      "B": "\u0007A relation in which every key has only one at- tribute is in 2NF",
+      "C": "\u0007A prime attribute can be transitively dependent on a key in a 3NF relation.",
+      "D": "\u0007A prime attribute can be transitively dependent on a key in a BCNF relation."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 60,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Consider the following relational schemas for a library database: Book (Title, Author, Catalog_ no, Publisher, Year, Price) Collection (Title, Author, Catalog_ no) with the following functional dependencies: I. Title Author → Catalog_no II. Catalog_no → Title Author Publisher Year III. Publisher Title Year → Price Assume {Author, Title} is the key for both schemas. Which of the following statements is true?\b [2008]",
+    "options": {
+      "A": "Both Book and Collection are in BCNF",
+      "B": "Both Book and Collection are in 3NF only",
+      "C": "Book is in 2NF and Collection is in 3NF",
+      "D": "Both Book and Collection are in 2NF only"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 60,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "The following functional dependencies hold for rela- tions R(A, B, C) and S(B, D, E) B → A, A → C The relation R contains 200 tuples and the relation S contains 100 tuples. What is the maximum number of tuples possible in the natural join R ⋈ S?\b [2010]",
+    "options": {
+      "A": "100",
+      "B": "200",
+      "C": "300",
+      "D": "2000"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 60,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Which of the following is true?\b [2012]",
+    "options": {
+      "A": "Every relation in 3NF is also in BCNF",
+      "B": "\u0007A relation R is in 3NF if every non-prime attrib- ute of R is fully functionally dependent on every key of R",
+      "C": "Every relation in BCNF is also in 3NF",
+      "D": "No relation can be in both BCNF and 3NF Common data questions 5 and 6: Relation R has eight attributes ABCDEFGH, Fields of R contain only atomic values. F = {CH → G, A → BC, B → CFH, E → A, F → EG} is a set of functional dependencies (FDs) so that F+ is exactly the set of FDs that hold for R."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 60,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "How many candidate keys does the relation R have? \b [2013]",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 60,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "The relation R is\b [2013]",
+    "options": {
+      "A": "in 1NF, but not in 2NF",
+      "B": "in 2NF, but not in 3NF",
+      "C": "in 3NF, but not in BCNF",
+      "D": "in BCNF"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 60,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "Assume that in the suppliers relation above, each supplier and each street within a city has a unique name, and (sname, city) forms a candidate key. No other functional dependencies are implied other than those implied by primary and candidate keys. Which one of the following is true about the above schema?\b [2009]",
+    "options": {
+      "A": "The schema is in BCNF",
+      "B": "The schema is in 3NF but not in BCNF",
+      "C": "The schema is in 2NF but not in 3NF",
+      "D": "The schema is not in 2NF"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 60,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Consider the relation scheme R = (E, F, G, H, I, J, K, L, M, N) and the set of functional dependencies {{E, F} → {G}, {F} → {I, J }, {E, H} → {K, L}, {K} → {M}, {L} → {N}} on R. What is the key for R? \b [2014]",
+    "options": {
+      "A": "{E, F}",
+      "B": "{E, F, H}",
+      "C": "{E, F, H, K, L}",
+      "D": "{E}"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 60,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "Given the following two statements: S1: \u0007Every table with two single-valued attributes is in 1NF, 2NF, 3NF and BCNF S2: \u0007AB → C, D → E, E → C is a minimal cover for the set of functional dependencies AB → C, D → E, AB → E, E → C Which one of the following is correct?\b [2014]",
+    "options": {
+      "A": "S1 is true and S2 is false",
+      "B": "Both S1 and S2 are true",
+      "C": "S1 is false and S2 is true",
+      "D": "Both S1 and S2 are false"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 60,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "A prime attribute of a relation scheme R is an attrib- ute that appears \b [2014]",
+    "options": {
+      "A": "in all candidate keys of R",
+      "B": "in some candidate key of R",
+      "C": "in a foreign key of R",
+      "D": "only in the primary key of R"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 60,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "Consider the relation X(P, Q, R, S, T, U) with the fol- lowing set of functional dependencies F = { {P, R} → {S, T} {P, S, U} → {Q, R} } Which of the following is the trivial functional dependency in F +, where F + is closure of F ?\b[2015]",
+    "options": {
+      "A": "{P, R} → {S, T}",
+      "B": "{P, R} → {R, T}",
+      "C": "{P, S} → {S}",
+      "D": "{P, S, U} → {Q}"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 61,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "A database of research articles in a journal uses the following schema.\b [2016] (VOLUME, NUMBER, STARTPAGE, ENDPAGE, TITLE, YEAR, PRICE) The primary key is (VOLUME, NUMBER, STARTPAGE,ENDPAGE) and the following func- tional dependencies exist in the schema. (VOLUME, NUMBER, STARTPAGE, ENDPAGE) → TITLE (VOLUME, NUMBER) → YEAR (VOLUME, NUMBER, STARTPAGE,ENDPAGE) → PRICE The database is redesigned to use the following schemas. (VOLUME, NUMBER, STARTPAGE, ENDPAGE, TITLE, PRICE) (VOLUME, NUMBER, YEAR) Which is the weakest normal form that the new data- base satisfies, but the old one does not?",
+    "options": {
+      "A": "1NF",
+      "B": "2NF",
+      "C": "3NF",
+      "D": "BCNF"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 61,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "2 - Normalization",
+    "section": "Previous Years’ Questions",
+    "number": 16,
+    "question": "The following functional dependencies hold true for the relational schema R {V, W, X, Y, Z}: V → W VW → X Y → VX Y → Z Which of the following is irreducible equivalent for this set of set of functional dependencies?\b [2017]",
+    "options": {
+      "A": "V → W",
+      "B": "V → W V → X W → X Y → V Y → V Y → Z Y → Z",
+      "C": "V → W",
+      "D": "V → W V → X W → X Y → V Y → V Y → X Y → X Y → Z Y → Z"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 61,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 18,
+    "question": "Consider the following four relational schemas. For each schema, all non-trivial functional dependencies are listed. The underlined attributes are the respective primary keys. Schema I: Registration (rollno, courses) Field ‘courses’ is a set-valued attribute containing the set of courses a student has registered for. Non-trivial functional dependency: Rollno → courses Schema II: Registration (rollno, courseid, email) Non-trivial functional dependencies: Rollno, courseid → email email → rollno Schema III: Registration (rollno, courseid, marks, grade) Non-trivial functional dependencies: Rollno, courseid → marks, grade Marks → grade Schema IV: Registration (rollno, courseid, credit) Non-trivial functional dependencies: Rollno, courseid → credit Courseid → credit Which one of the relational schemas above is in 3NF but not in BCNF?\b [2018]",
+    "options": {
+      "A": "Schema I",
+      "B": "Schema II",
+      "C": "Schema III",
+      "D": "Schema IV  Transactions and concurrency control  Transaction  Transaction properties  Uncommitted data  Transaction processing systems  Concurrency control with locking methods  Two-phase locking to ensure serializability  Concurrency control with time stamping methods  Concurrency control with optimistic methods  Recoverability  Equivalence of schedules  Testing for conﬂ ict serializability LEARNING OBJECTIVES introduCtion A transaction is a logical unit of work. It begins, with the execution of a BEGIN TRANSACTION operation, and ends with the execu- tion of a COMMIT or ROLLBACK operation. The logical unit of work that is, a transaction does not necessarily involve just a single database operation. Rather, it involves a sequence of several such operations as follows:"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 62,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 1,
+    "question": "Consider the given schedules S1 and S2 S1: r1(x), r1(y), r2(x), r2(y), w2(y), w1(x) S2: r1(x), r2(x), r2(y), w2(y), r1(y), w1(x) Which schedule is conflict serializable?",
+    "options": {
+      "A": "S1",
+      "B": "S2",
+      "C": "S1 and S2",
+      "D": "None of these"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 72,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 2,
+    "question": "Consider the given schedule with three transactions T1, T2 and T3: T1 T2 T3 r1(x) r2(y) r3(y) w2(y) w1(x) w3(x) r2(x) w2(x) Which of the following is correct serialization?",
+    "options": {
+      "A": "T2 → T1 → T3",
+      "B": "T1 → T3 → T2",
+      "C": "T3 → T1 → T2",
+      "D": "None of these"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 72,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 3,
+    "question": "Consider the three data items D1, D2 and D3 and the following execution of schedules of transactions T1, T2 and T3: T1 T2 T3 R(D2) R(D2) W(D2) R(D2) R(D3) R(D1) W(D1) W(D2) W(D3) R(D1) R(D2) W(D2) W(D1) Which of the following is true?",
+    "options": {
+      "A": "The schedule is conflict serializable",
+      "B": "The schedule is not conflict serializable",
+      "C": "The schedule has deadlock",
+      "D": "Both (A) and (C)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 72,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 4,
+    "question": "Consider the given schedule T3 T4 T7 R(Q) W(Q) W(Q) R(Q) W(Q) Which of the following is the correct precedence graph for the above schedule?",
+    "options": {
+      "A": "T7 T4 T3",
+      "B": "T7 T4 T3",
+      "C": "T7 T4 T 3",
+      "D": "T 7 T 4 T3"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 73,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 5,
+    "question": "Consider two Transactions T1 and T2 and four sched- ules: S1, S2, S3 and S4 of T1 and T2: T1: r1(x), w1(x), w1(y) T2: r2(x), r2(y), w2(y) S1: r1(x), r2(x), r2(y), w1(x), w1(y), w2(y) S2: r1(x), r2(x), r2(y), w1(x), w2(y), w1(y) S3: r1(x), w1(x), r2(x), w1(y), r2(y), w2(y) S4: r2(x), r2(y), r1(x), w1(x), w1(y), w2(y) Which schedules are conflict serializable in the given schedules?",
+    "options": {
+      "A": "S1 and S2",
+      "B": "S1 and S3",
+      "C": "S2 and S3",
+      "D": "S1 and S4"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 73,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 6,
+    "question": "Consider the following transactions with data items P and Q initialized to ‘0’: T1: read(P) Read(Q) if p = 0 then Q = Q + 1 Write(Q) T2: read(Q) Read(P) if Q = 0 then p = p + 1 Write (P) Any non-serial interleaving of T1 and T2 for concurrent execution leads to",
+    "options": {
+      "A": "a serializable schedule",
+      "B": "a schedule that is not conflict serializable",
+      "C": "a conflict serializable schedule",
+      "D": "\u0007a schedule for which a precedence graph cannot be drawn"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 73,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 7,
+    "question": "Consider the concurrent execution of two transactions T1 and T2, if the initial values of x, y, M and N are 200, 100, 10, 20 respectively. What are the final values of x and y? T1 T2 read-item(x) x = x – N read-item(x) x = x + M Write-item(x) read-item(y) Write-item(x) y = y + N Write-item(y)",
+    "options": {
+      "A": "220, 110",
+      "B": "210, 120",
+      "C": "220, 120",
+      "D": "210, 110"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 73,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 8,
+    "question": "For the above data, if the transactions are executed in serial manner, what would be the values of X and Y at the end of the serial execution of T1 and T2? T1 T2 Read-item(x) X = X – N Write-item(x) Read-item(y) Y = Y + N Write-item(y) Read-item(x) X = X + M Write-item(x)",
+    "options": {
+      "A": "190, 120",
+      "B": "180, 120",
+      "C": "190, 110",
+      "D": "180, 110"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 73,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 9,
+    "question": "Consider the given two transactions T1 and T2: T1: r1(x), w1(x), r1(y) T2: r2(x), r2(y), w2(x), w2(y) Which of the following schedules are complete schedules?",
+    "options": {
+      "A": "r1(x), r2(x), w1(x), r1(y), r2(y), w2(x), w2(y)",
+      "B": "r2(x), r1(x), r2(y), w1(x), w2(x), r1(y), w2(y)",
+      "C": "r1(x), r1(y), r2(x), r2(y), w1(x), w2(x), w2(y)",
+      "D": "All the above"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 73,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 10,
+    "question": "Consider the given schedule with data-locks on data- items, check whether it has dead-lock or not. The locks are shared-lock(S) and Exclusive-lock(X). Shared-lock is also called Read-lock, Exclusive-lock is also called Write-lock. Read and Write operations are denoted by R and W, respectively. T1 T2 T3 T4 S(A) R(A) X(B) W(B) S(B) S(C) R(C) X(C) X(B) X(A) Which of the following is incorrect?",
+    "options": {
+      "A": "T1 → T2",
+      "B": "T3 → T1",
+      "C": "T2 → T3",
+      "D": "T4 → T3"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 74,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 11,
+    "question": "Consider the three transactions T1, T2 and T3 and the schedule S1 as given below. Draw the serializability (precedence) graph for S1, and state whether the sched- ule is serializable or not. If a schedule is serializable, which one of the following is equivalent serial schedule? T1: r1(x), r1(z), w1(x) T2: r2(z), r2(y), w2(z), w2(y) T3: r3(x), r3(y), w3(y) S1: r1(x), r2(z), r1(z), r3(x), r3(y), w1(x), w3(y), r2(y), w2(z), w2­(y)?",
+    "options": {
+      "A": "\u0007r3(x), r3(y), w3(y), r1(x), r1(z), w1(x), r2(z), r2(y), w2(z), w2(y)",
+      "B": "\u0007r1(x), r1(z), w1(x), r2(z), r2(y), w2(z), w2(y), r3(x), r3(y), w3(y)",
+      "C": "\u0007r2(z), r2(y), w2(z), w2(y), r3(x), r3(y), w3(y), r1(x), r1(z), w1(x)",
+      "D": "\u0007r2(z), r2(y), w2(z), w2(y), r1(x), r1(z), w1(x), r3(x), r3(y), w3(y)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 74,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 12,
+    "question": "Consider the data given in the above question. Draw the precedence graph for S2 and state whether each sched- ule is serializable or not. If a schedule is serializable, which of the following is equivalent serial schedule? S2: r1(x), r2(z), r3(x), r1(z), r2(y), r3(y), w1(x), w2(z), w3(y), w2(y)",
+    "options": {
+      "A": "\u0007r3(x), r3(y), w3(y), r1(x), r1(z), w1(x), r2(z), r2(y), w2(z), w2(y)",
+      "B": "\u0007r1(x), r1(z), w1(x), r2(z), r2(y), w2(z), w2(y), r3(x), r3(y), w3(y)",
+      "C": "\u0007r2(z), r2(y), w2(z), w2(y), r3(x), r3(y), w3(y), r1(x), r1(z), w1(x)",
+      "D": "\u0007r2(z), r2(y), w2(z), w2(y), r1(x), r1(z), w1(x), r3(x), r3(y), w3(y)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 74,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 13,
+    "question": "Consider schedule S3, which is a combination of transac- tions T1, T2 and T3 from Q. No.11. S3: r1(x), r2(z), r1(z), r3(x), r3(y), w1(x), c1, w3(y), c3, r2(y), w2(z), w2(y), c2? Which of the following is true?",
+    "options": {
+      "A": "Recoverable and conflict serializable",
+      "B": "Recoverable but not conflict serializable",
+      "C": "Conflict serializable but not Recoverable",
+      "D": "Not recoverable and not conflict serializable"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 74,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 14,
+    "question": "Consider the given schedule: S4: r1(x), r2(z), r1(z), r3(x), r3(y), w1(x), w3(y), r2(y), w2(z), w2(y), c1, c2, c3: Which of the following is true?",
+    "options": {
+      "A": "Recoverable and conflict serializable",
+      "B": "Recoverable but not conflict serializable",
+      "C": "Conflict serializable but not Recoverable",
+      "D": "Not recoverable and not conflict serializable"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 74,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 15,
+    "question": "Which of the following is correct for the below com- patibility matrix? Mode of Locks Currently held by other transactions Shared-Lock Exclusive-Lock S X S – shared - Lock, X – Exclusive - Lock",
+    "options": {
+      "A": "S X S No No X Yes No",
+      "B": "S X S Yes No X No No",
+      "C": "S X S Yes Yes X No No",
+      "D": "S X S No Yes X No No"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 74,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 16,
+    "question": "Consider the following schedule with locking: T1 T2 Lock – X(A) R(A) W(A) Lock – X(B) R(B) W(B) Lock – X(A) Lock – X(B) Which of the following is true?",
+    "options": {
+      "A": "schedule is in Dead–Lock state",
+      "B": "schedule is conflict serializable",
+      "C": "schedule is not conflict serializable",
+      "D": "Both A and B"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 75,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 17,
+    "question": "Consider the given set of transactions: T1 T2 SELECT AVG (balance) FROM Account INSERT INTO Account VALUES (487, 2000); COMMIT SELECT AVG (balance) FROM Account COMMIT The above problem is a case of",
+    "options": {
+      "A": "READ UNCOMMITTED",
+      "B": "RAD COMMITTED",
+      "C": "REPEATABLE READ",
+      "D": "DIRTY READ"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 75,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 18,
+    "question": "Consider the given set of transactions T1 T2 UPDATE ACCOUNT SET balance = balance – 1000 WHERE number = 586; SELECT AVG (balance) FROM Account ROLL BACK COMMIT The above problem is a case of",
+    "options": {
+      "A": "READ UNCOMMITTED",
+      "B": "READ COMMITTED",
+      "C": "DIRTY READ",
+      "D": "BOTH A and C"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 75,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 19,
+    "question": "Consider the following set of transactions T1 T2 SELECT AVG (balance) FROM Account UPDATE Account SET balance = balance – 4000 WHERE number = 586; COMMIT SELECT AVG (balance) FROM Account COMMIT The above problem is a case of",
+    "options": {
+      "A": "READ UNCOMMITTED",
+      "B": "READ COMMITTED",
+      "C": "REPEATABLE READ",
+      "D": "DIRTY READ"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 75,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 20,
+    "question": "Consider the following schedule with locks on data items: T1 T2 T3 X(A) X(A) X(A) S(B) S(B) Which of the following is incorrect?",
+    "options": {
+      "A": "T2 → T1",
+      "B": "T3 → T2",
+      "C": "T3 → T1",
+      "D": "T1 → T3 Practice Problem 2 tive from the given choices."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 75,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 1,
+    "question": "Which of the following is false with respect to B+ - trees of order p?",
+    "options": {
+      "A": "Each internal node has at most p tree pointers.",
+      "B": "Each leaf node has at most p 2        values.",
+      "C": "\u0007Each internal node, except the root, has at least p 2         tree pointers.",
+      "D": "All leaf nodes are at same level."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 75,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 2,
+    "question": "Consider below transactions: T1 T2 Read - item(X); X : = X - N; Read - item (X); X: = X + M; Write - item(X); Read - item (Y); Write - item (X); Y: = Y + N; Write - item (Y); Which of the following problem will occur during the concurrent execution of the above transactions?",
+    "options": {
+      "A": "Lost update problem because of incorrect X.",
+      "B": "Lost update problem because of incorrect Y.",
+      "C": "Dirty read problem because of incorrect X.",
+      "D": "Dirty read problem because of incorrect Y."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 76,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 3,
+    "question": "Consider the scheduled: S: r1(X); r2(X); w1 (X); r1(Y); w2(X); C2; w1(Y); C1; This schedule is",
+    "options": {
+      "A": "Recoverable",
+      "B": "Non-recoverable",
+      "C": "Strict schedule",
+      "D": "Both (A) and (C)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 76,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 4,
+    "question": "Consider below schedule: T1 T2 Read - item(X); X : = X - N; Read - item (X); X: = X + M; Write - item(X); Read - item (Y); Write - item (X); Y: = Y + N; Write - item (Y); This schedule is",
+    "options": {
+      "A": "Serializable",
+      "B": "Not serializable",
+      "C": "Under dead lock",
+      "D": "Both (B) and (C)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 76,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 5,
+    "question": "Let, current number of file records = r maximum number of records = bfr current number of file buckets = N Then what will be the file load factor?",
+    "options": {
+      "A": "r bfr N ( ) ∗",
+      "B": "r + (bfr * N)",
+      "C": "r * (bfr * N)",
+      "D": "r * (bfr + N)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 76,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 6,
+    "question": "Match the following: LIST I LIST II 1. Primary index A. Ordered key field 2. Clustering index B. Non-ordered field 3. Secondary index C. Ordered non-key field",
+    "options": {
+      "A": "1 – A, 2 – B, 3 – C",
+      "B": "1 – A, 2 – C, 3 – B",
+      "C": "1 – C, 2 – B, 3 – A",
+      "D": "1 – C, 2 – A, 3 – B"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 76,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 7,
+    "question": "Consider a file with 30,000 fixed length records of size 100 bytes stored on a disk with block size 1024 bytes. Suppose that a secondary index on a non-ordering key field is constructed with key field size 9 bytes and block pointer 6 bytes. What will be the number of blocks needed for the index?",
+    "options": {
+      "A": "68",
+      "B": "442",
+      "C": "1500",
+      "D": "3000"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 76,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 8,
+    "question": "Match the following: Index type Number of Index entries 1. Primary Index A. Blocks in data file 2. Clustering index B. Record in data file 3. Secondary key index C. Distinct index filed values",
+    "options": {
+      "A": "1 – A, 2 – B, 3 – C",
+      "B": "1 – A, 2 – C, 3 – B",
+      "C": "1 – C, 2 – B, 3 – A",
+      "D": "1 – C, 2 – A, 3 – B"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 76,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 9,
+    "question": "Which of the following is true with respect to B – Tree of order p?",
+    "options": {
+      "A": "Each node has at most p tree pointers.",
+      "B": "\u0007Each node, except the root and leaf nodes, has at least p 2    tree pointers.",
+      "C": "All leaf nodes are at the same level.",
+      "D": "All of these."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 76,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 10,
+    "question": "What is the amount of unused space in allocation of uns- panned fixed records of size R on a block of size B bytes?",
+    "options": {
+      "A": "B - R",
+      "B": "B B R −   ",
+      "C": "B B R R −   ∗    4",
+      "D": "B R R B    ∗    −"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 76,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 11,
+    "question": "What is the average time required to access a record in a file consisting of b blocks using unordered heap linear search?",
+    "options": {
+      "A": "b",
+      "B": "b/2",
+      "C": "log2 b",
+      "D": "b2"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 76,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Exercises",
+    "number": 12,
+    "question": "Consider a file of fixed length records of size R bytes. If the block size is B bytes, then the blocking factor will be",
+    "options": {
+      "A": "B × R records",
+      "B": "B R    records",
+      "C": "B R    records",
+      "D": "B + R records"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 76,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 13,
+    "question": "Consider the following relation instance: P Q R 1 4 2 1 5 3 1 6 3 3 2 2 Which of the following FDs are satisfied by the instance?",
+    "options": {
+      "A": "PQ → R and R → Q",
+      "B": "QR → P and Q → R",
+      "C": "QR → P and P → R",
+      "D": "PR → Q and Q → P"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 77,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 14,
+    "question": "Consider an ordered file with 30,000 records stored on a disk with block size of 1024 bytes. The records are of fixed size and are of unspanned, with record length 100 bytes. What is the number of accesses required to access a data file using binary search?",
+    "options": {
+      "A": "10",
+      "B": "12",
+      "C": "1500",
+      "D": "3000"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 77,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 15,
+    "question": "What is the blocking factor for an index if the ordering key field size is 9 bytes and block pointer is 6 bytes long, and the disk block size is 1024 bytes?",
+    "options": {
+      "A": "114",
+      "B": "171",
+      "C": "341",
+      "D": "68"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 77,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 16,
+    "question": "For a set of n transactions, there exist ______ different valid serial schedules",
+    "options": {
+      "A": "n",
+      "B": "n2",
+      "C": "n/2",
+      "D": "n!"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 77,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 17,
+    "question": "The number of possible schedules for a set of n transac- tions is",
+    "options": {
+      "A": "lesser than n!",
+      "B": "much larger than n!",
+      "C": "n!",
+      "D": "None"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 77,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 18,
+    "question": "Which one of the following is conflict operation?",
+    "options": {
+      "A": "Reads and writes from the same transaction",
+      "B": "Reads and writes from different transaction",
+      "C": "\u0007Reads and writes from different transactions on different data items.",
+      "D": "\u0007Reads and writes from different transaction on same data."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 77,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 19,
+    "question": "The following schedule S: r3(x), r2(x), w3(x), r1(x), w1(x) is conflict equivalent to serial schedule",
+    "options": {
+      "A": "T1 → T3 → T1",
+      "B": "T2 → T1 → T3",
+      "C": "T1 → T2 → T3",
+      "D": "None"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 77,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Exercises",
+    "number": 20,
+    "question": "The following schedule S: R1(x), R2(x), W1(x), W2(x) is",
+    "options": {
+      "A": "Conflict serializable",
+      "B": "View serializable",
+      "C": "Both",
+      "D": "None"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 77,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Consider the following four schedules due to three trans- actions (indicated by the subscript) using read and write on a data item x, denoted by r(x) and w(x), respectively. Which one of the them is conflict serializable?\b [2014]",
+    "options": {
+      "A": "r1(x); r2(x); w1(x); r3(x); w2(x)",
+      "B": "r2(x); r1(x); w2(x); r3(x); w1(x)",
+      "C": "r3(x); r2(x); r1(x); w2(x); w1(x)",
+      "D": "r2(x); w2(x); r3(x); r1(x); w1(x)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 77,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Consider the following schedule S of transactions T1, T2, T3, T4: T1 T2 T3 T4 Reads (X) Writes (X) Commit Writes (X) Commit Writes (Y) Reads (Z) Commit Reads (X) Reads (Y) Commit Which one of the following statements is correct? \b [2014]",
+    "options": {
+      "A": "S is conflict-serializable but not recoverable",
+      "B": "S is not conflict-serializable but is recoverable",
+      "C": "S is both conflict-serializable and recoverable",
+      "D": "\u0007S is neither conflict-serializable nor it is recover- able"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 77,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Consider the following transaction involving two bank accounts x and y. read (x) ; x : = x – 50; write (x) ; read(y); y : = y + 50; write(y) The constraint that the sum of the accounts x and y should remain constant is that of \b [2015]",
+    "options": {
+      "A": "Atomicity",
+      "B": "Consistency",
+      "C": "Isolation",
+      "D": "Durability"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 77,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Consider a simple checkpointing protocol and the fol- lowing set of operations in the log. \u0007(start, T4); (write, T4, y, 2, 3); (start, T1); (commit, T4); (write, T1, z, 5, 7); (checkpoint); \u0007(start, T2); (write, T2, x, 1, 9); (commit, T2); (start, T3), (write, T3, z, 7, 2); \u0007If a crash happens now and the system tries to recover using both undo and redo operations. What are the contents of the undo list and the redo list?\b [2015]",
+    "options": {
+      "A": "Undo: T3, T1; Redo: T2",
+      "B": "Undo: T3, T1; Redo: T2, T4",
+      "C": "Undo: none; Redo: T2, T4, T3, T1",
+      "D": "Undo: T3, T1, T4; Redo: T2"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 77,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Consider the following partial schedule S involving two transactions T1 and T2. Only the read and the write operations have been shown. The read operation on data item P is denoted by read(P) and the write opera- tion on data item P is denoted by write(P) Time Instance Transaction – id T1 T2 1 read(A) 2 write(A) 3 read(C) 4 write(C) 5 read(B) 6 write(B) 7 read(A) 8 commit 9 read(B) Schedule S Suppose that the transaction T1 fails immediately after time instance 9. Which one of the following state- ments is correct?\b [2015]",
+    "options": {
+      "A": "\u0007T2 must be aborted and then both T1 and T2 must be re-started to ensure transaction atomicity.",
+      "B": "\u0007Schedule S is non-recoverable and cannot ensure transaction atomicity.",
+      "C": "\u0007Only T2 must be aborted and then re-started to ensure transaction atomicity.",
+      "D": "\u0007Schedule S is recoverable and can ensure atomic- ity and nothing else needs to be done."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 78,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Which one of the following is NOT a part of the ACID properties of database transactions?\b [2016]",
+    "options": {
+      "A": "Atomicity",
+      "B": "Consistency",
+      "C": "Isolation",
+      "D": "Deadlock - freedom"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 78,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "Consider the following two phase locking protocol. Suppose a transaction T accesses (for read or write operations), a certain set of objects {O1, ….. , Ok). This is done in the following manner:\b [2016] Step 1. T acquires exclusive locks to O1,….Ok in increasing order of their addresses. Step 2. The required operations are performed. Step 3. All locks are released. This protocol will",
+    "options": {
+      "A": "guarantee serializability and deadlock-freedom.",
+      "B": "\u0007guarantee neither serializability nor deadlock- freedom.",
+      "C": "\u0007guarantee serializability but not deadlock-free- dom.",
+      "D": "\u0007guarantee deadlock-freedom but not serializa- bilty."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 78,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Suppose a database schedule S involves transactions T1,….Tn. Construct the precedence graph of S with vertices representing the transactions and edges rep- resenting the conflicts. If S is serializable, which one of the following orderings of the vertices of the prec- edence graph is guaranteed to yield a serial schedule? \b [2016]",
+    "options": {
+      "A": "Topological order",
+      "B": "Depth - first order",
+      "C": "Breadth - first order",
+      "D": "\u0007Ascending order of transaction indices"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 78,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "Consider the following database schedule with two transactions T1 and T2. S = r2(X); r1(X); r2(Y); w1(X); r1(Y); w2(X); a1;a2 Where ri (Z) denotes a read operation by transaction Ti on a variable Z, wi(Z) denotes a write operation by Ti on a variable Z and ai denotes an abort by transac- tion Ti. Which one of the following statements about the above schedule is TRUE?\b [2016]",
+    "options": {
+      "A": "S is non - recoverable",
+      "B": "S is recoverable, but has a cascading abort",
+      "C": "S does not have a cascading abort",
+      "D": "S is strict."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 78,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "In a database system, unique timestamps are assigned to each transaction using Lamport’s logical clock. Let TS(T1) and TS(T2) be the timestamps of transactions T1 and T2 respectively. Besides, T1 holds a lock on the resource R, and T2 has requested a conflicting lock on the same resource R. The following algorithm is used to prevent deadlocks in the database system assum- ing that a killed transaction is restarted with the same timestamp. if TS(T2) < TS(T1) then T1 is killed else T2 waits. Assume any transaction that is not killed terminates eventually. Which of the following is TRUE about the database system that uses the above algorithm to pre- vent deadlocks?\b [2017]",
+    "options": {
+      "A": "\u0007The database system is both deadlock-free and starvation-free.",
+      "B": "\u0007The database system is deadlock-free, but not starvation-free."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 78,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Transaction and Concurrency",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "54",
+    "options": {
+      "C": "\u0007The database system is starvation-free, but not deadlock-free.",
+      "D": "\u0007The database system is neither deadlock-free nor starvation-free."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 79,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Consider the following specifications of a disk. Block size of a disk is 512 bytes, inter-block gap size is 128 bytes Number of blocks per track is 20 and number of tracks per surface is 400. (i) \u0007What is the capacity of disk including Inter block gap?",
+    "options": {
+      "A": "25400",
+      "B": "25600",
+      "C": "25800",
+      "D": "25900"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 88,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Consider the following specifications of a disk. Block size of disk is 512 bytes, 2000 tracks per surface, 50 sectors per track and 5 double sided platters. (i) What is the capacity of track in bytes?",
+    "options": {
+      "A": "2048",
+      "B": "51200",
+      "C": "4098",
+      "D": "4096"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 88,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "What is the order of internal node of B+ tree suppose that a child pointer takes 6 bytes, the search field value takes 14 bytes and the block size is 512 bytes?",
+    "options": {
+      "A": "23",
+      "B": "24",
+      "C": "25",
+      "D": "26"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 89,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "The order of a leaf node in a B+ tree is the maximum number of (value, data, record pointer) pairs it can hold. Given that block size is 1 k bytes (1024 bytes), data record pointer is 7 bytes long, the value field is ‘9’ bytes long and block pointer is 6 bytes.",
+    "options": {
+      "A": "63",
+      "B": "64",
+      "C": "65",
+      "D": "66"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 89,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "The following key values are inserted into a B+ tree in which order of the internal nodes is 3, and that of the leaf nodes is 2, in the sequence given below. The order of internal nodes is the maximum number of tree pointers in each node, and the order of leaf nodes is the maximum number of data items that can be stored in it. The B+ tree is initially empty. 10, 3, 6, 8, 4, 2, 1. What is the maximum number of times leaf nodes would get split up as a result of these insertions?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 89,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "For the same key values given in the above question, sup- pose the key values are inserted into a B– tree in which order of the internal nodes is 3 and that of leaf nodes is 2. The order of internal nodes is the maximum number of tree pointers in each node and the order of leaf nodes is the maximum number of data items that can be stored in it. The B– tree is initially empty. What is the maxi- mum number of times leaf nodes would get split up as a result of these insertions?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 89,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Suppose that we have an ordered file with 45,000 records stored on a disk with block size 2048 bytes. File records are of fixed size and are unspanned with record length 120 bytes. (i) What is the blocking factor?",
+    "options": {
+      "A": "10",
+      "B": "11",
+      "C": "12",
+      "D": "13"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 89,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Suppose that the ordering key field of the file is 12 bytes long, a block pointer is 8 bytes long, and we have constructed a primary index for the file. Consider the file specifications given in the above questions. (i) What is the size of each index entry?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 89,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "For the file specifications given in Q. No. 7, if we con- struct secondary index on a non-ordering key field of the file that is 12 bytes long, a block-pointer of size 8 bytes, each index entry is 20 bytes long and the block- ing factor is 102 entries per block. (i) What is the total number of index blocks?",
+    "options": {
+      "A": "6",
+      "B": "7",
+      "C": "8",
+      "D": "9"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 89,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "For the file specifications given in Q. No. 8, if we construct a multilevel index, number of 1st-level blocks are 442, blocking factor is 102, each index entry is 20 bytes long. (i) What is the number of 2nd-level blocks?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 89,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "Construct a B+ tree for (1,4,7,10,17,21,31) with n = 4, which nodes will appear two times in a final B+ tree?",
+    "options": {
+      "A": "17,7,20",
+      "B": "17,7,20,25",
+      "C": "17,20,25",
+      "D": "7,17.25"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 90,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Suppose the hash function is h(x) = xmod 8 and each bucket can hold at most two records. The extendable hash structure after inserting 1, 4, 5 ,7, 8, 2, 20, what is the local depth of ‘4’?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 90,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "Consider the given B+ tree, insert 19 into the tree, what would be the new element in level 2? 13 5 10 20 40 50 70 60 45 41 38 30 29 20 18 13 12 11 9 5 4 1 30",
+    "options": {
+      "A": "13",
+      "B": "18",
+      "C": "20",
+      "D": "29"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 90,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Consider the given B+ tree, delete 70 and 25 from the tree, what are the elements present in level 2? (∴ root is at level 1) 95 90 85 80 70 65 60 55 50 30 28 25 20 25 50 75 60 85 15 10 5 75",
+    "options": {
+      "A": "25, 50, 75",
+      "B": "25, 50,75, 85",
+      "C": "28, 50, 75, 85",
+      "D": "28, 50, 65, 75"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 90,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "Delete 60 from the above given tree (Q. No. 14). After deletion, what is the total number of nodes present in the tree? 95 90 85 85 70 65 60 75 60 85 50 30 28 25 5 10 15 20 50 25 55 75",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "8"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 90,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 16,
+    "question": "What will be the number of index records/block?",
+    "options": {
+      "A": "68",
+      "B": "65",
+      "C": "69",
+      "D": "None"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 90,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 17,
+    "question": "What will be the number of index blocks?",
+    "options": {
+      "A": "442",
+      "B": "440",
+      "C": "400",
+      "D": "None"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 90,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 18,
+    "question": "Consider the following: Block size = 1025 bytes Record length in data file = 100 bytes Total number of records = 30000 Search key = 9 bytes Pointer = 6 bytes What is the number of index blocks?",
+    "options": {
+      "A": "44",
+      "B": "45",
+      "C": "46",
+      "D": "None"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 90,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 19,
+    "question": "Which of the following is maximum search time tmax in B– trees?",
+    "options": {
+      "A": "t a N a d m bm m c max log log log =     + + +       2 2 2 2",
+      "B": "t a N a d m bm m c max log log log =     + + +       2 2 2 2",
+      "C": "t a N a d m bm m c max log log log = + + +       2 2 2",
+      "D": "t a N a m bm m c max log ( ) log log = + +       2 2 2"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 90,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 1",
+    "number": 20,
+    "question": "Consider a B+ tree. A child pointer takes 3 bytes, the search field value takes 7 bytes, and the block size is 256 bytes. What is the order of the internal node?",
+    "options": {
+      "A": "63",
+      "B": "64",
+      "C": "65",
+      "D": "66"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 90,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Which of the following is true?",
+    "options": {
+      "A": "Every conflict serializable is view serializable",
+      "B": "Every view serializable is conflict serializable",
+      "C": "Both A and B",
+      "D": "\u0007A schedule can be either only conflict serializable or only view-serializable."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Which one is the 2-phase locking rule?",
+    "options": {
+      "A": "Two transactions cannot have conflicting locks",
+      "B": "\u0007No unlock operation can precede a lock operation in the same transaction.",
+      "C": "\u0007No data is/are affected until all locks are obtained and until the transaction is in its locked point.",
+      "D": "All of the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "If Transaction Ti has obtained an exclusive mode lock on item Q, then",
+    "options": {
+      "A": "Ti can read Q",
+      "B": "Ti can write Q",
+      "C": "Ti can read and write",
+      "D": "Neither read nor write"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Phantom phenomenon is",
+    "options": {
+      "A": "\u0007A transaction retrieves a collection of objects but sees same result.",
+      "B": "\u0007A transaction retrieves a collection of objects but sees different results.",
+      "C": "Transaction T1 waits for T2 and T2 waits for T1",
+      "D": "\u0007This problem arises when the transaction has not locked all the objects."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "We can avoid the starvation of transactions by granting locks by following manner: When a transaction Ti requests a lock on a data item Q in a particular mode M, the concurrency control man- ager grants the lock provided that",
+    "options": {
+      "A": "\u0007There is no other transaction holding a lock on Q in a mode that conflicts with M.",
+      "B": "\u0007There is no other transaction that is waiting for a lock on Q,",
+      "C": "(A) and (B)",
+      "D": "None"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Which one is correct?",
+    "options": {
+      "A": "Upgrading can take place only in shrinking phase",
+      "B": "\u0007Upgrading can take place only in growing phase.",
+      "C": "\u0007Downgrading can take place only in growing phase",
+      "D": "(A) and (C) both"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "A simple but widely used scheme automatically gen- erates the appropriate lock and unlock instructions for a transaction, on the basis of read and write requests from the transaction:",
+    "options": {
+      "A": "\u0007When a transaction Ti issues a read (Q) operation, the system issues a lock s(Q) instruction followed by the read instruction.",
+      "B": "\u0007When Ti issues a write Q operation, the system checks to see whether Ti already holds a shared lock on Q. If it does, then the system issues an upgrade Q instruction followed by the write Q instruction, otherwise the system issues a lock -X(Q) instruction, followed by the write Q instruction.",
+      "C": "\u0007All locks obtained by a transaction are unlocked after that transaction commits or aborts.",
+      "D": "All of the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Which one is correct?",
+    "options": {
+      "A": "\u0007A lock manager can be implemented as a process that receives messages from transactions and sends messages in reply.",
+      "B": "It uses linked list of records.",
+      "C": "It uses hash table called lock table.",
+      "D": "All of the above Common data questions 9 and 10: Transaction T1 has 5 instructions. Transaction T2 has 3 instructions."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "The number of non-serial transactions will be",
+    "options": {
+      "A": "15",
+      "B": "8",
+      "C": "2",
+      "D": "56"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "The number of serial transaction schedules will be",
+    "options": {
+      "A": "15",
+      "B": "8",
+      "C": "2",
+      "D": "56"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "In a heap file system, which of the following function finds ‘average number of blocks to be read’?",
+    "options": {
+      "A": "i n n n = + = 1 2 1 2 ( )",
+      "B": "i n n n i n = + = = ∑ 1 2 1 2 1 ( )",
+      "C": "i n n n i n = − ∑ = + = 0 1 1 2 1 2 ( )",
+      "D": "All of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "What is the disadvantage in one directory per user?",
+    "options": {
+      "A": "\u0007Different applications can be divided into separate groups.",
+      "B": "\u0007Different applications cannot be divided into sepa- rate groups",
+      "C": "All files are in a single group",
+      "D": "All of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "What are the possible violations if an application pro- gram uses isolation-level ‘Read uncommitted’?",
+    "options": {
+      "A": "Dirty read problem",
+      "B": "Non-repeatable read problem",
+      "C": "Phantom phenomenon",
+      "D": "All of the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 91,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "The two-phase locking protocol",
+    "options": {
+      "A": "ensures serializability",
+      "B": "issues locks in two phases",
+      "C": "unlocks in two phases",
+      "D": "All of the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "The point in the schedule where the transaction has obtained its final lock (the end of its growing phase) is called the",
+    "options": {
+      "A": "block point",
+      "B": "critical section",
+      "C": "growing point",
+      "D": "lock point"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 16,
+    "question": "Which of the following is not a problem of file manage- ment system?",
+    "options": {
+      "A": "Data redundancy",
+      "B": "Lack of data independence",
+      "C": "Program dependence",
+      "D": "All of the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 17,
+    "question": "Which of the following is/are true about master list of an index file? (i) Is sorted in ascending order (ii) A number is assigned to each record.",
+    "options": {
+      "A": "Only (i)",
+      "B": "Only (ii)",
+      "C": "Both (i) and (ii)",
+      "D": "None of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 18,
+    "question": "To have a file, holding a list is necessary to (i) Identify the records in the list (ii) \u0007Identify the name, and type of the fields of each record. (iii) \u0007Decide which fields will be used as sort of index keys.",
+    "options": {
+      "A": "Only (i) and (ii)",
+      "B": "Only (i) and (iii)",
+      "C": "Only (ii) and (iii)",
+      "D": "All of the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 19,
+    "question": "Two files may be joined into a third file, if the following is true:",
+    "options": {
+      "A": "if they have row in common",
+      "B": "if they have a field in common",
+      "C": "Both (A) and (B)",
+      "D": "None"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Practice Problems 2",
+    "number": 20,
+    "question": "The minimum number of record movements required to merge four files w(with 10 records), x(with 20 records), y(with 15 records) and z(with 5 records) is:",
+    "options": {
+      "A": "50",
+      "B": "40",
+      "C": "30",
+      "D": "35"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "A clustering index is defined on the fields which are of type\b [2008]",
+    "options": {
+      "A": "non-key and ordering",
+      "B": "non-key and non-ordering",
+      "C": "key and ordering",
+      "D": "key and non-ordering"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "A B– tree of order 4 is built from scratch by 10 succes- sive insertions. What is the maximum number of node splitting operations that may take place?\b [2008]",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Consider a file of 16384 records. Each record is 32 bytes long and its key field is of size 6 bytes. The file is ordered on a non-key field, and the file organization is unspanned. The file is stored in a file system with block size 1024 bytes, and the size of a block pointer is 10 bytes. If the secondary index is built on the key field of the file, and a multilevel index scheme is used to store the secondary index, the number of first-level and second-level blocks in the multilevel index are respectively\b [2008]",
+    "options": {
+      "A": "8 and 0",
+      "B": "128 and 6",
+      "C": "256 and 4",
+      "D": "512 and 5"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "The following key values are inserted into a B+ tree in which order of the internal node s is 3, and that of the leaf nodes is 2, in the sequence given below. The order of internal nodes is the maximum number of tree pointers in each node, and the order of leaf nodes is the maximum number of data items that can be stored in it. The B+ tree is initially empty. 10, 3, 6, 8, 4, 2, 1 The maximum number of times leaf nodes would get split up as a result of these insertions is\b [2009]",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Consider a B+ tree in which the maximum number of keys in a node is 5. What is the minimum number of keys in any non-root node?\b [2010]",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "An index is clustered, if\b [2013]",
+    "options": {
+      "A": "it is on a set of fields that form a candidate key.",
+      "B": "\u0007it is on a set of fields that include the primary key.",
+      "C": "\u0007the data records of the file are organized in the same order as the data entries of the index.",
+      "D": "\u0007the data records of the file are organized not in the same order as the data entries of the index."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "4 - Databases",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "A file is organized so that the ordering of data records is the same as or close to the ordering of data entries in some index. Then that index is called\b [2015]",
+    "options": {
+      "A": "Dense",
+      "B": "Sparse",
+      "C": "Clustered",
+      "D": "Unclustered"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 92,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  },
+  {
+    "chapter": "5 - File Management",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "B+ Trees are considered BALANCED because \b [2016]",
+    "options": {
+      "A": "\u0007The lengths of the paths from the root to all leaf nodes are all equal.",
+      "B": "\u0007The lengths of the paths from the root to all leaf nodes differ from each other by at most 1.",
+      "C": "\u0007The number of children of any two non - leaf sib- ling nodes differ by at most 1.",
+      "D": "\u0007The number of records in any two leaf nodes dif- fer by at most 1."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 93,
+    "subject": "Dataabase",
+    "source": "Computer Science/Notes & Material/Dataabase.pdf"
+  }
+]

@@ -1,0 +1,3366 @@
+[
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "",
+    "number": 2,
+    "question": "Widening: Conversion of ‘lower’ type to ‘higher’ type. Char – int ¬– long – float – double – long double Widening Narrowing Note: Narrowing causes loss of data. Input/output Functions Function Purpose printf prints formatted string scanf reads formatted string getchar reads character putchar displays a character gets reads a string puts displays a string Format Specifier Purpose %c single character %d decimal integer %e floating point %f floating point %h short int %o octal integer %x hexa decimal %s string %u unsigned decimal integer Note: scanf(“%s”, string_var); does not read string which contains white space. Hence to read multi word string use gets(string_var); Example 1: Which of following comment regarding the reading of a string using scanf( ) and gets ( ) is true?",
+    "options": {
+      "A": "Both can be used interchangeably",
+      "B": "\u0007scanf is delimited by end of line, gets is delimited by blank space",
+      "C": "\u0007scanf is delimited by blank, gets is delimited by end of line",
+      "D": "None of these Ans: (C) Program Structure /* Documentation section */ Preprocessor commands; Global declaration; main () } } { Body of main; } User defined function area; Documentation section/comments Ignored by com- piler, provides additional information to user to improve readability. Preprocessing Tells the compiler to do pre-processing before doing compilation. For example #include < stdio.h > tells to include stdio header file. Global declaration It contains variable declarations, these are accessible in more than one function. Function Functions are main building blocks of ‘C’ pro- gram. Every ‘C’ program contains one or more functions. A mandatory function called ’main( )’ instructs the compiler to start execution from here. User defined area Here user can define his own functions. Control Statements The statement that controls the execution sequence of a pro- gram is called “control statement”. The control statements are classified as:"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 4,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "",
+    "number": 3,
+    "question": "Unconditional jump statements: break, continue, return, goto Selection/Decision-making Statement Makes a decision to select and execute statement(s) based on the condition. ‘C’ supports if and switch selection statements. The if statement “if ” is called two-way selection statement. Syntax: if (expression) // simple-if statement(s); if (expression) // if-else { statement1(s); } else { statements(s); } if (expression) // ladder else-if. { Statement1(s); } else if (expression2) { Statement2(s); } else { Statement3(s); } Nested if: if (expression1) { Statement(s)1; if (expression(s)2) else Statement(s)3; } else Statement(s)4; Note: If the expression evaluates to true then the statements of if block gets executed otherwise else block statements will execute. Example 2: Consider the following program segment: if (a > b) printf (“a > b”); else printf (“else part”); printf (“a < = b”); a < = b will be printed if",
+    "options": {
+      "A": "a > b",
+      "B": "a < b",
+      "C": "a = b",
+      "D": "all of these Ans: (D) Because the statement, printf(“a < = b”); is not the part of either if block or else block. The switch statement Switch is a multi-way (n-way) selection statement. Syntax: switch (var_name/exp) { case const1: stmts1; break; case const2: stmts2; break; . . . case constn: stmts n; break; default: statements; } Notes: •• For switch only the integral (integer/char) type variables or expression evaluates to integral allowed. •• Absence of break after case statements leads continua- tion execution of all case statements followed by match- ing case block. Example 3: main () { int i = 10; switch(i) { case 10 : printf (“case 10”); case 15 : printf (“case 15”); case 20 : printf (“case 20”); default : printf (“default case”); } } Output: Case 10 case 15 case 20 default case Reason: Missing break after each case, leads to execution of all the cases from matching case. Example 4: main ( ) { int i = 10; switch (i) { case 10 : printf(“case 10”); break ; case 8 + 2 : printf(“case 8+2”); break; default : printf(“ No matching case”); } } Program raises an error called ‘Duplicate case’ while com- piling because the expression ‘8 + 2’ evaluates to ‘10’. Looping Statements Sometimes, there is a situation to execute statement(s) repeat- edly for a number of times or until the condition satisfies. C’ supports following looping statements: while, do-while, for. While Statement Syntax: while (condition) { Statement(s); } If the condition is true the block of statements will execute and control returns to condition, i.e., the statement(s) exe- cutes till the condition becomes false. Notes: •• ‘While’ executes the block either ‘0’ or more times. •• ‘While’ is called entry control loop. Do-while Statement. Syntax: do { Statement(s); } while (condition); do-while is same as ‘while; except that the statement(s) will execute for at least once. Notes: •• The condition will not be evaluate to execute the block for first time. •• ‘do-while’ is called exit-control loop. Example 5: main ( ) { int i = 0; while (i! = 0) { printf(“%d”, i); i++; } } No output, because the condition is false for the first time. main ( ) { int i = 0; do { printf(“%d”, i); i++; } while (i! = 0); } Output: Displays 0 to 32767 and-32768 to-1 The for loop ‘for’ provides more concise loop control structure. Syntax: for(exp1; exp2; exp3) { Statement(s); } Expression 1: Initialization expression may contain mul- tiple initializations. It executes only once before executing the loop for first time. Expression 2: Condition expression. Only one condition expression is allowed. That may be single or compound condition, evaluates before every execution. Expression 3: Modification statement may contain multi- ple statements. It executes on completion of loop body for every iteration. Note: All the expressions in parenthesis are optional. Two semi-colons (;) are compulsory even though there are no expressions. Odd loops In the for loop, while loop, the condition speci- fies the number of times a loop can be executed. Sometimes a user may not know, about the number of times a loop is to be executed. If we want to execute a loop for unknown number of times, then the concept of odd loops should be implemented, these can be done using the for, while (or) do-while loops. Let us illustrate odd-loop with a program # include <stdio.h> main() { int num, x; num = 1; while (num = = 1) { printf (“enter a number“); scanf (“%d”, & x); if((x % 2) = = 0) printf(“number is even”); else printf(“number is odd”); printf(“do u want to test any num.”); printf(“for yes-enter ‘1’, No-enter ‘0’”); Scanf(“%d”,& num); } } Unconditional Jump Statements •• “C” language permits to jump from one statement to another. •• ‘C’ supports break, continue, return and goto jump statements. Break statement Breaks the execution sequence. That is when the break statement executes in a block (loop) it’ll come out from block (loop). Syntax: break; Continue statement Used to skip a part of the loop under certain conditions. Syntax: continue; Return statement Terminates the execution of a function and returns the control to the calling function. Syntax: return [exp/value]; Goto statement Jumps from one point to another with in a function. Syntax: label1: goto label2: Statement(s); Statement(s); goto label1; label2; reverse jump forward jump Reverse jump, executes the statements repeatedly where as in forward jump, the statements are skipped from execution. Example 6: main( ) { int i ; for (i=1; i<=10; i++) { if (i = = 5) break; printf(“%d” , i); } } output: 1 2 3 4 if i = 5, then the loop will break. Example 7: main( ) { int i ; for (i = 1; i<=10; i++) { if (i = = 5) continue; printf(“%d” , i); } } o/p: 1 2 3 4 6 7 8 9 10 if i = 5, the loop statements skipped for that iteration. So it does not print ‘5’. Example 8: Output for the following program segment for (i = 1, j = 10 ; i < 6; ++i, --j) printf(“\\n %d %d”, i, j); Output: 1 10 2 9 3 8 4 7 5 6 Note: Since for statement allows multiple initialization and multiple update statements, expression 1 and expression 3, does not raise any error."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 5,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "What will be the output of the following program? void main() { int i; char a[ ] =” \\0 ”; if (printf(“%s\\n”, a)) printf (“ok \\n”); else printf(“program error \\n”); }",
+    "options": {
+      "A": "ok",
+      "B": "progam error",
+      "C": "no output",
+      "D": "compilation error"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 8,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Output of the following will be # define FALSE-1 # define TRUE 1 # define NULL 0 main( ) { if(NULL) puts(“NULL”); else if(FALSE) puts(“TRUE”); else puts(“FALSE”); }",
+    "options": {
+      "A": "NULL",
+      "B": "TRUE",
+      "C": "FALSE",
+      "D": "1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 8,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "main( ) { printf(“%x”,-1 << 4) ; } For the above program output will be",
+    "options": {
+      "A": "FFF0",
+      "B": "FF00",
+      "C": "00FF",
+      "D": "0FFF"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 8,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "For the following program # define sqr (a) a*a main( ) { int i; i = 64 / sqr(4); printf( “%d”, i); } output will be",
+    "options": {
+      "A": "4",
+      "B": "16",
+      "C": "64",
+      "D": "compilation error"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 8,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "#define clrscr ( ) 1000 main ( ) { clrscr(); printf ( “%d \\n”, clrscr()); } Output of the above program will be?",
+    "options": {
+      "A": "error",
+      "B": "No output",
+      "C": "1000",
+      "D": "1"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 8,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Output of the following program is main( ) { int i = -2; +i; printf(“i = %d, +i = %d\\n”, i, +i);",
+    "options": {
+      "A": "error",
+      "B": "-2, +2",
+      "C": "-2, -2",
+      "D": "-2, 2"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 8,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "main( ) { int n; printf(“%d”, scanf (“%d”, & n)); } For the above program if input is given as 20. What will be the output?",
+    "options": {
+      "A": "20",
+      "B": "1",
+      "C": "2",
+      "D": "0"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 8,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "How many times will the following code be executed? { x = 10; while (x = 1) x ++; }",
+    "options": {
+      "A": "Never",
+      "B": "Once",
+      "C": "15 times",
+      "D": "Infinite number of times"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 8,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "The following statement printf(“%d”, 9%5); prints",
+    "options": {
+      "A": "1.8",
+      "B": "1.0",
+      "C": "4",
+      "D": "2"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 8,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "int a; printf(“%d”, a); What is the output of the above code fragment?",
+    "options": {
+      "A": "0",
+      "B": "2",
+      "C": "Garbage value",
+      "D": "3"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 8,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "printf(“%d”, printf(“time”));",
+    "options": {
+      "A": "syntax error",
+      "B": "outputs time 4",
+      "C": "outputs garbage",
+      "D": "prints time and terminates abruptly"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 8,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "The following program main( ) { int i = 2; { int i = 4, j = 5; printf (“%d%d”,i,j); } printf (“%d%d”,i,j); }",
+    "options": {
+      "A": "Compiler error: unrecognised symbol j;",
+      "B": "Prints 2545",
+      "C": "Print 4525",
+      "D": "None of the above"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 8,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "What is the output of the following program fragment? for (i = 3; i < 15; i + = 3); printf (“%d”, i);",
+    "options": {
+      "A": "a syntax error",
+      "B": "an execution error",
+      "C": "prints 12",
+      "D": "prints 15"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "What is the output of the following program segment? int a = 4, b = 6; printf(“%d”, a = b);",
+    "options": {
+      "A": "Outputs an error message",
+      "B": "Prints 0",
+      "C": "Prints 1",
+      "D": "None of these"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "The statements: a = 7; printf(“%d”, (a++)); prints",
+    "options": {
+      "A": "Value of 8",
+      "B": "Value of 7",
+      "C": "Value of 0",
+      "D": "None of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "If the condition is missing in a FOR loop of a C pro- gram then",
+    "options": {
+      "A": "It is assumed to be present and taken to be false",
+      "B": "It is assumed to be present and taken to be true",
+      "C": "It results in syntax error",
+      "D": "Execution will be terminated abruptly"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Which of the following operators in ‘C’ does not asso- ciate from the right?",
+    "options": {
+      "A": "=",
+      "B": "+ =",
+      "C": "postfix++",
+      "D": ">"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "In a C programming language x - = y + 1 means",
+    "options": {
+      "A": "x = -x - y - 1",
+      "B": "x = x - y + 1",
+      "C": "x = x - y - 1",
+      "D": "x = -x + y + 1"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Minimum number of temporary variables needed to swap two variables is",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "0"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "A preprocessor command",
+    "options": {
+      "A": "need not start on a new line",
+      "B": "need not start on the first column",
+      "C": "has # as the first character",
+      "D": "comes after the first executable statement"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "printf (“%d”, printf (“%d”, printf(“time4kids”)));",
+    "options": {
+      "A": "Outputs time",
+      "B": "Syntax error",
+      "C": "Outputs 9",
+      "D": "None of the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "for (i = 1; i < 5; i++) if (i!=3) printf(“%d”, i); Outputs:",
+    "options": {
+      "A": "12345",
+      "B": "Error",
+      "C": "1245",
+      "D": "0000"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Which operand in ‘C’ takes only integer operands?",
+    "options": {
+      "A": "*",
+      "B": "/",
+      "C": "%",
+      "D": "+"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "An unrestricted use of ‘goto’ statement is harmful because",
+    "options": {
+      "A": "\u0007it results in increasing the executing time of the program",
+      "B": "it increases the memory of the program",
+      "C": "it decreases the readability and testing of program",
+      "D": "None of the above"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "What will be the output? main() { int i = 0, j = 0; if(i && j ++) printf(“%d..%d”, i++, j); printf(“%d..%d”, i, j); }",
+    "options": {
+      "A": "1..1",
+      "B": "2..2",
+      "C": "0..0",
+      "D": "1..1, 1..1"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "What is the output? main () { int a = 0; int b = 20; char x = 1; char y = 10; if(a, b, x, y); printf(“hello”); }",
+    "options": {
+      "A": "logical error",
+      "B": "Garbage value",
+      "C": "hello",
+      "D": "20"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "What will be the value of count after executing the below program: main ( ) { int count = 10, digit = 0; while (digit < = 9) { printf (“%d\\n”, ++count); ++digit; } }",
+    "options": {
+      "A": "10",
+      "B": "11",
+      "C": "20",
+      "D": "21"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 9,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Which one of the following are essential features of an object-oriented programming language? (i) Abstraction and encapsulation (ii) Strictly-typedness (iii) Type-safe property coupled with sub-type rule (iv) Polymorphism in the presence of inheritance \b [2005]",
+    "options": {
+      "A": "(i) and (ii) only",
+      "B": "(i) and (iv) only",
+      "C": "(i), (ii) and (iv) only",
+      "D": "(i), (iii) and (iv) only"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 10,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Which of the following are true? (i) A programming language which does not permit global variables of any kind and has no nesting of procedures/functions, but permits recursion can be implemented with static storage allocation (ii) Multi-level access link (or display) arrangement is needed to arrange activation records only if the pro- gramming language being implemented has nesting of procedures/functions (iii) Recursion in programming languages cannot be implemented with dynamic storage allocation (iv) Nesting procedures/functions and recursion require a dynamic heap allocation scheme and cannot be implemented with a stack-based allocation scheme for activation records (v) Programming languages which permit a function to return a function as its result cannot be implemented with a stack-based storage allocation scheme for acti- vation records \b [2008]",
+    "options": {
+      "A": "(ii) and (v) only (B) (i), (iii) and (iv) only",
+      "C": "(i), (ii) and (v) only (D) (ii), (iii) and (v) only"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 10,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "What will be the output of the following C program segment? char inChar = ‘A’; switch(inChar) { case ‘A’: printf(“choice A\\n”): case ‘B’: case ‘C’: printf(“choice B”); case ‘D’ case ‘E’: default: printf(“No Choice”);}\b [2012]",
+    "options": {
+      "A": "No choice",
+      "B": "Choice A",
+      "C": "Choice A Choice B No choice",
+      "D": "Program gives no output as it is erroneous"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 10,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Suppose n and p are unsigned int variables in a C pro- gram. We wish to set p to nC3. If n is large, which one of the following statements is most likely to set p correctly? \b [2014]",
+    "options": {
+      "A": "p = n * (n - 1) * (n - 2)/6;",
+      "B": "p = n * (n - 1) /2* (n - 2)/3;",
+      "C": "p = n * (n - 1) /3 * (n - 2)/2;",
+      "D": "p = n * (n - 1) * (n - 2)/6.0;"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 10,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "The secant method is used to find the root of an equa- tion f (x) = 0. It is started from two distinct estimates xa and xb for the root. It is an iterative procedure involving linear interpolation to a root. The iteration stops if f (xb) is very small and then xb is the solution. The procedure is given below. Observe that there is an expression which is missing and is marked by ?. Which is the suitable expression that is to put in place of ? so that it follows all steps of the secant method? \b [2015] Secant Initialize: xa, xb, ε, N // ε = convergence indicator // N = maximum no. of iterations fb = f (xb) i = 0 while (i < N and | fb | > ε) do i = i + 1 // update counter xt = ? // missing expression for // intermediate value xa = xb // reset xa xb = xt // reset xb fb = f (xb) // function value at new xb end while if | fb | > ε then // loop is terminated with i = N write “Non-convergence” else write “return xb” end if",
+    "options": {
+      "A": "xb – ( fb – f (xa) ) fb / (xb – xa)",
+      "B": "xa – (fa – f(xa) ) fa / (xb – xa)",
+      "C": "xb – (xb – xa) fb / ( fb – f (xa))",
+      "D": "xa – (xb – xa) fa / ( fb – f (xa))"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 10,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "1 - Programming in C",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "Consider the C program fragment below which is meant to divide x by y using repeated subtractions. The variables x, y, q and r are all unsigned int. while (r >= y) { r = r − y; q = q + 1; } Which of the following conditions on the variables x, y, q and r before the execution of the fragment will ensure that the loop terminates in a state satisfying the condition x == (y*q + r)?\b [2017]",
+    "options": {
+      "A": "(q == r) && (r == 0)",
+      "B": "(x > 0) && (r == x) &&(y > 0)",
+      "C": "(q == 0) && (r == x) && (y > 0)",
+      "D": "(q == 0) && (y > 0)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 11,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Pass-by-address: In this case, only the addresses of parameters are passed to the called function. Therefore, manipulation of formal parameters affects actual parameters. Examples 6: void swap1(int, int); /* function – to swap two numbers by passing values */ void swap2 (int *, int *); /* function to swap two numbers by passing Address * / void main () { int a = 10, b = 15, c = 5, d = 25; printf(“value of a and b before swapping :%d, %d” a , b ); swap1(a, b); printf(“values of a and b after swapping : %d, %d”, a, b); printf (“values of c and d before swapping :%d%d”, c,d ); Swap2(&c, &d); printf(“values of c and d after swapping %d, %d”, c, d); } void swap1(int x, int y ) { int temp; temp = x; x = y; y = temp; } void swap2 (int *x, int *y) { int temp; temp = *x; *x = *y: *y = temp; } Output: Value of a and b before swapping: 10, 15 Value of a and b after swapping: 10, 15 Value of c and d before swapping: 5, 25 Value of c and d after swapping: 25, 5 Solved Examples Example 1: Consider the program below: #include<stdio.h> int fun (int n, int *fp) Table 1 Comparison of pass-by-value and pass-by-address Pass-by-value Pass-by-address 1. Also known as call-by-value 1. Also known as call-by-address or call by-reference 2. Pass the values of actual parameters 2. Pass the address of actual parameters 3. Formal parameters act as duplicates or as a copy to actual parameters 3. Formal parameters acts as references to the actual parameters 4. Operations on formal parameter does not affect actual parameters 4. Operations on formal parameters affect actual parameters 5. Passing of parameters is time consuming as the data size increases 5. The size of parameters does not affect the time for transfer- ring references. 6. Actual parameters are secured 6. Helps to return multiple parameters { int t,f; if (n < =1) { *fp=1; return 1; } t = fun(n−1, fp); f = t+ *fp; *fp = t; return f; } int main () { int x = 15; printf (“%d\\n”, fun(5,&x)); return 0; } What is the output?",
+    "options": {
+      "A": "−9",
+      "B": "12",
+      "C": "15",
+      "D": "20"
+    },
+    "answer": null,
+    "explanation": "(C) Execution stack Function call sequence \u0007Corresponding values of t, f, n, x main() t f n x 15 − − − fun (5 &x) main() t f n x(fp) 15 15 5 G G − − − t f n x(fp) 15 15 5 G G 15 4 G G − − − fun (5 &x) fun (4 &x) main() t f n x(fp) 15 15 5 G G 15 4 G G 15 3 G G − − − fun (5 &x) fun (4 &x) fun (3 &x) main() main() fun (5, &x) fun (4, &x) fun (3, &x) fun (2, &x) t f n x(fp) 15 15 5 G G 15 4 G G 15 3 G G 15 2 G G − − − Note: ‘–’ indicates no memory allocated to variable. ‘G’ indicates garbage value. main() fun (5, &x) fun (4, &x) fun (3, &x) fun (2, &x) fun (1, &x) t f n x(fp) 15 15 5 G G 15 4 G G 15 3 G G 15 2 G G 15 1 G G − − − For the function call fun(1, &x) condition (n<=1) is true. So Assigns ‘1’ to fp and returns ‘1’. main() fun (5, &x) fun (4, &x) fun (3, &x) fun (2, &x) fun (1, &x) t f n x(fp) 15 G G 4 G G 3 G G 2 G G 1. 1. 1. 1. 1. 1. 1 G G − − − main() fun (5, &x) fun (4, &x) fun (3, &x) fun (2, &x) t f n x(fp) 15 G G 4 G G 3 G G 2 2 1 1. 1. 1. 1. 1. − − − main() fun (5, &x) fun (4, &x) fun (3, &x) t f n x(fp) 5 G G 4 G G 3 3 2 1. − − − 2. 2. 2. main() fun (5, &x) fun (4, &x) t f n x(fp) 5 G G 4 5 3 1. − − − 3. 3. main() fun (5, &x) t f n x(fp) 5. − − − 5 8 5 5. main() t f n x(fp) 8 Finally, x contains ‘8’, so printf prints ‘8’. Example 2: What does the following program prints? #include < stdio.h> void f (int *p, int *q) { p=q; *p=12; } int i = 0, j=1; int main() { f(&i, &j); printf(“ %d%d “, i, j); return 0 ; } (D) main( ) f (&i, &j) address of ‘i’ is stored in to p. and address of ‘j’ is stored into ‘q’. i.e., *p and*q refers i and j. The statement: p = q; updates pointer ‘p’, so that both pointers refer to parameter ‘j’. *p = 12 Changes value of ‘j’ to ‘12’ But ‘i’ does not effected. So, prints 0 12. Example 3: What is the value printed by the following program? # include <stdio.h> int f(int *a, int n) { if (n<=0) return 0 ; else if(*a%2 = = 0) return *a + f(a+1, n−1); else return *a – f(a+1, n−1); } int main ( ) { int G [ ] = { 12, 7, 13, 4, 11, 6}; printf(“%d”, f (a,b)); return 0; } (C) 0 1 2 3 4 5 a 12 7 13 4 11 6 f (a, 6) is the first call to function f ( ). The array _ name refers to base address of array, i.e., address of first element. Thus, F (a, 6) 12 % 2 = 0. So, 12 1 1 5 7 + + −     ↓ [ ] f a n a ( ), * is even 12 7 1 1 4 13 + − + −     ↓                   f a n a ( ), [* ] is odd 12 7 13 1 4 1 3 + − − + ↓       −                 f a n a ( ) , [* is odd] 12 7 13 4 1 1 2 11 + − − + + − ↓                            f a n ( ), ( ) ,          [* ] a is even 12 7 13 4 11 1 1 1 6 + − − + − + −     ↓                         f a n ( ),                         [* ] a is odd 12 7 13 4 11 6 1 1 0 0 + − − + − + + − ↓                         f a n ( ), ( )                               [* ] a is even 12 + (7 (13 - (4 + (11 - (6 + 0))))) = 15 Scope, Lifetime and Binding Storage classes specify the scope, lifetime and binding of variables. To fully define a variable, one needs to mention not only its ‘type’ but also its ‘storage class’. A variable name identifies some physical location within computer memory where a collection of bits are allocated for storing value of variable. Storage class tells us:",
+    "page": 14,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "double y; int f( ) { double f;// legal int y; //legal } There are four storage classes in C. Storage class Storage Area Default Initial Value Lifetime Scope Keyword Automatic Memory Till the control remains in block Till the control remains in block Local auto Register CPU register An unpredictable value (or) gar- bage value Till the control remains in block Local register Static Memory Zero Value of variable persist between function calls Local static External Memory Unpredictable or garbage value Throughout program execution Global extern Note: Default storage class is auto. Example 4: What will be the output for the program? int i = 33; main( ) { extern int i; { int i = 22; { const volatile unsigned i = 11; printf (“ %d ”, i); } printf (“ %d ”, i); } printf (“%d “, i) ; }",
+    "options": {
+      "A": "345",
+      "B": "12",
+      "C": "5",
+      "D": "3"
+    },
+    "answer": null,
+    "explanation": "(B) ‘{‘ introduces new block and thus new scope. In the inner- most block, i is declared as const volatile unsigned which is a valid declaration. i is assumed of type int. So printf prints 11. In the next block, i has value 22 and so printf prints 22. In the outermost block, i is declared as extern, so no storage space is allocated for it. After compilation is over, the linker resolves it to global variable, i since it is the only variable visible there. So it prints its value as 33. Example 5: Consider the following C program: int f(int n) { static int r; if (n<=0) return 1; if (n> 3) { r=n; return (f(n−2)+2)); } return f(n−1) + r; } What is the value of f(5)? (C) Call Sequence r Return Sequence f (5) ↓ 5 18 f (3)+2 5 16+2 ↑ f (2)+r 5 11+5 ↑ f (1)+r 5 6+5 ↑ f (0)+r 5 1+5 ↑ Common data for questions 6 and 7: Consider the fol- lowing recursive ‘C’ function that takes two arguments. unsigned int foo (unsigned int n, unsigned int r) { if (n>0) return ((n%r)+ foo(n/r,r)); else return 0; } Example 6: What is the return value of the function foo when it is called as foo (512,2)? (D) foo (513, 2) 0 + 0 + foo (256, 2) 0 + foo (128, 2) 0 + foo (64, 2) 0 + foo (32,2) 0 + foo (16,2) 0 + foo (8, 2) foo (8, 2) 0 + 0 + foo (4, 2) 0 + foo (2, 2) 0 + f (1, 2) 0 + foo (1, 2) 0 0 + f (0, 2) Result = 1 Choice D Result = 1 Example 7: What is return value for the function call foo (345, 10)? (B) foo (345, 10) 5 + 4 + foo (34, 10) 3 + foo (3, 10) 0 + foo (0, 10) 0 result 5 + 4 + 3 = 12",
+    "page": 17,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "What will be the output of the following program? main( ) { main( ); }",
+    "options": {
+      "A": "overflow error",
+      "B": "syntax error",
+      "C": "returns 0",
+      "D": "returns 1"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Output of the following program is main( ) { static int var = 6; printf(“%d\\t”, var--); if(var) main( ); }",
+    "options": {
+      "A": "5 4 3 2 1 0",
+      "B": "6 6 6 6 6 6",
+      "C": "6 5 4 3 2 1",
+      "D": "Error"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 19,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Which of the following will be the output of the program? main( ) { char str[ ] = “Hello”; display( str ); } void display (char *str) { printf ( “%s”, str) ; }",
+    "options": {
+      "A": "compilation error",
+      "B": "hello",
+      "C": "print null string",
+      "D": "no output"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Consider the following C function int fun (int n) { static int x = 0; if (n<=0) return 1; if (n>3) { x = n; return fun(n-2)+3; } return fun(n-1)+ x; } What is the value of fun(5)?",
+    "options": {
+      "A": "4",
+      "B": "15",
+      "C": "18",
+      "D": "19"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 19,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "For the following C function void swap (int a, int b) { int t; t = a; a = b; b = t; } \u0007In order to exchange the values of two variables w and z,",
+    "options": {
+      "A": "call swap (w, z)",
+      "B": "call swap (and w, and z)",
+      "C": "\u0007swap (w, z) cannot be used as it does not return any value",
+      "D": "\u0007swap (w, z) cannot be used as the parameters are passed by value"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 19,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Choose the correct option to fill? x and? y so that the program below prints an input string in reverse order. Assume that the input string is terminated by a new line character: void Rev(void) { int a; if (?x) Rev( ); ?y } main( ) { printf(“Enter the text”); printf(“ \\n”); Rev( ); printf(“\\n”); }",
+    "options": {
+      "A": "? x is (getchar( )! = ‘\\n’) ? y is getchar (A);",
+      "B": "? x is((A = getchar( )) ! = ‘\\n’) ? y is getchar(A) ;",
+      "C": "? x is (A! = ‘\\n’) ? y is putchar (A);",
+      "D": "? x is (A = getchar ( )) ! = ‘\\n’) ? y is putchar(A) ;"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 19,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "main ( ) { extern int a; a = 30; printf (“%d”, a); } What will be the output of the above program?",
+    "options": {
+      "A": "30",
+      "B": "Compiler error",
+      "C": "Runtime error",
+      "D": "Linker error"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 19,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Which of the following will be the output of the program? void main ( ) { int n = ret(sizeof(float)); printf(“\\n value is %d ”, ++n); } int ret(int ret) { ret += 2.5; return (ret); }",
+    "options": {
+      "A": "Value is 6",
+      "B": "Value is 6.5",
+      "C": "Value is 7",
+      "D": "Value is 7.5"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 19,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "The following program main( ) { pt( ); pt( );pt( ); } pt( ) { static int a; printf(“%d”, ++a) ; } prints",
+    "options": {
+      "A": "0 1 2",
+      "B": "1 2 3",
+      "C": "3 consecutive, but unpredictable numbers",
+      "D": "1 1 1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 20,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "What is the output of the following program? main( ) { int i = 0; while (i < 4) { sum(i); i++; } } void sum(int i) { static int k; printf (“%d”, k + i); k++; }",
+    "options": {
+      "A": "0 2 4 6",
+      "B": "0 1 2 3",
+      "C": "0 2 0 0",
+      "D": "1 3 5 7"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 20,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "What will be the output of following code? # include <stdio.h> aaa() { printf(“hi”); } bbb() { printf(“hello”); } ccc() { printf(“bye”); } main () { int *ptr[3]( ); ptr[0] = aaa; ptr[1] = bbb; ptr[2] = ccc; ptr[2](); }",
+    "options": {
+      "A": "hi",
+      "B": "hello",
+      "C": "bye",
+      "D": "Garbage value"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 20,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "What is the output? void main() { static int i = 5; if(--i) { main(); printf(“%d”, i); } }",
+    "options": {
+      "A": "5",
+      "B": "5 5 5 5",
+      "C": "0 0 0 0",
+      "D": "1 1 1 1"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 20,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "If the following function gets compiled, what error would be raised? double fun(int x, double y) { int x; x = 100; return y; }",
+    "options": {
+      "A": "\u0007Function should be defined as int fun(int x, double y)",
+      "B": "Missing parenthesis in return",
+      "C": "Redeclaration of x",
+      "D": "All of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 20,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Consider the following function: fun(int x) { if ((x/2)! = 0) return (fun (x/2) 10 + x%2); else return 1; } \u0007What will happen if the function ‘fun’ called with value 16 i.e., as fun(16).",
+    "options": {
+      "A": "Infinite loop",
+      "B": "Random value will be returned",
+      "C": "11111",
+      "D": "10000"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 20,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "What is the output of the following program? void main( ) { static int x = 5; printf(“%d”, x – – ); if (x ! = 0) main( ); }",
+    "options": {
+      "A": "error:main( ) cannot be called from main( )",
+      "B": "Infinite loop",
+      "C": "5 4 3 2 1",
+      "D": "0"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 20,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "An external variable",
+    "options": {
+      "A": "is globally accessible by all functions",
+      "B": "\u0007has a declaration “extern” associated with it when declared within a function",
+      "C": "will be initialized to 0, if not initialized",
+      "D": "all of the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 21,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "The order in which actual arguments are evaluated in a function call",
+    "options": {
+      "A": "is from the left",
+      "B": "is from the right",
+      "C": "is unpredictable",
+      "D": "none of the above"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 21,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "In C language, it is necessary to declare the type of a function in the calling program if the function",
+    "options": {
+      "A": "returns an integer",
+      "B": "Returns a float",
+      "C": "both (A) and (B)",
+      "D": "none of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 21,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "What is the output? void main() { int k = ret(sizeof(int)); printf(“%d”, ++k); } int ret (int ret) { ret + = 2.5; return (ret); }",
+    "options": {
+      "A": "3.5",
+      "B": "5",
+      "C": "4",
+      "D": "logical error"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 21,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "When a recursive function is called, all its automatic variables are",
+    "options": {
+      "A": "maintained in stack",
+      "B": "retained from last execution",
+      "C": "initialized during each call of function",
+      "D": "none of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 21,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Consider the following program segment: int fun(int x, int y) { if(x > 0) return ((x % y) + fun(x/y, y)); else return 0; } \u0007What will be the output of the program segment if the function is called as fun(525, 25)?",
+    "options": {
+      "A": "25",
+      "B": "12",
+      "C": "21",
+      "D": "42"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 21,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "Consider the following C program segment: int fun (int x) { static int i = 0; if (x < = 0) return 1; else if (x > 5) { i = x; return fun (x – 3) +2; } return fun (x – 2) + i; } What is the value of fun(7)?",
+    "options": {
+      "A": "17",
+      "B": "10",
+      "C": "11",
+      "D": "9"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 21,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Consider the following C program: void rearrange( ) { char ch; if (X) rearrange( ); Y; } void main ( ) { \u0007printf(“\\n enter text to print reverse order :”); rearrange( ) ; } \u0007Choose the correct option to fill X and Y, so that the program prints the entered text in reverse order. As- sume that input string terminates with new line.",
+    "options": {
+      "A": "X: (getchar(ch) = = ‘\\n’) Y: putchar(ch);",
+      "B": "X: (getchar(ch)! = ‘\\n’) Y: ch = putchar( );",
+      "C": "X: ((ch = getchar( ) )! = ‘\\n’) Y: putchar(ch);",
+      "D": "X: ((ch = getchar( )) = = ‘\\n’) Y: putchar (ch);"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 21,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Consider the following C function: int f(int n) { static int i = 1; if (n > = 5) return n; n = n + i; i++ ; return f(n); } The value returned by f(1) is",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "8"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 21,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Consider the following C function: int incr (int i) { static int count = 0; count = count + i; return (count); } main ( ) { int i, j; for (i = 0; i < =4; i++) j = incr (i); } The j value will be",
+    "options": {
+      "A": "10",
+      "B": "4",
+      "C": "6",
+      "D": "7"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 21,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "The following function int Trial (int a, int b, int c) { if ((a > = b) && (c < b)) return b; else if(a > = b) return Trail(a, c, b); else return Trail (b, a, c); }",
+    "options": {
+      "A": "finds the maximum of a, b, c",
+      "B": "finds the middle value of a, b, c after sorting",
+      "C": "finds the minimum of a, b, c",
+      "D": "none of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 22,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Consider the following pseudo code f(a, b) { while(b! = 0) { t = b; b = a % b; a = t; } return a; }",
+    "options": {
+      "A": "\u0007The above code computes HCF of two numbers a and b",
+      "B": "The above code computes LCM of a and b",
+      "C": "The above code computes GCD of a and b",
+      "D": "None of the above"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 22,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "1. main ( ) 2. {int a = 10, *j; 3. void *k; 4. j = k = &a; 5. j++; 6. k++; 7. printf(“\\n %u, %u”, j, k); 8. } \u0007Which of the following is true in reference to the above code?",
+    "options": {
+      "A": "The above code will compile successfully",
+      "B": "Error on line number 6",
+      "C": "Error on line number 3",
+      "D": "Error on line number 4"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 22,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "Aliasing in the context of programming language refers to",
+    "options": {
+      "A": "\u0007multiple variables having the same memory location",
+      "B": "multiple variables having the same value",
+      "C": "multiple variables having the same identifier",
+      "D": "multiple uses of the same variable"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 22,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "Match the following: X: m = malloc (5); m = NULL; 1: Using dangling pointers Y: free (n); n → value = 5; 2: Using un initialized pointers Z: char *p; *p = ‘a’; 3: Lost memory",
+    "options": {
+      "A": "X – 1 Y – 3 Z – 2",
+      "B": "X – 3 Y – 1 Z – 2",
+      "C": "X – 3 Y – 2 Z – 1",
+      "D": "X – 2 Y – 1 Z – 3"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 22,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "In the following C function, let n ≥ m. int gcd(n,m) { if (n%m ==0) return m; n = n%m; return gcd(m,n); } How many recursive calls are made by this function? \b [2007]",
+    "options": {
+      "A": "Θ(log ) 2 n",
+      "B": "Ω(n)",
+      "C": "Θ(log log ) 2 2 n",
+      "D": "Θ( ) n"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 23,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "What is the time complexity of the following recursive function? int DoSomething (int n) { if (n <= 2) return 1; else return(DoSomething(floor(sqrt(n)))+ n);} \b [2007]",
+    "options": {
+      "A": "Θ( ) n2",
+      "B": "Θ( log ) n n 2",
+      "C": "Θ(log ) 2 n",
+      "D": "Θ(log log ) 2 2 n"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 23,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Choose the correct option to fill ? 1 and ? 2 so that the program below prints an input string in reverse order. Assume that the input string is terminated by a newline character. void reverse (void) { int c; if (?1) reverse( ); ?2 } main ( ) { printf (“Enter Text”) ; printf (“\\ n”); reverse ( ); printf (“\\ n”) ; }\b [2008]",
+    "options": {
+      "A": "?1 is (getchar( )! = ‘\\n’) ?2 is getchar(c);",
+      "B": "?1 is (c = getchar( ))! = ‘\\n’) ?2 is getchar(c);",
+      "C": "?1 is (c! = ‘\\n’) ?2 is putchar(c);",
+      "D": "?1 is ((c = getchar( ))! = ‘\\n’) ?2 is putchar(c);"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 23,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Consider the program below: # include < stdio.h > int fun(int n, int * f_p) { int t, f; if (n <=1) { *f_p =1; return 1; } t = fun (n-1, f_p); f = t+*f_p; *f_p = t; return f; } int main( ) { int x = 15; printf (“%d\\n”, fun(5,&x)); return 0; } The value printed is\b [2009]",
+    "options": {
+      "A": "6",
+      "B": "8",
+      "C": "14",
+      "D": "15"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 23,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "What is the value printed by the following C program? #include <stdio.h> int f(int *a, int n) { if (n <= 0)return 0; else if(*a % 2 = = 0) return * a + f(a+1, n­–1); else return *a–f(a+1, n­–1); } int main( ) { int a[ ] = {12, 7, 13, 4, 11, 6}; printf(“%d”, f(a,6)); return 0; }\b [2010]",
+    "options": {
+      "A": "-9",
+      "B": "5",
+      "C": "15",
+      "D": "19 Common data for questions 6 and 7: Consider the fol- lowing recursive C function that takes two arguments. unsigned int foo (unsigned int n, unsigned int r) { if ( n > 0 ) return ((n % r) + foo (n /r, r)); else return 0; }"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 23,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "What is the return value of the function foo when it is called as foo (513, 2)?\b [2011]",
+    "options": {
+      "A": "9",
+      "B": "8",
+      "C": "5",
+      "D": "2"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 23,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "What is the return value of the function foo when it is called as foo (345, 10)?\b [2011]",
+    "options": {
+      "A": "345",
+      "B": "12",
+      "C": "5",
+      "D": "3 Common data for questions 8 and 9: Consider the fol- lowing C code segment int a, b, c = 0; void prtFun (void); main ( ) { static int a = 1; prtFun( ); a+ = 1; prtFun( ); printf(“\\n %d %d”, a, b); } void prtFun(void) {static int a = 2; int b = 1; a+ = ++b; printf(“\\n %d %d”, a, b); }"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 24,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "What output will be generated by the given code seg- ment if: \b [2012] Line 1 is replaced by auto int a = 1; Line 2 is replaced by register int a = 2;",
+    "options": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "3 1 4 2 4 2 4 2 4 1 6 1 6 2 4 2 4 2 6 1 2 0 2 0"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 24,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "What output will be generated by the given code seg- ment?\b [2012]",
+    "options": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "3 1 4 2 4 2 3 1 4 1 6 1 6 2 5 2 4 2 6 1 2 0 5 2"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 24,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "What is the return value of f (p, p), if the value of p is initialized to 5 before the call? Note that the first parameter is passed by reference, whereas the second parameter is passed by value. int f(int &x, int c) { c = c – 1; if (c == 0) return 1; x = x + 1; return f(x, c) * x; }\b [2013]",
+    "options": {
+      "A": "3024",
+      "B": "6561",
+      "C": "55440",
+      "D": "161051"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 24,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "Consider the following pseudo code. What is the total number of multiplications to be performed?\b [2014] D = 2 for i = 1 to n do for j = i to n do for k = j +1 to n do D = D * 3",
+    "options": {
+      "A": "\u0007Half of the product of the three consecutive inte- gers.",
+      "B": "\u0007One-third of the product of the three consecutive integers.",
+      "C": "\u0007One-sixth of the product of the three consecutive integers.",
+      "D": "None of the above."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 24,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "Consider the following pseudo code, where x and y are positive integers \b [2015] begin q := 0 r := x while r ≥ y do begin r := r – y q := q + 1 end end The post condition that needs to be satisfied after the program terminates is",
+    "options": {
+      "A": "{r = qx + y ∧ r < y}",
+      "B": "{x = qy + r ∧ r < y}",
+      "C": "{y = qx + r ∧ 0 < r < y}",
+      "D": "{q + 1 < r – y ∧ y > 0}"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 24,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Previous Years’ Questions",
+    "number": 16,
+    "question": "Consider the following recursive C function void get (int n) { if (n < 1) return; get (n – 1); get (n – 3); printf(“%d”, n); } If get (6) function is being called in main ( ) then how many times will the get ( ) function be invoked before returning to the main ( )?",
+    "options": {
+      "A": "15",
+      "B": "25",
+      "C": "35",
+      "D": "45"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 25,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Previous Years’ Questions",
+    "number": 19,
+    "question": "What will be the output of the following C program? \b [2016] void count (int n) { static int d = 1; printf(“%d ”,n); printf(“%d ”,d); d ++; if (n > 1) count (n -1); printf(“%d ”, d); } void main ( ) { count (3); }",
+    "options": {
+      "A": "3 1 2 2 1 3 4 4 4",
+      "B": "3 1 2 1 1 1 2 2 2",
+      "C": "3 1 2 2 1 3 4",
+      "D": "3 1 2 1 1 1 2"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 25,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "2 - Functions",
+    "section": "Previous Years’ Questions",
+    "number": 20,
+    "question": "The following function computes XY for positive inte- gers X and Y.\b [2016] int exp (int X, int Y) { int res = 1, a = X, b = Y; while (b! = 0) { if (b%2 = = 0) {a = a*a; b = b/2;} else {res = res *a; b = b -1;} } return res; } Which one of the following conditions is TRUE before every iteration of the loop?",
+    "options": {
+      "A": "XY = ab",
+      "B": "(res *a)Y = (res* X)b",
+      "C": "XY = res *ab",
+      "D": "XY = ( res*a)b"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 25,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 21,
+    "question": "Consider the following two functions. void fun1 (int n) { void fun2 (int n) { if (n == 0) return; if (n == 0) return; printf (“%d”, n); printf (“%d”, n); fun2 (n − 2) ; fun1(++n) printf (“%d”, n); printf (“%d”, n); } } The output printed when fun1 (5) is called is\b [2017]",
+    "options": {
+      "A": "53423122233445",
+      "B": "53423120112233",
+      "C": "53423122132435",
+      "D": "53423120213243"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 26,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 22,
+    "question": "Consider the C functions foo and bar given below: int foo (int val) { int x = 0; while (val > 0) { x =x + foo (val−−); } return val; } int bar (int val) { int x = 0; while (val > 0) { x =x +bar (val − 1); } return val; } Invocations of foo (3) and bar (3) will result in: \b [2017]",
+    "options": {
+      "A": "Return of 6 and 6 respectively.",
+      "B": "\u0007Infinite loop and abnormal termination respec- tively.",
+      "C": "\u0007Abnormal termination and infinite loop respec- tively.",
+      "D": "Both terminating abnormally."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 26,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Output of the following C program is intF(int x, int *py, int **pz) { int y, z; ** pz+= 1; z = *pz; *py+= 2; y = *py; x+ = 3; return x+y+z; } void main( ) { int c, *b, **a ; c = 4; b = &c; a = &b; printf( “%d”, F(c, b, a)); }",
+    "options": {
+      "A": "30",
+      "B": "22",
+      "C": "20",
+      "D": "Error"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 37,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "main( ) { char *ptr; ptr = “Hello World”; printf(“%c\\n”,*&*ptr); } Output of the above program is",
+    "options": {
+      "A": "Garbage value",
+      "B": "Error",
+      "C": "H",
+      "D": "Hello world"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 37,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "#include <stdio.h> main( ) { register a =10; char b[ ] = “Hi”; printf(“%s %d ”, b, a); } Output is",
+    "options": {
+      "A": "Hi 10",
+      "B": "Error",
+      "C": "Hi",
+      "D": "Hi garbage value"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 37,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "main ( ) { int fun( ) ; (*fun)( ) ; } int fun( ) { printf(“Hello”) ; }",
+    "options": {
+      "A": "Hello",
+      "B": "Error",
+      "C": "No output",
+      "D": "H"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 38,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "Let B be a two-dimensional array declared as B : array[1...10] [1...15] of integer; \u0007Assuming that each integer takes one memory location the array is stored in row major order and the first ele- ment of the array is stored at location 100, what is the address of the element B[i] [j]?",
+    "options": {
+      "A": "15i + 10j + 84",
+      "B": "15i + j − 16",
+      "C": "15i + j",
+      "D": "15i + j + 84"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 38,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Consider the following C program which is supposed to compute the transpose of a given 4 × 4 matrix M. Note that, there is a Y in the program which indicates some missing statements. Choose the correct option to replace Y in the program. # include <stdio.h> \u0007int M[4][4] = { 8, 10, 9, 16, 12, 13, 11, 15, 14, 7, 6, 3, 4, 2, 1, 5 }; main( ) { int i, j, temp; for (i = 0; i<4; ++i) { Y } for (i=0; i<4; ++i) for (j=0; j<4; ++j) printf(“%d”, M[i] [j]); }",
+    "options": {
+      "A": "for (j=0; j<4; ++j) { M[j] [i] = temp; temp = M[j][i]; M[j][i] = M[i][j]; }",
+      "B": "for (j=0; j<4; ++j) { temp = M[j][i]; M[i][j] = M[j][i]; M[j][i] = temp; }",
+      "C": "for (j=i; j<4; ++j) { temp = M[i][j]; M[i][j] = M[j][i]; M[j][i] = temp; }",
+      "D": "for (j=i; j<4; ++j) { M[i][j] = temp; temp = M[j][i]; M[j][i] = M[i][j] ; }"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 38,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Consider the C program shown below: # include <stdio.h> # define print(a) printf(“%d”, a) int a; void z(int n) { n += a; print (n); } void x(int *p) { int a = *p+2; z(a) ; *p = a; print(a); } main(void) { a = 6; x(&a); print(a); } The output of this program is",
+    "options": {
+      "A": "14 8 6",
+      "B": "16 6 6",
+      "C": "8 6 6",
+      "D": "22 11 12"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 38,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Consider the program below: # include <stdio.h> int fun(int n, int *p) { int x,y; if (n<=1) { *p = 1; return 1; } x = fun(n-1, p); y = x +p; *p = x; return y; } int main( ) { int a =15; printf( “%d\\n”, fun(5, &a)); return 0; } The output value is",
+    "options": {
+      "A": "14",
+      "B": "15",
+      "C": "8",
+      "D": "95"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 38,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Consider the following C program segment char p[20] ; int i; char *s = “string” ; int l = strlen(s); for (i=0; i<l; i++) p[i] = s[l – i] ; printf(“%s”, p) ; The output of the program is",
+    "options": {
+      "A": "string",
+      "B": "gnirt",
+      "C": "gnirts",
+      "D": "No output is printed"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 39,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "# include <stdio.h> main( ) { struct AA { int A = 5; char name[ ] = “ANU”; }; \u0007struct AA *p = malloc(sizeof(struct AA)); printf(“%d”,p–>A); printf(“%s”,p–>name); } Output of the program is",
+    "options": {
+      "A": "5 ANU",
+      "B": "Runtime error",
+      "C": "Compiler error",
+      "D": "Linker error"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 39,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "The declaration union u_tag { int ival; float fval; char sval; } u; denotes u is a variable of type u_tag and",
+    "options": {
+      "A": "u can have a value of int, float and char",
+      "B": "\u0007u can represent either integer value, float value or character value at a time",
+      "C": "u can have a value of float but not integer",
+      "D": "None of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 39,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "If the following program is run from command line as myprog 1 2 3, what would be the output? main (int argc, char *argv[ ]) { int i; i = argv [1] + argv [2] − argv [3]; printf (\"%d\", i); }",
+    "options": {
+      "A": "123",
+      "B": "6",
+      "C": "0",
+      "D": "Error"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 39,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "The following C program is run from the command line as myprog one two; what will be the output? main (int argc, char *argv [ ]) { printf (“%c”,**++argv); }",
+    "options": {
+      "A": "m",
+      "B": "o",
+      "C": "myprog",
+      "D": "one"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 39,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "The following program change(int *); main( ) { int a = 4; change(a); printf (“%d”, a); } change(a) int a; { printf(“%d”, a); } Outputs",
+    "options": {
+      "A": "44",
+      "B": "55",
+      "C": "34",
+      "D": "22"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 39,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "What is the output of the following program: main( ) { const int x = 10; int *ptrx; ptrx = &x; *ptrx = 20; printf (“%d”, x); }",
+    "options": {
+      "A": "5",
+      "B": "10",
+      "C": "Error",
+      "D": "20"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 39,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "The following program segment int *i; *i = 10;",
+    "options": {
+      "A": "Results in run time error",
+      "B": "Is a dangling reference",
+      "C": "Results in compilation error",
+      "D": "Assigns 10 to i"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 40,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "A m × n matrix is stored in column major form. The expression which accesses the (ij)th entry of the same matrix is",
+    "options": {
+      "A": "n × (j − 1) + i",
+      "B": "m × (j − 1) + i",
+      "C": "n × (m − 1) + ij",
+      "D": "m × (n − 1) + j"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 40,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "int ∗ S[a] is 1D array of integers, which of the follow- ing refers to the third element in the array?",
+    "options": {
+      "A": "∗(S + 2)",
+      "B": "∗(S + 3)",
+      "C": "S + 2",
+      "D": "S + 3"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 40,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "If an array is declared as char a[10][12]; what is referred to by a[5]?",
+    "options": {
+      "A": "Pointer to 3rd Row",
+      "B": "Pointer to 4th Row",
+      "C": "Pointer to 5th Row",
+      "D": "Pointer to 6th Row"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 40,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "The following code is run from the command line as myprog 1 2 3. What would be the output? main(int argc, char *argv[ ]) { int i, j = 0; for (i = 1; i < argc; i++) j = j + atoi (argv [i]); printf (“%d”, j); }",
+    "options": {
+      "A": "123",
+      "B": "6",
+      "C": "Error",
+      "D": "“123”"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 40,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "What will be the following C program output? \u0007main (int argc, char *argv[ ], char *env [ ]) { int i; for(i = 1; i < argc; i++) printf (“%s”, env[i]); }",
+    "options": {
+      "A": "List of all arguments",
+      "B": "List of all path parameters",
+      "C": "Error",
+      "D": "List of environment variables"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 40,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "The declaration enum colors { red, blue, yellow = 1, green }; assigns the value 1 to",
+    "options": {
+      "A": "Red and Yellow",
+      "B": "Blue",
+      "C": "Red and blue",
+      "D": "Blue and yellow"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 40,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "What would be the output of the following program? sum = 0; for (i = −10; i < 0; i++) sum = sum + abs(i); printf (\"%d\", sum);",
+    "options": {
+      "A": "100",
+      "B": "−505",
+      "C": "55",
+      "D": "−55"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 40,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "An integer occupies 2 bytes of memory, float occupies 4 bytes and character occupies 1 byte. A structure is defined as: struct tab { char a; int b; float c; } table [10]; Then the total memory requirement (in bytes) is",
+    "options": {
+      "A": "14",
+      "B": "70",
+      "C": "40",
+      "D": "100"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 40,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "What are the values of u1 and u2? int u1, u2; int x = 2; int *ptr; u1 = 2*(x + 10); ptr = &x; u2 = 2*(*ptr + 10);",
+    "options": {
+      "A": "u1 = 8, u2 = 16",
+      "B": "u1 = 23, u2 = 24",
+      "C": "u1 = 24, u2 = 24",
+      "D": "None of the above"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 40,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "What is the output? func(a, b) int a, b; { return (a = (a = = b)); } main () { int process(), func(); \u0007printf(“The value of process is %d”, pro- cess (func,3,6)); } process (pf, val1, val2) int (*pf) (); int val1, val2; { return ((*pf) (val1, val2)); }",
+    "options": {
+      "A": "The value of process is 0",
+      "B": "The value of process is 3",
+      "C": "The value of process is 6",
+      "D": "Logical error"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 40,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Consider the following program in C language: # include < stdio. h> main () { int i; int *pi = &i; scanf (“%d”, pi); printf(“%d\\n”, i + 5); } Which one of the following statement is TRUE? \b [2014]",
+    "options": {
+      "A": "Compilation fails",
+      "B": "Execution results in a run-time error",
+      "C": "\u0007On execution, the value printed is 5 more than the address of variable i.",
+      "D": "\u0007On execution, the value printed is 5 more than the integer value entered."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 41,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Consider the following C function in which size is the number of elements in the array E: int MyX (int *E, unsigned int size) { int Y = 0; int Z; int i, j, k; for (i = 0; i < size; i++) Y = Y + E[i]; for (i = 0; i < size; i++) for (j = 1; j < size; j++) { Z = 0; for (k = i; k < = j; k++) Z = Z + E[k]; if (Z > Y) Y = Z; } return Y; } The value returned by the function My X is the\b[2014]",
+    "options": {
+      "A": "\u0007maximum possible sum of elements in any sub - array of array E.",
+      "B": "maximum element in any sub-array of array E.",
+      "C": "\u0007sum of the maximum elements in all possible sub-arrays of array E.",
+      "D": "the sum of all the elements in the array E."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 41,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "What is the output of the following C code? Assume that the address of x is 2000 (in decimal) and an inte- ger requires four bytes of memory.\b [2015] int main ( ) { unsigned int x[4] [3] = \u0007{ {1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}}; \u0007printf (“%u, %u, %u”, x + 3, *(x + 3), *(x + 2) + 3); }",
+    "options": {
+      "A": "2036, 2036, 2036",
+      "B": "2012, 4, 2204",
+      "C": "2036, 10, 10",
+      "D": "2012, 4, 6"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 41,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Consider the following function written in the C pro- gramming language.\b [2015] void foo(char *a { if ( *a && *a != ‘ ‘){ foo(a + 1); putchar(*a); } } The output of the above function on input “ABCD EFGH” is",
+    "options": {
+      "A": "ABCD EFGH",
+      "B": "ABCD",
+      "C": "HGFE DCBA",
+      "D": "DCBA"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 41,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Consider the following C program.\b [2016] void f (int, short); void main( ) { int i = 100; short s = 12; short *p = &s; _____; // call to f( ) } Which one of the following expressions, when placed in the blank above, will NOT result in a type checking error?",
+    "options": {
+      "A": "f (s,*s)",
+      "B": "i = f (i,s)",
+      "C": "f (i,*s)",
+      "D": "f (i,*p)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 42,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "The following function computes the maximum value contained in an integer array p [ ] of size n (n > = 1). \b [2016] int max (int *p, int n) { int a = 0, b = n – 1; while (_____) { if (p [a] < = p [b]) {a = a+1;} else { b = b – 1;} } return p[a]; } The missing loop condition is",
+    "options": {
+      "A": "a ! = n",
+      "B": "b ! = 0",
+      "C": "b > (a +1)",
+      "D": "b ! = a"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 42,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "Consider the following C code: # include <stdio.h> int *assignval (int *x, int val) { *x = val; return x; } void main ( ) { int *x = malloc (sizeof (int)); if (NULL == x) return; x = assignval (x, 0); if (x) { x = (int *) malloc (sizeof (int)); if (NULL == x) return; x = assignval (x, 10); } printf(“%d\\n”, *x); free (x); } The code suffers from which one of the following problems:\b [2017]",
+    "options": {
+      "A": "\u0007compiler error as the return of malloc is not type- cast appropriately",
+      "B": "\u0007compiler error because the comparison should be made as x == NULL and not as shown",
+      "C": "\u0007compiles successfully but execution may result in dangling pointer",
+      "D": "\u0007compiles successfully but execution may result in memory leak"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 43,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Previous Years’ Questions",
+    "number": 15,
+    "question": "Given the following binary number in 32-bit (single precision) IEEE-754 format: 00111110011011010000000000000000 The decimal value closest to this floating-point num- ber is\b [2017]",
+    "options": {
+      "A": "1.45 × 101",
+      "B": "1.45 × 10−1",
+      "C": "2.27 × 10−1",
+      "D": "2.27 × 101"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 43,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Previous Years’ Questions",
+    "number": 16,
+    "question": "Match the following: (P) static char var; (i) \u0007Sequence of memory loca- tions to store addresses (Q) m = malloc (10); m = NULL; (ii) \u0007A variable located in data section of memory (R) char *ptr [10]; (iii) \u0007Request to allocate a CPU register to store data (S) register int var1; (iv) \u0007A lost memory which cannot be freed \b [2017]",
+    "options": {
+      "A": "\u0007P → (ii), Q → (iv), R → (i), S → (iii)",
+      "B": "P → (ii), Q → (i), R → (iv), S → (iii)",
+      "C": "P → (ii), Q → (iv), R → (iii), S → (i)",
+      "D": "P → (iii), Q → (iv), R → (i), S → (ii)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 43,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Arrays, Pointers and Structures",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "Consider the following function implemented in C: void printxy (int x, int y) { int ptr; x = 0; ptr = &x; y = ptr; ptr = 1; printf (“%d, %d” x, y); } The output of invoking printxy (1, 1) is\b [2017]",
+    "options": {
+      "A": "0, 0",
+      "B": "0, 1",
+      "C": "1, 0",
+      "D": "1, 1"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 43,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 20,
+    "question": "Consider the following C program. #include<stdio.h> struct Ournode { char x, y, z; } ; Int main () { struct Ournode p = {‘1’, ‘0’, ‘a’+2}; struct Ournode *q = &p; printf (“%c, %c”, *( (char*)q+1), * ( (char*)q+2) ); return 0; } The output of this program is:\b [2018]",
+    "options": {
+      "A": "0, c",
+      "B": "0, a+2",
+      "C": "‘0’, ‘a+2’",
+      "D": "‘0’, ‘c’"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 44,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 21,
+    "question": "Consider the following C program: #include<stdio.h> void fun1 (char *s1, char * s2) { char *tmp; tmp = s1; s1 = s2 s2 = tmp; } void fun2 (char **s1, char **s2) { char *tmp; tmp = *s1; *s1 = *s2; *s2 = tmp; } int main () { char *str1 = “Hi”, *str2 = “Bye”; fun1 (str1, str2); printf (“%s %s “, str1, str2); fun2 (&str1, &str2); printf (“%s %s”, str1, str2); return 0; } The output of the program above is:\b [2018]",
+    "options": {
+      "A": "Hi Bye Bye Hi",
+      "B": "Hi Bye Hi Bye",
+      "C": "Bye Hi Hi Bye",
+      "D": "Bye Hi Bye Hi Data strUctUre Data structure represents the logical arrangement of data in com- puter memory for easily accessing and maintenance. LinkeD List A linked list is a data structure that consists of a sequence of nodes, each of which contains data fi eld and a reference (i.e., link) to next node in sequence. • Generally node of linked list is represented as self-referential structure. • The linked list elements are accessed with special pointer(s) called head and tail. Head Data Link Tail C A B • The principal benefi t of a linked list over a conventional array is that the list elements can easily be added or removed without reallocation or reorganization of the entire structure because the data items need not be stored contiguously in memory or on disk. • Linked lists allow insertion and removal of nodes at any point in the list. • Finding a node that contains a given data, or locating the place where a new node should be inserted may require scanning most or all of the list elements. • The list element does not have to occupy contiguous memory. • Adding, insertion or deletion of list elements can be accom- plished with the minimal disruption of neighbouring nodes. sinGLe-LinkeD List List in which each node contains only one link fi eld. Node structure struct { int ele; struct node ∗ next; }; typedef struct node Node; Creating a linked list with two nodes of type list node Creating a linked list with 2 nodes struct node { Int ele; struct node ∗ next ; }; typedef struct node Node ; Node ∗ ptr1, ∗ ptr2; ptr1 = getnode (); ptr2 = getnode (); if((ptr1) && (ptr2)) { Printf(“No memory”); exit(1); } Ptr1 → ele = 10;  Data structure  Linked list  Single-linked list  Double-linked list  Circular linked list  Double circular-linked list  Stack  Queue  Double-ended queue  Circular queue  Priority queue  Array implementation  Linked list implementation  Linked list implementation of priority queue LEARNING OBJECTIVES Ptr1 → next = ptr2; Ptr2 → ele = 20; Ptr2 → next = NULL; Head = ptr1; the linked list appears as below 10 20 \\ Head Operations on SLL (single-linked list) •• Insert at Head •• Insert at Tail •• Insert in Middle •• Delete Head •• Delete Tail •• Delete Middle •• Search •• Display Declare two special pointers called head and tail as follows: Node ∗Head, ∗Tail; Head = Tail = NULL; Head or tail is NULL represents list is empty. Steps for Insertion:"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 44,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "If the array representation of a circular queue contains only one element then",
+    "options": {
+      "A": "front = rear",
+      "B": "front = rear + 1",
+      "C": "front = rear − 1",
+      "D": "front = rear = NULL"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 53,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "The five items P, Q, R, S and T are pushed in a stack, one after another starting from P. The stack is popped four times, and each element is inserted in a queue. The two elements are deleted from the queue and pushed back on the stack. Now one item is popped from the stack. The popped item is _____.",
+    "options": {
+      "A": "P",
+      "B": "Q",
+      "C": "R",
+      "D": "S"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 53,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "What are the contents of the stack (initially the stack is empty) after the following operations? PUSH (A) PUSH (B) PUSH (C) POP PUSH(D); POP; POP; PUSH(E) PUSH(F) POP",
+    "options": {
+      "A": "ABE",
+      "B": "AE",
+      "C": "A",
+      "D": "ABCE"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 53,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Consider the below code, which deletes a node from the beginning of a list: void deletefront() { if(head = = NULL) return; else { .......... ......... ......... } } Which lines will correctly implement else part of above code?",
+    "options": {
+      "A": "if (head → next = = NULL) head = head → next;",
+      "B": "if (head = = tail) head = tail = NULL; else head = head → next;",
+      "C": "if (head = = tail = = NULL) head = head → next;",
+      "D": "head = head → next;"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 53,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "When a new element is inserted in the middle of linked list, then the references of _____ to be adjusted/ updated.",
+    "options": {
+      "A": "those nodes that appear after the new node",
+      "B": "those nodes that appear before the new node",
+      "C": "head and tail nodes",
+      "D": "\u0007those nodes that appear just before and after the new node"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 54,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "The following C function takes double-linked list as an argument. It modifies the list by moving the head (first) element to tail of the list. typedef struct node { struct node *p; int data; struct node *n; } Node; Node ⃰ Move – to – last (Node *head) { Node ⃰ temp, ⃰ prev, ⃰ next; if (head = = NULL)||(head → n = = NULL)) return head; temp = head; prev = head; head = head → n; while (prev → n! = NULL) { X; } Y; return head; }",
+    "options": {
+      "A": "X: prev = prev → n; Y: prev → n = temp; temp → p = prev; temp → n = NULL; head → P = NULL;",
+      "B": "X: next = prev → n; Y: prev → n = temp; temp → p = prev;",
+      "C": "X: prev = prev → n; Y: prev → n = temp; temp → n = NULL; head → p = NULL;",
+      "D": "X: next = prev → n; prev = prev → n; Y: prev → n = Next; next → n = head; temp → n = NULL;"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 54,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Which of the following program segment correctly inserts an element at the front of the linked list. Assume that Node represents linked list node structure, value is the element to be inserted.",
+    "options": {
+      "A": "temp = (Node )٭malloc (sizeof (Node)); temp → data = value; temp → next = head; head = temp;",
+      "B": "\u0007temp = (Node )٭malloc(sizeof (Node )٭ ;) temp → data = value; temp → next = head; head = temp;",
+      "C": "\u0007temp = (Node )٭malloc (sizeof (Node)); head = temp; temp → next = head; temp → data = value;",
+      "D": "\u0007temp = (Node )٭malloc (sizeof (Node ;)٭ temp → data = value; head = temp; temp → next = head;"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 54,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Consider the following program segment: struct element { int x; struct element ⃰link; } void shuffle(struct element ⃰head) { struct ⃰p, ⃰q; int t; if (!head || !head → link) return; p= head ; q = head → link; while(q) { t = p → x; p→ x = q → x; q → x = t; p = q → link; q = p? p : 0; } } The function called with list containing 10, 15, 20, 25, 30, 35, 40 in given order. What will the order of ele- ments of the list, after executing the function shuffle?",
+    "options": {
+      "A": "10 15 20 25 30 35 40",
+      "B": "40 35 30 25 20 15 10",
+      "C": "20 15 10 25 40 35 30",
+      "D": "15 10 25 20 35 30 40"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 54,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Primary ADT’s are",
+    "options": {
+      "A": "Linked list only",
+      "B": "Stack only",
+      "C": "Queue only",
+      "D": "All of these"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 54,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Linked list uses NULL pointers to signal",
+    "options": {
+      "A": "end of list",
+      "B": "start of list",
+      "C": "Either (A) or (B)",
+      "D": "Neither (A) nor (B)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "Which of the following is essential for converting an infix to postfix form efficiently?",
+    "options": {
+      "A": "Operator stack",
+      "B": "Operand stack",
+      "C": "Both (A) and (B)",
+      "D": "Parse tree"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Stacks cannot be used to",
+    "options": {
+      "A": "Evaluate postfix expression",
+      "B": "Implement recursion",
+      "C": "Convert infix to postfix",
+      "D": "\u0007Allocate resource like CPU by the operating system"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "Linked list can be sorted",
+    "options": {
+      "A": "By swapping data only",
+      "B": "By swapping address only",
+      "C": "Both (A) and (B)",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Linked list are not suitable for implementing",
+    "options": {
+      "A": "Insertion sort",
+      "B": "Binary search",
+      "C": "Radix sort",
+      "D": "Polynomial manipulation"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "Insertion of node in a double-linked list requires how many changes to previous (prev) and next pointers?",
+    "options": {
+      "A": "No changes",
+      "B": "2 next and 2 prev",
+      "C": "1 next and 1 prev",
+      "D": "3 next and 3 prev"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 1",
+    "number": 16,
+    "question": "Minimum number of stacks required to implement a queue is",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Stack is useful for implementing _____.",
+    "options": {
+      "A": "radix sort",
+      "B": "breadth first search",
+      "C": "quick sort",
+      "D": "recursion"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Which is true about linked list?",
+    "options": {
+      "A": "A linked list is a dynamic data structure.",
+      "B": "A linked list is a static structure.",
+      "C": "A stack cannot be implemented by a linear linked list.",
+      "D": "None of the above"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "The process of accessing the data stored in a tape is similar to manipulating data on a _____.",
+    "options": {
+      "A": "stack",
+      "B": "list",
+      "C": "queue",
+      "D": "heap"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Which of the following is used to aid in evaluating a prefix expression?",
+    "options": {
+      "A": "Queue",
+      "B": "Heap",
+      "C": "Stack",
+      "D": "Hash"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Select the statement which best completes the sentence  ‘Abstract data type is…’",
+    "options": {
+      "A": "a data type which is abstract in nature",
+      "B": "a kind of data type",
+      "C": "data structure",
+      "D": "\u0007a mathematical model together with a set of opera- tions defined on it"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Which of the following data structures may give an overflow error, even through the current number of ele- ments in it is less than its size?",
+    "options": {
+      "A": "Simple queue",
+      "B": "Circular queue",
+      "C": "Stack",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "In a circular linked list, insertion of a record involves the modification of _____.",
+    "options": {
+      "A": "no pointer",
+      "B": "four pointers",
+      "C": "two pointers",
+      "D": "All of the above"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Among the following, which one is not the right opera- tion on a stack?",
+    "options": {
+      "A": "\u0007Remove the item that is inserted latest into the stack.",
+      "B": "Add an item to the stack.",
+      "C": "\u0007Remove the first item that is inserted into the stack, without deleting other elements.",
+      "D": "None of the above"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Among the following which one is not the right opera- tion on dequeue?",
+    "options": {
+      "A": "Inserting an element in the middle of a dequeue.",
+      "B": "Inserting an element at the front of a dequeue.",
+      "C": "Inserting an element at the rear of a dequeue.",
+      "D": "None of the above"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "A linear list in which elements can be added or removed at either end but not in the middle is _____.",
+    "options": {
+      "A": "queue",
+      "B": "dequeue",
+      "C": "array",
+      "D": "tree"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "The post fix notation of A/B * * C + D * E – A * C is",
+    "options": {
+      "A": "ABC * * /DE * + AC * –",
+      "B": "ABC * * D/E * + AC + –",
+      "C": "ABC * * /DE * AC + –",
+      "D": "ABC * * /DE * + AC + –"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 55,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "An abstract data type (ADT) is \b [2005]",
+    "options": {
+      "A": "same as an abstract class.",
+      "B": "a data type that cannot be instantiated.",
+      "C": "\u0007a data type for which only the operations defined on it can be used, but none else.",
+      "D": "All of the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 56,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "An implementation of a queue Q, using two stacks S1 and S2, is given below: void insert (Q, x) { push (S1, x); } void delete (Q) { if (stack-empty (S2)) then if (stack-empty (S1)) then { print (“Q is empty”); return; } else while(!(stack-empty(S1))) { x = pop (S1); push(S2, x); } x = pop (S2); } \u0007Let n insert and m (≤ n) delete operations be per- formed in an arbitrary order on an empty queue Q. Let x and y be the number of push and pop operations performed respectively in the process. Which one of the following is true for all m and n?\b [2006]",
+    "options": {
+      "A": "n + m ≤ x < 2n and 2m ≤ y n + m",
+      "B": "n + m ≤ x < 2n and 2m ≤ y 2n",
+      "C": "2m ≤ x < 2n and 2m ≤ y n + m",
+      "D": "2m ≤ x < 2n and 2m ≤ y 2n"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 56,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "The following postfix expression with single digit operands is evaluated using a stack: 8 2 3 ∧ / 2 3 ∗ + 5 1 ∗ – \u0007Note that ∧ is the exponentiation operator. The top two elements of the stack after the first ∗ is evaluated are:\b [2007]",
+    "options": {
+      "A": "6 and 1",
+      "B": "5 and 7",
+      "C": "3 and 2",
+      "D": "1 and 5"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 56,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "The following C function takes a single-linked list of integers as a parameter and rearranges the elements of the list. The function is called with the list containing the integers 1, 2, 3, 4, 5, 6, 7 in the given order. What will be the contents of the list after the function com- pletes execution? struct node { int value; struct node *next; }; void rearrange (struct node *list) { struct node *p, *q; int temp; if (!list || !list -> next) return; p = list; q = list -> next; while (q) { \u0007temp = p -> value; p -> value = q -> value; q -> value = temp; p = q → next; q = p?p -> next : 0; } } \b [2008]",
+    "options": {
+      "A": "1, 2, 3, 4, 5, 6, 7",
+      "B": "2, 1, 4, 3, 6, 5, 7",
+      "C": "1, 3, 2, 5, 4, 7, 6",
+      "D": "2, 3, 4, 5, 6, 7, 1"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 56,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Suppose a circular queue of capacity (n – 1) elements is implemented with an array of n elements. Assume that the insertion and deletion operations are carried out using REAR and FRONT as array index vari- ables, respectively. Initially, REAR = FRONT = 0. The conditions to detect queue full and queue empty are\b [2012]",
+    "options": {
+      "A": "Full: (REAR + 1) mod n = = FRONT Empty: REAR = = FRONT",
+      "B": "Full: (REAR + 1) mod n = = FRONT Empty: (FRONT + 1) mod n = = REAR",
+      "C": "Full: REAR = = FRONT Empty: (REAR + 1) mod n = = FRONT",
+      "D": "Full: (FRONT + 1) mod n = = REAR Empty: REAR = = FRONT"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 56,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "The result of evaluating the postfix expression 10 5 + 60 6/* 8 – is\b [2015]",
+    "options": {
+      "A": "284",
+      "B": "213",
+      "C": "142",
+      "D": "71"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 57,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "4 - Linked Lists, Stacks and Queues",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "A circular queue has been implemented using a sin- gly linked list where each node consists of a value and a single pointer pointing to the next node. We maintain exactly two external pointers FRONT and REAR pointing to the front node and the rear node of the queue, respectively. Which of the following state- ments is/are CORRECT for such a circular queue, so that insertion and deletion operations can be per- formed in O (1) time? I. \u0007Next pointer of front node points to the rear node. II. \u0007Next pointer of rear node points to the front node. \b [2017]",
+    "options": {
+      "A": "I only",
+      "B": "II only",
+      "C": "Both I and II",
+      "D": "Neither I nor II"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 57,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "A binary tree T has n leaf nodes. The number of nodes of degree two in T is ____.",
+    "options": {
+      "A": "n",
+      "B": "n - 1",
+      "C": "log n",
+      "D": "n + 1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "How many numbers of binary tree can be created with 3 nodes which when traversed in post-order gives the sequence C, B, A?",
+    "options": {
+      "A": "3",
+      "B": "5",
+      "C": "8",
+      "D": "15"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "A binary search tree contains the values 3, 6, 10, 22, 25, 30, 60, 75. The tree is traversed in pre-order and the values are printed out. Which of the following sequence is a valid output?",
+    "options": {
+      "A": "25 6 3 10 22 60 30 75",
+      "B": "25 6 10 3 22 75 30 60",
+      "C": "25 6 75 60 30 3 10 22",
+      "D": "75 30 60 22 10 3 6 25"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Figure shows a balanced tree. How many nodes will become unbalanced when a node is inserted as a child of the node ‘g’? a b d f e c g",
+    "options": {
+      "A": "7",
+      "B": "2",
+      "C": "3",
+      "D": "8"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "A full binary tree with n non-leaf nodes contains",
+    "options": {
+      "A": "2n nodes",
+      "B": "log2 n node",
+      "C": "n + 1 nodes",
+      "D": "2n + 1 nodes"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Which of the following list of nodes corresponds to a post order traversal of the binary tree shown below? A B D E F C G J I H",
+    "options": {
+      "A": "A B C D E F G H I J",
+      "B": "J I H G F E D C B A",
+      "C": "D H E B I F J G C A",
+      "D": "D E H F I G J B C A"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Which of the following sequence of array elements forms as heap?",
+    "options": {
+      "A": "{23, 17, 14, 6, 13, 10, 1, 12, 7, 5}",
+      "B": "{23, 17, 14, 6, 13, 10, 1, 5, 7, 12}",
+      "C": "{23, 17, 14, 7, 13, 10, 1, 5, 6, 12}",
+      "D": "{23, 17, 14, 7, 13, 10, 1, 12, 5, 6}"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "What is the maximum height of any AVL tree with 7 nodes? Assume that the height of a tree with a single node is 0.",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "A binary search tree is generated by inserting in order the following integers: 55, 15, 65, 5, 25, 59, 90, 2, 7, 35, 60, 23. The number of nodes in the left subtree and right sub- tree of the root respectively are",
+    "options": {
+      "A": "8, 3",
+      "B": "7, 4",
+      "C": "3, 8",
+      "D": "4, 7"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "In a complete binary tree of n nodes, how far are the most distant two nodes? Assume each in the path counts as 1.",
+    "options": {
+      "A": "about log2 n",
+      "B": "about 2log2 n",
+      "C": "about 3log2 n",
+      "D": "about 4log2 (n)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "A complete binary tree of level 5 has how many nodes?",
+    "options": {
+      "A": "20",
+      "B": "63",
+      "C": "30",
+      "D": "73 Common data for questions 12 and 13: A 3-ary max-heap is like a binary max-heap, but instead of 2 children, nodes have 3 children. A 3-ary heap can be represented by an array as follows: The root is stored in the first location, a[0], nodes in the next level from left to right is stored from a[1] to a[3] and so on. An item x can be inserted into a 3-ary heap containing n items by placing x in the location a[n] and pushing it up the tree to satisfy the heap property."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Which one of the following is a valid sequence of ele- ments in an array representing 3-ary max-heap?",
+    "options": {
+      "A": "1, 3, 5, 6, 8, 9",
+      "B": "9, 6, 3, 1, 8 , 5",
+      "C": "9, 3, 6, 8, 5, 1",
+      "D": "9, 5, 6, 8, 3, 1"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "Suppose the elements 7, 2, 10 and 4 are inserted, in that order, into the valid 3-ary max-heap found in the above question. Which one of the following is the sequence of items in the array representing the resultant heap?",
+    "options": {
+      "A": "10, 7, 9, 8, 3, 1, 5, 2, 6, 4",
+      "B": "10, 9, 8, 7, 6, 5, 4, 3, 2, 1",
+      "C": "10, 9, 4, 5, 7, 6, 8, 2, 1, 3",
+      "D": "10, 8, 6, 9, 7, 2, 3, 4, 1, 5"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Consider the nested representation of binary trees : (X Y Z) indicated Y and Z are the left and right subtrees respectively, of node X(Y and Z may be null (or) further nested) which of the following represents a valid binary tree?",
+    "options": {
+      "A": "(1 2 (4 5 6 7))",
+      "B": "(1(2 3 4)5 6)7",
+      "C": "(1(2 3 4) (5 6 7))",
+      "D": "(1(2 3 NULL)(4 5))"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 65,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "A scheme for storing binary trees in an array X is as follows: Indexing of X starts at 1 instead of 0. The root is stored at X[ 1 ]. For a node stored at X[i], the left child, if any, is stored in X[ 2i ] and the right child, if any, in X[2i + 1]. To store any binary tree on ‘n’ vertices the minimum size of X should be",
+    "options": {
+      "A": "2n",
+      "B": "n",
+      "C": "3n",
+      "D": "n2"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 66,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "A binary search tree contains the values 1, 2, 3, 4, 5, 6, 7, 8. The tree is traversed in pre-order and the val- ues are printed out. Which of the following is a valid output?",
+    "options": {
+      "A": "53124786",
+      "B": "53126487",
+      "C": "53241678",
+      "D": "53124768"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 66,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "A binary search tree is generated by inserting in order the following integers : 50, 15, 62, 5, 20, 58, 91, 3, 8, 37, 60, 24. The number of nodes in the left subtree and right subtree of the root respectively are:",
+    "options": {
+      "A": "(4, 7)",
+      "B": "(7, 4)",
+      "C": "(8, 3)",
+      "D": "(3, 8)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "A full binary tree (with root at level 0) of height h has a total number of nodes equal to:",
+    "options": {
+      "A": "2h",
+      "B": "2h+1 – 1",
+      "C": "2h – 1",
+      "D": "2h – 1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "The number of null pointers of a binary tree of n nodes is :",
+    "options": {
+      "A": "n + 1",
+      "B": "n(n + 1)",
+      "C": "n2",
+      "D": "2n"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 66,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Which of the following is false?",
+    "options": {
+      "A": "A tree with n nodes has (n – 1) edges.",
+      "B": "\u0007A labeled rooted binary tree can be uniquely con- structed, given its post-order, in-order traversal results.",
+      "C": "\u0007The complete binary tree with n internal nodes has (n + 1) leaves.",
+      "D": "\u0007The maximum number of nodes in a binary tree of height h is (2h+1 – 1)."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 66,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "The maximum number of nodes in a binary tree at level i is",
+    "options": {
+      "A": "2i",
+      "B": "2i – 1",
+      "C": "2i + 1",
+      "D": "log2 i + 1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "The number of leaf nodes in a rooted tree of n nodes, with each node having 0 or 3 children is",
+    "options": {
+      "A": "n 3",
+      "B": "( ) n −1 3",
+      "C": "( ) n −1 2",
+      "D": "( ) 2 1 3 n +"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 66,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "A complete n-ary tree is one in which every node has 0 or n children. If x is the number of internal nodes of a complete n-ary tree, the number of leaves in it is given by",
+    "options": {
+      "A": "x(n − 1) + 1",
+      "B": "xn + 1",
+      "C": "xn − 1",
+      "D": "x(n + 1) − 1 Common data for questions 9 and 10:"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 66,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Insert the keys into a binary search tree in the order specified 15, 32, 20, 9, 3, 25, 12, 1. Which one of the following is the binary search tree after insertion of all elements?",
+    "options": {
+      "A": "15 9 3 1 12 20 25 32",
+      "B": "15 12 9 3 1 20 25 32",
+      "C": "15 3 20 12 25 32 3 1",
+      "D": "15 1 25 9 32 12 3 20 32"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 66,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Which of the following is the binary tree after deleting 15?",
+    "options": {
+      "A": "1 12 3 32 25 20 9",
+      "B": "3 12 9 32 1 25 20",
+      "C": "3 12 9 25 25 32 20",
+      "D": "3 12 9 25 1 32 20 For questions 11, 12 and 13 below, use this figure A B C D E F G H I"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "What is the post-order expression?",
+    "options": {
+      "A": "ABDGCEJHIF",
+      "B": "GDBHIEFCA",
+      "C": "DGBAHEICF",
+      "D": "ABHIEFCDG"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "What is the pre-order expression?",
+    "options": {
+      "A": "ABDGCEHIF",
+      "B": "ABHIEFCDG",
+      "C": "DGBAHEIFCF",
+      "D": "GDBHIEFCA"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 67,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "What is the in-order expression?",
+    "options": {
+      "A": "ABDGCEHIF",
+      "B": "GDBHIEFCA",
+      "C": "DGBAHEICF",
+      "D": "ABHIEFCDG"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 67,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "In a 3-ary tree every internal node has exactly 3 chil- dren. The number of leaf nodes in such a tree with 6 internal nodes will be",
+    "options": {
+      "A": "13",
+      "B": "12",
+      "C": "11",
+      "D": "10"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 67,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "Minimum number of swaps needed to convert the array 89, 19, 14, 40, 17, 12, 10, 2, 5, 7, 11, 6, 9, 70 into a max heap",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "1",
+      "D": "0"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "In a binary tree with n nodes, every node has an odd number of descendants. Every node is considered to be its own descendant. What is the number of nodes in the tree that have exactly one child?\b [2010]",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "(n − 1)/2",
+      "D": "n – 1"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 67,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "The following C function takes a singly-linked list as input argument. It modifies the list by moving the last element to the front of the list and returns the modi- fied list. Some part of the code is left blank. typedef struct node { int value; struct node *next; } Node; Node *move_to_front(Node *head) { Node *p, *q; \u0007if ((head = = NULL || (head->next = = NULL)) return head; q = NULL; p = head; while (p-> next !=NULL) { q = p; p = p->next; } return head; } Choose the correct alternative to replace the blank line.\b [2010]",
+    "options": {
+      "A": "q = NULL; p->next = head; head = p;",
+      "B": "\u0007q->next = NULL; head = p; p->next = head;",
+      "C": "head = p; p->next = q; q->next = NULL;",
+      "D": "\u0007q->next = NULL; p->next = head; head = p;"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 67,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Consider two binary operators ‘↑’ and ‘↓’ with the precedence of operator ↓ being lower than that of the operator ↑. Operator ↑ is right associative while opera- tor ↓ is left associative. Which one of the following rep- resents the parse tree for expression (7 ↓ 3 ↑ 4 ↑ 3 ↓ 2)? \b [2011]",
+    "options": {
+      "A": "7 3 4 3 2 ↓ ↓ ↓ ↓",
+      "B": "7 3 4 3 2 ↓ ↓ ↓ ↓",
+      "C": "7 3 4 3 2 ↓ ↓ ↓ ↓",
+      "D": "7 3 4 3 2 ↓ ↓ ↓ ↓"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "The height of a tree is defined as the number of edges on the longest path in the tree. The function shown in the pseudocode below is invoked as “height(root)” to compute the height of a binary tree rooted at the tree pointer “root”. int height(treeptr n) {if (n = = NULL) return –1; if (n → left ==NULL) if (n → right == NULL) return 0; else return B1 ; //Box 1 else {h1 = height (n → left); if (n → right= = NULL) return (1 + h1); else {h2 = height (n → right); return B2 ; //Box 2 } } } The appropriate expressions for the two boxes B1 and B2 are\b [2012]",
+    "options": {
+      "A": "B1: (1 + height (n → right)) B2: (1 + max (h1, h2))",
+      "B": "B1: (height (n → right)) B2: (1+ max(h1, h2))",
+      "C": "B1: height (n → right) B2: max(h1, h2)",
+      "D": "B1: (1 + height (n → right)) B2: max(h1, h2)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 68,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "3 - Programming and Data Structures",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Consider the pseudocode given below. The function Dosomething() takes as argument a pointer to the root of an arbitrary tree represented by the leftMostChild- rightSibling representation. Each node of the tree is of type treenode.\b [2014] type def struct treeNode* treeptr; struct treeNode { treeptr leftMostChild, rightSibling; }; int Dosomething (treeptr tree) { int value = 0; if (tree ! = NULL){ if (tree – > leftMostChild = = NULL) value = 1; else value = Dosomething (tree – > leftMostChild); value = value +Dosomething (tree - > right Sibling); } return (value); } When the pointer to the root of a tree is passed as the argument to DoSomething, the value returned by the function corresponds to the",
+    "options": {
+      "A": "Number of internal nodes in the tree",
+      "B": "Height of the tree",
+      "C": "Number of nodes without a right sibling in the tree",
+      "D": "Number of leaf nodes in the tree"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 68,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "The height of a tree is the length of the longest root- to-leaf path in it. The maximum and minimum num- ber of nodes in a binary tree of height 5 are \b [2015]",
+    "options": {
+      "A": "63 and 6, respectively",
+      "B": "64 and 5, respectively",
+      "C": "32 and 6, respectively",
+      "D": "31 and 5, respectively"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 69,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Which of the following is/are correct inorder traversal sequence(s) of binary search tree(s)?\b [2015] I. 3, 5, 7, 8, 15, 19, 25 II. 5, 8, 9, 12, 10, 15, 25 III. 2, 7, 10, 8, 14, 16, 20 IV. 4, 6, 7, 9, 18, 20, 25",
+    "options": {
+      "A": "I and IV only",
+      "B": "II and III only",
+      "C": "II and IV only",
+      "D": "II only"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 69,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "Consider a max heap, represented by the array: 40, 30, 20, 10, 15, 16, 17, 8, 4\b [2015] Array Index 1 2 3 4 5 6 7 8 9 Value 40 30 20 10 15 16 17 8 4 Now consider that a value 35 is inserted into this heap. After insertion, the new heap is",
+    "options": {
+      "A": "40, 30, 20, 10, 15, 16, 17, 8, 4, 35",
+      "B": "40, 35, 20, 10, 30, 16, 17, 8, 4, 15",
+      "C": "40, 30, 20, 10, 35, 16, 17, 8, 4, 15",
+      "D": "40, 35, 20, 10, 15, 16, 17, 8, 4, 30"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 69,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "While inserting the elements 71, 65, 84, 69, 67, 83 in an empty binary search tree (BST) in the sequence shown, the element in the lowest level is \b [2015]",
+    "options": {
+      "A": "65",
+      "B": "67",
+      "C": "69",
+      "D": "83"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 69,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "Consider the following New–order strategy for tra- versing a binary tree:\b [2016] •• Visit the root; •• Visit the right subtree using New – order; •• Visit the left subtree using New – order; The New – order traversal of the expression tree cor- responding to the reverse polish expression 3 4 * 5 – 2 ∧ 6 7 * 1 + – is given by:",
+    "options": {
+      "A": "+ – 1 6 7 * 2 ∧ 5 – 3 4 *",
+      "B": "– + 1 * 6 7 ∧ 2 – 5 * 3 4",
+      "C": "– + 1 * 7 6 ∧ 2 – 5 * 4 3",
+      "D": "1 7 6 * + 2 5 4 3 * – ∧ –"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 69,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "Let T be a binary search tree with 15 nodes. The mini- mum and maximum possible heights of T are:\b[2017] Note: The height of a tree with a single node is 0.",
+    "options": {
+      "A": "4 and 15 respectively",
+      "B": "3 and 14 respectively",
+      "C": "4 and 14 respectively",
+      "D": "3 and 15 respectively"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 69,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  },
+  {
+    "chapter": "5 - Trees",
+    "section": "Previous Years’ Questions",
+    "number": 15,
+    "question": "The pre-order traversal of a binary search tree is given by 12,8,6,2,7,9,10,16,15,19,17,20. Then the post- order traversal of this tree is:\b [2017]",
+    "options": {
+      "A": "2, 6, 7, 8, 9, 10, 12, 15, 16, 17, 19, 20",
+      "B": "2, 7, 6, 10, 9, 8, 15, 17, 20, 19, 16, 12",
+      "C": "7, 2, 6, 8, 9,10, 20, 17, 19, 15, 16, 12",
+      "D": "7, 6, 2, 10, 9, 8, 15, 16, 17, 20, 19, 12"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 69,
+    "subject": "Programming and Data structure",
+    "source": "Computer Science/Notes & Material/Programming and Data structure.pdf"
+  }
+]

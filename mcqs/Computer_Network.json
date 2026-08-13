@@ -1,0 +1,3018 @@
+[
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Assume that, in a stop and wait ARQ system, the band- width of the line is 1 mbps, and 1 bit takes 20 ms to make a round trip. What is the bandwidth delay product utilization percentage of the link if we send 1000 bits?",
+    "options": {
+      "A": "1%",
+      "B": "5%",
+      "C": "10%",
+      "D": "50%"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 16,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "A channel has a bit rate of 20 kbps and propagation delay of 100 msec. For what size does stop and wait gives an efficiency of 50%?",
+    "options": {
+      "A": "2000 bits",
+      "B": "3000 bits",
+      "C": "4000 bits",
+      "D": "6000 bits"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 16,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "CSMA/CD LAN of 1 gbps is to be designed over 1 km cable without repeater. The minimum frame size that Data link layer should consider, if cable support signal speed of 20,000 km/sec",
+    "options": {
+      "A": "10 k bits",
+      "B": "20 k bits",
+      "C": "30 k bits",
+      "D": "40 k bits"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 16,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "A 20 mbps satellite link has a propagation delay of 400 ms. The transmitter employs the ‘go-back-n ARQ’ scheme with n set to 10. Assuming each frame is 100 bytes long. What is the maximum data rate possible?",
+    "options": {
+      "A": "1 mbps",
+      "B": "2 mbps",
+      "C": "5 mbps",
+      "D": "10 mbps"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "A satellite channel has capacity of B bits/sec, the frame size is of L bits, and round trip propagation time of R sec, uses stop and wait protocol, what is the channel utilization?",
+    "options": {
+      "A": "L L BR −",
+      "B": "L L BR +",
+      "C": "L B R +",
+      "D": "L B R −"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Find efficiency of the ring where data rate of link is 4 mbps, number of stations are 20 separated by 100 meters and bit delay in each station is 2.5 bits. (velocity of propagation = 2 × 108 m/s)",
+    "options": {
+      "A": "60 bits",
+      "B": "75 bits",
+      "C": "90 bits",
+      "D": "120 bits"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "If you are designing sliding window protocol of 1 mbps which has one way delay of 1.25 seconds. Assuming each frame carries 1 kB of data, what is the minimum number of bits you need for the sequence number?",
+    "options": {
+      "A": "8",
+      "B": "9",
+      "C": "10",
+      "D": "12"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "What are the sequence numbers of sender and receiver windows in Go-back-n and selective repeat if m-bits are used?",
+    "options": {
+      "A": "2m –1,1, 2m – 1, 2m – 1",
+      "B": "2m, 1, 2m – 1, 2m – 1",
+      "C": "2m, 2, 2m, 2m",
+      "D": "2m–1,1, 2m, 2m"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "A 100 km long cable runs at 1.536 mbps. The propaga- tion speed in the cable is 2/3 of speed of light. Number of bits fit in the cable would be?",
+    "options": {
+      "A": "428 bits",
+      "B": "526 bits",
+      "C": "672 bits",
+      "D": "768 bits"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "If the bandwidth of the link is 256 mbps, Assume that sequence number field consists 32 bits. Find the wrap around time for sequence numbers?",
+    "options": {
+      "A": "128 sec",
+      "B": "256 sec",
+      "C": "512 sec",
+      "D": "1024 sec"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 984,
+    "question": "In how many successive collisions, the station was a part of communication?",
+    "options": {
+      "A": "4",
+      "B": "6",
+      "C": "8",
+      "D": "10"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "There are 10 stations in a LAN always having constant load and ready to transmit. During any particular con- tention slot each station transmits with a probability of 0.1. If the average frame takes 122 ms to transmit, what is the channel efficiency, if round trip time is 51.2 micro secs?",
+    "options": {
+      "A": "0.23",
+      "B": "0.35",
+      "C": "0.48",
+      "D": "0.56"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "Which of the below are issues concerning data link layer? (i) \u0007Ensures that the transmission facility is free of un- detected transmission errors (ii) \u0007Regulates the transmission rates so as to match the receiver’s capabilities (iii) \u0007Ensures the design of the line such that when a ‘1’ bit is sent it is always received as ‘1’ bit at receiv- ers end.",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(iii), (i)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "An Ethernet LAN has the capability of 100 Mbps. If Manchester encoding is used, what is the rate of signal change?",
+    "options": {
+      "A": "20 million times/sec",
+      "B": "200 million times/sec",
+      "C": "50 million times/sec",
+      "D": "500 million times/sec"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "For 10 Mbps LAN it is found that 64 bytes is the mini- mum frame size to aid in collision detection. What should be the minimum frame size for a 100 Mbps LAN?",
+    "options": {
+      "A": "6.4 bytes",
+      "B": "64 bytes",
+      "C": "640 bytes",
+      "D": "6400 bytes"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "What is the probability of success for any arbitrary sta- tion among ‘N’ stations to transmit in CSMA/CD?",
+    "options": {
+      "A": "Nps(1 – ps)N",
+      "B": "(N – 1)ps (1 – ps)",
+      "C": "Nps(1 – ps)N – 1",
+      "D": "Nps(1 – ps)N"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "If 4-bits are used to represent sequence numbers for flow control. What are sender and receiver window sizes in Go-back-n and selective repeat?",
+    "options": {
+      "A": "16, 1, 8, 8",
+      "B": "15, 1, 8, 8",
+      "C": "15, 2, 8, 8",
+      "D": "15, 1, 16, 8"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "If the available maximum sequence number is 13, com- pute sender and receiver window sizes in go-back-n and selective repeat?",
+    "options": {
+      "A": "4, 1, 4, 4",
+      "B": "4, 1, 7, 7",
+      "C": "13, 1, 7, 7",
+      "D": "13, 1, 4, 4"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "In a gigabit ethernet LAN, the receiver couldn’t empty the input buffer on some line for 1 millisecond. What is the maximum accumulation of frames possible neglect- ing propagation delays? 8.20 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology",
+    "options": {
+      "A": "1024 frames",
+      "B": "2097 frames",
+      "C": "4096 frames",
+      "D": "5120 frames"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 17,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "A Token ring LAN is using differential Manchester encoding. If the LAN speed is 10 Mbps. What is the baud rate?",
+    "options": {
+      "A": "10 M baud",
+      "B": "20 M baud",
+      "C": "5 M baud",
+      "D": "100 M baud"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Consider a 100-meter 10 mbps token ring containing 10 stations, each transmitting with equal priority. Each station can transmit 4 bytes before giving up the token. Token holding time per station is 10 ns. Also propaga- tion speed is 200 m/s. Assume that the Ring monitor has created a new token, how long does it take for the token to come back to the Ring monitor if no station uses the token?",
+    "options": {
+      "A": "2.55 msec",
+      "B": "3.64 msec",
+      "C": "4.65 msec",
+      "D": "2.93 msec"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "In the above question, if only 6 nodes including Ring monitor are active what is total propagation delay in msec?",
+    "options": {
+      "A": "3.60",
+      "B": "3.61",
+      "C": "3.62",
+      "D": "3.63"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "In the above case if bit regeneration time is 1 ns/bit. What is the regeneration overhead caused if a 4 kB token is taken by 1st node and if it uses to transmit 4B data to ring monitor.",
+    "options": {
+      "A": "412 ns",
+      "B": "544 ns",
+      "C": "640 ns",
+      "D": "800 ns"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Which of the below operation is applied to full-duplex mode operation of gigabit Ethernet? (i) Traffic is allowed in both directions at any time. (ii) CSMA/CD protocol is used. (iii) Maximum length of cable segment used to connect sta- tions is limited by CSMA/CD protocol.",
+    "options": {
+      "A": "(i) and (ii)",
+      "B": "(ii), (iii)",
+      "C": "(iii), (i)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Which of the below are not applied to Token Ring networks? (i) Collisions (ii) Limits on length of the cable segment (iii) Time slots for transmission (iv) Usage of repeaters",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(iii), (iv)",
+      "D": "(i), (iv)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "Select the correct statements from below (pertaining to Ethernet): (i) Frame collisions don’t occur at a repeater (ii) Frame collisions can occur at the hub itself (iii) Switch frames are never lost due to collisions (iv) Entire bridge is a point of collisions",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(ii), (iii), (iv)",
+      "C": "(i), (iii), (iv)",
+      "D": "(i), (ii), (iv)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Match the different layers with possible security meth- ods in those layers. (p) Data link layer (i) user authentication (q) Network layer (ii) use firewalls (r) Transport layer (iii) encryption of connections (s) Application layer (iv) \u0007point to point encryp- tion of data stream",
+    "options": {
+      "A": "p – i, q – ii, r – iii, s – iv",
+      "B": "p – ii, q – iv, r – iii, s – i",
+      "C": "p – iv, q – ii, r – iii, s – i",
+      "D": "p – iii, q – iv, r – ii, s – i"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "The hamming distance between 001111 and 010011 is",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "Which of the following represents the polynomial x5 + x4 + x0 using the CRC?",
+    "options": {
+      "A": "110000",
+      "B": "110001",
+      "C": "110010",
+      "D": "110101"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "For a sliding window of size n–1 (n sequence number) there can be maximum of how many frames sent but unacknowledged?",
+    "options": {
+      "A": "0",
+      "B": "n – 1",
+      "C": "n",
+      "D": "n + 1"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "The message 11001001 is to be transmitted using the CRC polynomial x3 + 1 to protect it from errors. The message that should be transmitted is:\b [2007]",
+    "options": {
+      "A": "11001001000",
+      "B": "11001001011",
+      "C": "11001010",
+      "D": "110010010011"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "The distance between two stations M and N is L kilo- meters. All frames are K bits long. The propagation delay per kilometer is t seconds. Let R bits/second be the channel capacity. Assuming that processing delay is negligible, the minimum number of bits for the sequence number field in a frame for maximum utilization, when the sliding window protocol is used, is:\b [2007]",
+    "options": {
+      "A": "log2 2 2 LtR k +     k",
+      "B": "log2 2LtR k    ",
+      "C": "log2 2LtR k k +    ",
+      "D": "log2 2 2 LtR k k +    "
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Match the following: (P) SMTP (1) Application layer (Q) BGP (2) Transport layer (R) TCP (3) Data link layer (S) PPP (4) Network layer (5) Physical layer \b [2007]",
+    "options": {
+      "A": "P–2 Q–1 R–3 S–5",
+      "B": "P–1 Q–4 R–2 S–3",
+      "C": "P–1 Q–4 R–2 S–5",
+      "D": "P–2 Q–4 R–1 S–3"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 18,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "A layer-4 firewall (a device that can look at all protocol headers up to the transport layer) CANNOT\b \b [2011]",
+    "options": {
+      "A": "\u0007Block entire HTTP traffic during 9.00PM and 5.00PM",
+      "B": "Block all ICMP traffic",
+      "C": "\u0007Stop incoming traffic from a specific IP address but allow outgoing traffic to the same IP address",
+      "D": "\u0007Block TCP traffic from a specific user on a multi- user system during 9.00PM and 5.00AM."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "If two fair coins are flipped and at least one of the out- comes is known to be a head, what is the probability that both outcomes are heads?\b [2011]",
+    "options": {
+      "A": "1/3",
+      "B": "1/4",
+      "C": "1/2",
+      "D": "2/3"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Which of the following transport layer protocols is used to support electronic mail?\b [2012]",
+    "options": {
+      "A": "SMTP",
+      "B": "IP",
+      "C": "TCP",
+      "D": "UDP"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 19,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "Consider a source computer (S) transmitting a file of size 106 bits to a destination computer (D) over a net- work of two routers (R1 and R2) and three links (L1, L2 and L3). L1 connects S to R1; L2 connects R1 to R2; and L3 connects R2 to D. Let each link be of length 100 km. Assume signals travel over each link at a speed of 108 meters per second. Assume that the link band- width on each link is 1 Mbps. Let the file be broken down into 1000 packets each of size 1000 bits. Find the total sum of transmission and propagation delays in transmitting the file from S to D?\b [2012]",
+    "options": {
+      "A": "1005 ms",
+      "B": "1010 ms",
+      "C": "3000 ms",
+      "D": "3003 ms"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 19,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Determine the maximum length of the cable (in km) for transmitting data at a rate of 500 Mbps in an Ethernet LAN with frames of size 10,000 bits. Assume the sig- nal speed in the cable to be 2,00,000 km/s.\b [2013]",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "2.5",
+      "D": "5"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 19,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "Consider the store and forward packet switched net- work given below. Assume that the bandwidth of each link is 106 bytes/sec. A user on host A sends a file of size 103 bytes to host B through routers R1 and R2 in three different ways. In the first case a single packet containing the complete file is transmitted from A to B. In the second case, the file is spilt into 10 equal parts, and these packets are transmitted from A to B. In the third case, the file is spilt into 20 equal parts, and these packets are sent from A to B. Each packet contains 100 bytes of header information along with the user data. Consider only transmission time and ignore processing, queuing and propagation delays. Also assume that there are no errors during transmis- sions. Let T1, T2 and T3 be the times taken to transmit the file in the first, second and third case respectively. Which one of the following is CORRECT?\b [2014] A R2 R1 B",
+    "options": {
+      "A": "T1 < T2 < T3",
+      "B": "T1 > T2 > T3",
+      "C": "T2 = T3, T3 < T1",
+      "D": "T1 = T3, T3 > T2"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 19,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "In the following pairs of OSI protocol layer/ sub-layer and its functionality the INCORRECT pair is \b[2014]",
+    "options": {
+      "A": "\u0007Network layer and Routing",
+      "B": "\u0007Data Link Layer and Bit synchornization",
+      "C": "\u0007Transport layer and End-to-end process commu- nication",
+      "D": "\u0007Medium Access Control sub-layer and Channel sharing"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 19,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "A bit-stuffing based framing protocol uses an 8-bit delimiter pattern of 01111110. If the output bit-string after stuffing is 01111100101, then the input bit- string is\b [2014]",
+    "options": {
+      "A": "0111110100",
+      "B": "0111110101",
+      "C": "0111111101",
+      "D": "011111111"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 19,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 15,
+    "question": "Consider a CSMA/CD network that transmits data at a rate of 100 Mbps (108-bits per second) over a 1 km (kilometer) cable with no repeaters. If the minimum frame size required for this network is 1250 bytes, what is the signal speed (km/sec) in the cable? \b [2015]",
+    "options": {
+      "A": "8000",
+      "B": "10000",
+      "C": "16000",
+      "D": "20000"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 20,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 20,
+    "question": "In an Ethernet local area network, which one of the following statements is TRUE?\b [2016]",
+    "options": {
+      "A": "\u0007A station stops to sense the channel once it starts transmitting a frame.",
+      "B": "\u0007The purpose of the jamming signal is to pad the frames that are smaller than the minimum frame size.",
+      "C": "\u0007A station continues to transmit the packet even after the collision is detected",
+      "D": "\u0007The exponential back off mechanism reduces the probability of collision on retransmissions."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 20,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 22,
+    "question": "A computer network uses polynomials over GF(2) for error checking with 8 bits as information bits and uses x3 + x + 1 as the generator polynomial to generate the check bits. In this network, the message 01011011 is transmitted as\b [2017]",
+    "options": {
+      "A": "01011011010",
+      "B": "01011011011",
+      "C": "01011011101",
+      "D": "01011011100"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 20,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 24,
+    "question": "Consider a binary code that consists of only four valid codewords as given below: 00000,01011,10101,11110 Let the minimum Hamming distance of the code be p and the maximum number of erroneous bits that can be corrected by the code be q. Then the values of p and q are\b [2017]",
+    "options": {
+      "A": "p=3 and q=l",
+      "B": "p=3 and q=2",
+      "C": "p=4 and q=1",
+      "D": "p=4 and q=2"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 20,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 25,
+    "question": "Consider two hosts X and Y connected by a single direct link of rate 106 bits/sec. The distance between the two hosts is 10.000 km and the propagation speed along the link is 2 × 108 m/sec. Host X sends a file of 50,000 bytes as one large message to host Y continu- ously. Let the transmission and propagation delays be p milliseconds and q milliseconds, respectively. Then the values of p and q are\b [2017]",
+    "options": {
+      "A": "p=50 and q=100",
+      "B": "p=50 and q=400"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 20,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "1 - OSI Layers",
+    "section": "Previous Years’ Questions",
+    "number": 26,
+    "question": "50",
+    "options": {
+      "C": "p=100 and q=50",
+      "D": "p=400 and q=50"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 21,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "End-Host protocol The algorithms specified above are based on Dijkstras shortest path algorithm they generate paths according to path characteristics and ensure path quality and path independence. The end-host protocol uses the multipath (determined) effectively performance will be improved if end-users use the multiple paths effectively. Distance Vector Routing A dynamic routing algorithm, operates by having each router maintain a table (i.e., a vector) giving the best known distance to each destination and which line to use to get there. These tables are updated by exchanging information with the neighbors. The Metric used might be number of hops, time delay in milliseconds, and total number of packets queued along the path or something similar. • • • • • • • • • • • A E F G H L K J I B C D",
+    "options": {
+      "A": "New estimated Delay from A I H K J A 0 24 20 21 8 A B 12 36 31 28 20 A C 25 18 19 36 28 I D 40 27 8 24 20 H E 14 7 30 22 17 I F 23 20 19 40 30 I G 18 31 6 31 18 H H 17 20 0 19 12 H I 21 0 14 22 10 I J 9 11 7 10 0 - K 24 22 22 0 6 K L 29 33 9 9 15 k JA delay is 8 JI delay is 10 JH delay is 12",
+      "B": "JK delay is 6 New routing table for J Vectors received from J’s four neighbours. Figure 2 (a) Subnet, (b) Delay vectors of J Figure 2(a) ‘shows a subnet. The first 4 columns of figure 2(b) shows the delay vectors received from the neighbors of router J. A claims to have a 12 m sec delay to B, a 25 m sec delay to C, a 40 m sec delay to D, etc. Suppose that J has estimated its delay to its neighbour, A, J, H and K as 8, 10, 12 and 6 m sec, respectively. Now J computes its new route to router G. It knows that it can get to A in 8 m sec, and A claims to be able to get to G in 18 m sec, so J knows it can count on a delay of 26 m sec to G if it forwards packets bound for G to A, similarly, it computes the delay to G via I, H and K as 41 (31 + 10), 18 (6 + 12) and 37 (31 + 6) m sec, respectively. The best of these values is 18, so it makes an entry in its routing table that the delay to G is 18 m sec and that the route to use is via H. Count to Infinity Problem It reacts rapidly to good news, but leisurely to bad news. Actual network may be down but routers will exchange routes with one another. Following measures are taken to avoid count-to-infinity problem:"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 22,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Compute the shortest path to every other router. Learning about the neighbors When a router is booted, its first task is to learn who its neighbors are. It accomplishes this goal by sending a special HELLO packet on each point to point line. The router on the other end is expected to send back a reply telling who it is. These names must be globally unique. Measuring the cost The link state routing algorithm requires each router to know, or at least have a reasonable estimate of, the delay to each of its neighbors. 8.26 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology The most direct way to determine this delay is to send over the line a special ECHO packet that the other side is required to send back immediately. By measuring the round trip time and dividing it by two, the sending router can get a reasonable estimate of the delay. If two paths with same bandwidth exists and one path is heavily loaded then the path which is not heavily loaded is chosen. But this may oscillate in the choice of best path. So to avoid oscillation in the choice of best path, distribute the load over multiple lines with same known fraction going over each line. Building link state packets Once the information needed for the exchange has been collected, the next step is, for each router to build a packet containing all the data. The packet starts with identity of the sender, followed by a sequence number and age, and a list of neighbors. For each neighbor, delay to that neighbor is given. B 2 C 6 1 D 3 7 F 8 E 5 A 4",
+    "options": {
+      "A": "A B C Seq Seq Seq Age Age Age B 4 B 4 B 2 E 5 D 2 D 3 E 6 E 1 D E F Seq Seq Seq Age Age Age C 3 A 5 B 6 F 7 F 8 D 7 C 1 E 8",
+      "B": "Figure 3 (a) Subnet5, (b) Link state packets for this subnet. Distributing the link state packets As the packets are dis- tributed and installed, the routers getting the routing packet first will change their routes. Consequently, the different routers may be using differ- ent versions of the topology, which can lead to inconsist- encies, loops, unreachable machines, and other problems. The fundamental idea is to use flooding to distribute the link state packets. To keep the flood in check, each packet contains a sequence number that is incremented for each new packet sent. Routers keep track of all the (source router, sequence) pairs they see. When a new link state packet comes in, it is checked against the list of packets already seen. If it is new, it is forwarded on all lines except the one it arrived on. If it is a duplicate, it is discarded. If a packet with a sequence number lower than the high- est one seen so far ever arrives, it is rejected as being obso- lete since the router has more recent data. If a router ever crashes it will lose track of its sequence number. If its starts again at 0, the next packet will be rejected as a duplicate. Also due to bit error, packets may be rejected as obsolete. Solution to these problems is to include the age of each packet after the sequence number and decrement it once per second. When the age hits zero, the information from that router is discarded. Computing new routes Once a router has accumulated a full set of link state packets, it can construct the entire sub- net graph because every link is represented. Every link is, in fact, represented twice, once for each direction. The two values can be averaged or used separately. Now dijkstra’s algorithm can be run locally to construct the shortest path to all possible destinations. Hierarchical Routing Hierarchical Routing is mainly designed for large topologies. With increase in the topology there is proportionate increase in the routing tables, which consume more memory for maintain- ing tables and requires more bandwidth for the status reports. In this routing, network topology is divided into hier- archies, these will reduce size of routing table. The node at each hierarchy will know about the nodes present in that level. It forwards the packet to its border router (at its level) if destination is not at its level. Hierarchical routing increases efficiency in routing, less traffic, reduction of table size in an order of about (log n). RIP"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 23,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Traffic shaping is about regulating the average rate of data transmission. Leaky Bucket Algorithm Leaky bucket",
+    "options": {
+      "A": "Host computer Packet Unregulared flow The bucket holds packet Regulated flow Interface containing a leaky bucket",
+      "B": "Figure 4 (a) A leaky bucket with water, (b) A leaky bucket with network 8.28 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology A leaky bucket is a bucket with a small hole. No matter at what rate water enters the bucket, the outflow is at constant rate, S, when there is any water in the bucket and zero when bucket is empty. Once the bucket is full, any additional water entering it, spills over the sides and it is lost. Each host is connected to the network by an interface containing a leaky bucket (i.e., a finite internal queue) congestion control algorithms. Maximum carrying capacity of subnet Perfect Desirable Congested Packets sent Packets delivered When too many packets are present in the subnet, perfor- mance degrades. This situation is called congestion. Causes of congestion"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 25,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Consider below figure: 180.70.65.135/25 m3 m1 m2 m0 R1 X X X 201.4.16.2/22 180.70.65.200/26 201.4.22.3/24 210.4.22.0/24 180.70.65.192/26 Rest of the internet 180.70.65.128 201.4.16.0/22 The internet The network address, 180.70.65.130 goes through which of the following interface?",
+    "options": {
+      "A": "m0",
+      "B": "m1",
+      "C": "m2",
+      "D": "m3"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 27,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Consider below graphical representation of a subnet with each node denoting a router. If all the routers are booted at the same time, what is the number of link state packets that are generated having the cost/delay information? • • • • • • B 3 C D 2 E 4 F 2 A 1 2 6",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 27,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "In a TCP connection it is found that burst size of 1024, 2048, 4096 have been transmitted while that of 8192 has resulted in a time out. The receiver has earlier set a win- dow size of 4096. As per slow start algorithm which of the below statement is true? (i) Congestion window is set to 4096. (ii) Maximum allowed burst size is 8192",
+    "options": {
+      "A": "(i) only",
+      "B": "(ii) only",
+      "C": "Both (i) and (ii)",
+      "D": "Neither (i) nor (ii)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 27,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "From the below graph select the sink tree(s): • • • • • D C 2 1 1 1 1 E 2 2 2 A B (i) C B E D A • • • • • (ii) B A D E C • • • • • (iii) B C E D A • • • • •",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 27,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "Consider the below graph. • • • • • • • E D C G F A B It is known that D is the optimal route from A to C and the optimal route from A to C has 3 hops. Which of the below statements is certainly true? (i) B is not in the optimal route from A to C (ii) G is not in the optimal route from B to C (iii) Either E or F is in the optimal route from A to C (iv) ED, FD are both optimal routes",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(ii), (iii), (iv)",
+      "C": "(i), (iii), (iv)",
+      "D": "(i), (iv), (ii)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 27,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "The shortest path using Dijkstra’s algorithm after 3 iterations is • • • • • • • • B 8 1 3 3 3 3 F 2 2 4 A 2 2 G H C D",
+    "options": {
+      "A": "A G",
+      "B": "A B E",
+      "C": "A B C",
+      "D": "A G H"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 27,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "There are totally 20 links among the routers of a subnet. How many rows are needed in all when link state packets 8.30 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology combined together, which are used to notify each other about cost/delay in transmitting data to immediate neigh- bours. Assume 1 row is needed for each neighbour?",
+    "options": {
+      "A": "10",
+      "B": "20",
+      "C": "40",
+      "D": "80"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 27,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Below are the link state packets generated by routers in a subnet. What is the shortest distance between A and D? A B C Seq Seq Seq Age Age Age B 4 A 4 B 2 E 5 C 2 D 3 F 6 E 1 D E F Seq Seq Seq Age Age Age C 3 A 5 B 6 F 7 C 1 D 7 F 8 E 8",
+    "options": {
+      "A": "6",
+      "B": "9",
+      "C": "10",
+      "D": "11"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 28,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "What are the advantages of reverse path forwarding over other broadcasting algorithms like spanning trees, multidestination routing, broadcasting, and flooding? (i) \u0007Route does not need to know information regard- ing spanning tree structures (ii) Uses destination tables for further forwarding (iii) \u0007Does not need a halt mechanism to stop packets from further getting routed",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 28,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Which of the following specifies the correct sequence of steps to route packets to mobile hosts? (i) Sender is given foreign agent’s address (ii) Packet is sent to mobile host’s home address (iii) Packet is tunneled to foreign agent (iv) \u0007Subsequent packets are tunneled to the foreign agent",
+    "options": {
+      "A": "(i), (ii), (iii), (iv)",
+      "B": "(ii), (iii), (iv), (i)",
+      "C": "(ii), (iii), (i), (iv)",
+      "D": "(iii), (iv), (i), (ii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 28,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "What are the different parts of congestion control by closed loop methods? (i) \u0007Design the system in advance to make sure conges- tion doesn’t occur in first place (ii) \u0007Monitor the system to detect when and where con- gestion occurs (iii) \u0007Pass congestion information to places where action can be taken (iv) Adjust system operation to correct the problem",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(ii), (iii), (iv)",
+      "C": "(iii), (iv), (i)",
+      "D": "(i), (ii), (iv)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 28,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "In Selective flooding",
+    "options": {
+      "A": "Packets are sent in all outgoing lines.",
+      "B": "\u0007Packets are sent in only on those lines that are approximately in the right direction.",
+      "C": "Both (A) and (B)",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 28,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "There are 5 routers and 6 networks in an inter-networking, using link state routing, how many routing tables are there?",
+    "options": {
+      "A": "1",
+      "B": "5",
+      "C": "6",
+      "D": "11"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 28,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Congestion control for multicasting flows from multiple sources to multiple destinations, the solution that can handle this is",
+    "options": {
+      "A": "RSVP (Resource reSerVation Protocol)",
+      "B": "Load shedding",
+      "C": "Both (A) and (B)",
+      "D": "None of these."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 28,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "Which of the below are part of backward learning algorithm? (i) \u0007As the bridge starts operating, a hash table to map source addresses to corresponding LANs is con- structed. (ii) \u0007It dynamically updates the hash tables when machines are connected and re connected to the LAN. (iii) It encrypts the frames for security reasons.",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 28,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "What does a routing algorithm perform?",
+    "options": {
+      "A": "\u0007Decides if incoming packet should be further cor- rected for transmission errors",
+      "B": "Adds checksum bits to packets",
+      "C": "Encrypts the packets",
+      "D": "\u0007Decides the output line on which the incoming packet should be transmitted"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "What happens in session routing?",
+    "options": {
+      "A": "\u0007User’s session variables are managed by the net- work layer",
+      "B": "Route remains same throughout the user session",
+      "C": "\u0007Packets change their route for optimization sake during user session",
+      "D": "Provides special routes for important packets"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "What is the type of algorithm that changes their routing decision based on changes in topology and traffic?",
+    "options": {
+      "A": "Adaptive routing",
+      "B": "Static routing",
+      "C": "Non-adaptive routing",
+      "D": "Network routing"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Which of the below routing method always ensures the shortest path even though routers crash during course of routing?",
+    "options": {
+      "A": "Dijkstra Routing",
+      "B": "Flooding",
+      "C": "Distance Vector Routing",
+      "D": "Link State Routing"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "What is the root cause for count-to-infinity problem?",
+    "options": {
+      "A": "The routing tables are static and are not updated.",
+      "B": "\u0007The routing tables run out of space to accommo- date more entries in table.",
+      "C": "\u0007When router X tells router Y that there is a path, it doesn’t say if Y itself is in the path.",
+      "D": "\u0007When router X tells router Y that there is a path (to target route Z) it doesn’t inform Z about the path."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "In a strict sure security path ABCD, where A, B, C, D are routers, the maximum bandwidth is found to be 500 kbps, 700 kbps, 900 kbps, 300 kbps respectively. What is the effective bandwidth if no buffering is possible?",
+    "options": {
+      "A": "600 kbps",
+      "B": "900 kbps",
+      "C": "300 kbps",
+      "D": "2400 kbps"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "What is the characteristic of Distance Vector Routing? (i) \u0007Time taken to reach other routers in the network is maintained in the routing tables. (ii) \u0007Algorithm is susceptible to count-to-infinity prob- lem. (iii) \u0007The preferred outgoing line to be used for a par- ticular destination is also stored in tables.",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "A subnet using link state algorithm has router, using link state packets with sequence of 16-bit fixed size. If a link state packet is sent every second, how long would it take before wrap around occurs. Assume start- ing sequence number is 0.",
+    "options": {
+      "A": "24.5 hours",
+      "B": "18.20 hours",
+      "C": "17.5 hours",
+      "D": "16.4 hours"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Which of the following are features of link state routing? (i) \u0007In the first step discover all the routers in the sub- net and find their network addresses. (ii) Measure cost/delay to the neighbours. (iii) \u0007Transmit the information as obtained in (ii) across the subnet. (iv) \u0007Thus by pass the necessity for shortest path algo- rithm.",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(iii), (iv)",
+      "D": "(i), (iv)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "In multidestination routing, (i) \u0007Each router makes new copies of the incoming packets. (ii) It retains the same destination list in all copies. (iii) It places them on appropriate outgoing lines.",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(iii), (i)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "In a subnet which follows reverse path forwarding, routers B and C have received packets from A which have been further forwarded to D and E by B and to F and G by C. Of this D, G has always discarded the valid packets. Construct the preferred routing lines in the subnet.",
+    "options": {
+      "A": "A B D E F G C",
+      "B": "B A E D G C F",
+      "C": "E B A C F",
+      "D": "A B D G C"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Which of the following layers accept services from net- work layer and provides services to session layer?",
+    "options": {
+      "A": "Data link layer",
+      "B": "Presentation layer",
+      "C": "Transport layer",
+      "D": "Physical layer."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "Which of the below are different metrics for congestion? (i) Packets discarded for lack of buffer space (ii) Packets that are retransmitted (iii) Average packet delay (iv) Average queue length",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(ii), (iii), (iv)",
+      "C": "(iii), (iv), (i)",
+      "D": "(i), (ii), (iii), (iv) 8.32 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 29,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "What are the ways to decrease congestion? (i) Put spare routers to use (ii) Increase bandwidth by routing on alternate lines (iii) Increase the size of tables in the routers (iv) Decrease the load",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(ii), (iii), (iv)",
+      "C": "(iii), (iv), (i)",
+      "D": "(iv), (i), (ii)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 30,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "The algorithm which tells the routers to maintain cer- tain data structures in their memories for congestion control is",
+    "options": {
+      "A": "Resource Reservation Protocol.",
+      "B": "Fair queuing algorithm.",
+      "C": "Token bucket algorithm.",
+      "D": "None of these Common data for questions 1 and 2: Consider three IP networks, A, B and C. Host HA in network A sends mes- sages each containing 180 bytes of application data to a host HC in network C. The TCP layer prefixes a 20 byte header to the message. This passes through an intermedi- ate network B. The maximum packet size, including 20 byte IP header, in each network is: A: 1000 bytes B: 100 bytes C: 1000 bytes The networks A and B are connected through a 1 Mbps link, while B and C are connected by a 512 Kbps link (bps = bits per second) Network A Network B Network C 1 Mbps 512 Mbps"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 30,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Assuming that the packets are correctly delivered, How many bytes, including headers, are delivered to the IP layer at the destination for one application message, in the best case? Consider only data packets. \b [2004]",
+    "options": {
+      "A": "200",
+      "B": "220",
+      "C": "240",
+      "D": "260"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 30,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "What is the rate at which the application data is trans- ferred to host HC? Ignore errors, acknowledgements, and other over heads.\b [2004]",
+    "options": {
+      "A": "325.5 kbps",
+      "B": "354.5 kbps",
+      "C": "409.6 kbps",
+      "D": "512.0 kbps"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 30,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "In a packet switching network, packets routed from source to destination along a single path having two intermediate nodes. If the message size is 24 bytes and each packet contains a header of 3 bytes, then the optimum packet size is:\b [2005]",
+    "options": {
+      "A": "4",
+      "B": "6",
+      "C": "7",
+      "D": "9"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 30,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Suppose the round trip propagation delay for a 10 Mbps Ethernet having 48-bit jamming signal is 46.4 ms. The minimum frame size is:\b [2005]",
+    "options": {
+      "A": "94",
+      "B": "416",
+      "C": "464",
+      "D": "512"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 30,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Station A uses 32 byte packets to transmit messages to station B using a sliding window protocol. The round trip delay between A and B is 80 milliseconds and the bottleneck bandwidth on the path between A and B is 128 kbps. What is the optimal window size that A should use?\b [2006]",
+    "options": {
+      "A": "20",
+      "B": "40",
+      "C": "160",
+      "D": "320"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 30,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Station A needs to send a message consisting of 9 packets to station B using a sliding window (window size 3) and go-back-n error control strategy. All pack- ets are ready and immediately available for transmis- sion. If every 5th packet that A transmits gets lost (but no acks from B ever get lost), then what is the number of packets that A will transmit for sending the mes- sage to B?\b [2006]",
+    "options": {
+      "A": "12",
+      "B": "14",
+      "C": "16",
+      "D": "18 Common data for questions 7 and 8: Consider the dia- gram shown, where a number of LANs are connected by (transparent) bridges. In order to avoid packets looping through circuits in the graph, the bridges organize them- selves in a spanning tree. First, the root bridge is identified as the bridge with the least serial number. Next, the root sends out (one or more) data units to enable the setting up of shortest paths from the root bridge to each bridge. Each bridge identifies a port (the root port) through which it will forward frames to the root bridge. Port con- flicts are always resolved in favor of the port with the lower index value. When there is possibility of multiple bridges forwarding to the same LAN (But not through the root port), ties are broken as follows: bridges closest to the root get preference and between such bridges, the one with the lowest serial number is preferred. B1 B3 B2 H7 H11 H12 H8 H3 H4 1 2 3 4 1 1 2 2 3 H9 H 5 H1 H2 H6 B5 1 4 3 2 H10 B4 3 1 2"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 30,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "For the given connection of LANs by bridges, which one of the following choices represents the depth first traversal of the spanning tree of bridges?\b [2006]",
+    "options": {
+      "A": "B1, B5, B3, B4, B2",
+      "B": "B1, B3, B5, B2, B4",
+      "C": "B1, B5, B2, B3, B4",
+      "D": "B1, B3, B4, B5, B2"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Consider the spanning tree for the previous question. let Host H1 send out a broadcast ping packet. Which of the following options represents the correct for- warding table on B3?\b [2006]",
+    "options": {
+      "A": "Hosts Port H1, H2, H3, H4 3 H5, H6, H9, H10 1 H7, H8, H11, H12 2",
+      "B": "Hosts Port H1, H2 4 H3, H4 3 H5, H6 1 H7, H8, H10, H11, H12 2",
+      "C": "Hosts Port H3, H4 3 H5, H6, H9, H10 1 H1, H2 4 H7, H8, H11, H12 2",
+      "D": "Hosts Port H2, H2, H3, H4 3 H5, H7, H9, H10 1 H7, H8, 11, H12 4"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 31,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "In a token ring network the transmission speed is 107 bps and the propagation speed is 200 metres/ms. The 1-bit delay in this network is equivalent to:\b [2007]",
+    "options": {
+      "A": "500 metres of cable.",
+      "B": "200 metres of cable.",
+      "C": "20 metres of cable.",
+      "D": "50 metres of cable."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "In the slow start phase of the TCP congestion control algorithm, the size of the congestion window\b [2008]",
+    "options": {
+      "A": "Does not increase",
+      "B": "Increases linearly",
+      "C": "Increases quadratically",
+      "D": "Increases exponentially"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 31,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "A computer on a 10 Mbps network is regulated by a token bucket. The token bucket is filled at a rate of 2 Mbps. It is initially filled to capacity with 16 Megabits. What is the maximum duration for which the com- puter can transmit at the full 10 Mbps?\b [2008]",
+    "options": {
+      "A": "1.6 seconds",
+      "B": "2 seconds",
+      "C": "5 seconds",
+      "D": "8 seconds"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 31,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "Let G(x) be the generator polynomial used for CRC checking. What is the condition that should be satis- fied by G(x) to detect odd number of bits in error? \b [2009]",
+    "options": {
+      "A": "G(x) contains more than two terms",
+      "B": "\u0007G(x) does not divide 1 + xk, for any k not exceed- ing the frame length",
+      "C": "1 + x is a factor of G(x)",
+      "D": "G(x) has an odd number of terms. Common data for questions 13 and 14: Frames of 1000 bits are sent over a 106 bps duplex link between two hosts. The propagation time is 25 ms. Frames are to be transmit- ted into this link to maximally pack them in transit (within the link)."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "What is the minimum number of bits (l) that will be required to represent the sequence numbers dis- tinctly? Assume that no time gap needs to be given between transmission of two frames.\b [2009]",
+    "options": {
+      "A": "l = 2",
+      "B": "l = 3",
+      "C": "l = 4",
+      "D": "l = 5"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 31,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "Suppose that the sliding window protocol is used with the sender window size of 2l, where l is the number of bits identified in the earlier part and acknowl- edgements are always piggy backed. After sending 2l frames, what is the minimum time the sender will have to wait before starting transmission of the next frame? (Identify the closest choice ignoring the frame processing time.)\b [2009]",
+    "options": {
+      "A": "16 ms",
+      "B": "18 ms",
+      "C": "20 ms",
+      "D": "22 ms Common data for questions 15 and 16: Consider a net- work with 6 routers R1 to R6 connected with links having weights as shown in the following diagram R 2 R4 R6 R5 R3 R1 6 7 8 4 9 1 2 3"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 31,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "The cost of link N2-N3 reduces to 2 (in both direc- tions). After the next round of updates, what will be the new distance vector at node, N3?\b [2011]",
+    "options": {
+      "A": "(3, 2, 0, 2, 5)",
+      "B": "(3, 2, 0, 2, 6)",
+      "C": "(7, 2, 0, 2, 5)",
+      "D": "(7, 2, 0, 2, 6)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 32,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 19,
+    "question": "Consider an instance of TCP’s Additive Increase Multiplicative Decrease (AIMD) algorithm where the window size at the start of the slow start phase is 2 MSS and the threshold at the start of the first transmis- sion is 8 MSS. Assume that a timeout occurs during the fifth transmission. Find the congestion window size at the end of the tenth transmission.\b [2012]",
+    "options": {
+      "A": "8 MSS",
+      "B": "14 MSS",
+      "C": "7 MSS",
+      "D": "12 MSS"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 32,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 20,
+    "question": "Assume that source S and destination D are con- nected through two intermediate routers labeled R. Determine how many times each packet has to visit the network layer and the data link layer during a transmission from S to D.\b [2013] S R R D",
+    "options": {
+      "A": "\u0007Network layer – 4 times and Data link layer – 4 times",
+      "B": "\u0007Network layer – 4 times and Data link layer – 3 times",
+      "C": "\u0007Network layer – 4 times and Data link layer – 6 times",
+      "D": "\u0007Network layer – 2 times and Data link layer – 6 times"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 22,
+    "question": "Consider the following three statements about link state and distance vector routing protocols, for a large network with 500 network nodes and 4000 links. [S1] \u0007The computational overhead in link state proto- cols is higher than in distance vector protocols. [S2] \u0007A distance vector protocol (with split horizon) avoids persistent routing loops, but not a link state protocol. [S3] \u0007After a topology change, a link state protocol will converge faster than a distance vector protocol. \u0007Which one of the following is correct about S1, S2 and S3?\b [2014]",
+    "options": {
+      "A": "S1, S2 and S3 are all true",
+      "B": "S1, S2 and S3 are all false",
+      "C": "S1 and S2 are true, but S3 is false",
+      "D": "S1 and S3 are true, but S2 is false."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 32,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 24,
+    "question": "Which one of the following is TRUE about the inte- rior gateway routing protocols-Routing information protocol (RIP) and Open Shortest Path First (OSPF)? \b [2014]",
+    "options": {
+      "A": "\u0007RIP uses distance vector routing and OSPF uses link state routing",
+      "B": "\u0007OSPF uses distance vector routing and RIP uses link state routing",
+      "C": "Both RIP and OSPF use link state routing",
+      "D": "Both RIP and OSPF use distance vector routing"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 32,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 25,
+    "question": "Consider the store and forward packet switched net- work given below. Assume that the bandwidth of each link is 106 bytes/sec. A user on host A sends a file of size 103 bytes to host B through routers R1 and R2 in three different ways. In the first case a single packet containing the complete file is transmitted from A to B. In the second case, the file is spilt into 10 equal parts, and these packets are transmitted from A to B. In the third case, the file is spilt into 20 equal parts, and these packets are sent from A to B. Each packet contains 100 bytes of header information along with the user data. Consider only transmission time and ignore processing, queuing and propagation delays. Also assume that there are no errors during transmis- sions. Let T1, T2 and T3 be the times taken to transmit the file in the first, second and third case respectively. Which one of the following is CORRECT?\b [2014] A R1 R 2 B",
+    "options": {
+      "A": "T1 < T2 < T3",
+      "B": "T1 > T2 > T3",
+      "C": "T2 = T3, T3 < T1",
+      "D": "T1 = T3, T3 > T2"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 33,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 26,
+    "question": "An IP machine Q has a path to another IP machine H via three IP routers R1, R2, and R3. Q – R1 – R2 – R3 – H \u0007H acts as an HTTP server, and Q connects to H via HTTP and downloads a file. Session layer encryption is used with DES as the shared key encryption protocol. Consider the following four pieces of information. [I1] The URL of the file downloaded by Q [I2] The TCP port numbers at Q and H [I3] The IP addresses of Q and H [II4] The link layer addresses of Q and H \u0007Which of I1, I2, I3 and I4 can an intruder learn through sniffing at R2 alone?\b [2014]",
+    "options": {
+      "A": "Only I1 and I2",
+      "B": "Only I1",
+      "C": "Only I2 and I3",
+      "D": "Only I3 and I4"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 33,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 27,
+    "question": "An IP router with a Maximum Transmission Unit (MTU) of 1500 bytes has received an IP packet of size 4404 bytes with an IP header of length 20 bytes. The values of the relevant fields in the header of the third IP fragment generated by the router for this packet are\b [2014]",
+    "options": {
+      "A": "MF bit : 0, Datagram Length: 1444; Offset: 370",
+      "B": "MF bit: 1, Datagram Length : 1424; Offset: 185",
+      "C": "MF Bit: 1, Datagram Length: 1500; Offset: 370",
+      "D": "MF bit: 0, Datagram Length: 1424; Offset: 2960"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 33,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 28,
+    "question": "Identify the correct order in which a server process must invoke the function calls accept, bind, listen, and recv according to UNIX socket API.\b [2015]",
+    "options": {
+      "A": "listen, accept, bind, recv",
+      "B": "bind, listen, accept, recv",
+      "C": "bind, accept, listen, recv",
+      "D": "accept, listen, bind, recv"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 33,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "2 - Routing Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 30,
+    "question": "Consider the following statements about the routing protocols. Routing Information Protocol (RIP) and Open Shortest Path First (OSPF) in an IPv4 network. I: RIP uses distance vector routing II: RIP packets are sent using UDP III: OSPF packets are sent using TCP IV: OSPF operation is based on link-state routing Which of the statements above are CORRECT? \b [2017]",
+    "options": {
+      "A": "I and IV only",
+      "B": "I, II and III only",
+      "C": "I, II and IV only",
+      "D": "II, III and IV only"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 33,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "User Agent (UA) : (i) \u0007It provides Graphical User Interface access to the user. Example: Netscape navigation, Mozilla Firefox. \u0007It also provides command-driven access in early days. (ii) It handles the inbox transactions:",
+    "options": {
+      "A": "\u0007Composing messages: Helps the user compose the e-mail message to be sent out.",
+      "B": "\u0007Reading messages: Helps to read incoming messages by checking the mail in the incoming mail box.",
+      "C": "\u0007Replying to messages: Sends the message to the sender or recipients of the copy.",
+      "D": "\u0007Forwarding messages: Sends the message to a third party. (e) \u0007Handling mailboxes: Two mailboxes, an inbox and an outbox are created by the user agent. The inbox keeps all the received e-mails until they are deleted by the user. The outbox keeps all the sent e-mails until the user deletes them. 8.44 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 41,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "If a TCP connection is transferring a file of 5000 bytes. The first byte is numbered 1001. What are the sequence numbers for each segment if data is sent in five seg- ments, each carrying 1000 bytes?",
+    "options": {
+      "A": "1001, 2001, 3001, 4001, 5001",
+      "B": "1000, 2000, 3000, 4000, 5000",
+      "C": "5000, 6000, 7000, 8000, 9000",
+      "D": "5001, 6001, 7001, 8001, 9001"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Which of the below statements hold good with respect to routing done by a bridge? (i) they can route packets using IP addresses (ii) they use data link layer addresses to do routing (iii) \u0007the LAN route IPv4,IPv6,Apple Talk, ATM, OSI packets",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Match the following: i Repeaters p connects different nodes of a LAN ii Hub q amplifies the signal between segments iii Switch r connects different LANs iv Bridge",
+    "options": {
+      "A": "i – q ii – r iii – p iv – r",
+      "B": "i – r ii – p iii – q iv – q",
+      "C": "i – q ii – p iii – p iv – r",
+      "D": "i – p ii – p iii – q iv – r"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "Match the following. i Retransmission timer p goes off when a TCP connection is idle for a long time ii Keep-alive timer q goes off if sender and receiver are waiting for each other iii Persistence timer r goes off to trigger the delivery of a segment in case acknowledgement is not received for first attempt",
+    "options": {
+      "A": "i – r ii – q iii – p",
+      "B": "i – q ii – r iii – p",
+      "C": "i – p ii – r iii – q",
+      "D": "i – p ii – q iii – r"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "In T/TCP (Transactional TCP) what does the packet that is sent by client, consist of ? (i) SYN (ii) REQUEST (iii) FIN",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Assume TCP uses 32-bit sequence numbers and sequence numbers are given to each byte that gets transmitted. If data is transmitted at 1 Gbps. What is the wraparound time for sequence numbers?",
+    "options": {
+      "A": "14.4 sec",
+      "B": "24.24 sec",
+      "C": "34.36 sec",
+      "D": "44.45 sec"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "What are the disadvantages of NAT? (i) \u0007NAT forms link between sender and receiver and then link can be broken irreparably during a connection. (ii) \u0007NAT violates architectural model of IP. (iii) \u0007NAT hacks source port field of TCP header which is of limited size. (iv) NAT alleviates IP shortage.",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(ii), (iii), (iv)",
+      "C": "(i), (iii), (iv)",
+      "D": "(i), (ii), (iv)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "What is the main protocol in the transport layer?",
+    "options": {
+      "A": "TCP",
+      "B": "UDP",
+      "C": "FTP",
+      "D": "Both (A) and (B)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Number of bytes for header in UDP segment and TCP segment are",
+    "options": {
+      "A": "8 bytes, 20 bytes",
+      "B": "16 bytes, 16 bytes",
+      "C": "32-bits, 20-bits",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "TCP maintains a variable RTT (Round trip time), for determining the time to reach destination and receiving acknowledgement, the formula for RTT is",
+    "options": {
+      "A": "RTT = RTT + D",
+      "B": "RTT = 4RTT",
+      "C": "RTT = aRTT + (1 - a) M (a = 7/8)",
+      "D": "None of these."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Maximum segment size is",
+    "options": {
+      "A": "The size of the segment without header.",
+      "B": "The size of the segment with limit.",
+      "C": "The transmission link capacity.",
+      "D": "Less than maximum transfer unit."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "What is meant by silly window syndrome that ruins TCP performance?",
+    "options": {
+      "A": "\u0007This occurs when sender sends data in large blocks and receiver receives in large blocks.",
+      "B": "\u0007This occurs when sender sends data in large blocks and receiver receives in or reads one byte at a time.",
+      "C": "Both (A) and (B)",
+      "D": "None of these Common data for questions 14 and 15: A TCP segment begins with a fixed-format, 20-byte header. The header is followed by reader options. After the options, upto 65,495 bytes of data may follow."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Number of one bit flags available in the TCP header are",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "2",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 46,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Which of the below TCP primitives block a port? (i) LISTEN (ii) CONNECT (iii) RECEIVE",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "In the context of TCP sockets how is a symmetric DISCONNECT different from that of an asymmetric one? (i) \u0007In symmetric DISCONNECT each direction is closed separately. (ii) \u0007In asymmetric DISCONNECT each direction is closed separately. (iii) \u0007In asymmetric DISCONNECT transport user can release the connection",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "When does RPC/UDP does not make a good combination? (i) \u0007When the caller and callee machines are separated by small network distance. (ii) \u0007When the parameters of the procedures are too huge in size. (iii) \u0007When the procedure requested cannot be repeated safely as needed.",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Which of the following statements below are true with reference to RTP (Real Time Transport Protocol)? (i) \u0007It multiplexes server real time data stream into a single stream of UDP packets. (ii) RTP has flow control, error control mechanism. (iii) RTP has no mechanism for retransmission.",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "What does RTCP (real time transport control protocol) accomplish? (i) \u0007Provides feedback on delay, jitter etc to sources. (ii) Handles introstream synchronization. (iii) Provides a way to name the sources.",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Which of the following are applicable to TCP? (i) \u0007Breaks the data coming from upper layers into 64 kbyte size packets and transmits them. (ii) \u0007Manages the time out and re-uses them. (iii) \u0007Should reassemble the packets in correct order at receiving end. (iv) TCP supports multicasting.",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(ii), (iii), (iv)",
+      "C": "(i), (iii), (iv)",
+      "D": "(i), (ii), (iv)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "Which of the below statements about sockets is/are true? (i) \u0007For sender and receiver to avail TCP service sock- ets have to be created. (ii) Each socket is a 16 bit number local to that host. (iii) \u0007Sockets can involve themselves in one connection at a time. (iv) Ports below 1024 are reserved.",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(ii), (iii), (iv)",
+      "C": "(iii), (iv), (i)",
+      "D": "(i), (ii), (iv)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "What are the functions of application layer?",
+    "options": {
+      "A": "\u0007Mail service provides a basis for electronic mails forwarding and storage",
+      "B": "\u0007File access transfer and management",
+      "C": "\u0007Creates virtual terminal that allows us to log onto remote host",
+      "D": "All the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Which of the following application uses UDP?",
+    "options": {
+      "A": "Streaming a multimedia",
+      "B": "Client–server interaction",
+      "C": "Internet telephony",
+      "D": "All the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "What are the reasons for choosing an UDP by an application?",
+    "options": {
+      "A": "No connection establishment",
+      "B": "No connection state",
+      "C": "Small packet header",
+      "D": "All the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "TCP uses multiple timers to do its work, the timers are",
+    "options": {
+      "A": "Retransmission timer",
+      "B": "Persistence timer",
+      "C": "Keep alive timer",
+      "D": "All the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Which of the following is supported by TCP connections?",
+    "options": {
+      "A": "Full-duplex",
+      "B": "Point-to-point",
+      "C": "Multicasting",
+      "D": "Both (A) and (B)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "TCP connection is ________ stream.",
+    "options": {
+      "A": "Byte",
+      "B": "Message",
+      "C": "Packet",
+      "D": "None of these."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "If a sender wants to indicate that, it has no data for the receiver, one of the following bits is set.",
+    "options": {
+      "A": "PSH",
+      "B": "RST",
+      "C": "FIN",
+      "D": "ACK"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "If the receiver host is responding by sending a primitive SYN (SEQ = y, ACK = x + 1) means",
+    "options": {
+      "A": "The receiver data sequence number is y.",
+      "B": "It has received up to x + 1 bytes of data.",
+      "C": "Both (A) and (B)",
+      "D": "None of these 8.50 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 47,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "The transport layer protocols used for real time mul- timedia, file transfer, DNS and email respectively are \b [2013]",
+    "options": {
+      "A": "TCP, UDP, UDP and TCP",
+      "B": "UDP, TCP, TCP and UDP",
+      "C": "UDP, TCP, UDP and TCP",
+      "D": "TCP, UDP, TCP and UDP"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Which one of the following socket API functions con- verts an unconnected active TCP socket into a passive socket?\b [2014]",
+    "options": {
+      "A": "Connect",
+      "B": "Bind",
+      "C": "Listen",
+      "D": "Accept"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Suppose two hosts use a TCP connection to transfer a large file. Which of the following statements is/are FALSE with respect to the TCP connection?\b [2015] I. \u0007If the sequence number of a segment is m, then the sequence number of the sub sequent segment is always m + 1. II. \u0007If the estimated round trip time at any given point of time is t sec, the value of the retransmission timeout is always set to greater than or equal to t sec. III. \u0007The size of the advertised window never changes during the course of the TCP connection. IV. \u0007The number of unacknowledged bytes at the sender is always less than or equal to the adver- tised window.",
+    "options": {
+      "A": "III only",
+      "B": "I and III only",
+      "C": "I and IV only",
+      "D": "II and IV only"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 48,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "In one of the pairs of protocols given below, both the protocols can use multiple TCP connections between the same client and the server. Which one is that? \b [2015]",
+    "options": {
+      "A": "HTTP, FTP",
+      "B": "HTTP, TELNET",
+      "C": "FTP, SMTP",
+      "D": "HTTP, SMTP"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 48,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Assume that the bandwidth for a TCP connection is 1048560 bits/sec. Let α be the value of RTT in milliseconds (rounded off to the nearest integer) after which the TCP window scale option is needed. Let β be the maximum possible window size with window scale option. Then the values of α and β are\b [2015]",
+    "options": {
+      "A": "63 milliseconds, 65535 × 214",
+      "B": "63 milliseconds, 65535 × 216",
+      "C": "500 milliseconds, 65535 × 214",
+      "D": "500 milliseconds, 65535 × 216"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Consider the following statements 1. TCP connections are full duplex 2. \u0007TCP has no option for selective acknowledge- ment 3. TCP connections are message streams",
+    "options": {
+      "A": "Only 1 is correct",
+      "B": "Only 1 and 3 are correct",
+      "C": "Only 2 and 3 are correct",
+      "D": "All of 1, 2 and 3 are correct"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 48,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "Which one of the following protocols is NOT used to resolve one form of address to another one?\b [2016]",
+    "options": {
+      "A": "DNS",
+      "B": "ARP",
+      "C": "DHCP",
+      "D": "RARP"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Which of the following is/are example(s) of stateful application layer protocols?\b [2016] (i) HTTP (ii) FTP (iii) TCP (iv) POP3",
+    "options": {
+      "A": "(i) and (ii) only",
+      "B": "(ii) and (iii) only",
+      "C": "(ii) and (iv) only",
+      "D": "(iv) only"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "Identify the correct sequence in which the following packets are transmitted on the network by a host when a browser requests a webpage from a remote server, assuming that the host has just been restarted.\b[2016]",
+    "options": {
+      "A": "HTTP GET request, DNS query, TCP SYN",
+      "B": "DNS query, HTTP GET request, TCP SYN",
+      "C": "DNS query, TCP SYN, HTTP GET request",
+      "D": "TCP SYN, DNS query, HTTP GET request"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "Consider a TCP client and a TCP server running on two different machines. After completing data trans- fer, the TCP client calls close to terminate the con- nection and a FIN segment is sent to the TCP server. Server-side TCP responds by sending an ACK, which is received by the client-side TCP. As per the TCP connection state diagram (RFC 793), in which state does the client-side TCP connection wait for the FIN from the server-side TCP?\b [2017]",
+    "options": {
+      "A": "LAST-ACK",
+      "B": "TIME-WAIT",
+      "C": "FIN-WAIT-1",
+      "D": "FIN-WAIT-2"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 48,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "Consider socket API on a Linux machine that sup- ports connected UDP sockets. A connected UDP socket is a UDP socket on which connect function has already been called. Winch of the following state- ments is/are CORRECT?\b [2017] I. \u0007A connected UDP socket can be used to com- municate with multiple peers simultaneously. II. \u0007A process can successfully call connect function again for an already connected UDP socket.",
+    "options": {
+      "A": "I only",
+      "B": "II only",
+      "C": "Both I and II",
+      "D": "Neither I nor II"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 48,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "3 - TCP/UDP",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "34 and MSS denotes the Maximum Segment Size. (i) The cwnd increases by 2 MSS on every success- ful acknowledgment. (ii) The cwnd approximately doubles on every suc- cessful acknowledgement. (iii) The cwnd increases by 1 MSS every round trip time. (iv) The cwnd approximately doubles every round trip time. Which one of the following is correct?\b [2018]",
+    "options": {
+      "A": "Only (ii) and (iii) are true",
+      "B": "Only (i) and (iii) are true",
+      "C": "Only (iv) is true",
+      "D": "Only (i) and (iv) are true"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 49,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "A person x is supposed to send a document with digi- tized signature to another person y using public key Cryptography. p is the message. Dx, Dy are private keys of x and y respectively. Ex, Ey are public keys of x, y respectively. Select the best possible sequence of events from below: (i) Dx (p) (ii) Dy (p) (iii) Ey (Dx(p)) (iv) Dy (Dx(p)) (v) Dy(Ey(p)) (vi) Dy(Ey(Dx(p)) (vii) Ex(Dx(p)) (viii) Ey(p) (ix) Ex(Dy(p)) (x) Dx(Ey(p))",
+    "options": {
+      "A": "(ii), (ix), (viii), (v)",
+      "B": "(viii), (x), (v), (i)",
+      "C": "(i), (iii), (v), (vii)",
+      "D": "(vii), (v), (iii), (i)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 56,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Select correct statements about PGP: (i) \u0007Uses existing cryptographic algorithms that have been quite successful. (ii) Support text compression, digital ignatures. (iii) Takes plaintext as feed and generates base-64 text. (iv) No key management capability is rovided.",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(ii), (iii), (iv)",
+      "C": "(i), (iii), (iv)",
+      "D": "(i), (ii), (iv) Linked answer questions 4 and 5:"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 56,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Using mono alphabetic substitution a string a b b a c a a b c d is transformed to one of the below strings. Select the most appropriate option:",
+    "options": {
+      "A": "p q q p r p p s r s",
+      "B": "j t t x j j i t x t x",
+      "C": "u s s u a u u s a b",
+      "D": "d c c d b b b c b a"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 56,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "Using the mapping obtained above, encrypt the phrase ‘bad cab’ using same method: Assume space is not encrypted.",
+    "options": {
+      "A": "q p s r p q",
+      "B": "t j z x j t",
+      "C": "s u b a u s",
+      "D": "c d a b d c"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 56,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Select the correct statements with regard to packet fil- ters of a firewall: (i) \u0007They are usually driven by a table with information in regards to acceptable sources and destinations. (ii) \u0007Default rules about what needs to be done in regards to packets coming from or going to other machines. (iii) Can block TCP ports.",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 56,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "What is meant by non-repudiation in the area of digital signatures?",
+    "options": {
+      "A": "Receiver verifying the signature of the sender.",
+      "B": "Receiver concocting the message.",
+      "C": "Sender denying having signed digitally.",
+      "D": "\u0007Receiver changing the contents after receiving the signed document."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 56,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Which of the following statements about DES is/are true? (i) DES is public key algorithm. (ii) DES has 19 distinct stages. (iii) In the 16 iterations of DES, different keys are used.",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 56,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Which of the below represents Triple encryption using DES? (P is the unencrypted input, ‘C’ is encrypted out- put, k1, k2, k3 are keys used in encryption and decryption, E stands for encryption and D stands for decryption).",
+    "options": {
+      "A": "K1 K2 K3 E E E P C",
+      "B": "K1 K2 K1 E E D P C",
+      "C": "K1 K2 K1 E D E P C",
+      "D": "K1 K2 K1 E D D P C"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 56,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Which of the below statements are applied for cipher block chaining? (i) \u0007Each plaintext block is XOR’ed with previous block before encryption. (ii) \u0007Encryption is a mono alphabetic substitution ci- pher. (iii) \u0007Cipher block chaining can result in same plaintext blocks encrypted to different cipher text blocks.",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 56,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "Which of the below statements are applied to RSA algorithm? (i) \u0007RSA is a relatively slow algorithm when encrypt- ing large data. (ii) \u0007Mainly used where key is to be distributed. (iii) \u0007The strength of the algorithm lies in the fact that determining the key can take exceedingly long time by brute force.",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 56,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "The security and usefulness of a digital signature depends on",
+    "options": {
+      "A": "A public hash function",
+      "B": "A two-way hash function",
+      "C": "Protection of user’s private key",
+      "D": "Protection of user’s public key"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "Let ‘M’ be the message to be encrypted, E be Encryption key and N be the product of two random prime num- bers, then what is the cipher text using RSA algorithm?",
+    "options": {
+      "A": "C = Em mod N",
+      "B": "C = ME mod N",
+      "C": "C = NE mod M",
+      "D": "C = EN mod M"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Which of the following best describes the decryption in Triple DES?",
+    "options": {
+      "A": "Plain text = D E D K K k 1 2 1 ( ( ( ))) ciper text",
+      "B": "Plain text = D E D K K k 1 2 3 ( ( ( ))) ciper text",
+      "C": "Plain text = E D E K K k 1 2 1 ( ( ( ))) ciper text",
+      "D": "Plain text = E D E K K k 1 2 1 ( ( ( ))) ciper text"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "In which cipher mode, all cipher blocks will be chained so that if one is modified the cipher text cannot be decrypted correctly?",
+    "options": {
+      "A": "Electronic Code Book",
+      "B": "Cipher Block Chaining",
+      "C": "Cipher Feedback Mode",
+      "D": "Counter Mode"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "‘All algorithms must be public only the keys are secret’ is",
+    "options": {
+      "A": "Rijndael Principle",
+      "B": "Kerckhoff’s principle",
+      "C": "Rivest shamir Adleman principle",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Pretty Good Privacy encrypts data by using a block cipher called",
+    "options": {
+      "A": "RSA",
+      "B": "MD5",
+      "C": "IDEA",
+      "D": "DES"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "E-mail security package is related to",
+    "options": {
+      "A": "Pretty Good Privacy",
+      "B": "DNS spoofing",
+      "C": "Secure Socket Layer",
+      "D": "Transport Layer Security"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Which of the following protocols will be proxy, on an application firewall?",
+    "options": {
+      "A": "IPX",
+      "B": "FTP",
+      "C": "POP",
+      "D": "SMS"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "A good recommendation is that if a private key is ____ or longer, the key is thought to be secure.",
+    "options": {
+      "A": "40 bits",
+      "B": "60 bits",
+      "C": "70 bits",
+      "D": "80 bits"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Which issue is related to server side security?",
+    "options": {
+      "A": "Protection of the server from legitimate web access",
+      "B": "Security of the information stored on server",
+      "C": "Security of the customer’s physical credit card",
+      "D": "Security of the customer’s computer"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "Which of the following is not an active attack?",
+    "options": {
+      "A": "Denial of service",
+      "B": "Traffic Analysis",
+      "C": "Replay",
+      "D": "Masquerade"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Verifying the true identity of the sender of a message recipient is known as _____.",
+    "options": {
+      "A": "Authentication",
+      "B": "fabrication",
+      "C": "Cryptography",
+      "D": "availability"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "In which of the following techniques, letters are arranged in a different order?",
+    "options": {
+      "A": "Transposition",
+      "B": "Substitution",
+      "C": "Private key Encryption",
+      "D": "None of the above"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "In which type of attack, Algorithm, cipher text, chosen plaintext and cipher text are known?",
+    "options": {
+      "A": "Cipher text only",
+      "B": "Known plain text",
+      "C": "Chosen cipher text",
+      "D": "Chosen text"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "In which type of ciphers the encryption depends on current state?",
+    "options": {
+      "A": "Link cipher",
+      "B": "Block cipher",
+      "C": "Stream cipher",
+      "D": "Current cipher"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Traffic Analysis can be counted using",
+    "options": {
+      "A": "Encryption",
+      "B": "Decryption",
+      "C": "Replay",
+      "D": "Data padding"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "DES Algorithm is vulnerable to",
+    "options": {
+      "A": "Masquerade attack",
+      "B": "Replay attack",
+      "C": "Denial of service",
+      "D": "Brute Force attack"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "What is the size of key in Triple DES?",
+    "options": {
+      "A": "168 bits",
+      "B": "112 bits",
+      "C": "56 bits",
+      "D": "Either (A) or (B) or (C)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "Direct digital signature involves",
+    "options": {
+      "A": "Source only",
+      "B": "Destination only",
+      "C": "Communicating parties, sender and receiver.",
+      "D": "Everyone including communicating parties. 8.74 | Unit 8 • Networks, Information Systems, Software Engineering and Web Technology"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 57,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Suppose that everyone in a group of N people wants to communicate secretly with the N – 1 others, using symmetric key cryptographic system. The communi- cation between any two persons should not be decod- able by the others in the group. The number of keys required in the system as a whole to satisfy the confi- dentiality requirement is \b [2015]",
+    "options": {
+      "A": "2N",
+      "B": "N(N - 1)",
+      "C": "N(N - 1)/2",
+      "D": "(N - 1)2"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 58,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Consider that B wants to send a message m that is digitally signed to A. Let the pair of private and public keys for A and B be denoted by Kx − and Kx + for x = A, B, respectively. Let Kx(m) represent the operation of encrypting m with a key Kx and H(m) represent the message digest. Which one of the following indicates the CORRECT way of sending the message m along with the digital signature to A?\b [2016]",
+    "options": {
+      "A": "{m, KB + (H(m))}",
+      "B": "{m, KB − (H(m))}",
+      "C": "{m, K A − (H(m))}",
+      "D": "{m, K A + (m)}"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 58,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Anarkali digitally signs a message and sends it to Salim. Verification of the signature by Salim requires \b [2016]",
+    "options": {
+      "A": "Anarkali’s public key.",
+      "B": "Salim’s public key.",
+      "C": "Salim’s private key.",
+      "D": "Anarkali’s private key."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 58,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  },
+  {
+    "chapter": "5 - Network Security",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "A sender S sends a message m to receiver R, which is digitally signed by S with its private key. In this sce- nario, one or more of the following security violations can take place. (I) \u0007S can launch a birthday attack to replace m with a fraudulent message. (II) \u0007A third party attacker can launch a birthday at- tack to replace m with a fraudulent message. (III) \u0007R can launch a birthday attack to replace m with a fraudulent message. Which of the following are possible security viola- tions?\b [2017]",
+    "options": {
+      "A": "(I) and (II) only",
+      "B": "(I) only",
+      "C": "(II) only",
+      "D": "(II) and (III) only"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 58,
+    "subject": "Computer Network",
+    "source": "Computer Science/Notes & Material/Computer Network.pdf"
+  }
+]

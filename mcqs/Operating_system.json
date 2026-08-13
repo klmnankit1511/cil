@@ -1,0 +1,4157 @@
+[
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "",
+    "number": 8,
+    "question": "Accounting information This information is stored in a data structure, typically called a process control block, that is created and managed by the OS. Process control block (PCB) It contains sufficient informa- tion so that it is possible to interrupt a running process and later resume execution as if the interruption has not occurred. Process States The behaviour of an individual process can be characterized by listing the sequence of instructions that executed for that process. This listing is referred to as a trace of the process. Also the behaviour of a processor is shown by listing the traces of the various processes that are interleaved. Dispatcher A dispatcher is a small program that switches the processor from one process to another. Two-state process model In the simplest possible process model (Figure 3), at any time, a process is either being exe- cuted by a processor or not, that is, a processor may be in one of two states: running or not running. Not running Running Enter Exit Dispatch Pause",
+    "options": {
+      "A": "Processor Exit Pause Dispatch Queue",
+      "B": "Figure 3 \u0007Two-state process model. (a) State transition dia- gram, (b) Queuing diagram When the OS creates a new process, it creates the PCB for the process and enters that process into the system in the not running state. The process exists, is known to the OS, and is waiting for an opportunity to execute. From time to time, the currently running process will be interrupted and the dispatcher portion of the OS will select some other process to run. The former process moves from the running state to the not running state and one of the other processes moves to the running state. Processes that are not running must be kept in some sort of queue, waiting their turn to execute. Figure 3(b) shows the structure. There is a single queue in which each entry is a pointer to the PCB of a particular process. Creation and Termination of Processes Process creation When a new process is to be added to those currently being managed, the OS builds the data structures that are used to manage the process and allocates address space in main mem- ory to the process. The common events which lead to process creation are as follows:"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 3,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "",
+    "number": 3,
+    "question": "Other OS resources If a process has multiple threads of control, it can per- form more than one task at a time. Figure 12 shows single threaded and multithreaded process models: Thread control block User stack User stack Kernel stack",
+    "options": {
+      "A": "",
+      "B": "Multithreaded process model. As OS based on its design will be in one of the following manners (Figure 13): One process one thread (Ex: MS-DOS) One process multiple threads (Ex: Java runtime environment) Multiple processes multiple threads per process (Ex: windows) Multiple processes one thread per process (Ex: variants of UNIX) Figure 13 Threads and processes. The threads of a process consist of the following:"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 7,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "In fork( ) system call, the return value to the parent process and the child process are respectively",
+    "options": {
+      "A": "PID of child process, 1",
+      "B": "PID of child process, 0",
+      "C": "PID of child, PID of parent process",
+      "D": "PID of parent process, PID of child"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 10,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Which of the following is not an advantage of thread?",
+    "options": {
+      "A": "Inter process communication",
+      "B": "Less memory space occupied by thread",
+      "C": "Less time to create and terminate than a process",
+      "D": "Context switching is faster"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 10,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "A process executes the following segment of code for (i = 1; i < 10; i ++) fork( ); The number of new processes created is",
+    "options": {
+      "A": "1024",
+      "B": "1023",
+      "C": "1025",
+      "D": "1028"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 10,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "For each of the following transitions, between process states, which transition is not possible?",
+    "options": {
+      "A": "Running → Ready",
+      "B": "Blocked → Suspend",
+      "C": "Ready → Ready/Suspend",
+      "D": "Blocked → Running"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 10,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "An operating system can be mapped to a five-state process model. A new event has been designated as capable to pre-empt the existing processes in order to trigger a new process to complete. Select the correct statement from below:",
+    "options": {
+      "A": "\u0007A new state need to be added to the existing transi- tion model to accommodate the changes.",
+      "B": "The existing model still holds good.",
+      "C": "\u0007Both the states and transitions of the existing mod- el have to be changed.",
+      "D": "Only the transitions need to be modified."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 10,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "The advantage of having multiple threads over multiple processes is (i) Less time for creation (ii) Less time for termination (iii) Less time for switching (iv) \u0007Kernel not involved in communication among threads",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(i), (ii), (iv)",
+      "C": "(ii), (iii), (iv)",
+      "D": "(i), (ii), (iii), (iv)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 10,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Select the correct sequence of steps taken by the pro- cessor when an interrupt occurs (i) Switch from user mode to kernel mode. (ii) \u0007Set the program counter to the first instruction of the interrupt handling routine. (iii) Save the current context.",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(i), (iii), (ii)",
+      "C": "(iii), (ii), (i)",
+      "D": "(ii), (i), (iii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 10,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "What are the necessary steps for a new process creation? (i) Assign an identifier to the new process. (ii) Suspend all other processes. (iii) Allocate space for the process. (iv) Initialize process control block. (v) Update process-related data structures. (vi) \u0007Update process state information wherever nec- essary. (vii) Set the process to user mode (viii) \u0007Notify all the machines in the network about the new process. (ix) Set the state of the new process as suspended",
+    "options": {
+      "A": "All except (ii), (v), (vi), (viii)",
+      "B": "All except (ii), (vii), (viii), (ix)",
+      "C": "All except (iv), (v), (vii), (ix)",
+      "D": "All except (iii), (iv), (vii), (ix)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 11,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "A processor, while executing the instruction sequence of user mode process, received n interrupts. If no other activity is reported to processor during the execution of the instruction sequence, what is the number of mode switches and process switches experienced?",
+    "options": {
+      "A": "2n, 2n",
+      "B": "n, n",
+      "C": "2n, 0",
+      "D": "n, 0"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 11,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Assume a program needs to implement threads, what are the resources that need to be encompassed in criti- cal section? (i) Global variables (ii) Local variables (iii) Static variables (iv) \u0007Function parameters that are passed as reference pointers (v) Global constants",
+    "options": {
+      "A": "(i), (ii), (iii), (v)",
+      "B": "(i), (iv), (v)",
+      "C": "(i), (iii), (v)",
+      "D": "(i), (iii), (iv)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 11,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "Which of the following is an appropriate four-state model for a process?",
+    "options": {
+      "A": "Running New End Unblock Block Blocked",
+      "B": "Ready Running New End Unblock Block Block Open",
+      "C": "Running Ready New End Unblock Abort Block Blocked",
+      "D": "Ready Abort Running New End Unblock Block Retry Open"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Which of the following are considered as disadvantage of user level thread (ULT)? (i) \u0007Calls made from system will block all threads in a process (ii) \u0007When scheduled in a multiprocessing environment only one thread per process can be executed at a time. (iii) \u0007ULTs cannot communicate with each other in a process. (iv) The cost of creating a thread is high",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(i), (iii), (iv)",
+      "C": "(i), (ii) only",
+      "D": "(ii), (iii), (iv)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 11,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "Choose from below, advantages of kernel-level threads: (i) \u0007Kernel can simultaneously schedule multiple threads from the same process on multiple processors. (ii) Kernel routines can be multithreaded. (iii) \u0007If one thread of a process is blocked then kernel can schedule another thread from the same process.",
+    "options": {
+      "A": "(i) only",
+      "B": "(i), (ii)",
+      "C": "(i), (ii), (iii)",
+      "D": "(i), (iii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 11,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Assume that part of a program takes long time to exe- cute. Select an option from below that can enhance performance: (i) \u0007Implement the part that takes long time as a sepa- rate process and use the results as needed from the main program. (ii) \u0007Implement both the parts as two different threads in the same process.",
+    "options": {
+      "A": "(i) only",
+      "B": "(ii) only",
+      "C": "Both (i) and (ii)",
+      "D": "Neither (i) nor (ii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 11,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "What is a kernel-level thread? (i) Threads that are spawned by OS Kernel (ii) \u0007Threads that are launched by user by directly ac- cessing the kernel",
+    "options": {
+      "A": "(i) only",
+      "B": "(ii) only",
+      "C": "Both (i), (ii)",
+      "D": "Neither (i) nor (ii)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Many-to-many multithreading model is used in which of the following operating system?",
+    "options": {
+      "A": "Windows NT/2000 with Thread Fibre",
+      "B": "Windows 95",
+      "C": "Windows 98",
+      "D": "Solaris Green Threads"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Which of the following does not interrupt a running process?",
+    "options": {
+      "A": "Device",
+      "B": "Timer",
+      "C": "Scheduler",
+      "D": "Power failure"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Which of the following need not be saved on a context switch between processes?",
+    "options": {
+      "A": "General purpose registers",
+      "B": "Translation look aside buffer",
+      "C": "Program counter",
+      "D": "All of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Which of the following actions is/are typically not per- formed by the OS when switching context from process A to process B?",
+    "options": {
+      "A": "\u0007Saving current register values and restoring the register values for process B",
+      "B": "Changing address translation tables",
+      "C": "\u0007Swapping out the memory image of process A to the disk",
+      "D": "Both (B) and (C)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "For each thread in a multithreaded process, there is a separate",
+    "options": {
+      "A": "Process control block",
+      "B": "User address space",
+      "C": "User and kernel stack",
+      "D": "Kernel space only"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "When a supervisor call is received",
+    "options": {
+      "A": "Mode switch happens",
+      "B": "Process switch happens",
+      "C": "Both (A) and (B)",
+      "D": "Neither (A) nor (B)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "What is the purpose of jacketing?",
+    "options": {
+      "A": "\u0007Convert non-blocking system call to blocking sys- tem call",
+      "B": "\u0007Convert blocking system call to non-blocking sys- tem call",
+      "C": "Convert blocking system call into a new thread",
+      "D": "\u0007Convert non-blocking system call into a new thread"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Which of the following statements is/are always true? (i) \u0007Time taken for mode switch is always greater than process switch. (ii) \u0007Time taken for mode switch is always less than process switch. (iii) \u0007Time taken for mode switch is always equal to pro- cess switch.",
+    "options": {
+      "A": "(i) and (iii)",
+      "B": "(ii) and (iii)",
+      "C": "Only (i)",
+      "D": "Only (ii)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Which of the following is the property of time sharing systems? (i) Multiple user access (ii) Multiprogramming",
+    "options": {
+      "A": "(i) only",
+      "B": "(ii) only",
+      "C": "Both (i) and (ii)",
+      "D": "Neither (i) nor (ii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Which of the following is/are not a valid reason for pro- cess creation? (i) Created by OS (ii) Interactive logon (iii) Privileged instruction",
+    "options": {
+      "A": "(i), (ii)",
+      "B": "(ii), (iii)",
+      "C": "(i), (iii)",
+      "D": "(iii) only"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "Which of the following is/are reason(s) for blocking a running process? (i) \u0007A call from the running program to a procedure that is a part of OS code. (ii) A running process may initiate an I/O operation. (iii) A user may block a running process.",
+    "options": {
+      "A": "(i), (ii) only",
+      "B": "(ii), (iii)only",
+      "C": "(i), (iii) only",
+      "D": "(iii) only"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "If the OS is pre-empting a running process because a higher priority process on blocked/suspend queue has just become unblocked, then the running process moved to queue.",
+    "options": {
+      "A": "Suspend",
+      "B": "Ready/suspend",
+      "C": "Blocked",
+      "D": "Blocked/suspend"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "Which of the following is used to call an OS function?",
+    "options": {
+      "A": "Interrupt",
+      "B": "Trap",
+      "C": "Supervisor call",
+      "D": "All of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "Which of the following is a general component of a thread? (i) Thread ID (ii) Register set (iii) User stack (iv) Kernel stack",
+    "options": {
+      "A": "(i), (iii), (iv)",
+      "B": "(i), (ii), (iv)",
+      "C": "(i), (ii), (iii)",
+      "D": "(i), (ii), (iii), (iv)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 12,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Consider the following statements with respect to User-level threads and Kernel-supported threads. \b [2004] (1) \u0007Context switch is faster with Kernel-supported threads (2) \u0007For user-level threads, a system call can block the entire process (3) \u0007Kernel supported threads can be scheduled inde- pendently (4) User level threads are transparent to the Kernel Which of the above statements are true?",
+    "options": {
+      "A": "2, 3 and 4 only",
+      "B": "2 and 3 only",
+      "C": "1 and 3 only",
+      "D": "1 and 2 only"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 13,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Which one of the following is true for a CPU having a single interrupt request line and a single interrupt grant line?\b [2005]",
+    "options": {
+      "A": "\u0007Neither vectored interrupt nor multiple inter- rupting devices are possible",
+      "B": "\u0007Vectored interrupts are not possible but multiple interrupting devices are possible",
+      "C": "\u0007Vectored interrupts and multiple interrupting de- vices are both possible",
+      "D": "\u0007Vectored interrupt is possible but multiple inter- rupting devices are not possible"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 13,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Normally user programs are prevented from handling I/O directly by I/O instructions in them. For CPUs having explicit I/O instructions, such I/O protection is ensured by having the I/O instructions privileged. In a CPU with memory mapped I/O, there is no explicit I/O instruction. Which one of the following is true for a CPU with memory mapped I/O?\b [2005]",
+    "options": {
+      "A": "\u0007I/O protection is ensured by operating system routine(s)",
+      "B": "I/O protection is ensured by a hardware trap",
+      "C": "\u0007I/O protection is ensured during system configu- ration",
+      "D": "I/O protection is not possible"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 13,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Consider the following code fragment: if (fork ()==0) \b [2005] { a = a + 5; printf(“%d,%d\\n”,a,&a);} else { a = a - 5; printf(“%d,%d\\n”,a,&a);} Let u, v be the values printed by the parent process, and x, y be the values printed by the child process. Which one of the following is true?",
+    "options": {
+      "A": "u = x + 10 and v = y",
+      "B": "u = x + 10 and v ≠ y",
+      "C": "u + 10 = x and v = y",
+      "D": "u + 10 = x and v ≠ y"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 13,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Consider the following statements about user-level threads and Kernel-level threads. Which one of the following statements is false?\b [2007]",
+    "options": {
+      "A": "\u0007Context switch time is longer for Kernel-level threads than for user level threads.",
+      "B": "\u0007User level threads do not need any hardware support.",
+      "C": "\u0007Related Kernel-level threads can be scheduled on different processors in a multi-processor system.",
+      "D": "\u0007Blocking one Kernel-level thread blocks all re- lated threads."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 13,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Which of the following statements about synchronous and asynchronous I/O is NOT true?\b [2008]",
+    "options": {
+      "A": "\u0007An ISR is invoked on completion of I/O in syn- chronous I/O but not in asynchronous I/O",
+      "B": "\u0007In both synchronous and asynchronous I/O, an ISR (Interrupt Service Routine) is invoked after completion of the I/O",
+      "C": "\u0007A process making a synchronous I/O call waits until I/O is complete, but a process making an asynchronous I/O call does not wait for comple- tion of the I/O",
+      "D": "\u0007In the case of synchronous I/O, the process wait- ing for the completion of I/O is woken up by the ISR that is invoked after the completion of I/O"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 13,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "A process executes the following code for (i=0; i<n; i++) fork( ); The total number of child processes created is\b [2008]",
+    "options": {
+      "A": "n",
+      "B": "2n − 1",
+      "C": "2n",
+      "D": "2n+1 – 1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 13,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "A CPU generally handles an interrupt by executing an interrupt service routine\b [2009]",
+    "options": {
+      "A": "As soon as an interrupt is raised.",
+      "B": "\u0007By checking the interrupt register at the end of fetch cycle.",
+      "C": "\u0007By checking the interrupt register after finishing the execution of the current instruction.",
+      "D": "\u0007By checking the interrupt register at fixed time intervals."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 13,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "A thread is usually defined as ‘light weight process’ because an operating system (OS) maintains smaller data structures for a thread than for a process. In rela- tion to this, which of the following is true?\b [2011]",
+    "options": {
+      "A": "\u0007On per-thread basis, the OS maintains only CPU register state",
+      "B": "\u0007The OS does not maintain a separate stack for each thread",
+      "C": "\u0007On per thread basis, the OS does not maintain virtual memory state.",
+      "D": "\u0007On per thread basis, the OS maintains only scheduling and accounting information."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 13,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "1 - Processes and Threads",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "Let the time taken to switch between user and ker- nel modes of execution be t1 while the time taken to switch between two processes be t2. Which of the fol- lowing is true?\b [2011]",
+    "options": {
+      "A": "t1 > t2",
+      "B": "t1 = t2",
+      "C": "t1 < t2",
+      "D": "\u0007Nothing can be said about the relation between t1 and t2"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 13,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "A process executes the code fork(); fork(); fork(); The total number of child processes created is\b [2012]",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "7",
+      "D": "8"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 14,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "Which one of the following is FALSE?\b [2014]",
+    "options": {
+      "A": "\u0007User level threads are not scheduled by the Kernel.",
+      "B": "\u0007When a user level thread is blocked, all other threads of its process are blocked.",
+      "C": "\u0007Context switching between user level threads is faster than context switching between Kernel- level threads.",
+      "D": "\u0007Kernel-level threads cannot share the code seg- ment."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 14,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "Threads of a process share\b [2017]",
+    "options": {
+      "A": "global variables but not heap.",
+      "B": "heap but not global variables.",
+      "C": "neither global variables nor heap.",
+      "D": "both heap and global variables."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 14,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "Which of the following is/are shared by all the threads in a process?\b [2017] I. Program counter II. Stack III. Address space IV. Registers",
+    "options": {
+      "A": "I and II only",
+      "B": "III only",
+      "C": "IV only",
+      "D": "III and IV only"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 14,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "The value of a counting semaphore is 7. Then 15 wait operations and 10 signal operations were completed on this semaphore. The resulting value of semaphore is",
+    "options": {
+      "A": "5",
+      "B": "7",
+      "C": "2",
+      "D": "0"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 24,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "At a particular time of computation, the value of count- ing semaphore is 7. Then 20 wait operations and ‘x’ signal operations were completed on this semaphore. If the final value of the semaphore is 5, what is x?",
+    "options": {
+      "A": "18",
+      "B": "13",
+      "C": "5",
+      "D": "0"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 24,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "A process using a semaphore has a start value of 1 for its semaphore. Since the start of execution of the pro- gram, 12 signal operations were completed. How many wait operations have been completed so far if the cur- rent value of semaphore is 6?",
+    "options": {
+      "A": "1",
+      "B": "5",
+      "C": "7",
+      "D": "11"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 24,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "It is found that a program has multiple critical sections. Choose correct statements from below: (i) \u0007Multiple semaphores are needed for handling the situation. (ii) \u0007A single semaphore that uncompresses all the crit- ical section is sufficient and is also more efficient. (iii) \u0007To get better control of the code, monitors need to be implemented.",
+    "options": {
+      "A": "(i) and (ii)",
+      "B": "(ii) and (iii)",
+      "C": "(i) and (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 25,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "Consider the below psuedocode: semaphore S = 1; semaphore E = 1; if(thread_count++ <100) spawnnewthread( ); wait(E); // critical section – begin --------------- --------------- // critical section – end signal(S); Assume that above pseudocode gets called a hundred times, what is the count of semaphore E?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "–99",
+      "D": "–100"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 25,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Consider the below code for a process i: ------------- ------------- flag[i] = true; if(turn == i and flag [i] == true) /* critical section begin */ counter++; /* critical section end */ turn = x; ------------- ------------- If the value of a counter started, what would be the value of ‘counter’ count at the end of the program:",
+    "options": {
+      "A": "Semaphore count",
+      "B": "Thread count",
+      "C": "Concurrency count",
+      "D": "Deadlock process count"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 25,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Consider the below pseudocode: function waitB(s) { if(s.value ==1) s.value = 0; else place the process in the Queue; } function signalB(s) { s. value = 1; } What does the code most likely behave as",
+    "options": {
+      "A": "general semaphore",
+      "B": "weak semaphore",
+      "C": "binary semaphore",
+      "D": "mutex"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 25,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "A shared variable x, initialized to 0 is operated on by four concurrent processes P, Q, R, S as follows: P(x) Q(x) { { wait( ); wait( ); read(x); read(x); increment x by 1; increment x by 1; store(x); store(x); signal(); signal( ); } } R(x) S(x) { { wait( ); wait( ); read (x); read(x); decrement x by 2; decrement x by 2; store (x); store(x); signal( ); signal( ); } } A counting semaphore ‘N’ is used by the processes whose value is initialized to 2. What is the maximum possible value of ‘x’ after all processes complete execution?",
+    "options": {
+      "A": "–2",
+      "B": "–1",
+      "C": "1",
+      "D": "2"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 25,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Consider the following code: Program concurrency; Var x: Integer (: = 0); y: Integer (: = 0); Procedure threadA( ) ; begin x = 1; /*S1*/ y = y + x; /*S2*/ end; Procedure threadB( ) ; begin y = 4; /*S3*/ x = x + 5; /*S4*/ end; begin /*mainprogram*/ parbegin threadA( ); threadB( ); parend; end. Suppose a process has two concurrent threads: one thread executes statements S1 and S2, and the other thread executes statements S3 and S4. What are the maximum possible values of x and y when the code fin- ishes execution? (All the statements S1, S2, S3 and S4 are atomic).",
+    "options": {
+      "A": "x = 6, y = 4",
+      "B": "x = 6, y = 5",
+      "C": "x = 1, y = 5",
+      "D": "x = 6, y = 10"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 25,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Consider the following program: boolean lock[2]; int turn; void P(int id) { while(true) { lock[id] = true; while (turn! = id) { while (lock [1 – id]) /*do nothing*/ turn = id; } /*critical section*/ lock[id] = false; /*reamainder*/ } } void main( ) { lock[0] = false; lock[1] = false; turn = 0; parbegin (P(0), P(1)); } Which of the following statements is correct for two processes executing this code?",
+    "options": {
+      "A": "Given program provides mutual exclusion.",
+      "B": "Given program does not provide mutual exclusion.",
+      "C": "\u0007Given program provides mutual exclusion and also solves starvation problem.",
+      "D": "\u0007Given program provides mutual exclusion but does not prevent from starvation."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 26,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "Consider two process P0 and P1 which share the follow- ing variables: boolean flag [2]; /*initially false*/ int turn; These two processes, Pi(i = 0 or 1), Pj (j = 1 or 0) exe- cute the following code: do { flag[i] = TRUE; while(flag [j]) { if (turn = = j) { flag[i] = false; while (turn = = j); flag [i] = TRUE; } } // critical section turn = j; flag[i] = FALSE; // remainder. } while(TRUE); The code satisfies (i) Mutual exclusion (ii) Progress (iii) Bounded waiting",
+    "options": {
+      "A": "(i), (ii) only",
+      "B": "(ii), (iii) only",
+      "C": "(i), (iii) only",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 26,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Which of the following statement(s) is false? (i) \u0007Spinlocks are not appropriate for single-processor systems. (ii) Mailboxes may be used for synchronization. (iii) \u0007Message passing and semaphores do not have equivalent functionality.",
+    "options": {
+      "A": "(i) only",
+      "B": "(iii) only",
+      "C": "(i), (iii)",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 26,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "Consider the following code: signal (mutex); ………….. Critical section ………….. wait (mutex); \u0007Here ‘mutex’ is a semaphore variable, which is initial- ized to 1. Then",
+    "options": {
+      "A": "Mutual exclusion is provided",
+      "B": "\u0007Mutual exclusion violated, if several processes are simultaneously active in their critical section.",
+      "C": "Deadlock will occur",
+      "D": "Starvation is possible"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 26,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Which of the following sequence of ‘wait’ and ‘signal’ operations leads to deadlock? (Here ‘mutex’ is a semaphore variable initialized to 1.)",
+    "options": {
+      "A": "wait (mutex); ………. Critical section ……….. Signal (mutex);",
+      "B": "wait (mutex); ……….. Critical section …………… Wait (mutex);",
+      "C": "Signal (mutex); ………… Critical section ………. Wait (mutex);",
+      "D": "signal (mutex); ………… Critical section …………. Signal (mutex);"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 26,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "Which of the following situation arises if a process omits the wait(S) or the signal(S) on a semaphore vari- able ‘S’ (Initially S = 1). (i) Mutual exclusion violated (ii) Deadlock will occur",
+    "options": {
+      "A": "(i) only",
+      "B": "(ii) only",
+      "C": "Both (i) and (ii)",
+      "D": "Neither (i) nor (ii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 27,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 1",
+    "number": 16,
+    "question": "consider the following shared data and code: data: int turn; Boolean flag[2]; Code: do { flag [i] = TRUE; turn = j; while (flag [j] && turn = = j); //critical section flag [i] = FALSE; //remainder } while (TRUE); Let two processes Pi (i = 0 or 1) and Pj (j = 1 or 0) use the shared data and executes the code. Then the code provides",
+    "options": {
+      "A": "a solution to critical section problem",
+      "B": "mutual exclusion but not progress.",
+      "C": "progress but not mutual exclusion",
+      "D": "\u0007both mutual exclusion, progress but no bounded waiting."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 27,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 1",
+    "number": 17,
+    "question": "Consider the following code that shows the structure of a process in an algorithm to solve the critical section problem for two processes. var flag[2] of Boolean; /* initialized to false */ repeat flag[i] = true; while flag[j] do no – op; //critical section flag[i] = false; // remainder until false Then which of the following statements is true?",
+    "options": {
+      "A": "\u0007The algorithm satisfies all the requirements of critical section problem.",
+      "B": "\u0007The algorithm satisfies only mutual exclusion and progress.",
+      "C": "The algorithm only satisfies progress requirement.",
+      "D": "\u0007The algorithm does not satisfy critical section problem requirements."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 27,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "The result of a computation depends upon the speed of the processes involved, is said to be:",
+    "options": {
+      "A": "Cycle stealing",
+      "B": "Race condition",
+      "C": "A time lock",
+      "D": "A deadlock"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 27,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "A relation between processes such that each has some part which must not be executed, while the critical sec- tion of another is being executed is known as",
+    "options": {
+      "A": "Mutual exclusion",
+      "B": "Semaphore",
+      "C": "Multi-tasking D) Mutli-programming"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 27,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Producer–consumer problem can be solved using",
+    "options": {
+      "A": "Semaphores",
+      "B": "Event counters",
+      "C": "Monitors",
+      "D": "All of the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 27,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "To avoid the race condition, the number of processes allowed in critical section is",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 27,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Mutual exclusion problem occurs between",
+    "options": {
+      "A": "\u0007Two disjoint processes that unaware of each other",
+      "B": "Processes that share resources",
+      "C": "Processes directly aware of each other.",
+      "D": "Both (A) and (B)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 27,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Semaphores are used to solve the problem of",
+    "options": {
+      "A": "Race condition",
+      "B": "Multitasking",
+      "C": "Mutual exclusion",
+      "D": "Both (A) and (C)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 27,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "At a particular time, the value of a counting semaphore is 10. It will become 7 after",
+    "options": {
+      "A": "3 signal operations",
+      "B": "3 wait operations",
+      "C": "5 signal operations and 2 wait operations",
+      "D": "None of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 27,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Critical region is",
+    "options": {
+      "A": "\u0007A part of the OS which is not allowed to be ac- cessed by any process",
+      "B": "\u0007A set of instructions that accesses common shared resource, which exclude one another in time",
+      "C": "\u0007The portion of main memory, which can be ac- cessed only by one process at a time",
+      "D": "Both (A) and (C)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 27,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Concurrent processes are:",
+    "options": {
+      "A": "Processes that don’t overlap in time",
+      "B": "Processes that overlap in time",
+      "C": "Processes that are executed",
+      "D": "\u0007Processes that are executed by a processor at the same time"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 28,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Semaphore operations are atomic because they are implemented within the______.",
+    "options": {
+      "A": "Kernel",
+      "B": "Shell",
+      "C": "User process",
+      "D": "Normal process space"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 28,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "The programming language construct that provides equiv- alent functionality of a semaphore and better control is",
+    "options": {
+      "A": "Signal",
+      "B": "Monitor",
+      "C": "Mutex",
+      "D": "Critical section."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 28,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "What is the ideal way of emptying the queue of a strong semaphore?",
+    "options": {
+      "A": "Random",
+      "B": "LIFO",
+      "C": "FIFO",
+      "D": "binary"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 28,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "What are the disadvantages of machine instruction approach? (i) \u0007While a process is waiting for entering a critical section, process still consumes resources. (ii) There could be starvation (iii) There could be deadlocks",
+    "options": {
+      "A": "(i), (ii) only",
+      "B": "(ii), (iii) only",
+      "C": "(iii), (i) only",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 28,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "Select from below the advantages of Machine Instruction approach? (i) \u0007Applicable to any number of processes either uni- processor or multi-processor system (ii) Simple and easy to verify (iii) Supports multiple critical sections",
+    "options": {
+      "A": "(i), (ii) only",
+      "B": "(ii), (iii) only",
+      "C": "(iii), (i) only",
+      "D": "(i), (ii), (iii)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 28,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "Which of the below are requirements for mutual exclusion? (i) Only one process is allowed into critical section. (ii) \u0007A process remains inside its critical section for finite time only. (iii) \u0007It must be possible for a process accessing critical section to be delayed indefinitely. (iv) \u0007A process halting in critical section must do so without interfering with other processes.",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(ii), (i), (iv)",
+      "C": "(i), (ii), (iv)",
+      "D": "(i), (ii), (iii), (iv)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 28,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Consider these two functions and two statements S1 and S2 about them: \b [2006] int work1 (int *a,int i, int j) { int x=a[i+2]; a[j]=x+1; return a[i+2]-3; } int work2 (int *a,int i, int j) { int t1=i+2; int t2=a[t1]; a[j]=t2+1; return t2 - 3; } S1: \u0007The transformation from work1 to work2 is val- id, that is,for any program state and input argu- ments, work 2 will compute the same output and have the same effect on program state as work 1 S2: \u0007All the transformations applied to work 1 to get work 2 will always improve the performance (i.e., reduce CPU time) of work 2 compared to work 1",
+    "options": {
+      "A": "S1 is false and S2 is false",
+      "B": "S1 is false and S2 is true",
+      "C": "S1 is true and S2 is false",
+      "D": "S1 is true and S2 is true"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 28,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "The atomic fetch-and-set x, y instructions uncondi- tionally sets the memory location x to 1 and fetches the old value of the of x in y without allowing any intervening access to the memory location x. Consider the following implementation of P and V functions on binary semaphore S. void P (binary-semaphore *s) { unsigned y; unsigned *x = & (s → value); do { fetch-and-set x, y ; } while (y) ; } void V (binary-semaphore *s) { s → value = 0; } Which one of the following is true? \b [2006]",
+    "options": {
+      "A": "\u0007The implementation may not work if context switching is disabled in P",
+      "B": "\u0007Instead of using fetch-and-set, a pair of normal load/store can be used",
+      "C": "The implementation of V is wrong",
+      "D": "\u0007The code does not implement a binary semaphore"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 28,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "The P and V operations on counting semaphores, where s is a counting semaphore, are defined as follows: P(s) : s = s – 1; if s < 0 then wait; V(s) : s = s + 1; if s <= 0 then wake up a process waiting on s; Assume that Pb and Vb, the wait and signal opera- tions on binary semaphores, are provided. Two binary semaphores xb and yb are used to implement the sema- phore operations P(s) and V(s) as follows: P(s) : Pb (xb) ; s = s – 1; if (s < 0) { Vb (xb) ; Pb (yb) ; } else Vb (xb) ; V(s) : Pb (xb) ; s = s + 1; if (s<=0) Vb (yb) ; Vb (xb) ; The initial values of xb and yb are respectively \b [2008]",
+    "options": {
+      "A": "0 and 0",
+      "B": "0 and 1",
+      "C": "1 and 0",
+      "D": "1 and 1"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 28,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Consider a system with four types of resources R1 (3 units), R2 (2 units), R3 (3 units), R4 (2 units). A non- pre-emptive resource allocation policy is used. At any given instance, a request is not entertained if it can- not be completely satisfied. Three processes P1, P2, P3 request the resources as follows if executed indepen- dently.\b [2009] Process P1: t = 0: requests 2 units of R2 t = 1: requests 1 unit of R3 t = 3: requests 2 units of R1 t = 5: releases 1 unit of R2 and 1 unit of R1. t = 7: releases 1 unit of R3 t = 8: requests 2 units of R4 t = 10: Finishes Process P2: t = 0: requests 2 units of R3 t = 2: requests 1 unit of R4 t = 4: requests 1 unit of R1 t = 6: releases 1 unit of R3 t = 8: Finishes Process P3: t = 0: requests 1 unit of R4 t = 2: requests 2 units of R1 t = 5: releases 2 units of R1 t = 7: requests 1 unit of R2 t = 8: requests 1 unit of R3 t = 9: Finishes Which one of the following statements is true if all three processes run concurrently starting at time t = 0?",
+    "options": {
+      "A": "\u0007All processes will finish without any deadlock",
+      "B": "Only P1 and P2 will be in deadlock.",
+      "C": "Only P1 and P3 will be in a deadlock.",
+      "D": "All three processes will be in deadlock."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 29,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "The enter_CS() and leave_CS() functions to imple- ment critical section of a process are realized using test-and-set instruction as follows:\b [2009] void enter_CS(X) { while (test-and-set(X)) ; } void (leave_CS(X)) { X=0; } In the above solution, X is a memory location associated with the CS and is initialized to 0. Now consider the fol- lowing statements: (i) \u0007The above solution to CS problem is deadlock- free. (ii) The solution is starvation free. (iii) The processes enter CS in FIFO order. (iv) \u0007More than one process can enter CS at the same time. Which of the above statements is true?",
+    "options": {
+      "A": "(i) only",
+      "B": "(i) and (ii)",
+      "C": "(ii) and (iii)",
+      "D": "(iv) only"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 29,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Consider the methods used by processes P1 and P2 for accessing their critical sections whenever needed, as given below. The initial values of shared Boolean variables S1 and S2 are randomly assigned. \b [2010] Method used by P1 while (S1 = = S2); Critical section S1 = S2; Method used by P2 while (S1 != S2); Critical section S2 = not (S1); Which one of the following statements describes the properties achieved?",
+    "options": {
+      "A": "Mutual exclusion but not progress",
+      "B": "Progress but not mutual exclusion",
+      "C": "Neither mutual exclusion nor progress",
+      "D": "Both mutual exclusion and progress"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 29,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "The following program consists of three concurrent processes and three binary semaphores. The sema- phores are initialized as S0 = 1, S1 = 0, S2 = 0. Process P0 Process P1 Process P2 while (true) { wait (S0); print ‘0’ release (S1); release (S2); } wait (S1); Release (S0); wait (S2); release (S0); How many times will process P0 print ‘0’?\b [2010]",
+    "options": {
+      "A": "At least twice",
+      "B": "Exactly twice",
+      "C": "Exactly thrice",
+      "D": "Exactly once"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 29,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Fetch _ And _Add(X, i) is an atomic Read- Modify- Write instruction that reads the value of memory loca- tion X, increments it by the value i, and returns the old value of X. It is used in the pseudocode shown below to implement a busy wait lock. L is an unsigned inte- ger shared variable initialized to 0. The value of 0 cor- responds to lock being available, while any non-zero value corresponds to the lock being not available. \b [2012] AcquireLock(L) { while(Fetch_And_Add(L, 1)) L = 1; } ReleaseLock (L) { L = 0; } This implementation",
+    "options": {
+      "A": "fails as L can overflow",
+      "B": "\u0007fails as L can take on a non-zero value when the lock is actually available",
+      "C": "works correctly but may starve some processes",
+      "D": "works correctly without starvation"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 30,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "A shared variable x, initialized to 0, is operated on by four concurrent processes W, X, Y, Z as follows. Each of the processes W and X reads x from memory, incre- ments by one, stores it to memory, and then terminates. Each of the processes Y and Z reads x from memory, decrements by two, stores it to memory, and then ter- minates. Each process before reading x invokes the P operation (i.e., wait) on a counting semaphore S and invokes the V operation (i.e., signal) on the semaphore S after storing x to memory. Semaphore S is initialized to 2. What is the maximum possible value of x after all processes complete execution?\b [2013]",
+    "options": {
+      "A": "–2",
+      "B": "–1",
+      "C": "1",
+      "D": "2"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 30,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "A certain computation generates two arrays ‘a’ and ‘b’ such that a[i] = f(i) for 0 ≤ i < n and b[i] = g(a[i]) for 0 ≤ i < n. Suppose this computation is decomposed into two concurrent processes X and Y such that X computes the array ‘a’ and Y computes the array ‘b’. The processes employ two binary semaphores R and S, both initialized to zero. The array ‘a’ is shared by the two processes. The structures of the processes are shown below. Process X: Process Y: private i; private i; for (i = 0; i<n; i++) { for (i = 0; i<n; i++) { a[i] = f(i); EntryY(R, S); ExitX(R, S); b[i] = g(a[i]); } } Which one of the following represents the correct implementations of ExitX and EntryY? \b [2013]",
+    "options": {
+      "A": "ExitX(R, S) {",
+      "B": "ExitX(R, S) { P(R); V(R); V(S); V(S); } } EntryY(R,S){ EntryY(R,S){ P(S); P(R); V(R); P(S); } }",
+      "C": "ExitX (R, S){",
+      "D": "ExitX (R, S){ P(S); V(R); V(R); P(S); } } EntryY(R,S){ EntryY(R,S){ V(S); V(S); P(R); P(R); } }"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 30,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "Consider the procedure below for the producer-con- sumer problem which uses semaphores; \b [2014] semaphore n = 0; semaphore s = 1; void producer () { while (true) { produce ( ) semWait (s); addToBuffer (); semSignal (s); semSignal (n); } } void consumer () { while (true) { semWait (s); semWait (n); remove FromBuffer (); semSignal(s); consume ( ) ; } } Which one of the following is true?",
+    "options": {
+      "A": "\u0007The producer will be able to add an item to the buffer, but the consumer can never consume it.",
+      "B": "\u0007The consumer will remove no more than one item from the buffer.",
+      "C": "\u0007Deadlock occurs if the consumer succeeds in ac- quiring semaphore s when the buffer is empty.",
+      "D": "\u0007The starting value for the semaphore n must be 1 and not 0 for deadlock free operation."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 30,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "Two processes X and Y need to access a critical sec- tion. Consider the following synchronization con- struct used by both the processes\b [2015] Process X /* other code for pro- cess X */ while (true) { varP = true; while(varQ == true) { /* Critical Section */ varP = false; } } /* other code for pro- cess X */ Process Y /* other code for pro- cess Y */ while (true) { varQ = true; while (varP == true) { /* Critical Section */ varQ = false; } } /* other code for pro- cess Y */ Here, varP and varQ are shared variables and both are initialized to false. Which one of the following state- ments is true?",
+    "options": {
+      "A": "\u0007The proposed solution prevents deadlock but fails to guarantee mutual exclusion.",
+      "B": "\u0007The proposed solution guarantees mutual exclu- sion but fails to prevent deadlock.",
+      "C": "\u0007The proposed solution guarantees mutual exclu- sion and prevents deadlock.",
+      "D": "\u0007The proposed solution fails to prevent deadlock and fails to guarantee mutual exclusion."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 31,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "Consider the following proposed solution for the crit- ical section problem. There are n process: P0…Pn–1. In the code, function pmax returns an integer not smaller than any of its arguments. For all i, t[ i ] is initialized to zero. \b [2016] do { c[ i ] = 1; t [ i ] = pmax (t[ i ], ……, t[n – 1]) + 1; c[ i ] = 0; for every j ≠ i in (0, …., n – 1) { while (c [ j ]); while (t[ j ] ! = 0 && t[ j ] < = t[ i ]); } Critical Section; t[ i ] = 0; Remainder Section; } while (true); \u0007Which one of the following is TRUE about the above solution? \u0007(A) \u0007At most one process can be in the critical section at any time.",
+    "options": {
+      "B": "The bounded wait condition is satisfied.",
+      "C": "The progress condition is satisfied.",
+      "D": "It cannot cause a deadlock."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 31,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Previous Years’ Questions",
+    "number": 15,
+    "question": "Consider the following two - process synchronization",
+    "options": {
+      "A": "\u0007This is a correct two - process synchronization",
+      "B": "\u0007This Solution violates mutual exclusion require- ment.",
+      "C": "This Solution violates progress requirement.",
+      "D": "\u0007This Solution violates bounded wait require- ment."
+    },
+    "answer": null,
+    "explanation": "Process 0 Process 1 Entry: loop while (turn = = 1); (Critical section) Exit: turn = 1; Entry: loop while (turn = = 0); (Critical section) Exist: turn = 0; The shared variable turn is initialized to zero. Which one of the following is TRUE?\b [2016]",
+    "page": 31,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "2 - Interprocess Communication, Concurrency and Synchronization",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "A multithreaded program P executes with x number of threads and uses y number of locks for ensuring mutual exclusion while operating on shared memory locations. All locks in the program are non-reentrant, i.e., if a thread holds a lock l, then it cannot re-acquire lock l without releasing it. If a thread is unable to acquire a lock, it blocks until the lock becomes avail- able. The minimum value of x and the minimum value of y together for which execution of P can result in a deadlock are:\b [2017]",
+    "options": {
+      "A": "x = 1, y = 2",
+      "B": "x = 2, y = 1",
+      "C": "x = 2, y = 2",
+      "D": "x = 1, y = 1"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 31,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 18,
+    "question": "C Producer Consumer do { wait(P); wait (mutex); //Add item to buffer signal (mutex); signal (Q); } while (1); do { wait(R); wait (mutex); //Consume item from buffer signal (mutex); signal (S); } while (1); Which one of the following assignments to P, Q, R and S will yield the correct solution?\b [2018]",
+    "options": {
+      "A": "P: full, Q: full, R: empty, S: empty",
+      "B": "P: empty, Q: empty, R: full, S: full",
+      "C": "P: full, Q: empty, R: empty, S: full",
+      "D": "P: empty, Q: full, R: full, S: empty deadlock It is a situation where a process or set of processes is blocked, waiting for some resource that is held by other waiting processes. System Model Let the resource types be R1, R2 ... Rm (like CPU cycles, memory space, input/output (I/O) devices, etc.). Each resource type Ri has Wi instances; each process utilizes a resource as follows: Request A process, needing a resource, will request the operat- ing system (OS) for assignment of the needed resource. Then the process waits, till operating system assigns it an instance of the requested resource. Assignment The OS will assign to the requesting process an instance of the requested resource, whenever, it is available. Then, the process comes out of its waiting state. Use The process will use the assigned resource. In case, the resource is non-sharable, the process will have exclusive access to it. Release After the process ﬁ nished with the use assigned resource, it will return the resource to the system pool. The released resource can now be assigned to another waiting process. Example: Bridge crossing Traffi c is allowed only in one direction. Each section of a bridge can be viewed as a resource. If a deadlock occurs, it can be resolved if one car backs up (pre- empt resources and rollback). Several cars may have to be backed up if a deadlock occurs. Problem of starvation (infi nite wait) is possible. Resources Types of resources:"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 32,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "A cycle indicates the system is in unsafe state. Example 1: Consider the following state of a system consisting of three processes and two resources: R = (R1, R2) = (5 3) V = (V1, V2) = (2 1) R1 R2 C = P1 4 3 P2 2 1 P3 3 3 R1 R2 A = P1 2 1 P2 1 1 P3 0 0 Is this is a safe state?",
+    "options": {
+      "A": "Finish [i] = false;",
+      "B": "Need ≤ Work (Need = claim – Allocation) If no such i exists, go to step 4. Step III: Work = Work + Allocation Finish [i] = true Go to step 2 Step IV: \u0007If Finish [i] = true for all i, then the system is in safe state else it is in unsafe state. This algorithm takes O(m × n2) operations to decide whether a state is safe. Resource–Request algorithm Let Requesti be the request vector for process, Pi. If Requesti[j] = k, the process Pi wants k instances of resource type Rj. When a request for resources is made by process, Pi, the following actions are taken. Step I: \u0007 \u0007If Requesti ≤ Needi, go to step 2. Else raise an exception (error) as the process has exceeded its maximum claim. Step II: \u0007If Requesti ≤ Available, go to step 3. Else P1 must wait, since the resources are not available. Step IIII: \u0007Have the system pretend to have allocated the requested resources to process, Pi, by modifying the state as follows. Available = Available – Requesti Allocation = Allocation + Requesti Needi = Needi – Requesti If the resulting resource–allocation is safe, then the transac- tion is completed and process, Pi is allocated its resources. However, if the new state is unsafe then Pi must wait for Requesti and the old resource allocation state is restored. Advantages of deadlock avoidance technique"
+    },
+    "answer": null,
+    "explanation": "To check whether the state is safe or not, identify whether any one of the three process can run to completion with the resources available, that is, Cij – Aij ≤ Vj, ∀ j R1 R2 C A P P P − =         1 2 3 2 2 1 0 3 3 We can identify that [1 0] < [2 1]. \\ P2 can execute first. After P2 execution it will release all its resources then V = (2 1) + (1 1) = (3 2). Now P1 can execute as (2 2) < (3 2). After that P1 can release its resources then V = (3 2) + (2 1) = (5 3) Now P3 can execute and release the resources after completion. Hence, the safe sequence is < P2, P1, P3 >. Example 2: Now suppose for the above system the allocation matrix A V =         = 2 1 1 1 2 1 00 and ( ) Then no process can run to completion as no Cij – Aij ≤ Vj, ∀j Hence, the system is in unsafe state. Detection Algorithm for Several Instances of a Resource Type Safety algorithm To find out whether or not a system is in a safe state. Step I: \u0007Let ‘work’ and ‘finish’ be the two vectors of length m and n. \u0007Initialize: Work = Available and Finish [i] = false; Step II: Find i such that both:",
+    "page": 36,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 1,
+    "question": "Consider the following processes; find the average wait- ing time using non-pre-emptive priority scheduling? Process Arrival time (ms) Burst time (ms) Priority P0 P1 P2 P3 0 1 3 5 10 6 2 4 5 4 2 0",
+    "options": {
+      "A": "2.36 ms",
+      "B": "0.31 ms",
+      "C": "7.75 ms",
+      "D": "13.25 ms"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 44,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 2,
+    "question": "Consider a set of five processes whose arrival time, CPU times needed are given below. Process CPU time (in m sec) Arrival time (in msec) P1 10 5 P2 5 2 P3 3 0 P4 20 4 P5 2 3 If the CPU scheduling policy is SJF, find the average waiting time (with pre-emption).",
+    "options": {
+      "A": "4.8 ms",
+      "B": "5.6 ms",
+      "C": "2.16 ms",
+      "D": "2.8 ms"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 44,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 3,
+    "question": "Consider the following snapshot of a system: Allocation Max Available A B C D A B C D A B C D P0 P1 P2 P3 P4 0 0 1 2 1 0 0 0 1 3 5 4 0 6 3 2 0 0 1 4 0 0 1 2 1 7 5 0 2 3 5 6 0 6 5 2 0 6 5 6 1 5 2 0 Which of the following is true? (i) The system is in a safe state. (ii) \u0007If a request from process P, arrives for (0, 4, 2, 0). Then the request can be granted.",
+    "options": {
+      "A": "Only (i)",
+      "B": "Only (ii)",
+      "C": "Both (i) and (ii)",
+      "D": "Neither (i) nor (ii)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 44,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 4,
+    "question": "In a Round Robin scheduling context switch time is 4 units, the average process running time before blocking is 6 units then CPU efficiency is",
+    "options": {
+      "A": "0.2",
+      "B": "0.4",
+      "C": "0.6",
+      "D": "0.1"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 44,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 5,
+    "question": "A short-term scheduler executes at least once every 20 msec. If it takes 2 msec to decide to execute a process for 2 msec, what is the percentage of CPU time wasted?",
+    "options": {
+      "A": "8%",
+      "B": "9%",
+      "C": "10%",
+      "D": "11%"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 44,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 6,
+    "question": "Consider a system which has n resources of the same type. The n resources are shared among three processes A, B, C, which have high demands of 3, 5, 6, respec- tively. For what value of n will deadlock not occur?",
+    "options": {
+      "A": "11",
+      "B": "10",
+      "C": "9",
+      "D": "15"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 44,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 7,
+    "question": "A comparative study of scheduling algorithm was per- formed, the average arrival time in the queue is 5 m sec and waiting time of the processes is 10 msec. What is the average queue length of the waiting processes?",
+    "options": {
+      "A": "50",
+      "B": "60",
+      "C": "70",
+      "D": "80"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 44,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 8,
+    "question": "A CPU scheduling algorithm determines an order for the execution of its scheduled processes. Given five processes to be scheduled on one processor, how many possible different schedules are there?",
+    "options": {
+      "A": "50",
+      "B": "100",
+      "C": "120",
+      "D": "150"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 44,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 9,
+    "question": "Consider the following set of jobs (processes) along with their Arrival Time (AT), start time (ST) and Finish Time (FT). Find weighted turnaround time. Job no. AT ST FT 1 10.0 10.0 10.3 2 10.2 10.3 10.8 3 10.4 10.8 10.9 4 10.5 10.9 11.3 5 10.8 11.3 11.4",
+    "options": {
+      "A": "3.04",
+      "B": "2.04",
+      "C": "4.04",
+      "D": "0.56"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 44,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 10,
+    "question": "Is the following resource allocation graph in a deadlock state? R1 R2 P1 P2 P3 P4",
+    "options": {
+      "A": "Yes",
+      "B": "No",
+      "C": "Not predictable",
+      "D": "Insufficient data"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 44,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 11,
+    "question": "Starvation of longer jobs happens in one of the follow- ing scheduling algorithm?",
+    "options": {
+      "A": "Shortest run remaining time first",
+      "B": "Round Robin",
+      "C": "Highest response ratio next",
+      "D": "First-come first-served"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 44,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Exercises",
+    "number": 12,
+    "question": "Suppose n processes, P1 … Pn share n identical resource units, which can be reserved and released one at a time. The maximum resource requirement of process Pi is Si, where Si > 0. Which one of the following is a sufficient condition for ensuring that deadlock does not occur?",
+    "options": {
+      "A": "+∀i, Si < m",
+      "B": "+∀i, Si < n",
+      "C": "S m n i i n < + = ∑ ( ) 1",
+      "D": "S m n i i n < ∗ = ∑ ( ) 1"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 45,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Exercises",
+    "number": 13,
+    "question": "A system with following processes and resources exists. Check the system for safe state and find the safe sequence of processes Allocation Max Available X Y Z X Y Z X Y Z P0 0 1 0 7 5 3 3 3 2 P1 2 0 0 3 2 2 P2 3 0 2 9 0 2 P3 2 1 1 2 2 2 P4 0 0 2 4 3 3",
+    "options": {
+      "A": "< P1, P3, P4, P2, P0 >",
+      "B": "< P3, P4, P2, P0, P1 >",
+      "C": "< P2, P4, P0, P1, P3 >",
+      "D": "The system is in unsafe state."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 45,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Exercises",
+    "number": 14,
+    "question": "Does the below statements be executed concurrently? S1 : a = x + y S2 : b = z + 1",
+    "options": {
+      "A": "Yes",
+      "B": "No",
+      "C": "Not predictable",
+      "D": "None of the above"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 45,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Exercises",
+    "number": 15,
+    "question": "Let A, B, C be three jobs. Their arrival time and execu- tion time are shown below. By applying monoprogram- ming and multiprogramming (use Round Robin with time slice 1 unit) approaches, calculate the amount of reduction in turnaround time? Job Arrival time Execution time A 1 2 B 2 6 C 3 1",
+    "options": {
+      "A": "3.33",
+      "B": "4.33",
+      "C": "5.33",
+      "D": "2.33"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 45,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Exercises",
+    "number": 16,
+    "question": "Consider a system with three processes A, B, C with 15 tape drivers. Process A has 4 tape drives but requires 14 tape drives. Process B has 5 tape drives but requires 9 tape drives. Process C has 3 tape drives but requires 7 tape drives. Among the following processes which will enter the deadlock state?",
+    "options": {
+      "A": "A, B only",
+      "B": "A, B, C",
+      "C": "A, C only",
+      "D": "B, C only"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 45,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Exercises",
+    "number": 17,
+    "question": "Assume that the following jobs are to be executed on a uniprocessor system: Job id CPU burst time P 4 Q 1 R 8 S 1 T 2 The jobs are assumed to have arrived at 0, and in the order P, Q, R, S and T. Calculate the departure with time slice (completion time) for job P if scheduling is Round Robin with time slices of 1 unit (slice).",
+    "options": {
+      "A": "4",
+      "B": "10",
+      "C": "11",
+      "D": "12 Common data for questions 18 and 19: Consider the fol- lowing Resource Allocation Graph: P2 P3 P0 P1"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 45,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Exercises",
+    "number": 18,
+    "question": "The system is in a deadlock state. This remark is:",
+    "options": {
+      "A": "True",
+      "B": "False",
+      "C": "Impossible to determine",
+      "D": "Unpredictable"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 45,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Exercises",
+    "number": 19,
+    "question": "Which one is a safe sequence?",
+    "options": {
+      "A": "P0, P1, P2, P3",
+      "B": "P1, P0, P2, P3",
+      "C": "P2, P0, P1, P3",
+      "D": "Both (A) and (C) Practice Problem 2 tive from the given choices."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 45,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Exercises",
+    "number": 1,
+    "question": "Let there be five processes (P1 to P5) and three resource types A, B, C. Resource type A has 10 instances, Resource type B has 5 instances, Resource type C has 7 instances. \u0007Suppose that at time T0, the following snapshot of the system has been taken. Allocation Max Available P1 0 1 0 7 5 3 3 3 2 P2 2 0 0 3 2 2 P3 3 0 2 9 0 2 P4 2 1 1 2 8 2 P5 0 0 2 4 3 3 Which of the following statement is true?",
+    "options": {
+      "A": "The system is in safe state.",
+      "B": "The system has process initiation denial problem.",
+      "C": "No process causes initiation denial",
+      "D": "Both (A) and (C)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 45,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 2,
+    "question": "Consider three CPU intensive processes, which require 20, 30 and 40 time units and arrive at times 0, 2 and 4, respectively. How many context switches are needed if the operating system implements a shortest remaining time first scheduling algorithm? Do not count the con- text switches at time zero and at the end.",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 3,
+    "question": "Consider the set of processes P1 to P5 with the follow- ing CPU burst times. Find the average turnaround time using shortest remaining time first. Process CPU burst time Arrival time P1 P2 P3 P4 P5 3 6 4 5 2 0 2 4 6 8",
+    "options": {
+      "A": "1.3 ms",
+      "B": "3.5 ms",
+      "C": "5.8 ms",
+      "D": "7.2 ms"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 46,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 4,
+    "question": "All processes are arriving at time 0, find the average waiting time. Process Burst time Priority P1 P2 P3 P4 P5 10 1 2 1 5 3 1 3 4 2",
+    "options": {
+      "A": "8.2 ms",
+      "B": "4.1 ms",
+      "C": "2.0 ms",
+      "D": "1.3 ms"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 46,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 5,
+    "question": "Consider a set of three processes P1, P2 and P3 with their priorities and arrival times as given below. Process Burst time Priority Arrival time P1 P2 P3 10 5 2 3 2 1(highest) 0 1 2 Find the average waiting time.",
+    "options": {
+      "A": "1 ms",
+      "B": "2 ms",
+      "C": "3 ms",
+      "D": "4 ms"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 46,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 6,
+    "question": "The portion of the process scheduler in an OS that dis- patches processes is concerned with:",
+    "options": {
+      "A": "assigning ready processes to the CPU",
+      "B": "activating suspended I/O bound processes",
+      "C": "\u0007temporarily suspending processes when the CPU load is too great.",
+      "D": "All the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 46,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 7,
+    "question": "In a time-sharing OS, when the time slot given to a pro- cess is completed, the process goes from the running state to the",
+    "options": {
+      "A": "blocked state",
+      "B": "ready state",
+      "C": "suspended state",
+      "D": "terminated state"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 8,
+    "question": "On a system with n CPUs, what is the maximum num- ber of processes that can be in the ready state?",
+    "options": {
+      "A": "n processes",
+      "B": "No process can be in ready state",
+      "C": "\u0007There is no limit to the number of processes in the ready state",
+      "D": "None of the above"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 46,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 9,
+    "question": "Consider a set of n tasks with known runtimes r1, r2,…, rn to be run on a uniprocessor machine. Which of the following processor scheduling algorithms will result in the maximum throughput?",
+    "options": {
+      "A": "Round Robin",
+      "B": "SJF",
+      "C": "Highest response ratio next",
+      "D": "First-come first-served"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 10,
+    "question": "Match the following: A Critical region I Hoare’s monitor B Wait/signal II Mutual exclusion C Working set III Principle of locality D Deadlock IV Circular wait",
+    "options": {
+      "A": "A – II, B – I, C – III, D – IV",
+      "B": "A – I, B – II, C – III, D – IV",
+      "C": "A – II, B – I, C – IV, D – III",
+      "D": "A – I, B – II, C – IV, D – III"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 46,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 11,
+    "question": "Consider three processes A, B, C to be scheduled as per SRT algorithm. A is known to be scheduled first and when A has been running for 7 units of time, C has arrived. C has run for 1 unit of time when B has arrived and completed running in 2 units of time, what could be the minimum time of executions for A and C?",
+    "options": {
+      "A": "11 and 4",
+      "B": "11 and 3",
+      "C": "12 and 3",
+      "D": "12 and 4"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 12,
+    "question": "Select the correct statements from below: (i) \u0007SRT and SPN can cause starvation for larger pro- cesses. (ii) \u0007FCFS can potentially block small processes in fa- vour of much larger processes. (iii) \u0007Round Robin algorithm gives fair treatment to all the processes. (iv) FCFS is a pre-emptive algorithm. (v) \u0007The throughput for Round Robin is high even for small time slices.",
+    "options": {
+      "A": "(i), (ii), (iii)",
+      "B": "(i), (ii), (iv)",
+      "C": "(iii), (iv), (v)",
+      "D": "(i), (ii), (iii), (v)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 46,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Exercises",
+    "number": 13,
+    "question": "Three processes share four resource units that can be reserved and released only one at a time. Each process needs a maximum of two units. Then",
+    "options": {
+      "A": "there is a possibility of deadlock",
+      "B": "no deadlock will occur",
+      "C": "there will be a circular wait",
+      "D": "nothing can be predicted about dead lock."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Exercises",
+    "number": 14,
+    "question": "N processes share M resource units that can be reserved and released only one at a time. The maximum need of each process does not exceed M and the sum of all maximum needs is less than M + N, then",
+    "options": {
+      "A": "there is a possibility of deadlock",
+      "B": "there will be no deadlock",
+      "C": "circular wait exists",
+      "D": "nothing can be predicted about dead lock."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 47,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Exercises",
+    "number": 15,
+    "question": "Which of the following scheduling algorithms could result in starvation?",
+    "options": {
+      "A": "First-come, first-served",
+      "B": "Shortest job first",
+      "C": "Round Robin",
+      "D": "Highest response ratio next"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 47,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Consider three processes (process id 0, 1, 2, respec- tively) with compute bursts 2, 4 and 8 time units. All processes arrive at time zero. Consider the longest remaining time first (LRTF) scheduling algorithm. In LRTF ties are broken by giving priority to the process with the lowest process id. The average turnaround time is:\b [2006]",
+    "options": {
+      "A": "13 units",
+      "B": "14 units",
+      "C": "15 units",
+      "D": "16 units"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 47,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Consider three processes, all arriving at zero, with total execution time of 10, 20 and 30 units, respec- tively. Each process spends the first 20% of execution time doing I/O, the next 70% of time doing computa- tion, and the last 10% of time doing I/O again. The operating system uses a shortest remaining compute time first scheduling algorithm and schedules a new process either when the running process gets blocked on I/O or when the running process finishes its com- pute burst. Assume that all I/O operations can be over- lapped as much as possible. For what percentage of time does the CPU remain idle?\b [2006]",
+    "options": {
+      "A": "0%",
+      "B": "10.6%",
+      "C": "30.0%",
+      "D": "89.4%"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 47,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "A single processor system has three resource types X, Y and Z, which are shared by three processes. There are five units of each resource type. Consider the following scenario, where the column alloc denotes the number of units of each resource type allocated to each process, and the column request denotes the number of units of each resource type requested by a process in order to complete execution. Which of these processes will finish last? P P P X Y Z X Y Z 0 1 2 1 2 1 1 0 3 2 0 1 0 1 2 2 2 1 1 2 0 alloc request",
+    "options": {
+      "A": "P0\b [2007]",
+      "B": "P1",
+      "C": "P2",
+      "D": "\u0007None of the above, since the system is in a dead- lock."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 47,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Which of the following is not true of deadlock preven- tion and deadlock avoidance schemes?\b [2008]",
+    "options": {
+      "A": "\u0007In deadlock prevention, the request for resources is always granted if the resulting state is safe",
+      "B": "\u0007In deadlock avoidance, the request for resources is always granted if the result state is safe",
+      "C": "\u0007Deadlock avoidance is less restrictive than dead- lock prevention",
+      "D": "\u0007Deadlock avoidance requires knowledge of re- source requirements a priori"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 47,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "In the following process state transition diagram for a uniprocessor system, assume that there are always some processes in the ready state:\b [2009] Start Blocked Terminated Running Ready A B C E F D Now consider the following statements: I. \u0007If a process makes a transition D, it would result in another process making transition A immedi- ately. II. \u0007A process P2 in blocked state can make transi- tion E, while another process P1 is in running state. III. The OS uses pre-emptive scheduling. IV. The OS uses non-pre-emptive scheduling. Which of the above statements are true?",
+    "options": {
+      "A": "I and II",
+      "B": "I and III",
+      "C": "II and III",
+      "D": "II and IV"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 47,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Which of the following statements are true? I. \u0007Shortest remaining time first scheduling may cause starvation II. Pre-emptive scheduling may cause starvation III. \u0007Round Robin is better than FCFS in terms of re- sponse time\b [2010]",
+    "options": {
+      "A": "I only",
+      "B": "I and III only",
+      "C": "II and III only",
+      "D": "I, II and III"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 47,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "A system has n resources R0, … , Rn–1, and k processes P0, … Pk–1. The implementation of the resource request logic of each process Pi, is as follows: if (i% 2 = = 0) { if (i<n) request Ri; if (i+2<n) request Ri+2; } else { if (i<n) request Rn-i; if (i+2<n) request Rn-i-2; } In which one of the following situations is a deadlock possible?\b [2010]",
+    "options": {
+      "A": "n = 40, k = 26",
+      "B": "n = 21, k = 12",
+      "C": "n = 20, k = 10",
+      "D": "n = 41, k = 19"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 47,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Consider the following table of arrival time and burst time for three processes P0, P1 and P2.\b [2011] Process Arrival time Burst time P0 0 ms 9 ms P1 1 ms 4 ms P2 2 ms 9 ms The pre-emptive shortest job first scheduling algo- rithm is used. Scheduling is carried out only at arrival or completion of processes. What is the average wait- ing time for the three processes?",
+    "options": {
+      "A": "5.0 ms",
+      "B": "4.33 ms",
+      "C": "6.33 ms",
+      "D": "7.33 ms"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 48,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "Consider the three processes, P1, P2 and P3 as shown in the table. \b [2012] Process Arrival time Time units required P1 0 5 P2 1 7 P3 3 4 The completion order of the three processes under the policies FCFS and RR2 (Round Robin scheduling with CPU quantum of 2 time units) are",
+    "options": {
+      "A": "FCFS: P1, P2, P3 RR2: P1, P2, P3",
+      "B": "FCFS: P1, P3, P2 RR2: P1, P3, P2",
+      "C": "FCFS: P1, P2, P3 RR2: P1, P3, P2",
+      "D": "FCFS: P1, P3, P2 RR2: P1, P2, P3"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "A scheduling algorithm assigns priority proportional to the waiting time of a process. Every process starts with priority zero (the lowest priority). The scheduler re-evaluates the process priorities every T time units and decides the next process to schedule. Which one of the following is TRUE if the processes have no I/O operations and all arrive at time zero?\b [2013]",
+    "options": {
+      "A": "\u0007This algorithm is equivalent to the first-come- first-serve algorithm.",
+      "B": "\u0007This algorithm is equivalent to the Round Robin algorithm.",
+      "C": "\u0007This algorithm is equivalent to the shortest-job- first algorithm.",
+      "D": "\u0007This algorithm is equivalent to the shortest- remaining-time-first algorithm."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 48,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "An operating system uses the Banker’s algorithm for deadlock avoidance when managing the allocation of three resource types X, Y and Z to three processes P0, P1, and P2. The table given below presents the current system state. Here, the allocation matrix shows the current number of resources of each type allocated to each process and the Max matrix shows the maximum number of resources of each type required by each process during its execution. \b [2014] Allocation Max X Y Z X Y Z P0 0 0 1 8 4 3 P1 3 2 0 6 2 0 P2 2 1 1 3 3 3 \u0007There are three units of type X, two units of type Y and two units of type Z still available. The system is currently in a safe state. Consider the following inde- pendent requests for additional resources in the current state: \u0007REQ1: P0 requests 0 units of X, 0 units of Y and two units of Z \u0007REQ 2: P1 requests two units of X, 0 units of Y and 0 units of Z Which one of the following is true?",
+    "options": {
+      "A": "Only REQ1 can be permitted",
+      "B": "Only REQ2 can be permitted",
+      "C": "Both REQ1 and REQ2 can be permitted",
+      "D": "Neither REQ1 nor REQ2 can be permitted"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 48,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "A system has 6 identical resources and N processes competing for them. Each process can request atmost 2 resources. Which one of the following values of N could lead to a deadlock?\b [2015]",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 49,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Previous Years’ Questions",
+    "number": 18,
+    "question": "The maximum number of processes that can be in Ready state for a computer system with n CPUs is \b [2015]",
+    "options": {
+      "A": "n",
+      "B": "n2",
+      "C": "2n",
+      "D": "Independent of n"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 49,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Previous Years’ Questions",
+    "number": 19,
+    "question": "Consider the following policies for preventing dead- lock in a system with mutually exclusive resources. \b [2015] (1) \u0007Processes should acquire all their resources at the beginning of execution. If any resource is not available, all resources acquired so far are released. (2) \u0007The resources are numbered uniquely, and pro- cesses are allowed to request for resources only in increasing resource numbers. (3) \u0007The resources are numbered uniquely, and pro- cesses are allowed to request for resources only in decreasing resource numbers. (4) \u0007The resources are numbered uniquely. A process is allowed to request only for a resource with resource number larger than its currently held resources. Which of the above policies can be used for prevent- ing deadlock?",
+    "options": {
+      "A": "Any one of 1 and 3 but not 2 or 4",
+      "B": "Any one of 1, 3 and 4 but not 2",
+      "C": "Any one of 2 and 3 but not 1 or 4",
+      "D": "Any one of 1, 2, 3 and 4"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 49,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Previous Years’ Questions",
+    "number": 20,
+    "question": "For the processes listed in the following table, which of the following scheduling schemes will give the lowest average turnaround time?\b [2015] Process Arrival Time Processing Time A 0 3 B 1 6 C 4 4 D 6 2",
+    "options": {
+      "A": "First Come First Serve",
+      "B": "Non-preemptive Shortest Job First",
+      "C": "Shortest Remaining Time",
+      "D": "Round Robin with Quantum value two"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 49,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "3 - Deadlock and CPU Scheduling",
+    "section": "Previous Years’ Questions",
+    "number": 21,
+    "question": "Consider an arbitrary set of CPU - bound processes with unequal CPU burst lengths submitted at the same time to a computer system. Which one of the follow- ing process scheduling algorithms would minimize the average waiting time in the ready queue?\b [2016]",
+    "options": {
+      "A": "Shortest remaining time first",
+      "B": "\u0007Round-robin with time quantum less than the shortest CPU burst",
+      "C": "Uniform random",
+      "D": "\u0007Highest priority first with priority proportional to CPU burst length"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 49,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 24,
+    "question": "A system shares 9 tape drives. The current allocation and maximum requirement of tape drives for three processes are shown below: Process Current Allocation Maximum Requirement P1 3 7 P2 1 6 P3 3 5 Which of the following best describes current state of the system?\b [2017]",
+    "options": {
+      "A": "Safe. Deadlocked",
+      "B": "Safe. Not Deadlocked",
+      "C": "Not Safe. Deadlocked",
+      "D": "Not Safe, Not Deadlocked"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 50,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 27,
+    "question": "In a system, there are three types of resources: E, F and G. Four processes P0, P1, P2 and P3 execute con- currently. At the outset, the processes have declared their maximum resource requirements using a matrix named Max as given below. For example, Max[P2, F] is the maximum number of instances of F that P2 would require. The number of instances of the resources allocated to the various processes at any given state is given by a matrix named Allocation. Consider a state of the system with the Allocation matrix as shown below, and in which 3 instances of E and 3 instances of F are the only resources available. Allocation Max E F G E F G P0 1 0 1 P0 4 3 1 P1 1 1 2 P1 2 1 4 P2 1 0 3 P2 1 3 3 P3 2 0 0 P3 5 4 1 From the perspective of deadlock avoidance, which one of the following is true?\b [2018]",
+    "options": {
+      "A": "The system is in safe state.",
+      "B": "The system is not in safe state, but would be safe if one more instance of E were available.",
+      "C": "The system is not in safe state, but would be safe if one more instance of F were available.",
+      "D": "The system is not in safe state, but would be safe if one more instance of G were available."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 50,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Consider a 3-level memory hierarchy shown in the fol- lowing table, with access times to memory: Hierarchy level Cache hit ratio Page transfer time M1 0.55 0.003 ms M2 0.92 0.3 ms M3 – 1.0 ms When a miss occurs, data is fetched from the next level. Calculate the average time required for a process to read one word from the memory system.",
+    "options": {
+      "A": "0.379",
+      "B": "0.162",
+      "C": "0.2798",
+      "D": "0.172"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Consider a memory system with FIFO page replace- ment algorithm policy. For an arbitrary page access pattern, increasing the number of page frames in main memory will",
+    "options": {
+      "A": "Always decrease the number of page faults",
+      "B": "Always increase the number of page faults",
+      "C": "Sometimes increase the number of page faults",
+      "D": "Never effect the number of page faults"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Consider the below page address stream generated by executing a program: 4 5 4 3 7 4 Assuming that LRU is used for page replacement and at most three frames are available in the memory for the process, find the number of page faults that can occur (initially all frames empty).",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "3",
+      "D": "4"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 66,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Consider a logical address space of four pages of 2048 words each mapped into a physical memory of 32 frames. How many bits in logical address?",
+    "options": {
+      "A": "12-bits",
+      "B": "14-bits",
+      "C": "13-bits",
+      "D": "11-bits"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 66,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "The time taken to service a page fault is on average 10 ms and the memory access time is 20 ms. If the hit ratio is 70%, calculate the average access time.",
+    "options": {
+      "A": "3018 ms",
+      "B": "4014 ms",
+      "C": "3014 ms",
+      "D": "4024 ms"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 66,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Consider the following page trace: 4, 3, 2, 1, 4, 3, 5, 4, 3, 2, 1, 5 Number of frames for the Job M = 4. Then the page fault ratio using FIFO technique will be",
+    "options": {
+      "A": "63%",
+      "B": "75%",
+      "C": "83%",
+      "D": "94%"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 66,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "The available main memory for loading pages is 64 MB with a frame size of 8 MB. If pages of size 6 MB, and 4 MB are loaded into memory, what is the percent- age of the internal fragmentation resulted?",
+    "options": {
+      "A": "42.5",
+      "B": "37.5",
+      "C": "57.5",
+      "D": "62.45"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "A demand paging system takes 50 time units to handle a page fault and 200 time units to replace a dirty page. Access time of memory is 2 time units. Probability of page fault and dirty page is P. Average access time is 4 time units. Then what is the value of P ?",
+    "options": {
+      "A": "0.037",
+      "B": "0.027",
+      "C": "0.012",
+      "D": "0.042"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 66,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Assume that a total memory 20 KB is available with no partition. If Buddy system technique is used and there are total of four partitions to serve the request, the clos- est range of the requested size is",
+    "options": {
+      "A": "12.5 and 25",
+      "B": "14.5 and 30",
+      "C": "15.5 and 25",
+      "D": "14.5 and 40"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 66,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "A system uses FIFO page replacement algorithm. It has three page frames with no pages loaded. First 50 pages are accessed in some order and the same pages are accessed in the reverse order. What is the number of page faults?",
+    "options": {
+      "A": "98",
+      "B": "96",
+      "C": "97",
+      "D": "95"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "If 32-bit addressing is used for pages whose maximum size is 512 KB, what is the maximum number of pages that can be addressed?",
+    "options": {
+      "A": "4096",
+      "B": "2048",
+      "C": "8192",
+      "D": "16384"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Calculate the overhead due to page table if given the average process in bytes is 16-bytes, the page size is 32-bytes and the page entry is 2-bytes.",
+    "options": {
+      "A": "15",
+      "B": "17",
+      "C": "18",
+      "D": "19"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "In a system with 32-bit virtual address and 1 KB page size, use of one-level page tables for virtual to physical address translation is not practical because of",
+    "options": {
+      "A": "The large amount of internal fragmentation",
+      "B": "The large amount of external fragmentation",
+      "C": "\u0007The large memory overhead in maintaining page tables",
+      "D": "\u0007The large computation overhead in the translation process"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "If an instruction takes time 10 m sec if there is no page fault and time 20 m sec if there is a page fault, what is the effective instruction time if page fault occurs once every 5 instructions?",
+    "options": {
+      "A": "12.5 msec",
+      "B": "12 msec",
+      "C": "14 msec",
+      "D": "15 msec"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "Let an instruction take 10 ms and page fault takes an additional 5 ms. If the average page fault occurs after 20 instructions, the effective instruction time will be",
+    "options": {
+      "A": "10 ms",
+      "B": "10.25 ms",
+      "C": "0.25 ms",
+      "D": "10.75 ms"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 1",
+    "number": 16,
+    "question": "A 0.8 MB-sized memory is managed using variable partitions, while the rest of the memory is occupied by a 0.26 MB partition, 0.27 MB partition and 0.25 MB partitions in the order. Best-fit strategy is being adopted where would be a 0.18 MB allocation request is fulfilled?",
+    "options": {
+      "A": "0.26",
+      "B": "0.27",
+      "C": "0.25",
+      "D": "Request will be denied Common data for questions 17 and 18: Suppose that the OS uses variable length partitions for memory manage- ment. At some particular time, the running process occupies a partition between physical addresses 20,000 and 40,000."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 1",
+    "number": 17,
+    "question": "The values of base and limit register are respectively",
+    "options": {
+      "A": "20, 000, 40,000",
+      "B": "20,000, 20,000",
+      "C": "0, 10,000",
+      "D": "0, 40,000"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 1",
+    "number": 18,
+    "question": "What physical address corresponds to a virtual address of 13,000?",
+    "options": {
+      "A": "13,000",
+      "B": "43,000",
+      "C": "33,000",
+      "D": "Out of range"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 1",
+    "number": 19,
+    "question": "Consider a page table where translation look ahead buffer is used. TLB hit ratio is 0.95 and generally takes 1 nanosecond to retrieve the frame number. If a miss is recorded by the TLB then an additional overhead of 10 nanoseconds should be taken into con- sideration, further cache and main memory reference takes 100 ns on average, what is the average memory fetch time using the TLB? Assume main memory accesses are always a success.",
+    "options": {
+      "A": "101 ns",
+      "B": "105 ns",
+      "C": "200 ns",
+      "D": "205 ns"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 1",
+    "number": 20,
+    "question": "Consider a 1 MB process which is divided into five segments. Each segment is further divided into pages whose size is 4 KB. What is the maximum segments possible? Assume that the system is byte addressable.",
+    "options": {
+      "A": "64",
+      "B": "128",
+      "C": "256",
+      "D": "512"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Consider a logical address space of 32 pages of 2048 words mapped into memory of 64 frames. Then the number of bits required for logical address are",
+    "options": {
+      "A": "16-bits",
+      "B": "17-bits",
+      "C": "18-bits",
+      "D": "20-bits"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "In which of the page table techniques the logical address space is broken into multiple page table?",
+    "options": {
+      "A": "Inverted Page Table",
+      "B": "Hierarchical Page Table",
+      "C": "Hashed Page Table",
+      "D": "None of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Consider a system with 70% hit ratio, 60 nanoseconds time to search the associative registers, 800 nanosec- onds to access memory. What is the effective memory access time?",
+    "options": {
+      "A": "1200 nsec",
+      "B": "1100 nsec",
+      "C": "1300 nsec",
+      "D": "2200 nsec"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "On a system using fixed partitions, all of size 28, the number of bits used by the limit register is",
+    "options": {
+      "A": "128",
+      "B": "256",
+      "C": "8",
+      "D": "1024"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Working set (t, k) at an instant of time, t, is the set of",
+    "options": {
+      "A": "\u0007k future references that the operating system will make",
+      "B": "\u0007future references that the operating system will make in the next ‘k’ time units",
+      "C": "k references with high frequency",
+      "D": "\u0007pages that have been referenced in the last k time units."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Cache and interleaved memories are ways of speeding up memory access between CPUs and slower RAM. Which of the following memory models are best suited (i.e., improves performance the most) for which programs? (i) Cached memory is best suited for small loops. (ii) Interleaved memory is best suited for small loops. (iii) Interleaved memory is best suited for large loops. (iv) \u0007Cache memory is best suited for large sequential code.",
+    "options": {
+      "A": "(i) and (ii) are true",
+      "B": "(i) and (iii) are true",
+      "C": "(iv) and (ii) are true",
+      "D": "(iv) and (iii) are true"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "A paging system with a page table in memory every reference to memory takes 100 ns. The TLB hit ratio is 85% and the time needed for searching TLB is almost negligible. What is the effective memory access time?",
+    "options": {
+      "A": "115 ns",
+      "B": "135 ns",
+      "C": "145 ns",
+      "D": "125 ns"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Consider the page sequence 4, 2, 1, 5, 3, 2, 1, 5, 0, 2, 5. If FIFO page replacement algorithm is used and frame size is 3, then the percentage of page fault is",
+    "options": {
+      "A": "99%",
+      "B": "90.9%",
+      "C": "80.8%",
+      "D": "89.9%"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "If the page size is 32 KB, primary page table contains 4096 entries and the secondary page table contains 256 entries, then what is the size of logical address in bits?",
+    "options": {
+      "A": "15-bits",
+      "B": "20-bits",
+      "C": "32-bits",
+      "D": "35-bits"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "If page size is 2 KB and logical address is 20-bit, then the number of entries in the page table is",
+    "options": {
+      "A": "2048 B",
+      "B": "256 B",
+      "C": "512 B",
+      "D": "1 MB"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "Consider a paging system with the page table stored in memory. If a memory reference takes 200 ns, how long does a paged memory reference take?",
+    "options": {
+      "A": "100 ns",
+      "B": "200 ns",
+      "C": "300 ns",
+      "D": "400 ns"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Consider a logical address space of eight pages of 1024 words each mapped onto a physical memory of 32 frames. How many bits are there in the logical address and in the physical address?",
+    "options": {
+      "A": "10, 18",
+      "B": "13, 18",
+      "C": "13, 15",
+      "D": "10, 5"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "For a paged system, TLB hit ratio is 0.9. Let the RAM access time ‘t’ be 20 ns and the TLB access time ‘T ’ be 100 ns. Then effective memory access (with TLB) will be",
+    "options": {
+      "A": "120 ns",
+      "B": "200 ns",
+      "C": "130 ns",
+      "D": "150 ns"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "Assume that a user program is 100 K words and sec- ondary storage device is a fixed hard disk with an average latency of 8 ms and a transfer rate of 2,50,000 words/second. Then find the swap time of a transfer of 100 K words to or from memory.",
+    "options": {
+      "A": "816 ms",
+      "B": "408 ms",
+      "C": "204 ms",
+      "D": "8 ms"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "Consider the following segment table: Segment Limit Base 0 1000 1400 1 400 6300 2 400 4300 3 1100 3200 4 1000 4700 The physical address for a logical address which is in segment 2 with offset 253 is",
+    "options": {
+      "A": "4553",
+      "B": "6353",
+      "C": "6253",
+      "D": "4453"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 16,
+    "question": "Consider a process of size 2 MB. If the page size is 0.5 KB, what is the size of the page table (assuming that each page is mapped by a 32-bit size page table entry)?",
+    "options": {
+      "A": "8 KB",
+      "B": "16 KB",
+      "C": "24 KB",
+      "D": "32 MB"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 17,
+    "question": "A CPU generates 32-bit virtual address. The page size is 2 KB. The translation look-aside buffer (TLB) which can hold 256 page table entries and is two-way set asso- ciative mapping. The number of bits in the TLB tag is",
+    "options": {
+      "A": "10-bits",
+      "B": "12-bits",
+      "C": "14-bits",
+      "D": "15-bits"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 18,
+    "question": "Assume that a total memory M is available with no partitions made yet. If Buddy system strategy is being used and a total of n partitions have been made to serve the request. The closest range of the requested size is",
+    "options": {
+      "A": "M M n n 2 1 2 + and",
+      "B": "M n M n and −1",
+      "C": "M M n n 2 2 1 and −",
+      "D": "M n M n +1 and"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 68,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 2",
+    "number": 19,
+    "question": "The memory has four free blocks of sizes 2K, 6K, 20K, 4K. The request blocks are allocated according to best fit allocation method. The allocation requests are stored in queue as shown: Reqest no. P1 P2 P3 P4 P5 P6 P7 Reqest sizes 4 K 10 K 2 K 3 K 5 K 4 K 2 K Usage time 1 4 2 6 3 1 8 The time at which request for P7 will be completed is",
+    "options": {
+      "A": "10 unit time",
+      "B": "14 unit time",
+      "C": "20 unit time",
+      "D": "15 unit time"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 69,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Practice Problems 2",
+    "number": 20,
+    "question": "A memory page containing a heavily used variable that was initialized very early and is in constant use is removed when _____ page replacement is used.",
+    "options": {
+      "A": "LRU",
+      "B": "FIFO",
+      "C": "LFU",
+      "D": "Optimal"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 69,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "A processor uses 36-bit physical addresses and 32-bit virtual addresses, with a page frame size of 4 K bytes. Each page table entry is of size 4 bytes. A three-level page table is used for virtual to physical address trans- lation, where the virtual address is used as follows: \b [2008] •• Bits 30–31 are used to index into the first level page table •• Bits 21–29 are used to index into the second level page table •• Bits 12–20 are used to index into the third level page table, and •• Bits 0–11 are used as offset within the page The number of bits required for addressing the next level page table (or page frame) in the page table entry of the first, second and third level page tables are, respectively,",
+    "options": {
+      "A": "20, 20 and 20",
+      "B": "24, 24 and 24",
+      "C": "24, 24 and 20",
+      "D": "25, 25 and 24"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 69,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "How many 32 K × 1 RAM chips are needed to pro- vide a memory capacity of 256 K bytes?\b [2009]",
+    "options": {
+      "A": "8",
+      "B": "32",
+      "C": "64",
+      "D": "128"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 69,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "In which one of the following page replacement policies, Belady’s anomaly may occur?\b [2009]",
+    "options": {
+      "A": "FIFO",
+      "B": "Optimal",
+      "C": "LRU",
+      "D": "MRU"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 69,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "The essential content(s) in each entry of a page table is/are\b [2009]",
+    "options": {
+      "A": "Virtual page number",
+      "B": "Page frame number",
+      "C": "Both virtual page number and page frame number",
+      "D": "Access right information"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 69,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "A multilevel page table is preferred in comparison to a single-level page table for translating virtual address to physical address because\b [2009]",
+    "options": {
+      "A": "\u0007It reduces the memory access time to read or write a memory location.",
+      "B": "\u0007It helps to reduce the size of page table needed to implement the virtual address space of a process.",
+      "C": "\u0007It is required by the translation look-aside buffer.",
+      "D": "\u0007It helps to reduce the number of page faults in page replacement algorithms."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 69,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "A system uses FIFO policy for page replacement. It has four-page frames with no pages loaded to begin with. The system first accesses 100 distinct pages in some order and then accesses the same 100 pages but now in the reverse order. How many page faults will occur?\b [2010]",
+    "options": {
+      "A": "196",
+      "B": "192",
+      "C": "197",
+      "D": "195"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 69,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "Let the page fault service time be 10 ms in a com- puter with average memory access time being 20 ns. If one page fault is generated for every 106 memory accesses, what is the effective access time for the memory?\b [2011]",
+    "options": {
+      "A": "21 ns",
+      "B": "30 ns",
+      "C": "23 ns",
+      "D": "35 ns"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 69,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Consider the virtual page reference string 1, 2, 3, 2, 4, 1, 3, 2, 4, 1 on a demand paged virtual memory system running on a computer system that has main memory size of three-page frames which are initially empty. Let LRU, FIFO and OPTIMAL denote the number of page faults under the corresponding page replacement pol- icy. Then \b [2012]",
+    "options": {
+      "A": "OPTIMAL< LRU < FIFO",
+      "B": "OPTIMAL < FIFO < LRU",
+      "C": "OPTIMAL = LRU",
+      "D": "OPTIMAL = FIFO"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 69,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "A RAM chip has a capacity of 1024 words of 8 bits each (1 K × 8). The number of 2 × 4 decoders with enable line needed to construct a 16 K × 16 RAM from 1 K × 8 RAM is\b [2013]",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "7 Common data for Questions 10 and 11: A computer uses 46-bit virtual address, 32-bit physical address, and a three-level paged page table organization. The page table base register stores the base address of the first-level table (T1), which occupies exactly one page. Each entry of T1 stores the base address of a page of the second-level table (T2). Each entry of T2 stores the base address of a page of the third-level table (T3). Each entry of T3 stores a page table entry (PTE). The PTE is 32-bits in size. The proces- sor used in the computer has a 1 MB 16-way set associa- tive virtually indexed physically tagged cache. The cache block size is 64 bytes."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 69,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "What is the size of a page in KB in this computer? \b [2013]",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "8",
+      "D": "16"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 70,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "What is the minimum number of page colours needed to guarantee that no two synonyms map to different sets in the processor cache of this computer?\b [2013]",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "8",
+      "D": "16"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 70,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "A computer has 20 physical page frames which con- tain pages numbered 101 through 120. Now a pro- gram accesses the pages numbered 1, 2, … 100 in that order, and repeats the access sequence THRICE. Which one of the following page replacement policies experiences the same number of page faults as the optimal page replacement policy for this program? \b [2014]",
+    "options": {
+      "A": "Least-recently used",
+      "B": "First-in-first-out",
+      "C": "Last-in-first-out",
+      "D": "Most-recently-used"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 70,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "Consider a main memory with five page frames and the following sequence of page references: 3, 8, 2, 3, 9, 1, 6, 3, 8, 9, 3, 6, 2, 1, 3. Which one of the following is true with respect to page replacement policies First In First Out (FIFO) and Least Recently Used (LRU)? \b [2015]",
+    "options": {
+      "A": "Both incur the same number of page faults",
+      "B": "FIFO incurs 2 more page faults than LRU",
+      "C": "LRU incurs 2 more pages faults than FIFO",
+      "D": "FIFO incurs 1 more page faults than LRU"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 70,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 18,
+    "question": "Consider six memory partitions of sizes 200 KB, 400 KB, 600 KB, 500 KB, 300 KB and 250 KB, where KB refers to kilobyte. These partitions need to be allotted to four processes of sizes 357 KB, 210 KB, 468 KB and 491 KB in that order. If the best fit algorithm is used, which partitions are NOT allotted to any pro- cess?\b [2015]",
+    "options": {
+      "A": "200 KB and 300 KB",
+      "B": "200 KB and 250 KB",
+      "C": "250 KB and 300 KB",
+      "D": "300 KB and 400 KB"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 70,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 20,
+    "question": "Consider the following two C code segments. Y and X are one and two dimensional arrays of size n and n × n respectively, where 2 ≤ n ≤ 10. Assume that in both code segments, elements of Y are initialized to 0 and each element X[i] [ j] of array X is initialized to i + j. Further assume that when stored in main memory all elements of X are in same main memory page frame. Code segment 1:\b [2015] //initialize elements of Y to 0 //initialize elements X[i] [j] of X to i + j for (i = 0; i < n; i++) Y[i] += X[0] [i]; Code Segment 2: //initialize elements of Y to 0 //initialize elements X[i] [j] of X to i + j for (i = 0; i < n; i++) Y[i] += X[i] [0]; Which of the following statements is/are correct? S1: \u0007Final contents of array Y will be same in both code segments S2: \u0007Elements of array X accessed inside the for loop shown in code segment 1 are contiguous in main memory S3: \u0007Elements of array X accessed inside the for loop shown in code segment 2 are contiguous in main memory.",
+    "options": {
+      "A": "Only S2 is correct",
+      "B": "Only S3 is correct",
+      "C": "Only S1 and S2 are correct",
+      "D": "Only S1 and S3 are correct"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 70,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Previous Years’ Questions",
+    "number": 23,
+    "question": "In which one of the following page replacement algo- rithms it is possible for the page fault rate to increase even when the number of allocated frames increases? \b [2016]",
+    "options": {
+      "A": "LRU (Least Recently Used)",
+      "B": "OPT (Optimal Page Replacement)",
+      "C": "MRU (Most Recently Used)",
+      "D": "FIFO (First In First Out)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 71,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Previous Years’ Questions",
+    "number": 24,
+    "question": "Recall that Belady’s anomaly is that the page-fault rate may increase as the number of allocated frames increases. Now, consider the following statements: S1: \u0007Random page replacement algorithm (where a page chosen at random is replaced) suffers from Belady’s anomaly S2: \u0007LRU page replacement algorithm suffers from Belady’s anomaly Which of the following is CORRECT?\b [2017]",
+    "options": {
+      "A": "S1 is true, S2 is true",
+      "B": "S1 is true, S2 is false",
+      "C": "S1 is false, S2 is true",
+      "D": "S1 is false, S2 is false"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 71,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "4 - Memory Management and Virtual Memory",
+    "section": "Previous Years’ Questions",
+    "number": 25,
+    "question": "Consider a process executing on an operating sys- tem that uses demand paging. The average time for a memory access in the system is M units if the corre- sponding memory page is available in memory and D units if the memory access causes a page fault. It has been experimentally measured that the average time taken for a memory access in the process is X units. Which one of the following is the correct expression for the page fault rate experienced by the process? \b [2018]",
+    "options": {
+      "A": "(D – M)/(X – M)",
+      "B": "(X – M/(D – M)",
+      "C": "(D – X/(D – M)",
+      "D": "(X – M/(D – X)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 71,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Replacement policy: •• LRU •• LFU But these two replacement policies lead to poor perfor- mance. So a new technique frequency-based replacement is proposed. Two alternatives of frequency-based technique are shown below: Re-reference: count unchanged New section Old section Re-reference: Count = count +1 Miss (new block brought in) Count = 1 MRU LRU",
+    "options": {
+      "A": "FIFO New section Middle section Old section MRU LRU",
+      "B": "Use of three sections. In FIFO, the blocks are logically organized in a stack; where the top part of the stack is the new section. When there is a cache hit, the referenced block is moved to top of the stack. If the block was already in the new section, its reference count is not incremented; otherwise it is incre- mented by 1. In another technique, we divide the stack into three sec- tions: New, middle and old. Here only blocks in the old sec- tion are eligible for replacement. Protection and Security System protection Protection refers to a mechanism for controlling the access of programs, processes or users to the resources defined by a computer system. Principles of Protection Programs, users and even systems are given just enough privileges to perform their tasks. This is the principle of least privilege. Domain of protection A computer system is a collection of processes and objects. The objects may be software or hard- ware objects. The operations that are possible may depend on the object. A process should be allowed to access only those resources for which it has authorization. At any time, a pro- cess should be able to access only those resources that it currently requires to complete its task. This requirement is referred as need to know principle and is useful in limiting the amount of damage, which a faulty process can cause in the system. Domain structure Each domain defines a set of objects and the types of operations that may be invoked on each object. The ability to execute an operation on an object is an access right. A domain is a collection of access rights, each of which is an ordered pair <obj-name, rights-set> File System Security"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 85,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Given a system using unspanned blocking and 100 byte blocks. A file contains records 30, 40, 55, 80, 30, 40. What percentage of space will be wasted in the blocks allocated for the file?",
+    "options": {
+      "A": "31.25%",
+      "B": "41.25%",
+      "C": "51.25%",
+      "D": "62.15%"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 88,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Disk requests come into the disk driver for cylinders 15, 25, 10, 2, 35, 9, 42 in that order. The disk head is currently positioned over cylinder 15. A seek takes 6 msec per cylinder moved. What is the total seek time using First Come First Served Algorithm?",
+    "options": {
+      "A": "750 msec",
+      "B": "650 msec",
+      "C": "550 msec",
+      "D": "450 msec"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 88,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "A Java application needs to load 50 libraries. To load each library, one disk access is required. Seek time to access the location is 10 ms. Rotational speed is 6000 rpm. The total time needed to load all libraries is",
+    "options": {
+      "A": "0.65 sec",
+      "B": "0.75 sec",
+      "C": "0.85 sec",
+      "D": "1 sec"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 88,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "A program has just read the 13th record in a sequential access file. If it wants to read the 10th record next, how many records must the program read to input the tenth record?",
+    "options": {
+      "A": "5",
+      "B": "0",
+      "C": "10",
+      "D": "13"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 88,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "A disk is formatted into 40 sectors and 20 tracks. The disk rotates at 200 ms in one revolution. The time taken by the head to move from the centre to the rim is 10 ms. There are three different files stored on the disk: File P : Sector 2, track 4 File Q : Sector 5, track 1 File R : Sector 6, track 2 \u0007Calculate the average latency time required for the three files.",
+    "options": {
+      "A": "22.55 ms",
+      "B": "32.22 ms",
+      "C": "21.66 ms",
+      "D": "30.22 ms"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 88,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Match the following",
+    "options": {
+      "A": "a – 2, b – 4, c – 3, d – 1",
+      "B": "a – 1, b – 2, c – 3, d – 4",
+      "C": "a – 3, b – 2, c – 4, d – 1",
+      "D": "a – 4, b – 1, c – 2, d – 3"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 88,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "The correct matching for the following pairs is",
+    "options": {
+      "A": "A – 3, B – 4, C – 2, D – 1",
+      "B": "A – 4, B – 3, C – 2, D – 1",
+      "C": "A – 2, B – 4, C – 1, D – 3",
+      "D": "A – 2, B – 1, C – 4, D – 3"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 88,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "A program P reads and processes 2000 consecutive records from a sequential file stored on device R with- out using any file system facilities. Given the following: Size of each record = 3500 bytes Access time of R = 20 ms Data transfer rate of R = 500 × 103 bytes/sec CPU time to process each record = 5 m sec \u0007What is the elapsed time of P if R contains unblocked records and P does not use buffering?",
+    "options": {
+      "A": "64 sec",
+      "B": "46 sec",
+      "C": "34 sec",
+      "D": "17 sec"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 89,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "A disk has 19456 cylinders, 16 heads and 63 sectors per track. The disk spins at 5400 rpm. Seek time between adjacent tracks is 2 ms. Assuming the read/write head is already positioned at track 0, how long does it take to read the entire disk?",
+    "options": {
+      "A": "35 min",
+      "B": "68 min",
+      "C": "58 min",
+      "D": "53 min"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 89,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "On a disk with 1000 cylinders, numbered 0 to 999, compute the number of tracks the disk arm must move to satisfy all the requests in the disk queue using SCAN algorithm. Assume the last request serviced was at track 345 and the head is moving towards 0. The queue in FIFO order contains requests for the following tracks: 123, 874, 692, 475, 105, 376",
+    "options": {
+      "A": "219",
+      "B": "635",
+      "C": "845",
+      "D": "1219 Common data for questions 11 to 14: In the operation of a certain disk drive mechanism, a disk is formatted into 20 sectors and 10 tracks. The disk can be rotated either clockwise or anti-clockwise. The times required to perform certain operations are as follows: I. Rotate the disk through one revolution = 200 ms II. Move the disk head from the centre to the rim = 20 ms III. Read and transmit one block of data = 0.3 ms Three files are stored on the disk: File A: 2 blocks at track 6 File B: 5 blocks at track 2 File C: 1 block at track 5"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 89,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "The disk head is initially at sector 0, track 0. If all three files A, B and C are to be read in the minimum amount of time, they should be read in the following order:",
+    "options": {
+      "A": "A, B, C",
+      "B": "A, C, B",
+      "C": "B, C, A",
+      "D": "C, A, B"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 89,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "The disk head is initially at sector 0, track 0. The files are read in the order C, B, A. The total time to read the files is",
+    "options": {
+      "A": "143.9 ms",
+      "B": "100.4 ms",
+      "C": "114.0 ms",
+      "D": "102.6 ms"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 89,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "The most nearly average latency time for the sequence CBA is:",
+    "options": {
+      "A": "1 ms",
+      "B": "7 ms",
+      "C": "27 ms",
+      "D": "50 ms"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 89,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "The most nearly average seek time for CBA is",
+    "options": {
+      "A": "1 ms",
+      "B": "8 ms",
+      "C": "30 ms",
+      "D": "50 ms"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 89,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "A CD has 150 tracks rotating at 3500 rpm. Average seek time for consecutive tracks is 0.1 ms, the disk is subjected to read data from the track numbers 89, 75, 112, 5. What is the total seek time if the requests are served unidirectionally (C-Scan) and the first request determines initial direction? Assume that the current position of the head is at track 100.",
+    "options": {
+      "A": "20.2 ms",
+      "B": "16.9 ms",
+      "C": "21.3 ms",
+      "D": "14 ms"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 89,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "The strategy that allocates the smallest possible chunk of disk space that is sufficient to the file is",
+    "options": {
+      "A": "Nearest fit",
+      "B": "Best fit",
+      "C": "Worst fit",
+      "D": "First fit"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 89,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "If a process of 200 kB is transferred from backing store to memory and average disk latency is 10 ms, then what would be the total swap time, if transfer ratio is 2 Mbps?",
+    "options": {
+      "A": "10 ms",
+      "B": "20 ms",
+      "C": "30 ms",
+      "D": "40 ms"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 89,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Let us assume that the user process is 10 MB in size and backing store is a standard hard disk with a transfer rate of 40 MB per second. Let the average latency is 8 millisecond. Find actual time transfer of the 10 MB process to or from main memory?",
+    "options": {
+      "A": "8 ms",
+      "B": "250 ms",
+      "C": "258 ms",
+      "D": "516 ms"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 89,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Disk scheduling involves deciding",
+    "options": {
+      "A": "which disk should be accessed next",
+      "B": "\u0007the order in which disk access requests must be serviced.",
+      "C": "\u0007the physical location when files should be ac- cessed in the disk",
+      "D": "disk access time and an unused space."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 89,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "The root directory of a disk should be placed",
+    "options": {
+      "A": "at a fixed address in the memory",
+      "B": "anywhere on the disk",
+      "C": "at a fixed location on the system disk",
+      "D": "at a location on floppy."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Direct access methods are not effectively supported by",
+    "options": {
+      "A": "Contiguous allocation",
+      "B": "Linked allocation",
+      "C": "Indexed allocation",
+      "D": "Sequential allocation"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "In which of the following directory systems, it is pos- sible to have multiple paths for a file, starting from the root directory?",
+    "options": {
+      "A": "Single-level directory",
+      "B": "Two-level directory",
+      "C": "Tree-structured directory",
+      "D": "A cyclic graph directory"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "The most common system’s security method is:",
+    "options": {
+      "A": "Passwords",
+      "B": "Key card systems",
+      "C": "Surveillance system",
+      "D": "Lock system"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Trojan Horse programs",
+    "options": {
+      "A": "\u0007are legitimate programs that allow unauthorized access.",
+      "B": "\u0007are hacker programs that do not show up on the system",
+      "C": "really do not work",
+      "D": "are immediately discovered"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Which of the following is a program that spreads throughout the network?",
+    "options": {
+      "A": "Trojan Horse",
+      "B": "Virus",
+      "C": "TSR",
+      "D": "Worm"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "A program has just read the 15th record in a sequential access file. If it wants to read the 10th record next, how many records must the program read to input the tenth record?",
+    "options": {
+      "A": "0",
+      "B": "5",
+      "C": "4",
+      "D": "10"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Formatting of a floppy disk refers to",
+    "options": {
+      "A": "Arranging the data on the disk in contiguous fashion",
+      "B": "Writing the directory",
+      "C": "Erasing the system area",
+      "D": "Writing identification information on all tracks"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "Sector interleaving in disks is done by",
+    "options": {
+      "A": "the disk manufacturer",
+      "B": "the disk controller card",
+      "C": "the operating system",
+      "D": "the user"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "Disk I/O is done in terms of",
+    "options": {
+      "A": "Tracks",
+      "B": "Blocks",
+      "C": "Bits",
+      "D": "Bytes"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "How many six-letter passwords can be constructed using lowercase letters and digits?",
+    "options": {
+      "A": "266",
+      "B": "106",
+      "C": "366",
+      "D": "356"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Consider a disk drive with the following specifica- tions:\b [2005] 16 surfaces, 512 tracks/surfaces, 512 sectors/track, 1 KB/sector, rotation speed 3000 rpm. The disk is oper- ated in cycle stealing mode whereby whenever one 4 byte word is ready it is sent to memory; similarly, for writing, the disk interface reads a 4 byte word from the memory in each DMA cycle. Memory cycle time is 40 nsec. The maximum percentage of time that the CPU gets blocked during DMA operation is:",
+    "options": {
+      "A": "10",
+      "B": "25",
+      "C": "40",
+      "D": "50"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Consider a disk pack with 16 surfaces, 128 tracks per surface and 256 sectors per track. 512 bytes of data are stored in a bit serial manner in a sector. The capac- ity of the disk pack and the number of bits required to specify a particular sector in the disk are, respec- tively:\b [2007]",
+    "options": {
+      "A": "256 Mbyte, 19 bits",
+      "B": "256 Mbyte, 28 bits",
+      "C": "512 Mbyte, 20 bits",
+      "D": "64 Gbyte, 28 bits"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "For a magnetic disk with concentric circular tracks, the seek latency is not linearly proportional to the seek distance due to\b [2008]",
+    "options": {
+      "A": "non-uniform distribution of requests",
+      "B": "arm starting and stopping inertia",
+      "C": "\u0007higher capacity of tracks on the periphery of the platter",
+      "D": "use of unfair arm scheduling policies"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "7 - Operating System",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Consider a file of 16384 records. Each record is 32 bytes long and its key field is of size 6 bytes. The file is ordered on a non-key field, and the file organization is unspanned. The file is stored in a file system with block size 1024 bytes, and the size of a block pointer is 10 bytes. If the secondary index is built on the key field of the file, and a multi-level index scheme is used to store the secondary index, the number of first- level and second-level blocks in the multi-level index are, respectively\b [2008]",
+    "options": {
+      "A": "8 and 0",
+      "B": "128 and 6",
+      "C": "256 and 4",
+      "D": "512 and 5"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 90,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Consider a disk system with 100 cylinders. The requests to access the cylinders occur in following sequence:\b [2009] 4, 34, 10, 7, 19, 73, 2, 15, 6, 20 Assuming that the head is currently at cylinder 50, what is the time taken to satisfy all requests if it takes 1ms to move from one cylinder to adjacent one and shortest seek time first policy is used?",
+    "options": {
+      "A": "95 ms",
+      "B": "119 ms",
+      "C": "233 ms",
+      "D": "276 ms Common data for questions 6 and 7: A hard disk has 63 sectors per track, 10 platters each with 2 recording sur- faces and 1000 cylinders. The address of a sector is given as a triple 〈c, h, s〉 , where c is the cylinder number, h is the surface number and s is the sector number. Thus, the 0th sector is addressed as 〈0, 0, 0〉 , the 1st sector as 〈0, 0, 1〉, and so on"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 91,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "The address <400, 16, 29> corresponds to the sector number:\b [2009]",
+    "options": {
+      "A": "505035",
+      "B": "505036",
+      "C": "505037",
+      "D": "505038"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 91,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "The address of the 1039th sector is\b [2009]",
+    "options": {
+      "A": "〈0, 15, 31〉",
+      "B": "〈0, 16, 30〉",
+      "C": "〈0, 16, 31〉",
+      "D": "〈0, 17, 31〉"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 91,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "A file system with 300 GByte disk uses a file descrip- tor with 8 direct block addresses, 1 indirect block address and 1 doubly indirect block address. The size of each disk block is 128 bytes and the size of each disk block address is 8 bytes. The maximum possible file size in this file system is\b [2012]",
+    "options": {
+      "A": "3 Kbytes",
+      "B": "35 Kbytes",
+      "C": "280 Kbytes",
+      "D": "dependent on the size of the disk"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 91,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "Consider a hard disk with 16 recording surfaces (0–15) having 16384 cylinders (0–16383) and each cylinder contains 64 sectors (0–63). Data stor- age capacity in each sector is 512 bytes. Data are organized cylinder-wise and the addressing format is <cylinder no., surface no., sector no.>. A file of size 42797 KB is stored in the disk and the starting disk location of the file is <1200, 9, 40>. What is the cylinder number of the last sector of the file, if it is stored in a contiguous manner?\b [2013]",
+    "options": {
+      "A": "1281",
+      "B": "1282",
+      "C": "1283",
+      "D": "1284"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 91,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  },
+  {
+    "chapter": "5 - File Systems, I/O Systems, Protection and Security",
+    "section": "Previous Years’ Questions",
+    "number": 15,
+    "question": "In a file allocation system, which of the following allocation scheme(s) can be used if no external frag- mentation is allowed?\b [2017] I. Contiguous II. Linked III. Indexed",
+    "options": {
+      "A": "I and III only",
+      "B": "II only",
+      "C": "III only",
+      "D": "II and III only"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 91,
+    "subject": "Operating system",
+    "source": "Computer Science/Notes & Material/Operating system.pdf"
+  }
+]

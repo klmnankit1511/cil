@@ -1,0 +1,4400 @@
+[
+  {
+    "chapter": "3 - Algorithms",
+    "section": "",
+    "number": 2,
+    "question": "Visit in pre-order the sub trees with roots v1, v2 … vk in that order. 12 13 14 11 16 17 15 18 17 11 12 14 18 16 13 15",
+    "options": {
+      "A": "",
+      "B": "15 13 11 12 14 18 17 16 Figure 6 (a) Pre-order, (b) Post-order (c) In-order Post-order traversal A post-order traversal of T is defined recursively as follows:"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 4,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "",
+    "number": 3,
+    "question": "Visit in inorder the right sub tree of r. Example: Consider the given tree C D E B A What are the pre-order, post-order and in-order traversals of the above tree?",
+    "options": {
+      "C": "f (n) = q(g(n)) Figure 7 A diagrammatic representation of the asymptotic notations O, W and q •• W-notation describes a lower bound; it is used to bound the best-case running time of an algorithm. The best-case running time of insertion sort is W(n). The running time of insertion sort falls between W(n) and O(n2), since it falls anywhere between a linear function of ‘n’ and a quadratic function of ‘n’. •• When we say that the running time of an algorithm is W(g(n)), we mean that no matter what particular input of size ‘n’ is chosen for each value of n, the running time on that input is at least a constant times g(n), for sufficiently large ‘n’. O-notation The asymptotic upper bound provided by O-notation may or may not be asymptotically tight. The bound 2n3 = O(n3) is asymptotically tight, but the bound 2n = O(n2) is not. We use O-notation to denote an upper bound that is not asymptotically tight. ω -notation By analogy, w-notation is to W-notation as o-notation is to O-notation. We use w-notation to denote a lower bound that is not asymptotically tight. It is defined as f (n) ∈ w(g(n)) if and only if g(n) ∈ o(f (n)) Comparison of functions Transitivity",
+      "A": "f (n) = O(g(n)) n0 0 ≤ Cg(n) ≤ f(n), ∀ n ≥ n0 f(n) Cg(n)",
+      "B": "f (n) = W(g(n)) n0 0 ≤ C2g(n) ≤ f(n) ≤ C1g(n), ∀ n ≥ n0 C1g(n) C2g(n) f(n)"
+    },
+    "answer": null,
+    "explanation": "Pre-order – CBADE Post-order – ABEDC In-order – ABCDE Data Structure A data structure is a way to store and organize data in-order to facilitate access and modifications. No single data struc- ture works well for all purposes, it is important to know the strengths and limitations of several data structures. Efficiency Algorithms devised to solve the same problem often differ dramatically in their efficiency. Let us compare efficiencies of Insertion sort and merge sort; insertion sort, takes time equal to C1n2 to sort ‘n’ elements, where C1 is a constant that does not depend on ‘n’. It takes time proportional to n2, merge sort takes time equal to C2nlog n, C2 is another constant that also does not depend on ‘n’. Insertion sort has a smaller constant factor than merge sort (C1 < C2) constant factors are far less significant in the running time. Insertion sort takes C1 * n2 time Merge sort takes C2 * n * log n time C1 = 4, C2 = 50 Computer A takes 4 2 10 instructions 10 instructions/second 4 seconds 6 9 × × ≅ ( )2 000 Computer B takes = × × × × 50 2 10 2 10 10 6 6 7 log( )insturctions instructions/second = 209 seconds By using an algorithm whose running time grows more slowly, even with an average compiler, computer B runs 20 times faster than computer A. The advantage of merge sort is even more pronounced when we sort ten million numbers. As the problem size increases, so does the relative advantage of merge sort. Worst-case and average-case analysis In the analysis of insertion sort, the best case occurs when the array is already sorted and the worst case, in which the input array is reversely sorted. We concentrate on finding the worst-case running time, that is the longest running time for any input of size ‘n’. •• The worst-case running time of an algorithm is an upper bound on the running time for any input. It gives us a guarantee that the algorithm will never take any longer. •• The ‘average-case’ is as bad as the worst-case. Suppose that we randomly choose ‘n’ numbers and apply inser- tion sort. To insert an element A[j], we need to determine where to insert in sub-array A [1 … J – 1]. On average half the elements in A[1 … J – 1] are less than A[j] and half the elements are greater. So tj = j/2. The average-case running time turns out to be a quadratic function of the input size. Asymptotic Notations Asymptotic notations are mostly used in computer science to describe the asymptotic running time of an algorithm. As an example, an algorithm that takes an array of size n as input and runs for time proportional to n2 is said to take O(n2) time. 5 Asymptotic Notations: •• O (Big-oh) •• q (Theta) •• W (Omega) •• o (Small-oh) •• w How to Use Asymptotic Notation for Algorithm Analysis? Asymptotic notation is used to determine rough estimates of relative running time of algorithms. A worst-case anal- ysis of any algorithm will always yeild such an estimate, because it gives an upper bound on the running time T(n) of the algorithm, that is T(n) g(n). Example: a ← 0 1 unit 1 time for i ← 1 to n do{ 1 unit n times for j ← 1 to i do{ 1 unit n(n + 1)/2 times a ← a + 1 1 unit n(n +1)/2 times Where the times for the inner loop have been computed as fol- lows: For each i from 1 to n, the loop is executed i times, so the total number of times is 1 2 3 1 2 1 + + + + = = + =∑ n i n n i n ( )/ Hence in this case T(n) = 1 + n + 2n (n +1)/2 = n2 + 2n + 1 If we write g(n) = n2 + 2n + 1, then T(n) ∈ q(g(n)), That is T(n) ∈ q(n2 + 2n + 1), we actually write T(n) ∈ q(n2), as recommended by the following rule: •• Although the definitions of asymptotic notation allow one to write, for example, T(n) ∈ O(3n2 + 2). We simplify the function in between the parentheses as much as possible (in terms of rate of growth), and write instead T(n) ∈ O(n2) For example: T(n) ∈ q(4n3 – n2 + 3) T(n) ∈ q(n3) For instanceO i i n =∑     1 , write O(n2) after computing the sum. •• In the spirit of the simplicity rule above, when we are to compare, for instance two candidate algorithms A and B having running times (TA(n) = n2 – 3n + 4 and TB(n) = 5n3 + 3, rather than writing TA(n) ∈ O(TB(n)), we write TA(n) ∈ q(n2), and TB(n) ∈ q(n3), and then we conclude that A is better than B, using the fact that n2(quadratic) is better than n3(cubic) time, since n2 ∈ O(n3). Order of Growth In the rate of growth or order of growth, we consider only the leading term of a formula. Suppose the worst case run- ning time of an algorithm is an2 + bn + c for some constants a, b and c. The leading term is an2. We ignore the leading term’s constant coefficient, since constant factors are less significant than the rate of growth in determining compu- tational efficiency for large inputs. Thus we can write, the worst-case running time is q(n2). We usually consider one algorithm to be more efficient than another if its worst-case running time has a lower order of growth. Due to constant factors and lower order terms, this evaluation may be in error for small inputs. But for large inputs, q(n2) algorithm will run more quickly in the worst-case than q(n3) algorithm. q-Notation A function f (n) belongs to the set q(g(n)) if there exists a positive constant C1 and C2 such that it can be “sand witched” between C1g(n) and C2g(n) for sufficiently large n. We write f (n) ∈ q (g(n)) to indicate that f (n) is a member of q (g(n)) or we can write f (n) = q (g(n)) to express the same notation. C2g(n) C1g(n) n0 n f(n) The above figure gives an intuitive picture of functions f (n) and g(n), where we have that f (n) = q (g(n)), for all the val- ues of ‘n’ to the right of no, the value of f (n) lies at or above C1g(n) and at or below C2g(n). g(n) is asymptotically tight bound for f (n). The definition of q(g(n)) requires that every member f (n) ∈ q(g(n)) be asymptotically non-negative, that is f (n) must be non-negative whenever ‘n’ is sufficiently large. The q-notation is used for asymptotically bounding a function from both above and below. We would use q(theta) notation to represent a set of functions that bounds a par- ticular function from above and below. Definition: We say that a function f (n) is theta of g(n) writ- ten as f (n) = q(g(n)) if such exists positive constants C1, C2 and n0 such that 0 ≤ C1g(n) ≤ f (n) ≤ C2 g(n), ∀ n ≥ n0. Example: Let f (n) = 5.5n2 – 7n, verify whether f (n) is q(n2). Lets have constants c1 = 9 and n0 = 2, such that 0 ≤ f (n) ≤ C1 n2, ∀n ≥ n0. From example, 4 we have constants C2 = 3, and n0 = 2.8, such that 0 ≤ C2 n2 ≤ f (n), ∀n ≥ n0. To show f (n) is q(n2), we have got hold of two constants C1 and C2. We fix the n0 for q as maximum {2, 2.8} = 2.8. •• The lower order terms of an asymptotically positive func- tion can be ignored in determining asymptotically tight bounds because they are insignificant for large n. •• A small fraction of the highest order term is enough to dominate the lower order term. Thus setting C1 to a value that is slightly smaller than the coefficient of the highest order term and setting C2 to a value that is slightly larger permits the inequalities in the definition of q-notation to be satisfied. If we take a quadratic function f (n) = an2 + bn + c, where a, b and c are constants and a > 0. Throwing away the lower order terms and ignoring the constant yields f (n) = q (n2). •• We can express any constant function as q(n0), or q(1) we shall often use the notation q(1) to mean either a constant or a constant function with respect to some variable. O-Notation We use O-notation to give an upper bound on a function, within a constant factor. n0 n Cg(n) f(n) The above figure shows the intuition behind O-notation. For all values ‘n’ to the right of n0, the value of the function f (n) is on or below g(n). We write f (n) = O(g(n)) to indicate that a function f (n) is a member of the set O(g(n)). f (n) = q(g(n)) implies f (n) = O(g(n)). Since q notation is stronger notation than O-notation set theoretically, we have q(g(n)) ⊆ O(g(n)). Thus any quadratic function an2 + bn + c, where a > 0, is in q(n2) also shows that any quadratic function is in O(n2) when we write f (n) = O(g(n)), we are claiming that some constant multiple of g(n) is an asymp- totic upper bound on f (n), with no claim about how tight an upper bound it is. The O-notation is used for asymptotically upper bound- ing a function. We would use O (big-oh) notation to represent a set of functions that upper bounds a particular function. Definition We say that a function f (n) is big oh of g(n) writ- ten as f (n) = O(g(n)) if there exists positive constants C and n0 such that 0 ≤ f (n) ≤ Cg(n), ∀ n ≥ no Solved Examples Example 1: let f (n) = n2 Then f (n) = O(n2) f (n) = O(n2log n) f (n) = O(n2.5) f (n) = O(n3) f (n) = O(n4) … so on. Example 2: Let f (n) = 5.5n2 – 7n, verity whether f (n) is O(n2) Let C be a constant such that 5 5 7 7 5 5 2 2 . , . n n Cn n c − ≥ − ≤ or Fix C = 9, to get n ≥ 2 So our n0 = 2 and C = 9 This shows that there exists, positive constants C = 9 and n0 = 2 such that 0 ≤ f (n) ≤ Cn2, ∀ n ≥ n0 Example 3: h(n) = 3n3 + 10n + 1000 log n ∈ O(n3) h(n) = 3n3 + 10n + 1000 log n ∈ O(n4) •• Using O-notation, we can describe the running time of an algorithm by inspecting the algorithm’s overall struc- ture. For example, the doubly nested loop structure of the insertion sort algorithm yields an O(n2) upper bound on the worst-case running time. The cost of each iteration of the inner loop is bounded from above by O(1) (constant), the inner loop is executed almost once for each of the n2 pairs. •• O(n2) bound on worst-case running time of insertion sort also applies to its running time on every input. •• The q(n2) bound on the worst-case running time of inser- tion sort, however, does not imply a q(n2) bound on the running time of insertion sort on every input, when the input is already sorted, insertion sort runs in q(n) time. W (omega)-notation n0 n Cg(n) f(n) The W-notation is used for asymptotically lower bound- ing a function. We would use Ω(big-omega) notation to represent a set of functions that lower bounds a particular function. Definition We say that a function f (n) is big-omega of g(n) written as f (n) = Ω(g(n)) if there exists positive constants C and n0 such that 0 ≤ Cg(n) ≤ f (n) , ∀ n ≥ n0 The intuition behind Ω-notation is shown in the above figure. For all values ‘n’ to the right of n0, the value of f (n) is on or above Cg(n). For any 2 functions f (n) and g(n) we have f (n) = q(g(n)) if f (n) = O(g(n)) and f (n) = Ω(g(n)). From the above statement we can say that, an2 + bn + c = q(n2) for any constants a, b and c, where a > 0, immediately implies that \\ an2 + bn + c = Ω(n2) \\ an2 + bn + c = O(n2) Example 4: Let f (n) = 5.5n2 - 7n. Verity whether f (n) is W(n2) Let C be a constant such that 5.5n2 – 7n ≥ Cn2 or n C ≥ − 7 5 5. .Fix C = 3, to get n ≥ 2.8. So, our n0 = 2.8 and C = 3 This shows that there exists positive constants C = 3 and n0 = 2.8, such that 0 ≤ Cn2 ≤ f (n), ∀n ≥ n0. n0 0 ≤ f(n) ≤ Cg(n), ∀ n ≥ n0 f(n) Cg(n)",
+    "page": 4,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "What is the time complexity of the recurrence relation T n T n n ( ) ? =    + 2 2 2",
+    "options": {
+      "A": "q(n2)",
+      "B": "q(n)",
+      "C": "q(n3)",
+      "D": "q(n log n)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "What is the time complexity of the recurrence relation by using masters theorem T n T n n ( ) ? =    + 2 2",
+    "options": {
+      "A": "q(n2)",
+      "B": "q(n)",
+      "C": "q(n3)",
+      "D": "q(n log n)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "What is the time complexity of the recurrence relation by using master theorem, T n T n n ( ) . =    + 2 4 0 51",
+    "options": {
+      "A": "q(n2)",
+      "B": "q(n)",
+      "C": "q(n3)",
+      "D": "(n0.51)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "What is the time complexity of the recurrence relation using master theorem,T n T n n ( ) ? =    + 7 3 2",
+    "options": {
+      "A": "q(n2)",
+      "B": "q(n)",
+      "C": "q(n3)",
+      "D": "(log n)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "Time complexity of f (x) = 4x2 - 5x + 3 is",
+    "options": {
+      "A": "O(x)",
+      "B": "O(x3/2)",
+      "D": "O(x0.5)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Time complexity of f (x) = (x2 + 5 log2 x)/(2x + 1) is",
+    "options": {
+      "A": "O(x)",
+      "B": "O(x2)",
+      "C": "O(x3/2)",
+      "D": "O(x0.5)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "For the recurrence relation, T n T n n ( ) lg , =   ( )+ 2 which is tightest upper bound?",
+    "options": {
+      "A": "T(n) = O(n2)",
+      "B": "T(n) = O(n3)",
+      "C": "T(n) = O(log n)",
+      "D": "T(n) = O(lg n lg lg n)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Consider T(n) = 9T(n/3) + n, which of the following is TRUE?",
+    "options": {
+      "A": "T(n) = q(n2)",
+      "B": "T(n) = q(n3)",
+      "C": "T(n) = W(n3)",
+      "D": "T(n) = O(n)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "If f (n) is 100 * n seconds and g(n) is 0.5 * n seconds then",
+    "options": {
+      "A": "f (n) = g(n)",
+      "B": "f (n) = W(g(n))",
+      "C": "f (n) = w(g(n))",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Solve the recurrence relation using master method: T(n) = 4T (n/2) + n2",
+    "options": {
+      "A": "q(n log n)",
+      "B": "q(n2 log n)",
+      "C": "q(n2)",
+      "D": "q(n3)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "Arrange the following functions according to their order of growth (from low to high):",
+    "options": {
+      "A": "n n n n n 3 4 3 2 0 001 3 1 3 2 , . , , + +",
+      "B": "3 2 0 001 3 1 2 3 4 3 n n n n n , , , . + +",
+      "C": "2 3 0 001 3 1 2 3 4 3 n n n n n , , , . + +",
+      "D": "n n n n n 3 2 4 3 2 3 0 001 3 1 , , , . + +"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "The following algorithm checks whether all the ele- ments in a given array are distinct: Input: array A[0 … n – 1] Output: true (or) false For i ← 0 to n – 2 do For j ← i + 1 to n – 1 do if A[i] = A[ j] return false return true The time complexity in worst case is",
+    "options": {
+      "A": "q(n2)",
+      "B": "q(n)",
+      "C": "q(log n)",
+      "D": "q(n log n)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "The order of growth for the following recurrence rela- tion is T(n) = 4T(n/2) + n3, T(1) = 1",
+    "options": {
+      "A": "q(n)",
+      "B": "q(n3)",
+      "C": "q(n2)",
+      "D": "q(log n)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Time complexity of T n T n ( ) =    + 2 4 3 is",
+    "options": {
+      "A": "q( log ) n n",
+      "B": "q( log ) n n",
+      "C": "q( ) n",
+      "D": "q(n2)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "Consider the following three claims (I) (n + k)m = θ(nm), where k and m are constants (II) 2n + 1 = O(2n) (III) 22n + 1 = O(2n) Which one of the following is correct?",
+    "options": {
+      "A": "I and III",
+      "B": "I and II",
+      "C": "II and III",
+      "D": "I, II and III"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Arrange the order of growth in ascending order:",
+    "options": {
+      "A": "To the least n is log n",
+      "B": "n is log n always",
+      "C": "n is at most log n",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Which of the following is correct? (i) q (g(n)) = O(g(n)) ∩ W(g(n)) (ii) q (g(n)) = O(g(n)) ∪ W(g(n))",
+    "options": {
+      "A": "(i) is true (ii) is false",
+      "B": "Both are true",
+      "C": "Both are false",
+      "D": "(ii) is true (i) is false"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 11,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "2n2 = x (n3), x is which notation?",
+    "options": {
+      "A": "Big-oh",
+      "B": "Small-oh",
+      "C": "W – notation",
+      "D": "q – notation"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 12,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Master method applies to recurrence of the form T(n) = a T(n/b) + f (n) where",
+    "options": {
+      "A": "a ≥ 1, b > 1",
+      "B": "a = 1, b > 1",
+      "C": "a > 1, b = 1",
+      "D": "a ≥ 1, b ≥ 1"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "What is the time complexity of the recurrence relation using master method? T n T n n ( ) =    + 4 2",
+    "options": {
+      "A": "q(n2)",
+      "B": "q(n)",
+      "C": "q(log n)",
+      "D": "q(n log n)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "Use the informal definitions of O, q W to determine these assertions which of the following assertions are true.",
+    "options": {
+      "A": "n(n + 1)/2 ∈ O(n3)",
+      "B": "n(n + 1)/2 ∈ O(n2)",
+      "C": "n(n + 1)/2 ∈ W(n)",
+      "D": "All the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 12,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Match the following: (i) Big-oh",
+    "options": {
+      "A": "(i) – D, (ii) – A, (iii) – C, (iv) -B , (v) – E",
+      "B": "(i) – B, (ii) – D, (iii) – A, (iv) – C, (v) – E",
+      "C": "(i) – C, (ii) – A, (iii) – B, (iv) – E, (v) – D",
+      "D": "(i) – A, (ii) – B, (iii) – C, (iv) – D, (v) – E"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 12,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Which one of the following statements is true?",
+    "options": {
+      "A": "\u0007Both time and space efficiencies are measured as functions of the algorithm input size.",
+      "B": "\u0007Only time efficiencies are measured as a function of the algorithm input size.",
+      "C": "\u0007Only space efficiencies are measured as a function of the algorithm input size.",
+      "D": "\u0007Neither space nor time efficiencies are measured as a function of the algorithm input size."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Which of the following is true?",
+    "options": {
+      "A": "\u0007Investigation of the average case efficiency is con- siderably more difficult than investigation of the worst case and best case efficiencies.",
+      "B": "\u0007Investigation of best case is more complex than average case.",
+      "C": "\u0007Investigation of worst case is more complex than average case.",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "Time complexity of T(n) = T(n/3) + T(2n/3) + O(n) is",
+    "options": {
+      "A": "O(1)",
+      "B": "O(n log n)",
+      "C": "O(log n)",
+      "D": "O(n2)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 12,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Solve the recurrence relation to find T(n): T(n) = 4(n/2) + n",
+    "options": {
+      "A": "q(n2)",
+      "B": "q(log2n)",
+      "C": "q(n2 log2n)",
+      "D": "q(n3)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "What is the worst case analysis for the given code? int search (int a[ ], int x, int n) { int i; for (i = 0 ; i < n; i ++) if (a [i] = = x) return i; return –1; }",
+    "options": {
+      "A": "O(n)",
+      "B": "O(n log n)",
+      "C": "O(log n)",
+      "D": "O(n2)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 12,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "Find the time complexity of the given code. void f (int n) { if (n > 0) { f (n/2); f (n/2); } }",
+    "options": {
+      "A": "θ(n2)",
+      "B": "θ(n)",
+      "C": "θ(n log n)",
+      "D": "θ(2n)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 12,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "The running time of the following algorithm procedure A(n) if n ≤ 2 return (1) else return ( ( )) A n is described by",
+    "options": {
+      "A": "O n n ( log )",
+      "B": "O(log n)",
+      "C": "O(log log n)",
+      "D": "O(n)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 12,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "The median of n elements can be found in O(n) time. Which one of the following is correct about the com- plexity of quick sort, in which median is selected as pivot?\b [2006]",
+    "options": {
+      "A": "q(n)",
+      "B": "q(n log n)",
+      "C": "q(n2)",
+      "D": "q(n3)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 13,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Given two arrays of numbers a1 … an and b1 … bn where each number is 0 or 1, the fastest algorithm to find the largest span (i, j) such that ai + ai+ 1 + … + aj = bi + bi + 1 + … + bj, or report that there is not such span,\b [2006]",
+    "options": {
+      "A": "\u0007Takes O(3n) and W(2n) time if hashing is permit- ted",
+      "B": "\u0007Takes O(n3) and W(n2.5) time in the key compari- son model",
+      "C": "Takes Q(n) time and space",
+      "D": "\u0007Takes O n ( ) time only if the sum of the 2n ele- ments is an even number"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 13,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Consider the following segment of C-code: int j, n; j = 1; while (j <=n) j = j*2; The number of comparisons made in the execution of the loop for any n > 0 is:\b [2007]",
+    "options": {
+      "A": " + log2 1 n",
+      "B": "n",
+      "C": " +  log2 n",
+      "D": " + log2 1 n"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 13,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "In the following C function, let n ≥ m. int gcd(n,m) { if (n%m = =0) return m; n = n%m; return gcd(m,n); } How many recursive calls are made by this function? \b [2007]",
+    "options": {
+      "A": "Θ(log ) 2 n",
+      "B": "Ω( ) n",
+      "C": "Θ(log log ) 2 2 n",
+      "D": "Θ( ) n"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 13,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "What is the time complexity of the following recursive function: int DoSomething (int n) { if (n <= 2) return 1; else return(DoSomething (floor(sqrt(n)))+ n);}\b [2007]",
+    "options": {
+      "A": "Θ( ) n2",
+      "B": "Θ( log ) n n 2",
+      "C": "Θ(log ) 2 n",
+      "D": "Θ(log log ) 2 2 n"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 13,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "An array of n numbers is given, where n is an even number. The maximum as well as the minimum of these n numbers needs to be determined. Which of the following is TRUE about the number of comparisons needed?\b [2007]",
+    "options": {
+      "A": "\u0007At least 2n – c comparisons, for some constant c, are needed.",
+      "B": "At most 1.5n − 2 comparisons are needed.",
+      "C": "At least n log2 n comparisons are needed.",
+      "D": "None of the above."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 13,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "Consider the following C code segment:\b int IsPrime(n) { int i,n; for(i=2; i<= sqrt(n); i ++) if (n%i = =0) {printf(“Not Prime\\n”); return 0;} return 1; } Let T(n) denote the number of times the for loop is exe- cuted by the program on input n. Which of the following is TRUE?\b [2007]",
+    "options": {
+      "A": "T n n T n n ( ) ( ) ( ) ( ) = = Ο Ω and",
+      "B": "T n n T n ( ) ( ) ( ) ( ) = = Ο Ω and 1",
+      "C": "T n n T n n ( ) ( ) ( ) ( ) = = Ο Ω and",
+      "D": "None of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 13,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "The most efficient algorithm for finding the number of connected components in an undirected graph on n vertices and m edges has time complexity\b [2008]",
+    "options": {
+      "A": "Q(n)",
+      "B": "Q(m)",
+      "C": "Q(m + n)",
+      "D": "Q(mn)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 13,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "Consider the following functions: f (n) = 2n g(n) = n! h(n) = nlogn Which of the following statements about the asymp- totic behavior of f (n), g(n), and h(n) is true?\b [2008]",
+    "options": {
+      "A": "f (n) = O(g(n)); g(n) = O(h(n))",
+      "B": "f (n) = W(g(n)); g(n) = O(h(n))",
+      "C": "g(n) = O(f (n)); h(n) = O(f (n))",
+      "D": "h(n) = O(f (n)); g(n) = W(f (n))"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 13,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "The minimum number of comparisons required to determine if an integer appears more than n/2 times in a sorted array of n integers is\b [2008]",
+    "options": {
+      "A": "Q(n)",
+      "B": "Q(log n)",
+      "C": "Q(log * n)",
+      "D": "Q(1)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 13,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "We have a binary heap on n elements and wish to insert n more elements (not necessarily one after another) into this heap. The total time required for this is\b [2008]",
+    "options": {
+      "A": "Q(log n)",
+      "B": "Q(n)",
+      "C": "Q(n log n)",
+      "D": "Q(n2)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 13,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "The running time of an algorithm is represented by the following recurrence relation:\b [2009] T n n n T n ( ) = ≤    +    3 3 cn otherwise Which one of the following represents the time com- plexity of the algorithm?",
+    "options": {
+      "A": "q(n)",
+      "B": "q(n log n)",
+      "C": "q(n2)",
+      "D": "q(n2 log n)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 14,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "Two alternative packages A and B are available for processing a database having 10k records. Package A requires 0.0001 n2 time units and package B requires 10n log10 n time units to process n records. What is the smallest value of k for which package B will be preferred over A?\b [2010]",
+    "options": {
+      "A": "12",
+      "B": "10",
+      "C": "6",
+      "D": "5"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 14,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "An algorithm to find the length of the longest mono- tonically increasing sequence of numbers in an array A[0 : n - 1] is given below. Let L denote the length of the longest monotonically increasing sequence starting at index in the array. Initialize Ln-1 = 1, For all i such that 0 ≤ i ≤ n - 2 Li L A i A i i = 1 + , if [ ] < [ + 1], 1 otherwise +1 { Finally the length of the longest monotonically increasing sequence is Max (L0, L1,…Ln–1) Which of the following statements is TRUE?\b [2011]",
+    "options": {
+      "A": "\u0007The algorithm uses dynamic programming para- digm.",
+      "B": "\u0007The algorithm has a linear complexity and uses branch and bound paradigm.",
+      "C": "\u0007The algorithm has a non-linear polynomial com- plexity and uses branch and bound paradigm.",
+      "D": "The algorithm uses divide and conquer paradigm."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 14,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 15,
+    "question": "Which of the given options provides the increasing order of asymptotic complexity of functions f1, f2, f3 and f4?\b [2011] f1(n) = 2n f2(n) = n3/2 f3(n) = n log2n f n n n 4 2 ( ) log =",
+    "options": {
+      "A": "f3, f2, f4, f1",
+      "B": "f3, f2, f1, f4",
+      "C": "f2, f3, f1, f4",
+      "D": "f2, f3, f4, f1"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 14,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 16,
+    "question": "Let W(n) and A(n) denote respectively, the worst- case and average-case running time of an algorithm executed on input of size n. Which of the following is ALWAYS TRUE?\b [2012]",
+    "options": {
+      "A": "A(n) = W(W(n))",
+      "B": "A(n) = Q(W(n))",
+      "C": "A(n) = O(W(n))",
+      "D": "A(n) = o(W(n))"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 14,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "The recurrence relation capturing the optimal execu- tion time of the Towers of Hanoi problem with n discs is \b [2012]",
+    "options": {
+      "A": "T(n) = 2T(n – 2) + 2",
+      "B": "T(n) = 2T(n – 1) + n",
+      "C": "T(n) = 2T(n/2) + 1",
+      "D": "T(n) = 2T(n – 1) + 1"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 14,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 18,
+    "question": "A list of n strings, each of length n, is sorted into lexicographic order using the merge sort algorithm. The worst-case running time of this computation is \b [2012]",
+    "options": {
+      "A": "O(n log n)",
+      "B": "O(n2log n)",
+      "C": "O(n2 + log n)",
+      "D": "O(n2)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 14,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 19,
+    "question": "Consider the following function: int unknown (int n) { int i, j, k = 0; for (i = n/2; i < = n; i++) for (j = 2; j < = n; j = j*2) k = k + n/2; return (k); } The return value of the function is\b [2013]",
+    "options": {
+      "A": "Θ(n2)",
+      "B": "Θ(n2log n)",
+      "C": "Θ(n3)",
+      "D": "Θ(n3log n)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 14,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 20,
+    "question": "The number of elements that can be sorted in Θ(log n) time using heap sort is \b [2013]",
+    "options": {
+      "A": "Θ(1)",
+      "B": "Θ( log ) n",
+      "C": "Θ log loglog n n    ",
+      "D": "Θ(log n)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 14,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 21,
+    "question": "Which one of the following correctly determines the solution of the recurrence relation with T(1) = 1 T n T n n ( ) log ? =    + 2 2 \b [2014]",
+    "options": {
+      "A": "q(n)",
+      "B": "q(n log n)",
+      "C": "q(n2)",
+      "D": "q(log n)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 14,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 22,
+    "question": "An algorithm performs (log N)1/2 find operations, N insert operations, (log N)1/2 delete operations, and (log N)1/2 decrease-key operations on a set of data items with keys drawn from a linearly ordered set. For a delete operation, a pointer is provided to the record that must be deleted For the decrease – key opera- tion, a pointer is provided to the record that has its key decreased Which one of the following data struc- tures is the most suited for the algorithm to use, if the goal is to achieve the best total asymptotic complexity considering all the operations?\b [2015]",
+    "options": {
+      "A": "Unsorted array",
+      "B": "Min-heap",
+      "C": "Sorted array",
+      "D": "Sorted doubly linked list"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 14,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 23,
+    "question": "Consider the following C function. int fun1(int n) { int i, j, k, p, q=0; for (i=1; i<n; ++i) { p=0; for (j=n; j>1; j=j/2) ++p; for (k=1; k<p; k=k*2) ++q; } return q; } Which one of the following most closely approxi- mates the return value of the function fun1?\b [2015]",
+    "options": {
+      "A": "n3",
+      "B": "n(log n)2",
+      "C": "n log n",
+      "D": "n log(log n)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 15,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 24,
+    "question": "An unordered list contains n distinct elements. The number of comparisons to find an element in this list that is neither maximum nor minimum is\b [2015]",
+    "options": {
+      "A": "θ(n log n)",
+      "B": "θ(n)",
+      "C": "θ(log n)",
+      "D": "θ(1)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 15,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 25,
+    "question": "Consider a complete binary tree where the left and the right subtrees of the root are max-heaps. The lower bound for the number of operations to convert the tree to a heap is \b [2015]",
+    "options": {
+      "A": "Ω(log n)",
+      "B": "Ω(n)",
+      "C": "Ω(n log n)",
+      "D": "Ω(n2)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 15,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 26,
+    "question": "Consider the equality i i n 3 0 = =∑ and the following choices for X 1. θ(n4) 2. θ(n5) 3. O(n5) 4. Ω(n3) The equality above remains correct if X is replaced by \b [2015]",
+    "options": {
+      "A": "Only 1",
+      "B": "Only 2",
+      "C": "1 or 3 or 4 but not 2",
+      "D": "2 or 3 or 4 but not 1"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 15,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 27,
+    "question": "Consider the following array of elements <89, 19, 50, 17, 12, 15, 2, 5, 7, 11, 6, 9, 100> The minimum number of interchanges needed to con- vert it into a max-heap is [2015]",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "2",
+      "D": "3"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 15,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 28,
+    "question": "Let f(n) = n and g(n) = n(1 + sin n), where n is a positive integer. Which of the following statements is/are cor- rect?\b [2015] I. f(n) = O(g(n)) II. f(n) = Ω(g(n))",
+    "options": {
+      "A": "Only I",
+      "B": "Only II",
+      "C": "Both I and II",
+      "D": "Neither I nor II"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 15,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 29,
+    "question": "A queue is implemented using an array such that ENQUEUE and DEQUEUE operations are per- formed efficiently. Which one of the following state- ments is CORRECT (n refers to the number of items in the queue)?\b [2016]",
+    "options": {
+      "A": "Both operations can be performed in O(1) time.",
+      "B": "\u0007At most one operation can be performed in O(1) time but the worst case time for the other opera- tion will be Ω (n).",
+      "C": "\u0007The worst case time complexity for both opera- tions will be Ω (n).",
+      "D": "\u0007Worst case time complexity for both operations will be Ω (logn)."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 15,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 30,
+    "question": "Consider a carry look ahead adder for adding two n - bit integers, built using gates of fan - in at most two. The time to perform addition using this adder is \b [2016]",
+    "options": {
+      "A": "Θ(1)",
+      "B": "Θ(log(n))",
+      "C": "Θ n ( )",
+      "D": "Θ(n)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 15,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 31,
+    "question": "N items are stored in a sorted doubly linked list. For a delete operation, a pointer is provided to the record to be deleted. For a decrease - key operation, a pointer is provided to the record on which the operation is to be performed. An algorithm performs the following operations on the list in this order: Q (N) delete, O (logN) insert, O (log N) find, and Q (N) decrease - key. What is the time complexity of all these operations put together? \b [2016]",
+    "options": {
+      "A": "O (log2N)",
+      "B": "O(N)",
+      "C": "O(N2)",
+      "D": "Q (N2logN)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 15,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "1 - Asymptotic Analysis",
+    "section": "Previous Years’ Questions",
+    "number": 32,
+    "question": "In an adjacency list representation of an undirected simple graph G = (V,E), each edge (u,v) has two adja- cency list entries:[v] in the adjacency list of u, and [u] in the adjacency list of v. These are called twins of each other. A twin pointer is a pointer from an adja- cency list entry to its twin. If |E| = m and |V| = n, and the memory size is not a constraint, what is the time complexity of the most efficient algorithm to set the twin pointer in each entry in each adjacency list? \b [2016]",
+    "options": {
+      "A": "Θ(n2)",
+      "B": "Θ(n + m)",
+      "C": "Θ(m2)",
+      "D": "Θ(n4)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 15,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 33,
+    "question": "Consider the following functions from positive inte- gers to real numbers: 10, n , n, log2 n, 100 n . The CORRECT arrangement of the above functions in increasing order of asymptotic complexity is: \b [2017]",
+    "options": {
+      "A": "2 100 log , ,10, , n n n n",
+      "B": "2 100 ,10, log , , n n n n",
+      "C": "2 100 10, , ,log , n n n n",
+      "D": "2 100 ,log , 10, , n n n n"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 16,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 34,
+    "question": "Consider the recurrence function ( ) ( ) 2 1 2 2, 0 2 T n n T n n  + >  =  < ≤  Then T(n) in terms of Θ notation is\b [2017]",
+    "options": {
+      "A": "Θ (log log n)",
+      "B": "Θ (log n)",
+      "C": "( ) n Θ",
+      "D": "Θ (n)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 16,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 35,
+    "question": "Consider the following C function. int fun (int n) { int i, j; for(i = 1; i <= n; i++) { for (j = l; j < n; j += i) { printf{“ %d %d”,i, j); } } } Time complexity of fun in terms of Θ notation is \b [2017]",
+    "options": {
+      "A": "( ) n n Θ",
+      "B": "Θ(n2)",
+      "C": "Θ(n log n)",
+      "D": "Θ(n2 log n)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 16,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 36,
+    "question": "A queue is implemented using a non-circular sin- gly linked list. The queue has a head pointer and a tail pointer, as shown in the figure. Let n denote the number of nodes in the queue. Let enqueue be imple- mented by inserting a new node at the head, and dequeue be implemented by deletion of a node from the tail. head tail Which one of the following is the time complexity of the most time-efficient implementation of enqueue and dequeue, respectively, for this data structure? \b [2018]",
+    "options": {
+      "A": "q(1), θ(1)",
+      "B": "θ(1), θ(n)",
+      "C": "θ(n), θ(1)",
+      "D": "θ(n), θ(n)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 16,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 37,
+    "question": "Consider the following C code. Assume that unsigned long int type length is 64 bits. unsigned long int fun (unsigned long int n) { unsigned long int i, j = 0, sum = 0; for (i = n; i > 1. i = i/2) j++; for (; j > 1; j = j/2) sum++; return (sum); } \u0007The value returned when we call fun with the input 240 is:\b [2018]",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "40"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 16,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Solve the recurrence relation T(n) = 2T(n/2) + k.n where k is constant then T(n) is",
+    "options": {
+      "A": "O(log n)",
+      "B": "O(n log n)",
+      "C": "O(n)",
+      "D": "O(n2)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 23,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "What is the time complexity of the given code? Void f(int n) { if (n > 0) f (n/2); }",
+    "options": {
+      "A": "θ(log n)",
+      "B": "θ(n log n)",
+      "C": "θ(n2)",
+      "D": "θ(n)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 23,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "The running time of an algorithm is represented by the following recurrence relation; T n n n T n cn ( ) = ≤    +    3 otherwise 3 What is the time complexity of the algorithm?",
+    "options": {
+      "A": "θ(n)",
+      "B": "θ(n log n)",
+      "C": "θ(n2)",
+      "D": "θ(n2 log n) Common data for questions 4 and 5:"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 23,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "The following pseudo code does which sorting? xsort [A, n] for j ← 2 to n do key ← A [ i ] i ← j – 1 While i > 0 and A [ i ] > key do A [i + i] ← A [ i ] i ← i – 1 A [i + 1] ← key",
+    "options": {
+      "A": "Selection sort",
+      "B": "Insertion sort",
+      "C": "Quick sort",
+      "D": "Merge sort"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 23,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "What is the order of elements after 2 iterations of the above-mentioned sort on given elements? 8 2 4 9 3 6",
+    "options": {
+      "A": "2 4 9 8 3 6",
+      "B": "2 4 8 9 3 6",
+      "C": "2 4 6 3 8 9",
+      "D": "2 4 6 3 8 9 Common data for questions 6 and 7:"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 23,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Combine 2 ordered lists",
+    "options": {
+      "A": "Insertion sort",
+      "B": "Selection sort",
+      "C": "Merge sort",
+      "D": "Quick sort"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 23,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "What is the complexity of the above pseudo code?",
+    "options": {
+      "A": "θ(log n)",
+      "B": "θ(n2)",
+      "C": "θ(n log n)",
+      "D": "θ(2n)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 24,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "What is the sequence after first phase, pivot is first element?",
+    "options": {
+      "A": "5 3 2 6 10 8 13 11",
+      "B": "5 2 3 6 8 13 10 11",
+      "C": "6 5 13 10 8 3 2 11",
+      "D": "6 5 3 2 8 13 10 11"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 24,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Selection sort is applied on a given sequence: 89, 45, 68, 90, 29, 34, 17. What is the sequence after 2 iterations?",
+    "options": {
+      "A": "17, 29, 68, 90, 45, 34, 89",
+      "B": "17, 45, 68, 90, 29, 34, 89",
+      "C": "17, 68, 45, 90, 34, 29, 89",
+      "D": "17, 29, 68, 90, 34, 45, 89"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 24,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Suppose there are log n sorted lists of n n log    elements each. The time complexity of producing sorted lists of all these elements is: (hint: use a heap data structure)",
+    "options": {
+      "A": "θ(n log log n)",
+      "B": "θ(n log n)",
+      "C": "W(n log n)",
+      "D": "W(n3/2)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 24,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "If Divide and conquer methodology is applied on power- ing a Number Xn. Which one the following is correct?",
+    "options": {
+      "A": "Xn = Xn/2 ⋅ Xn/2",
+      "B": "X X X n n n = ⋅ − − 1 2 1 2 . X",
+      "C": "X X X n n n = ⋅ +1 2 2",
+      "D": "Both (A) and (B)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 24,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "The usual θ(n2) implementation of insertion sort to sort an array uses linear search to identify the posi- tion, where an element is to be inserted into the already sorted part of the array. If binary search is used instead of linear search to identify the position, the worst case running time would be.",
+    "options": {
+      "A": "θ (n log n)",
+      "B": "θ (n2)",
+      "C": "θ (n(log n)2)",
+      "D": "θ (n)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 24,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "Consider the process of inserting an element into a max heap where the max heap is represented by an array, suppose we perform a binary search on the path from the new leaf to the root to find the position for the newly inserted element, the number of comparisons performed is:",
+    "options": {
+      "A": "θ (log n)",
+      "B": "θ (log log n)",
+      "C": "θ (n)",
+      "D": "θ (n log n)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 24,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Consider the following algorithm for searching a given number ‘X’ in an unsorted array A[1 … n] having ‘n’ distinct values: (1) Choose an ‘i’ uniformly at random from 1 … n (2) If A [i ] = x Then stop else goto(1); Assuming that X is present in A, what is the expected number of comparisons made by the algorithm before it terminates.",
+    "options": {
+      "A": "n",
+      "B": "n – 1",
+      "C": "2n",
+      "D": "n/2"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 24,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "The recurrence equation for the number of additions A(n) made by the divide and conquer algorithm on input size n = 2K is",
+    "options": {
+      "A": "A(n) = 2A(n/2)+ 1",
+      "B": "A(n) = 2A(n/2) + n2",
+      "C": "A(n) = 2A(n/4) + n2",
+      "D": "A(n) = 2A(n/8) + n2"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 24,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Choose the correct one (i) log n (ii) n (iii) n log n (iv) n2",
+    "options": {
+      "A": "i – b, ii – c, iii – a, iv – d",
+      "B": "i – a, ii – b, iii – c, iv – d",
+      "C": "i – c, ii – d, iii – a, iv – b",
+      "D": "i – d, ii – a, iii – b, iv – c"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 24,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Insertion sort analysis in worst case",
+    "options": {
+      "A": "θ (n)",
+      "B": "θ (n2)",
+      "C": "θ (n log n)",
+      "D": "θ (2n)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 24,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "From the recurrence relation. Of merge sort T(n) = 2T (n/2) + θ(n). Which option is correct? I. n/2 II. 2T III. θ (n)",
+    "options": {
+      "A": "III – b, II – a, I – c",
+      "B": "I – b, II – c, III – a",
+      "C": "I – a, II – c, III – b",
+      "D": "I – c, II – a, III – b"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "What is the number of swaps required to sort ‘n’ ele- ments using selection sort, in the worst case?",
+    "options": {
+      "A": "θ(n)",
+      "B": "θ(n2)",
+      "C": "θ(n log n)",
+      "D": "θ(n2 log n)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "In a binary max heap containing ‘n’ numbers, the smallest element can be found in time",
+    "options": {
+      "A": "O(n)",
+      "B": "O(log n)",
+      "C": "O(log log n)",
+      "D": "O(1)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "What is the worst case complexity of sorting ‘n’ num- bers using quick sort?",
+    "options": {
+      "A": "θ(n)",
+      "B": "θ(n log n)",
+      "C": "θ(n2)",
+      "D": "θ(n !)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "The best case analysis of quick sort is, if partition splits the array of size n into",
+    "options": {
+      "A": "n/2 : n/m",
+      "B": "n/2 : n/2",
+      "C": "n/3 : n/2",
+      "D": "n/4 : n/2"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "What is the time complexity of powering a number, by using divide and conquer methodology?",
+    "options": {
+      "A": "θ (n2)",
+      "B": "θ (n)",
+      "C": "θ(log n)",
+      "D": "θ(n log n)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Which one of the following in-place sorting algorithm needs the minimum number of swaps?",
+    "options": {
+      "A": "Quick sort",
+      "B": "Insertion sort",
+      "C": "Selection sort",
+      "D": "Heap sort"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "As the size of the array grows what is the time com- plexity of finding an element using binary search (array of elements are ordered)?",
+    "options": {
+      "A": "θ(n log n)",
+      "B": "θ(log n)",
+      "C": "θ(n2)",
+      "D": "θ(n)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "The time complexity of heap sort algorithm is",
+    "options": {
+      "A": "n log n",
+      "B": "log n",
+      "C": "n2",
+      "D": "None of these."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "As part of maintenance work, you are entrusted with the work of rearranging the library books in a shelf in a proper order, at the end of each day. The ideal choices will be_____.",
+    "options": {
+      "A": "Heap sort",
+      "B": "Quick sort",
+      "C": "Selection sort",
+      "D": "Insertion sort"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "The value for which you are searching is called",
+    "options": {
+      "A": "Binary value",
+      "B": "Search argument",
+      "C": "Key",
+      "D": "Serial value"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "To sort many large objects and structures it would be most efficient to _____.",
+    "options": {
+      "A": "Place them in an array and sort the array",
+      "B": "\u0007Place the pointers on them in an array and sort the array",
+      "C": "Place them in a linked list and sort the linked list",
+      "D": "None of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "What is the number of swaps required to sort n ele- ments using selection sort, in the worst case?\b [2009]",
+    "options": {
+      "A": "q(n)",
+      "B": "q(n log n)",
+      "C": "q(n2)",
+      "D": "q(n2 log n)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Which one of the following is the tightest upper bound that represents the number of swaps required to sort n numbers using selection sort?\b [2013]",
+    "options": {
+      "A": "O(log n)",
+      "B": "O(n)",
+      "C": "O(n log n)",
+      "D": "O(n2)"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Let P be a quick sort program to sort numbers in ascending order using the first element as the pivot. Let t1 and t2 be the number of comparisons made by P for the inputs [1 2 3 4 5] and [4 1 5 3 2] respectively. Which one of the following holds?\b [2014]",
+    "options": {
+      "A": "t1 = 5",
+      "B": "t1 < t2",
+      "C": "t1 > t2",
+      "D": "t1 = t2"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "2 - Sorting Algorithms",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "You have an array of n elements. Suppose you imple- ment quick sort by always choosing the central element of the array as the pivot. Then the tight- est upper bound for the worst case performance is \b [2014]",
+    "options": {
+      "A": "O(n2)",
+      "B": "O(n log n)",
+      "C": "θ(n log n)",
+      "D": "O(n3)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 25,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "The worst case running times of Insertion sort, Merge sort and Quick sort, respectively, are:\b [2016]",
+    "options": {
+      "A": "Θ(n log n), Θ(n log n),and Θ(n2)",
+      "B": "Θ(n2), Θ(n2),and Θ(n log n)",
+      "C": "Θ(n2), Θ(n log n),and Θ(n log n)",
+      "D": "Θ(n2), Θ(n log n),and Θ(n2)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 26,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "An operator delete(i) for a binary heap data structure is to be designed to delete the item in the i-th node. Assume that the heap is implemented in an array and i refers to the i-th index of the array. If the heap tree has depth d (number of edges on the path from the root to the farthest leaf), then what is the time complexity to re-fix the heap efficiently after the removal of the element?\b [2016]",
+    "options": {
+      "A": "O(1)",
+      "B": "O(d) but not O(1)",
+      "C": "O(2d) but not O(d)",
+      "D": "O(d2d) but not O(2d)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 26,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "Assume that the algorithms considered here sort the input sequences in ascending order. If the input is already in ascending order, which of the following are TRUE?\b [2016] I. Quicksort runs in Q (n2) time II. Bubblesort runs in Q (n2) time III. Mergesort runs in Q (n) time IV. Insertion sort runs in Q (n) time",
+    "options": {
+      "A": "I and II only",
+      "B": "I and III only",
+      "C": "II and IV only",
+      "D": "I and IV only"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 26,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "How many comparisons are required to search an item 89 in a given list, using Binary search? 4 8 19 25 34 39 45 48 66 75 89 95 [0] [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11]",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 30,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Construct a Binary search tree with the given list of elements: 300, 210, 400, 150, 220, 370, 450, 100, 175, 215, 250 Which of the following is a parent node of element 250?",
+    "options": {
+      "A": "220",
+      "B": "150",
+      "C": "370",
+      "D": "215"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 30,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "What is the breadth first search order of the given tree? a b h d c e f g",
+    "options": {
+      "A": "acbhdefg",
+      "B": "abcdefgh",
+      "C": "adbcefgh",
+      "D": "aebcdfgh"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 30,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "What is the depth first search order of the given graph? 1 4 2 5 3",
+    "options": {
+      "A": "14325",
+      "B": "12435",
+      "C": "14253",
+      "D": "12354"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 30,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "When pre-order traversal is applied on a given tree, what is the order of elements? 1 2 3 4 5",
+    "options": {
+      "A": "1 – 2 – 4 – 5 – 3",
+      "B": "1 – 4 – 2 – 5 – 3",
+      "C": "1 – 2 – 4 – 3 – 5",
+      "D": "1 – 2 – 3 – 4 – 5"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 30,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "What is the order of post-order traversal and in-order traversals of graph given in the above question?",
+    "options": {
+      "A": "4 – 2 – 5 – 1 – 3 and 4 – 5 – 2 – 3 – 1",
+      "B": "4 – 5 – 2 – 3 – 1 and 4 – 2 – 5 – 1 – 3",
+      "C": "4 – 5 – 2 – 1 – 3 and 4 – 2 – 5 – 1 – 3",
+      "D": "4 – 5 – 2 – 3 – 1 and 4 – 2 – 5 – 3 – 1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 30,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Find the number of bridges in the given graph a b d c e f h i j k n m l q r p s t v w u o g",
+    "options": {
+      "A": "12",
+      "B": "13",
+      "C": "11",
+      "D": "10"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 31,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Match the following: I. In-order 1. ABCDEFGHI II. Pre-order 2. DBHEIAFCG III. Post-order 3. ABDEHICFG IV. Level-order 4. DHIEBFGCA For the tree A B D C E F H I G",
+    "options": {
+      "A": "I – 2, II – 3, III – 4, IV – 1",
+      "B": "I – 3, II – 1, III – 4, IV – 2",
+      "C": "I – 1, II – 2, III – 3, IV – 4",
+      "D": "I – 4, II – 3, III – 2, IV – 1"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 31,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "A complete n-array tree in which each node has ‘n’ children (or) no children. Let ‘I’ be the number of internal nodes and ‘L’ be the number of leaves in a complete n-ary tree. If L = 51 and I = 10 what is the value of ‘n’?",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "Both (A) and (B)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "A complete n-ary tree is one in which every node has 0 (or) n children. If ‘X ’ is the number of internal nodes of a complete n-ary tree, the number of leaves in it is given by",
+    "options": {
+      "A": "X(n – 1) + 1",
+      "B": "Xn – 1",
+      "C": "Xn + 1",
+      "D": "X(n + 1) + 1"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 31,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "The numbers 7, 5, 1, 8, 3, 6, 0, 9, 4, 2 are inserted in the given order into an initially empty binary search tree. The binary search tree uses the usual ordering on natu- ral numbers. What is the in-order traversal sequence of the resultant tree?",
+    "options": {
+      "A": "7 5 1 0 3 2 4 6 8 9",
+      "B": "0 2 4 3 1 6 5 9 8 7",
+      "C": "0 1 2 3 4 5 6 7 8 9",
+      "D": "9 8 6 4 2 3 0 1 5 7"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Consider the following graph: a b g e f h Among the following sequences I. a b e g h f II. a b f e h g III. a b f h g e IV. a f g h b e Which are depth first traversals of the above graph?",
+    "options": {
+      "A": "I, II and IV only",
+      "B": "I and IV only",
+      "C": "I, III only",
+      "D": "I, III and IV only"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 31,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "The breadth first search algorithm has been imple- mented using the queue data structure. One possible order of visiting the nodes is A B C D E F",
+    "options": {
+      "A": "A B C D E F",
+      "B": "B E A D C F",
+      "C": "E A B D F C",
+      "D": "Both (A) and (B)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 31,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "An undirected graph G has ‘n’ nodes. Its adjacency matrix is given by an n × n square matrix. (i) Diagonal elements are 0’s (ii) Non-diagonal elements are 1’s Which of the following is true?",
+    "options": {
+      "A": "Graph G has no minimum spanning tree",
+      "B": "\u0007Graph G has a unique minimum spanning tree of cost (n –1)",
+      "C": "\u0007Graph G has multiple distinct minimum spanning trees, each of cost (n – 1)",
+      "D": "\u0007Graph G has multiple spanning trees of different cost."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 31,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "Which of the following is the breadth first search tree for the given graph? a b c d e f g h",
+    "options": {
+      "A": "a b c d f g e h",
+      "B": "a e c d f g b",
+      "C": "a b c d f g h",
+      "D": "a b c d f g e"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 31,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Which of the following algorithm design technique is used in finding all pairs of shortest distances in a graph?",
+    "options": {
+      "A": "Divide-and-conquer",
+      "B": "Greedy method",
+      "C": "Back tracking",
+      "D": "Dynamic programming"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 32,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "Let LASTPOST, LASTIN and LASTPRE denote the last vertex visited in a post-order, in-order and pre- order traversals respectively of a complete binary tree. Which of the following is always true?",
+    "options": {
+      "A": "LASTIN = LASTPOST",
+      "B": "LASTIN = LASTPRE",
+      "C": "LASTPRE = LASTPOST",
+      "D": "LASTIN = LASTPOST = LASTPRE"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 32,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Match the following: X : Depth first search Y : Breadth first search Z : Sorting a : Heap b : Queue c : Stack",
+    "options": {
+      "A": "X – a, Y – b, Z – c",
+      "B": "X – c, Y – a, Z – b",
+      "C": "X – c, Y – b, Z – a",
+      "D": "X – a, Y – c, Z – b"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Let G be an undirected graph, consider a depth first tra- versal of G, and let T be the resulting DFS Tree. Let ‘U’ be a vertex in ‘G’ and let ‘V’ be the first new (unvisited) vertex visited after visiting ‘U’ in the traversal. Which of the following is true?",
+    "options": {
+      "A": "\u0007{U, V} must be an edge in G and ‘U’ is a descend- ant of V in T.",
+      "B": "\u0007{U, V} must be an edge in ‘G’ and V is a descend- ant of ‘U ’ in T.",
+      "C": "\u0007If {U, V} is not an edge in ‘G’ then ‘U’ is a leaf in T.",
+      "D": "\u0007if {U, V} is not an edge in G then U and V must have the same parent in T."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 32,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Identify the binary tree with 3 nodes labeled A, B and C on which preorder traversal gives the sequence C, B, A.",
+    "options": {
+      "A": "A B C",
+      "B": "C B A",
+      "C": "B C A",
+      "D": "A C B"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 32,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Consider an undirected unweighted graph G. Let a breadth first traversal of G be done starting from a node r. Let d(r, u) and d(r, v) be the lengths of the shortest paths from r to u and v respectively in ‘G’. If u is visited before v during the breadth first travel, which of the fol- lowing is correct?",
+    "options": {
+      "A": "d(r, u) < d(r, v)",
+      "B": "d(r, u) > d (r, v)",
+      "C": "d(r, u) ≤ d (r, v)",
+      "D": "None of these"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 32,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "In a complete 5-ary tree, every internal node has exactly 5 children. The number of leaves in such a tree with ‘3’ internal nodes are:",
+    "options": {
+      "A": "15",
+      "B": "20",
+      "C": "13",
+      "D": "Can’t predicted"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Which of the following algorithm is single pass that is they do not traverse back up the tree for search, create, insert etc.",
+    "options": {
+      "A": "Depth first search",
+      "B": "Pre-order traversal",
+      "C": "B-tree traversal",
+      "D": "Post-order traversal"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 32,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Which of the following is the adjacency matrix of the given graph? c a b d",
+    "options": {
+      "A": "0 1 1 1 1 0 0 0 1 0 0 1 1 0 1 0            ",
+      "B": "1 1 1 1 0 0 0 0 0 0 0 1 0 0 1 0            ",
+      "C": "1 1 1 1 0 0 0 0 0 0 0 1 1 0 1 0            ",
+      "D": "1 1 1 1 0 0 0 0 1 0 0 1 0 0 1 0            "
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 32,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "Which one of the following is the post-order traversal of the given tree? b c d e f a",
+    "options": {
+      "A": "d e a f c b a",
+      "B": "d e b f c a",
+      "C": "e b d f c a",
+      "D": "a b c d e f Common data for questions 11 and 12:"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 33,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "The pre-order traversal of a tree is a b d h i e c f g. Which of the following is the correct tree?",
+    "options": {
+      "A": "a b h f i g d e c",
+      "B": "a b d h e i c f g",
+      "C": "a c d h e i b f g",
+      "D": "a b e h d i c f g"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 33,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Which of the following is in-order traversal of the above tree?",
+    "options": {
+      "A": "a b h d e i f g c",
+      "B": "a b d h e i f g c",
+      "C": "h d i b e a f c g",
+      "D": "i d h b e a f c g"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 33,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "Consider the below binary search tree 11 10 16 32 44 43 55 22 33 Which of the following is the resultant binary search tree after deletion of 33?",
+    "options": {
+      "A": "11 10 16 32 44 55 22 43",
+      "B": "11 10 16 43 55 45 22 44",
+      "C": "11 10 16 43 44 55 22 32",
+      "D": "11 10 16 43 44 43 22 55"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 33,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "Match the following: I. Articulation Point 1. An edge whose removal disconnects graph II. Bridge 2. A vertex whose removal disconnects graph III. Bi connected component 3. Maximal set of edges such that any two edges in the set lie on a common simple cycle",
+    "options": {
+      "A": "I – 1, II – 2, III – 3",
+      "B": "I – 2, II – 1, III – 3",
+      "C": "I – 2, II – 3, III – 1",
+      "D": "I – 1, II – 2, III – 3"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 33,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Divide-and-conquer",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "If x is the root of an n-node subtree, then the inorder- tree-walk takes",
+    "options": {
+      "A": "q (n)",
+      "B": "q (n2)",
+      "C": "q (n3)",
+      "D": "q (n log n)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 33,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Which one of the following is the tightest upper bound that represents the time complexity of insert- ing an object into a binary search tree of n nodes? \b [2013]",
+    "options": {
+      "A": "O(1)",
+      "B": "O(log n)",
+      "C": "O(n)",
+      "D": "O(n log n)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 34,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "Which one of the following is the recurrence equation for the worst case time complexity of the Quicksort algorithm for sorting n(≥2) numbers? In the recur- rence equations given in the options below, c is a con- stant.\b [2015]",
+    "options": {
+      "A": "T(n) = 2T(n/2) + cn",
+      "B": "T(n) = T(n – 1) + T(1) + cn",
+      "C": "T(n) = 2T(n – 1) + cn",
+      "D": "T(n) = T(n/2) + cn"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 34,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Suppose you are provided with the following function declaration in the C programming language. int partition (int a[ ], int n); The function treats the first element of a [ ] as a pivot, and rearranges the array so that all elements less than or equal to the pivot is in the left part of the array, and all elements greater than the pivot is in the right part in addition, it moves the pivot so that the pivot is the last element of the left part. The return value is the number of elements in the left part. The following partially given function in the C pro- gramming language is used to find the k th smallest element in an array a [ ] of size n using the partition function. We assume k ≤ n. int kth_smallest (int a [ ], int n, int k)\b [2015] { int left_end = partition(a, n); if (left_end+1 == k) { return a [left_end]; ) if (left_end+1 > k) { return kth_smallest (__________); } else { return kth_smallest (__________); } } The missing argument lists are respectively",
+    "options": {
+      "A": "\u0007(a, left_end, k) and (a+left_end+1, n-left_end-1, k-left_end-1)",
+      "B": "\u0007(a, left_end, k) and (a, n-left_end-1, k-left_end-1)",
+      "C": "\u0007(a+left_end+1, n-left_end-1, k-left_end-1) and (a, left_end, k)",
+      "D": "\u0007(a, n-left_end-1, k-left_end-1) and (a, left_end, k)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 34,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Assume that a mergesort algorithm in the worst case takes 30 seconds for an input of size 64. Which of the following most closely approximates the maximum input size of a problem that can be solved in 6 min- utes?\b [2015]",
+    "options": {
+      "A": "256",
+      "B": "512",
+      "C": "1024",
+      "D": "2048"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 34,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "Match the algorithms with their time complexities: Algorithm Time complexity (P) Towers of Hanoi with n disks (i) Θ (n2) (Q) \u0007Binary search given n sorted numbers (ii) Θ (n log n) (R) \u0007Heap sort given n numbers at the worst case (iii) Θ (2n) (S) Addition of two n × n matrices (iv) Θ (log n) \b [2017]",
+    "options": {
+      "A": "P → (iii), Q → (iv), R → (i), S → (ii)",
+      "B": "P → (iv), Q → (iii), R → (i), S → (ii)",
+      "C": "P → (iii), Q → (iv), R → (ii), S → (i)",
+      "D": "P → (iv), Q → (iii), R → (ii), S → (i)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 34,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "while (S is not empty) (i) pop a vertex V (ii) if ‘V ’ is not visited",
+    "options": {
+      "A": "visit the vertex",
+      "B": "Store ‘V ’ in visited",
+      "C": "push all the adjacent vertices of ‘V ’ in to visited (iii) End if"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 40,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "A thief enters a store and sees the following: $120 $80 A 2 pds 2 pds 3 pds B C $100 His knapsack can hold 4 pounds, what should he steal to maximize profit? (Use 0-1 Knapsack).",
+    "options": {
+      "A": "A and B",
+      "B": "A and C",
+      "C": "B and C",
+      "D": "A, B and C"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "By using fractional Knapsack, calculate the maximum profit, for the data given in the above question?",
+    "options": {
+      "A": "180",
+      "B": "170",
+      "C": "160",
+      "D": "150"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "Consider the below figure: 8 4 a 11 8 h 1 g 6 2 4 7 c d 7 14 e 10 f 2 i 7 b What is the weight of the minimum spanning tree using Kruskals algorithm?",
+    "options": {
+      "A": "34",
+      "B": "35",
+      "C": "36",
+      "D": "38"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 46,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Construct a minimum spanning tree for the figure given in the above question, using prim’s algorithm. What are the first three nodes, added to the solution set respec- tively (consider ‘a’ as starting node).",
+    "options": {
+      "A": "b, c, i",
+      "B": "h, b, c",
+      "C": "c, i, b",
+      "D": "h, c, b"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "Consider the below graph, calculate the shortest dis- tance from ‘S’ to ‘T ’? S 1 A B 11 5 9 E T F C 5 2 16 2 4 D 18 13 2",
+    "options": {
+      "A": "23",
+      "B": "9",
+      "C": "20",
+      "D": "22"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 46,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Solve the travelling salesman problem, with the given distances in the form of matrix of graph, which of the following gives optimal solution? C 1 2 3 4 1 0 15 20 25 2 10 0 14 15 3 11 18 0 17 4 13 13 14 0 1 2 3 4",
+    "options": {
+      "A": "1 - 2 - 4 - 3 - 1",
+      "B": "2 - 3 - 4 - 1 - 2",
+      "C": "1 - 4 - 2 - 3 - 1",
+      "D": "2 - 4 - 3 - 1 - 2"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Calculate the maximum profit using greedy strategy, knapsack capacity is 50. The data is given below: n = 3 (w1, w2, w3) = (10, 20, 30) (p1, p2, p3) = (60, 100, 120) (dollars)? (0/1 knapsack)",
+    "options": {
+      "A": "180",
+      "B": "220",
+      "C": "240",
+      "D": "260 Common data for questions 8 and 9: Given that a b c d e f Frequency 45 13 12 16 9 5 Fixed length code word 000 001 010 011 100 101"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 46,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Using Huffman code, find the path length of internal nodes.",
+    "options": {
+      "A": "8",
+      "B": "100",
+      "C": "100 × 8",
+      "D": "100/8"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Using above answer, external path length will be",
+    "options": {
+      "A": "2220",
+      "B": "2100",
+      "C": "2600",
+      "D": "2180"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 46,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "Which of the following gives maximum profit, using fractional knapsack?",
+    "options": {
+      "A": "x1 = 1, x2 = 1, x3 = 0",
+      "B": "x1 = 1, x2 = 1, x3 = 2/3",
+      "C": "x1 = 1, x2 = 0, x3 = 1",
+      "D": "x1 = 1, x2 = 1, x3 = 1/3"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 46,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "Using dynamic programming find the longest common subsequence (LCS) in the given 2 sub sequences: x [1, … , m] y [1, … , n] x : A B C B D A B Y : B D C A B A Find longest sequence sets common to both.",
+    "options": {
+      "A": "(BDAB, BCAB, BCBA)",
+      "B": "(BADB, BCAB, BCBA)",
+      "C": "(BDAB, BACB, BCBA)",
+      "D": "(BDAB, BCAB, BBCA)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 47,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "Let C1, C2, C3, C4 represent coins. C1 = 25 paisa C2 = 10 paisa C3 = 5 paisa C4 = 1 paisa To represents 48 paisa, what is the minimum number of coins used, using greedy approach?",
+    "options": {
+      "A": "6",
+      "B": "7",
+      "C": "8",
+      "D": "9"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 47,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Worst-case analysis of hashing occurs when",
+    "options": {
+      "A": "All the keys are distributed",
+      "B": "Every key hash to the same slot",
+      "C": "\u0007Key values with even number, hashes to slots with even number",
+      "D": "\u0007Key values with odd number hashes to slots with odd number."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 47,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "Consider the given graph: 5 4 6 3 5 3 2 d a f e 8 c 7 4 2 b Which one of the following cannot be the sequence of edges added, in that order, to a minimum spanning tree using Kruskal’s algorithm?",
+    "options": {
+      "A": "(a - b), (d - f ), (b - f ), (d - c), (d - e)",
+      "B": "(a - b), (d - f ), (d - c), (b - f ), (d - e)",
+      "C": "(d - f ), (a - b), (d - c), (b - f ), (d - e)",
+      "D": "(d - f ), (a - b), (b - f ), (d - e), (d - c)"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 47,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "The worst case height analysis of B-tree is",
+    "options": {
+      "A": "O(n)",
+      "B": "O(n2)",
+      "C": "O(log n)",
+      "D": "O(n log n)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 47,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "Consider the given graph: b f a c 1 6 5 6 2 8 4 4 5 3 d e Which of the following is the minimum spanning tree. (If we apply Kruskal algorithm).",
+    "options": {
+      "A": "b c a f e d",
+      "B": "b c f e a d",
+      "C": "a b c d f e",
+      "D": "b a f c d e"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 47,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Consider the following graph: b d e c 4 2 3 6 5 4 7 a Find the shortest path using Dijkstra’s algorithm.",
+    "options": {
+      "A": "a - b - d - e",
+      "B": "a - b - c - d",
+      "C": "a - c - d - e",
+      "D": "a - b - c - e"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 47,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Which statement is true about Kruskal’s algorithm?",
+    "options": {
+      "A": "\u0007It is a greedy algorithm for the minimum spanning tree problem.",
+      "B": "\u0007It constructs spanning tree by selecting edges in increasing order of their weights.",
+      "C": "\u0007It does not accept creation of cycles in spanning tree.",
+      "D": "All the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 47,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "Dijkstra’s algorithm bears similarity to which of the following for computing minimum spanning trees?",
+    "options": {
+      "A": "Breadth first search",
+      "B": "Prim’s algorithm",
+      "C": "Both (A) and (B)",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "Which of the following algorithm always yields a cor- rect solution for a graph with non-negative weights to compute shortest paths?",
+    "options": {
+      "A": "Prim’s algorithm",
+      "B": "Kruskal’s algorithm",
+      "C": "Dijkstra’s algorithm",
+      "D": "Huffman tree"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "Let the load factor of the hash table is number of keys is n, cells of the hash table is m then",
+    "options": {
+      "A": "∝ = n/m",
+      "B": "∝ = m/n",
+      "C": "∝ + m n 1",
+      "D": "∝ + n m 1"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "To implement Dijkstra’s shortest path algorithm on unweighted graphs so that it runs in linear time, the data structure to be used is:",
+    "options": {
+      "A": "Queue",
+      "B": "Stack",
+      "C": "Heap",
+      "D": "B-tree"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "The development of a dynamic-programming algo- rithm can be broken into a sequence of four steps, which are given below randomly. I. \u0007Construct an optimal solution from computed in- formation. II. \u0007Compute the value of an optimal solution in a bot- tom-up fashion. III. \u0007Characterize the structure of an optimal solution. IV. \u0007Recursively defines the value of an optimal solution. The correct sequence of the above steps is",
+    "options": {
+      "A": "I, II, III, IV",
+      "B": "IV, III, I, II",
+      "C": "IV, II, I, III",
+      "D": "III, IV, II I"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "Let V stands for vertex, E stands for edges. For both directed and undirected graphs, the adjacency list representation has the desirable property that the amount of memory required is",
+    "options": {
+      "A": "q(V )",
+      "B": "q(E)",
+      "C": "q(V + E )",
+      "D": "q(V - E )"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "Which of the following is false?",
+    "options": {
+      "A": "\u0007Adjacency-matrix representation of a graph per- mits faster edge look up.",
+      "B": "\u0007The adjacency matrix of a graph requires q(v2) memory, independent of the number of edges in the graph.",
+      "C": "\u0007Adjacency-matrix representation can be used for weighted graphs.",
+      "D": "All the above"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "Dynamic programming is a technique for solving prob- lems with",
+    "options": {
+      "A": "Overlapped sub problems",
+      "B": "Huge size sub problems",
+      "C": "Small size sub problems",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "The way a card game player arranges his cards, as he picks them up one by one is an example of _____.",
+    "options": {
+      "A": "Bubble sort",
+      "B": "Selection sort",
+      "C": "Insertion sort",
+      "D": "None of the above"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "You want to check whether a given set of items is sorted. Which method will be the most efficient if it is already in sorted order?",
+    "options": {
+      "A": "Heap sort",
+      "B": "Bubble sort",
+      "C": "Merge sort",
+      "D": "Insertion sort"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "What is the maximum profit earned?\b [2005]",
+    "options": {
+      "A": "147",
+      "B": "165",
+      "C": "167",
+      "D": "175"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Consider a weighted complete graph G on the ver- tex set {v1, v2,…, vn} such that the weight of the edge ( , ) . v v i j i j is 2 − The weight of the minimum span- ning tree is:\b [2006]",
+    "options": {
+      "A": "n - 1",
+      "B": "2n - 2",
+      "C": "n 2    ",
+      "D": "n2"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "To implement Dijkstra’s shortest path algorithm on unweighted graphs so that it runs in linear time, the data structure to be used is: \b [2006]",
+    "options": {
+      "A": "Queue",
+      "B": "Stack",
+      "C": "Heap",
+      "D": "B-Tree"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "Consider the following graph:\b [2006] a b 2 7 5 4 4 3 1 6 3 2 1 c d e f Which one of the following cannot be the sequence of edges added, in that order, to a minimum spanning tree using Kruskal’s algorithm?",
+    "options": {
+      "A": "(a - b), (d - f), (b - f), (d - c), (d - e)",
+      "B": "(a - b), (d - f), (d - c), (b - f), (d - e)",
+      "C": "(d - f), (a - b), (d - c), (b - f), (d - e)",
+      "D": "(d - f), (a - b), (b - f), (d - e), (d - c) Common data for questions 5 and 6: A 3-ary max-heap is like a binary max-heap, but instead of 2 children, nodes have 3 children. A 3-ary heap can be repre- sented by an array as follows: The root is stored in the first location, a[0], nodes in the next level, from left to right, is stored from a[1] to a[3]. The nodes from the second level of the tree from left to right are stored from a[4] location onward. An item x can be inserted into a 3-ary heap containing n items by placing x in the location a[n] and pushing it up the tree to satisfy the heap property."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 48,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Which one of the following is a valid sequence of elements in an array representing 3-ary max-heap? \b [2006]",
+    "options": {
+      "A": "1, 3, 5, 6, 8, 9",
+      "B": "9, 6, 3, 1, 8, 5",
+      "C": "9, 3, 6, 8, 5, 1",
+      "D": "9, 5, 6, 8, 3, 1"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 49,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "Suppose the elements 7, 2, 10 and 4 are inserted, in that order, into the valid 3-ary max-heap found in the above question, Q-76. Which one of the following is the sequence of items in the array representing the resultant heap?\b [2006]",
+    "options": {
+      "A": "10, 7, 9, 8, 3, 1, 5, 2, 6, 4",
+      "B": "10, 9, 8, 7, 6, 5, 4, 3, 2, 1",
+      "C": "10, 9, 4, 5, 7, 6, 8, 2, 1, 3",
+      "D": "10, 8, 6, 9, 7, 2, 3, 4, 1, 5"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 49,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "In an unweighted, undirected connected graph, the shortest path from a node S to every other node is computed most efficiently, in terms of time complex- ity, by\b [2007]",
+    "options": {
+      "A": "Dijkstra’s algorithm starting from S.",
+      "B": "Warshall’s algorithm",
+      "C": "Performing a DFS starting from S.",
+      "D": "Performing a BFS starting from S."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 49,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "A complete n-ary tree is a tree in which each node has n children or no children. Let I be the number of inter- nal nodes and L be the number of leaves in a complete n-ary tree. If L = 41, and I = 10, what is the value of n?\b [2007]",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 49,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "Consider the following C program segment where CellNode represents a node in a binary tree:\b [2007] struct CellNode { struct CellNode *leftChild; int element; struct CellNode *rightChild; }; int GetValue (struct CellNode *ptr) { int value = 0; if (ptr != NULL) { if ((ptr->leftChild == NULL) && (ptr->rightChild == NULL)) value = 1; else value = value + GetValue(ptr->leftChild) + GetValue(ptr->rightChild); } return(value); \u0007The value returned by GetValue when a pointer to the root of a binary tree is passed as its argument is:",
+    "options": {
+      "A": "The number of nodes in the tree",
+      "B": "The number of internal nodes in the tree",
+      "C": "The number of leaf nodes in the tree",
+      "D": "The height of the tree"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 49,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "Let w be the minimum weight among all edge weights in an undirected connected graph. Let e be a specific edge of weight w. Which of the following is FALSE? \b [2007]",
+    "options": {
+      "A": "There is a minimum spanning tree containing e.",
+      "B": "\u0007If e is not in a minimum spanning tree T, then in the cycle formed by adding e to T, all edges have the same weight.",
+      "C": "\u0007Every minimum spanning tree has an edge of weight w.",
+      "D": "\u0007e is present in every minimum spanning tree."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 49,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "The Breadth first search algorithm has been imple- mented using the queue data structure. One possible order of visiting the nodes of the following graph is \b [2008] M N O P Q R",
+    "options": {
+      "A": "MNOPQR",
+      "B": "NQMPOR",
+      "C": "QMNPRO",
+      "D": "QMNPOR"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 49,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "G is a graph on n vertices and 2n - 2 edges. The edges of G can be partitioned into two edge-disjoint span- ning trees. Which of the following is NOT true for G? \b [2008]",
+    "options": {
+      "A": "Only vertex a",
+      "B": "Only vertices a, e, f, g, h",
+      "C": "Only vertices a, b, c, d",
+      "D": "all the vertices"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 49,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "You are given the post-order traversal, P, of a binary search tree on the n elements 1, 2,…, n. You have to determine the unique binary search tree that has P as its post-order traversal. What is the time complexity of the most efficient algorithm for doing this?\b[2008]",
+    "options": {
+      "A": "Q(log n)",
+      "B": "Q(n)",
+      "C": "Q(n log n)",
+      "D": "\u0007None of the above, as the tree cannot be uniquely determined"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 50,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 15,
+    "question": "Which of the following statement(s) is/are correct regarding Bellman–Ford shortest path algorithm? \b [2009] P. \u0007Always finds a negative weighted cycle, if one exists. Q. \u0007Finds whether any negative weighted cycle is reachable from the source.",
+    "options": {
+      "A": "P only",
+      "B": "Q only",
+      "C": "Both P and Q",
+      "D": "Neither P nor Q"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 50,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 16,
+    "question": "Consider the following graph:\b [2009] b e d c a 5 5 4 4 3 2 6 3 5 6 6 6 g f Which one of the following is NOT the sequence of edges added to the minimum spanning tree using Kruskal’s algorithm?\b [2009]",
+    "options": {
+      "A": "(b, e) (e, f) (a, c) (b, c) (f, g) (c, d)",
+      "B": "(b, e) (e, f) (a, c) (f, g) (b, c) (c, d)",
+      "C": "(b, e) (a, c) (e, f) (b, c) (f, g) (c, d)",
+      "D": "(b, e) (e, f) (b, c) (a, c) (f, g) (c, d) Common data for questions 17 and 18: Consider a binary max-heap implemented using an array."
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 50,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "Which one of the following array represents a binary max-heap?\b [2009]",
+    "options": {
+      "A": "{25, 12, 16, 13, 10, 8, 14}",
+      "B": "{25, 14, 13, 16, 10, 8, 12}",
+      "C": "{25, 14, 16, 13, 10, 8, 12}",
+      "D": "{25, 14, 12, 13, 10, 8, 16}"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 50,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 18,
+    "question": "What is the content of the array after two delete oper- ations on the correct answer to the previous question? \b [2009]",
+    "options": {
+      "A": "{14, 13, 12, 10, 8}",
+      "B": "{14, 12, 13, 8, 10}",
+      "C": "{14, 13, 8, 12, 10}",
+      "D": "{14, 13, 12, 8, 10} Common data for questions 19 and 20: Consider a com- plete undirected graph with vertex set {0, 1, 2, 3, 4}. Entry Wij in the matrix W below is the weight of the edge {i, j}. W =                 0 1 8 1 4 1 0 12 4 9 8 12 0 7 3 1 4 7 0 2 4 9 3 2 0"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 50,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 19,
+    "question": "What is the minimum possible weight of a spanning tree T in this graph such that vertex 0 is a leaf node in the tree T ?\b [2010]",
+    "options": {
+      "A": "7",
+      "B": "8",
+      "C": "9",
+      "D": "10"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 50,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 20,
+    "question": "What is the minimum possible weight of a path P from vertex 1 to vertex 2 in this graph such that P contains at most 3 edges?\b [2010]",
+    "options": {
+      "A": "7",
+      "B": "8",
+      "C": "9",
+      "D": "10 Common data for questions 21 and 22: A hash table of length 10 uses open addressing with hash function h(k) = k mod 10, and linear probing. After inserting 6 values into an empty hash table, the table is as shown below: 0 1 2 42 3 23 4 34 5 52 6 46 7 33 8 9"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 50,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 21,
+    "question": "Which one of the following choices gives a possi- ble order in which the key values could have been inserted in the table? \b [2010]",
+    "options": {
+      "A": "46, 42, 34, 52, 23, 33",
+      "B": "34, 42, 23, 52, 33, 46",
+      "C": "46, 34, 42, 23, 52, 33",
+      "D": "42, 46, 33, 23, 34, 52"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 50,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 22,
+    "question": "How many different insertion sequences of the key values using the same hash function and linear prob- ing will result in the hash table shown above?\b [2010]",
+    "options": {
+      "A": "10",
+      "B": "20",
+      "C": "30",
+      "D": "40"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 51,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 23,
+    "question": "A max-heap is a heap where the value of each parent is greater than or equal to the value of its children. Which of the following is a max-heap?\b [2011]",
+    "options": {
+      "A": "10 8 6 5 1 2 4",
+      "B": "10 8 6 1 2 5 4",
+      "C": "10 5 6 2 1 8 4",
+      "D": "5 2 8 6 1 4 1 Common data for questions 24 and 25: An undirected graph G (V, E) contains n(n > 2) nodes named V1, V2, …, Vn. Two nodes Vi, Vj are connected if and only if 0 < |i - j| ≤ 2. Each edge (Vi, Vj) is assigned a weight i + j. A sample graph with n = 4 is shown below. V4 V3 3 4 6 7 5 V2 V1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 51,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 24,
+    "question": "What will be the cost of the minimum spanning tree (MST) of such a graph with n nodes?\b [2011]",
+    "options": {
+      "A": "1 12 11 5 2 ( ) n n −",
+      "B": "n2 - n + 1",
+      "C": "6n - 11",
+      "D": "2n + 1"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 51,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 25,
+    "question": "The length of the path from V5 to V6 in the MST of previous question with n = 10 is \b [2011]",
+    "options": {
+      "A": "11",
+      "B": "25",
+      "C": "31",
+      "D": "41"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 51,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 26,
+    "question": "Consider the directed graph shown in the figure below. There are multiple shortest paths between ver- tices S and T. Which one will be reported by Dijkstra’s shortest path algorithm? Assume that, in any iteration, the shortest path to a vertex v is updated only when a strictly shorter path to v is discovered. \b [2012] G 2 T 5 5 D 1 E 1 C 1 A 4 4 S 3 B F 3 7 3 3 2 4 3",
+    "options": {
+      "A": "SDT",
+      "B": "SBDT",
+      "C": "SACDT",
+      "D": "SACET"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 51,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 27,
+    "question": "Let G be a weighted graph with edge weights greater than one and G1 be the graph constructed by squaring the weights of edges in G. Let T and T1 be the mini- mum spanning trees of G and G1, respectively, with total weights t and t1. Which of the following state- ments is TRUE?\b [2012]",
+    "options": {
+      "A": "T 1 = T with total weight t1 = t2",
+      "B": "T 1 = T with total weight t1 < t2",
+      "C": "T 1 ≠ T but total weight t1 = t2",
+      "D": "None of the above"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 51,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 28,
+    "question": "What is the time complexity of Bellman–Ford single- source shortest path algorithm on a complete graph of n vertices?\b [2013]",
+    "options": {
+      "A": "Θ(n2)",
+      "B": "Θ(n2 log n)",
+      "C": "Θ(n3)",
+      "D": "Θ(n3 log n)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 51,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 29,
+    "question": "Consider the following operation along with Enqueue and Dequeue operations on queues, where k is a global parameter. MultiDequeue(Q) { m = k while (Q is not empty) and (m > 0) { Dequeue (Q) m = m - 1 } } What is the worst case time complexity of a sequence of n queue operations on an initially empty queue? \b [2013]",
+    "options": {
+      "A": "Θ(n)",
+      "B": "Θ(n + k)",
+      "C": "Θ(nk)",
+      "D": "Θ(n2)"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 51,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 30,
+    "question": "The preorder traversal sequence of a binary search tree is 30, 20, 10, 15, 25, 23, 39, 35, 42. Which one of the following is the post order traversal sequence of the same tree?\b [2013]",
+    "options": {
+      "A": "10, 20, 15, 23, 25, 35, 42, 39, 30",
+      "B": "15, 10, 25, 23, 20, 42, 35, 39, 30",
+      "C": "15, 20, 10, 23, 25, 42, 35, 39, 30",
+      "D": "15, 10, 23, 25, 20, 35, 42, 39, 30"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 52,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 31,
+    "question": "Let G be a graph with n vertices and m edges. What is the tightest upper bound on the running time of depth first search on G, when G is represented as an adja- cency matrix? \b [2014]",
+    "options": {
+      "A": "q(n)",
+      "B": "q(n + m)",
+      "C": "q(n2)",
+      "D": "q(m2)"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 52,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 32,
+    "question": "Consider the directed graph given below.\b [2014] P Q S R Which one of the following is TRUE?",
+    "options": {
+      "A": "\u0007The graph does not have any topological order- ing.",
+      "B": "\u0007Both PQRS and SRQP are topological orderings.",
+      "C": "\u0007Both PSRQ and SPRQ are topological orderings.",
+      "D": "PSRQ is the only topological ordering."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 52,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 34,
+    "question": "A priority queue is implemented as a max-heap. Initially it has 5 elements. The level-order traversal of the heap is : 10, 8, 5, 3, 2. Two new elements 1 and 7 are inserted into the heap in that order. The level- order traversal of the heap after the insertion of the elements is \b [2014]",
+    "options": {
+      "A": "10, 8, 7, 3, 2, 1, 5",
+      "B": "10, 8, 7, 2, 3, 1, 5",
+      "C": "10, 8, 7, 1, 2, 3, 5",
+      "D": "10, 8, 7, 5, 3, 2, 1"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 52,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 35,
+    "question": "Consider the tree arcs of a BFS traversal from a source node W in an unweighted, connected, undi- rected graph. The tree T formed by the tree acrs is a data structure for computing \b [2014]",
+    "options": {
+      "A": "The shortest path between every pair of vertices",
+      "B": "\u0007The shortest path from W to every vertex in the graph",
+      "C": "\u0007The shortest paths from W to only those nodes that are leaves of T.",
+      "D": "The longest path in the graph"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 52,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 40,
+    "question": "Consider two decision problems Q1, Q2 such that Q1 reduces in polynomial time to 3-SAT and 3-SAT reduces in polynomial time to Q2. Then which one of the following is consistent with the above statement? \b [2015]",
+    "options": {
+      "A": "Q­1 is in NP, Q2 is NP hard.",
+      "B": "Q2 is in NP, Q1 is NP hard.",
+      "C": "Both Q1 and Q2 are in NP.",
+      "D": "Both Q1 and Q2 are NP hard."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 53,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "\u0007Backtracking search on a graph iv. Depth-first search v. Breadth-first search Match the above algorithms on the left to the corre- sponding design paradigm they follow.",
+    "options": {
+      "A": "1–i, 2–iii, 3–i, 4–v",
+      "B": "1–iii, 2–iii, 3–i, 4–v",
+      "C": "1–iii, 2–ii, 3–i, 4–iv",
+      "D": "1–iii, 2–ii, 3–i, 4–v"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 53,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 43,
+    "question": "Which one of the following hash functions on integers will distribute keys most uniformly over 10 buckets numbered 0 to 9 for i ranging from 0 to 2020? \b [2015]",
+    "options": {
+      "A": "h(i) = i 2 mod 10",
+      "B": "h(i) = i 3 mod 10",
+      "C": "h(i) = (11 * i2 ) mod 10",
+      "D": "h(i) = (12 * i) mod 10"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 53,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 44,
+    "question": "Let G be a weighted connected undirected graph with distinct positive edge weights. If every edge weight is increased by the same value, then which of the fol- lowing statements is/are TRUE?\b [2016] P : Minimum spanning tree of G does not change. Q : \u0007Shortest path between any pair of vertices does not change.",
+    "options": {
+      "A": "P only",
+      "B": "Q only",
+      "C": "Neither P nor Q",
+      "D": "Both P and Q"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 53,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 46,
+    "question": "G = (V,E) is an undirected simple graph in which each edge has a distinct weight, and e is a particular edge of G. Which of the following statements about the minimum spanning trees (MSTs) of G is/ are TRUE? \b [2016] I. \u0007If e is the lightest edge of some cycle in G, then every MST of G includes e II. \u0007If e is the heaviest edge of some cycle in G, then every MST of G excludes e",
+    "options": {
+      "A": "I only",
+      "B": "II only",
+      "C": "both I and II",
+      "D": "neither I nor II"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 53,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "4 - Greedy Approach",
+    "section": "Previous Years’ Questions",
+    "number": 48,
+    "question": "Let G = (V,E) be any connected undirected edge- weighted graph. The weights of the edges in E are pos- itive and distinct. Consider the following statements: (I) Minimum spanning Tree of G is always unique. (II) \u0007Shortest path between any two vertices of G is always unique. Which of the above statements is/are necessarily true? \b [2017]",
+    "options": {
+      "A": "(I) only",
+      "B": "(II) only",
+      "C": "both (I) and (II)",
+      "D": "neither (I) nor (II)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 53,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 52,
+    "question": "4 M N O P Q R",
+    "options": {
+      "A": "MNOPQR",
+      "B": "NQMPOR",
+      "C": "QMNROP",
+      "D": "POQNMR"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 54,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 51,
+    "question": "Let G be a simple undirected graph. Let TD be a depth first search tree of G. Let TB be a breadth first search tree of G. Consider the following statements. (I) No edge of G is a cross edge with respect to TD. (A cross edge in G is between two nodes neither of which is an ancestor of the other in TD.) (II) For every edge (u, v) of G, if u is at depth i and v is at depth j in TB, then |i – j| = 1. Which of the statements above must necessarily be true?\b [2018]",
+    "options": {
+      "A": "I only",
+      "B": "II only",
+      "C": "Both I and II",
+      "D": "Neither I nor II"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 54,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 1,
+    "question": "Hash the keys 12, 44, 13, 88, 23, 94, 11, 39, 20 using the hash function with chaining (2 k + 5) mod 11, which of the following slots are empty?",
+    "options": {
+      "A": "0, 1, 2, 3, 4",
+      "B": "0, 2, 3, 4, 8, 10",
+      "C": "0, 1, 2, 4, 8, 10",
+      "D": "0, 1, 2, 4, 8"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 64,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 2,
+    "question": "Using linear probing on the list given in the above ques- tion with the same hash function, which slots are not occupied?",
+    "options": {
+      "A": "3, 4",
+      "B": "4, 5",
+      "C": "3, 6",
+      "D": "4, 6"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 64,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 3,
+    "question": "In hashing, key value 123456 is hashed to which address using multiplication method (m = 104)?",
+    "options": {
+      "A": "40",
+      "B": "41",
+      "C": "42",
+      "D": "44"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 64,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 4,
+    "question": "Insert element 14 into the given hash table with double hashing? h1 (k) = k mod 13, h2 (k) = 1 + (k mod 11). The element will occupy, which slot? 0 1 79 2 3 4 69 5 98 6 7 72 8 9 10 11 50 12",
+    "options": {
+      "A": "7th",
+      "B": "8th",
+      "C": "2nd",
+      "D": "9th"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 64,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Practice Problems 1",
+    "number": 5,
+    "question": "Consider the below given keys: 257145368, 25842354, 12487654, 248645452. Find the hash values of keys using shift folding method?",
+    "options": {
+      "A": "770, 221, 153, 345",
+      "B": "221, 770, 153, 345",
+      "C": "760, 770, 153, 345",
+      "D": "815, 770, 153, 345"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 65,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Practice Problems 1",
+    "number": 6,
+    "question": "Consider the following two problems on unidirected graphs. β : Given G(V, E), does G have an independent set of size |V|-4? α : Given G(V, E), does G have an independent set of size 5? Which of the following is true?",
+    "options": {
+      "A": "β is in P and α is in NP-Complete",
+      "B": "β is in NP-Complete and α is in P",
+      "C": "Both α and β are NP-Complete",
+      "D": "Both α and β are in P"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 65,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Practice Problems 1",
+    "number": 7,
+    "question": "Let S be an NP-complete problem and Q and R be two other problems not known to be in NP. Q is pol- ynomial-time reducible to S and S is polynomial-time reducible to R. Which one of the following statements is true?",
+    "options": {
+      "A": "R is NP-Complete",
+      "B": "R is NP-Hard",
+      "C": "Q is NP-Complete",
+      "D": "Q is NP-Hard"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 65,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Practice Problems 1",
+    "number": 8,
+    "question": "Let FHAM3 be the problem of finding a Hamiltonian cycle in a graph G = (V, E) with |V| divisible by 3 and DHAM3 be the problem of determining if a Hamiltonian cycle exists in such graphs. Which of the following is true?",
+    "options": {
+      "A": "Both FHAM3 and DHAM3 are NP-hard",
+      "B": "FHAM3 is NP-hard but DHAM3 is not",
+      "C": "DHAM3 is NP-hard but FHAM3 is not",
+      "D": "Neither FHAM3 nor DHAM3 is NP-hard"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 65,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Practice Problems 1",
+    "number": 9,
+    "question": "Consider a hash table of size 7, with starting index ‘0’ and a hash function (3x + 4) mod 7. Initially hash table is empty. The sequence 1, 3, 8, 10 is inserted into the table using closed hashing then what is the position of element 10?",
+    "options": {
+      "A": "1st",
+      "B": "2nd",
+      "C": "6th",
+      "D": "0th"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 65,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Practice Problems 1",
+    "number": 10,
+    "question": "Place the given keys in the hash table of size 13, index from ‘0’ by using open hashing, hash function is h(k) mod 13. Keys: A, FOOL, HIS, AND (hint : Add the positions of a word’s letters in the alpha- bet, take A → 1, B → 2, C → 3. D → 4 … Z → 26). Which of the following shows the correct hash addresses of keys?",
+    "options": {
+      "A": "A – 1, FOOL – 10, HIS – 9, AND – 6",
+      "B": "A – 1, FOOL – 9, HIS – 10, AND – 6",
+      "C": "A – 0, FOOL – 6, HIS – 10, AND – 9",
+      "D": "A – 0, FOOL – 9, HIS – 9, AND – 6"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 65,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Practice Problems 1",
+    "number": 11,
+    "question": "Consider the following input (322, 334, 471, 679, 989, 171, 173, 199) and the hash function is x mod 10 which statement is true? I. 679, 989, 199 hash to the same value II. 471, 171, hash to the same value III. Each element hashes to a different value IV. All the elements hash to the same value",
+    "options": {
+      "A": "I Only",
+      "B": "II Only",
+      "C": "I and II",
+      "D": "III"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 65,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Practice Problems 1",
+    "number": 12,
+    "question": "For the input 30, 20, 56, 75, 31, 19 and hash function h (k) = k mod 11, what is the largest number of key comparisons in a successful search in the open hash table.",
+    "options": {
+      "A": "4",
+      "B": "3",
+      "C": "5",
+      "D": "2"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 65,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Practice Problems 1",
+    "number": 13,
+    "question": "The keys 12, 18, 13, 2, 3, 23, 5 and 15 are inserted into an empty hash table of length 10 using open address- ing with hash function, h (k) = k mod 10 and linear probing. Which is the resultant hash table?",
+    "options": {
+      "A": "0 1 2 2 23 3 13 4 15 5 6 7 8 9",
+      "B": "0 3 1 12 2 13 3 4 15 5 6 7 8 9",
+      "C": "0 1 12 2 13 3 2 4 3 5 23 6 5 7 18 8 15 9",
+      "D": "0 1 2 2 3 3 12 4 13 5 23 6 5 7 18 8 15 9"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 65,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Practice Problems 1",
+    "number": 14,
+    "question": "Which one of the following is correct?",
+    "options": {
+      "A": "\u0007Finding shortest path in a graph is solvable in poly- nomial time.",
+      "B": "\u0007Finding longest path from a graph is solvable in poly-nomial time.",
+      "C": "\u0007Finding longest path from a graph is solvable in polynomial time, if edge weights are very small values.",
+      "D": "Both (A) and (B) are correct"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 65,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 1",
+    "number": 15,
+    "question": "In the following pair of problems 2 CNF Satisfiability I Vs 3 CNF Satisfiability II .",
+    "options": {
+      "A": "\u0007I is solvable in polynomial time, II is NP complete problem.",
+      "B": "\u0007II is solvable in polynomial time, I is NP complete problem.",
+      "C": "Both are solvable in polynomial time",
+      "D": "None can be solved in polynomial time."
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 1,
+    "question": "For NP-complete problems",
+    "options": {
+      "A": "\u0007Several polynomial time algorithms are available",
+      "B": "No polynomial time algorithm is discovered yet",
+      "C": "\u0007Polynomial time algorithms exist but not discovered",
+      "D": "\u0007Polynomial time algorithms will not exist, hence cannot be discovered"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 2,
+    "question": "In the division method for creating hash functions, we map a key k into one of m slots by taking the remainder of k divided by m. That is, the hash function is",
+    "options": {
+      "A": "h(k) = m mod k",
+      "B": "h(k) = m mod m/k",
+      "C": "h(k) = k mod m",
+      "D": "h(k) = mk mod k"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 3,
+    "question": "In the division method for creating hash function, which of the following hash table size is most appropriate?",
+    "options": {
+      "A": "2",
+      "B": "7",
+      "C": "4",
+      "D": "8"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 4,
+    "question": "Which of the following techniques are commonly used to compute the probe sequence required for open addressing?",
+    "options": {
+      "A": "Linear probing",
+      "B": "Quadratic probing",
+      "C": "Double hashing",
+      "D": "All the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 5,
+    "question": "Which of the following problems is not NP-hard?",
+    "options": {
+      "A": "Hamiltonian circuit problem",
+      "B": "The 0/1 knapsack problem",
+      "C": "The graph coloring problem",
+      "D": "None of these"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 6,
+    "question": "For problems x and y, y is NP-complete and x reduces to y in polynomial time. Which of the following is true?",
+    "options": {
+      "A": "If x can be solved in polynomial time, then so can y",
+      "B": "x is NP-hard",
+      "C": "x is NP-complete",
+      "D": "x is in NP, but not necessarily NP-complete"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 7,
+    "question": "If P1 is NP-complete and there is a polynomial time reduction of P1 to P2, then P2 is",
+    "options": {
+      "A": "NP-complete",
+      "B": "Not necessarily NP-complete",
+      "C": "Cannot be NP-complete",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 8,
+    "question": "A problem is in NP, and as hard as any problem in NP. The given problem is",
+    "options": {
+      "A": "NP hard",
+      "B": "NP complete",
+      "C": "NP",
+      "D": "NP-hard ∩ NP-complete"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 9,
+    "question": "Which of the following is TRUE?",
+    "options": {
+      "A": "All NP-complete problems are NP-hard.",
+      "B": "\u0007If an NP-hard problem can be solved in polyno- mial time, then all NP-complete problems can be solved in polynomial time.",
+      "C": "\u0007NP-hard problems are not known to be NP-complete.",
+      "D": "All the above"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 10,
+    "question": "If a polynomial time algorithm makes polynomial num- ber of calls to polynomial time subroutines, then the resulting algorithm runs in",
+    "options": {
+      "A": "Polynomial time",
+      "B": "No-polynomial time",
+      "C": "Exponential time",
+      "D": "None of these"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 11,
+    "question": "If a polynomial time algorithm makes atmost constant number of calls to polynomial time subroutines, then the resulting algorithm runs in",
+    "options": {
+      "A": "Polynomial time",
+      "B": "No-polynomial time",
+      "C": "Exponential time",
+      "D": "None of these"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 12,
+    "question": "When a record to be inserted maps to an already occu- pied slot is called",
+    "options": {
+      "A": "Hazard",
+      "B": "Collision",
+      "C": "Hashing",
+      "D": "Chaining"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 13,
+    "question": "Worst-case analysis of hashing occurs when",
+    "options": {
+      "A": "All the keys are distributed",
+      "B": "Every key hash to the same slot",
+      "C": "\u0007Key values with even number, hashes to slots with even number",
+      "D": "\u0007Key values with odd number hashes to slots with odd number"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 14,
+    "question": "Main difference between open hashing and closed hashing is",
+    "options": {
+      "A": "\u0007Closed hashing uses linked lists and open hashing does not.",
+      "B": "\u0007Open hashing uses linked list and closed hashing does not",
+      "C": "\u0007Open hashing uses tree data structure and closed uses linked list",
+      "D": "None of the above"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Practice Problems 2",
+    "number": 15,
+    "question": "The worst case scenario in hashing occurs when",
+    "options": {
+      "A": "\u0007All keys are hashed to the same cell of the hash table",
+      "B": "\u0007The size of hash table is bigger than the number of keys",
+      "C": "\u0007The size of hash table is smaller than the number of keys",
+      "D": "None of the above"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 66,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Previous Years’ Questions",
+    "number": 1,
+    "question": "Consider a hash table of size seven, with starting index zero, and a hash function (3x + 4) mod7. Assuming the hash table is initially empty, which of the follow- ing is the contents of the table when the sequence 1, 3, 8, 10 is inserted into the table using closed hashing? Note that − denotes an empty location in the table. \b [2007]",
+    "options": {
+      "A": "8, −, −, −, −, −, 10",
+      "B": "1, 8, 10, −, −, −, 3",
+      "C": "1, −, −, −, −, −, 3",
+      "D": "1, 10, 8, −, −, −, 3 Common data for questions 2 and 3: Suppose the let- ters a, b, c, d, e, f have probabilities 1 2 1 4 1 8 1 32 32 , , , , , , 1 16 1 respectively."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Previous Years’ Questions",
+    "number": 2,
+    "question": "Which of the following is the Huffman code for the letter a, b, c, d, e, f ?\b [2007]",
+    "options": {
+      "A": "0, 10, 110, 1110, 11110, 11111",
+      "B": "11, 10, 011, 010, 001, 000",
+      "C": "11, 10, 01, 001, 0001, 0000",
+      "D": "110, 100, 010, 000, 001, 111"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 67,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Previous Years’ Questions",
+    "number": 3,
+    "question": "What is the average length of the correct answer to above question? \b [2007]",
+    "options": {
+      "A": "3",
+      "B": "2.1875",
+      "C": "2.25",
+      "D": "1.9375"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 67,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Previous Years’ Questions",
+    "number": 4,
+    "question": "The subset-sum problem is defined as follows: Given a set S of n positive integers and a positive integer W, determine whether there is a subset of S whose ele- ments sum to W. An algorithm Q solves this problem in O(nW) time. Which of the following statements is false? \b [2008]",
+    "options": {
+      "A": "\u0007Q solves the subset-sum problem in polynomial time when the input is encoded in unary",
+      "B": "\u0007Q solves the subset-sum problem in polynomial time when the input is encoded in binary",
+      "C": "The subset sum problem belongs to the class NP",
+      "D": "The subset sum problem is NP-hard"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Previous Years’ Questions",
+    "number": 5,
+    "question": "Let πA be a problem that belongs to the class NP. Then which one of the following is TRUE? \b [2009]",
+    "options": {
+      "A": "There is no polynomial time algorithm for πA.",
+      "B": "\u0007If πA can be solved deterministically in polyno- mial time, then P = NP.",
+      "C": "If πA is NP-hard, then it is NP-complete.",
+      "D": "πA may be undecidable."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 67,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Previous Years’ Questions",
+    "number": 6,
+    "question": "The keys 12, 18, 13, 2, 3, 23, 5 and 15 are inserted into an initially empty hash table of length 10 using open addressing with hash function h(k) = k mod 10 and linear probing. What is the resultant hash table? \b [2009]",
+    "options": {
+      "A": "0 1 2 12 3 23 4 5 15 6 7 8 18 9",
+      "B": "0 1 2 12 3 13 4 5 5 6 7 8 18 9",
+      "C": "0 1 2 12 3 13 4 2 5 3 6 23 7 5 8 18 9 15",
+      "D": "0 1 2 12,2 3 13,3,23 4 5 5,15 6 7 8 18 9 Common data for questions 7 and 8: A sub-sequence of a given sequence is just the given sequence with some elements (possibly none or all) left out. We are given two sequences X[m] and Y[n] of lengths m and n, respectively, with indexes of X and Y starting from 0."
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 67,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Previous Years’ Questions",
+    "number": 7,
+    "question": "We wish to find the length of the longest common sub- sequence (LCS) of X[m] and Y[n] as l(m, n), where an incomplete recursive definition for the function l(i, j) to compute the length of the LCS of X[m] and Y[n] is given below: I(i, j) = 0, if either i = 0 or j = 0 = expr1, if i, j > 0 and X[i - 1] = Y[ j - 1] = expr2, if i, j > 0 and X[i - 1] ≠ Y [ j - 1] Which one of the following options is correct?\b [2009]",
+    "options": {
+      "A": "expr1 ≡ I(i - 1, j) + 1",
+      "B": "expr1 ≡ I(i, j - 1)",
+      "C": "expr2 ≡ max(I(i - 1, j), I(i, j - 1))",
+      "D": "expr2 ≡ max(I(i -1, j - 1), I(i, j))"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 67,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Previous Years’ Questions",
+    "number": 8,
+    "question": "The values of l(i, j) could be obtained by dynamic programming based on the correct recursive defini- tion of l(i, j) of the form given above, using an array L[M, N], where M = m + 1 and N = n + 1, such that L[i, j] = l(i, j). Which one of the following statements would be TRUE regarding the dynamic programming solution for the recursive definition of l(i, j)?\b [2009]",
+    "options": {
+      "A": "\u0007All elements of L should be initialized to 0 for the values of l(i, j) to be properly computed.",
+      "B": "\u0007The values of l(i, j) may be computed in a row major order or column major order of L(M, N).",
+      "C": "\u0007The values of l(i, j) cannot be computed in either row major order or column major order of L(M, N).",
+      "D": "\u0007L[p, q] needs to be computed before L[r, s] if either p < r or q < s."
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 67,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 9,
+    "question": "The weight of a sequence a0, a1, …, an-1 of real num- bers is defined as a0 + a1/2 + … + an-1/2n-1. A subse- quence of a sequence is obtained by deleting some elements from the sequence, keeping the order of the remaining elements the same. Let X denote the maxi- mum possible weight of a subsequence of a0, a1, …., an-1. Then X is equal to\b [2010]",
+    "options": {
+      "A": "max (Y, a0 + Y)",
+      "B": "max (Y, a0 + Y/2)",
+      "C": "max (Y, a0 + 2Y)",
+      "D": "a0 + Y/2"
+    },
+    "answer": "C",
+    "explanation": null,
+    "page": 68,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 10,
+    "question": "Four matrices M1, M2, M3 and M4 of dimensions p × q, q × r, r × s and s × t respectively, can be multiplied in several ways with different number of total scalar multiplications. For example when multiplied as ((M1 × M2) × (M3 × M4)), the total number of scalar multipli- cations is pqr + rst + prt. When multiplied (((M1 × M2) × M3) × M4) the total number of scalar multiplications is pqr + prs + pst. If p = 10, q = 100, r = 20, s = 5 and t = 80, then the minimum number of scalar multiplications needed is \b [2011]",
+    "options": {
+      "A": "248000",
+      "B": "44000",
+      "C": "19000",
+      "D": "25000"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 68,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 11,
+    "question": "Assuming P ≠ NP, which of the following is TRUE? \b [2012]",
+    "options": {
+      "A": "NP-complete = NP",
+      "B": "NP-complete ∩ P = ∅",
+      "C": "NP-hard = NP",
+      "D": "P = NP-complete"
+    },
+    "answer": "B",
+    "explanation": null,
+    "page": 68,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 12,
+    "question": "Which of the following statements are TRUE? (i) \u0007The problem of determining whether there exists a cycle in an undirected graph is in P. (ii) \u0007The problem of determining whether there exists a cycle in an undirected graph is in NP. (iii) If a problem A is NP-Complete, there exists a non- deterministic polynomial time algorithm to solve A. \b [2013]",
+    "options": {
+      "A": "1, 2 and 3",
+      "B": "1 and 2 only",
+      "C": "2 and 3 only",
+      "D": "1 and 3 only"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 68,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 13,
+    "question": "Suppose a polynomial time algorithm is discov- ered that correctly computes the largest clique in a given graph. In this scenario, which one of the following represents the correct Venn diagram of the complexity classes P, NP and NP-complete (NPC)?\b [2014]",
+    "options": {
+      "A": "NPC P NP",
+      "B": "NP P NPC",
+      "C": "P = NP NPC",
+      "D": "P = NP = NPC"
+    },
+    "answer": "D",
+    "explanation": null,
+    "page": 68,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 14,
+    "question": "Consider a hash, table with 9 slots. The hash func- tion is h(K) = K mod 9. The collisions are resolved by chaining. The following 9 keys are inserted in the order: 5, 28, 19, 15, 20, 33, 12, 17, 10. The maximum, minimum, and average chain lengths in the hash table, respectively, are \b [2014]",
+    "options": {
+      "A": "3, 0 and 1",
+      "B": "3, 3 and 3",
+      "C": "4, 0 and 1",
+      "D": "3, 0 and 2"
+    },
+    "answer": "A",
+    "explanation": null,
+    "page": 68,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 17,
+    "question": "Consider the decision problem 2CNFSAT defined as follows:\b [2014] {φ | φ is a satisfiable propositional formula in CNF with at most two literals per clause} For example, φ = (x1 ∨ x2) ∧ (x1 ∨ x3) ∧ (x2 ∨ x4) is a Boolean formula and it is in 2CNFSAT. The decision problem 2CNFSAT is",
+    "options": {
+      "A": "NP-complete",
+      "B": "\u0007Solvable in polynomial time by reduction to di- rected graph reach ability.",
+      "C": "\u0007Solvable in constant time since any input in- stance is satisfiable.",
+      "D": "NP-hard, but not NP-complete"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 68,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "3 - Algorithms",
+    "section": "Previous Years’ Questions",
+    "number": 18,
+    "question": "Consider a hash table with 100 slots. Collisions are resolved using chaining. Assuming simple uniform hashing, what is the probability that the first 3 slots are unfilled after the first 3 insertions?\b [2014]",
+    "options": {
+      "A": "(97 × 97 × 97)/1003",
+      "B": "(99 × 98 × 97)/1003",
+      "C": "(97 × 96 × 95)/1003",
+      "D": "(97 × 96 × 95)/(3! × 1003)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 68,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Previous Years’ Questions",
+    "number": 19,
+    "question": "Match the following [2014] (P) \u0007prim’s algorithm for minimum spanning tree (i) Backtracking (Q) \u0007Floyd-Warshall algorithm for all pairs shortest paths (ii) Greedy method (R) Mergesort (iii) Dynamic programming (S) Hamiltonian circuit (iv) Divide and conquer",
+    "options": {
+      "A": "P–iii, Q–ii, R–iv, S–i",
+      "B": "P–i, Q–ii, R–iv, S–iii",
+      "C": "P–ii, Q–iii, R–iv, S–i",
+      "D": "P–ii, Q–i, R–iii, S–iv"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 69,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Previous Years’ Questions",
+    "number": 22,
+    "question": "The Floyd - Warshall algorithm for all -pair shortest paths computation is based on\b [2016]",
+    "options": {
+      "A": "Greedy paradigm",
+      "B": "Divide-and-Conquer paradigm",
+      "C": "Dynamic Programming paradigm",
+      "D": "\u0007Neither Greedy nor Divide-and-Conquer nor Dynamic Programming paradigm."
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 69,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Previous Years’ Questions",
+    "number": 24,
+    "question": "Consider the following table: Algorithms Design Paradigms (P) Kruskal (i) Divide and Conquer (Q) Quicksort (ii) Greedy (R) Floyd-Warshall (iii) Dynamic Programming Match the algorithms to the design paradigms they are based on.\b [2017]",
+    "options": {
+      "A": "(P) ↔ (ii), (Q) ↔ (iii), (R) ↔ (i)",
+      "B": "(P) ↔ (iii), (Q) ↔ (i), (R) ↔ (ii)",
+      "C": "(P) ↔ (ii), (Q) ↔ (i), (R) ↔ (iii)",
+      "D": "(P) ↔ (i), (Q) ↔ (ii), (R) ↔ (iii)"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 69,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  },
+  {
+    "chapter": "5 - Dynamic Programming",
+    "section": "Previous Years’ Questions",
+    "number": 25,
+    "question": "Assume that multiplying a matrix G1 of dimension p × q with another matrix G2 of dimension q × r requires pqr scalar multiplications. Computing the product of n matrices G1G2G3, ..., Gn can be done by parenthesiz- ing in different ways. Define Gi Gi+1 as an explicitly computed pair for a given paranthesization if they are directly multiplied. For example, in the matrix multi- plication chain G1G2G3G4G5G6 using parenthesization (G1(G2G3))(G4(G5G6)), G2G3 and G5G6 are the only explicitly computed pairs. Consider a matrix multiplication chain F1F2F3F4F5, where matrices F1, F2, F3, F4, and F5 are of dimensions 2 × 25, 25 × 3, 3 × 16, 16 × 1 and 1 × 1000, respectively. In the parenthesization of F1F2F3F4F5 that minimizes the total number of scalar multiplications, the explicitly computed pairs is/are:\b [2018]",
+    "options": {
+      "A": "F1F2 and F3F4 only",
+      "B": "F2F3 only",
+      "C": "F3F4 only",
+      "D": "F1F2 and F4F5 only"
+    },
+    "answer": null,
+    "explanation": null,
+    "page": 69,
+    "subject": "Algorithms",
+    "source": "Computer Science/Notes & Material/Algorithms.pdf"
+  }
+]
