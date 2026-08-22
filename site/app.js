@@ -237,7 +237,9 @@
   /* ---------------------------------------------------------- practice */
 
   let session = null;
-  const prefs = store.get('prefs', { size: 20, onlyKeyed: true, onlyExpl: false });
+  const prefs = store.get('prefs', {
+    size: 20, onlyKeyed: true, onlyExpl: false, level: '', topic: '', order: 'ordered'
+  });
 
   function viewPractice(subjectId) {
     if (!subjectId) return viewPicker();
@@ -282,7 +284,22 @@
                   ${prefs.level === l ? 'selected' : ''}>${l}</option>`).join('')}
               </select>
             </label>
-            <button class="btn primary full" id="startBtn">${ICON.shuffle} New shuffled set</button>
+            <label class="side-row"><span>Topic</span>
+              <select id="topicSel">
+                <option value="">All topics</option>
+                ${[...new Set(subject.questions.map((q) => q.c).filter(Boolean))]
+                  .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+                  .map((topic) => `<option value="${esc(topic)}"
+                    ${prefs.topic === topic ? 'selected' : ''}>${esc(topic)}</option>`).join('')}
+              </select>
+            </label>
+            <label class="side-row"><span>Order</span>
+              <select id="orderSel">
+                <option value="ordered" ${prefs.order !== 'shuffle' ? 'selected' : ''}>In order</option>
+                <option value="shuffle" ${prefs.order === 'shuffle' ? 'selected' : ''}>Shuffled</option>
+              </select>
+            </label>
+            <button class="btn primary full" id="startBtn">Start new set</button>
           </div>
           <div class="side-card keys">
             <div class="side-title">Shortcuts</div>
@@ -297,25 +314,30 @@
       prefs.onlyKeyed = $('#onlyKeyed').checked;
       prefs.onlyExpl = $('#onlyExpl').checked;
       prefs.level = $('#levelSel').value;
+      prefs.topic = $('#topicSel').value;
+      prefs.order = $('#orderSel').value;
       store.set('prefs', prefs);
 
       let pool = subject.questions
         .map((q, i) => ({ q, i }))
         .filter(({ q }) => (!prefs.onlyKeyed || q.a >= 0)
           && (!prefs.onlyExpl || q.e)
-          && (!prefs.level || q.d === prefs.level));
+          && (!prefs.level || q.d === prefs.level)
+          && (!prefs.topic || q.c === prefs.topic));
 
       if (!pool.length) {
         session = null;
         $('#quiz').innerHTML = `<div class="empty card-empty">${ICON.empty}
           <p>Nothing in <b>${esc(subject.name)}</b> matches those filters.</p>
-          <p style="font-size:14px">Try turning off &ldquo;only with explanations&rdquo;.</p></div>`;
+          <p style="font-size:14px">Try changing the topic or turning off one of the filters.</p></div>`;
         renderSide();
         return;
       }
-      for (let i = pool.length - 1; i > 0; i--) {           // Fisher–Yates
-        const j = Math.floor(Math.random() * (i + 1));
-        [pool[i], pool[j]] = [pool[j], pool[i]];
+      if (prefs.order === 'shuffle') {
+        for (let i = pool.length - 1; i > 0; i--) {         // Fisher–Yates
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
       }
       if (prefs.size) pool = pool.slice(0, prefs.size);
 
@@ -323,8 +345,8 @@
       renderQuestion();
     };
 
-    $('#startBtn').addEventListener('click', () => { start(); toast('New set shuffled'); });
-    ['setSize', 'onlyKeyed', 'onlyExpl', 'levelSel'].forEach((id) =>
+    $('#startBtn').addEventListener('click', () => { start(); toast('New set started'); });
+    ['setSize', 'onlyKeyed', 'onlyExpl', 'levelSel', 'topicSel', 'orderSel'].forEach((id) =>
       $('#' + id).addEventListener('change', start));
 
     start();   // land straight on a question — no extra click needed
